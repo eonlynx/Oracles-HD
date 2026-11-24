@@ -1,0 +1,1152 @@
+// items
+smallkey 得到了小钥匙！\n\n可以打开锁住的门了。
+compass 得到了罗盘！\n\n可以得知首领和宝物的位置喔！\f还附带新功能！\n\n附近有钥匙的时候会发出提示音！
+dmap 终于找到地图了！\n\n按下[START]键查看地图画面吧！
+stonebeak 找到石喙了！\n\n去找猫头鹰石像吧。
+
+sword1 得到了遗失的剑！上面有\n\n自己的名字，肯定就是这把没错！\f这样就能攻击敌人了。\n\n按下按键挥剑吧！
+feather 得到了洛克鸟的羽毛！\n\n感觉身体变轻了。
+pegasusBoots 得到了天马之鞋！按住按键\n\n就能冲刺！配合跳跃还能跳得很远！
+flippers 得到了灯鱼怪蛙鞋！按下按键\n\n可以潜水，按下[CANCEL]键还能游得更快！
+bracelet0 得到了力量手镯！\n\n这样就能举起壶跟岩石了！
+bracelet1 得到了强力手镯！\n\n这样连象都能举起了！
+ocarina 得到了陶笛！\n\n要是能学会吹奏许多曲子就好了！
+powder 得到了魔法粉！\n\n试着撒在各种东西上面吧。
+mirrorShield 得到了镜盾！\n\n这样连光束都能反射了！
+hookshot 得到了钩索！\n\n咻咻～地伸出去使用吧！
+magicRod 得到了魔术杖！\n\n燃烧吧！燃烧吧！燃烧殆尽吧！！
+shovel 得到了铁铲！马上来挖洞吧！
+magicPowder 得到了魔法粉！\n\n试着撒在各种东西上面吧。
+bomb 得到了炸弹！\n\n轰轰烈烈地爆炸吧！！
+sword2 剑的等级上升了！\n\n升级为可湖霖之剑！\f立刻写上名字吧！
+boomerang 通过交换手持的道具，\n\n得到了回旋镖！
+
+shield 得到了盾！\n\n在背面写上名字吧！
+shield_intro 拿回盾了！\n\n按住按键的时候可以弹开敌人。
+shield_back 拿回盾了！\n\n按住按键的时候可以弹开敌人。
+
+yoshiPickup 是耀西！\n\n最近在很多游戏里都能见到呢～
+
+// playing the ocarina without having learned a song
+ocarina_bad 是陶笛！可、可是……\n\n还没学会曲子……
+ocarina_bad_marin 马马虎虎……\f咦！？我刚刚有说了些什么吗？\n\n你听错了喔！听～错～了～！
+
+// trading alt + 0161
+trade0 用[TRADE0]­耀西娃娃交换了[TRADE1]­缎带。\n\n这个或许也能交换……？
+trade1 用[TRADE1]­缎带交换了[TRADE2]­狗粮！\n\n里面满满当当都是牛肉！
+trade2 交出了[TRADE2]­狗粮，\n\n换来了[TRADE3]­香蕉！\f感觉还不错啦！
+trade4 捡到了猴子留下来的\n\n[TRADE4]­棒子……先收下吧。
+trade5 [TRADE4]­棒子\n\n变成[TRADE5]­蜂巢了。\f唔？？虽然不清楚是怎么一回事，\n\n总之先收下吧！
+trade6 用[TRADE5]­蜂巢\n\n交换了[TRADE6]­凤梨！\f酸酸的但很美味！\n\n很美味但酸酸的！
+trade7 用[TRADE6]­凤梨\n\n交换了[TRADE7]­朱槿！
+trade8 [TRADE7]­朱槿变成[TRADE8]­山羊的信了。\n\n……总觉得……好神奇啊！
+trade9 收到了[TRADE9]­扫把作为回礼！\n\n不过，那张艺术照其实……
+trade10 用[TRADE9]­扫把交换了[TRADE10]­钓钩！\n\n接下来会换成什么呢？
+trade11 [TRADE10]­钓钩\n\n变成[TRADE11]­项链了！\f……\n\n是谁弄丢的东西吗？
+trade12 还回了[TRADE11]­项链，\n\n拿到一片[TRADE12]­人鱼鳞片！\f这个有什么用途呢？
+trade13 太惊人了！这是神奇的镜片，\n\n[TRADE13]­透视镜！\f能看见各种各样\n\n以往看不到的东西了！！
+
+trade11_redux [TRADE10]­钓钩\n\n变成[TRADE11]­粉色胸罩了！\f……\n\n是谁弄丢的东西吗？
+trade12_redux 还回了[TRADE11]­粉色胸罩，\n\n拿到一片[TRADE12]­人鱼鳞片！\f这个有什么用途呢？
+
+// keyholes
+keyhole_0 唔？这里竟然会有钥匙孔？\n\n上面写着长尾钥匙孔。
+keyhole_1 唔？这里居然有钥匙孔？\n\n写着粘液钥匙孔。
+keyhole_2 唔？这里居然有钥匙孔？\n\n写着灯鱼怪钥匙孔。
+keyhole_3 唔？这里居然有钥匙孔？\n\n写着颜面钥匙孔。
+keyhole_4 唔？这里居然有钥匙孔？\n\n上面写着飞鸟钥匙孔。
+
+// collectables
+toadstool 捡到了蘑菇！\n\n芬芳的气味沁人心脾。
+toadstool_hold 长在不可思议森林里的古怪蘑菇。
+
+seashell 得到了秘密贝壳！\n\n多收集些贝壳，换取好东西吧。
+seashell_1 得到了秘密贝壳！\n\n能找到剩下的吗？
+seashell_2 得到了全部26枚秘密贝壳！\n\n你真是贝壳猎人大师！
+
+heart 拿到了心！\n\n噗通噗通！心之容器回复一格！
+
+ruby20 拿到了20卢比！\n\n捡到小便宜了！
+ruby50 拿到了50卢比！\n\n钱包鼓鼓的！
+ruby100 拿到了100卢比！\n\n非常开心。
+ruby200 拿到了200卢比！\n\n欣喜若狂！
+
+// trendy game
+ruby30 是30卢比！可以多玩三次游戏！
+
+heartMeter 得到了心之碎片！\f按下[START]键打开道具画面\n\n就可以确认了喔！
+heartMeterFilled 集齐4个心之碎片了！心数的上限\n\n增加了！体力也恢复至全满了！
+
+guardianAcorn 得到了守护果实！\n\n受到敌人攻击时，伤害减半！
+pieceOfPower 找到了力量碎片！\n\n感觉充满了力量！
+
+potion 什么？这是秘密药品！\n\n涂呀涂……自己涂上了。
+
+dkey1 得到了长尾钥匙！\n\n这样就能打开长尾的门了！
+dkey2 得到了粘液钥匙！\n\n去乌库库草原的入口吧！
+dkey3 得到了灯鱼怪钥匙！
+dkey4 得到了颜面钥匙！
+dkey5 得到了飞鸟钥匙！\n\n是合作无间得来的胜利！
+
+nightmarekey 得到了首领钥匙！\n\n可以打开首领房间的门了。
+
+instrument0 是满月小提琴！
+instrument1 找到海螺号角了！
+instrument2 得到了海百合铃铛！
+instrument3 找到浪涛竖琴了！
+instrument4 找到暴风马林巴琴了！
+instrument5 是珊瑚三角铁！
+instrument6 找到夕静风琴了！
+instrument7 找到远雷鼓了！
+
+instrument0Collected ……沼泽……花朵盛开的沼泽处……\n\n延续着新的道路……
+instrument1Collected ……草原……草原，\n\n草原正在等着你……
+instrument2Collected ……瀑布……被藏在……\n\n瀑布之中……
+instrument3Collected ……海湾……海湾之中……\n\n也延续着你该走的路……
+instrument4Collected ……神殿……神殿内……\n\n藏有岛屿的秘密……
+instrument5Collected ……山……在山上……\n\n呼唤着你……
+instrument6Collected ……笛……笛子之音……\n\n将引导你……
+instrument7Collected ……时机已至……\n\n圣蛋在呼唤着你……
+
+goldLeaf 太好了！\n\n找到黄金叶子了！
+goldLeafLast 终、终、终于……\n\n得到最后1片叶子了～～！\f总之，先拿着叶子回去找理查德，\n\n问问他有关钥匙的事吧。
+
+signpost0 error
+signpost1 [RIGHT] 长尾大空洞\n\n[DOWN] 托隆波海岸
+signpost2 不可思议森林\n\n危险！莫力布林大量出没中！
+signpost3 东[RIGHT] 乌库库草原\n\n远东：动物村
+signpost4 小心海胆！\n\n请勿徒手触碰！
+signpost5 小心龟裂的地板！\n\n过重的人请勿站在上面！
+
+signpost6 距离卡那列城还要10分钟 [RIGHT] [UP]
+signpost7 距离卡那列城还要5分钟 [RIGHT]
+signpost8 距离卡那列城还要50步 [UP]
+
+signpost9 [RIGHT] 动物村\n[DOWN] 玛莎海湾
+signpost10 贝壳馆
+
+signpost11 这一带是达达高原\n\n照相馆就在附近
+signpost12 [RIGHT] 塔马兰奇山\n\n[LEFT] 果彭加沼泽
+signpost13 [RIGHT] 古怪崔西的家\n\n[DOWN] 曼波池
+signpost14 [RIGHT] 坟场\n\n[DOWN] 乌库库草原
+signpost15 [RIGHT] 果彭加沼泽\n\n[DOWN] 不可思议森林
+
+signpost16 危险！\n\n汪汪以外，请勿入内！
+signpost17 理查德的别墅
+signpost19 电话亭\n\n[DOWN] 路牌迷宫
+
+signpost20 塔马兰奇山 
+signpost21 邀请你来挑战！\n\n乘上木筏急流泛舟\f如欲参加，请至办公室
+
+signpost22 亚那沙漠入口 [RIGHT]
+signpost23 [RIGHT] 欢迎光临动物村！
+
+signpost_Down 往 [DOWN] 的方向前进
+signpost_Up 往 [UP] 的方向前进
+signpost_Right 往 [RIGHT] 的方向前进
+signpost_Left 往 [LEFT] 的方向前进
+signpost_TryAgain 回到起点\n\n重新开始！
+signpost_Great 非常精彩！你过关了！\n\n走过楼梯就会看到奖品……\f敬请期待！
+signpost_Gone 我们去巡回演出了。\n\n                       玛穆
+
+talking_tree 呼～～！吓死我了！\n\n不过还是告诉你一个秘密吧。\f试着用剑去敲敲看\n\n迷宫的墙壁吧。\f敲击声不同的墙壁可以用炸弹炸开喔！\n\n你注意到了吗？
+
+mamu0 呱呱！我是主唱玛穆！\n\n你长着一副连音乐基础\f都不懂的嘴脸呢。啧啧。\n\n带着笛子再来吧！
+mamu1 呱呱。我是主唱玛穆！\n\n在这里谁都听过我的大名。\f你想听我们的\n\n灵魂之歌对吧？啧啧。\f我们乐队的演出费\n\n可不便宜喔，宝贝～！\f唱1首歌300卢比，\n\n怎么样？
+mamu2 抱歉～我们乐队\n\n是不会义演的。
+mamu3 谢谢大家支持！！谢谢！！！\n\n呱呱～呱！！
+ocarina_frog_song 学会了蛙之灵魂曲！\n\n是一首能震撼灵魂的歌！\f凭借这首歌的音色，\n\n为没有生命的东西注入灵魂吧！！
+ocarina_frog_song_end 小哥！只要唱这首歌，\n\n就能震撼灵魂喔！
+
+manbo0 我叫曼波为五郎，\n\n是条小曼波鱼！\f你有带着笛子吗？
+manbo1 这样啊……\n\n咕噜咕噜咕噜……
+manbo2 那么，我来教你1首歌吧！
+manbo3 啊，原来你没有乐器……这样啊……\n\n咕噜咕噜咕噜……
+manbo4 我叫曼波为五郎，\n\n是条小曼波鱼！\f只要吹奏我的曲子，\n\n就能传送到岛上各处的传送点去喔！\f在迷宫里\n\n也试着吹奏吧。\f呜～！
+
+ocarina_manbo_song 学会了曼波鱼之曼波曲。\n\n离开水底后，试着吹奏一下吧！
+
+choice_Pay 付钱
+choice_Leave 拜~
+
+signHead1 “风鱼”非鱼也。\n\n虽能呼风亦非鸟也。
+signHead2 前往谒见神之蛋，\n\n奏一曲，神将显灵。
+signHead3 梦醒后将化为泡影，\n\n怪物尔等皆成泡影，\f怪物故欲群起反抗，\n\n万般阻挠苏醒使者。
+signHead4 秘密藏桥下。
+signHead5 “风鱼”若不苏醒，\n\n勇者终将化为岛上之尘土。
+signHead6 秘密藏近处。
+signHead7 大鹫塔于前方。\n\n注意！近处无钥匙。
+signHead8 此处无秘密。
+signHead9 秘密藏脚下。
+
+castle_button 哦？城门打开了！\n\n这样回去就很轻松了！
+castle_button_2 咦？听起来城门关上了！
+
+door_nightmarekey 唔？锁住了！\n\n或许用首领钥匙就能打开……
+
+dungeon_keyhole_block 唔？这个砖块上有钥匙孔……\n\n拿到钥匙后再来吧！！
+rock_cracks_message 唔？好像裂缝挺大的？\n\n找个方法说不定就能破坏掉！
+crystal_hard 唔？是个不明物体！\n\n一口气撞过去或许就能破坏掉！
+
+stone 唔！！这好重啊！\n\n徒手好像搬不动呢……
+
+// nightmares
+nightmare1 嘎呼呼！！嘎呼呼！！\n\n外来者！碍事者！
+nightmareFinal0 要消失了……要崩坏了……\n\n吾等的岛屿、吾等的世界……\f……吾等的岛屿……\f……吾等……\f……………………
+nightmareFinal1 ……[NAME]啊，\n\n你战胜了恶梦，做得太好了！\f请向上走。
+
+// maria
+maria_0_0 啊！你醒来了！\n\n太好了！\f还以为已经没救了……\f你刚才好像在做恶梦……\n\n一直在痛苦地呻吟。\f……咦？塞尔达？\f你认错人了，我叫玛林。\n\n你还没完全清醒吧。\f这里是可湖霖岛喔。
+maria_0_1 沿着路往南走，\n\n就能到达你被冲上岸的海滩。\f不过，自从你来到这个岛上，\n\n这附近也开始有魔物徘徊。\f你千万要小心喔。
+
+// marin standing outside
+maria_1_0 对了！[NAME]。\n\n塔林到森林里采蘑菇去了。\f我很喜欢唱歌！\n\n来听听这首风鱼之歌吧！
+maria_1_1 我果然还是最喜欢唱歌！\n\n[NAME]你喜欢什么？
+
+// after talking to the owl
+maria_1_2 [NAME]，\n\n塔林正在家里睡午觉。\f我要唱歌了！\n\n唱那首风鱼之歌！
+
+// singing in the right village
+maria_1_3 咦？你找来了个很棒的笛子呢！\n\n试着配合我的歌声，吹奏看看。
+maria_1_4 怎么样？这首歌很动人心弦对吧？\n\n你有好好记住吗？
+maria_1_5 啊？你要好好记住喔！\n\n这可是我喜欢的歌呢。
+
+maria_1_6 为免忘记这首歌，\n\n你偶尔要唱一下喔！
+maria_1_7 千万别忘记风鱼之歌喔！还有我……
+
+maria_1_8 听说风鱼之歌\n\n是苏醒之歌。\f要是神醒来了……\n\n他会实现我的愿望吗？
+maria_1_9 啊！[NAME]，我呢～\n\n经常来这村子唱歌喔！\f大家好像最喜欢“风鱼”的歌呢。\f[NAME]，你喜欢什么歌？
+
+marin_letter 我去海滩了。\n\n          玛林 [MARIN]
+
+// maria at the beach
+marin_2_0 哎呀，[NAME]。\n\n原来你也知道这个地方啊。\f跟我聊聊好吗？
+
+// Yes! No...
+marin_2_1 这样啊……那我就在这里\n\n多待一会，看看海……
+marin_2_2 这个椰子\n\n到底是从哪里来的呢……\f虽然塔林说过，\n\n海的另一端什么都没有……\f但我相信，\n\n那里一定是有些什么的！\f………………\f当我找到[NAME]的时候，\n\n我的心跳得很快。\f那时我在想，这个人一定是\n\n为了告知我们某些事情，\f而从海的另一端过来的。
+marin_2_3 ………………\f如果我是海鸥……\n\n我一定有多远就飞多远……\f飞到许多不同的地方，\n\n和许多不同的人合唱。\f要是我向“风鱼”许愿，\n\n我的愿望是否会成真呢……
+marin_2_4 哎，[NAME]。你有在听吗？ 
+marin_2_5 真是的！总是心不在焉……\n\n下次你要好好听我说话喔！
+marin_2_6 要是有机会，\n\n真想去[NAME]的故乡看看呢……\f我只是说说而已！呵呵……
+marin_2_7 啊？海象先生？？\n\n……可以喔！我跟你一起去吧！
+
+maria_collected 太棒了！获得玛林相助！\n\n机、机会来了！？
+
+// going into a dungeon
+marin_dungeon 啊？你要进去吗？\n\n我在这里等你吧……\f[NAME]，要小心喔……
+marin_dungeon_leave 啊！ [NAME]，你回来了！\n\n没受伤吧？
+marin_dungeon_leave_time ……好慢喔。真是的，\n\n我还以为你不会回来了……
+marin_dungeon_hearts 哇啊！！伤得这么重！\n\n真是的！不准再乱来啊！
+marin_dungeon_hearts_alt 明明警告过你了……\f咦！？什么！？\n\n我什么也没有听见！真的喔！
+
+marin_cucco_0 啊哈哈！上啊！\n\n上啊！继续上吧～！…………\f不，当我没说过吧……
+marin_cucco_1 不准这样做！\n\n鸡先生不是很可怜吗！真是的！
+
+marin_pot_0 啊哈哈～！摔吧！摔吧！\n\n全部摔坏吧！！\f咦？怎么了？有什么问题吗？
+marin_pot_1 啊！\n\n……唉，你真是个坏孩子！
+
+marin_digging 哇～！挖啊！挖啊！\n\n挖遍整座岛吧！！
+
+maria_game_0 哇～！对了对了，[NAME]，\n\n我可以玩这个吗！？可以吗！？\f怎么办呢？
+// Okay No Way
+maria_game_1 我好想玩！真的好想玩！！
+// Yes  Okay
+maria_game_2 还挺厉害的嘛……\n\n你啊……是职业的对吧！？\f本店不欢迎职业的！！\n\n呸！给我滚！！
+
+// walrus sequence
+maria_3_0 哎呀？真是只懒洋洋的海象先生呢。\n\n要吓他一下吗？
+// Yes  No...
+marin_3_1 也是呢。这样做他会很可怜的。\n\n我们就别去吵醒他吧！
+maria_3_2 啊哈哈哈！刚醒来就很精神呢！
+maria_3_3 咦？他在叫我……\f一定是想我做平时的那件事吧……\n\n呵呵呵。
+maria_3_4 我要去动物村看看。\n\n[NAME]，你也一定要来喔！
+
+// marin falling into the fountain not falling on link
+marin_fountain 呼……差点把我吓坏了！
+
+// marin in the mountains
+marin_4_0 有人吗～～～！
+marin_4_1 啊！[NAME]！\f有些怪物欺负我，\n\n把我带到这里来……\f…………怎么办？\n\n身体害怕得动不了……
+marin_4_2 啊呀！\n\n…………吓我一跳！\f[NAME]，谢谢你！
+marin_4_3 ………………\n\n…………那个……\f……[NAME]，听我说……
+marin_4_4 ……我……\n\n……我……
+marin_4_5 玛林！！！！
+marin_4_6 啊！塔林！？？\f………………\n\n……对不起……没什么事……\f我……先走了。
+
+marin_5_0 刚才真是谢谢你……\n\n[NAME]真的很酷呢。\f我刚刚向风鱼\n\n许愿了……\f嗯？你问我许了什么愿望？\n\n那就是……不告诉你！那是秘密喔！
+marin_5_1 [NAME]总有一天\n\n会离开这座岛屿吧……\f我隐隐约约……能察觉得到……\n\n[NAME]会离开这里。\f……别忘记我喔。\n\n要是把我忘掉，\f我可是不会原谅你的喔！
+
+marin_6_0 [NAME]，我有预感我不会再有机会……\n\n你愿意和我一起散步吗？
+marin_6_1 哦，好吧……也许改天吧。
+marin_6_2 谢谢你，[NAME]，今天玩得很开心！\n\n我想暂时就此告别吧？
+marin_6_3 [NAME]。我……我……觉得不太对。\n\n我们请回头吧！
+
+walrus_0 ……啊呜……啊呜……\n\n… [MARIN] … [MARIN] …
+walrus_1 啊呜！啊呜！\n\n[MARIN]  [MARIN]！  [MARIN]   [MARIN]！\f…… [LINK]？？
+
+animals_absorbed ………………\n\n正陶醉于歌声之中。
+
+ocarina_maria_song 学会了\n\n风鱼之歌！\f玛林的歌声\n\n仍不绝于耳。
+
+// tarin house
+tarin_chest 喂！你怎么擅自打开别人的柜子！\n\n……这种事你是从哪里学来的啊。
+
+// tarin
+npc02_leave 喂！等一下！\n\n过来这边！
+tarin_0 嗨，[NAME]，你醒来啦？\n\n俺叫塔林。你还好吗？\f嗯！？你在奇怪\n\n俺怎么知道你的名字是吗……？\f俺只是看到了盾背面写的名字唷。\n\n就是这面盾，你拿去吧！
+tarin_1 对了，海滩上还有其他\n\n一起被冲上来的东西唷。\f如果你想去找找看，\n\n可得小心魔物唷。\f自从你来到这个岛上，\n\n它们就开始活跃起来了！
+
+// after the raccoon transformation
+tarin_raccoon_2 咬了一口蘑菇后，\n\n俺就做了个自己变成狸猫的梦。\f虽然不记得在梦里做了些什么，\n\n但总觉得过得很快乐唷！
+tarin_raccoon_3 俺打算多休息一会再回家……
+
+tarin_2 嗯……俺累了。\n\n先睡一会……呼～呼～
+tarin_3 唔……要是有不明白的事，\n\n可以打电话给乌鲁里拉爷爷唷……\f……呼～呼～呼～
+
+// tarin with the bananas
+tarin_4 我肚子饿了，所以去海滩那里\n\n拿了些香蕉，咀嚼咀嚼……\f[NAME]，你要是也想要的话，\n\n可以自己去拿唷……
+
+// tarin trading sequence
+tarin_stick 喔？[NAME]，\n\n你带着好东西呢。\f俺会把美味的蜂蜜分给你的唷，\n\n你就把那根[TRADE4]­棒子借给俺吧！
+tarin_stick_no 唔……[NAME]你真坏唷！
+
+// after the trading sequence sleeping in the bed
+tarin_5 唔……唔……\n\n俺已经受够蜜蜂了。
+
+// lady with the broom
+npc_broom_0 嗨～！我精神很好喔！\n\n你呢～？
+npc_broom_1 呀呵～！我精神很好喔。\n\n但可能是我太有干劲了，\f到最后连[TRADE9]­扫把也被我用得\n\n破破烂烂，已经不能再用了！
+npc_broom_2 呀呵～！呀呵～！\n\n那是新的[TRADE9]­扫把吗？\f真是麻烦你了，是要给我的对吧？
+npc_broom_3 那么我就把在河边捡到的\n\n[TRADE10]­钓钩当作回礼送给你吧。
+npc_broom_4 呀呵～！！新的[TRADE9]­扫把很不错喔！
+npc_broom_5 噢～！那是不是\n\n由你来帮我打扫这座岛呢？
+npc_broom_bowwow 呀呵～！刚才的莫力布林\n\n该不会是住在达达高原的那群家伙吧？\f他们可是很野蛮的～！\n\n我很担心汪汪啊……
+
+npc04 嗯……\n\n………………\f那个……\n\n打电话……给我……\f……从外面打……\n\n………………
+npc04_game 看来乌鲁里拉爷爷\n\n是位非常沉默寡言的人。
+
+// kid with hints
+//npc05_0 嘿，老兄！想要保存的时候就一次按下所有按钮！呃……别问我这是什么意思，我只是个小孩！
+npc05_1 似乎在保存之后\n\n就能从最后通过的入口重新开始游戏。\f不过，我还只是个孩子，\n\n完全搞不懂这些是什么意思呢！
+npc05_2 听说如果要看这个岛的地图，\f可以先后按下[START]和[SELECT]键\n\n来打开地图。\f不过，我还只是个孩子，\n\n完全搞不懂这些是什么意思呢！
+npc05_3 当心数即将归零时，\n\n去找大妖精就好了。\f不过，我还只是个孩子，\n\n完全搞不懂这些是什么意思呢！
+
+npc_ball_left 大哥哥你是从哪里来的啊？\n\n……岛的外面！？\f“外面”是什么地方？\n\n我从没想过呢。
+npc_ball_right 我听说“风鱼”在那个在那个\n\n塔马兰奇山的圣蛋里面睡觉。\f为什么？\n\n我也不知道为什么喔。
+
+// kid near the weather bird or next to the shop
+npc_boy_island 啊？你问我们\n\n从何时开始住在这座岛上……？\f“何时”是什么意思啊？\n\n我搞不清楚呢。
+npc_boy_marin 我说，大哥哥。\n\n你觉得玛林怎么样？\f不过，毕竟我还只是个孩子，\n\n我会装做什么都不懂的。
+npc_boy_shrine 我说我说～大哥哥！\n\n那边的梦之祠堂啊，\f里面有\f喔………\f毕竟我还只是个孩子，\n\n所以只能说到这里。
+npc_boy_marin_beach 玛林经常一个人\n\n去海滩看海。\f这是为什么呢……？\n\n我还是小孩子，所以不懂啦。
+// kids while marin is with link
+npc_boy_marin_following 我说，大哥哥……\n\n你要跟小玛林一起去哪里呢？\f咦？我没别的意思……\n\n毕竟我还只是个孩子！
+npc_boy_marin_gone 咦？小玛林不在呢。\n\n……她怎么了吗？
+
+// when the player has the broom and the grandma is in the other village
+npc_boy_grandmother 亚荷奶奶不见了？！\n\n…………一切谜题都解开了！\f我以乌鲁里拉爷爷的名义发誓，\n\n奶奶就在动物村！\f……其实我只是\n\n从电话里听来的……
+
+// kids playing ball game after the village gets attacked
+npc_kid_attacked 啊！大哥哥！糟糕了！\n\n糟糕了！你听我说！听我说！\f对啊！真的糟透了！\n\n刚刚莫力布林到村子里……\f你听我说！刚刚有很多\n\n莫力布林冲了过来！然后啊……\f对啊！他们立即冲到\n\n那个房子去……然后啊！听我说！\f那房子是养了汪汪的那人的家……\n\n好像是……不！对啊，就是那一家！\f莫力布林那群家伙！居然啊！\n\n就是……！你听我说……！\f似乎自己去确认\n\n会比较快。
+
+// chef in the right village
+npc_chef_0 我的梦想是在梅贝村开分店。
+npc_chef_1 做料理的食材不够啊。\n\n可恶！\f要是有蜂蜜，\n\n我就可以把这道菜煮成绝世美食了。
+npc_chef_2 嘿呵～！你带着的……\n\n该不会是[TRADE5]­蜂巢吧？\f正好蜂蜜都用光了！\n\n可以用[TRADE6]­凤梨和你交换吗？
+npc_chef_3 可恶～！真可惜啊。\n\n那可是很稀有的珍贵食材啊！
+npc_chef_4 嗷吼！嗷吼！亚那沙漠啊。\n\n我知道喔。\f入口就在村子南面呢。\n\n但有只很大的海象挡住了路。\f……那家伙一旦睡着了，\n\n就会动～也不动。\f对了！带小玛林过来吧！\n\n让小玛林的歌声叫醒他！\f他一定会吓得跳起来的！\n\n嘿嘿嘿！
+npc_chef_marin 嘿呵～！！！\n\n小玛林，欢迎欢迎！\f……哎呀？我也真是的，\n\n原来你也在，抱歉抱歉。
+
+// yoshi doll
+npc07_0 四个小孩都长得一模一样。\n\n就算是我也搞不清呢。
+npc07_1 话说回来，\n\n这孩子很想要[TRADE0]­耀西娃娃～\f虽然村子里的游戏店有，\n\n但太难了，我拿不到。
+npc07_2 哎呀，你要把那个[TRADE0]­耀西娃娃\n\n送给这孩子吗？
+npc07_3 哎呀，真可惜……
+npc07_4 哇，谢谢你！你真是个好人。\n\n对了，我用这个和你交换吧。
+npc07_5 我老公……\n\n好像如同他所说的一样遇难了。\f有没有人可以带着食物\n\n去救救他呢～？
+
+npc_house_chest [NAME]调查了衣柜。\f嗯～是个不错的衣柜啊。
+npc_house_chest_marin [NAME]，\n\n你经常做这种事情吗？？
+
+npc_letter_boy_0 我是善良的莱特叔叔！\n\n我的兴趣是写信！\f可是我从没收过回信。\n\n好伤心啊～
+npc_letter_boy_1 什、什么！你带了回信\n\n给我吗！！\f好、好高兴啊～～～！！\f啊！\n\n信里还附有小克莉丝汀的艺术照～！
+npc_letter_boy_2 嗯～～！她是多么的美丽！\n\n……啊，我得送你回礼才是！\f但我可以送你的就只有\n\n[TRADE9]­扫把这类的东西而已。可以吗？
+npc_letter_boy_3 求求你！\n\n请收下[TRADE9]­扫把吧！
+npc_letter_boy_4 哎呀～书信往来\n\n真的是件很棒的事啊！
+npc_letter_boy_5 嗨，我正在写信给克莉丝丁。
+
+npc_letter_girl_0 难道你不知道\n\n造访女生房间时该有的礼仪吗？\f如果你有朵鲜花的话，\n\n或许本小姐会有心情和你聊聊天。\f对了，本小姐喜欢[TRADE7]­朱槿，\n\n所以…………
+npc_letter_girl_1 噢！这朵[TRADE7]­朱槿\n\n是要送给本小姐的吗？谢谢你。\f有件事情……想要拜托\n\n非常有绅士风度的你喔。\f你能听听本小姐的请求吗？
+npc_letter_girl_2 本小姐希望你能把信交给\n\n在森林边境的莱特先生。\f拜托你了！
+npc_letter_girl_3 ……这样啊。\n\n本小姐还以为你是个好绅士……
+npc_letter_girl_4 只要是看起来很美味的纸，\n\n就算是莱特先生的信，\f有时候本小姐也会把它吃掉。\n\n……真是丢脸……
+
+// fisher under the bridge
+npc_bridge_0 唉，真头痛。\n\n鱼儿把[TRADE10]­钓钩给咬走了……\f只是垂钓着鱼线\n\n果然什么都钓不上来啊。
+npc_bridge_1 喔喔！你拿着的\n\n不就是[TRADE10]­钓钩吗？\f可以送给我吗？我会用钓到的\n\n东西和你交换的。觉得怎样？
+npc_bridge_2 你待人处事\n\n得再善良一点才行！
+npc_bridge_3 那么，就请你睁大双眼，\n\n看看什么叫做职业钓手的技术吧！
+npc_bridge_4 噢！看来大鱼上钩了！\n\n很大、很大的鱼！\f看我的～！！
+npc_bridge_5 下次会钓到什么呢？\n\n真的好期待啊！
+
+tracy_give 买
+tracy_dont 不买
+
+npc_tracy_0 我是古怪崔西！\n\n我专卖能让人打起精神的秘密喔。
+npc_tracy_1 要用28卢比买这个秘密吗？
+npc_tracy_2 要用42卢比买这个秘密吗？
+npc_tracy_3 ……看你长得这么可爱，\n\n算你7卢比就好了～
+npc_tracy_4 涂啊涂～好了！谢谢惠顾！\n\n我把秘密药品涂在你身上了！\f当心数归零时就会见效。\n\n要再来找我喔……\f
+npc_tracy_5 等等！你的钱不够唷。\n\n给我下次再来吧！
+npc_tracy_6 ………………\n\n不过，才不卖给你呢！
+npc_tracy_7 什么嘛～都跟你说了有打起\n\n精神的效果……你这个胆小鬼！
+npc_tracy_8 这是我个人给你的特别招待～\n\n你看～心数都回满了唷！
+
+// npc lost boy
+npc_lost_boy_0 哎呀～正如我所说的。\n\n巴巴尔我遇难了的说！\f饿得没力气走动的说。\n\n你可以给我一点食物吗？
+npc_lost_boy_1 你这个人真无情的说……
+npc_lost_boy_2 这个[TRADE6]­凤梨看起来很好吃啊！！\f那我就不客气，\n\n品尝这个[TRADE6]­凤梨了的说！
+npc_lost_boy_3 啊对了！虽然作为回礼\n\n可能有点寒酸……\f让我把这朵[TRADE7]­朱槿送给你吧。\f朱槿是这朵花的品种的说。
+npc_lost_boy_4 好吃！很好吃的说！\n\n力气都涌出来了的说！
+
+// mermaid
+npc_mermaid_0 我在海湾游泳时，我很珍惜的\n\n[TRADE11]­项链被海浪卷走了……\f如果你能帮我找回来，\n\n就把我的……送.给.你！
+npc_mermaid_1 我已经在这附近都找过了！
+npc_mermaid_2 啊～！那是我的[TRADE11]­项链！\n\n我说～把它还给我！还给我！\f你还给我，我就让你从我身上\n\n拿走一片­鳞片！
+npc_mermaid_3 啊～！只能拿一片喔！
+npc_mermaid_4 嘤嘤……你太坏了～！
+npc_mermaid_5 之前有个好色的艺术家\n\n拜托过我当模特儿。\f这么说起来，\n\n那家伙也很想要我的鳞片呢。\f果然透视镜的传闻\n\n是真的吗……
+
+npc_mermaid_0_redux 我在海湾游泳时，\n\n波浪冲走了我的粉色胸罩……\f如果你能帮我找回来，\n\n就把我的……送.给.你！
+npc_mermaid_1_redux 呀！变态！变态！！！
+npc_mermaid_2_redux 啊～！那是我的[TRADE11]­粉色胸罩！\n\n我说～把它还给我！还给我！\f你还给我，我就让你从我身上\n\n拿走一片­鳞片！
+
+// mermaid statue
+mermaid_statue_0 《悲伤的人鱼像》\n\n        舒尔之作\f咦？塑像欠缺了1片鳞片。
+mermaid_statue_1 成功把­[TRADE12]­人鱼鳞片\n\n嵌入缺口！
+
+// rabbit
+rabbit_0_0 动物村和梅贝村\n\n是姐妹市喔。\f虽然也说不上是城市啦……\f题外话，梅贝村里\n\n不是有一座梦之祠堂吗？\f根据某个可靠消息，\n\n里面好像放着……\f不知道是不是真的？
+rabbit_0_1 我昨晚做了一个\n\n变成胡萝卜的梦。\f……害我心情有点复杂。
+
+rabbit_1_0 最近魔物变多了，\n\n去不了梅贝村。\f唉……小玛林，\n\n不知道她还好吗……
+rabbit_1_1 啊？我们动物为什么能说话？\f是为什么呢？\n\n毕竟我只是只兔子，所以搞不清楚呢！
+rabbit_2_0 亚那沙漠？\n\n入口在南面啦……\f但那家伙挡住了路，\n\n可能进不去呢。
+rabbit_2_1 你知道飞天鸡吗？\n\n听说它以前曾住在梅贝村，\f不知道是不是真的？
+
+rabbit_3_0 唉……像这种日子……\n\n果然还是要那个吧……
+rabbit_3_1 唉……小玛林什么时候来呢？\n\n果然还是得要那个对吧。嗯嗯。
+
+rabbit_marin 啊！是小玛林！！
+
+// dialog choices
+choice_Yes 当然
+choice_YES 想！
+choice_Yes! 好啊
+choice_Okay 好啊
+choice_Yeah 嗯
+choice_Fine 我知道了
+
+choice_No 不
+choice_NO 没、没兴趣
+choice_No... 不要
+choice_No! 才不要
+choice_N-No 别这样吧！
+choice_No_Way 不行！
+choice_No_way 不是
+choice_Not_Now 不用了
+choice_Nope 不可以！
+choice_Give 给你
+choice_Keep 不要
+choice_Dont 不给啦
+choice_Can 好啊
+choice_Cant 不给
+
+choice_Fish 要
+choice_Cast 当然
+choice_Look 看
+
+// Marin beach sequence - asking to join Link to see the Walrus.
+choice_Yeah_Marin 嗯
+choice_No_Marin... 不要
+
+// Papahl
+npc08_0 我是四小福的爸爸，\n\n名字叫巴巴尔的说！\f我迟早会在山上遇难的说，\n\n到时候就拜托你了！
+npc08_1 哎呀～\n\n之前真是谢谢你的说。
+
+// Madam MeowMeow
+npc09_0 呵～呵呵！我家的汪汪\n\n对自己的毛色相当自豪呢！呵呵！
+npc09_1 糟糕了！不得～了！\n\n我家汪汪被莫、莫、\f莫力布林给掳走了！\n\n啊啊！谁来救救汪汪啊～！
+npc09_2 哎唷～谢谢你把我家汪汪带回来！\n\n我很高兴！\f哎呀～！\n\n你还要顺便带它去散步吗……\f真是帮上我大忙了。\n\n那么就拜托你了！
+npc09_3 呵～呵呵呵。\n\n非常感谢你把汪汪救回来。\f你真是个善良的孩子呢。\n\n这是回礼。\f啾啵！！\f……得到了\n\n喵喵夫人的回礼……\f……………………\f……真、真走运啊！
+npc09_4 呵～呵呵呵。\n\n非常感谢你带汪汪去散步。\f这是回礼。\f啾啵！！\f……得到了\n\n喵喵夫人的回礼……\f……………………\f……真、真走运啊！
+
+// Bow Wow
+bowWow2 嗷嗷！嗷嗷！
+bowWow3_0 我是最喜欢打扮，\n\n并拥有年轻健美身材的嗷嗷！\f唉……我好想要可爱的饰品～
+bowWow3_1 我是最喜欢打扮，\n\n并拥有年轻健美身材的嗷嗷！\f唉……我好想要可爱的饰品～\n哎呀～！那条[TRADE1]­缎带超可爱的！\n\n我用[TRADE2]­狗粮跟你交换吧！
+bowWow3_2 啊啊啊～～～～！？\n\n搞什么啊！太差劲了！
+bowWow3_3 太幸运了！谢谢你。\n\n那么，我就用[TRADE2]­狗粮和你交换了！
+bowWow_dig 挖这里！汪汪！汪汪！
+bowWow_walk 要带汪汪去散步吗？
+
+// Trendy Game
+npc_trendy_open 玩1次　流行游戏　10卢比
+npc_trendy_no_cash 哎呀！你的钱不够啊！\n\n没办法，你还是下次再来吧！
+npc_trendy_start 玩法是按[CONFIRM]和[CANCEL]键来移动夹子……\n\n之后就要看准时机了！\f好了，到按键的前方去吧。\n\n加油喔！
+npc_trendy_again 要再玩一次吗？
+npc_trendy_closed 今天已经关门了。\n\n下次再来玩吧～！
+npc_trendy_good_luck 祝你好运！
+npc_trendy_play 玩
+npc_trendy_no_play 不玩了
+
+// 0176: <
+npc_fisherman_0 要钓鱼吗？
+npc_fisherman_choice 只要10卢比喔。
+npc_fisherman_1 你要更热情一点才行啊！
+npc_fisherman_2 没钱了吗？\n\n有钱的时候再过来吧。
+npc_fisherman_3 长按[CONFIRM]键便能投出假饵。\n\n用[DPAD]上的[LEFT]和[RIGHT]使假饵摆动，\f当鱼咬钩时再按下[CONFIRM]键。\n\n连续按的话能快速收线。\f之后便是你跟鱼之间的较量了。\n\n 要加油喔！
+npc_fisherman_4 为什么不再钓1次？
+npc_fisherman_5 哎唷，让鱼逃走了！\n\n还要再钓1次吗？
+npc_fisherman_6 这条鱼真不错！\n\n是条大鱼！\f给你奖金20卢比！
+npc_fisherman_6_1 还要再钓1次吗？
+npc_fisherman_7 这条鱼好小！\f嗯……好吧。\n\n给你5卢比。
+npc_fisherman_7_1 你应该再钓1次！
+
+npc_fisherman_8 你是第一次钓到这么大的鱼呢。\n\n让我把心之碎片也送给你吧！\f再给你奖金20卢比！
+npc_fisherman_8_full 你是第一次钓到这么大的鱼呢。\n\n让我把心之碎片也送给你吧！\f再给你奖金20卢比！
+
+npc_fisherman_8_1 要再试1次吗？
+npc_fisherman_9 钓鱼池已经被钓空了。
+npc_fisherman_9_1 为什么不去海边碰碰运气？
+npc_fisherman_10 我刚才有说什么吗？\n\n忘掉它，好吗？\f现在给我离开……
+
+// npc raft
+npc_raft_0 欢迎光临。\n\n要坐木筏吗？费用是100卢比。
+npc_raft_1 好！帮你打开闸门了！\n\n祝你玩得尽兴！
+npc_raft_2 没钱了吗？\n\n有钱的时候再过来吧。
+
+// frog boy
+npc_frog_boy_0 哟！别看我现在这样，\n\n我啊～也曾经在城堡里居住过的喔。\f但自从我的随从被怪物附身后，\n\n我啊～就从那里逃出来了……\f你能答应我的请求吗？\n\n会给你好东西报答你的。\f我啊～想你帮我从怪物手上，\n\n取回我在逃离城堡时留下的黄金叶子！
+npc_frog_body_impressed 噢！我啊～真的非常感激你！\n\n其实那个叶子总共有5片呢。\f啊，回来之前记得买个铁铲喔～！
+npc_frog_body_coward 我啊～再也不想看见\n\n像你这种胆小鬼了！去去！走开！
+npc_frog_body_please 你好！[NAME]。\n\n为了爱与正义……\f还有我的幸福，\n\n去帮我搜集所有叶子吧！
+npc_frog_body_bien 嗯～！好棒棒！\n\n叶子都集齐了！\f好！为了表达我的谢意，\n\n你来推一下这座青蛙石像吧！
+npc_frog_body_debt 多亏有你，叶子都找回来了，\n\n我啊～真是太幸福了～！
+npc_frog_body_bowwow 啊！给我等等，这可不行啊～\n\n居然带着汪汪过来……\f我啊～怎样都无法喜欢\n\n那种野蛮的动物呢～\f等那家伙不在的时候再见面吧。\n\n再见～\f
+
+npc_zora 不要跟任何人提起我，\n\n我会告诉你一条有用的消息。\f去一趟托隆波海岸的洞窟吧！\f那里有些家伙跟我一样，\n\n只能用[TRADE13]­透视镜才能看到！
+
+alligator_0 我是这里的管理员啦，\n\n叫做瑟勒！\f我的兴趣是\n\n收集稀有的罐头啦。\f但我弟弟不同，他不知道\n\n跑哪里去当艺术家啦。\f我自己是觉得\n\n吃美食更开心啦……
+alligator_1 那是什么啦！？\n\n你手上的不就是罐、罐头吗！？\f求求你！给我那个[TRADE2]罐头啦！\n\n求求你啦！
+alligator_2 要怎么办？
+alligator_3 那么就没办法了啦……\n\n要是你回心转意了，就跟我说啦。
+alligator_4 谢谢你啦！\n\n那么我要吃啦！
+alligator_5 这个很好吃啦！！\f那么，这[TRADE3]­香蕉就作为谢礼送你啦。\n\n哎呀～真的是很好吃啦！
+alligator_6 谢谢你！那个超好吃的啦！
+alligator_7 谢谢了，小兄弟！\n\n你有玩过急流泛舟吗？\f它就在达达高原最东边。\n\n至少去一次看看喔！
+
+witch_0 搅搅搅！森林蘑菇变糊糊！\n\n拌拌拌！糊糊化为魔法粉！
+witch_1 喔喔！那是酣睡菇！\n\n给我三秒钟，我来替你制作个好东西！
+witch_2 来！大功告成了！\n\n使用时要注意一下剩余的次数喔。\f先试着撒在这房间的某处吧……
+witch_3 没错，就是这样。\n\n或许有些敌人会受魔法粉影响而产生变化。\f要是用完了，就把森林里的蘑菇拿过来吧。\n\n我再给你制作新的……
+
+cukeman_0 这个冷知识你知道吗？
+cukeman_1 这座岛上好像有3首歌。
+cukeman_2 据说这3首歌，\n\n分别有着不可思议的力量。
+cukeman_3 试着在各种不同的地方吹奏吧～
+
+fairy_0 让我来治愈你的伤口和疲劳吧。\n\n请闭上眼睛……
+
+// general dialog not used in the actual game
+itemShop_dialog [itemShopItem]\n\n[itemShopPrice] 卢比！
+itemShop_bow 弓箭组合　980卢比
+itemShop_arrow 10支　箭　10卢比
+itemShop_shovel 酷炫铁铲　200卢比
+itemShop_hearts 3颗　心　10卢比  
+itemShop_shield 盾　20卢比\n\n还可以写上名字。
+itemShop_bomb 10个　炸弹　10卢比  
+
+itemShop_buy 买
+itemShop_dont 不买
+itemShop_no_way 太贵了！
+itemShop_no_way! 不需要
+
+// shopkeeper
+shopkeeper_0 欢迎光临！想要什么的话，\n\n就把它拿来这里吧！
+shopkeeper_1 谢谢惠顾！下次再来喔！
+shopkeeper_2 哎呀！你的钱不够啊！\n\n没办法，你还是下次再来吧！
+shopkeeper_3 哎呀！你现在买这个也没用啊。\n\n看来你还有得学呢！
+shopkeeper_4 等等！这可不行啊！\n\n你得好好付钱才行！
+shopkeeper_5 竟然！？\n\n免费获得了物品！\f………………嗯？？
+shopkeeper_6 嘿！你偷了我的东西，但我给你机会弥补。如果你给我999卢比、30颗炸弹、30支箭和20份魔法粉，我们就算扯平。怎么样？
+
+shopkeeper_debt_0 偿还你的债务吗？
+
+shopkeeper_debt_1 很高兴和你做生意。我会帮你洗清罪名！
+shopkeeper_debt_2 真遗憾。那你就永远被称为小偷！
+shopkeeper_debt_3 抱歉小子！你没有那些物资！\n\n等你有了我要的全部东西再来！
+
+itemShop_revenge 我明明已经再三叮嘱过，\n\n要你好好付钱的……没办法了。\f给我纳命来！
+
+weatherBird 飞天鸡\n\n长眠于此
+
+rooster_0 鸡居然复活过来了！\n\n它好像很高兴。
+rooster_1 嘎——！
+
+// ghost that follows link
+ghost_0 ……带我……回家……\n\n……海湾的……家……
+ghost_1 ……不要！\n\n……我讨厌……那里……
+ghost_2 ……是这里了！\n\n……进去吧……这是我的家……
+ghost_3 ……好怀念……\n\n……一切都没有变……\f……呜呜呜呜……
+ghost_4 ……可以了……已经够了……\n\n……我要回去……墓地……\f……带我回去……墓地……
+ghost_5 ……我要回去……墓地……\n\n……带我回去……墓地……
+ghost_6 ……谢谢你……\f…我的宝物……\n\n……送给你……拿去用吧……\f……拜拜……
+
+ghost_grave_powder ……咳咳……咳咳……\f……别撒粉过来……\f……不然就诅咒你！咳咳……
+
+// == owl ==                                                                                                               
+owl_1_0 呜呜！呜呜！\f原来孩子你是这把剑的主人啊……\f呜呜！原来如此。\n\n怪不得怪物们都开始四处闹事，\f毕竟告知风鱼苏醒的使者\n\n出现了呢。\f据说如果不唤醒风鱼，\n\n那位使者便会永远被困于岛上……\f呜！来村子北面的\n\n不可思议森林吧。\f我会在那里等你……\n\n呜呜！呜呜！
+owl_1_1 呜呜！\f肩负唤醒使命的勇者大人，\n\n欢迎来到不可思议森林。\f这座岛屿名为可湖霖岛，\n\n是绝对不会被记载在地图上的岛屿。\f这里不同于你之前所处的世界，\n\n它是由不同的法则构成的。\f任谁也不能离开这座岛屿。\f只要统治可湖霖岛的神风鱼一直沉睡，\n\n就无法开启通往外面世界的道路。\f……话说回来，\n\n你看到村子南边的长尾大空洞了吗？\f拿着在这片森林某处的钥匙，\n\n到长尾大空洞去吧！\f风鱼在注视着你。\n\n呜呜！呜呜！
+owl_1_2 呜！拿着那把钥匙，到村子南边的\n\n长尾大空洞去吧。\f试着找出沉睡于\n\n洞穴深处的乐器！\f风鱼在等着你呢。\n\n呜呜！呜呜！
+
+owl_2_0 呜呜！呜呜！\f那正是瑟莲的乐器！\f孩子你果然是真正的使者！\n\n请原谅我多次的无礼……\f那乐器拥有唤醒\n\n风鱼的力量。\f乐器总共有8件，\n\n得把这8件乐器全部集齐。\f我是被派来负责引导孩子你\n\n走上正确道路的信使。\f请前往位于北方的果彭加沼泽。\n\n呜呜！
+owl_2_1 呜呜！呜呜！\f你牵着一只生人勿近的家伙呢。\f下一件瑟莲的乐器在\n\n果彭加沼泽里。\f千万别忘记喔。\n\n呜呜！呜呜！
+
+// post dungeon 3
+owl_3_0 呜呜！\f已经收集了多少件\n\n瑟莲的乐器呢？\f当8件乐器同时奏起乐曲，\n\n风鱼便会苏醒过来。\f届时，就是孩子你\n\n离开这座岛屿的时候吧。\f前往亚那沙漠吧。\f栖息于该处的黑色怪物\n\n将会为你的前路提供线索。\f呜呜！呜呜！
+owl_3_1 呜呜！呜呜！\f那支钥匙象征着\n\n于瀑布中逆流而上的鱼。\f呜！\n\n向山中瀑布前进吧！\f登上水流的最高处后，\n\n只要向下一跃……\f呜呜！呜呜！
+
+// at the grave of the ghost
+owl_5_0 呜呜！呜呜！\f孩子，好久不见了。从玛莎海湾的\n\n水底进入鲶鱼大嘴吧。\f随着孩子你越来越接近，\n\n风鱼也开始有苏醒的迹象。\f继续前进吧……\n\n呜呜！呜呜！
+
+// owl sitting infront of the egg on the stairs
+owl_stairs 呜呜！\f风鱼在上方的圣蛋之中，\n\n一直做着永无止境的梦。\f当8件乐器同时于圣蛋前奏响，\n\n风鱼便会从梦中醒来。\f这就是离开这座岛的\n\n唯一方法……\f呜呜！呜呜！
+
+// pre dungeon 6
+owl_6_0 呜呜！\f这里的北方和南方\n\n都建有神殿。\f请先朝南方前进\f那里有座与风鱼渊源甚深，\n\n荒废的古代遗迹。\f在那里会看到什么呢……
+owl_6_1 ……在里面的石板\n\n是自古流传下来的东西。\f上面记载着这座岛屿\n\n存在于风鱼梦中一事。\f此时此刻，究竟是梦境还是现实，\n\n大概任谁都不得而知吧。\f正如不打开宝箱，\n\n就无法知道里面藏着的是什么一样。\f不到睡醒的那一刻，\n\n都不会知道是梦还是真……\f知道真相的，\n\n就只有风鱼而已。\f……请走上你所相信的路吧。\n\n总有一天，一切会水落石出。\f呜呜！呜呜！
+
+// after dungeon 6
+owl_7_0 怪物们畏惧着\n\n风鱼的苏醒。\f怪物的力量是真实的。\f他们终将支配整座岛屿，\n\n消灭阻碍他们的人。\f而这也只是迟早的事……\f请前往山塔！\n\n像鸟儿般展开翅膀吧……\f呜呜！呜呜！
+owl_7_1 呜呜！\f接下来的道路\n\n会变得更为险峻吧。\f只差几步而已……\n\n余下的分别位于这座山的东西两侧。\f先朝着东塔出发吧。\f……一切都看孩子你了。\f距离风鱼的苏醒已经不远了。\n\n呜呜！
+
+// after saving marin
+owl_8_0 ……那位女孩刚才在圣蛋前\n\n唱了苏醒之歌。\f风鱼之歌是\n\n告知沉睡者苏醒的歌……\f难道刚才玛林是\n\n想叫醒风鱼……\f呜呜！下一件乐器位于\n\n山的西面的乌龟岩！！\f为乌龟形状的岩石吹入生气，\n\n展示出无所畏惧的勇气吧！\f风鱼在等着你呢。
+
+// after opening the egg
+owl_9_0 呜呜！\f风鱼在\n\n圣蛋中等待着。\f来！进入蛋壳里面吧！\n\n呜呜！呜呜！
+
+owl_final 呜呜！呜呜！\f孩子……不，[NAME]啊！\n\n你战胜了恶梦，做得太好了！\f那份智慧、力量以及勇气，\n\n正是你身为勇者的证明！\f…… …… ……\n\n…… …… ……\f吾是“风鱼”内心的一部分。\f吾的使命就是在“风鱼”沉睡的期间\n\n守护梦世界。\f……但某一天，\n\n恶梦在梦境的裂缝中萌生，\f并开始侵蚀整个岛屿……\f……然后苏醒使者，\n\n也就是[NAME]你来了……\f吾一直相信。\f你是位不会败给恶梦，\n\n充满勇气的人。\f呜呜！呜呜！\f谢谢你，[NAME]……\n\n这样一来，吾的使命便结束了。\f吾将回到“风鱼”之中。\n\n永别了！呜呜！
+
+// raccoon in the forest
+raccoon_0 俺是恶作剧狸猫……\n\n最讨厌粉末状的东西唷～！
+raccoon_1 嘻嘻嘻！在不可思议森林中\n\n迷路了呢！咚咚！
+
+dog 汪汪……
+
+desert_bone_0 哟呵！我又活过来啦！\n\n那么就告诉你一个情报吧。\f这座岛上住了三只\n\n嘴上不饶人的小恶魔。\f但要是对他们以礼相待就会有好事发生！\n\n再见啦！咯咯咯咯！
+
+// chicken dude in the mountains
+chicken_dude_0 最近的咕咕鸡\n\n真是一点骨气都没有，\f我以前养的咕咕鸡可是能\n\n啪啪地～就飞到空中喔！\f哎～我说的是真的，没骗你啊。\n\n来，咕咕咕，咕咕～
+chicken_dude_1 哎呀～那只咕咕鸡\n\n居然还真的能飞天呢……\f哎、哎～我说的没错吧。\n\n嗯，你试着举起那只咕咕鸡看看吧。
+chicken_dude_2 哎～！果然飞天咕咕鸡\n\n是最棒的唷！
+chicken_dude_3 想不想骑着这只会飞的公鸡兜一圈？
+chicken_dude_4 请把公鸡还给我！
+chicken_dude_5 想借公鸡的时候随时来找我！
+chicken_dude_6 好吧，我不介意再等一会儿...
+
+/ hidden npc that trades the boomerang
+npc_hidden_0 我在海滩捡到了好东西……\n\n用设置在[CANCEL]键的道具来交换吧。
+npc_hidden_1 那就交换啰！\f如果想要回换掉的道具，\n\n就来找我吧。我会还给你的……
+npc_hidden_2 啊，是吗……
+npc_hidden_3 把回旋镖还给我吧，求你了！\n\n我也会把道具还回给你的！
+npc_hidden_4 通过还回回旋镖，\n\n取回了道具。
+npc_hidden_5 啊！那个道具不行喔。\n\n选别的吧～
+
+/ bat in cave
+npcBat_Intro 喂！小鬼！\n\n你竟敢弄醒本大爷！\f……真的，很谢谢你。本大爷\n\n要给你回礼，做好心理准备吧！\f……请问你准备好了吗？
+npcBat_End 嘻嘻！活该！\n\n持有上限增加了唷！\f那么，请你好好保重……\n\n有缘再会！\f
+
+npcBat_Powder 那么，就让你能\n\n持有更多魔法粉！嘻嘻！\f请问你意下如何？ 
+npcBat_Bombs 那么，就让你能\n\n持有更多炸弹！嘻嘻！\f请问你意下如何？ 
+npcBat_Arrows 那么，就让你能\n\n持有更多更多的箭！嘻嘻！\f请问你意下如何呢？ 
+
+bat_yes 好喔
+
+book 要看这本书吗？
+book_read 要看这本书吗？
+book_realy_read 想看这本书吗……？
+
+book_yes 看
+book_no 不看
+book_look 看
+book_dont 不看
+
+bookcase 这是书柜。\f嗯？你说你知道？哦，这样啊。
+
+book1_0 《道具的设置方法》
+book1_1 按下[START]键即可在道具画面\n\n查看持有的道具。\f在道具画面中可以把喜欢的道具\n\n设置在按键上。\f每种道具都能在冒险中派上用场。\n\n尝试使用不同的道具吧！
+
+book2_0 《地图画面介绍》
+book2_1 先后按下[START]和[SELECT]键就能在地图画面\n\n查看岛上的地图。\f看不见的地方表示还没去过。\f按下[CONFIRM]键可以看到\n\n更多信息和回顾冒险历程。\f所以不用做笔记也没问题。\n\n哎呀～真方便！
+
+book3_0 《秘传！回旋斩》
+book3_1 有一种神秘的剑技只在身上\n\n流着某族血脉之人中传承。\f按住按键蓄力！\n\n蓄好力了就松开按键吧！\f你究竟能不能使出此剑技呢？
+
+book4_0 《盾的使用方法》
+book4_1 按住按键的时候可以挡下敌人的攻击\n\n或弹开敌人。\f好像还有能将\n\n光束反射回去的镜盾。
+
+book5_0 《你还不知道炸弹是能举起的吗？》
+book5_1 你知道吗？\f站在放好了的炸弹前面\n\n按下按键就能举起炸弹。\f再按一次按键\n\n还可以将举起的炸弹投掷出去！
+
+book6_0 《传送的规则》
+book6_1 这座岛上有被称为\n\n“传送点”的地方。\f只要踏入这个传送点里，\n\n就能传送到其他传送点。\f不过，不能传送到未见过的传送点！
+
+book7_0 《可湖霖岛的地图》
+book7_1 记载着岛上各地的地名。\f要看这份地图吗？
+
+book8_0 《秘密的书！？》
+book8_1 哎呀！这、这是！\f……………………\n\n……………………\f没有透视镜就无法看这本书。\n\n……透视镜在哪里？去帮助别人看看吧！
+book8_2 蛋之回廊，绕了一圈又一圈。\n\n[LEFT] [LEFT] [UP] [RIGHT] [RIGHT] [UP] [LEFT] [UP]\f……唔？？\n\n散发着神秘的气息……
+book8_3 蛋之回廊，绕了一圈又一圈。\n\n[RIGHT] [UP] [UP] [RIGHT] [UP] [UP] [RIGHT] [UP]\f……唔？？\n\n散发着神秘的气息……
+book8_4 蛋之回廊，绕了一圈又一圈。\n\n[LEFT] [UP] [RIGHT] [UP] [LEFT] [UP] [RIGHT] [UP]\f……唔？？\n\n散发着神秘的气息……
+book8_5 蛋之回廊，绕了一圈又一圈。\n\n[RIGHT] [RIGHT] [RIGHT] [RIGHT] [UP] [UP] [UP] [UP]\f……唔？？\n\n散发着神秘的气息……
+
+book9_1 隐藏的色彩力量埋于\n\n5个排在一起的坟墓地底。\f3[UP]  4[RIGHT]  5[UP]\n\n2[LEFT]  1[DOWN]   \f使出浑身力气持续推进吧！\n\n崭新的道路将展现于眼前！\f色彩力量将依附在\n\n拥有资格之人的衣服上。\f唔……这是什么意思？
+
+// phone in the house of ulrira
+ulrira_telephone 嘟噜噜噜……嘟噜噜噜……\n\n嘟噜噜噜……噜……喀嚓！\f你好～～这里是壬天堂艺廊～\n\n……呃，喀嚓！\f嘟----嘟----嘟----嘟----\f？？？\n\n好像拨错电话号码了。\f
+
+// ulrira dialog
+ulrira_0 喀！哒----哒----哒----\n\n……嘟噜噜噜、嘟噜噜……喀嚓！\f哈啰！我是乌鲁里拉爷爷！\n\n想知道岛上的事情问我就对了！\f迷惘的时候就打电话给我吧。\n\n多多指教！
+ulrira_1 喀！哒----哒----哒----\n\n……嘟噜噜噜、嘟噜噜……喀喳！\f哈啰！我是乌鲁里拉爷爷！\n\n村子里有一座图书馆……\f要是你不知道该怎么办才好时，\n\n就去那里调查看看吧。\f那么再见了……乌鲁里拉～喀嚓！
+
+ulrira_2_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f哈啰！我是乌鲁里拉爷爷！\n\n嗯，虽然大部分莫力布林\f都居住在森林，\n\n但也有部分是住在达达高原的洞窟的。\f……这能帮上什么忙吗？\n\n乌鲁里拉～喀嚓！
+ulrira_2_1 喀！哒----哒----哒----\n\n……嘟噜噜噜、嘟噜噜……喀喳！\f哈啰！我是乌鲁里拉爷爷！\n\n盛开在果彭加沼泽的花吗……\f听说那些是\n\n汪汪最爱吃的东西。\f如果要带汪汪散步，顺道去一趟那里\n\n怎么样？乌鲁里拉～喀嚓！
+
+ulrira_3_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉爷爷。\n\n你要不要把汪汪还回去？\f喵喵夫人也一定会很高兴。\n\n乌鲁里拉～喀嚓！
+ulrira_3_1 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f是我啊，乌鲁里拉爷爷！\n\n跟岛上的大家都见过面了吗？\f在村子东南面的坑洞田\n\n有个名叫理查德的男人……\f先跟他见个面怎样？\n\n那么再见了，乌鲁里拉～喀嚓！
+ulrira_3_2 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f是我啊，乌鲁里拉爷爷！\n\n对了，你需要香蕉吗？\f试着再跟村民\n\n说说话吧……\f乌鲁里拉～喀嚓！
+
+ulrira_leaf_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n唔……找不齐五片叶子吗……？\f看好你手上的叶子，\n\n有人想偷走它们。\f乌鲁里拉～喀嚓！
+ulrira_leaf_1 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n唔……找不齐五片叶子吗……？\f我想想……试着在可疑的地方\n\n放置炸弹如何呢？\f有帮到你吗？\n\n乌鲁里拉～喀嚓！
+ulrira_leaf_2 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n唔……找不齐五片叶子吗……？\f我也不太清楚，但……乌鸦……\n\n城堡的乌鸦感觉很可疑呢。\f去吓吓它们如何？\n\n乌鲁里拉～喀嚓！
+ulrira_shovel 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n铁铲……你买铁铲了吗？\f四处挖掘看看，\n\n说不定会找到些什么喔。喀嚓！
+
+ulrira_3_3 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。要是不去乌库库\n\n草原的钥匙地洞，就要哭哭了！\f……我没有在开玩笑啊。\n\n…………喀嚓！
+
+ulrira_4_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n听说在岛的东南面的亚那沙漠中，\f好像有个叫\n\n灯鱼怪钥匙的东西。\f我的提示也开始变得\n\n越来越露骨呢～喀嚓！
+ulrira_4_1 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n这是从我家老婆那里听来的。\f在达达山脉的瀑布背后，\n\n应该藏了些什么。\f有帮到你吗？\n\n乌鲁里拉～喀嚓！
+
+ulrira_5_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n海湾的鲶鱼张开着大嘴呢……\f试着游泳过去怎样？\n\n乌鲁里拉～喀嚓！
+
+ulrira_6_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n你有去过脸孔神殿吗？\f它位于动物村的北面，\n\n是一座能让你获益良多的遗迹喔。\f乌鲁里拉～喀嚓！
+
+ulrira_7_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n你知道飞天鸡吗？\f以前会举起飞天鸡，\n\n在空中振翅高飞呢。\f听说现在被埋在梅贝村\n\n风信鸡的底下。\f有帮到你吗？\n\n乌鲁里拉～喀嚓！
+ulrira_7_1 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。你很努力呢。\n\n只要再努力坚持一会……\f……话说，你有去过\n\n山上的鸡舍吗？\f在鸡舍附近有个洞窟。\n\n去那里获取重要的东西吧。\f乌鲁里拉～喀嚓！
+ulrira_7_2 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。我记得年轻的时候，\n\n在山的东面有座高塔。\f你要不要去看看？\n\n乌鲁里拉～喀嚓！
+
+ulrira_8_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n你说乌龟岩的头部很挡路？\f向它吹出生命之气说不定就会动起来喔。\n\n真的～真的啦～\f乌鲁里拉～喀嚓！
+ulrira_8_1 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n加油！只差最后一步了！\f我也会为你加油打气的喔！\n\n乌鲁里拉～喀嚓！
+
+ulrira_9_0 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。前往位在\n\n塔马兰奇山的圣蛋吧。\f[NAME]，要万事小心喔。\n\n乌鲁里拉～喀嚓！
+ulrira_9_1 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n在蛋的迷宫里迷路了？唔……\f对不起，我也不清楚。\n\n去图书馆调查看看如何？\f虽然没帮到你，但下次也要打来喔。\n\n那么再见了，乌鲁里拉～喀嚓！
+
+ulrira_wife 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f……我是乌鲁里拉……唉。\n\n……老婆去了动物村。\f总觉得很寂寞啊……\n\n乌鲁里拉……喀嚓！
+ulrira_ghost 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n你被奇怪的鬼怪缠上了？\f我想想……把那家伙带到\n\n他想去的地方怎样？\f乌鲁里拉～喀嚓！
+ulrira_mamu 喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n你喜欢歌曲吗？\f住在路牌迷宫的青蛙\n\n玛穆会很乐意教你一曲喔。\f……虽然价格有点高。\n\n乌鲁里拉～喀嚓！
+
+// TODO: not sure when this is shown in the game
+ulrira_seashells L喀！哒----哒----哒----\n\n……嘟噜噜噜 嘟噜噜……喀嚓！\f我是乌鲁里拉。\n\n敌人很难对付……？\f那么去收集更多贝壳\n\n就好了……\f请你相信自己，\n\n奋战到最后一刻……\f要保重啊，乌鲁里拉～\n\n喀嚓！
+
+// dungeon intro
+dungeon_1 Level 1--\n\n     长尾大空洞
+dungeon_2 Level 2--\n\n     壶洞窟
+dungeon_3 Level 3--\n\n     钥匙地洞
+dungeon_4 Level 4--\n\n     灯鱼怪瀑布池
+dungeon_5 Level 5--\n\n     鲶鱼大嘴
+dungeon_6 Level 6--\n\n     脸孔神殿
+dungeon_7 Level 7--\n\n     大鹫塔
+dungeon_8 Level 8--\n\n     乌龟岩
+
+beak_nop 欠缺石喙的石像在说话。\n\n……但听不清内容。
+
+beak_d1_1 尖刺锐利者，\n\n宜以盾抵挡击退……
+beak_d1_2 移动方石，\n\n开启紧闭之门扉。
+
+// shrine
+shrine_dark 墙上刻有壁画。\n\n……太暗无法看清。
+shrine_message 予触及此处者：\n\n可湖霖岛实非岛。\f天海山人怪，\n\n皆虚构之物也。\f其乃风鱼沉眠间\n\n所见之梦乡罢矣。\f风鱼苏醒之际，\n\n可湖霖即化为泡影。\f谨寄语真相予\n\n漂泊至吾身之君。\f虚构之物……？
+
+// dungeon two
+beak_d2_1 隆起地板，阻碍前路。\n\n发光水晶，击之开路。
+beak_d2_2 地板图案一致时，\n\n崭新道路将开启……
+beak_d2_3 先除大耳怪物……\n\n后灭髑髅骑士……
+
+// genie
+d2_boss_0 呼嘿嘿！你这次的对手\n\n是我！呼嘿嘿！
+d2_boss_1 呼嘿嘿嘿！只要这个壶还在，\n\n我就是不死之身唷！
+d2_boss_2 ……唔！我不能动了！\n\n但没有问题。\f就凭你手上的钝剑，\n\n是无法打破这个壶的！
+d2_boss_3 你竟敢做出这种事！\n\n我绝对不会放过你！
+
+// dungeon three
+beak_d3_1 面对远地……\n\n无所畏惧，飞奔跃起……
+beak_d3_2 硬壳黑怪物，\n\n攻击其内部。
+beak_d3_3 见怪墙，以剑击之，\n\n听回响，分辨其异。
+
+d3_boss 弹呀弹～！弹呀弹～！\n\n你猜我躲哪儿去了～！\f……可别撞墙壁！
+
+bow_wow_cave_entry 唔！谁啊！？是个可疑的小鬼！\n\n大家都出来吧！快来～！
+bow_wow_cave_boss 可恶！你是来抢回汪汪的吗？\n\n那么，你就是汪汪的主人----\f喵喵夫人派来的刺客吧！\n\n看我反过来打败你！
+bow_wow_cave_bw 成功把汪汪救出来了！\n\n靠近一看，果然还是很可怕。
+
+castle_monkey_hunger 金吉达！金吉达！吱吱猴！\n\n我饿了喔！吱吱猴！
+castle_monkey_bowwow 搞什么！这只笨汪汪！\n\n来决一胜负吧！！呜吱吱～吱！
+
+castle_monkey_banana [TRADE3]­香蕉啊！[TRADE3]­香蕉啊！呜吱吱！\n\n可以送给我吗？
+castle_monkey_banana_yes [TRADE3]­香蕉啊！[TRADE3]­香蕉啊！呜吱吱！\n\n大家快集合！要送回礼啰～！
+castle_monkey_done 猴子大桥建造完毕！\n\n再会了！呜吱吱～吱！
+
+// dungeon four
+beak_d4_1 知发光地板动静者，\n\n必将得到引导……
+
+d4_nightmare 嘎啵啵～！\n\n噶吧啤吧噶啵！\f食物！来了！\n\n食物！来了！
+
+// dungeon five
+beak_d5_1 骷髅剑士，用剑难除。\n\n趁骨碎时，爆破除之。
+beak_d5_2 蜡烛立四方，烛火相交杂，\n\n思其交汇点，深潜入其下。
+
+master_stalfos_0 可恶！打不赢你啊！\n\n暂时撤退！
+master_stalfos_1 唔！被发现了！\n\n你这家伙真难缠！
+master_stalfos_2 咯咯！又来了吗！\n\n你这家伙还真固执啊！\f就由本大爷来整治\n\n你这死缠烂打的个性吧！
+master_stalfos_3 箱子里的东西本大爷收下了！\n\n想要的话就来抓本大爷吧！\f          骷髅剑士至尊 [SKULL]
+
+slime_eel_0 就是你吧？那个要来叫醒\n\n风鱼的外来者……\f叽嘻嘻嘻！叽嘻嘻嘻！\n\n我要吃掉你！！
+slime_eel_1 叽啊啊～～～！唔唔！\n\n可恶～～！！\f你、你还不知道\n\n这座岛是什么地方对吧？\f叽嘻嘻嘻！你真是个大好人啊！\n\n叽嘻嘻嘻……嘻嘻……\f……………
+
+// dungeon six
+beak_d6_1 地图如颜，\n\n攻其双目，破壁而入。
+beak_d6_2 水晶地板阻去路，\n\n踏在其上向前行。
+beak_d6_3 壶环宝物，\n\n以物击之，方可开启。
+
+facade_opening 提示！我对……最头痛了！\f噫噫！\n\n不小心说溜了嘴。噫！
+facade_death 啊噫～！\n\n我又要说溜嘴了～！\f风鱼醒来的话，\n\n一切～都会消失的啊！\f这个岛上的一切，全都会消失！\n\n我说真的。噫噫！
+
+// dungeon seven
+grim_creeper_enter 喂～那边的小不点！\n\n难道你想和本大爷决斗吗？\f好！求之不得！兄弟们！\n\n我们去揍扁他！呸！
+grim_creeper_1 只要有1只存活，\n\n就足够了！呸！\f反正我可以不断地呼唤同伴！\n\n看招吧！小不点！
+grim_creeper_2 你竟敢把本大爷\n\n可爱的手下都打败了！\f给我记住！\n\n以后有你哭的时候！呸！
+grim_creeper_3 呸！呸！\n\n今次本大爷一定不会放过你！\f看本大爷把你揍得捂着鼻子\n\n爬着滚！看招吧！小家伙！！
+grim_creeper_4 输、输了……嘿嘿。\n\n被烧得一片灰白……\f不过，你也会消失的啊。\n\n只要风鱼一醒……\f毕竟……你和本大爷一样……\n\n只是……那家伙的……梦……
+
+beak_d7_1 欲取高台之宝箱，\n\n于更高处向下跃。
+beak_d7_2 四柱崩塌之时，\n\n谜团将会解开。
+beak_d7_3 若遇无法前行之栏栅，\n\n朝栏栅内投掷手中物。
+
+// dungeon eight
+beak_d8_1 守护钥匙两怪物，\n\n外绕高处击倒之。
+beak_d8_2 若见独眼怪石像，\n\n须以箭矢穿其目。
+beak_d8_3 建路之岩，以([DPAD])操控，\n\n填平地面。
+
+ice_block_message 是深蓝色的冰块！\n\n……嗯？好冰啊！！
+
+hot_head_0 噗喔！噗喔！噗喔！\n\n到此为止了！鼠辈！！！\f我是不会让你使用\n\n瑟莲的乐器的！
+hot_head_1 为、为什么！要是你从没出现，\n\n一切都不会改变……\f你是无法唤醒\n\n风鱼的！\f你别忘了……\n\n这里可是在梦境之中……
+
+// color dungeon
+grave_locked “不敢独自挑战的懦夫、弱者！\f如此之人纵使再怎么推，\n\n也无法推动此座墓碑！”\f
+
+beak_dc_1 务须打击着色处，\n\n皆成正方谜自解。
+
+stone_hinox 你这个贪婪之徒……\n\n竟然想要追求更强大的力量！\f像你这般的愚者，还是在这座\n\n墓碑的地底化为腐朽吧！
+
+giant_buzz_blob_enter 布丁布丁！我们才不是无名小卒！\n\n现在就让你尝尝我的厉害！\f我要变身为你讨厌的那家伙！\n\n你的剑是伤不了我的！
+giant_buzz_blob_sword 笨蛋！剑是伤不了我的！\f赶快把魔法粉啊，\n\n枪炮啊之类的拿出来吧！
+
+// is this only shown on the normal gameboy?
+// I am sorry, but this is the Color Dungeon. Only those with the power of color may enter. If you can tell who wears red and who wears blue, you may enter. Farewell.
+npc_color_0 我们的颜色是不同的。\n\n如果我是红色，那他就是蓝色！\f如果他是红色，那我就是蓝色！\n\n我的衣服是什么颜色？
+npc_color_1 不对，不对。\n\n仔细看看再选一次。
+npc_color_2 不要告诉任何人。
+npc_color_3 妖精女王在等着你。
+npc_color_4 你必须持有魔法粉，\n\n才能往深处前进！
+
+choice_Red 红色
+choice_Blue 蓝色
+
+hardhit_beetle_0 安全！安全！
+hardhit_beetle_1 复活！重来！
+hardhit_beetle_2 拖延时间……拖延时间！
+
+choice_RED 攻击红
+choice_BLUE 防御蓝
+choice_GREEN 绿色
+
+color_fairy_0 苏醒使者[NAME]！\n\n没想到你能来到这里。\f我认定你拥有资格，\n\n让我赐予你色彩力量吧！\f如果你追求攻击力量，\n\n那么你需要红色！\f追求防御力量的话，\n\n就选择蓝色吧！\f来！你要选择哪一个呢？
+color_fairy_1 攻击红和防御蓝，\n\n要选择哪一个呢？
+color_fairy_2 确定选好了吗？
+color_fairy_3 请闭上眼睛一会……
+color_fairy_4 我来将你\n\n送回地面吧！
+color_fairy_5 欢迎回来，[NAME]。如果你不再希望使用颜色的力量，我可以恢复你原本的衣服。你想要归还颜色的力量吗？
+color_fairy_6 你想改用另一种颜色吗？
+
+cloak_blue 得到了蓝色衣服！\n\n这样就能缓和心数减少了。
+cloak_red 得到了红色衣服！\n\n感觉浑身充满了力量。
+cloak_green 你获得了绿色服装！它们没有特殊效果，但非常时尚！
+
+// desert
+desertLanmola 呜喀喀！呜喀喀！\n\n碍事！碍眼！
+
+// shell mansion
+shell_mansion_0 ……空无一人的房子里……\n\n……回荡着声音……\f我是寄宿于\n\n贝壳馆之人……\f我一直在等待\n\n能对抗黑暗力量之人。\f……收集隐藏在\n\n岛上各处的秘密贝壳吧！\f拿着收集到的秘密贝壳\n\n站到台座上吧……\f拥有资格者，将获赐\n\n光明力量之剑！\f
+shell_mansion_1 ……没有反应……\n\n贝壳的数量似乎不够……
+shell_mansion_2 ……你已集齐所有贝壳。\n\n我切实感受到了你坚强的意志。\f……愿你接下来的旅途\n\n一帆风顺。\f……如此一来……我的职责……\n\n终于结束了……
+
+npc_hippo_0 讨厌～！
+npc_hippo_1 吼～骂人喽！
+npc_hippo_2 你再继续缠着我的话，\n\n就要把你叫做大叔了喔！吼～！
+
+npc_painter_0 我是著名的艺术家，\n\n名叫舒尔.多纳皮契，嗯哼！\f海湾的人鱼像\n\n也是我的得意作品之一。\f……其实因为某些原因，\n\n那个塑像是未完成品喔，呵呵！\f不过我创作的艺术意境太高深了，\n\n所以你无法理解吧……嗯哼。
+npc_painter_1 那该不会是[TRADE12]­人鱼鳞片吧，\n\n嗯哼？！\f我忙着画这幅画，\n\n抽不出时间来呢，嗯哼。\f所以希望你能代我\n\n去完成人鱼像，嗯哼。
+npc_painter_2 你！你在看什么，嗯哼！\n\n哇啊～～！难、难道？\f你有[TRADE13]­透视镜对吧，嗯哼？！\n\n住手！别用它来看我！
+
+// photo house
+photo_book 《[NAME]游记》 要看这本相册吗？
+photo_book_text 你想看哪张照片？\n\n使用[DPAD]选择，然后按下[CONFIRM]键。
+
+// entering with a follower
+photo_mouse_follower 等只有你一个人的时候，\n\n我们再见面！
+
+photo_left_11 还剩11张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_10 还剩10张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_9 还剩9张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_8 还剩8张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_7 还剩7张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_6 还剩6张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_5 还剩5张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_4 还剩4张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_3 还剩3张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_2 还剩2张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_1 还剩1张胶卷！\n\n我应该再照一张什么样的照片呢？
+photo_left_0 哦不！胶卷用完了！\n\n别忘了看看你的相册。
+
+// photo sequence photo house
+photo_01_0 我无比热爱照相！\n\n你能让我拍一张你的照片吗？
+photo_01_1 走到房间的后面，\n\n站在幕布之前。
+photo_01_2 我要叫它“一个勇敢的男子”。\n\n说“茄子！”
+photo_01_3 你的名字是什么？[NAME]？\n\n这是你的相册，[NAME]。\f走之前记得看一看。
+photo_01_4 看看我们能不能填满这本相册！
+photo_01_5 来照张照片吧！
+photo_01_6 不照？你在逗我吗？
+photo_01_7 真扫兴！
+photo_01_8 漂亮！我要叫它“游戏结束”
+photo_01_9 我还没照完呢！回去站好！
+
+// photo sequence ulrira house
+photo_02_0 嗨！是我，摄影师！\n\n你似乎对乌鲁里拉爷爷很好奇。
+photo_02_1 我要叫它\n\n“[NAME]发现了乌鲁里拉的秘密！”
+
+// photo sequences BowWow
+photo_03_0 嘿，看起来不错！\n\n我要叫它“[NAME]和汪汪玩耍！”\f离汪汪更近一些！
+photo_03_1 汪汪！
+photo_03_2 [NAME]，近一些！
+photo_03_3 汪汪！汪汪！
+photo_03_4 汪汪！汪汪！汪汪！
+photo_03_5 再近一些！好！\n\n我准备好了。微笑！
+
+// photo sequences castle
+photo_05_0 嗨，[NAME]。\n\n你知道我喜欢照相。\f这个城堡很上镜啊！
+photo_05_1 还没找到？！\n\n我已经等烦了。\f我要马上拿到黄金叶子！\n\n这种壮举值得拍照留念，不是吗？
+photo_05_2 来给我拍张照片。\n\n什么角度都行。
+photo_05_3 我啊～虽然不害怕，\n\n不过还是在家里等你吧！再见！
+
+// photo sequences grave
+photo_06_0 我多么喜欢照相啊。\n\n嘿，[NAME]！你在这里做什么？
+photo_06_1 你想知道那个鬼的事吗？\n\n我敢打赌，多亏了你，\f他一定很高兴。\n\n你准备好拍照了吗？
+photo_06_2 我要叫它“我很害怕。”。微笑！
+
+// photo sequences marin cliff
+marin_cliff_0 ……[NAME]，\n\n这是我们第一次一起散步呢。
+marin_cliff_1 ………………
+marin_cliff_2 呵呵，这海角也是\n\n专属我们两人的秘密呢…… 
+marin_cliff_3 讨厌啦！[NAME]\n\n你也说几句话嘛……\f这让人很害羞啊……
+marin_cliff_4 我多么喜欢照相啊。\n\n你为什么不在周围\f没人的时候拍张照片呢？\n\n你可以叫它……
+marin_cliff_5 我先去把它洗出来。\n\n等会见！
+
+// photo sequences fountain
+photo_08_0 嗨！我是摄影师！这是多么美妙的\n\n拍照时刻！我要叫它“头朝上！”
+photo_08_1 哦！对不起！\n\n你还好吗？！[NAME]？
+
+// photo sequences weather bird
+photo_09_0 嘿，玛林和[NAME]！\n\n你们要照相吗？\f你们应该和大家照\n\n一张合影，包括我！
+photo_09_1 我用这个来照相。\n\n准备好了吗？说“蘑菇！”
+photo_09_2 好，完成了。\n\n我要回家了。
+
+// photo sequences fisher
+photo_10_0 我有预感我\n\n还会钓到一条大鱼。
+photo_10_1 哇！好大啊！\n\n嘿，照相的！你能给我照一张吗？
+photo_10_2 嘿！下次注意点！
+
+// photo sequences zora
+photo_11_0 哇，被发现了。\n\n啧，原来是[TRADE13]­透视镜啊……\f明明我和其他人不一样，\n\n只是想平静地过日子……
+photo_11_1 这里！是我，摄影师！\n\n你说这房子里有卓拉？\f我一定要照一张相！\n\n我要叫它“我找到了卓拉。”
+
+// photo sequences mountain
+photo_12_0 嘿，这场景完美体现了你的冒险！
+photo_12_1 我要叫它“惊心动魄。”嗯嗯。
+photo_12_2 我靠的太近了。
+photo_12_3 我要往后走一点。
+photo_12_4 啊啊啊啊！
+
+// map
+map_tal_tal 达达山脉
+map_wind_fishs_egg 圣蛋
+map_mt_tamaranch 塔马兰奇山
+map_hen_house 鸡舍
+map_telephone_booth 电话亭
+map_goponga_swamp 果彭加沼泽
+map_tal_tal_heights 达达高原
+map_weird_mr_write 莱特的家
+map_photo_both 立正站好拍一张纪念照
+map_raft_shop 木筏店
+map_mysterious_woods 不可思议森林
+map_koholint_prairie 可湖霖平原
+map_crazy_tracy 古怪崔西的药店
+map_tabahl_wasteland 塔巴林地
+map_kanalet_castle 卡那列城
+map_rapids_ride 急流泛舟
+map_witchs_hut 魔法婆婆的家
+map_cementry 坟场
+map_fishing_pond 钓鱼池
+map_quadruplets_house 四小福的家
+map_dream_shrine 梦之祠堂
+map_ukuku_prairie 乌库库草原
+map_seashell_mansion 贝壳馆
+map_face_shrine 脸孔神殿
+map_mabe_village 梅贝村
+map_town_tool_shop 村庄道具店
+map_madam_meow 喵喵夫人的家\n\n当心恶犬！
+map_marin_tarin 玛林和塔林的家
+map_village_library 村立图书馆
+map_old_man_house 乌鲁里拉爷爷的家
+map_trendy_game 流行游戏
+map_south_village 村子南面
+map_signpost_maze 路牌迷宫
+map_pothole_field 坑洞田
+map_maraths_bay 玛莎海湾
+map_animal_village 动物村
+map_yarna_desert 亚那沙漠
+map_richards_villa 理查德的别墅
+map_toronbo_shores 托隆波海岸
+map_banana_house 瑟勒的家
+map_bay_east 海湾东面
+map_house_bay 海湾的家
+
+map_level_1 Level 1--\n\n     长尾大空洞
+map_level_2 Level 2--\n\n     壶洞窟
+map_level_3 Level 3--\n\n     钥匙地洞
+map_level_4 Level 4--\n\n     灯鱼怪瀑布池
+map_level_5 Level 5--\n\n     鲶鱼大嘴
+map_level_6 Level 6--\n\n     脸孔神殿
+map_level_7 Level 7--\n\n     大鹫塔
+map_level_8 Level 8--\n\n     乌龟岩
+
+final_boss 吾等是从恶梦之中\n\n孕育成长之者……\f为了在“梦”这个封闭的\n\n世界中建立秩序，\f吾等把永无止境的沉睡\n\n赐给了风鱼……\f这样一来，岛屿便永远不会\n\n因苏醒而消失，\f吾等才是真正的神！\n\n………………\f……然而，你却来了……\n\n来妨碍吾等的计划！\f呵呵呵……\n\n你无法打败吾等！\f接招吧！！
+final_windfish ………………\n\n……我是风鱼……\f……从我入睡开始，\n\n到底经过了多少年月……\f……起初，\n\n我梦见了一个蛋……\f后来，蛋的周围演变成一座岛屿，\n\n人类和动物开始诞生……\f……世界诞生了……\f………………\n\n………………\f然而，梦终须醒。\n\n这是自然的定律。\f当我苏醒后，\n\n可湖霖岛便会消失吧。\f但是，在这座岛的回忆，\n\n会作为现实，留在你心中。\f然后……有一天你也会\n\n想起这座岛吧。\f也许这份回忆，\n\n才是真正的梦世界吧。\f………………\n\n谢谢你，[NAME]\f时机已至！\n\n让我们一起苏醒吧！！
+final_instruments 来！演奏吧！\n\n演奏起苏醒之歌！
+
+// credits
+// 1998
+credits_0 1998 STAFF
+
+credits_1 SUPERVISOR
+credits_1_0 TAKASHI TEZUKA
+
+credits_2 DIRECTOR
+credits_2_0 YOSINORI TUTIYAMA
+
+credits_3 SCRIPT WRITER
+credits_3_0 NOBUO MATSUMIYA
+
+credits_4 PROGRAMMER
+credits_4_0 EIJI NOTO
+credits_4_1 KIYOSHI KODA
+credits_4_2 SIGEHIRO KASAMATU
+
+credits_5 CHARACTER DESIGNER
+credits_5_0 MIKIO MISHIMA
+credits_5_1 KYOKO KIMURA
+
+credits_6 SOUND COMPOSER
+credits_6_0 YUICHI OZAKI
+
+credits_7 ART WORK
+credits_7_0 KEIKO IZAWA
+
+credits_8 TECHNICAL SUPPORT
+credits_8_0 N KOGANEZAWA
+
+credits_9 ENGLISH SCRIPT
+credits_9_0 JIM WORNELL
+credits_9_1 KEIKO TAMURA
+credits_9_2 TAMAYO ITO
+
+credits_10 SPECIAL THANKS TO
+credits_10_0 AKIYA SAKAMOTO
+credits_10_1 R&D2 DEBUG STAFF
+
+credits_11 DEBUG STAFF
+credits_11_0 SUPER MARIO CLUB
+
+// 1993
+credits_12 1993 STAFF
+
+credits_13 DIRECTOR
+credits_13_0 TAKASHI TEZUKA
+
+credits_14 DUNGEON DESIGNER
+credits_14_0 YASUHISA YAMAMURA
+
+credits_15 SCRIPT WRITER
+credits_15_0 KENSUKE TANABE
+credits_15_1 YOSHIAKI KOIZUMI
+
+credits_16 PROGRAMMER
+credits_16_0 KAZUAKI MORITA
+credits_16_1 TAKAMITSU KUZUHARA
+
+credits_17 CHARACTER DESIGNER
+credits_17_0 MASANAO ARIMOTO
+credits_17_1 SHIGEFUMI HINO
+
+credits_18 SOUND COMPOSER
+credits_18_0 KAZUMI TOTAKA
+credits_18_1 MINAKO HAMANO
+credits_18_2 KOZUE ISHIKAWA
+
+credits_19 ILLUSTRATOR
+credits_19_0 YOUICHI KOTABE
+
+credits_20 ENGLISH SCRIPT
+credits_20_0 DAN OWSEN
+
+credits_21 SPECIAL THANKS TO
+credits_21_0 TOSHIHIKO NAKAGO
+credits_21_1 KOJI KONDO
+credits_21_2 TOMOAKI KUROUME
+credits_21_3 MASAICHI OKUMURA
+credits_21_4 KANAE WADA
+
+credits_22 PRODUCER
+credits_22_0 SHIGERU MIYAMOTO
+
+credits_23 EXECUTIVE PRODUCER
+credits_23_0 HIROSHI YAMAUCHI
+
+credits_24 
+credits_24_0 
+
+credits_25 
+credits_25_0 THE END

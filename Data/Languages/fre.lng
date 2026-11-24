@@ -1,0 +1,411 @@
+map_overlay_close Fermer
+overlay_map Carte
+overlay_inventory Inventaire
+overlay_teleport Teleportation
+savename_thief Voleur
+
+main_menu_select_header SELECTION DE LA PARTIE
+main_menu_bottom_header 
+main_menu_new_game Nouvelle partie
+main_menu_settings Paramètres
+main_menu_copy Copie
+main_menu_erase Supp.
+main_menu_quit Quitter
+main_menu_back Retour
+main_menu_select Choisir
+main_menu_tooltip Infobulle
+
+main_menu_delete_confirmation_header Supprimer la partie ?
+main_menu_delete_confirmation_header_yes Oui
+main_menu_delete_confirmation_header_no Non
+
+main_menu_copy_confirmation_header Copier la partie ?
+main_menu_copy_confirmation_header_yes Oui
+main_menu_copy_confirmation_header_no Non
+
+main_menu_copy_header Copier la partie
+main_menu_copy_from Depuis
+main_menu_copy_to Vers
+main_menu_copy_empty -Vide-
+main_menu_copy_arrow [RIGHT]
+main_menu_copy_back Retour
+
+new_game_menu_save_name Saisie du Nom:
+new_game_menu_back Retour
+new_game_menu_create_file Créer Fichier
+new_game_menu_game_type Type de Jeu :
+new_game_menu_gtype_settings Utiliser Réglages
+new_game_menu_gtype_modern Moderne
+new_game_menu_gtype_classic Classique
+new_game_menu_gtype_hybrid Hybride
+new_game_menu_gtype_purist Puriste
+
+game_menu_header Menu
+game_menu_back_to_game Reprendre la partie
+game_menu_settings Paramètres
+game_menu_save_continue Sauvegarder et continuer
+game_menu_exit_to_the_menu Quitter vers le menu
+game_menu_exit_the_game Quitter le jeu
+
+game_menu_exit_header Etes vous sur ?
+game_menu_exit_no Non
+game_menu_exit_yes Oui
+
+gameover_header GameOver
+gameover_continue Continuer
+gameover_quit Quitter
+
+settings_menu_header Parametres
+settings_menu_game Jeu
+settings_menu_redux Redux
+settings_menu_camera Caméra
+settings_menu_video Video
+settings_menu_graphics Graphiques
+settings_menu_audio Audio
+settings_menu_controls Contrôles
+settings_menu_mods Modificateurs
+settings_menu_presets Parametres predefinis
+settings_menu_cheats Triches
+settings_menu_achieve Succès
+settings_menu_back Retour
+
+settings_game_header Paramètres Jeu
+settings_game_language Langue: Français
+settings_game_sublanguage Langue:
+settings_game_sublanguage_01 Texte Original
+settings_game_sublanguage_02 Remake Moderne
+settings_game_sublanguage_03 Alternatif
+settings_game_menubricks Bordure de menu
+settings_game_menubricksA LADX
+settings_game_menubricksB Originale
+settings_game_menubricksC Noir
+settings_game_classicsword Épée Classique
+settings_game_saveposition Selectionner Derniere Sauvegarde
+settings_game_autosave Sauvegarde Automatique
+settings_game_sharedstorage Sauvegarder en Stockage Partagé
+settings_game_hide_achievement Masquer la Notification de Succès
+settings_game_items_on_right Emplacements d'objets sur la droite
+
+settings_redux_header Paramètres Redux
+settings_redux_dungeonteleport Téléporteur de Carte:
+settings_redux_dungeonteleport_01 Desactive
+settings_redux_dungeonteleport_02 Carte Uniquement
+settings_redux_dungeonteleport_03 Manbo Uniquement
+settings_redux_dungeonteleport_04 Carte + Manbo
+settings_redux_vwfont Police à largeur variable
+settings_redux_nohelptext Désactiver les messages d'aide
+settings_redux_dialogskip Activer le saut de dialogues
+settings_redux_uncensor Désactiver la censure
+settings_redux_unmissables Rien n'est manquable
+settings_redux_photoscolor Photos en couleur
+settings_redux_noanimaldmg Pas de Dégâts aux Animaux
+
+settings_camera_header Paramètres de Caméra
+settings_camera_cameratype Type
+settings_camera_cameratypeA Caméra Moderne
+settings_camera_cameratypeB Caméra Classique
+settings_camera_cameratypeC Caméra Personnalisée
+settings_camera_custommenu Personnaliser la Caméra
+settings_camera_fogdiscovery Brouillard de Découverte de la Carte
+settings_camera_fogedgesharp Netteté du Bord du Brouillard
+settings_camera_fogopacity Opacité du Brouillard
+settings_camera_fogfadetime Durée de Disparition du Brouillard
+settings_camera_camborder Bordure Classique
+settings_camera_blackpercent Opacité de Bordure
+settings_camera_bias Décalage de Bordure Classique
+settings_camera_classicscaling Verrouillage Echelle Classique
+settings_camera_persistentitems Objets Lâchés Persistants
+settings_camera_cameralock Verrouillage de Caméra
+settings_camera_smoothcamera Caméra fluide
+
+settings_camcustom_header Personnaliser la Caméra
+settings_camcustom_modern Moderne
+settings_camcustom_classic Classique
+settings_camcustom_overworld Monde Extérieur
+settings_camcustom_houses Maisons
+settings_camcustom_caves Grottes
+settings_camcustom_dungeons Donjons
+settings_camcustom_castle Château
+settings_camcustom_egg À l'Intérieur de l'Œuf
+settings_camcustom_2dMaps Cartes 2D
+settings_camcustom_bosses Combats de Boss
+
+settings_video_header Parametres video
+settings_video_game_scale Echelle du jeu:
+settings_video_ui_scale Echelle UI:
+settings_video_autodetect Detection automatique
+settings_video_fullscreen Mode d ecran:
+settings_video_fullscreen_01 Fenetre
+settings_video_fullscreen_02 Plein ecran sans bordure
+settings_video_fullscreen_03 Plein ecran exclusif
+settings_video_fps_lock Synchronisation verticale
+settings_video_opaquehud Desactiver flou UI
+settings_video_pixelsnap Accrochage aux Pixels
+settings_video_pixelgrid Shader de grille de pixels
+settings_video_epilepsysafe Sécurité Épilepsie
+
+settings_graphics_header Parametres graphiques
+settings_graphics_sequencescale Echelle de sequence
+settings_graphics_colorcorrect Correction des Couleurs GBC
+settings_graphics_shadow Ombres dynamiques
+settings_graphics_fogeffects Effets de brouillard
+settings_graphics_globallights Eclairage global
+settings_graphics_objectlights Eclairage des objets
+settings_graphics_screenshake Effets de Tremblement de l Ecran
+settings_graphics_exscreenshake Effets Supplementaires de Tremblement de l Ecran
+settings_graphics_classicsprites Sprites d'Objets Classiques
+
+settings_audio_header Paramètres Audio
+settings_audio_music_volume Volume de la musique :
+settings_audio_effect_volume Volume des effets :
+settings_audio_classic_music Indications Musicales Classiques
+settings_audio_mute_inactive Fenêtre inactive muette
+settings_audio_heartbeep Bip cardiaque faible
+settings_audio_mute_powerups Pas de musique PowerUp
+settings_audio_mute_achievement Désactiver la Notification de Succès
+
+settings_controls_header Paramètres Controles
+settings_controls_onscreen Commandes a l ecran
+settings_controls_deadzone Zone Morte Analogique
+settings_controls_gamepad Manette
+settings_controls_remap Reconfigurer Les Boutons De La Manette
+settings_controls_triggersscale Gachettes Reglent Jeu
+settings_controls_sixbuttons Six Boutons d'Inventaire
+settings_controls_swapbuttons Échanger Confirmer & Annuler
+settings_controls_classicmove Mouvement Classique
+settings_controls_digitalanalog Analogique Numérique
+
+settings_controls_onscreenpad Commandes a l ecran
+settings_controls_onscreenpad_01 Desactive
+settings_controls_onscreenpad_02 Fondu
+settings_controls_onscreenpad_03 Toujours
+settings_controls_touchmovement Mouvement
+settings_controls_touchmovement_01 D-Pad + Analogique
+settings_controls_touchmovement_02 D-Pad menus + Analogique en Jeu
+settings_controls_touchmovement_03 D-Pad uniquement
+settings_controls_touchmovement_04 Analogique uniquement
+settings_controls_fadeopacity Opacite du fondu
+settings_controls_shadowopacity Opacite de l ombre
+settings_controls_onscreenscale Echelle des controles
+settings_controls_onscreenmiddletop Select/Start haut de l ecran
+settings_controls_onscreenanalogbuttons Gachettes analogiques
+
+settings_controls_remapheader Reconfiguration des Boutons
+settings_controls_keyboad Clavier
+settings_controls_Up Haut
+settings_controls_Down Bas
+settings_controls_Left Gauche
+settings_controls_Right Droite
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 Style 1
+settings_controls_style_02 Style 2
+
+settings_mods_header Options mods
+settings_mods_enemy_hp PV en plus
+settings_mods_damage Dégâts subis
+settings_mods_damagecd Dommage Refroidir
+settings_mods_movespeed Vitesse +
+settings_mods_nohearts Pas de cœurs lâchés
+settings_mods_dmglaunch Pas de projection
+settings_mods_swordinteract Interactions Supplémentaires de l'Épée
+settings_mods_mirrorreflect Reflechit Avec le Bouclier Miroir
+
+settings_sword_header Interactions de l'Épée
+settings_sword_grabnormal Ramasser les Objets Lâchés
+settings_sword_grabworlditem Ramasser les Objets Fixes
+settings_sword_grabfairy Ramasser les Fées
+settings_sword_grabsmallkeys Ramasser les Petites Clés
+settings_sword_boomerang Ricochet du Bumerang
+settings_sword_bouncebombs Repousser les Bombes
+settings_sword_swordblock Trancher Projectiles Ennemis
+settings_sword_breakpots L2 Brise Pots et Crânes
+settings_sword_beamshrubs Rayon L2 Coupe Obj. Environnementaux
+
+settings_preset_header Parametres de preset
+settings_preset_setdefault Restaurer les valeurs par defaut
+settings_preset_setmodern Definir preset moderne
+settings_preset_setclassic Definir preset classique
+settings_preset_sethybrid Definir preset hybride
+settings_preset_purist Definir preset puriste
+
+settings_cheats_header Paramètres de Triches
+settings_cheats_invincibility Invincibilité
+settings_cheats_infiniterupees Rubis Infinis
+settings_cheats_infinitepowder Poudre Magique Infinie
+settings_cheats_infinitebombs Bombes Infinies
+settings_cheats_infinitearrows Flèches Infinies
+settings_cheats_disableclipping Désactiver la Collision
+settings_cheats_onehitkills Tuer en un Coup
+settings_cheats_giveallitems Avoir Tous les Objets
+
+achievements_header Succès
+achievements_reset Réinitialiser
+achievements_earned Obtenu
+achievements_reset_header Réinitialiser les succès ?
+
+tooltip_default Selectionnez une option pour voir sa description.
+
+photo_book_select Sélectionnez le bouton [CONFIRM].
+photo_book_cancel Annulez avec le bouton [CANCEL].
+
+tooltip_newgame_noname Veuillez entrer un nom avant de tenter de commencer une nouvelle partie.
+tooltip_newgame_entry Il s'agit du nom associé au fichier de sauvegarde actuel et du nom que les PNJ utiliseront pour se référer au personnage dans les dialogues.
+tooltip_newgame_keyboard Le clavier à l'écran permettant de saisir le nom associé à ce fichier de sauvegarde. Vous pouvez également utiliser le clavier de votre appareil.
+tooltip_newgame_gametype0 "Utiliser Réglages" utilise les parametres actuels et ne change rien automatiquement. Quel que soit le "Type de jeu" choisi, les reglages peuvent toujours etre modifies plus tard.
+tooltip_newgame_gametype1 "Moderne" ajuste la camera au mode moderne, permettant le zoom et le deplacement libre. Il ajuste aussi la musique a l environnement.
+tooltip_newgame_gametype2 "Classique" ajuste la camera comme dans le jeu original, divisant la carte en "champs" avec transitions entre eux. Il ajuste aussi la musique au jeu original.
+tooltip_newgame_gametype3 "Hybride" utilise la camera moderne dans l overworld et la camera classique dans les donjons. Il ajuste aussi la musique a l environnement.
+tooltip_newgame_gametype4 "Puriste" ajuste les paramètres pour se rapprocher le plus possible du jeu original et réduit au minimum le nombre d'améliorations proposées par ce portage.
+tooltip_newgame_back Quittez la page actuelle et revenez au menu de sélection de fichiers.
+tooltip_newgame_start Commencez une nouvelle partie avec le nom saisi et le type de jeu sélectionné.
+
+tooltip_menu_game Options qui affectent le gameplay mais ne modifient pas la structure et le comportement du jeu de base.
+tooltip_menu_redux Options initialement basées sur le romhack "Redux" qui affectent le gameplay et peuvent modifier le jeu de base en ajoutant des fonctionnalités qui n'existaient pas à l'origine.
+tooltip_menu_camera Options qui affectent la caméra. Pour une expérience plus proche du jeu original, activez la "Caméra Classique" pour un défilement basé sur les écrans.
+tooltip_menu_video Options permettant de configurer les paramètres vidéo. Ces paramètres sont généralement liés à votre écran et à votre GPU.
+tooltip_menu_graphics Options permettant de configurer les paramètres graphiques. Ces paramètres affectent l'apparence des graphismes en jeu.
+tooltip_menu_audio Options pour configurer l'audio. Volume de la musique et des sons, ainsi que désactivation de la musique lors de la collecte de bonus.
+tooltip_menu_controls Options qui permettent de personnaliser les contrôles. Assurez-vous de sélectionner votre type de manette dans les options "Jeu" avant de les modifier ici.
+tooltip_menu_mods Options qui affectent à la fois le gameplay et la difficulté. Peut ajouter plus de points de vie aux monstres, augmenter les dégâts reçus, désactiver la chute de cœurs, augmenter la vitesse de déplacement ou même bloquer les projectiles avec l'épée.
+tooltip_menu_presets Propose une série de valeurs d'options prédéfinies pour adapter rapidement l'expérience de jeu au choix du joueur.
+tooltip_menu_cheats Active ou désactive diverses triches qui peuvent rendre le jeu beaucoup plus facile ou être activées juste pour le plaisir.
+tooltip_menu_achieve Ouvre la fenêtre des succès qui affiche la description et la progression de chaque succès individuel.
+
+tooltip_game_language Change la langue actuelle.
+tooltip_game_sublanguage Contient des variations subtiles dans les dialogues des PNJ. Actuellement pris en charge uniquement dans quelques langues. Les efforts communautaires pour étendre cette option et les scripts sont appréciés.
+tooltip_game_menubricks Choisit la texture de bordure utilisée dans les menus d'options ou désactive complètement la bordure.
+tooltip_game_classicsword Cette option fait fonctionner l'épée comme dans le jeu original, où elle ne peut couper qu'un seul élément du décor à la fois (buissons, herbe, etc.).
+tooltip_game_saveposition Enregistre le dernier fichier de sauvegarde sélectionné et le sélectionne automatiquement lors du chargement du menu principal. La sélection automatique n'est pas instantanée en raison de la conception du menu.
+tooltip_game_autosave Sauvegarde automatiquement le jeu chaque fois qu'une transition d'écran se produit (sauf dans les donjons). Si désactivé, n'oubliez pas de sauvegarder manuellement !
+tooltip_game_sharedstorage Les fichiers de sauvegarde sont lus et écrits dans "/storage/emulated/0/LADXHD/SaveFiles" plutôt que dans le stockage limité. Cela nécessite la permission de l'utilisateur. Le but est de permettre l'utilisation d'applications comme "SyncThing" pour synchroniser les sauvegardes entre appareils.
+tooltip_game_hide_achievement Masque la superposition de succès qui apparaît dans le coin inférieur droit de l'écran lorsqu'un succès est obtenu. L'effet sonore peut également être désactivé dans les paramètres "Audio".
+tooltip_game_itemsonright Affiche les icônes des objets équipés dans le HUD du côté droit de l'écran au lieu du gauche.
+
+tooltip_redux_dungeonteleport_01 Cette option permet de se teleporter vers un donjon termine via la carte. L option actuellement selectionnee est "Desactive", le teletransport via la carte n est donc pas disponible.
+tooltip_redux_dungeonteleport_02 Cette option permet de se teleporter vers un donjon termine via la carte. L option actuellement selectionnee permet de se teleporter vers un donjon termine en ouvrant la carte depuis l inventaire, en selectionnant un noeud de donjon et en appuyant sur le bouton [X].
+tooltip_redux_dungeonteleport_03 Cette option permet de se teleporter vers un donjon termine via la carte. L option actuellement selectionnee est similaire a la precedente, mais au lieu de selectionner un donjon depuis la carte de l inventaire, elle remplace la chanson de Manbo par le teleporteur de carte et permet de selectionner l etang de Manbo.
+tooltip_redux_dungeonteleport_04 Cette option permet de se teleporter vers un donjon termine via la carte. L option actuellement selectionnee permet la teleportation via la carte de l inventaire et remplace la chanson de Manbo par le teleporteur de carte. Le teleporteur de carte qui apparait lors de l utilisation de la Chanson de Manbo permet egalement de selectionner l etang de Manbo.
+tooltip_redux_vwfont Remplace la police de jeu par défaut par une police à largeur variable créée par "toruzz".
+tooltip_redux_nohelptext Désactive la plupart des dialogues lors du contact avec des objets nécessitant un objet manquant et désactive également la plupart des dialogues de ramassage d'objets et de coffres.
+tooltip_redux_dialogskip Permet de passer les boîtes de dialogue avec le bouton "Start", faisant défiler rapidement le texte et fermant automatiquement la fenêtre de dialogue. Les dialogues de questions sont uniquement passés jusqu'au point où une entrée utilisateur est requise.
+tooltip_redux_uncensor Supprime la censure vue dans la version nord-américaine et certaines autres. Restaure les sprites originaux de Hippo et l'objet commercial et dialogue de la Sirène.
+tooltip_redux_unmissables Le manoir Seashell donne toujours les coquillages 5 et 10, la porte du château Kanalet peut être rouverte, Bow Wow, Marin et le coq peuvent redevenir des compagnons après le niveau 8, le commerçant propose un rachat de nom si l'objet a été volé, et la fin secrète est toujours affichée.
+tooltip_redux_photoscolor Par défaut, les photographies utilisent des couleurs sépia comme dans la version DX originale. Cette option utilise à la place des photos en couleur de "drestrada".
+tooltip_redux_noanimaldmg Empêche que les cuccos et les chiens autour de Mabe Village puissent être attaqués. Cette option désactive complètement leurs hitboxes.
+
+tooltip_camera_cameratype La "Caméra Moderne" est centrée sur Link et permet de zoomer et dézoomer. La "Caméra Classique" reproduit les transitions d'écran du jeu original. La "Caméra Personnalisée" permet de choisir la caméra selon le type de carte.
+tooltip_camera_custommenu Configure le type de caméra utilisé selon le type de carte. Nécessite que le type de caméra soit réglé sur "Caméra Personnalisée".
+tooltip_camera_fogdiscovery Lorsque la "Caméra Moderne" est la caméra active, cela génère un effet de brouillard sur les zones qui n'ont pas encore été découvertes.
+tooltip_camera_fogedgesharp Détermine dans quelle mesure le bord du brouillard se fond dans les zones découvertes. Augmenter cette valeur réduira le flou et rendra le bord du brouillard plus net. Notez qu'il y a des rendements décroissants perceptibles au-delà de 35%.
+tooltip_camera_fogopacity Détermine à quel point le brouillard est "épais", ou plutôt à quel point on peut voir à travers lui. Régler cette valeur à 100% rend le brouillard complètement opaque.
+tooltip_camera_fogfadetime C'est le temps qu'il faut pour qu'une zone nouvellement découverte devienne visible lorsqu'on y entre. Le brouillard disparaîtra progressivement sur la durée spécifiée ici. Le temps est en millisecondes (1000ms = 1 seconde).
+tooltip_camera_camborder Lorsque la caméra classique est activée, cela place une bordure autour du champ actuel et masque les objets non animés. La bordure peut être une simple bordure noire ou la bordure Super Game Boy. Cela imite partiellement le ratio d'origine du Game Boy, moins les 16 pixels HUD.
+tooltip_camera_camborderA Aucune
+tooltip_camera_camborderB Noir
+tooltip_camera_camborderC Super Game Boy
+tooltip_camera_blackpercent Détermine l'alpha de la bordure de la caméra classique. Peut être utilisé pour montrer une partie du champ de jeu environnant sans le couper complètement.
+tooltip_camera_bias Déplace le viewport simulé vers la position sélectionnée si l'échelle actuelle ne couvre pas toute la hauteur verticale de l'écran. Cette option ne fonctionne pas avec la bordure du Super Game Boy activée.
+tooltip_camera_biasA Centré
+tooltip_camera_biasB Haut
+tooltip_camera_biasC Bas
+tooltip_camera_classicscaling Desactiver cette option permet de mettre a l echelle manuellement la "Camera Classique" via l echelle du jeu au lieu d ajuster automatiquement la vue a la resolution d agrandissement entiere la plus proche. Cette option peut "casser" la vue si elle est definie trop grande ou trop petite.
+tooltip_camera_persistentitems Lors du changement de terrain avec la "Caméra Classique" activée (c'est-à-dire que l'écran défile), les objets lâchés tels que les rubis, les cœurs et les bonus ne disparaîtront pas et resteront en place au retour sur le terrain.
+tooltip_camera_cameralock Verrouille la caméra lorsque la "Caméra Moderne" est active. Lorsque cette option est désactivée, le stick analogique droit peut faire pivoter la caméra. N'a aucun effet lorsque la "Caméra Classique" est activée.
+tooltip_camera_smoothcamera Chaque fois que la caméra change de cible, cela ajoute un effet de panoramique fluide. Lorsqu'il est désactivé, la caméra se verrouille directement en place. Affecte les deux caméras, mais la "Caméra Classique" en bénéficie le plus.
+
+tooltip_camcustom_overworld Choisit la caméra active sur la carte du Monde Extérieur.
+tooltip_camcustom_houses Choisit la caméra active à l'intérieur des cartes de type maison.
+tooltip_camcustom_caves Choisit la caméra active à l'intérieur des cartes de type grotte.
+tooltip_camcustom_dungeons Choisit la caméra active à l'intérieur des donjons.
+tooltip_camcustom_castle Choisit la caméra active à l'intérieur du Château de Kanalet et du Sanctuaire du Visage Sud.
+tooltip_camcustom_egg Choisit la caméra active lors de l'exploration à l'intérieur de l'œuf.
+tooltip_camcustom_2dMaps Choisit la caméra active sur les cartes 2D. A la priorité sur les autres types.
+tooltip_camcustom_bosses Choisit la caméra active pendant les combats de boss. A la priorité sur les autres types.
+
+tooltip_video_game_scale Détermine la taille d'un "pixel de jeu" par rapport à la résolution du Game Boy. Par exemple, une échelle de 10 signifie qu'un pixel de jeu correspond à 10x10 pixels à l'écran. En dessous de 1x, c'est un pourcentage d'un pixel original.
+tooltip_video_ui_scale Détermine la taille de l'interface utilisateur. La valeur de mise à l'échelle est arbitraire et ne correspond pas aux jeux originaux. Choisissez simplement l'échelle que vous préférez.
+tooltip_video_fullscreen Definit le mode d ecran actuel: Fenetre, Plein ecran sans bordure et Plein ecran exclusif. Il est recommande d utiliser Sans bordure sauf si tu as absolument besoin du mode Exclusif pour un usage specifique, comme la compatibilite avec un logiciel externe. Alt + Enter permet de basculer rapidement entre Fenetre et Plein ecran sans bordure.
+tooltip_video_fps_lock Verrouille le framerate à votre taux de rafraîchissement actuel. Si désactivé, le framerate sera aussi élevé que possible.
+tooltip_video_opaquehud Desactive tous les effets de flou de l'interface et utilise a la place des arriere-plans unis. Cela peut ameliorer les performances sur les appareils moins puissants.
+tooltip_video_pixelsnap Activer cette option verrouille les bords de pixels des sprites comme une grille LCD. La distance minimale qu'un objet peut parcourir est d'un pixel de jeu entier. Lorsqu'elle est désactivée, les objets peuvent se déplacer par pas de sous-pixel, ce qui paraît beaucoup plus "fluide" au détriment de la précision.
+tooltip_video_pixelgrid Une grille de pixels est dessinée sur tout l'écran, reproduisant l'effet de "grille LCD" des consoles rétro comme la Game Boy Color d'où ce jeu est issu. Cette fonctionnalité nécessite l'"Accrochage aux Pixels" pour fonctionner correctement et ne fonctionnera pas sans lui.
+tooltip_video_epilepsysafe Désactive les effets clignotants lors de l'augmentation des valeurs maximales d'objets ou lorsqu'on touche les Buzz Blobs. Désactive également d'autres effets de scintillement sur les ennemis comme les étincelles et les Antifairies.
+
+tooptip_graphics_sequencescale Ajoute a l Echelle UI specifiquement pour les sequences en jeu. Si l Echelle UI est 3 et que ceci est regle sur 2, l echelle de sequence sera 5. Cela inclut les sequences photo, les images et les scenes du jeu. La valeur maximale sure est generalement +2. Une valeur trop elevee ne garantit pas qu elle restera dans les limites de l ecran.
+tooltip_graphics_colorcorrect La Game Boy Color originale n'avait pas d'écran rétroéclairé et assombrissait les couleurs, donc les jeux compensaient avec des palettes de couleurs saturées. La correction des couleurs tente de faire apparaître tout comme sur le matériel original de la Game Boy Color.
+tooltip_graphics_shadows Lorsqu il est active, les ombres sont generees dynamiquement a partir de la forme des sprites. Lorsqu il est desactive, des ombres de sprite sont utilisees a la place, mais seulement pour Link, les ennemis et les NPC dans les airs.
+tooltip_graphics_fogeffects Desactive l effet de brouillard utilise dans la Foret Mysterieuse, la foret juste au dessus du Village Mabe.
+tooltip_graphics_nogloballights Active l'éclairage global appliqué aux cartes. Cet éclairage assombrit l'environnement et améliore les effets lumineux émis par les objets.
+tooltip_graphics_noobjectlights Active les effets d'éclairage émis par les objets. L'éclairage des objets ne nécessite pas l'éclairage global, mais a très peu d'effet sans celui-ci.
+tooltip_graphics_screenshake Active ou désactive les effets de tremblement de l écran originaux. Cela inclut les collisions avec les Bottes Pégase, les électrocutions, l ouverture des entrées de donjons, les boss faisant trembler l écran, et plus.
+tooltip_graphics_exscreenshake Active ou désactive les effets supplémentaires de tremblement de l écran qui n étaient pas dans le jeu original. Cela inclut lorsque Link subit des dégâts, quand les bombes explosent, de nouveaux effets d environnement et de nouveaux effets sur les boss et ennemis.
+tooltip_graphics_classicsprites Dans le jeu original, les sprites pouvaient différer dans l'inventaire par rapport au terrain de jeu. Ce port choisit d'afficher un seul sprite par souci de cohérence. Activer cette option restaure l'affichage de différents sprites comme dans le jeu original.
+
+tooltip_audio_music_volume Le volume de la musique du jeu.
+tooltip_audio_effect_volume Le volume des effets sonores du jeu.
+tooltip_audio_classic_music Détermine quand la musique change dans l'overworld. Désactivé (moderne) suit étroitement le tilemap, activé (classique) suit le jeu original. La différence est subtile. Testez dans l'est de Mabe Village.
+tooltip_audio_mute_inactive Coupe tout audio et effets sonores lorsque la fenêtre du jeu n'est pas active.
+tooltip_audio_heartbeep Désactive le bip périodique lorsque les cœurs tombent sous un certain seuil.
+tooltip_audio_mute_powerups Lors de la collecte d'un Guardian Acorn ou d'un Piece of Power, cette option désactive la musique qui joue normalement.
+tooltip_audio_mute_achievement Désactive l'effet sonore qui se joue lorsqu'un succès est obtenu.
+
+tooltip_controls_deadzone Le pourcentage de course que le joystick doit parcourir avant de réagir à une entrée. Sauf si une zone morte est définie dans un autre logiciel, il est recommandé de ne pas descendre en dessous de 10 %, car cela peut provoquer des mouvements involontaires du joystick. Des valeurs supérieures à celle par défaut peuvent être utiles pour les manettes sujettes au drift.
+tooltip_controls_onscreen Permet de configurer les options du controleur a l ecran exclusif a la version Android.
+tooltip_controls_gamepad Choisit le type de contrôleur pour afficher les boutons à l'écran. Prend en charge les contrôleurs Xbox, PlayStation et Nintendo.
+tooltip_controls_remap Reconfigurez les touches du clavier et de la manette selon la disposition que vous préférez. Changez le type de manette pour correspondre a votre manette avant de reconfigurer.
+tooltip_controls_triggersscale Permet de modifier l echelle actuelle du jeu avec les deux boutons superieurs avant de la manette (LB/RB, L1/R1, L/R). Si l option "Six Inventory Buttons" est activee, les deux boutons ou gachettes superieurs arriere (LT/RT, L2/R2 ou ZL/ZR) modifieront a la place l echelle du jeu.
+tooltip_controls_sixbuttons Active six boutons de la manette pour les objets de l inventaire au lieu de quatre. Les objets peuvent etre equipes sur les deux boutons superieurs avant (LB/RB, L1/R1, L/R) et les reglages de l echelle du jeu sont deplaces vers les deux boutons ou gachettes superieurs arriere (LT/RT, L2/R2, ZL/ZR).
+tooltip_controls_swapconfirm Échange les boutons de confirmation et d'annulation utilisés dans les menus et les dialogues.
+tooltip_controls_classicmove Cette option reproduit le fonctionnement des déplacements des jeux originaux en permettant à Link de marcher en arrière. Combinez-la avec <Digital Analog> pour reproduire entièrement le système de déplacement du jeu original.
+tooltip_controls_digitalanalog Supprime la plage analogique du joystick et déplace Link dans huit directions selon des angles de 45 degrés (Haut, Bas, Gauche, Droite et Diagonales). Cela rend le contrôle de Link plus proche du jeu original, comme s'il était joué sur un émulateur.
+
+tooltip_controls_onscreenpad Active ou desactive les commandes a l ecran. "Desactive" est explicite. "Fondu" fait disparaitre les boutons lorsqu ils ne sont pas utilises. "Toujours" garde les boutons visibles en permanence.
+tooltip_controls_touchmovement Definit la visibilite du D-Pad ou du stick analogique. Les deux peuvent etre toujours actifs, utiliser le D-Pad pour les menus et l analogique pour deplacer Link, ou un seul peut etre actif a la fois.
+tooltip_controls_fadeopacity Lorsque les commandes a l ecran sont sur "Fondu", c est l opacite minimale maintenue jusqu a ce qu elles soient appuyees.
+tooltip_controls_shadowopacity L opacite de l ombre sous les commandes. Quel que soit le mode de visibilite, l ombre conserve la meme opacite.
+tooltip_controls_onscreenscale La valeur d echelle des commandes a l ecran.
+tooltip_controls_onscreenmiddletop Place les boutons Start et Select en haut de l ecran au lieu du bas.
+tooltip_controls_onscreenanalogbuttons Active les boutons a l ecran des sticks analogiques LS et RS. Le bouton RS est utilise pour centrer la camera lorsqu elle n est pas verrouillee.
+
+tooltip_mods_enemy_hp Ajoute des points de vie supplémentaires à tous les ennemis globalement. Par exemple, si l'on ajoute 3 PV à un ennemi, un ennemi avec 1 PV aura 4 PV et un boss avec 8 PV aura 11 PV.
+tooltip_mods_damage Multiplie les dégâts reçus de toutes les sources. Par exemple, si réglé sur 4 et qu'une attaque infligerait un demi-cœur, elle infligera plutôt 2 cœurs complets.
+tooltip_mods_damagecd La valeur par défaut est de 16x (1056 ms). Elle correspond au facteur de récupération des dégâts multiplié par le temps de clignotement des dégâts de 66 ms, ce qui détermine la durée pendant laquelle Link est invincible après avoir subi un coup.
+tooltip_mods_movespeed Augmente la vitesse de déplacement en pourcentage, jusqu'à 100%. Affecte toutes les formes de mouvement : marche, escalade, nage, etc.
+tooltip_mods_nohearts Désactive complètement la chute de cœurs de toutes les sources. Le seul moyen de se soigner est de trouver une fée, visiter une Grande Fée ou acheter des potions chez Crazy Tracy.
+tooltip_mods_dmglaunch Désactive l'effet de projection lorsqu'on attaque des ennemis sous l'effet d'un Piece of Power ou en portant la Tunique Rouge du Color Dungeon.
+tooltip_mods_swordinteract Cette option permet à l'épée de collecter les fées, de repousser le boomerang et d'interagir avec les bombes afin de les projeter. Elle permet également à l'épée de niveau 2 et au rayon d'épée de briser les pots, et au rayon d'épée de niveau 2 de couper l'herbe et les buissons.
+tooltip_mods_mirrorreflect Donne au Bouclier Miroir la capacite de renvoyer les projectiles vers les ennemis. Les projectiles reflechis voyagent plus vite et peuvent meme blesser d autres ennemis touches.
+
+tooltip_sword_grabnormal Active la possibilité de ramasser avec l'épée les objets laissés par les ennemis, comme les Rubis, les Cœurs, le Gland Gardien et le Fragment de Puissance. Nécessite de recharger la carte pour prendre effet.
+tooltip_sword_grabworlditem Permet de ramasser avec l'épée les objets fixes présents dans le monde. Cela inclut les Conteneurs de Cœur, les Instruments, les Feuilles d'Or, les Clés d'Entrée de Donjon et objets similaires. Nécessite de recharger la carte pour prendre effet.
+tooltip_sword_grabfairy Active la possibilité de ramasser les fées avec l'épée.
+tooltip_sword_grabsmallkeys Active la possibilité de ramasser les petites clés de donjon avec l'épée. Nécessite de recharger la carte pour prendre effet.
+tooltip_sword_boomerang Lorsque le bumerang est lancé, il peut être frappé avec l'épée afin de réinitialiser sa trajectoire. Cela fonctionne avec tous les types d'attaques à l'épée.
+tooltip_sword_bouncebombs Les bombes que le joueur pose au sol peuvent être frappées avec l'épée afin de les repositionner.
+tooltip_sword_swordblock Permet de trancher les projectiles avec l'épée si le timing est parfait, comme les lances des Moblins ou les tirs des Octoroks.
+tooltip_sword_breakpots Permet à l'épée de niveau 2 et à son rayon de détruire les jarres et les crânes.
+tooltip_sword_beamshrubs Permet au rayon d'épée de niveau 2 de couper directement l'herbe et les buissons, et permet également au rayon de briser les amas de cristaux.
+
+tooltip_preset_setdefault Definit toutes les options sur leurs valeurs par defaut. Certaines options sont exclues comme la langue et les options plein ecran.
+tooltip_preset_setmodern Configure les options pour que le jeu ait une sensation plus "moderne". La camera permet de zoomer et de se deplacer dans le monde, certaines fonctions de confort sont activees et les indices musicaux de l overworld correspondent mieux a l environnement.
+tooltip_preset_setclassic Configure les options pour que le jeu ait une sensation plus "classique" et se comporte davantage comme le jeu original. La camera traditionnelle basee sur ecran est utilisee, certaines fonctions de confort sont activees et les indices musicaux de l overworld sont identiques au jeu original.
+tooltip_preset_sethybrid Configure les options pour que le jeu ait un melange de sensation moderne et classique. La camera moderne est utilisee dans l overworld tandis que la camera classique est utilisee dans les donjons. Certaines fonctions de confort sont activees et les indices musicaux de l overworld correspondent mieux a l environnement.
+tooltip_preset_purist Configure les options pour que le jeu soit aussi proche que possible du jeu original en dehors des fonctions de confort inherentes a ce port. Toute option disponible pour faire fonctionner le jeu comme l original est activee et toute fonction de confort supplementaire est desactivee.
+
+tooltip_cheats_invincibility Rend Link insensible aux dégâts. Contrairement au réglage du Multiplicateur de Dégâts Reçus à 0, cela élimine également la détection des coups et le recul.
+tooltip_cheats_infiniterupees Définit le nombre actuel de rubis à 999 et fait en sorte qu'il ne soit jamais réduit. C'est irréversible ! N'activez pas cette option sauf si vous acceptez de tricher sur votre nombre de rubis !
+tooltip_cheats_infinitepowder Définit le nombre de poudre magique au maximum actuel et fait en sorte qu'il ne soit jamais réduit. C'est irréversible ! N'activez pas cette option sauf si vous acceptez de tricher !
+tooltip_cheats_infinitebombs Définit le nombre de bombes au maximum actuel et fait en sorte qu'il ne soit jamais réduit. C'est irréversible ! N'activez pas cette option sauf si vous acceptez de tricher !
+tooltip_cheats_infinitearrows Définit le nombre de flèches au maximum actuel et fait en sorte qu'il ne soit jamais réduit. C'est irréversible ! N'activez pas cette option sauf si vous acceptez de tricher !
+tooltip_cheats_disableclipping Permet à Link de traverser la plupart des objets solides. N'inclut pas les trous, les ennemis, l'eau et la lave.
+tooltip_cheats_onehitkills Si le type d'attaque peut infliger des dégâts à l'ennemi touché, l'ennemi sera toujours vaincu en un seul coup.
+tooltip_cheats_giveallitems Donne à Link accès à tous les objets équipables du niveau le plus élevé. Lorsque la triche est désactivée, seuls les objets obtenus légitimement seront restitués au joueur.

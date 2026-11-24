@@ -1,0 +1,411 @@
+map_overlay_close Tutup
+overlay_map Peta
+overlay_inventory Persediaan
+overlay_teleport Teleportasi
+savename_thief Pencuri
+
+main_menu_select_header Pilih Pemain
+main_menu_bottom_header 
+main_menu_new_game Permainan Baru
+main_menu_settings Pengaturan
+main_menu_copy Salin
+main_menu_erase Hapus
+main_menu_quit Keluar
+main_menu_back Kembali
+main_menu_select Pilih
+main_menu_tooltip Keterangan
+
+main_menu_delete_confirmation_header Hapus Penyimpanan?
+main_menu_delete_confirmation_header_yes Ya
+main_menu_delete_confirmation_header_no Tidak
+
+main_menu_copy_confirmation_header Salin Penyimpanan?
+main_menu_copy_confirmation_header_yes Ya
+main_menu_copy_confirmation_header_no Tidak
+
+main_menu_copy_header Salin Penyimpanan
+main_menu_copy_from Dari
+main_menu_copy_to Ke
+main_menu_copy_empty -Kosong-
+main_menu_copy_arrow [RIGHT]
+main_menu_copy_back Kembali
+
+new_game_menu_save_name Entri Nama:
+new_game_menu_back Kembali
+new_game_menu_create_file Buat File
+new_game_menu_game_type Tipe Game:
+new_game_menu_gtype_settings Gunakan Setelan
+new_game_menu_gtype_modern Modern
+new_game_menu_gtype_classic Klasik
+new_game_menu_gtype_hybrid Hibrida
+new_game_menu_gtype_purist Purist
+
+game_menu_header Menu
+game_menu_back_to_game Lanjut Permainan
+game_menu_settings Pengaturan
+game_menu_save_continue Simpan & Lanjut
+game_menu_exit_to_the_menu Simpan & Ke Menu
+game_menu_exit_the_game Simpan & Keluar
+
+game_menu_exit_header Apa Kamu Yakin?
+game_menu_exit_no Tidak 
+game_menu_exit_yes Ya
+
+gameover_header Permainan Berakhir
+gameover_continue Lanjut
+gameover_quit Keluar
+
+settings_menu_header Pengaturan
+settings_menu_game Permainan
+settings_menu_redux Redux
+settings_menu_camera Kamera
+settings_menu_video Video
+settings_menu_graphics Grafis
+settings_menu_audio Suara
+settings_menu_controls Kontrol
+settings_menu_mods Modifikasi
+settings_menu_presets Preset
+settings_menu_cheats Kecurangan
+settings_menu_achieve Pencapaian
+settings_menu_back Kembali
+
+settings_game_header Pengaturan Permainan
+settings_game_language Bahasa: Indonesia
+settings_game_sublanguage Bahasa:
+settings_game_sublanguage_01 Versi Game Boy
+settings_game_sublanguage_02 Versi Switch
+settings_game_sublanguage_03 Alternatif
+settings_game_menubricks Pinggiran Menu
+settings_game_menubricksA LADX
+settings_game_menubricksB Orisinil
+settings_game_menubricksC Hitam
+settings_game_classicsword Pedang Klasik
+settings_game_saveposition Pilih Simpanan Terakhir
+settings_game_autosave Simpan Otomatis
+settings_game_sharedstorage Simpan di Penyimpanan Bersama
+settings_game_hide_achievement Sembunyikan Notifikasi Pencapaian
+settings_game_items_on_right Slot Barang di Kanan
+
+settings_redux_header Redux
+settings_redux_dungeonteleport Teleporter Peta:
+settings_redux_dungeonteleport_01 Dinonaktifkan
+settings_redux_dungeonteleport_02 Peta Saja
+settings_redux_dungeonteleport_03 Hanya Manbo
+settings_redux_dungeonteleport_04 Peta + Manbo
+settings_redux_vwfont Variasi Ukuran Huruf
+settings_redux_nohelptext Mematikan Pesan Pembantu
+settings_redux_dialogskip Lewati Dialog dengan START
+settings_redux_uncensor Mematikan Penyensoran
+settings_redux_unmissables Tidak Ada Yang Bisa Terlewat
+settings_redux_photoscolor Fotografi Berwarna
+settings_redux_noanimaldmg TIdak Bisa Melukai Hewan
+
+settings_camera_header Pengaturan Kamera
+settings_camera_cameratype Jenis
+settings_camera_cameratypeA Kamera Modern
+settings_camera_cameratypeB Kamera Klasik
+settings_camera_cameratypeC Kamera Kustom
+settings_camera_custommenu Sesuaikan Kamera
+settings_camera_fogdiscovery Kabut Penemuan Peta
+settings_camera_fogedgesharp Ketajaman Tepi Kabut
+settings_camera_fogopacity Opasitas Kabut
+settings_camera_fogfadetime Waktu Pudar Kabut
+settings_camera_camborder Bingkai Klasik
+settings_camera_blackpercent Transparansi Bingkai
+settings_camera_bias Bias Batas Klasik
+settings_camera_classicscaling Kunci Skala Klasik
+settings_camera_persistentitems Item Drop Permanen
+settings_camera_cameralock Mematikan Kamera Analog
+settings_camera_smoothcamera Gerakan Kamera Halus
+
+settings_camcustom_header Sesuaikan Kamera
+settings_camcustom_modern Modern
+settings_camcustom_classic Klasik
+settings_camcustom_overworld Dunia Luar
+settings_camcustom_houses Rumah
+settings_camcustom_caves Gua
+settings_camcustom_dungeons Penjara Bawah Tanah
+settings_camcustom_castle Kastel
+settings_camcustom_egg Di Dalam Telur
+settings_camcustom_2dMaps Peta 2D
+settings_camcustom_bosses Pertarungan Bos
+
+settings_video_header Pengaturan video
+settings_video_game_scale Skala game:
+settings_video_ui_scale Skala UI:
+settings_video_autodetect Deteksi otomatis
+settings_video_fullscreen Mode layar:
+settings_video_fullscreen_01 Jendela
+settings_video_fullscreen_02 Layar penuh tanpa batas
+settings_video_fullscreen_03 Layar penuh eksklusif
+settings_video_fps_lock Sinkronisasi vertikal
+settings_video_opaquehud Nonaktifkan blur UI
+settings_video_pixelsnap Penguncian Piksel
+settings_video_pixelgrid Shader kisi piksel
+settings_video_epilepsysafe Perlindungan Epilepsi
+
+settings_graphics_header Pengaturan grafis
+settings_graphics_sequencescale Skala urutan
+settings_graphics_colorcorrect Koreksi Warna GBC
+settings_graphics_shadow Bayangan dinamis
+settings_graphics_fogeffects Efek kabut
+settings_graphics_globallights Pencahayaan global
+settings_graphics_objectlights Pencahayaan objek
+settings_graphics_screenshake Efek Guncangan Layar
+settings_graphics_exscreenshake Efek Guncangan Layar Tambahan
+settings_graphics_classicsprites Sprite Item Klasik
+
+settings_audio_header Pengaturan Suara
+settings_audio_music_volume Volume Suara Musik:
+settings_audio_effect_volume Volume Suara Efek:
+settings_audio_classic_music Isyarat Musik Klasik
+settings_audio_mute_inactive Bisu Ketika Tidak Aktif
+settings_audio_heartbeep Alarm Ketika Hati Rendah
+settings_audio_mute_powerups Tidak Ada Musik PowerUp
+settings_audio_mute_achievement Bisukan Notifikasi Pencapaian
+
+settings_controls_header Pengaturan Kontrol
+settings_controls_onscreen Kontrol di layar
+settings_controls_deadzone Zona Mati Analog
+settings_controls_gamepad Gamepad
+settings_controls_remap Atur Ulang Tombol Kontroler
+settings_controls_triggersscale Trigger Skala Game
+settings_controls_sixbuttons Enam Tombol Inventaris
+settings_controls_swapbuttons Tukar Tombol Konfirmasi
+settings_controls_classicmove Gerakan Klasik
+settings_controls_digitalanalog Analog Digital
+
+settings_controls_onscreenpad Kontrol di layar
+settings_controls_onscreenpad_01 Nonaktif
+settings_controls_onscreenpad_02 Pudar
+settings_controls_onscreenpad_03 Selalu
+settings_controls_touchmovement Pergerakan
+settings_controls_touchmovement_01 D-Pad + Analog
+settings_controls_touchmovement_02 D-Pad menu + Analog Dalam Game
+settings_controls_touchmovement_03 D-Pad saja
+settings_controls_touchmovement_04 Analog saja
+settings_controls_fadeopacity Opasitas pudar
+settings_controls_shadowopacity Opasitas bayangan
+settings_controls_onscreenscale Skala kontrol
+settings_controls_onscreenmiddletop Select/Start bagian atas layar
+settings_controls_onscreenanalogbuttons Pemicu analog
+
+settings_controls_remapheader Pemetaan Ulang Tombol
+settings_controls_keyboad Keyboard
+settings_controls_Up Atas
+settings_controls_Down Bawah
+settings_controls_Left Kiri
+settings_controls_Right Kanan
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 Gaya 1
+settings_controls_style_02 Gaya 2
+
+settings_mods_header Modifikasi
+settings_mods_enemy_hp Penambahan HP Musuh
+settings_mods_damage Penambahan Serangan Yang Diterima
+settings_mods_damagecd Jeda Kerusakan
+settings_mods_movespeed Peningkatan Kecepatan Berjalan
+settings_mods_nohearts Tidak Mendapat Hati Dari Musuh 
+settings_mods_dmglaunch Musuh Tidak Dapat Terlempar
+settings_mods_swordinteract Interaksi Pedang Tambahan
+settings_mods_mirrorreflect Memantulkan Dengan Perisai Cermin
+
+settings_sword_header Interaksi Pedang
+settings_sword_grabnormal Mengambil Item Jatuhan
+settings_sword_grabworlditem Mengambil Item Tetap
+settings_sword_grabfairy Mengambil Peri
+settings_sword_grabsmallkeys Mengambil Kunci Kecil
+settings_sword_boomerang Pantulan Bumerang
+settings_sword_bouncebombs Dorongan Balik Bom
+settings_sword_swordblock Tebas Proyektil Musuh
+settings_sword_breakpots L2 Menghancurkan Pot & Tengkorak
+settings_sword_beamshrubs Sinar L2 Memotong Obj. Lingkungan
+
+settings_preset_header Pengaturan preset
+settings_preset_setdefault Pulihkan pengaturan default
+settings_preset_setmodern Atur preset modern
+settings_preset_setclassic Atur preset klasik
+settings_preset_sethybrid Atur preset hibrida
+settings_preset_purist Atur preset purist
+
+settings_cheats_header Pengaturan Kecurangan
+settings_cheats_invincibility Kebal
+settings_cheats_infiniterupees Rupee Tak Terbatas
+settings_cheats_infinitepowder Bubuk Ajaib Tak Terbatas
+settings_cheats_infinitebombs Bom Tak Terbatas
+settings_cheats_infinitearrows Panah Tak Terbatas
+settings_cheats_disableclipping Nonaktifkan Tabrakan
+settings_cheats_onehitkills Satu Pukulan Mematikan
+settings_cheats_giveallitems Miliki Semua Item
+
+achievements_header Pencapaian
+achievements_reset Atur Ulang
+achievements_earned Diperoleh
+achievements_reset_header Atur ulang pencapaian?
+
+tooltip_default Pilih opsi untuk melihat tooltipnya.
+
+photo_book_select Pilih tombol [CONFIRM].
+photo_book_cancel Batalkan dengan tombol [CANCEL].
+
+tooltip_newgame_noname Silakan masukkan nama sebelum mencoba memulai permainan baru.
+tooltip_newgame_entry Ini adalah nama yang terkait dengan file simpanan saat ini dan nama yang akan digunakan NPC untuk merujuk karakter dalam dialog.
+tooltip_newgame_keyboard Keyboard layar yang dapat digunakan untuk memasukkan nama yang terkait dengan file simpanan ini. Anda juga dapat menggunakan keyboard perangkat Anda.
+tooltip_newgame_gametype0 "Gunakan Setelan" memakai pengaturan saat ini dan tidak mengubah apa pun secara otomatis. Apa pun "Tipe game" yang dipilih, setelan selalu bisa diubah nanti.
+tooltip_newgame_gametype1 "Modern" menyesuaikan kamera ke mode modern yang mendukung zoom dan geser layar. Musik juga disesuaikan dengan lingkungan.
+tooltip_newgame_gametype2 "Klasik" menyesuaikan kamera seperti game asli dengan peta terbagi menjadi "field" dan transisi antar area. Musik juga mengikuti versi asli.
+tooltip_newgame_gametype3 "Hibrida" menggunakan kamera modern di overworld dan kamera klasik di dungeon. Musik juga disesuaikan dengan lingkungan.
+tooltip_newgame_gametype4 "Purist" menyesuaikan pengaturan agar semirip mungkin dengan game aslinya dan meminimalkan jumlah peningkatan yang ditawarkan oleh port ini.
+tooltip_newgame_back Keluar dari halaman saat ini dan kembali ke menu pemilihan file.
+tooltip_newgame_start Mulai permainan baru dengan nama yang dimasukkan dan jenis permainan yang dipilih.
+
+tooltip_menu_game Opsi yang memengaruhi gameplay tetapi tidak mengubah struktur dan perilaku permainan dasar.
+tooltip_menu_redux Opsi yang awalnya berdasarkan romhack "Redux" yang memengaruhi gameplay dan dapat mengubah permainan dasar dengan menambahkan fitur yang sebelumnya tidak ada.
+tooltip_menu_camera Opsi yang memengaruhi kamera. Untuk pengalaman lebih dekat ke permainan asli, aktifkan "Kamera Klasik" untuk scrolling berbasis layar.
+tooltip_menu_video Opsi untuk mengonfigurasi pengaturan video. Pengaturan ini biasanya terkait dengan layar dan GPU Anda.
+tooltip_menu_graphics Opsi untuk mengonfigurasi grafis. Pengaturan ini memengaruhi tampilan grafis dalam permainan.
+tooltip_menu_audio Opsi untuk mengonfigurasi audio. Volume musik dan suara serta menonaktifkan musik saat mengumpulkan power-up.
+tooltip_menu_controls Opsi yang memungkinkan kustomisasi kontrol. Pastikan memilih tipe kontroler dari opsi "Game" sebelum mengubahnya di sini.
+tooltip_menu_mods Opsi yang memengaruhi gameplay dan kesulitan. Dapat menambahkan HP monster, meningkatkan kerusakan yang diterima, menonaktifkan drop hati, meningkatkan kecepatan gerak, atau bahkan memblokir proyektil dengan pedang.
+tooltip_menu_presets Menyediakan sejumlah nilai opsi preset untuk menyesuaikan pengalaman permainan dengan cepat sesuai pilihan pemain.
+tooltip_menu_cheats Mengaktifkan atau menonaktifkan berbagai kecurangan yang dapat membuat permainan jauh lebih mudah atau dapat diaktifkan hanya untuk bersenang-senang.
+tooltip_menu_achieve Buka jendela pencapaian yang menampilkan deskripsi dan progres setiap pencapaian secara individual.
+
+tooltip_game_language Mengubah bahasa saat ini.
+tooltip_game_sublanguage Berisi variasi halus dalam dialog NPC. Saat ini hanya didukung di beberapa bahasa. Usaha komunitas untuk memperluas opsi ini dan skripnya sangat dihargai.
+tooltip_game_menubricks Memilih tekstur tepi yang digunakan selama menu opsi atau menonaktifkan tepi sepenuhnya.
+tooltip_game_classicsword Opsi ini membuat pedang berperilaku seperti di gim asli, di mana pedang hanya dapat menebas satu objek medan sekaligus (semak, rumput, dan sebagainya).
+tooltip_game_saveposition Menyimpan file simpanan terakhir yang dipilih dan memilihnya secara otomatis saat memuat menu utama. Pemilihan otomatis tidak instan karena keterbatasan desain menu.
+tooltip_game_autosave Menyimpan permainan secara otomatis setiap kali terjadi transisi layar (kecuali di dungeon). Jika dinonaktifkan, jangan lupa menyimpan secara manual!
+tooltip_game_sharedstorage File simpanan dibaca dan ditulis ke "/storage/emulated/0/LADXHD/SaveFiles" alih-alih ke penyimpanan terbatas. Ini memerlukan izin dari pengguna. Tujuannya adalah untuk memungkinkan penggunaan aplikasi seperti "SyncThing" untuk menyinkronkan simpanan antar perangkat.
+tooltip_game_hide_achievement Menyembunyikan overlay pencapaian yang muncul di sudut kanan bawah layar ketika pencapaian diperoleh. Efek suara juga dapat dinonaktifkan di pengaturan "Audio".
+tooltip_game_itemsonright Menampilkan ikon item yang dipakai di HUD di sisi kanan layar, bukan kiri.
+
+tooltip_redux_dungeonteleport_01 Opsi ini memungkinkan teleportasi ke dungeon yang telah diselesaikan melalui peta. Opsi yang saat ini dipilih adalah "Dinonaktifkan", sehingga teleportasi melalui peta tidak tersedia.
+tooltip_redux_dungeonteleport_02 Opsi ini memungkinkan teleportasi ke dungeon yang telah diselesaikan melalui peta. Opsi yang saat ini dipilih memungkinkan teleportasi ke dungeon yang telah diselesaikan dengan membuka peta dari inventaris, memilih node dungeon, dan menekan tombol [X].
+tooltip_redux_dungeonteleport_03 Opsi ini memungkinkan teleportasi ke dungeon yang telah diselesaikan melalui peta. Opsi yang saat ini dipilih mirip dengan opsi sebelumnya, tetapi alih alih memilih dungeon dari layar peta inventaris, opsi ini menggantikan lagu Manbo dengan teleporter peta dan memungkinkan pemilihan kolam Manbo.
+tooltip_redux_dungeonteleport_04 Opsi ini memungkinkan teleportasi ke dungeon yang telah diselesaikan melalui peta. Opsi yang saat ini dipilih memungkinkan teleportasi melalui peta inventaris dan menggantikan lagu Manbo dengan teleporter peta. Teleporter peta yang muncul saat memainkan Lagu Manbo juga memungkinkan pemilihan kolam Manbo.
+tooltip_redux_vwfont Mengganti font default permainan dengan font lebar variabel buatan "toruzz".
+tooltip_redux_nohelptext Menonaktifkan sebagian besar dialog saat menyentuh objek yang membutuhkan item yang hilang dan juga menonaktifkan sebagian besar dialog pengambilan item dan membuka peti.
+tooltip_redux_dialogskip Mengaktifkan melewati kotak dialog dengan tombol "Start" yang menggulir teks dengan cepat dan menutup jendela dialog secara otomatis. Dialog pertanyaan hanya dilewati sampai titik di mana input pengguna diperlukan.
+tooltip_redux_uncensor Menghapus sensor yang terlihat pada versi Amerika Utara dan beberapa lainnya. Mengembalikan sprite Hippo asli dan item dagang serta dialog Mermaid.
+tooltip_redux_unmissables Seashell Mansion selalu memberikan 5 dan 10 kerang, pintu Kanalet Castle dapat dibuka kembali, Bow Wow, Marin, dan ayam jantan bisa menjadi pengikut lagi setelah Level 8, pedagang menawarkan pembelian kembali nama jika item dicuri, dan selalu menampilkan akhir rahasia.
+tooltip_redux_photoscolor Secara default, foto menggunakan warna sepia seperti versi DX asli. Opsi ini menggunakan foto berwarna dari "drestrada".
+tooltip_redux_noanimaldmg Membuat cuccos dan anjing di sekitar Mabe Village tidak dapat diserang. Opsi ini sepenuhnya menonaktifkan hitbox mereka.
+
+tooltip_camera_cameratype "Kamera Modern" berpusat pada Link dan memungkinkan kamu memperbesar serta memperkecil tampilan. "Kamera Klasik" mereplikasi transisi layar dari game aslinya. "Kamera Kustom" memungkinkan pemilihan kamera berdasarkan jenis peta.
+tooltip_camera_custommenu Mengonfigurasi jenis kamera yang digunakan berdasarkan jenis peta. Memerlukan jenis kamera yang diatur ke "Kamera Kustom".
+tooltip_camera_fogdiscovery Ketika "Kamera Modern" adalah kamera yang aktif, ini menghasilkan efek kabut di atas area yang belum ditemukan.
+tooltip_camera_fogedgesharp Menentukan seberapa banyak tepi kabut menyatu ke area yang telah ditemukan. Meningkatkan nilai ini akan mengurangi blur dan membuat tepi kabut lebih tajam. Perlu diketahui bahwa efeknya semakin berkurang secara nyata di atas 35%.
+tooltip_camera_fogopacity Menentukan seberapa "tebal" kabut tersebut, atau lebih tepatnya seberapa baik kamu dapat melihat melaluinya. Mengatur nilai ini ke 100% membuat kabut sepenuhnya buram.
+tooltip_camera_fogfadetime Ini adalah waktu yang diperlukan agar area yang baru ditemukan menjadi terlihat saat memasukinya. Kabut akan memudar selama waktu yang ditentukan di sini. Waktu dalam milidetik (1000ms = 1 detik).
+tooltip_camera_camborder Saat kamera klasik diaktifkan, ini menempatkan border di sekitar field saat ini dan menyembunyikan objek yang tidak dianimasikan. Border bisa berupa border hitam dasar atau border Super Game Boy. Ini meniru rasio aspek Game Boy asli, kecuali 16 piksel HUD.
+tooltip_camera_camborderA Tidak ada
+tooltip_camera_camborderB Hitam
+tooltip_camera_camborderC Super Game Boy
+tooltip_camera_blackpercent Menentukan alpha dari border kamera klasik. Dapat digunakan untuk menunjukkan sebagian field sekitarnya tanpa memotong sepenuhnya.
+tooltip_camera_bias Memindahkan viewport simulasi ke posisi yang dipilih jika skala saat ini tidak mencakup seluruh ukuran vertikal layar. Opsi ini tidak berfungsi dengan batas Super Game Boy yang diaktifkan.
+tooltip_camera_biasA Terpusat
+tooltip_camera_biasB Atas
+tooltip_camera_biasC Bawah
+tooltip_camera_classicscaling Menonaktifkan opsi ini memungkinkan menskalakan "Kamera Klasik" secara manual melalui Skala Game alih alih menyesuaikan tampilan secara otomatis ke resolusi upscale bilangan bulat terdekat. Opsi ini dapat "merusak" tampilan jika diatur terlalu besar atau terlalu kecil.
+tooltip_camera_persistentitems Saat berpindah area ketika "Kamera Klasik" diaktifkan (layar bergulir), item drop seperti rupee, hati, dan powerup tidak akan menghilang dan akan tetap ada saat kembali ke area tersebut.
+tooltip_camera_cameralock Mengunci kamera saat "Kamera Modern" aktif. Ketika opsi ini dinonaktifkan, stik analog kanan dapat menggeser kamera. Tidak berpengaruh saat "Kamera Klasik" diaktifkan.
+tooltip_camera_smoothcamera Setiap kali kamera berganti target, ini menambahkan efek pergeseran yang halus. Ketika dinonaktifkan, kamera akan langsung terkunci ke tempatnya. Mempengaruhi kedua kamera, tetapi "Kamera Klasik" mendapat manfaat paling besar.
+
+tooltip_camcustom_overworld Memilih kamera yang aktif saat berada di peta dunia luar.
+tooltip_camcustom_houses Memilih kamera yang aktif saat berada di dalam peta bertipe rumah.
+tooltip_camcustom_caves Memilih kamera yang aktif saat berada di dalam peta bertipe gua.
+tooltip_camcustom_dungeons Memilih kamera yang aktif saat berada di dalam penjara bawah tanah.
+tooltip_camcustom_castle Memilih kamera yang aktif saat berada di dalam Kastel Kanalet dan Kuil Wajah Selatan.
+tooltip_camcustom_egg Memilih kamera yang aktif saat menjelajahi bagian dalam telur.
+tooltip_camcustom_2dMaps Memilih kamera yang aktif pada peta 2D. Memiliki prioritas di atas jenis lainnya.
+tooltip_camcustom_bosses Memilih kamera yang aktif selama pertarungan bos. Memiliki prioritas di atas jenis lainnya.
+
+tooltip_video_game_scale Menentukan ukuran "pixel game" relatif terhadap resolusi Game Boy. Misalnya, skala 10 berarti satu pixel game berukuran 10x10 pixel layar. Di bawah 1x adalah persentase dari pixel asli.
+tooltip_video_ui_scale Menentukan seberapa besar tampilan UI. Nilai skala bersifat arbitrer dan tidak berhubungan dengan game asli. Pilih skala yang diinginkan.
+tooltip_video_fullscreen Mengatur mode layar saat ini: Jendela, Layar penuh tanpa batas dan Layar penuh eksklusif. Disarankan menggunakan Tanpa batas kecuali kamu benar benar membutuhkan Eksklusif untuk tujuan tertentu seperti kompatibilitas dengan perangkat lunak eksternal. Alt + Enter dapat dengan cepat beralih antara Jendela dan Layar penuh tanpa batas.
+tooltip_video_fps_lock Mengunci frame rate ke refresh rate layar saat ini. Jika dinonaktifkan, frame rate akan setinggi mungkin.
+tooltip_video_opaquehud Menonaktifkan semua efek blur UI dan sebagai gantinya menggunakan latar belakang solid. Ini dapat meningkatkan performa pada perangkat kelas bawah.
+tooltip_video_pixelsnap Mengaktifkan opsi ini mengunci tepi piksel sprite mirip dengan kisi LCD. Jarak minimum yang dapat ditempuh objek adalah satu piksel game penuh. Saat dinonaktifkan, objek dapat bergerak dalam langkah subpiksel yang terlihat jauh lebih "halus" dengan mengorbankan akurasi.
+tooltip_video_pixelgrid Kisi piksel digambar di seluruh layar, mereplikasi efek "kisi LCD" dari konsol retro seperti Game Boy Color tempat game ini berasal. Fitur ini memerlukan "Penguncian Piksel" agar dapat berfungsi dengan baik dan tidak akan berfungsi tanpanya.
+tooltip_video_epilepsysafe Menonaktifkan efek berkedip saat meningkatkan maksimum item atau saat menyerang Buzz Blobs. Juga menonaktifkan efek berkedip lainnya pada musuh seperti Sparks dan Antifairies.
+
+tooptip_graphics_sequencescale Ditambahkan ke Skala UI khusus untuk urutan dalam game. Jika Skala UI adalah 3 dan ini diatur ke 2, maka skala urutan menjadi 5. Ini termasuk urutan foto, gambar, dan cutscene dalam game. Nilai aman maksimum biasanya +2. Nilai yang terlalu tinggi tidak menjamin tetap berada dalam batas layar.
+tooltip_graphics_colorcorrect Game Boy Color asli tidak memiliki layar backlit dan meredupkan warna, sehingga game mengkompensasinya dengan palet warna yang jenuh. Koreksi warna berusaha membuat segalanya tampak seperti pada hardware Game Boy Color asli.
+tooltip_graphics_shadows Saat diaktifkan, bayangan dihasilkan secara dinamis berdasarkan bentuk sprite. Saat dinonaktifkan, bayangan sprite digunakan sebagai gantinya, tetapi hanya untuk Link, musuh, dan NPC yang berada di udara.
+tooltip_graphics_fogeffects Menonaktifkan efek kabut yang digunakan di Hutan Misterius, yaitu hutan tepat di atas Desa Mabe.
+tooltip_graphics_nogloballights Mengaktifkan pencahayaan global yang diterapkan di seluruh peta. Pencahayaan ini menggelapkan lingkungan dan meningkatkan efek cahaya dari objek.
+tooltip_graphics_noobjectlights Mengaktifkan efek pencahayaan dari objek. Pencahayaan objek tidak memerlukan pencahayaan global, tetapi hampir tidak terlihat tanpa pencahayaan tersebut.
+tooltip_graphics_screenshake Mengaktifkan atau menonaktifkan efek guncangan layar asli. Ini termasuk menabrak dengan Sepatu Pegasus, tersengat listrik, pintu masuk ruang bawah tanah terbuka, bos mengguncang layar, dan lainnya.
+tooltip_graphics_exscreenshake Mengaktifkan atau menonaktifkan efek guncangan layar tambahan yang tidak ada di game asli. Ini termasuk saat Link menerima kerusakan, saat bom meledak, efek lingkungan baru, dan efek baru pada bos dan musuh.
+tooltip_graphics_classicsprites Dalam game aslinya, sprite bisa berbeda di inventaris dibandingkan di lapangan permainan. Port ini memilih untuk menampilkan satu sprite demi konsistensi. Mengaktifkan opsi ini mengembalikan tampilan sprite yang berbeda seperti game aslinya.
+
+tooltip_audio_music_volume Volume musik dalam game.
+tooltip_audio_effect_volume Volume efek suara dalam game.
+tooltip_audio_classic_music Menentukan kapan musik berubah di overworld. Dinonaktifkan (modern) mengikuti tilemap dengan ketat, diaktifkan (klasik) mengikuti game asli. Perbedaannya halus. Coba di timur Mabe Village.
+tooltip_audio_mute_inactive Membisukan semua audio dan efek suara ketika jendela game tidak aktif.
+tooltip_audio_heartbeep Menonaktifkan suara beep berkala saat hati turun di bawah ambang tertentu.
+tooltip_audio_mute_powerups Saat mengambil Guardian Acorn atau Piece of Power, opsi ini menonaktifkan musik yang biasanya dimainkan.
+tooltip_audio_mute_achievement Menonaktifkan efek suara yang diputar saat pencapaian diperoleh.
+
+tooltip_controls_deadzone Persentase jarak gerak joystick sebelum input terdeteksi. Kecuali Dead Zone telah diatur di perangkat lunak lain, disarankan untuk tidak menurunkannya di bawah 10% karena dapat menyebabkan joystick bergerak sendiri. Nilai yang lebih tinggi dari default berguna untuk controller yang mengalami masalah drifting.
+tooltip_controls_onscreen Memungkinkan konfigurasi opsi untuk kontrol di layar yang khusus untuk versi Android.
+tooltip_controls_gamepad Memilih tipe kontroler untuk menampilkan tombol prompt. Mendukung kontroler Xbox, PlayStation, dan Nintendo.
+tooltip_controls_remap Atur ulang tombol keyboard dan kontroler sesuai tata letak yang Anda inginkan. Ubah jenis kontroler agar sesuai dengan kontroler Anda sebelum mengatur ulang.
+tooltip_controls_triggersscale Mengaktifkan perubahan skala game saat ini menggunakan dua tombol depan atas kontroler (LB/RB, L1/R1, L/R). Jika opsi "Six Inventory Buttons" diaktifkan, dua tombol atau trigger belakang atas (LT/RT, L2/R2, atau ZL/ZR) akan mengubah skala game.
+tooltip_controls_sixbuttons Mengaktifkan enam tombol kontroler untuk item inventori sebagai ganti empat. Item dapat 
+tooltip_controls_swapconfirm Menukar tombol konfirmasi dan batal yang digunakan di menu dan dialog.
+tooltip_controls_classicmove Opsi ini meniru cara pergerakan pada game asli dengan memberi Link kemampuan untuk berjalan mundur. Kombinasikan dengan "Digital Analog" untuk sepenuhnya meniru sistem pergerakan game asli.
+tooltip_controls_digitalanalog Menghapus rentang analog pada stik dan menggerakkan Link dalam delapan arah dengan sudut 45 derajat (Atas, Bawah, Kiri, Kanan, dan Diagonal). Ini membuat kendali Link terasa lebih seperti game asli, seolah dimainkan melalui emulator.
+
+tooltip_controls_onscreenpad Mengaktifkan atau menonaktifkan kontrol di layar. "Nonaktif" berarti dinonaktifkan. "Pudar" akan membuat tombol memudar saat tidak digunakan. "Selalu" membuat tombol selalu terlihat.
+tooltip_controls_touchmovement Mengatur visibilitas D-Pad atau stik analog. Keduanya bisa selalu aktif, menggunakan D-Pad untuk menu dan analog untuk menggerakkan Link, atau hanya salah satu yang aktif pada satu waktu.
+tooltip_controls_fadeopacity Saat kontrol di layar diatur ke "Pudar", ini adalah opasitas minimum yang dipertahankan hingga ditekan.
+tooltip_controls_shadowopacity Opasitas bayangan di bawah kontrol. Apa pun mode visibilitas yang dipilih, bayangan tetap memiliki opasitas yang sama.
+tooltip_controls_onscreenscale Nilai skala untuk kontrol di layar.
+tooltip_controls_onscreenmiddletop Menempatkan tombol Start dan Select di bagian atas layar alih alih di bawah.
+tooltip_controls_onscreenanalogbuttons Mengaktifkan tombol analog LS dan RS di layar. Tombol RS digunakan untuk memusatkan kamera saat tidak terkunci.
+
+tooltip_mods_enemy_hp Menambahkan Hit Points tambahan ke semua musuh secara global. Misalnya, jika menambahkan 3 HP ke musuh, musuh dengan 1 HP akan memiliki 4 HP dan bos dengan 8 HP akan memiliki 11 HP.
+tooltip_mods_damage Mengalikan jumlah kerusakan yang diterima dari semua sumber. Misalnya, jika diatur ke 4 dan serangan akan memberikan setengah hati, maka akan memberikan 2 hati penuh.
+tooltip_mods_damagecd Nilai default adalah 16x (1056 ms). Nilai ini merupakan faktor cooldown damage yang dikalikan dengan waktu kedip damage sebesar 66 ms, yang menentukan berapa lama Link kebal setelah terkena serangan.
+tooltip_mods_movespeed Meningkatkan kecepatan gerak dalam persentase, hingga 100%. Mempengaruhi semua bentuk pergerakan: berjalan, memanjat, berenang, dll.
+tooltip_mods_nohearts Menonaktifkan sepenuhnya jatuhnya hati dari semua sumber. Satu-satunya cara untuk menyembuhkan adalah menemukan peri, mengunjungi Great Fairy, atau membeli obat dari Crazy Tracy.
+tooltip_mods_dmglaunch Menonaktifkan efek melontarkan saat menyerang musuh di bawah efek Piece of Power atau saat memakai Red Tunic dari Color Dungeon.
+tooltip_mods_swordinteract Opsi ini memungkinkan pedang mengumpulkan peri, memukul balik bumerang, dan berinteraksi dengan bom untuk menghempaskannya. Pedang level 2 dan sinar pedang juga dapat menghancurkan pot, dan sinar pedang level 2 dapat memotong rumput dan semak.
+tooltip_mods_mirrorreflect Memberikan Perisai Cermin kemampuan untuk memantulkan proyektil kembali ke musuh. Proyektil yang dipantulkan bergerak lebih cepat dan bahkan dapat melukai musuh lain yang terkena.
+
+tooltip_sword_grabnormal Mengaktifkan kemampuan untuk mengambil item dengan pedang yang dijatuhkan oleh musuh seperti Rupee, Hati, Acorn Penjaga, dan Pecahan Kekuatan. Membutuhkan muat ulang peta untuk berlaku.
+tooltip_sword_grabworlditem Memungkinkan pengambilan item statis dengan pedang yang ada di dunia. Ini termasuk Wadah Hati, Alat Musik, Daun Emas, Kunci Masuk Dungeon, dan item serupa. Membutuhkan muat ulang peta untuk berlaku.
+tooltip_sword_grabfairy Mengaktifkan kemampuan mengambil peri dengan pedang.
+tooltip_sword_grabsmallkeys Mengaktifkan kemampuan mengambil kunci dungeon kecil dengan pedang. Membutuhkan muat ulang peta untuk berlaku.
+tooltip_sword_boomerang Saat bumerang dilempar, pedang dapat digunakan untuk memukulnya dan mengatur ulang lintasannya. Ini berlaku untuk semua jenis serangan pedang.
+tooltip_sword_bouncebombs Bom yang diletakkan pemain di tanah dapat dipukul dengan pedang untuk memindahkannya ke posisi lain.
+tooltip_sword_swordblock Memungkinkan memotong proyektil dengan pedang jika timing tepat. Misalnya, tombak Moblin atau tembakan Octorok.
+tooltip_sword_breakpots Memungkinkan pedang level 2 dan sinar pedang menghancurkan pot dan tengkorak.
+tooltip_sword_beamshrubs Memungkinkan sinar pedang level 2 untuk memotong langsung rumput dan semak-semak, serta memungkinkan sinar tersebut menghancurkan gugusan kristal.
+
+tooltip_preset_setdefault Mengatur semua opsi ke nilai default. Beberapa opsi tidak termasuk seperti bahasa dan opsi layar penuh.
+tooltip_preset_setmodern Mengatur opsi agar game terasa lebih "modern". Kamera memungkinkan zoom dan menggeser tampilan di dunia, beberapa fitur kenyamanan diaktifkan dan isyarat musik di overworld lebih selaras dengan lingkungan.
+tooltip_preset_setclassic Mengatur opsi agar game terasa lebih "klasik" dan berperilaku lebih seperti game asli. Kamera tradisional berbasis layar digunakan, beberapa fitur kenyamanan diaktifkan dan isyarat musik overworld identik dengan game asli.
+tooltip_preset_sethybrid Mengatur opsi agar game memiliki campuran nuansa modern dan klasik. Kamera modern digunakan di overworld sementara kamera klasik digunakan di dalam dungeon. Beberapa fitur kenyamanan diaktifkan dan isyarat musik overworld lebih selaras dengan lingkungan.
+tooltip_preset_purist Mengatur opsi agar game sedekat mungkin dengan game asli selain fitur kenyamanan yang melekat pada port ini. Setiap opsi yang tersedia untuk membuat game berperilaku seperti game asli akan diaktifkan dan semua fitur kenyamanan tambahan akan dinonaktifkan.
+
+tooltip_cheats_invincibility Membuat Link kebal terhadap kerusakan. Tidak seperti mengatur Pengganda Kerusakan yang Diterima ke 0, ini juga menghilangkan deteksi hantaman dan knockback.
+tooltip_cheats_infiniterupees Mengatur jumlah rupee saat ini menjadi 999 dan membuatnya tidak pernah berkurang. Ini tidak dapat dibalik! Jangan aktifkan opsi ini kecuali kamu tidak keberatan curang pada jumlah rupee-mu!
+tooltip_cheats_infinitepowder Mengatur jumlah bubuk ajaib ke maksimum saat ini dan membuatnya tidak pernah berkurang. Ini tidak dapat dibalik! Jangan aktifkan opsi ini kecuali kamu tidak keberatan untuk curang!
+tooltip_cheats_infinitebombs Mengatur jumlah bom ke maksimum saat ini dan membuatnya tidak pernah berkurang. Ini tidak dapat dibalik! Jangan aktifkan opsi ini kecuali kamu tidak keberatan untuk curang!
+tooltip_cheats_infinitearrows Mengatur jumlah panah ke maksimum saat ini dan membuatnya tidak pernah berkurang. Ini tidak dapat dibalik! Jangan aktifkan opsi ini kecuali kamu tidak keberatan untuk curang!
+tooltip_cheats_disableclipping Memungkinkan Link melewati sebagian besar objek padat. Tidak termasuk lubang, musuh, air, dan lava.
+tooltip_cheats_onehitkills Jika jenis serangan dapat memberikan kerusakan pada musuh yang terkena, musuh tersebut akan selalu dikalahkan dalam satu pukulan.
+tooltip_cheats_giveallitems Memberi Link akses ke semua item yang dapat dilengkapi pada tingkat tertinggi. Ketika cheat dinonaktifkan, hanya item yang diperoleh secara sah yang akan dikembalikan kepada pemain.

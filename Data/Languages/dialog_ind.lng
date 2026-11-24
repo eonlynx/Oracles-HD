@@ -1,0 +1,1175 @@
+// items
+smallkey Kamu mendapatkan Kunci Kecil!\nSekarang kamu bisa membuka pintu yang terkunci.
+compass Kamu mendapatkan Kompas!\nSekarang kamu bisa mengetahui di mana peti dan Nightmare yang tersembunyi!\fKompas ini memiliki fitur baru-- sebuah suara akan terdengar ketika ada kunci yang tersembunyi di ruangan yang kamu masuki!
+dmap Akhirnya, kamu mendapatkan Peta!\nTekan tombol [START] untuk melihatnya!
+stonebeak Kamu menemukan Paruh Batu!\nMari kita cari patung burung hantu untuk menggunakannya.
+
+sword1 Kamu menemukan Pedangmu! Ini sudah pasti punya kamu karena ada nama yang terukir di pedangnya!
+feather Kamu mendapatkan Bulu Roc! Tubuhmu jadi terasa lebih ringan berkat benda ini!
+pegasusBoots Kamu mendapatkan Sepatu Pegasus! Kalau kamu menahan tombol, kamu bisa berlari cepat!
+flippers Kamu mendapatkan Sirip! Kalau menekan tombol [CANCEL] saat berenang, kamu bisa menyelam ke bawah air!
+bracelet0 Kamu menemukan Gelang Kekuatan! Akhirnya kamu bisa mengangkat guci dan berbatuan!
+bracelet1 Kamu dapat Gelang Kekuatan yang lebih kuat! Sekarang kamu bahkan bisa mengangkat seekor Paus!
+ocarina Kamu mendapatkan Ocarina! Cobalah untuk belajar memainkan beberapa lagu!
+powder Kamu mendapatkan beberapa Bubuk Sihir! Cobalah untuk menaburkannya di berbagai tempat!
+mirrorShield Kamu mendapatkan Perisai Cermin! Sekarang kamu bisa menangkis sinar yang sebelumnya tidak bisa dipantulkan!
+hookshot Kamu mendapatkan Penembak Kait! Rantainya bisa memanjang ketika digunakan!
+magicRod Kamu mendapatkan Tongkat Sihir! Sekarang kamu bisa membakar benda di sekitar! BAKAR! BAKAR!
+shovel Kamu mendapatkan Sekop! Sekarang kamu akan tahu betapa menyenangkannya menggali!
+magicPowder Kamu mendapatkan beberapa Bubuk Sihir! Cobalah untuk menaburkannya di berbagai tempat!
+bomb Kamu mendapatkan Bom!\nBagus sekali!
+sword2 Kamu dapat Pedang yang baru! Sebaiknya kamu segera mengukir namamu di pedang itu!
+boomerang Kamu menukarkan barangmu untuk mendapatkan Bumerang.
+
+shield Sebuah Perisai!\nAda tempat untuk mengukir namamu di perisai tersebut!
+shield_intro Kamu dapat Perisaimu kembali! Gunakan tombol untuk menangkis serangan musuh!
+shield_back Kamu dapat Perisaimu kembali! Gunakan untuk membalikkan posisi musuh!
+
+yoshiPickup Kamu dapat sebuah Boneka Yoshi! Akhir-akhir ini dia sering muncul di berbagai game!
+
+// playing the ocarina without having learned a song
+ocarina_bad Ini memang Ocarina, tapi kamu tidak tahu cara memainkannya ....
+ocarina_bad_marin Kamu tidak begitu mahir, ya? ... Eh? Apa aku mengatakan sesuatu? Kamu hanya salah dengar ....
+
+// trading alt + 0161
+trade0 Kamu menukar [TRADE0] dengan [TRADE1]! Mungkin kamu bisa menukar Pita ini untuk benda yang lain!
+trade1 Kamu menukar [TRADE1] dengan [TRADE2]! Terlihat sangat lezat!
+trade2 Kamu memberikan [TRADE2] dan menukarnya dengan Pisang [TRADE3]! Transaksi yang bagus!
+trade4 Kamu menemukan tongkat yang ditinggalkan para monyet ....\nKamu mengambilnya!
+trade5 [TRADE4] berubah menjadi [TRADE5]! Kamu tidak tahu kenapa itu bisa terjadi, tapi kamu tetap mengambilnya!
+trade6 Kamu menukar [TRADE5] dengan [TRADE6]! Ini tidak terlalu manis, tapi tetap enak kok!
+trade7 Kamu menukar [TRADE6] dengan [TRADE7]!
+trade8 Kamu menukar [TRADE7] dengan sebuah surat [TRADE8]! ... Bagus!?
+trade9 Kamu mendapatkan Sapu sebagai hadiah dari Mr. Write! Tapi foto itu ....
+trade10 Kamu menukar [TRADE9] dengan kait pancing [TRADE10]! Akan menjadi apa kait pancing ini?
+trade11 [TRADE10] berubah menjadi kalung [TRADE11]! Hoki!
+trade12 Kamu mengembalikan kalung [TRADE11] dan mendapat sisik [TRADE12] dari ekor duyung. Bagaimana kamu akan menggunakannya?
+trade13 Kamu mendapatkan Kaca Pembesar [TRADE13]! Kamu bisa melihat banyak hal yang sebelumnya tidak bisa kamu lihat!
+
+trade11_redux [TRADE10] berubah menjadi BH merah muda [TRADE11]! B-beruntung?
+trade12_redux Kamu mengembalikan BH [TRADE11] dan mendapat sisik [TRADE12] dari ekor duyung. Bagaimana kamu akan menggunakannya?
+
+// keyholes
+keyhole_0 Hmm? Lubang kucing?\nDi sini tertulis, 'Lubang Kunci Moldorm'
+keyhole_1 Hmm? Lubang kucing?\nDi sini tertulis, 'Lubang Kunci Geladir'
+keyhole_2 Hmm? Lubang kucing?\nDi sini tertulis, 'Lubang Kunci Sungut'
+keyhole_3 Hmm? Lubang kucing?\nDi sini tertulis, 'Lubang Kunci Wajah'
+keyhole_4 Hmm? Lubang kucing?\nDi sini tertulis, 'Lubang Kunci Burung'
+
+// collectables
+toadstool Kamu mengangkat jamur itu ... Selagi kamu memegangnya di atas kepala, aroma yang lembut mulai memasuki lubang hidungmu.
+toadstool_hold Itu jamur yang kamu ambil dari hutan. Memang ada apa dengan benda itu? Kamu memegangnya di atas kepala, dan aroma yang lembut mulai memasuki lubang hidungmu.
+
+seashell Kamu menemukan Kulit Kerang Rahasia! Kalau kamu mengumpulkan yang banyak, sesuatu yang bagus akan terjadi!
+seashell_1 Kamu menemukan Kulit Kerang Rahasia! Apakah kamu bisa menemukan sisanya?
+seashell_2 Kamu menemukan semua 26 Kulit Kerang Rahasia! Kamu adalah master pemburu kerang!
+
+heart Kamu mendapatkan sebuah Hati! Salah satu wadah hatimu kini sudah terisi!
+
+ruby20 Kamu dapat 20 Rupee!\nSenangnya!
+ruby50 Kamu dapat 50 Rupee!\nBagus sekali!
+ruby100 Kamu dapat 100 Rupee!\nIni membuatmu senang!
+ruby200 Kamu dapat 200 Rupee!\nIni Sangat menggembirakan!
+
+// trendy game
+ruby30 Dapat 30 Rupee! Kamu jadi bisa bermain tiga kali lagi!
+
+heartMeter Kamu mendapat Pecahan Hati! Tekan [START] untuk membuka layar menu dan melihatnya.
+heartMeterFilled Kamu berhasil mengumpulkan empat Pecahan Hati. Sekarang satu wadah sudah terisi penuh!
+
+guardianAcorn Kamu dapat Biji Pohon Ek Penjaga!\nIni akan mengurangi luka yang kamu terima setengahnya!
+pieceOfPower Kamu dapat Kepingan Kekuatan!\nKamu bisa merasakan energi mengalir di dalam tubuhmu!
+
+potion Kamu menemukan obat rahasia! Coba pakai dan lihat apa yang akan terjadi!
+
+dkey1 Kamu dapat Kunci Moldorm! Sekarang kamu bisa membuka gerbang Goa Moldorm!
+dkey2 Kamu dapat Kunci Geladir! Sekarang kamu bisa membuka gerbang di Padang Ukuku!
+dkey3 Kamu dapat Kunci Sungut!
+dkey4 Kamu dapat Kunci Wajah!
+dkey5 Kamu dapat Kunci Burung!
+
+nightmarekey Kamu mendapatkan Kunci Besar! Sekarang kamu bisa membuka pintu Markas Nightmare!
+
+instrument0 Kamu mendapatkan Selo Bulan Purnama!
+instrument1 Kamu mendapatkan Sangka Kulit Kerang!
+instrument2 Kamu mendapatkan Lonceng Bunga Lili!
+instrument3 Kamu mendapatkan Harpa Ombak!
+instrument4 Kamu mendapatkan Marimba Angin!
+instrument5 Kamu mendapatkan Segitiga Karang!
+instrument6 Kamu mendapatkan Orgen Malam Yang Tenang!
+instrument7 Kamu mendapatkan Gendang Petir!
+
+instrument0Collected {...RAWA...}{Sebuah jalan terbuka...}{di antara bunga-bunga...}
+instrument1Collected {...PADANG...}{...PADANG...} Padang Belantara tengah menanti...
+instrument2Collected {...AIR TERJUN...}{Itu tersembunyi di}{balik air terjun...}
+instrument3Collected {...TELUK...}{Tujuanmu adalah}{teluk...}
+instrument4Collected {...KUIL...}{Sebuah rahasia pulau}{ada di kuil...}
+instrument5Collected {...GUNUNG...}{Sesuatu memanggil...}{dari pegunungan...}
+instrument6Collected {...OCARINA...}{Musik dari Ocarina}{akan menuntunmu...}
+instrument7Collected {...TELUR....}{Telur di puncak gunung}{sedang memanggil!}
+
+goldLeaf Kamu menemukan Daun Emas! Tekan Tombol [START] untuk melihat berapa banyak yang sudah kamu kumpulkan!
+goldLeafLast Akhirnya kamu menemukan Daun Emas yang terakhir! Sekarang pergi temui Richard untuk membicarakan soal kunci itu ....
+
+signpost0 error
+signpost1 [RIGHT] Goa Moldorm\n[DOWN] Pantai Toronbo
+signpost2 Hutan Misterius\n(Tempatnya agak misterius)
+signpost3 Timur [RIGHT] Padang\n      Ukuku\fUjung Timur\n  Desa Binatang
+signpost4 Awas banyak Bulu Babi!\nJangan menyentuhnya dengan tangan kosong!
+signpost5 Awas banyak lantai yang retak! Orang yang berat tidak boleh berdiri di atasnya!
+
+signpost6 Kastil Kanalet 10 Menit [RIGHT] [UP]
+signpost7 Kastil Kanalet 5 Menit [RIGHT]
+signpost8 Kastil Kanalet 50 Langkah [UP]
+
+signpost9 [RIGHT] Desa Binatang\n[DOWN] Teluk Martha
+signpost10 Rumah Kerang Laut
+
+signpost11 Kamu sudah dekat dengan Dataran Tinggi Tal Tal. Toko Kamera ada di dekat sana.
+signpost12 [RIGHT] Gunung Tamaranch\n[LEFT] Rawa Goponga
+signpost13 [RIGHT] Crazy Tracy\n[DOWN] Telaga Manbo
+signpost14 [RIGHT] Pemakaman\n[DOWN] Padang Ukuku
+signpost15 [RIGHT] Rawa Goponga\n[DOWN] Hutan Misterius
+
+signpost16 BAHAYA!\nJangan dekat-dekat!\n(Kecuali BowWow)
+signpost17 Vila Richard
+signpost19 Telepon Umum\n[DOWN] Labirin Papan Petunjuk
+
+signpost20 Gunung Tamaranch
+signpost21 Apa kamu ingin menantang arus deras ini dengan rakit? Mohon segera menuju kantor!
+
+signpost22 Jalan masuk ke\nGurun Yarna [RIGHT]
+signpost23 [RIGHT] Selamat datang di\nDesa Binatang!
+
+signpost_Down [DOWN] PERGI KE ARAH SINI
+signpost_Up [UP] PERGI KE ARAH SINI
+signpost_Right [RIGHT] PERGI KE ARAH SINI
+signpost_Left [LEFT] PERGI KE ARAH SINI
+signpost_TryAgain COBA LAGI DARI AWAL
+signpost_Great KAMU BERHASIL! HADIAHMU ADA DI SEBELAH SINI! [RIGHT]
+signpost_Gone SEDANG PERGI\nMAMU
+
+talking_tree Mengejutkan sekali! Hei! Akan aku beri tahu satu rahasia! Gunakan pedangmu untuk menyentuh dinding goa ... kalau kamu mendengar suara yang berongga, kamu bisa menjebol dindingnya dengan Bom!
+
+mamu0 Kwak-kwak! Halo kawan, aku Mamu sang vokalis! Sepertinya kamu tidak tahu apa-apa soal musik!
+mamu1 Kwak-kwak! Halo, aku Mamu sang vokalis! Tapi sepertinya aku tidak perlu memberitahumu, 'kan? Semua orang tahu soal diriku! Ingin mendengarkan kami bermain musik! Hanya dengan 300 Rupee, kami akan memperdengarkanmu lagu yang belum pernah dirilis! Bagaimana?
+mamu2 Sayang sekali, tapi kami tidak bermain secara gratis!
+mamu3 Terima kasih banyak!
+ocarina_frog_song Kamu berhasil mempelajari lagu 'Jiwa Para Katak'! Melodinya sangat menyentuh... Ini bahkan bisa menghidupkan benda mati!
+ocarina_frog_song_end Kalau kamu memainkan lagu ini, kamu akan membuat sekitarmu terasa lebih hidup!
+
+manbo0 Namaku Manbo, anak dari si Ikan Surya! Apa kamu punya sebuah Ocarina?
+manbo1 Baiklah ...\nGlub Blub Blub!
+manbo2 Ahaha! Kalau begitu aku bisa mengajarkanmu lagu milikku!
+manbo3 Aha ... Kamu tidak punya, kalau begitu ... Glub glub!
+manbo4 Akulah Manbo, anak dari Ikan Surya! Kalau kamu memainkan Mambo milikku, kamu bisa teleportasi menuju Telaga Manbo! Cobalah memainkannya di goa ini juga! Cha-cha-cha!
+
+ocarina_manbo_song Kamu berhasil mempelajari Mambo Manbo! Ketika kamu sudah keluar dari air, mainkanlah!
+
+choice_Pay Bayar
+choice_Leave Pergi
+
+signHead1 IKAN PAWANA HANYALAH SEBUAH NAMA.
+signHead2 MUSIK, SANG IKAN MENGGUBAH DARI DALAM TELUR ....
+signHead3 BERUANG LAUT BERBUIH, BERUANG TIDUR BERMIMPI. KEDUANYA MENEMUI AKHIR YANG SAMA!
+signHead4 RAHASIA ITU SEPERTI AIR YANG MENJEMBATANI
+signHead5 IKAN PAWANA TERTIDUR PANJANG ... NYAWA PAHLAWAN LENYAP ....
+signHead6 DI SEKITAR SINI, RAHASIA SUDAH DEKAT
+signHead7 Kamu sudah dekat dengan Menara Elang. Waspadalah terhadap para burung!
+signHead8 SEKARANG KAMU HARUS MELIHAT JAUH UNTUK MENEMUKAN RAHASIA ....
+signHead9 RAHASIA TERKUBUR DI DALAM TANAH, DI BAWAH TELAPAK KAKIMU ....
+
+castle_button Hmm? Kedengarannya gerbang kastil sudah terbuka! Sekarang kamu bisa dengan mudah meninggalkan kastil!
+castle_button_2 Hmm? Itu suara gerbang kastil yang tertutup!
+
+door_nightmarekey Eh? Ini terkunci! Kamu bisa membukanya dengan Kunci Besar.
+
+dungeon_keyhole_block Hmm? Batu ini adalah lubang kunci! Sebaiknya kamu kembali lagi dengan kunci yang dibutuhkan!
+rock_cracks_message Ada banyak retakan di batu ini ... pasti ada cara untuk memecahkannya ....
+crystal_hard Sungguh benda yang aneh! Pasti ada cara untuk mengatasi penghalang ini.
+
+stone Wow! Ini kelihatannya cukup berat! Kamu tidak akan bisa mengangkatnya dengan tangan kosong ....
+
+// nightmares
+nightmare1 {BZZZZZ! BZZZZ!}{PENYUZZZZUP!}
+nightmareFinal0 Pulau ini akan segera lenyap. Dunia kami akan segera menghilang ....
+nightmareFinal1 ... [NAME], Kamu sudah mengalahkan semua Nightmare! Naikilah tangga yang ada di depanmu!
+
+// maria
+maria_0_0 Syukurlah! Aku kira kamu tidak akan pernah terbangun! Kamu terdampar di pantai dan ...\fApa? Zelda? Bukan, namaku Marin! Kamu pasti masih merasa pusing!\nKamu sekarang berada di Pulau Koholint!
+maria_0_1 Ikuti jalan ke selatan untuk mencapai tempat di mana aku menemukanmu. Karena kamu terdampar di pantai, banyak sekali monster yang berkeliaran di sekitar sana, jadi hati-hati, ya?
+
+// marin standing outside
+maria_1_0 Hai! Tarin pergi ke hutan untuk mencari jamur, tapi aku lebih suka menyanyi. Dengarkanlah, ini berjudul 'Puisi Sang Ikan Pawana.'
+maria_1_1 Aku sangat suka menyanyi-- Kalau [NAME] kesukaannya apa?
+
+// after talking to the owl
+maria_1_2 [NAME], Tarin sedang tidur siang di dalam rumah. Aku tidak mengerti bagaimana dia bisa tidur di hari yang indah ini! Membuatku ingin menyanyikan sebuah lagu. ... Ya, lagu ini berjudul 'Puisi Sang Ikan Pawana!'
+
+// singing in the right village
+maria_1_3 Hei! Kamu punya Ocarina yang bagus! Apa kamu mau mengiringiku bernyanyi?
+maria_1_4 Jadi bagaimana? Apa kamu suka? Lagu yang sangat menyentuh, bukan? Apa lagu itu sudah tertanam di pikiranmu?
+maria_1_5 Kumohon! Aku ingin kamu mempelajarinya! Ini lagu kesukaanku!
+
+maria_1_6 Kumohon! Tolong ingat selalu lagu ini! Kamu harus memainkannya sesekali agar tetap teringat di pikiranmu!
+maria_1_7 Kumohon, jangan pernah melupakan lagu ini ... atau aku nanti akan ....
+
+maria_1_8 Mereka bilang 'Puisi Sang Ikan Pawana' adalah lagu untuk membangunkan sesuatu. Aku jadi penasaran, jika Ikan Pawana terbangun, apa dia bisa mengabulkan harapanku?
+maria_1_9 Oh, [NAME]. Aku sering datang ke desa ini untuk bernyanyi juga! Sepertinya semua orang menyukai 'Puisi Sang Ikan Pawana'! [NAME], Kira-kira apa lagu favorit mu?
+
+marin_letter Di pantai ... Marin ¶
+
+// maria at the beach
+marin_2_0 Oh, [NAME], Aku senang kamu menemukan tempat ini. Apa kamu mau tinggal sebentar dan mengobrol denganku?    
+
+// Yes! No...
+marin_2_1 Baiklah, aku hanya akan melihat ombak untuk beberapa waktu ....
+marin_2_2 Kira-kira dari mana pohon kelapa ini berasal, ya? Tarin bilang tidak ada apa-apa di ujung lautan sana. Ketika aku menemukanmu, [NAME], jantungku langsung berdebar-debar! Aku mengira orang ini pasti datang untuk memberi kami sebuah pesan ....
+marin_2_3 ... Kalau aku menjadi seekor burung camar, aku akan terbang sejauh yang aku bisa! Aku ingin terbang ke tempat nan jauh dan bernyanyi untuk banyak orang! ... Kalau memohon kepada Ikan Pawana, aku penasaran apakah beliau akan mengabulkannya ....
+marin_2_4 Hei! Apa kamu mendengarkan! [NAME], apa kamu mendengarku?
+marin_2_5 Hmph! Pikiranmu selalu saja melamun! Lain kali tolong dengarkan aku, ya?!
+marin_2_6 Aku ingin tahu segalanya tentangmu ... Errr ... Uhh, Hahahaha!!
+marin_2_7 Hmm? Pak Beruang Laut ingin bertemu denganku? Tidak masalah, aku akan pergi bersamamu untuk menemuinya ....
+
+maria_collected Marin kini mengikutimu! Apakah ini kesempatan besarmu?
+
+// going into a dungeon
+marin_dungeon Eh? Kamu ingin aku masuk ke sana? Tidak usah, sepertinya aku hanya akan menunggu di luar saja ... hati-hati, [NAME]!
+marin_dungeon_leave [NAME]! Kamu kembali! Apa kamu terluka?
+marin_dungeon_leave_time ... Kamu terlambat! Aku kira kamu tidak akan pernah kembali!
+marin_dungeon_hearts ... IIIIH! Kamu terluka! Arrrrgh! Tolong jangan gegabah!
+marin_dungeon_hearts_alt ... Kamu bodoh! Sudah aku bilang ini pasti akan terja- ... Eh?! Apa? Aku tidak bilang apa-apa, kok!
+
+marin_cucco_0 Oh tidak! Ayam yang malang!\nTolong hentikan itu!
+marin_cucco_1 Ha ha ha! Terus! Lakukan teruuuus! ... Hmm? Tidak, bukan apa-apa ... aku tidak bermaksud, kok.
+
+marin_pot_0 Ya!! Hancurkan! Hancurkan semuanya! ... Kenapa? Apa ada yang salah?
+marin_pot_1 Ahhh! Ahhh, kamu anak nakal, [NAME]!
+
+marin_digging Bagus! Gali! Gali terus! Gali sampai ke inti bumi!!
+
+maria_game_0 Wow! [NAME], boleh aku mencobanya?! Boleh, ya?
+// Okay No Way
+maria_game_1 Ayolah! aku ingin mencobanya! Boleh, ya? Ini terlihat menyenangkan!
+// Yes  Okay
+maria_game_2 Kamu hebat! Jago sekali! Kamu pasti sudah ahli, ya? Kalau begitu pergilah! Profesional tidak boleh ada di sini!
+
+
+// walrus sequence
+maria_3_0 Ya, itu si Beruang Laut pemalas! Apa kita harus memberinya sedikit kejutan?
+// Yes  No...
+marin_3_1 Kamu benar, agak jahat jika kita membangunkannya sekarang! Kita biarkan dia tidur lebih lama!
+maria_3_2 Aha ha ha! Waw! Dia benar-benar terbangun!
+maria_3_3 Hmm? Oh, dia memanggilku ... ini sama seperti biasanya ... ha ha!
+maria_3_4 [NAME], aku akan pergi ke Desa Binatang! Sesekali berkunjung, ya?
+
+// marin falling into the fountain not falling on link
+marin_fountain Waah! Itu tadi Mengejutkan!
+
+// marin in the mountains
+marin_4_0 Seseorang, TOLONG AKU!
+marin_4_1 [NAME]! Ada monster yang membawaku ke atas sini! Apa yang harus kulakukan!? Aku takut ketinggian!!
+marin_4_2 Fyuh! Itu tadi sungguh mengejutkan! Terima kasih, [NAME]!
+marin_4_3 ... [NAME] ....
+marin_4_4 Uhh ... Aku tidak tahu bagaimana cara mengatakannya ... Tapi ....
+marin_4_5 MAAAAAAARINNNN!!
+marin_4_6 Hah?! Tarin??! ... Uh ... lupakan saja, Aku ... aku harus pergi!
+
+marin_5_0 Terima kasih untuk segalanya! [NAME], kamu pria paling baik hati yang pernah kutemui. Suatu hari aku akan membuat permohonan kepada Ikan Pawana. ... Apa permohonannya? Itu ... rahasia!
+marin_5_1 [NAME], suatu hari nanti kamu akan meninggalkan pulau ini ... Aku tahu dari lubuk hatiku itu akan terjadi. ... Tolong jangan pernah melupakanku ... atau aku tidak akan memaafkanmu!
+
+marin_6_0 [NAME], Aku punya firasat aku tidak akan punya kesempatan lagi ... Apa kamu mau jalan-jalan denganku?
+marin_6_1 Ah. Baiklah ... mungkin di lain waktu.
+marin_6_2 Terima kasih [NAME], itu tadi menyenangkan! Kurasa ini waktunya perpisahan?
+marin_6_3 [NAME]. Aku ... merasa tidak enak soal ini. Ayo kita kembali!
+
+walrus_0 {ZZZ ZZZ ZZZ ZZZ}{... ¶ ... ¶ ...}
+walrus_1 {Arfh! Arfh! Arf!}{¶  ¶!  ¶   ¶!}{..... ·??}
+
+animals_absorbed {... ... ... ...}Kelihatannya mereka sudah hanyut ke dalam nyanyian Marin!
+
+ocarina_maria_song Kamu berhasil mempelajari 'Puisi Sang Ikan Pawana!' Lagu ini akan selalu tertanam di hatimu!
+
+// tarin house
+tarin_chest Hei! Apa yang kamu lakukan dengan peti hartaku?! Dari mana kamu tahu soal itu?!
+
+// tarin
+npc02_leave Hei, nak! Mau ke mana kamu buru-buru sekali? Duduklah, ada sesuatu yang ingin kuceritakan!
+tarin_0 Hei, [NAME], akhirnya kamu tersadar ... Namaku Tarin ... Semoga kamu merasa lebih baik ... Apa? Bagaimana aku tahu namamu? Kamu pikir itu aneh? Aku tahu dari nama yang terukir di belakang perisai!
+tarin_1 Oh, iya ... Benda-benda seperti ini sering terhanyut ke tepi pantai ... Kalau kamu ingin mencarinya, berhati-hatilah terhadap monster! Sejak kamu tiba di sini, aku melihat banyak sekali dari mereka!
+
+// after the raccoon transformation
+tarin_raccoon_2 Hal terakhir yang aku ingat adalah saat menggigit jamur yang terlihat enak ini. Kemudian, aku bermimpi ... kalau aku berubah menjadi rakun! Kedengarannya memang aneh, tapi itu benar-benar menyenangkan!
+tarin_raccoon_3 Aku sangat lelah ... Sebaiknya aku cepat pergi pulang ....
+
+tarin_2 Aku lelah ... aku akan pergi tidur sekarang ... zzzzzz ...
+tarin_3 Hrrrm ... Hmm? ... kalau kamu tidak tahu ... coba panggil si tua Ulrira! Zzzzzzz ....
+
+// tarin with the bananas
+tarin_4 Aku merasa sangat lapar, jadi aku pergi mengambil pisang di pantai ... [NAME], kalau kamu mau, cobalah untuk mengambil beberapa!
+
+// tarin trading sequence
+tarin_stick Oh?! [NAME], Kulihat kamu punya tongkat yang bagus ... boleh aku meminjamnya sebentar?
+tarin_stick_no Hmmm, kamu jahat sekali, [NAME]!
+
+// after the trading sequence sleeping in the bed
+tarin_5 Unnnngh! Awwwww! ... Aku rindu akan rasa madu!
+
+
+// lady with the broom
+npc_broom_0 YUHUU! Aku baik, dan kamu?!
+npc_broom_1 YUHUU! Aku bekerja terlalu keras sampai-sampai sapu ku terlihat usang!
+npc_broom_2 YUHUU! YUHUU! Sebuah sapu yang baru?! Itu untukku, 'kan? Iya, 'kan?!
+npc_broom_3 Oke! Sebagai balasan kamu bisa memiliki pancingan ini, aku menemukannya saat aku menyapu di tepi sungai!
+npc_broom_4 YUHUU! Sapu yang baru! Luar biasa!
+npc_broom_5 Maka coba KAMU yang menyapu pulau ini!
+npc_broom_bowwow Rumah tetangga baru saja mengalami tragedi yang mengerikan! Begitu mengerikan, namun yang bisa kulakukan hanyalah menyapu!
+
+npc04 Err ... eh ... hmm ... bagaimana aku mengatakannya ... mohon panggil ... dari luar ....
+npc04_game Kelihatannya si tua Ulrira itu orang yang pemalu ....
+
+// kid with hints
+//npc05_0 Hey! Kalau kamu ingin menyimpan permainan, cukup tekan semua tombol secara bersamaan! Uhh ... jangan  tanya aku apa maksudnya, aku cuma seorang bocah!
+npc05_1 Kelihatannya setelah menyimpan permainan, kamu akan memulai ulang dari pintu terakhir yang dimasuki ... aku tidak tahu kenapa itu terjadi, karena aku hanya seorang bocah!
+npc05_2 Kudengar kamu bisa menekan [START] lalu [SELECT] untuk melihat peta ... tapi aku tidak tahu apa maksudnya itu ....
+npc05_3 Saat hatimu hampir habis, sebaiknya kamu masuk ke dalam rumah atau goa. Kenapa? Mana kutahu, aku cuma seorang bocah!
+
+npc_ball_left Dari mana asalmu, kawan? ... Dari luar pulau? Aku tidak menyangka ....
+npc_ball_right Telur raksasa di puncak Gunung Tamaranch? Konon katanya Ikan Pawana tertidur di dalamnya. Kenapa? Aku juga tidak tahu ....
+
+// kid near the weather bird or next to the shop
+npc_boy_island Hei, kawan! Kamu bertanya sejak kapan kami tinggal di pulau ini? Apa maksudmu 'sejak kapan'? Uwaah! Memikirkannya saja sudah membuat kepalaku sakit!
+npc_boy_marin Hei, kawan! Bagaimana menurut kamu soal Marin? Uhh ... entahlah, aku cuma seorang bocah!
+npc_boy_shrine Hei hei, bro! Soal Kuil Mimpi yang di sana ... mereka bilang ada sesuatu yang berharga di dalam sana ... Lebih baik aku tidak berbicara lebih lanjut karena aku hanya seorang bocah!
+npc_boy_marin_beach Marin? Dia suka memandangi lautan seorang diri ... Kenapa? Hei, aku cuma seorang bocah, jadi jangan tanya aku!
+// kids while marin is with link
+npc_boy_marin_following Hei ... Ke mana kalian berdua akan pergi? Hmm? Eh, aku tak bermaksud apa-apa ... aku cuma seorang bocah!
+npc_boy_marin_gone Hah?! Marin tidak sedang bersamamu? Apa yang terjadi kepadanya?
+
+// when the player has the broom and the grandma is in the other village
+npc_boy_grandmother Nenek sedang tidak ada di sini. Dia berada di Desa Binatang. Itu yang dikatakan Kakek Ulrira di telepon!
+
+// kids playing ball game after the village gets attacked
+npc_kid_attacked hei kawan! Ini gawat! Benar-benar gawat! Sekumpulan Moblin datang memasuki desa! Kemudian ... Mereka masuk ke dalam rumah ... Iya, rumah yang itu, dan mereka melakukan sesuatu terhadap rumah BowWow! Kejadiannya sangat mengerikan! Jadi, ahh! ... Mungkin akan lebih cepat kalau kamu memeriksanya sendiri!
+
+// chef in the right village
+npc_chef_0 Tujuanku yang utama ialah untuk membuka cabang di Desa Mabe!
+npc_chef_1 Rik'm rak'm! Aku kehabisan bahan makanan! Kalau saja aku punya madu, aku bisa membuatkan porsi besar!
+npc_chef_2 Hi ho! Hei kau! Apa mungkin itu [TRADE5]? Aku baru saja kehabisan! Apa kamu mau menukarnya dengan sebuah nanas?
+npc_chef_3 Sayang sekali, tapi aku paham, karena itu makanan yang cukup langka!
+npc_chef_4 Hi ho! Aku tahu, dia sedang tertidur di Gurun Yarna! Begitu dia tertidur, dia tidak akan bangun untuk waktu yang lamaaaaaaaaa. Tapi! Bawalah Marin dan bangunkan dia dengan nyanyiannya! Itu mungkin bisa membangunkannya! Heh heh heh!
+npc_chef_marin HI HO! Nak Marin! Selamat datang! ... Oh, sial! Kamu ada di sini juga ... Maaf ....
+
+// yoshi doll
+npc07_0 Karena mereka terlihat mirip, bahkan aku juga kadang bingung ....
+npc07_1 Omong-omong, anak bayiku ingin sebuah Boneka Yoshi. Aku melihat satu di Area Permainan Trendy, tapi aku tidak bisa mendapatkannya.
+npc07_2 Oh! Apa kamu mau memberikan boneka itu kepada bayiku?!
+npc07_3 Cih ... Sayang sekali ....
+npc07_4 Terima kasih! Kamu benar-benar orang yang baik! Ah! Sebagai balasan, aku akan memberikanmu ini!
+npc07_5 Suamiku hilang di dalam hutan! Tolong temukan dia!
+
+npc_house_chest [NAME] memeriksa petinya.\nWaw! Ini peti yang bagus!
+npc_house_chest_marin [NAME], Apa kamu selalu melihat ke dalam isi rumah orang lain?
+
+npc_letter_boy_0 Aku biasanya hanya berpaku pada surat-suratku ... Namaku Write! Satu-satunya hal yang tidak ku suka dari kegemaranku adalah aku tidak pernah mendapat surat balasan ....
+npc_letter_boy_1 Apa ini?! Surat untukku?! Bahagianya aku! ... Lihat! Bahkan ada foto di dalamnya!
+npc_letter_boy_2 Mmm ... dia begitu cantik. Aku harus membalas budi atas kebaikanmu ... hmm ... kelihatannya yang aku punya hanya tinggal sapu ini ... apa kamu mau?
+npc_letter_boy_3 Kumohon! Aku bersikeras untuk kamu menerima [TRADE9] ini!
+npc_letter_boy_4 Menulis surat benar-benar hobi yang mengasyikkan!
+npc_letter_boy_5 Halo! Sekarang aku sedang menulis surat balasan untuk Christine!
+
+
+npc_letter_girl_0 Apa kamu tidak tahu etika saat bertemu dengan seorang wanita? Kamu seharusnya membawakan bunga atau hadiah lainnya, maka mungkin aku mau berbicara denganmu. ... Oh iya, kalau aku inginnya bunga kembang sepatu ....
+npc_letter_girl_1 Oh, kamu membawakanku bunga kembang sepatu! romantis sekali! Karena kamu sudah berperilaku seperti pria sejati, aku punya permintaan. Apa kamu mau mendengarkan? 
+npc_letter_girl_2 Aku ingin kamu mengantarkan surat ini kepada Pak Write yang tinggal di perbatasan Hutan Misterius. Aku mohon bantuanmu!
+npc_letter_girl_3 ... Begitukah? Aku kira kamu ini pria sejati ....
+npc_letter_girl_4 Terkadang aku tidak bisa menahan diri untuk memakan kertas yang lezat ini, bahkan kertas dari Pak Write sekalipun ... Ini begitu memalukan!
+
+// fisher under the bridge
+npc_bridge_0 Ini semua sia-sia! Seekor ikan sudah memutus kail pancinganku. Aku sudah melempar umpan ke dalam air, tapi masih belum ada yang menggigitnya. Aku punya firasat kalau ini akan terjadi ....
+npc_bridge_1 Oh! Apa itu yang ada di tanganmu? itu sebuah pancingan, bukan?! Tolong biarkan aku memilikinya. Kalau kamu setuju aku akan memberikanmu hasil tangkapanku berikutnya ....
+npc_bridge_2 Kamu seharusnya lebih baik hati! Aku kira kita ini teman!
+npc_bridge_3 Perhatikan dan lihat cara profesional bekerja.
+npc_bridge_4 Ini tangkapan yang BESAR!
+npc_bridge_5 Aku tidak sabar melihat hasil tangkapanku berikutnya!
+
+
+tracy_give Berikan
+tracy_dont Jangan
+
+npc_tracy_0 Hai, namaku Crazy Tracy! aku punya sedikit rahasia yang bisa membuatmu bersemangat kalau kamu mau membayarnya!
+npc_tracy_1 Apa kamu mau membayar 28 Rupee untuk rahasiaku?
+npc_tracy_2 Bagaimana? 42 Rupee untuk rahasia kecilku ....
+npc_tracy_3 ... Kamu imut sekali!\nAku berikan diskon sebesar 7 Rupee!
+npc_tracy_4 Baiklah, kemari dan aku akan mengoleskannya kepadamu! ... Nah, aku sudah memberikanmu obat rahasiaku! Ini akan bekerja ketika kamu kehilangan semua hatimu! Datang lagi, ya!
+npc_tracy_5 Kalau begitu pergi! Kembali lagi saat kamu sudah punya uang!
+npc_tracy_6 ... Tapi aku tidak akan menjualnya kepadamu!
+npc_tracy_7 Aku hanya akan menawarkan rahasia yang bisa membuatmu lebih kuat! Pengecut sekali dirimu!!
+npc_tracy_8 Ini beberapa bonus untukmu! Lihat! Hatimu sekarang jadi penuh!
+
+// npc lost boy
+npc_lost_boy_0 Yap, Papahl tersesat seperti yang dibilang! Sekarang aku begitu lapar sampai-sampai tidak bisa bergerak! Apa kamu mau memberikanku beberapa makanan?
+npc_lost_boy_1 Sikapmu dingin sekali ....
+npc_lost_boy_2 [TRADE6] ini terlihat lezat sekali! Aku akan memakannya sekarang! Selamat makan!
+npc_lost_boy_3 AH! Aku tidak bermaksud menjadikan ini sebagai hadiah ... ambillah [TRADE7] ini! Ini bunga kembang sepatu!
+npc_lost_boy_4 Lezat sekali! Nyam nyam! Energiku kini penuh terisi!
+
+// mermaid
+npc_mermaid_0 Saat aku sedang berenang di teluk, ombak laut menghanyutkan kalungku yang sangat berharga! Kalau kamu menemukannya, aku akan memberikanmu sisik dari ekorku sebagai hadiah!
+npc_mermaid_1 Aku sudah mencarinya di sekitar sini!
+npc_mermaid_2 Ahh! Itu dia! Itu kalungku! Kembalikan padaku! Aku akan memberikanmu sisik yang sudah kujanjikan!
+npc_mermaid_3 Janji kamu hanya mengambil satu, ya!
+npc_mermaid_4 Kamu begitu tidak punya hati!
+npc_mermaid_5 Seorang pelukis pernah memintaku menjadi model untuknya, dan dia juga menginginkan sisikku ... Apakah legenda dari Lensa Pembesar itu benar-benar ada?
+
+npc_mermaid_0_redux Saat aku sedang berenang di teluk, ombak laut menghanyutkan Beha ku! Kalau kamu menemukannya, aku akan memberikanmu sisik dari ekorku sebagai hadiah!
+npc_mermaid_1_redux Kyaa! Dasar cabul!!!
+npc_mermaid_2_redux Ahh! Itu dia! Itu Beha ku! Kembalikan! Aku akan memberikanmu sisik yang sudah kujanjikan!
+
+// mermaid statue
+mermaid_statue_0 SANG DUYUNG YANG BERKABUNG oleh SCHULE? ... Ada bagian sisik yang hilang.
+mermaid_statue_1 Kamu meletakkan sisik yang hilang ke patung duyung!
+
+// rabbit
+rabbit_0_0 Hei! Apa kamu tahu kalau Desa Binatang dan Desa Mabe itu seperti kota yang bersaudara? Iya, meski mereka tidak cukup besar untuk disebut sebagai kota ... intinya, aku dengar dari sumber yang tepercaya kalau mereka memiliki Kuil Mimpi di Mabe, dan ada sesuatu yang berharga di dalamnya ... apa itu benar?
+rabbit_0_1 Semalam aku bermimpi berubah menjadi wortel ... mimpi yang aneh sekali ....
+
+rabbit_1_0 Aku tidak bisa pergi ke Desa Mabe karena banyak monster di luar sana. Aku harap Marin baik-baik saja.
+rabbit_1_1 Hah? Kenapa para binatang bisa berbicara? Aku ini cuma seekor kelinci, jadi mana aku tahu!
+
+rabbit_2_0 Gurun Yarna? Ada cara untuk sampai ke sana lewat selatan, tapi mungkin kamu tidak akan bisa lewat bisa kalau si beruang laut pemalas itu menghalangi jalan!
+rabbit_2_1 Apa kamu pernah dengar soal Ayam Terbang? Mereka bilang dahulu kala itu pernah hidup di Desa Mabe ... aku penasaran apa itu benar ....
+
+rabbit_3_0 Ahhh ... di hari yang indah ini, kita membutuhkan nyanyian Marin!
+rabbit_3_1 Aaaah, Nak Marin ... aku ingin dia kembali lagi ... lagu-lagu darinya memang yang terbaik ....
+
+rabbit_marin Ahhh! Itu dia\nNak Mariiiin!!
+
+
+// dialog choices
+choice_Yes Ya
+choice_YES YA
+choice_Yes! Ya!
+choice_Okay Oke
+choice_Yeah Iya
+choice_Fine Baik
+
+choice_No Tidak
+choice_NO TIDAK
+choice_No... Tidak
+choice_No! Tidak!
+choice_N-No T-tidak
+choice_No_Way Tidak
+choice_No_way Tidak
+choice_Not_Now Enggak dulu
+choice_Nope Tidak
+choice_Give Berikan
+choice_Keep Ambil
+choice_Dont Jangan
+choice_Can Bisa
+choice_Cant Tidak bisa
+
+choice_Fish Memancing
+choice_Cast Lempar
+choice_Look Lihat
+
+// Marin beach sequence - asking to join Link to see the Walrus.
+choice_Yeah_Marin Iya
+choice_No_Marin... Tidak
+
+// Papahl
+npc08_0 Ya! mereka anak-anak kesayanganku! Namaku Papahl, senang bertemu denganmu! Nanti aku akan menghilang ke atas bukit, jadi nanti cari aku, ya?
+npc08_1 Aku harus berterima kasih atas bantuanmu!
+
+// Madam MeowMeow
+npc09_0 Ho ho ho! BowWow sangat bangga dengan jaket bulu barunya!
+npc09_1 KYAAAAAAA! Mengerikan sekali! BowWow diculik oleh ... para Mo-mo-MOBLINS! OHHH! AHHHH! Kumohon! Seseorang tolong BowWow yang malang!!
+npc09_2 Oh, terima kasih! Aku senang sekali kamu membawa kembali BowWow kesayanganku! Apa kamu mau mengajaknya jalan-jalan sebentar? Itu akan sangat membantu! ... Kamu mau? Terima kasih!
+npc09_3 Ho ho ho! Aku sangat menghargai atas apa yang kamu perbuat pada BowWow kesayanganku! kamu benar-benar anak yang baik! Bagaimana caraku membalasnya? Ah, aku tahu ....\fEMMMMMUACH!\nKamu dapat hadiah dari Madam MeowMeow ....\nB-b-beruntung sekali!
+npc09_4 Ho ho ho! Aku sangat menghargai kamu sudah mengajak BowWow kesayanganku jalan-jalan! Bagaimana caraku membalasnya? Ah, aku tahu ....\fEMMMMMUACH!\nKamu dapat hadiah dari Madam MeowMeow ....\nB-b-beruntung sekali!
+
+// Bow Wow
+bowWow2 YIP YIP!\nYIP YIP!
+bowWow3_0 Tata Rias! Perhiasan! Gaun! Aku ingin semuanya! Haah~ ... aksesoris baru mungkin juga akan bagus ....
+bowWow3_1 Tata Rias! Perhiasan! Gaun! Aku ingin semuanya! Haah~ ... aksesoris baru mungkin juga akan bagus ....\nOh! Pita itu! Aku membutuhkannya! Apa kamu mau menukarnya dengan makanan anjing ini?
+bowWow3_2 Eh?! Aku tidak percaya!! Kamu jahat sekali!!
+bowWow3_3 Beruntungnya aku! Terima kasih!\nIni dia [TRADE2] mu!
+bowWow_dig Guk-guk! Gali!
+bowWow_walk Ajak Bow Wow berjalan jalan?
+
+// Trendy Game
+npc_trendy_open PERMAINAN TRENDY!\n10 Rupee untuk sekali bermain.
+npc_trendy_no_cash Maaf, nak! Rupee kamu tidak cukup! Kembali lagi kalau kamu sudah punya uang, ya!
+npc_trendy_start Tombol [CONFIRM] dan [CANCEL] untuk menggerakkan capit ... Sisanya kamu hanya perlu bergantung pada kemampuan! Pergi ke tombol pengendali untuk mulai bermain! Semoga berhasil!
+npc_trendy_again Coba lagi?
+npc_trendy_closed Kami tutup untuk hari ini! Datang lagi lain kali, ya!
+npc_trendy_good_luck Semoga berhasil!
+npc_trendy_play Main
+npc_trendy_no_play Tidak
+
+// 0176: <
+npc_fisherman_0 Hei kawan, apa kamu mau coba memancing?
+npc_fisherman_choice Harganya hanya 10 Rupee ....
+npc_fisherman_1 Kamu harus punya lebih banyak semangat hidup!
+npc_fisherman_2 Rupee kamu kurang? Jangan khawatir, kembali lagi kalau kamu sudah punya lebih banyak uang.
+npc_fisherman_3 Oke, aku akan mengajarkanmu caranya. Gunakan [LEFT] dan [RIGHT] pada [DPAD] untuk melempar kail. Begitu ikan menggigitnya, Tekan tombol [CONFIRM] dengan cepat untuk menariknya ke daratan!
+npc_fisherman_4 Kenapa tidak coba sekali lagi, kawan?
+npc_fisherman_5 Wow! Dia berhasil lolos!\nApa kamu ingin coba lagi?
+npc_fisherman_6 Wow! Ikan yang bagus! Aku akan memberimu 20 Rupee sebagai hadiah!
+npc_fisherman_6_1 Coba lagi?
+npc_fisherman_7 Itu cukup kecil! Aku hanya akan memberimu 5 Rupee sebagai hadiah.
+npc_fisherman_7_1 Kamu harus mencobanya lagi!
+
+npc_fisherman_8 Oh! Itu besar sekali! Dan ikan itu membawa Pecahan Hati! Aku juga akan memberimu 20 Rupee!
+npc_fisherman_8_full Oh! Itu besar sekali! Dan ikan itu membawa Pecahan Hati! Kamu sudah mengisi penuh Wadah Hati lainnya! Aku juga memberi hadiah 20 Rupee! Apa kamu ingin coba lagi?
+
+npc_fisherman_8_1 Coba lagi?
+npc_fisherman_9 Semua ikan di kolam ini sudah habis.
+npc_fisherman_9_1 Kenapa kamu tidak coba memancing di laut?
+npc_fisherman_10 Apa aku barusan mengatakan itu? Lupakan saja, oke? Sekarang pergilah ....
+
+
+// npc raft
+npc_raft_0 Ingin naik rakit dengan harga 100 Rupee?
+npc_raft_1 Oke, kamu sudah bisa menggunakan rakit di luar! Selamat menikmati!
+// same string as for the fisherman
+npc_raft_2 Rupee kamu kurang? Jangan khawatir. Kembali lagi saat kamu sudah punya lebih banyak uang.
+
+// frog boy
+npc_frog_boy_0 Salam! kamu tidak akan tahu dari penampilanku, tapi aku dulu pernah tinggal di kastil! Para anak buahku tiba-tiba mengamuk dan memaksaku kabur ke vila ku .... Jadi, kamu ingin kunci untuk membuka gerbang Padang Ukuku? Mungkin aku bisa membantumu ... mari kita buat perjanjian, mau tidak? Aku ingin kamu mendapatkan Daun Emas yang kutinggalkan di dalam kastil ketika aku melarikan diri ....
+
+npc_frog_body_impressed Aku terkesan. Jumlahnya ada 5 Daun Emas. Ingatlah untuk membeli Sekop.
+npc_frog_body_coward Aku tidak percaya! Aku kira kamu menganggapku penakut, tapi, ... Kumohon, tinggalkan aku sendiri ... keluar dari sini!
+
+npc_frog_body_please Ah! Bonjour! [NAME], Demi nama cinta dan keadilan, dan juga untukku, kamu harus menemukan semua Daun Emas itu!
+
+npc_frog_body_bien Ahh! Tres Bien! Aku lihat kamu sudah mendapatkan semua daunnya! Sekarang, pindahkan kotak ini dan kamu akan menemukan hadiahmu!
+npc_frog_body_debt Aku sangat berterima kasih karena sudah mendapatkan kembali daunku!
+
+npc_frog_body_bowwow Ahem! Aku ingin kamu untuk tidak membawa BowWow itu ke dalam sini! Tinggalkan dia di luar lalu kita bisa bicara! Selamat tinggal!
+
+npc_zora Kalau kamu mau merahasiakannya, aku akan memberitahu hal bagus. Pergilah ke Pantai Toronbo, gunakan kaca pembesar dan kamu akan menemukan orang-orang seperti aku.
+
+alligator_0 Selamat datang di Rumah Pisang Sale! Aku Sale, dan ini adalah rumahku! Sebenarnya, kegemaranku adalah mengoleksi pisang dan makanan kaleng yang tidak biasa. Saudaraku adalah seorang pelukis, jadi kurasa hobi aneh sudah menjadi warisan!
+alligator_1 Apa itu yang ada di tanganmu?! Itu kan makanan kaleng! Kumohon, berikan [TRADE2] itu padaku!
+alligator_2 Dia begitu histeris! Jadi apa yang akan kamu lakukan?
+alligator_3 Kurasa aku tidak bisa memohonkannya? Yah, kalau kamu berubah pikiran, beri tahu aku, ya.
+alligator_4 Terima kasih banyak! Akan kuterima dengan senang hati!
+alligator_5 NYAM NYAM!! ... Lezat sekali! Aku tahu ini bukan barang yang setimpal, tapi ambil beberapa pisang ini! NYAM ....
+alligator_6 Terima kasih! Ini itu tadi lezat sekali!
+alligator_7 Hei kawan! apa kamu pernah mengarungi arus deras dengan rakit? Kamu bisa melakukannya di Dataran Tinggi Tal Tal! Kamu haus mencobanya!
+
+witch_0 Abracadabra, kamu bisa membuat bubuk sihir dengan racikan jamur!
+witch_1 Ahhh ... Ini mengandung Jamur Tertidur! Kita akan membuat sesuatu dengan benda ini!
+witch_2 Sudah siap, ini dia! Gunakan dengan hati-hati, karena jumlahnya tidak banyak! Kenapa tidak mencobanya sedikit di dalam gubuk?
+witch_3 Kerja bagus! Gunakan pada musuh dan lihat yang akan terjadi. Kalau kamu kehabisan, pergilah ke hutan, ambil beberapa jamur, dan aku akan membuatkannya lagi untukmu.
+
+cukeman_0 Hei!
+cukeman_1 Aku lebih suka memanggil dengan nama panggilan ....
+cukeman_2 Ini bisa menampilkan jutaan poligon!
+cukeman_3 Aku membutuhkannya segera!
+
+fairy_0 Akan ku sembuhkan lukamu dan menghilangkan rasa lelah dari tubuhmu ... Sekarang tutup matamu ....
+
+
+// general dialog not used in the actual game
+itemShop_dialog [itemShopItem]\n[itemShopPrice] Rupee!
+itemShop_bow Satu set Panah dan Busur hanya 980 Rupee!
+itemShop_arrow 10 Panah 10 Rupee
+itemShop_shovel Sekop Deluxe 200 Rupee! Kelihatan mewah!
+itemShop_hearts Tiga Hati 10 Rupee!  
+itemShop_shield Perisai 20 Rupee!
+itemShop_bomb Sepuluh Bom 10 Rupee  
+
+itemShop_buy Beli
+itemShop_dont Jangan
+itemShop_no_way Tidak
+itemShop_no_way! Tidak!
+
+// shopkeeper
+shopkeeper_0 Hei! Selamat datang! Apa ada barang yang kamu suka?! Bawa saja kemari!
+shopkeeper_1 Terima kasih banyak! Datang lagi, ya!
+shopkeeper_2 Maaf nak! Uangmu tidak cukup! Kembali lagi saat kamu sudah punya uang yang cukup!
+shopkeeper_3 Aye Caramba! Kamu harus banyak belajar, nak. Untuk apa membeli barang yang tidak bisa kamu gunakan!
+shopkeeper_4 Hei! Kamu! Berhenti! Kamu harus membayarnya! Taruh kembali!
+shopkeeper_5 Kamu bisa mendapatkannya secara gratis. Apa kamu senang?
+shopkeeper_6 Hei! Kamu mencuri barang daganganku, tapi aku akan memberimu kesempatan untuk memperbaiki keadaan. Kalau kamu memberiku 999 Rupee, 30 Bom, 30 Panah, dan 20 Bubuk Sihir, aku akan menganggapnya impas. Bagaimana?
+
+shopkeeper_debt_0 Apa kamu ingin membayar hutang-hutangmu?
+
+shopkeeper_debt_1 Senang sudah berbisnis. Akan aku pastikan untuk membersihkan nama baik mu!
+shopkeeper_debt_2 Sayang sekali. Maka selamanya kamu akan dikenal sebagai seorang Pencuri!
+shopkeeper_debt_3 Maaf nak! Jumlah barangnya masih belum cukup! Kembali lagi jika kamu sudah punya semua yang kuminta!
+
+itemShop_revenge Aku tidak bercanda ketika aku bilang bayar! Sekarang, kamu akan membayar dengan harga yang tidak masuk akal!
+
+weatherBird Di sini tertidur si Ayam Terbang
+
+rooster_0 Wow! si Ayam sudah pulih! Dia terlihat sangat ramah!
+rooster_1 KUKURUYUUUK!
+
+// ghost that follows link
+ghost_0 {...bawa...}{...aku...}{...rumah...}{...di teluk...}
+// trying to enter a dungon
+ghost_1 {...B-b-b-bukan!...}{...B-bukan di sana!}
+ghost_2 {...Ini!...}{...masuk...}{...rumahku...}
+ghost_3 {...Nostalgia...}{...tidak berubah...}{...ihihihi...}
+ghost_4 {...Cukup...}{...bawa...}{...kuburanku...}{...pemakaman...}
+ghost_5 {...kuburanku...}{...bawa...}{...pemakaman...}
+ghost_6 {...Terima kasih...}{...botol...}{...rumahku...}{..lihat isinya...}{...selamat tinggal...}
+
+ghost_grave_powder Uhuk uhuk ... jangan menaburkannya padaku ... atau aku akan menghantuimu! Uhuk uhuk ....
+
+
+// == owl ==
+owl_1_0 Kuk-kuk! Kuk-kuk!\nJadi kamu pemilik pedang itu ...\fSekarang aku mengerti kenapa para monster menjadi begitu agresif ...\fSeseorang yang pemberani telah membangunkan Ikan Pawana ...\fDikatakan kalau kamu tidak bisa meninggalkan pulau ini sebelum membangunkan Ikan Pawana ...\fSekarang pergilah menuju Hutan Misterius di utara\nAku akan menunggumu di sana! Hoot!
+owl_1_1 Kuk-kuk! Ho, Anak muda nan pemberani, yang sedang berkelana untuk membangunkan si pemimpi! Selamat datang di Hutan Misterius! Banyak misteri yang akan kamu temukan di Pulau Koholint ini! Aku khawatir kamu akan sulit meninggalkan pulai ini bila sang Ikan Pawana masih tertidur. ... Omong-omong, apa kamu sudah mengunjungi Goa Moldorm di selatan desa? Masukilah dengan kunci yang kamu temukan di hutan ini ... Sang Ikan Pawana akan terus mengawasimu ... Kuk-kuk!
+owl_1_2 Kuk-kuk! Ambil kuncinya dan pergi menuju Goa Moldorm. Dapatkan Instrumen yang tersembunyi di dalam sana! Segera berangkat! Sang Ikan Pawana menunggumu! Kuk-kuk!
+
+owl_2_0 Kuk-kuk! Itu adalah 'Instrumen Siren!' Harus kuakui, awalnya aku tak menyangka kamu bisa melakukannya .... Instrumen itu, beserta tujuh instrumen lainnya, punya kekuatan untuk membangunkan Sang Ikan Pawana! Kamu harus mengumpulkan semuanya! Aku diperintahkan untuk memberi arah jalan ... tujuanmu berikutnya adalah Rawa Goponga di utara!! Kuk-kuk!
+owl_2_1 Kuk-kuk! Kamu membawa hewan yang mengerikan bersamamu! Jangan lupa, instrumen berikutnya berada di Rawa Goponga!
+
+// post dungeon 3
+owl_3_0 Kuk-kuk! Berapa banyak Instrumen yang sudah kamu dapat sejauh ini? Ketika kamu memainkannya di depan Telur, Sang Ikan Pawana akan terbangun dan meninggalkan pulau ini. Sekarang, kamu harus bergegas menuju Gurun Yarna! para monster penghuni padang pasir itu akan menunjukkan jalannya! Kuk-kuk!
+owl_3_1 Kuk-kuk! Bentuk kuncinya terlihat seperti ikan, yang sedang berenang di air terjun! Sekarang pergilah menuju air terjun di pegunungan! Lompat dari puncaknya dan kamu akan sampai di tujuanmu!
+
+// at the grave of the ghost
+owl_5_0 Hoot! Sudah lama sejak kita terakhir kali bertemu. Kamu harus menyelam ke dalam Teluk Martha untuk masuk ke dalam Mulut Sang Ikan Lele .... Semakin dekat dengan tujuanmu membangunkan Ikan Pawana, semakin lelap pula dia tertidur. Lanjutkan perjalananmu! Kuk-kuk!
+
+// owl sitting infront of the egg on the stairs
+owl_stairs Kuk-kuk! Sang Ikan Pawana tertidur panjang dan bermimpi di dalam Telur ... Ketika kamu memainkan kedelapan Instrumen Siren di depan Telur, dia akan terbangun. Ini satu-satunya cara bagimu untuk bisa pergi dari pulau ini! Kuk-kuk!
+
+// pre dungeon 6
+owl_6_0 Kuk-kuk! Ada dua Kuil di pulai ini, satu di utara, dan datu lagi di selatan. Pertama, pergilah ke selatan, ke tempat reruntuhan kuno Ikan Pawana ... kamu akan mempelajari banyak hal di sana ....
+owl_6_1 Kuk-kuk! Kulihat kamu sudah membaca pahatannya ... Memang dikatakan kalau pulau ini hanyalah mimpi dari Ikan Pawana, tidak ada yang yakin soal itu ... Seperti tidak ada yang tahu isi dari peti sebelum kamu membukanya. Satunya-satunya yang tahu ialah sang Ikan Pawana itu sendiri ... Percayalah dengan perasaanmu ... Suatu hari aku yakin kamu akan mengetahuinya ....
+
+// after dungeon 6
+owl_7_0 Kuk-kuk! Banyak monster di pulau ini yang takut akan Ikan Pawana yang segera terbangun! Kekuatan para monster benar-benar nyata! Mereka mungkin saja menguasai pulau ini dan menghabisi semua lawan-lawannya! Hari itu mungkin saja akan tiba! Terbanglah seperti burung! Kuk-kuk!!
+// after dungeon 6 on the mountain entry
+owl_7_1 Kuk-kuk! Jalanmu tidaklah mudah, tapi kamu hampir sampai. Pergilah ke timur. Sang Ikan Pawana sebentar lagi terbangun.
+
+// after saving marin
+owl_8_0 Kuk-kuk! Gadis itu menyanyikan lagu miliknya di depan Telur! 'Puisi Sang Ikan Pawana' adalah lagu untuk membangkitkan Sang Ikan Pawana! Apa dia berniat membangunkannya?! Instrumen Siren berikutnya berada di barat. Mainkan melodi milikmu sehingga para makhluk halus mendengarnya! Tunjukkan keberanianmu! Sang Ikan Pawana sedang menunggumu! Kuk-kuk!
+
+// after opening the egg
+owl_9_0 Waktunya telah tiba .... Sang Ikan Pawana sudah menunggu ... masuki telurnya ... kuk-kuk!
+
+owl_final Kuk-kuk! Anak muda, maksudku ... [NAME], sang pahlawan! Kamu sudah mengalahkan para Nightmare! Kamu sudah menunjukkan kebijaksanaan, keberanian dan kekuatanmu! ... Sebagai bagian dari jiwa Ikan Pawana, aku adalah penjaga dari dunia mimpinya. ... Namun suatu hari, para Nightmare memasuki mimpi dan mulai membuat kekacauan. Kemudian kamu, [NAME], datang untuk menyelamatkan pulau ini ... aku selalu percaya akan keberanianmu untuk mengusir para Nightmare. Terima kasih, [NAME] ... tugasku sudah selesai  ... Sang Ikan Pawana akan segera terbangun. Selamat tinggal ... kuk-kuk!
+
+// raccoon in the forest
+raccoon_0 Sebagai seekor rakun, hidungku sangat sensitif terhadap debu dan serbuk ....
+raccoon_1 Heh heh heh ho! Berkat diriku, kamu akan tersesat!  Heh heh!
+
+dog GRRRR ....
+
+desert_bone_0 Ahhh ... Serbuk yang begitu menyegarkan ... Untuk itu, aku akan beri tahu satu petunjuk! Gunakan Bom di tempat di mana pasir akan menelanmu. Ada sesuatu di sisi lain dinding ... Dadah!
+
+// chicken dude in the mountains
+chicken_dude_0 Ayam masa kini tidak punya semangat seperti ayam yang dulu! Di masa mudaku, mereka sampai bisa terbang! Tapi sekarang, kamu lihat sendiri!
+chicken_dude_1 Waw! Luar biasa! Ayam itu benar-benar terbang! Seperti yang kukatakan, bukan? Apa kamu sudah mencoba memegangnya di atas kepalamu?
+chicken_dude_2 Wooo! Akhirnya! Ayam terbang ini memang yang ter-hebat!
+chicken_dude_3 Apa kamu ingin membawa ayam terbang keluar sebentar?
+chicken_dude_4 Kumohon kembalikan ayam itu!
+chicken_dude_5 Kalau kamu ingin meminjam ayam itu, mampir saja kapan pun!
+chicken_dude_6 Oke, aku bisa menunggu sedikit lebih lama ....
+
+// hidden npc that trades the boomerang
+npc_hidden_0 Aku menemukan barang bagus yang terhanyut di pantai ... aku akan menukarkannya untukmu dengan benda yang ada di Tombol [CANCEL] ....
+npc_hidden_1 Oke, mari kita lakukan! Kalau kamu sudah tidak membutuhkan Bumerang ini, kembali lah!
+npc_hidden_2 Oh, ya, uh ... oke, terserah lah.
+npc_hidden_3 Kembalikan Bumerang itu, kumohon! Aku akan kembalikan barang yang kamu tukar sebelumnya!
+npc_hidden_4 Barangnya sudah kembali ke tanganmu. Kamu mengembalikan Bumerang miliknya.
+npc_hidden_5 Ah ... aku tidak menginginkan barang itu ... bagaimana kalau sesuatu yang lain?
+
+// bat in cave
+npcBat_Intro Hei, nak! kamu membangunkanku dari tidur lelapku!! ... Terima kasih!\nTapi sekarang, aku akan membalasmu!\nApa kamu siap?!
+npcBat_End Heh Heh! Kamu patut mendapatkannya! Sekarang lihat betapa banyak barang yang harus kamu bawa!\nJaga dirimu, ya! Sampai jumpa lagi!
+
+npcBat_Powder Aku akan membuatmu bisa membawa lebih banyak Serbuk Sihir! He He! Apa kamu siap?! 
+npcBat_Bombs Oke, aku akan membuatmu bisa membawa lebih banyak Bom! He He He! Apa kamu siap?!
+npcBat_Arrows Baiklah, aku akan membuatmu bisa membawa lebih banyak anak panah! Heh Heh! Apa kamu siap?!
+
+bat_yes
+
+book Baca buku ini?
+book_read Apa kamu ingin membaca buku ini?
+book_realy_read Apa kamu benar-benar ingin membaca buku ini?
+
+book_yes IYA
+book_no TIDAK
+book_look Lihat
+book_dont Jangan
+
+bookcase Ini bukanlah peti harta ... apa? Kamu sudah  tahu? Oke.
+
+book1_0 'Memilih Alat Yang Tepat Untukmu'
+book1_1 'Kamu bisa memilih alat kesukaanmu untuk ditaruh ke Tombol yang mana saja dari Layar Menu. Dengan menggunakan variasi alat, kamu bahkan bisa melawan musuh tanpa menggunakan pedang! Temukan berbagai cara yang paling efektif untukmu!'
+
+book2_0 'Panduan Peta dan Memo'
+book2_1 'Kamu bisa melihat peta pulau ini dengan menekan Tombol [START] kemudian [SELECT]. Bagian gelap dari peta adalah daerah yang belum pernah kamu kunjungi. Gerakkan kursor dan tekan Tombol [CONFIRM] untuk mendapat informasi lebih lanjut tentang area yang kamu pilih, atau membaca ulang pesan yang kamu dapat di daerah itu ....'
+
+book3_0 'Rahasia Dari Teknik Pedang Berputar'
+book3_1 'Teknik Pedang Berputar adalah teknik yang diturunkan dari generasi ke generasi oleh keluarga pahlawan. Tahan Tombol Pedang untuk mengumpulkan kekuatan. Jika sudah cukup, kamu bisa melepas tombolnya! Apa kamu bisa menguasainya?'
+
+book4_0 'Cara Menggunakan Perisai Seperti Ahlinya!'
+book4_1 'Kalau kamu menahan Tombol Perisai, kamu bisa melindungi dirimu dari serangan musuh, dan bahkan bisa membalikkan beberapa musuh. Selain perisai standar ada juga variasi perisai cermin yang bisa memantulkan sinar cahaya!'
+
+book5_0 'Bersenang-senang Dengan Bom'
+book5_1 'Setelah kamu menaruh Bom, kamu bisa mengangkatnya dengan menekan Tombol yang sama. Kamu bisa melemparnya dengan menekan Tombol sekali lagi. Apa kamu sudah tahu itu?'
+
+book6_0 'Kegunaan Dari Lubang Teleportasi'
+book6_1 'Ada beberapa Lubang Teleportasi di Pulau Koholint. Kamu bisa pergi ke tempat yang berbeda dengan menggunakan lubang ini. Jika kamu masuk ke dalam lubang dari tempat semula, kamu akan keluar dari lubang berikutnya sesuai urutan. Kamu hanya bisa menggunakan lubang yang sudah pernah kamu lihat sebelumnya ....'
+
+book7_0 'Atlas Pulau Koholint'
+book7_1 Kamu bisa menggerakkan kursor dan melihat nama tempat yang tertera ... Apa kamu ingin melihat peta ini?
+
+book8_0 'Rahasia Kelam Dan Misteri Dari Koholint'
+book8_1 A-apa ini! ... Kamu tidak bisa membaca tulisan yang kecil ini tanpa bantuan kaca pembesar ....
+book8_2 Berputar dan berputar, jalan menuju Telur ...\n{[LEFT] [LEFT] [UP] [RIGHT] [RIGHT] [UP] [LEFT] [UP]}{??}... Hmmmmmm, buku ini penuh dengan rahasia ....
+book8_3 Berputar dan berputar, jalan menuju Telur ...\n{[RIGHT] [UP] [UP] [RIGHT] [UP] [UP] [RIGHT] [UP]}{??}... Hmmmmmm, buku ini penuh dengan rahasia ....
+book8_4 Berputar dan berputar, jalan menuju Telur ...\n{[LEFT] [UP] [RIGHT] [UP] [LEFT] [UP] [RIGHT] [UP]}{??}... Hmmmmmm, buku ini penuh dengan rahasia ....
+book8_5 Berputar dan berputar, jalan menuju Telur ...\n{[RIGHT] [RIGHT] [RIGHT] [RIGHT] [UP] [UP] [UP] [UP]}{??}... Hmmmmmm, buku ini penuh dengan rahasia ....
+
+book9_1 Dunia warna baru di bawah 5 batu nisan.\f{3[UP]  4[RIGHT]  5[UP]}{2[LEFT]  1[DOWN]   }\fCobalah dengan seluruh kemampuanmu. Buka jalan yang baru! Barang siapa yang pantas menerima kekuatan dari warna. Kira-kira apakah dunia warna itu?
+
+// phone in the house of ulrira
+ulrira_telephone 'KRRING! KRRING! KRRING! KLIK! Iya! Ini dengan Tikus Timba! Terima kasih sudah menelepon!  ... Jadi .... KLIK!' ??? ... Kamu pasti salah sambung ....
+
+// ulrira dialog
+ulrira_0 'KRRING! KRRING! Halo! Ini dengan Ulrira! Tanyakan saja soal pulau ini padaku! Kalau kamu tersesat, telepon aku, ya! Dadah! KLIK!'
+ulrira_1 'KRRING! KRRING! Dengan Ulrira yang bicara! Kamu tahu tidak, di desa ada perpustakaan yang mungkin bisa memberimu informasi yang berguna! Aku akan bicara lagi denganmu nanti! KLIK!'
+
+ulrira_2_0 'KRRING! KRRING! Halo, ini dengan Ulrira! ... Yah, kebanyakan Moblin tinggal di dalam Hutan Misterius, tapi beberapa juga tinggal di dalam goa di Dataran Tinggi Tal Tal ... Aku harap informasi itu berguna! KLIK!'
+ulrira_2_1 'KRRING! KRRING! Ya, dengan Ulrira di sini. Bunga-bunga di Rawa Goponga ... itu bunga kesukaan BowWow. Kenapa kamu tidak coba membawanya ke sana? KLIK!'
+
+ulrira_3_0 'KRRING! KRRING! Ulrira siap melayani! Oh? Sebaiknya kamu membawa pulang kembali BowWow. Madam MeowMeow pasti akan sangat senang! Dadah! KLIK!'
+ulrira_3_1 'KRRING! KRRING! Hai, ini dengan Ulrira! ... Apa kamu sudah bertemu dengan semua orang di pulau ini? Ada pria bernama Richard yang tinggal di Ladang Berlubang, sebelah tenggara desa. Kenapa kamu tidak coba mengunjunginya? Itu saja yang bisa ku beri tahu saat ini! Dadah! KLIK!'
+ulrira_3_2 'KRRING! KRRING! Dengan Pak Tua Ulrira di sini! ... Apa kamu suka pisang? Cobalah berbicara lagi dengan para penduduk desa! Dadah! KLIK!'
+
+ulrira_leaf_0 'KRRING! KRRING! Ya, dengan Ulrira di sini! Kamu belum menemukan kelima Daun Emas? Jaga baik-baik daun yang sudah kamu dapat. Seseorang mungkin saja akan mencoba merebutnya! Dadah! KLIK!'
+ulrira_leaf_1 'KRRING! KRRING! Ya, dengan Ulrira di sini! Kamu belum menemukan kelima Daun Emas? Cobalah untuk menggunakan bom di tempat yang mencurigakan. Semoga itu bisa membantu! Dadah! KLIK!'
+ulrira_leaf_2 'KRRING! KRRING! Ya, dengan Ulrira di sini! Kamu belum menemukan kelima Daun Emas? Coba takuti burung gagak yang ada di kastil dan lihat apakah itu bisa membantu! Dadah! KLIK!'
+ulrira_shovel 'KRRING! KRRING! Dengan Ulrira di sini! ... Sekop ... Apa kamu sudah membeli sekop? Kamu mungkin akan menemukan sesuatu yang bagus jika menggali di berbagai tempat! Dadah! KLIK!'
+
+ulrira_3_3 'KRRING! KRRING! Ya, dengan Ulrira di sini! Goa di Padang Ukuku adalah kuncinya! Ya, maksudku Goa Kunci, aku tidak sedang bercanda. Dadah! KLIK!'
+
+ulrira_4_0 'KRRING! KRRING! Hai, dengan Ulrira di sini! Di Gurun Yarna, yang terletak di sebelah tenggara pulau, kamu bisa menemukan benda yang dinamakan Kunci Sungut. Hmmm ... harus seberapa jelas lagi aku harus menjelaskan? Dadah! KLIK!'
+ulrira_4_1 'KRRING! KRRING! Ini dengan Ulrira! Oh, aku dengan dari nenek kalau ada sesuatu di balik air terjun Pegunungan Tal Tal. Apa itu bisa membantu! Dadah! KLIK!'
+
+ulrira_5_0 'KRRING! KRRING! Hai, dengan Ulrira di sini! Mulut Sang Ikan Lele terbuka katamu? Kedengarannya seperti tempat yang bagus untuk diselami! Dadah! KLIK!'
+
+ulrira_6_0 'KRRING! KRRING! Dengan Ulrira di sini! ... Apa kamu sudah mengunjungi Kuil Wajah? Itu terletak di utara Desa Binatang. Tempat itu merupakan reruntuhan yang menarik ... KLIK!'
+
+ulrira_7_0 'KRRING! KRRING! Hai, dengan Ulrira di sini! Apa kamu sudah dengar soal Ayam Terbang di Desa Mabe? Pada jaman dahulu kala, dia sering memberi kita tumpangan jika kita mengangkatnya ke atas kepala kita .... Sekarang dia tertidur di bawah Patung Ayam. Apa informasi itu berguna? Semoga saja, ya! Dadah! KLIK!'
+ulrira_7_1 'KRRING! KRRING! Hai, dengan Ulrira di sini! Kamu sudah melakukannya dengan baik! Segala usahamu sebentar lagi akan berakhir .... Omong-omong, apa kamu sudah mengunjungi Rumah Ayam di gunung? Di dekatnya ada goa yang menyimpan sesuatu yang berharga. Dadah! KLIK!'
+ulrira_7_2 'KRRING! KRRING! Ulrira di sini ... Iya, dulu ketika aku kecil, aku ingat pernah melihat menara tinggi di pegunungan! Kamu harus pergi ke sana! Apa informasi itu berguna untukmu? Dadah! KLIK!'
+
+ulrira_8_0 'KRRING! KRRING! Hai, dengan Ulrira di sini! Kepala si kura-kura menghalangi jalanmu? Berusahalah lebih keras dan dia akan pindah! Beneran, lho! Dadah! KLIK!'
+ulrira_8_1 'KRRING! KRRING! Ulrira di sini! ... Sebentar lagi perjalananmu akan selesai! Aku mendukungmu! Dadah! KLIK!'
+
+ulrira_9_0 'KRRING! KRRING! Halo, dengan Ulrira yang berbicara! [NAME], Ini saatnya bagimu untuk pergi menghadap Telur di puncak Gunung Tamaranch! Berhati-hatilah, [NAME]! Dadah! KLIK!'
+ulrira_9_1 'KRRING! KRRING! Dengan Ulrira di sini! Kamu tersesat di dalam Telur? Hmmmm. Maaf, aku tidak bisa membantumu kali ini. Bagaimana dengan perpustakaan? Dan juga, jangan berhenti meneleponku hanya karena aku tidak tahu akan satu hal kecil! KLIK!'
+
+ulrira_wife 'KRRING! KRRING! Ya, dengan Ulrira di sini! Istriku pergi ke Desa Binatang dan meninggalkanku sendiri. Apa kamu bisa menyampaikan pesan kepadanya untuk segera pulang begitu dia selesai? Dadah! KLIK!'
+ulrira_ghost 'KRRING! KRRING! Dengan Ulrira di sini! Sekarang kamu dibayangi oleh hantu gentayangan?! Hmm, bagaimana dengan membawanya ke tempat yang dia inginkan? Dadah! KLIK!'
+ulrira_mamu 'KRRING! KRRING! Iya, dengan Ulrira di sini! Kamu mulai menyukai musik? Ada katak bernama Mamu yang tinggal di Labirin Papan Petunjuk. Dia mungkin tahu beberapa lagu baru, tapi kamu akan harus membayar dengan harga yang mahal! Dadah! KLIK!'
+
+// TODO: not sure when this is shown in the game
+ulrira_seashells 'KRRING! KRRING! Ini dengan Ulrira! Apa para musuh terlalu kuat untukmu? Kalau begitu, sebaiknya kamu mengumpulkan semua Kulit Kerang ... Percaya dirilah dan lakukan yang terbaik! KLIK!'
+
+
+// dungeon intro
+dungeon_1 Level 1--\n     Goa Moldorm
+dungeon_2 Level 2--\n     Goa Jin Botol
+dungeon_3 Level 3--\n     Goa Kunci
+dungeon_4 Level 4--\n     Terowongan Ikan Sungut
+dungeon_5 Level 5--\n     Mulut Sang Ikan Lele
+dungeon_6 Level 6--\n     Kuil Wajah
+dungeon_7 Level 7--\n     Menara Elang
+dungeon_8 Level 8--\n     Kura-kura Batu
+
+beak_nop Patung burung hantu ini mencoba mengatakan sesuatu, tapi kamu tidak bisa memahaminya karena tidak ada paruhnya.
+
+beak_d1_1 Balikkan mereka dengan perisai ....
+beak_d1_2 Jika ada pintu yang tidak bisa kamu buka, pindahkan balok batu.
+
+
+// shrine
+shrine_dark ?? Ada gambar yang terukir pada dinding, tapi kamu tidak bisa melihatnya karena terlalu gelap di dalam sini ....
+shrine_message KEPADA YANG MENEMUKAN TEMPAT INI ... PULAU KOHOLINT, HANYALAH SEBATAS ILUSI ... MANUSIA, MONSTER, LAUTAN, LANGIT ... SEMUA HANYALAH PEMANDANGAN DARI DIA YANG TERTIDUR ... BANGUNKAN SI PEMIMPIN, DAN KOHOLINT AKAN LENYAP SEPERTI GELEMBUNG YANG TERTUSUK JARUM ... WAHAI ORANG TERDAMPAR, SEKARANG KAMU TAHU KEBENARANNYA! ... ... ... ... Apa? Ilusi?
+
+
+// dungeon two
+beak_d2_1 Beberapa bagian lantai terangkat. Sentuhlah kristal biru itu.
+beak_d2_2 Buat semua motif balok terlihat sama, dan jalan yang baru akan terbuka.
+beak_d2_3 Pertama, kalahkan Pols Voice yang terpenjara terlebih dahulu, lalu kalahkan Stal Stalfos ....
+
+// genie
+d2_boss_0 HO HO HO! Kali ini akulah lawanmu!! HO HO HO!
+d2_boss_1 NYAH NYAH! Kau tidak akan bisa melukaiku selama aku memiliki botolku!
+d2_boss_2 . . . .! Aku tidak bisa bergerak!\nTapi aku masih baik-baik saja. Pedang mungilmu tidak akan bisa menghancurkan botol ini!
+d2_boss_3 Waaaah! Ka- kau menghancurkan botolku! Kenapa, kau ... kau membuatku marah!!!
+
+// dungeon three
+beak_d3_1 Jauh di sana ....\nJangan takut, lari dan terbang lah!
+beak_d3_2 Untuk mengalahkan monster dengan tempurung yang keras itu. beri makan dia beberapa peledak.
+beak_d3_3 Ketuk bagian dinding yang mencurigakan menggunakan pedangmu dan dengar suara yang dibuatnya.
+
+d3_boss {NEENER NEENER!}{Temukan aku kalau bisa!}{NYAH NYAH!}
+
+bow_wow_cave_entry Ennh? Siapa orang mencurigakan ini?!\nOke kawan-kawan, ayo kita singkirkan dia!
+bow_wow_cave_boss Kau pasti orang suruhan Madam MeowMeow untuk menyelamatkan BowWow! Kau sudah datang sejauh ini, tapi justru akulah yang akan mengalahkanmu!!
+bow_wow_cave_bw Kamu berhasil menyelamatkan BowWow! Sungguh binatang yang menakutkan!
+
+castle_monkey_hunger Chi-kiita! Chi-kiita! Kiki si monyet! Lapar! Kiki si monyet!
+castle_monkey_bowwow Kiiiki! Apa?! Baiklah! Mari bertarung!!
+
+castle_monkey_banana {[TRADE3]!    [TRADE3]!}{Oooh!  Oooh!}{Berikan pada Kiki!?}
+castle_monkey_banana_yes {[TRADE3]!    [TRADE3]!}{Oooh! Ooh! Kiki!}{Para monyet! Datanglah!}{Kiki harus balas budi!}
+castle_monkey_done {Bisnis!}{Selesai!  Selamat tinggal!}{Oooh!  Kiki!}
+
+// dungeon four
+beak_d4_1 Kilaukan dari lantai akan memandumu ....
+
+d4_nightmare {BLOOOP! BLOOOP!  }{GLUB!  GLUB!   }{OGGGH!  MAKANAN!}{BLOOOOP!  GLUB!   }
+
+// dungeon five
+beak_d5_1 Jika kamu tidak bisa menghancurkan tengkorak dengan pedangmu, cobalah dengan menggunakan bom.
+beak_d5_2 Menyelam lah ke tempat yang disinari cahaya ....
+
+master_stalfos_0 Arrgh! Aku tidak bisa mengalahkanmu! Aku pergi dari sini!
+master_stalfos_1 Wah! Kau menemukanku!\nKamu ini benar-benar anak yang mengganggu, ya?!
+master_stalfos_2 Kau lagi! Kamu terus saja menemukanku ... Aku tidak bisa lari darimu!\nBaiklah kalau begitu, mari kita lakukan!
+master_stalfos_3 'Aku sudah mendapatkan apa yang ada di dalam kotak ini. Cobalah untuk merebutnya kalau bisa!' -Master µ
+
+slime_eel_0 Jjjjadiii ... kamu orang assssing, yang mencoba membanggggunkan si Ikan Pawwwana ... KEEE-HEE-HEEEH!\nAkan kumakan kau!
+slime_eel_1 TSSSK, TSSSK! Ssssssepertinya kamu tidak tahu kebenaran soal pulau innnnnni ... KEEE-HEEE-HEEE! Bodoh sekali ... KEE-HEE-HEH!!
+
+// dungeon six
+beak_d6_1 Masuki ruang yang memiliki banyak mata pada dindingnya ....
+beak_d6_2 Lompat ke atas kristal untuk terus maju.
+beak_d6_3 Untuk membuka peti harta, gunakan guci yang ada di sekitarnya.
+
+facade_opening Hey dungu! Apa kamu butuh petunjuk? Titik lemah ku ada di ... Ups! Lagi-lagi, aku hampir keceplosan ....
+facade_death Dengar, ya! Kalau Sang Ikan Pawana terbangun, semua yang ada di pulau ini akan lenyap! Dan aku tidak bercanda ... SEMUANYA!
+
+// dungeon seven
+grim_creeper_enter Hei kerdil! Apa kau pikir bisa melawanku?! Baiklah kawan-kawan, singkirkan bocah tengik ini dari hadapanku!
+grim_creeper_1 Ha! Apa hanya itu kemampuanmu?! Bersiaplah menghadapi INI!
+grim_creeper_2 Dasar tikus licik! K-k-k-kau mengalahkan kakakku! Kamu akan membayarnya! Aku tidak akan pernah melupakan ini!
+grim_creeper_3 BAH! Aku tidak akan lagi menahan diri! Aku akan membuatmu merasa menyesal telah dilahirkan!
+grim_creeper_4 Energi ku ... menghilang ... aku ... kalah! Tapi kau juga akan kalah, jika Sang Ikan Pawana terbangun! Sama seperti aku ... kamu ... juga ... ada ...  di ... dalam ... mimpinya ....
+
+beak_d7_1 Lompat dari lantai atas untuk mencapai peti di atas meja.
+beak_d7_2 Teka-teki akan terpecahkan ketika pilar-pilar sudah jatuh!
+beak_d7_3 Kalau kamu tidak bisa melewati tiangnya, coba untuk menggunakan alat-alat yang ada di tanganmu.
+
+// dungeon eight
+beak_d8_1 Untuk mengalahkan monster yang memegang kuncinya, serang dari tempat yang lebih tinggi.
+beak_d8_2 Jika patungnya terlihat mencurigakan, tembak dengan panah.
+beak_d8_3 Isi semua lubang dengan batu-batu yang berguling, ([DPAD]) ini adalah kuncinya!
+
+ice_block_message Brrrr ... Balok yang terbuat dari es! Ini sangat dingin!
+
+hot_head_0 Habislah kau! Aku tidak akan membiarkanmu memainkan Instrumen Siren!
+hot_head_1 Kenapa kau datang kemari? Kalau bukan karena kau, semua ini tidak akan ada yang berubah! Kau tidak boleh membangunkan Sang Ikan Pawana! Ingat, kamu ... juga ... ada ... di ... dalam ... mimpi ....
+
+// color dungeon
+grave_locked Kalau kamu tidak punya keberanian, maka kamu tidak akan punya kekuatan. Batu nisan itu tidak bisa digerakkan oleh penakut.
+
+beak_dc_1 Ini petunjuk untukmu. Buat semua warna merah menjadi biru.
+
+stone_hinox Sungguh orang yang serakah! Kamu ingin lebih banyak kekuatan?! Badut seperti kau sebaiknya menyerah dan pulang saja!
+
+giant_buzz_blob_enter BOO! Aku bukan orang lemah! Pedang payahmu bukan tandingan untukku!
+giant_buzz_blob_sword Bodoh sekali! Pedangmu tidak akan mempan! Coba cara yang lain!
+
+// is this only shown on the normal gameboy?
+// I am sorry, but this is the Color Dungeon. Only those with the power of color may enter. If you can tell who wears red and who wears blue, you may enter. Farewell.
+npc_color_0 Warna kami tidaklah sama! Jika aku merah, dia biru! Jika dia merah, aku biru! Apa warna pakaianku?
+npc_color_1 Bukan, perhatikan dengan seksama dan coba lagi.
+npc_color_2 Jangan beri tahu siapa pun.
+npc_color_3 Ratu peri sedang menunggumu.
+npc_color_4 Apa kamu punya serbuknya?\nKalau tidak, kamu harus kembali.
+	
+choice_Red Merah
+choice_Blue Biru
+
+hardhit_beetle_0 Biru artinya aman. Kuning artinya hati-hati. Merah artinya bahaya.
+hardhit_beetle_1 Biru. Aku ulangi ... Kuning artinya hati-hati. Merah artinya bahaya.
+hardhit_beetle_2 Kuning artinya hati-hati. Merah artinya bahaya. Jangan terburu-buru.
+
+choice_RED MERAH
+choice_BLUE BIRU
+choice_GREEN HIJAU
+
+color_fairy_0 Selamat datang, [NAME]. Aku kagum kamu bisa sampai sejauh ini. Aku akan memberimu kekuatan dari warna. Jika kamu ingin kekuatan, pilih merah. Jika kamu ingin pertahanan, pilih biru. Mana yang kamu inginkan?
+color_fairy_1 merah untuk kekuatan, biru untuk pertahanan. Mana yang kamu pilih? 
+color_fairy_2 Apa kamu yakin?
+color_fairy_3 Sekarang tutup matamu.
+color_fairy_4 Sekarang aku akan mengantarmu keluar.
+color_fairy_5 Selamat datang kembali, [NAME]. Jika kamu tidak lagi ingin mendapatkan manfaat dari kekuatan warna, aku dapat mengembalikan pakaian aslimu. Apakah kamu ingin mengembalikan kekuatan warna?
+color_fairy_6 Apakah kamu ingin beralih ke warna yang lain?
+
+cloak_blue Kamu mendapatkan Tunik Biru! Serangan yang kamu terima akan berkurang setengahnya!!
+cloak_red Kamu mendapatkan Tunik Merah! Tubuhmu kini penuh dengan energi!
+cloak_green Kamu mendapatkan Pakaian Hijau! Tidak memiliki efek khusus, tetapi terlihat keren!
+
+// desert
+desertLanmola Mengganggu sekali! Kamu hanya menghalangi!
+
+// shell mansion
+shell_mansion_0 Aku adalah roh penunggu rumah ini. Aku sudah menunggu seseorang yang bisa melewati ujian ini. Temukan semua Kulit Kerang Rahasia dan lewati gerbang ini untuk mendapatkan Pedang Pamungkas!
+shell_mansion_1 Hmmm. Tidak ada respon. Kamu belum punya cukup Kulit Kerang.
+shell_mansion_2 Tugasku di sini sudah selesai.
+
+npc_hippo_0 Menjauh dariku!
+npc_hippo_1 Keluar dari sini!
+npc_hippo_2 Tinggalkan aku sendiri! aku sedang mencoba duduk tenang supaya Schule bisa melukis potret diriku!
+
+npc_painter_0 Ya, Akulah Schule Donavitch! Fatung duyung yang ada di teluk itu adalah mahakarya buatanku! ... Kalau boleh jujur, karya itu masih belum zelezai! Karya zeni itu ... zulit sekali untuk dipahami, ya?
+npc_painter_1 Afa itu zizik dari zeekor duyung? Aku tidak biza menggunakannya zekarang. Aku mazih haruz mengerjakan lukizan ini. Zebaiknya kamu zaja yang menyelesaikan fatung itu untukku.
+npc_painter_2 Ach! Afa yang zedang kamu lihat dengan kaca fembezar itu? Berhenti zekarang juga!
+
+// photo house
+photo_book 'Perjalanan [NAME]' Apa kamu ingin melihat isi album?
+photo_book_text Gambar mana yang ingin kamu lihat? Gunakan + untuk memilih, lalu tekan Tombol A!
+
+// entering with a follower
+photo_mouse_follower Temui aku lagi, saat kamu sedang sendirian!
+
+photo_left_11 Tersisa 11 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_10 Tersisa 10 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_9 Tersisa 9 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_8 Tersisa 8 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_7 Tersisa 7 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_6 Tersisa 6 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_5 Tersisa 5 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_4 Tersisa 4 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_3 Tersisa 3 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_2 Tersisa 2 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_1 Tersisa 1 foto lagi! Foto seperti apa yang harus aku ambil?
+photo_left_0 Oh tidak! Foto mu sudah habis! Jangan lupa untuk melihat album milikmu!
+
+// photo sequence photo house
+photo_01_0 Aku SUKA sekali fotografi. Apa boleh aku memotret dirimu?
+photo_01_1 Pergi ke belakang dan berdiri di depan tirai.
+photo_01_2 Aku menyebutnya 'Di Sini Berdiri Sang Pria Pemberani'.
+photo_01_3 Siapa namamu, anak muda? [NAME]? Ini album milikmu, [NAME]. Lihatlah isinya sebelum kamu pergi!
+photo_01_4 Mari kita lihat apakah kita bisa mengisi penuh album itu!
+photo_01_5 Mari kita ambil gambarnya!
+photo_01_6 Tidak boleh?!\nApa kamu bercanda?
+photo_01_7 Sayang sekali!
+photo_01_8 Indah sekali! Aku menyebutnya 'Game Over.'
+photo_01_9 Hei! Aku belum memotret dirimu! Kembali berdiri di depan tirai!
+
+// photo sequence ulrira house
+photo_02_0 Hai! Ini aku, si fotografer! Kamu kelihatannya penasaran soal Kakek Ulrira.
+photo_02_1 Aku menyebutnya '[NAME] Menemukan Rahasia Ulrira!'
+
+// photo sequences BowWow
+photo_03_0 Hei, itu kelihatan bagus! Aku menyebutnya '[NAME] Bermain Dengan BowWow!' Sekarang mendekat lah ke samping BowWow!
+photo_03_1 Grrrr!
+photo_03_2 [NAME], mendekat lah!
+photo_03_3 Grrrr! Grrrr!!
+photo_03_4 Grrrr! Grrrr!! GRRRR!
+photo_03_5 Lebih dekat! OK, Aku siap. Senyum~!
+
+// photo sequences castle
+photo_05_0 Hai, [NAME]. Kamu tahu kalau aku suka memotret. Bukankah kastil tua ini tempat yang bagus untuk berfoto?
+photo_05_1 Apa masih belum?! Aku lelah menunggu. Aku ingin Daun Emas itu segera diantarkan! Keberanianmu patut mendapat foto, tidakkah kamu juga berpikir demikian?
+photo_05_2 Silah ambil potret diriku, dari sudut mana pun yang kamu suka!
+photo_05_3 Aku tidak takut. Aku hanya memilih untuk menunggu di dalam rumah.
+
+// photo sequences grave
+photo_06_0 Betapa cintanya aku dengan fotografi. Hei, [NAME]! Apa yang sedang kamu lakukan di sini?
+photo_06_1 Kamu ingin tahu soal hantu itu? Aku pikir dia merasa senang berkat dirimu. Apa kamu siap untuk difoto?
+photo_06_2 Aku menyebutnya 'Aku Sangat Takut.' Senyum~!
+
+// photo sequences marin cliff
+marin_cliff_0 Ini pertama kalinya aku jalan-jalan denganmu, [NAME].
+marin_cliff_1 ......
+marin_cliff_2 Tebing ini akan menjadi tempat rahasia kita. 
+marin_cliff_3 Apa kamu tidak ingin mengatakan sesuatu?
+marin_cliff_4 Oh! aku suka sekali foto! Kenapa kamu tidak mengambil foto selagi tidak ada siapa-siapa?\nKamu bisa mulai sekarang ....
+marin_cliff_5 Aku akan mencetaknya. Nanti datang saja untuk melihatnya, oke?
+
+// photo sequences fountain
+photo_08_0 Hai! aku si fotografer! Sungguh momen yang bagus untuk difoto! Aku menyebutnya 'Bersiaplah!'
+photo_08_1 Ohh! Maafkan aku! Apa kamu baik-baik saja?! [NAME]?
+
+// photo sequences weather bird
+photo_09_0 Hai, Marin dan [NAME]! Apa kalian berdua ingin mengambil foto? Sebaiknya kamu memotret semua orang, termasuk aku.
+photo_09_1 Aku menggunakan benda ini untuk mengambil foto. Apa kamu siap! Katakan 'Cendawan!'
+photo_09_2 Oke, aku sudah selesai. Sekarang aku akan pulang.
+
+// photo sequences fisher
+photo_10_0 Aku punya firasat kalau aku akan menangkap ikan besar lagi kali ini.
+photo_10_1 WHOA! Itu besar sekali! Hei, tukang foto! Apa kamu bisa memotret ini?
+photo_10_2 Hei! Lain kali hati-hati, ya!
+
+// photo sequences zora
+photo_11_0 Hei, Kamu bisa melihatku?! Kamu pasti memiliki kaca pembesar. Aku bukan pembuat onar, kok. Aku hanya ingin hidup dengan tenang.
+photo_11_1 Hai! ini aku, si fotografer! Zora ada di dalam rumah, katamu? Aku HARUS memotret dia. Aku menyebutnya 'Aku Menemukan Zora'.
+
+// photo sequences mountain
+photo_12_0 Hei, foto ini akan merepresentasikan petualanganmu dengan sempurna!
+photo_12_1 Aku menyebutnya 'Hampir Saja'. Hmm.
+photo_12_2 Aku terlalu dengan.
+photo_12_3 Sebaiknya aku mundur sedikit.
+photo_12_4 Aaaaaah!
+
+// map
+map_tal_tal Daratan Gunung Tal Tal
+map_wind_fishs_egg Telur Ikan Pawana
+map_mt_tamaranch Gunung Tamaranch
+map_hen_house Rumah Ayam
+map_telephone_booth Telepon Umum
+map_goponga_swamp Rawa Goponga
+map_tal_tal_heights Dataran Tinggi Tal Tal
+map_weird_mr_write Pak Write Angker
+map_photo_both Masuklah dan dapatkan suvenir foto!
+map_raft_shop Toko Rakit
+map_mysterious_woods Hutan Misterius
+map_koholint_prairie Padang Koholint
+map_crazy_tracy Spa Kesehatan\nCrazy Tracy
+map_tabahl_wasteland Gurun Tabahl
+map_kanalet_castle Kastil Kanalet
+map_rapids_ride Tumpangan Rakit Sungai
+map_witchs_hut Gubuk Penyihir
+map_cementry Pemakaman
+map_fishing_pond Kolam Ikan
+map_quadruplets_house Rumah Si Kembar Empat
+map_dream_shrine Kuil Mimpi
+map_ukuku_prairie Padang Ukuku
+map_seashell_mansion Rumah Kerang Laut
+map_face_shrine Kuil Wajah
+map_mabe_village Desa Mabe
+map_town_tool_shop Toko Perkakas
+map_madam_meow Rumah Madam MeowMeow\nAwas Anjing Galak!
+map_marin_tarin Rumah Marin dan Tarin
+map_village_library Perpustakaan Desa
+map_old_man_house Rumah Pak Tua Ulrira
+map_trendy_game Permainan Trendy
+map_south_village Bagian Selatan Desa
+map_signpost_maze Labirin Papan Petunjuk
+map_pothole_field Ladang Berlubang
+map_maraths_bay Teluk Martha
+map_animal_village Desa Binatang
+map_yarna_desert Gurun Yarna
+map_richards_villa Vila Richard
+map_toronbo_shores Pantai Toronbo
+map_banana_house Rumah Pisang Sale
+map_bay_east Bagian Timur Teluk
+map_house_bay Rumah Di Dekat Teluk
+
+
+map_level_1 Level 1--\n     Goa Moldorm
+map_level_2 Level 2--\n     Goa Jin Botol
+map_level_3 Level 3--\n     Goa Kunci
+map_level_4 Level 4--\n     Terowongan Ikan Sungut Ganda
+map_level_5 Level 5--\n     Mulut Sang Ikan Lele
+map_level_6 Level 6--\n     Kuil Wajah
+map_level_7 Level 7--\n     Menara Elang
+map_level_8 Level 8--\n     Kura-Kura Batu
+
+
+
+final_boss Kami terlahir dari mimpi buruk. ... Untuk mengambil alih dunia ini, kami membuat Sang Ikan Pawana tidur abadi! Jika Sang Ikan Pawana tidak pernah terbangun, pulau ini tidak akan pernah lenyap! Kami seharusnya akan menjadi penguasa dunia ini ... tapi kau malah datang dan mengacaukan rencana kami! Heh Heh! Kau tidak akan pernah bisa mengalahkan kami! Ayo bertarung!
+
+final_windfish ... ... ... ...  ... ... ... ... AKULAH SANG IKAN PAWANA ... SUDAH LAMA AKU TERLELAP ... DI DALAM MIMPIKU ... SEBUAH TELUR MUNCUL DAN DIKELILINGI OLEH SEBUAH PULAU, YANG DITEMPATI MANUSIA, BINATANG, SEPERTI SEBUAH DUNIA! ... ... ... ... TAPI, SUDAH MENJADI KODRATNYA SEBUAH MIMPI HARUS BERAKHIR! KETIKA AKU TERBANGUN, KOHOLINT AKAN LENYAP ... HANYA KENANGAN DARI MIMPI INI YANG AKAN TERSISA DI DUNIA NYATA ... SUATU HARI, KAMU AKAN MENGENANG PULAU INI ... KENANGAN ITU PASTILAH DARI DUNIA MIMPI INI ... ... ... ... ... ... AYO, [NAME]... MARI KITA BANGUN DARI MIMPI KITA ... BERSAMA-SAMA!!
+final_instruments MAINKAN KEDELAPAN INSTRUMEN! MAINKAN LAGU UNTUK MEMBANGUNKANNYA!!
+
+// credits
+// 1998
+credits_0 STAF 1998
+
+credits_1 SUPERVISOR
+credits_1_0 TAKASHI TEZUKA
+
+credits_2 SUTRADARA
+credits_2_0 YOSINORI TUTIYAMA
+
+credits_3 PENULIS NASKAH
+credits_3_0 NOBUO MATSUMIYA
+
+credits_4 PROGRAMMER
+credits_4_0 EIJI NOTO
+credits_4_1 KIYOSHI KODA
+credits_4_2 SIGEHIRO KASAMATU
+
+credits_5 DESAIN KARAKTER
+credits_5_0 MIKIO MISHIMA
+credits_5_1 KYOKO KIMURA
+
+credits_6 KOMPOSER MUSIK
+credits_6_0 YUICHI OZAKI
+
+credits_7 ARTWORK
+credits_7_0 KEIKO IZAWA
+
+credits_8 BANTUAN TEKNIS
+credits_8_0 N KOGANEZAWA
+
+credits_9 NASKAH BAHASA INGGRIS
+credits_9_0 JIM WORNELL
+credits_9_1 KEIKO TAMURA
+credits_9_2 TAMAYO ITO
+
+credits_10 TERIMA KASIH KEPADA
+credits_10_0 AKIYA SAKAMOTO
+credits_10_1 R&D2 DEBUG STAFF
+
+credits_11 STAF DEBUG
+credits_11_0 SUPER MARIO CLUB
+
+// 1993
+credits_12 STAF 1993
+
+credits_13 SUTRADARA
+credits_13_0 TAKASHI TEZUKA
+
+credits_14 DESAIN DUNGEON
+credits_14_0 YASUHISA YAMAMURA
+
+credits_15 PENULIS NASKAH
+credits_15_0 KENSUKE TANABE
+credits_15_1 YOSHIAKI KOIZUMI
+
+credits_16 PROGRAMMER
+credits_16_0 KAZUAKI MORITA
+credits_16_1 TAKAMITSU KUZUHARA
+
+credits_17 DESAIN KARAKTER
+credits_17_0 MASANAO ARIMOTO
+credits_17_1 SHIGEFUMI HINO
+
+credits_18 KOMPOSER MUSIK
+credits_18_0 KAZUMI TOTAKA
+credits_18_1 MINAKO HAMANO
+credits_18_2 KOZUE ISHIKAWA
+
+credits_19 ILLUSTRATOR
+credits_19_0 YOUICHI KOTABE
+
+credits_20 NASKAH BAHASA INGGRIS
+credits_20_0 DAN OWSEN
+
+credits_21 TERIMA KASIH KEPADA
+credits_21_0 TOSHIHIKO NAKAGO
+credits_21_1 KOJI KONDO
+credits_21_2 TOMOAKI KUROUME
+credits_21_3 MASAICHI OKUMURA
+credits_21_4 KANAE WADA
+
+credits_22 PRODUSER
+credits_22_0 SHIGERU MIYAMOTO
+
+credits_23 PRODUSER EKSEKUTIF
+credits_23_0 HIROSHI YAMAUCHI
+
+credits_24 TRANSLASI BAHASA INDONESIA OLEH
+credits_24_0 PANGRANGGA CLAMP
+
+credits_25 
+credits_25_0 TAMAT

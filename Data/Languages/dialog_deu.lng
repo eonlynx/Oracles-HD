@@ -1,0 +1,1212 @@
+// items
+smallkey Mit dem Kleinen Schlüssel\nlässt sich FAST jedes Schloss öffnen.
+compass Der Kompass!\nNun kannst Du sehen, wo sich die Endbosse und Truhen befinden.\fAls weitere Hilfe: Ein akustisches Signal zeigt Dir die Räume an, in denen Schlüssel versteckt sind.
+dmap Die Karte!\nMit [START] kannst Du einen Blick auf sie werfen!
+stonebeak Du hast einen Schnabel aus Stein gefunden.\nSuche nach der dazugehörigen Eulen-Statue!
+
+sword1 Nun hast Du Dein Schwert gefunden und bist froh, [NAME] darauf zu lesen!
+feather Die Greifenfeder erlaubt es Dir, große Sprünge zumachen.
+pegasusBoots Du besitzt jetzt ein Paar neuer Pegasusstiefel! Damit kannst Du nun rennen, wenn Du den Knopf gedrückt hältst.
+flippers Jetzt besitzt Du endlich ein Paar Schwimmflossen! Drückst Du beim Schwimmen den [CANCEL]-Knopf, kannst Du sogar tauchen!
+bracelet0 Suuuper! Du hast das Kraftarmband gefunden! Damit kannst Du Steine und Vasen heben.
+bracelet1 Du hast nun ein noch stärkeres Kraftarmband. Du könntest damit sogar einen Elefanten heben.
+ocarina Hm! Es ist eine Ocarina! Aber was sollst Du darauf spielen???
+powder Das Zauberpulver gehört nun Dir! Probiere, was Du damit besprühen kannst...
+mirrorShield Mit dem Spiegelschild kannst Du nun die Strahlen blocken und zurück feuern!
+hookshot Jetzt besitzt Du den Enterhaken! Damit kommst Du über Schluchten!
+magicRod Jetzt besitzt Du den Somariastab! Damit feuerst Du einen glühenden Feuerstrahl ab.
+magicRod_mod Jetzt besitzt Du den magischen Stab! Damit feuerst Du einen glühenden Feuerstrahl ab.
+magicRod_alt Du besitzt nun einen Magie-Stab! Damit kannst Du Dinge verbrennen! Verbrennen, Baby!
+shovel Du besitzt jetzt eine Schaufel. Aber was willst Du nun angraben?
+magicPowder Das Zauberpulver gehört nun Dir! Probiere, was Du damit besprühen kannst...
+bomb Du besitzt nun eine Bombe.\nAlso los!
+sword2 Du besitzt ein neues Schwert! Vielleicht wäre es gut, Deinen Namen darauf zu schreiben...?!
+boomerang Für DAS, was Du in der Hand hattest, hast Du nun einen tollen Bumerang bekommen...
+
+shield Es ist ein Schild!\nUnd er hat einen Platz für Deinen Namen!
+shield_intro Du hast Deinen Schild wieder! Halte den Knopf zur Abwehr der Gegner gedrückt!
+shield_back Du hast Deinen Schild wieder! Du kannst es benutzen, um Gegner umzuwerfen!
+
+yoshiPickup Oh! Du hast eine Yoshi-Puppe [TRADE0] bekommen. Endlich! Du LIEBST Yoshi!
+
+// Ocarina spielen, ohne ein Lied gelernt zu haben
+ocarina_bad Hm! Es ist eine Ocarina! Aber was sollst Du darauf spielen???
+ocarina_bad_marin Hör auf, das ist ja schrecklich!... Was??? Ich habe nichts gesagt...
+
+// Tauschhandel = TRADE+zahl in eckigen Klammern | zahl> 0= Yoshi-Puppe  1= Schleife  2= Dose Hundefutter  3= Bananen  4= Stock  5= Honigwabe  6= Ananas  7= Hibiskus  8= Brief der Ziege  9= Besen  10= Angelhaken  11= Kette/Bikini-Oberteil  12= Schuppe  13= Lupe
+trade0 Du hast Deinen [TRADE0] gegen eine [TRADE1] getauscht! Bestimmt kannst Du auch irgendwo die Schleife tauschen!
+trade1 Du hast die [TRADE1] gegen eine [TRADE2] getauscht!
+trade2 Du hast die [TRADE2] gegen Bananen [TRADE3] getauscht. Guter Deal, Baby!
+trade4 Du hast einen Stock gefunden, den einer der Affen zurückgelassen hat...\nDu nimmst ihn!
+trade5 Du hast die [TRADE4] gegen die Honigwabe [TRADE5] getauscht, die sehr saftig ist.
+trade6 Du hast die [TRADE5] gegen einen [TRADE6] getauscht!
+trade7 Du hast die [TRADE6] gegen einen [TRADE7] getauscht!!
+trade8 Du hast Deinen [TRADE7] gegen den Brief der Ziege [TRADE8] getauscht ?!
+trade9 Aus Dankbarkeit hast Du von Dr. Wright einen Besen erhalten. Wenn er wüsste, wie Christine WIRKLICH aussieht...
+trade10 Du hast den [TRADE9] gegen einen [TRADE10] getauscht. Was wirst Du wohl für den Angelhaken bekommen?
+trade11 Aus dem [TRADE10] wurde eine [TRADE11]! So ein Glück!
+trade12 Du hast der Nixe die [TRADE11] gegeben und dafür eine [TRADE12] erhalten! Was machst Du damit?
+trade13 Die Magische Lupe [TRADE13]!! Jetzt kannst Du Dinge sehen (& lesen), die vorher unsichtbar waren.
+
+trade11_redux Aus dem [TRADE10] wurde ein sexy Bikini-Oberteil [TRADE11]! Wow! Sabber...
+trade12_redux Du hast der Nixe das Bikini-Oberteil [TRADE11] zurück gebracht und eine [TRADE12] erhalten! Was machst Du damit?
+
+// SCHLÜSSELLÖCHER
+keyhole_0 WURM-SCHLÜSSELLOCH \nHm? Was hat das zu bedeuten???
+keyhole_1 SCHLEIM-SCHLÜSSELLOCH \nHm? Was hat das zu bedeuten???
+keyhole_2 WUNDER-SCHLÜSSELLOCH \nHm? Was hat das zu bedeuten???
+keyhole_3 MASKEN-SCHLÜSSELLOCH \nHm? Was hat das zu bedeuten???
+keyhole_4 ADLER-SCHLÜSSELLOCH \nHm? Was hat das zu bedeuten???
+
+// collectables 
+toadstool Du hast eine Schlummermorchel gepflückt! Beim Hochheben verbreitet sie ein fauliges Aroma. 
+toadstool_hold Du hältst die Schlummermorchel nach oben, aber nichts passiert. Stattdessen verbreitet sich ein fauliger Geruch.
+
+seashell Du hast eine Zaubermuschel gefunden... Wenn Du genug davon gesammelt hast, kannst Du etwas Feines bekommen!
+seashell_1 Du hast eine Zaubermuschel gefunden! Kannst Du die restlichen finden?
+seashell_2 Du hast alle 26 Zaubermuscheln gefunden! Du bist ein wahrer Meister der Muscheljagd!
+
+heart Du hast ein Herz gewonnen! Sofort wird einer der Herzcontainer aufgefüllt.
+
+ruby20 Du hast 20 Rubine gefunden!\nNa toll!
+ruby50 Du hast 50 Rubine gefunden!\nSehr schön!
+ruby100 Du hast 100 Rubine gefunden!\nSuper!
+ruby200 Du hast 200 Rubine gefunden!\nWaaaaaahnsinn!
+
+// trendy game
+ruby30 Hey! 30 Rubine!! Damit kannst Du wieder dreimal spielen!
+
+heartMeter Ein Herzteil! Drücke [START] im Untermenü, um die Anzahl festzustellen.
+heartMeterFilled Du hast 4 Herzteile gesammelt. Jetzt bekommst Du einen neuen Herzcontainer!
+
+guardianAcorn Ein Götterahorn!\nEr reduziert die Verletzungen durch die Gegner um die Hälfte.
+guardianAcorn_alt Du hast eine Wächter-Eichel erhalten\nSie reduziert den Schaden durch die Gegner um die Hälfte!
+pieceOfPower Du hast ein Teil der MACHT erhalten.\nSpürst Du die Energie???
+
+potion Geheimnisvolles Elixier! Verwende es und warte ab, was passieren wird!
+potion_alt Du hast Geheimnisvolle Medizin erhalten! Du solltest sie verwenden und schauen, was passiert!
+
+dkey1 Nun hast Du den Wurmschlüssel in der Hand! Sicher kannst Du damit den Wurmpalast öffnen.
+dkey2 Coooool! Mit dem Schleimschlüssel öffnet sich das Tor in der Urunga-Steppe.
+dkey3 Mit dem Wunderschlüssel öffnet sich das Tor zum Wundertunnel!
+dkey4 Der Maskenschlüssel!!! Er gehört nun Dir!
+dkey5 Der Adlerschlüssel!!! Er gehört nun Dir!
+
+nightmarekey Endlich! Mit dem Großen Schlüssel lassen sich die Verstecke der Endbosse öffnen!
+
+//Instrumente der Sirenen
+instrument0 Du hast die Muschelgeige erhalten!
+instrument1 Du hast das Tritonshorn erhalten!
+instrument2 Du hast das Nixenglöckchen erhalten!
+instrument3 Du hast die Neptun-Harfe erhalten!
+instrument4 Du hast das Korallenxylophon erhalten!
+instrument5 Du hast die Seesterntriangel erhalten!
+instrument6 Du hast die Poseidon-Orgel erhalten!
+instrument7 Du hast die Oktopustrommel erhalten!
+
+instrument0Collected .....SUMPF..... Sag mir, wo die Blumen blüh'n...
+instrument1Collected ...URUNGA...STEPPE.. Steppe schnell... in die Steppe...
+instrument2Collected ...WASSERFALL...Im Wasserfall es ist versteckt...
+instrument3Collected .....BUCHT..... Mit voller Wucht geht's zur Bucht...
+instrument4Collected ....SCHREIN.... Inselgeheimnis im Schrein...
+instrument5Collected ....GEBIRGE.... Ein Ruf aus den Bergen...
+instrument6Collected ...OCARINA... Die Musik der... Ocarina weist... den Weg...
+instrument7Collected .....EIEIEI.....Das Ei ruft.....
+
+goldLeaf Ein goldenes Blatt! Mit [START] siehst Du, wieviele Du bereits gesammelt hast!
+goldLeafLast Nun hast Du auch das letzte der GOLDENEN BLÄTTER gefunden! Jetzt solltest Du noch einmal Richard aufsuchen, wegen des Schlüssels!
+
+signpost0 IAMerror
+signpost1 [RIGHT] Wurmpalast \n[DOWN] Torongastrand
+signpost2 Zauberwald\n(schauder)
+signpost3 Osten [RIGHT] Urunga-\n         Steppe\fWeiter östlich \n  Zoodorf
+signpost4 VORSICHT SEEIGEL\nMit dem Schild zur Seite schieben!
+signpost5 Vorsicht bei den rissigen Steinbodenplatten...\nEINSTURZGEFAHR
+
+signpost6 Schloss Kanalet 10 Min [RIGHT] [UP]
+signpost7 Schloss Kanalet 5 Min. [RIGHT]
+signpost8 Schloss Kanalet 50 Schritte [UP]
+
+signpost9 [RIGHT] Zoodorf \n[DOWN] Zwergenbucht
+signpost10 Muschelbasar
+
+signpost11 Hier sind die Taltal-Höhen.\nRechter Hand:\nDer Foto-Laden
+signpost12 [RIGHT] Tamaranchberg\n[LEFT] Schleimsumpf
+signpost13 [RIGHT] Geierwally\n[DOWN] Manbos Brunnen
+signpost13_mod [RIGHT] Trantrudi\n[DOWN] Manbos Brunnen
+signpost13_alt [RIGHT] Geierwally\n[DOWN] Manbos Brunnen
+signpost14 [RIGHT] Friedhof\n[DOWN] Urunga-Steppe
+signpost15 [RIGHT] Schleimsumpf\n[DOWN] Zauberwald
+
+signpost16 * GEFAHR!!!! *\nBETRETEN VERBOTEN\n(außer Struppi)
+signpost16_mod * GEFAHR!!!! *\nBETRETEN VERBOTEN\n(außer Komet)
+signpost17 Richards Villa
+signpost19 Telefonhäuschen\n[DOWN] Schilderwald
+
+signpost20 Tamaranchberg
+signpost21 * Floß-Verleih *\nTäglich geöffnet, außer sonntags \nBITTE AN DER KASSE MELDEN
+
+signpost22 Eingang zur\nDurstwüste [RIGHT]
+signpost23 [RIGHT] Willkommen im\nZoodorf!
+
+signpost_Down [DOWN] HIER ENTLANG
+signpost_Up [UP] HIER ENTLANG
+signpost_Right [RIGHT] HIER ENTLANG
+signpost_Left [LEFT] HIER ENTLANG
+signpost_TryAgain FALSCHER WEG\nZURÜCK ZUM START
+signpost_Great Toll! Du hast es geschafft! Jetzt musst Du nur noch nach [RIGHT] gehen!!!
+signpost_Gone Bin zur Zeit auf Tour...\nWart
+
+talking_tree Komm mir nicht zu nahe, Knirps! Ich verrate Dir auch ein Geheimnis: Schlage mit dem Schwert an die Wände! Hörst Du einen hohlen Klang, lässt sich die Wand mit 'ner Bombe sprengen.
+
+//Wart der Frosch
+mamu0 Quaaaak! Servus, Alter! Man nennt mich Wart, den Musikfrosch. Und Du? Hm, ich sehe schon... Du hast keine Ahnung von Musik. Quaaaaak! Bring eine Ocarina mit, wenn Du mal wieder kommst... ... und Tschüss!!!
+mamu1 Quaaaak! Ich bin Wart, der Musikfrosch! Aber das weißt Du ja..! Willst Du unsere neueste Komposition hören? Es kostet Dich nur lächerliche 300 Rubine. Was ist, Alter???
+mamu2 Tja, Pech für Dich! Du weißt nicht, was Dir entgeht...
+mamu3 Danke! Vielen Dank! Quaaaak!
+ocarina_frog_song Jetzt kennst Du also den Krötenrap! Jeder, der ihn hört, wird sofort munter! Selbst leblose Gegenstände...!
+ocarina_frog_song_end Spielst Du diese Melodie, wird sich manches in Deiner Umgebung etwas lebendiger fühlen!
+
+manbo0 Ich bin Manbo, Kind des Sonnenfischs. Hast Du schon eine Ocarina bekommen?
+manbo1 Sehr schön...\nBLUBB! BLUBBER!
+manbo2 Gut! Dann kann ich Dir jetzt meinen Song beibringen. BLUBB!
+manbo3 Oh! Du hast also keine Ocarina...!
+manbo4 Ich bin Manbo, Kind des Sonnenfischs. Spielst Du meinen Mambo, wirst Du in den Manbobrunnen teleportiert. Auch in den Höhlen solltest Du ihn spielen! Mambo!
+
+ocarina_manbo_song Soeben hast Du Manbos Mambo gelernt. Spiele ihn, wenn Du aus dem Fluss kommst.
+
+choice_Pay Bezahlen
+choice_Leave Wieder gehen
+
+signHead1 EIN FISCH IM WIND IST KEIN FISCH UND KEIN VOGEL
+signHead2 MUSIK WIRD DICH ZUM EI GELEITEN
+signHead3 SCHLAF IST GEGEN DAS ENDE DAS BÖSE IST
+signHead3_alt SCHLAF IST DAS BÖSE OHNE DAS ENDE
+signHead4 UNTER BRÜCKEN, GEHEIMNISSE LANGE LEBEN
+signHead5 SCHLÄFT DER FISCH EWIG, WIRD DER HELD ZU ERDE
+signHead6 GEHEIMNISSE, IN NAHER ERDE
+signHead7 Die Adlerfestung ist nahe! Vorsicht vor dem Teufelsadler!
+signHead8 HIER KEINE GEHEIMNISSE
+signHead9 MUTTER ERDE GEHEIMNISSE HAT, AM FUSSE MEINER SELBST
+
+castle_button Äh? Das hat sich angehört, als sei das Schlosstor aufgegangen. Nun kommst Du leicht nach draußen!
+castle_button_2 Äh? Das hat sich angehört, als hätte sich das Tor geschlossen.
+
+door_nightmarekey Diese Tür läßt sich nur mit dem Großen Schlüssel öffnen. Pech!
+
+dungeon_keyhole_block Der Stein hat ja ein Schlüsselloch! Vermutlich braucht man hier einen Schlüssel!
+rock_cracks_message Dieser Fels ist äußerst brüchig! Vielleicht kann man ihn irgendwie sprengen...?
+crystal_hard Das ist aber ein seltsamer Stein! Vielleicht kann man ihn einfach umrennen...?
+
+stone Zu schwer! Mit bloßen Händen wirst Du DAS nicht hochheben können!
+
+// Albträume
+nightmare1 Buzzzzz Buzzzzz! Rauzzzzzzzzzzzz!
+nightmareFinal0 Die Insel löst sich auf... Unsere Welt verschwindet... Unsere Welt... Unsere... Welt..
+nightmareFinal1 ...[NAME]! Du hast alle Albträume besiegt. Steige die Leiter nach oben... Komm!
+
+// Marin
+maria_0_0 Gott sei Dank! Ich dachte, Du wachst nie mehr auf...\fWas...? Zelda...? Nein, ich heiße Marin!\nDu bist auf der Insel Cocolint! Bist Du in Ordnung...?
+maria_0_1 Am Strand unten, dort wo ich Dich gefunden habe, wimmelt es von Monstern. Vielleicht solltest Du Dich dort mal umschauen?! Gehe den Weg entlang nach Süden!
+
+// Marin steht draußen
+maria_1_0 Hi! Tarin ist in den Wald gegangen, um Pilze zu sammeln. Ich bin aber lieber hiergeblieben, um zu singen. Es folgt die "Ballade vom Windfisch"...
+maria_1_1 Ich liebe diese Melodie... Und Du, [NAME]? Was liebst Du???
+
+// Nachdem man mit der Eule gesprochen hat
+maria_1_2 Hi [NAME]! Tarin ist zu Hause und schläft... Dabei scheint draußen doch die Sonne! Ich könnte das nicht! Ich singe lieber. Und zwar die "Ballade vom Windfisch".
+
+// singing in the right village
+maria_1_3 Mann, Du hast da ja eine tolle Ocarina! Willst Du mich beim Singen begleiten...?
+maria_1_4 Und, wie gefällt sie Dir? Sie ist doch mitreißend, oder? Kannst Du sie Dir merken?
+maria_1_5 Bitte! Ich möchte, dass Du sie lernst!! Dieses Lied ist nämlich mein Lieblingslied!
+
+maria_1_6 Bitte merke Dir dieses Lied! Du solltest die Melodie öfters mal spielen, damit Du sie nicht vergisst...
+maria_1_7 Bitte vergiss nie dieses Lied... ... oder mich!
+
+maria_1_8 Man sagt, dass die "Ballade vom Windfisch" den Windfisch wecken könne. Ob er mir wohl den Wunsch erfüllt, wenn er aufwacht...?
+maria_1_9 Oh, [NAME]! Ich bin auch oft im Zoodorf, um zu singen. Selbst hier lieben sie die "Ballade vom Windfisch"! Was ist denn Dein Lieblingslied, [NAME]???
+
+marin_letter Bin am Strand! Deine Marin [MARIN]
+
+// Marin am Strand
+marin_2_0 Oh [NAME]! Schön, dass Du mich hier besuchen kommst! Willst Du Dich ein bisschen zu mir setzen und reden?
+
+// Ja! Nein, Variationen...
+marin_2_1 Okay! Ich bleibe noch ein bisschen hier und schaue in den Horizont.
+marin_2_2 Manchmal frage ich mich, woher diese Palmen kommen... ... Tarin sagt, dass es außer dieser Insel nichts gäbe, da draußen auf dem Meer! Aber da MUSS es etwas geben!!! Als ich Dich am Strand gefunden habe, [NAME], ich war ganz außer mir... Ich hielt Dich für ein Zeichen der Götter...
+marin_2_3 ... ... ... ... ... ... ... ... Wenn ich eine Möwe wäre,.. ich würde nach weit draußen fliegen und überall für die Menschen singen... Ich frage mich, ob der Windfisch mir diesen Wunsch erfüllen würde... ... ...
+marin_2_4 HALLO! [NAME]!!! Hörst Du mir überhaupt zu??? Hmmm...
+marin_2_5 Wo hast Du nur Deine Gedanken, [NAME]! Hörst Du mir gefälligst zu?
+marin_2_6 [NAME], ich will alles über Dich wissen... Was Du denkst, was Du fühlst... was Du liebst.. kicher!
+marin_2_7 Was? Ich soll mit Dir zum Walross gehen? Okay, dann lass uns losgehen...
+
+maria_collected Juchu!!! Da ist sie ja... MARIN!
+
+// Tempel betreten
+marin_dungeon Was? Ich soll DA reingehen? Nein, ohne mich! Ich warte draußen...Pass auf Dich auf, [NAME]!
+marin_dungeon_leave [NAME], da bist Du ja wieder! Du bist doch nicht verletzt?!
+marin_dungeon_leave_time Was hast Du da drinnen so lange gemacht? Häh???
+marin_dungeon_hearts Iiieehh! Du bist ja verletzt! Oh! Jetzt stell Dich nicht so an...
+marin_dungeon_hearts_alt Du Idiot! Habe ich Dir nicht gesagt, dass das passieren wird? ... ... Was??? Ich habe nichts gesagt...
+
+marin_cucco_0 Hey! Tierquäler!\nDie arme Henne!!
+marin_cucco_1 Hahaha! Ja, mach das Huhn platt! ... ... ... ... Was??? Ich habe nichts gesagt...
+
+marin_pot_0 Au ja! Mach sie kaputt! Schmeiß sie an die Wand! ... ... ... ... Was ist los?
+marin_pot_1 Das ist gemein von Dir, [NAME]!
+
+marin_digging Super! Grabe uns ein Loch, bis zum Mittelpunkt der Erde!
+
+maria_game_0 Ey super, [NAME]! Kann ich es auch mal versuchen?
+// Jo! Nein
+maria_game_1 Ach, komm schon! [NAME]!!! Bitte!! Ich möchte gern!
+// Gut!  Okay
+maria_game_2 Von wegen "VERSUCHEN"! Du bist ja ein Profi! ... ... ... ... Profis brauchen wir hier nicht!
+
+// Wallross 
+maria_3_0 Das ist also das Walross?! Sollen wir es ein wenig erschrecken?
+// Jaja  Nein!
+marin_3_1 Ich glaube, Du hast Recht...! Wir sollten es schlafen lassen!
+maria_3_2 Hahaha! Der hat sich jetzt aber erschrocken... Hihihi!
+maria_3_3 Häh? Ich glaube, der will was von mir! Vielleicht soll ich mitkommen... Oh, diese Karnickel!!!
+maria_3_3_Alt Oh? Ich glaube, der möchte etwas von mir! Vielleicht soll ich mitkommen?
+maria_3_4 Okay, dann gehe ich jetzt mit ihm ins Zoodorf! Komm doch später nach, [NAME]!
+// Marin fällt in den Brunnen, aber fällt nicht auf Link
+marin_fountain Huch??? Wo sind wir denn jetzt gelandet...?
+
+// Marin in den Bergen
+marin_4_0 HIIIIIILFEEEEEE!
+marin_4_1 [NAME]! Ein paar Monster haben mich hierher gebracht. Was soll ich jetzt tun??? Ich habe ANGST!
+marin_4_2 Danke, [NAME]! Das war Rettung in letzter Sekunde!
+marin_4_3 ... ... ... ... ... ... ... ... Sag... [NAME] ...
+marin_4_4 Ach... Ich weiß nicht, wie ich es sagen soll...Aber... [NAME]...
+marin_4_5 MAAAAARINNNNNN!!
+marin_4_6 Huch? Oh, TARIN!... ... ... ... Tja... Dann muss ich wohl gehen!
+
+marin_5_0 Du hast mir das Leben gerettet, [NAME]! Das werde ich Dir nie vergessen. Ich habe mir beim Windfisch etwas für uns gewünscht... Was..? Das wird nicht verraten!
+marin_5_1 [NAME]! Ich weiß, dass Du Cocolint irgendwann verlassen wirst. In meinem Herzen spüre ich das... Versprich mir, dass Du mich nie vergessen wirst! Ich würde es Dir nie verzeihen!
+
+marin_6_0 [NAME], ich habe das Gefühl, dass ich keine weitere Chance bekommen werde... Würdest Du mit mir spazieren gehen?
+marin_6_1 Oh. Okay, dann... Vielleicht ein anderes Mal.\f[NAME]...\f...Bitte versprich mir, dass Du wiederkommst!
+marin_6_2 Danke, [NAME], das hat viel Spaß gemacht!\f[NAME]...\f...Bitte versprich mir, dass Du mich nie vergessen wirst!\fDas heißt wohl, wir verabschieden uns jetzt?
+marin_6_3 [NAME]. Ich... ich... habe kein gutes Gefühl dabei. Lass uns bitte umkehren!
+
+walrus_0 SCHNARCH! Zzzzz!{... [MARIN] ... [MARIN] ...}
+walrus_1 Arfh! Arfh! Arf! {[MARIN]  [MARIN]!  [MARIN]   [MARIN]!}{..... [LINK]??}
+
+animals_absorbed ... ... ... ... ... ... ... ... Es scheint durch Marins Lied in Trance zu sein.
+
+ocarina_maria_song Endlich hast Du die "Ballade vom Windfisch" gelernt. Sie wird in Deinem Herzen weiterleben.
+
+// Tarins Haus
+tarin_chest ... Ja, spinn ich denn?! Was fällt Dir ein, in dem Schrank herumzuwühlen. Du ungezogener Kerl!
+
+// Tarin
+npc02_leave Hey, Kleiner! Wo willst Du denn so schnell hin? Ich habe hier etwas für Dich.
+tarin_0 Endlich bist Du wieder auf den Beinen, [NAME]... Ich heiße übrigens Tarin... Bist Du okay? Was? Woher ich Deinen Namen weiß?? Der steht auf der Rückseite von diesem Schild... Hier!
+tarin_1 Oh ja! Am Strand lag noch etwas... Ist wohl auch an Land gespült worden... Achte auf die Monster! Sie treiben sich überall herum, seit Du auf der Insel bist, [NAME]!
+
+// nach der Waschbär Transformation
+tarin_raccoon_2 Nachdem ich in den seltsamen Pilz gebissen habe, muss ich wohl eingeschlafen sein. Im Traum war ich ein Waschbär. Das war lustig, sage ich Dir... Du hältst mich für verrückt???
+tarin_raccoon_3 Kinder, bin ich kaputt! Ich ruhe mich erst einmal aus, später gehe ich nach Hause!
+
+tarin_2 Ich bin müde... Ich... muss... schlafen. Gähn!
+tarin_3 Schnarch... Häh? Ruf doch Ulrira an, wenn Du eine Frage hast... Hm? Schnarch...
+
+// Tarin und die Bananen
+tarin_4 Ich brauchte unbedingt ein paar Vitamine, da bin ich unten an den Strand gegangen, um mir ein paar Bananen zu besorgen. [NAME], solltest Du auch tun...
+
+// Tarins Tauschsequenz
+tarin_stick Hi, [NAME]...! Ein schöner Stock, den Du da hast... Leihst Du ihn mir mal kurz?
+tarin_stick_no Das ist gemein von Dir, [NAME]!
+
+// Tarin, nach der Tauschsequenz im Bett schlafend
+tarin_5 Auuuuu! Auaaaaa!... ... ... ... Erwähne ja nicht das Wort HONIG!!
+
+// Frau mit Besen
+npc_broom_0 Jaja, mir geht's gut, und Dir???
+npc_broom_1 Jaja, nach dem vielen Kehren ist mein Besen ganz kaputt...
+npc_broom_2 Oh... Ein neuer Besen? Für MICH? Er ist doch für mich, oder...?
+npc_broom_3 Danke! Ich gebe Dir dafür den Angelhaken [TRADE10], den ich beim Kehren am Fluss gefunden habe.
+npc_broom_4 Jaja! Der neue Besen kehrt gut!
+npc_broom_5 Gut! Dann kannst Du SELBST den Dreck wegkehren!
+npc_broom_bowwow Jaja! SEUFZ! In Madame MiouMious Haus hat sich eine furchtbare Tragödie ereignet! Es ist so schrecklich,... ...aber ich kann nichts weiter tun, als kehren.
+
+npc04 Öhm... Wie soll ich es sagen... Aber... könntest Du mich bitte... von draußen anrufen... ... ...???
+npc04_game Es scheint, Ulrira ist sehr schüchtern!
+
+// Kinder mit Hinweisen
+//npc05_0 Hey! Wenn Du das Spiel speichern willst, musst Du alle vier Knöpfe auf einmal drücken... Frag mich aber nicht, was das bedeutet, ich bin nur ein Kind!
+npc05_1 Es scheint, dass Du nach dem Abspeichern wieder an DER Tür beginnst, durch die Du zuletzt gegangen bist... ... ... ... ... Ich verstehe das auch nicht! Aber ich bin auch noch zu klein!
+npc05_2 Ich habe gehört, dass Du [START] und dann [SELECT] drücken kannst, um auf die Karte der Insel zu sehen... Ich weiß auch nicht, wie die das meinen!
+npc05_3 Wenn alle Herzen fast leer sind, solltest Du Dich schnell in ein Haus oder eine Höhle begeben... Warum? Ich habe keine Ahnung... Ich bin noch ein Kind!
+
+npc_ball_left Von wo kommst Du denn her?... Nicht von der Insel??? Wo soll denn das sein??? Das habe ich ja noch nie gehört!
+npc_ball_right Das große Ei auf dem Tamaranchberg?? Man sagt, der Windfisch schlafe darin... Warum? Frag mich was Leichteres!
+
+// Kinder in der Nähe des Wettervogels oder neben dem Laden
+npc_boy_island Du fragst mich, seit wann wir auf dieser Insel leben? Hm... Darüber habe ich noch nie nachgedacht!
+npc_boy_marin Hey, Du Clown! Was hältst Du eigentlich von Marin...? Uhhh... Ich verstehe, es geht mich nichts an!
+npc_boy_shrine Hyho, Kumpel. Du meinst den Traum Schrein? Drinnen gibt es eine... Ups! Ich habe nichts gesagt... Ich bin noch zu jung für sowas!
+npc_boy_marin_beach Marin? Sie sitzt manchmal für Stunden am Meer und starrt in die Ferne... Tja, FRAUEN!!!
+// Kinder, während Marin bei Link ist
+npc_boy_marin_following Hallo, Ihr zwei! Wo geht Ihr denn hin? Okay okay, geht mich ja nix an. Ich bin ja nur ein Kind...
+npc_boy_marin_gone Nanu? Wo hast Du denn die Marin gelassen? Hm??? Was ist mit ihr geschehen?
+
+// wenn der Spieler den Besen hat und die Oma im anderen Dorf ist
+npc_boy_grandmother Oma ist nicht hier. Sie ist ins Zoodorf gegangen! Das hat Opa Ulrira mir am Telefon erzählt!
+
+// Ball spielende Kinder, nachdem das Dorf angegriffen wurde.
+npc_kid_attacked Hey, Du da! Es ist etwas ganz Schlimmes geschehen... Ja, ganz schlimm! Die Moblins sind ins Dorf gekommen. Ja, ganz viele... Eine ganze Gruppe von Miblons, ähh... Moblins! Dann... sie sind zu dem Haus... Ja, das Haus von Struppi und der Frau... Sie haben etwas ganz Böses getan. Oh ja, das war vielleicht böse ... ... ... Hm! Finde besser selbst heraus, was geschehen ist...
+
+// Koch ist im richtigen Dorf
+npc_chef_0 Demnächst eröffne ich wohl ein Bistro im Mövendorf...
+npc_chef_0Alt Mein ultimativer Plan wäre es, eine Filiale in Möwendorf zu eröffnen!
+npc_chef_1 Mir fehlt noch etwas Honig für meinen Bäreneintopf. Aber wo soll ich DEN nun herbekommen?
+npc_chef_2 Hallo! Ist das etwa eine Honigwabe [TRADE5], die Du da hast? Genau so eine bräuchte ich... Möchtest Du eine Ananas dafür?
+npc_chef_3 Das verstehe ich gut! Leider sind diese Honigwaben sehr rar...
+npc_chef_4 Nun, dieses Tier schläft schon ewig da unten im Süden des Dorfes und versperrt den Weg in die Durstwüste. Aber hey, vielleicht kann die kleine Marin es ja mit ihrem Lied aufwecken!? Wahrscheinlich ist das die Lösung!! Hehehe!
+npc_chef_marin Hyho, kleines Fräulein! Tag...! ... ... ... ... ... ... ... ... Oh... Du bist nicht alleine...
+npc_chef_marinAlt HI HO! Kleine Marin! Willkommen! ... ... ... ... Oh, verdammt! Du bist auch hier... Tut mir leid...
+
+// Mamahl - Yoshi Puppe
+npc07_0 Sie sehen alle gleich aus. Auch ich kann sie manchmal nicht unterscheiden!
+npc07_1 Mein Sohn fragt zur Zeit immer nach der Yoshi-Puppe! Ich sah eine in der Spielhalle...
+npc07_2 Oh! Schenkst Du meinem Kind den [TRADE0]? Bitte!
+npc07_3 Hm! Das ist aber schade!
+npc07_4 Vielen Dank! Das ist sehr lieb von Dir! Moment! ... ... ... ... Ich gebe Dir DAS für die Puppe...!
+npc07_5 Mein Mann hat sich im Wald verlaufen. Bitte suche ihn!
+
+npc_house_chest [NAME] untersucht das Regal!\n... Das ist ja ein tolles Regal! 
+npc_house_chestAlt [NAME] hat die Truhe begutachtet.\nWow! Das ist eine schöne Truhe!
+npc_house_chest_marin [NAME]! Siehst Du immer in die Schränke von anderen Leuten?
+
+//Dr. Wright
+npc_letter_boy_0 Hallo, mein Name ist Dr. Wright! Tja, seit Wochen schreibe ich nun Liebesbriefe an Christine, aber bis heute habe ich keine Antwort bekommen!
+npc_letter_boy_1 Was ist das? Ein BRIEF? Für MICH? schnief... Das.. ist ja toll! ... Und sieh doch...! Mit einem FOTO!!
+npc_letter_boy_2 Mmm... Sie ist ja so hübsch... Warte, ich muss Dir irgendetwas für Deine Mühe geben... Moment! Dieser Besen ist alles, was ich habe... Okay?
+npc_letter_boy_3 Bitte! Du musst diesen [TRADE9] von mir annehmen...
+npc_letter_boy_4 Ich habe es ja immer gesagt... Briefe schreiben lohnt sich...
+npc_letter_boy_5 Habe keine Zeit! Schreibe gerade einen Brief an Christine...
+
+// Christine
+npc_letter_girl_0 Hm! Du hast noch nicht gelernt, wie man sich bei einer Dame benimmt, oder? Wer mir nicht einmal Blumen oder so mitbringt, mit dem rede ich erst gar nicht... Mmm! Über Hibiskus würde ich mich schon freuen...
+npc_letter_girl_1 Oh, wie entzückend von Dir! Du hast mir einen Hibiskus mitgebracht. Wenn Du so ein Gentleman bist... Könntest Du mir einen Gefallen tun?
+npc_letter_girl_2 Könntest Du für mich einen Brief zu Dr. Wright bringen? Er lebt am Rand vom Zauberwald. Bitte!
+npc_letter_girl_3 Oh, wirklich??? Und ich dachte, Du seist ein Gentleman...
+npc_letter_girl_4 Manchmal habe ich Heißhunger auf ein leckeres Stück Papier. Dann esse ich sogar Briefe von meinem Liebling Dr. Wright! Das ist mir echt peinlich...
+
+// Angler unter der Brücke
+npc_bridge_0 Es ist seltsam!? Dieser Fisch ist mit dem Angelhaken auf und davon... Seitdem halte ich die Schnur ins Wasser, aber keiner beißt mehr an... Könnte es sein, dass ich ohne den Angelhaken nicht angeln kann???
+npc_bridge_1 Oh! Das ist doch nicht etwa ein Angelhaken, was Du da in der Hand hast, oder? Den solltest Du mir geben... Du bekommst dafür meinen ersten Fang... 
+npc_bridge_2 Ich dachte, wir seien Freunde...Das ist nicht sehr nett..!
+npc_bridge_3 Sperre Deine Augen auf und sieh genau hin!
+npc_bridge_4 Wow! Welch ein Riesenbrocken!
+npc_bridge_5 Bin gespannt, was ich als nächstes heraus ziehe... LECHZ!
+
+// Geierwally/Trantrude/Crazy Tracy
+tracy_give Klar
+tracy_dont Nö
+
+npc_tracy_0 Hallo, ich heiße Geierwally! Ich verkaufe Dir ein Geheimnis, das Dich sicher anmachen wird...
+npc_tracy_0_mod Hallo, mein Name ist Trantrude! Ich verkaufe Dir ein Geheimnis, das Dich sicher anmachen wird...
+npc_tracy_0_alt Hallo, mein Großer! Ich bin Crazy Tracy! Ich habe ein kleines Geheimnis zu verkaufen, das Dich richtig in Stimmung bringen wird!
+npc_tracy_1 Zahlst Du mir 28 Rubine für mein Geheimnis? Hm???
+npc_tracy_2 Zahlst Du mir 42 Rubine für mein Geheimnis? Hm???
+npc_tracy_3 Du gefällst mir, Kleiner!\nDeshalb kostet es Dich nur 7 Rubine...
+npc_tracy_3_alt Du bist ja so toll!\nDeshalb bekommst Du auch einen Rabatt von 7 Rubinen...
+npc_tracy_4 Okay, Süßer! Du hast eine gute Wahl getroffen!! Hier... Ich gebe Dir meine geheime Medizin. Wenn all Deine Herzen leer sind, wirst Du mit der Medizin automatisch wieder gesund!!
+npc_tracy_5 Nicht mit mir!!! Komm wieder, wenn Du genügend Geld dabei hast!
+npc_tracy_6 ... oder lieber doch nicht... Du hast ja schon..
+npc_tracy_7 Dann eben nicht! Wer nicht will, der hat schon... Ich wollte Dir nur etwas Gutes tun, Du Memme...
+npc_tracy_8 Lass mich Deine Wunden heilen..! Entspanne Dich und schließe die Augen... Ommmm!
+// Papahl, der verlorene "Junge"
+npc_lost_boy_0 Tja... Ich habe mich verlaufen, wie ich es vorhergesagt habe... Und jetzt bin ich so K.O., ich kann mich nicht mehr bewegen... Hast Du zufällig etwas Essbares für mich?
+npc_lost_boy_1 Du bist ja total herzlos!
+npc_lost_boy_2 Mmmmm! Diese [TRADE6] sieht ja lecker aus. Ich muss sie gleich essen!
+npc_lost_boy_3 Lecker! Ich gebe Dir dafür einen [TRADE7]! Ein schöner Hibiskus!
+npc_lost_boy_4 Ich fühle mich wie neu geboren!
+npc_lost_boy_4Alt Köstlich! Lecker! Ich bin jetzt voller Energie!
+
+// Meerjungfrau/Nixe
+npc_mermaid_0 Ich bin hier geschwommen, als mir eine Welle meine Perlenkette vom Hals riss. Wenn Du sie findest, schenke ich Dir eine Schuppe von mir!
+npc_mermaid_1 An dieser Stelle habe ich bereits gesucht!
+npc_mermaid_2 Da IST ja meine Perlenkette! Hey, gib sie mir zurück! Ich gebe Dir auch eine Schuppe von mir!
+npc_mermaid_3 Versprich mir, dass Du nur eine Schuppe nimmst! Aua! Nur eine!
+npc_mermaid_4 SCHLUCHZ! Du bist gemein!
+npc_mermaid_5 Einst stand ich Modell für einen Künstler aus dem Zoodorf... Zur Vollendung der Statue fehlte ihm damals aber eine Schuppe... Weißt DU eigentlich, ob die Legende über die magische Lupe wahr ist???
+
+npc_mermaid_0_redux Als ich in der Bucht schwamm, hat die Welle mein rosa Bikini-Oberteil weggespült... Wenn Du es findest, schenke ich Dir eine Schuppe von mir!
+npc_mermaid_0_redux_alt Als ich in der Bucht schwimmen war, riss mir eine Welle mein schönes pinkes Bikini-Oberteil vom Körper... Wenn Du es findest, gebe ich Dir etwas Besonderes von mir...!
+npc_mermaid_1_redux Hey, lass das Du Strolch!
+npc_mermaid_2_redux Uiiii! Da IST es ja! Mein Bikini-Oberteil! Hey, gib es mir! Gib es mir sofort zurück! Ich gebe Dir auch eine Schuppe von mir!
+
+// Venusnixen Statue
+mermaid_statue_0 DIE VENUSNIXE VON DILIUS??? Oh, da fehlt ja eine Schuppe!
+mermaid_statue_1 Du hast die fehlende Schuppe in die Nixenstatue gesteckt!
+
+// Kaninchen
+rabbit_0_0 Hey! Wusstest Du schon, dass Zoodorf und Mövendorf Partnerstädte sind? Na ja, STÄDTE ist vielleicht etwas übertrieben... Daher weiß ich auch, dass es im Mövendorf einen Traumtempel geben soll, in dem sich etwas Gutes befindet. Hm, ob das wohl stimmt??
+rabbit_0_1 Hm! Letzte Nacht habe ich mich im Traum in eine Karotte verwandelt! Junge, das war echt übel...
+
+rabbit_1_0 Wegen all dieser Ungeheuer komme ich nicht ins Möwendorf. Hoffentlich geht es Marin gut!
+rabbit_1_1 Hm? Wie ein Tier sprechen kann??? Woher soll ICH denn das wissen! Ich bin doch nur ein Karnickel!
+rabbit_1_1_alt Hm? Wie ein Tier sprechen kann??? Woher soll ICH denn das wissen! Ich bin doch nur ein Kaninchen!
+
+rabbit_2_0 Die Durstwüste?? Ja, im Süden ist ein Weg, der in die Wüste führt! Aber solange das faule Walross diesen Weg versperrt, kommst Du wohl nicht in die Wüste...
+rabbit_2_1 Hast Du schon vom "Fliegenden Gockel" gehört, der früher im Mövendorf gelebt haben soll? ... ... ... ... Ob an dieser Geschichte wohl etwas dran ist?
+
+rabbit_3_0 GÄÄÄHHN... An so einem Tag könnte ich ein Lied von Marin vertragen!
+rabbit_3_1 SEUFZ! Ich vermisse die kleine Marin so sehr... Und ihr Lied...!
+
+rabbit_marin Juchu!!! Da ist sie ja...\nMARIN!
+
+// Aialog Auswahlen
+choice_Yes Ja
+choice_YES JA
+choice_Yes! JAA!
+choice_Okay Okay
+choice_Yeah Jo!
+choice_Fine Gut
+choice_No Nein
+choice_NO NEIN
+choice_No... Nein...
+choice_No! Nein!
+choice_N-No N-Nein
+choice_No_Way Auf keinen Fall
+choice_No_way Absolut nicht
+choice_Not_Now Nicht jetzt
+choice_Nope Nöö
+choice_Give Geben
+choice_Keep Behalten
+choice_Dont Nicht
+choice_Can Mach ich
+choice_Cant Das wird nichts
+
+choice_Keep_redux Lechz
+
+choice_Fish Angeln
+choice_Cast Auswerfen
+choice_Look Schauen
+
+// Marin beach sequence - asking to join Link to see the Walrus.
+choice_Yeah_Marin Hmmm
+choice_No_Marin... ....
+
+// Papahl
+npc08_0 Hast Du schon meine Vierlinge getroffen...? Ich bin Papahl und glaube, dass ich mich später im Gebirge verirren werde. Suchst Du mich dort...?
+npc08_1 Vielen Dank noch einmal! Danke!
+
+// Madame MiouMiou
+npc09_0 Bonjour...! Mein kleiner Struppi sieht mit seiner neuen Frisur so süß aus!
+npc09_0_mod Bonjour...! Mein kleiner Komet sieht mit seiner neuen Frisur so süß aus!
+npc09_1 KREEEEIIIIIISCH! Es ist entsetzlich! Sie haben meinen Struppi entführt. Sie... die.. Mo.. Mob.. MOBLIIIIIIINS... Warum hilft denn keiner meinem kleinen Struppi?
+npc09_1_mod KREEEEIIIIIISCH! Es ist entsetzlich! Sie haben meinen Komet entführt. Sie... die.. Mo.. Mob.. MOBLIIIIIIINS... Warum hilft denn keiner meinem kleinen Struppi?
+npc09_2 DANKE! DAAAANKE! Du hast mir den kleinen Struppi zurückgebracht. Aber könntest Du mit ihm kurz Gassi gehen? Ich bin gerade etwas unpässlich... Du machst es? Vielen Dank!
+npc09_2_mod DANKE! DAAAANKE! Du hast mir den kleinen Komet zurückgebracht. Aber könntest Du mit ihm kurz Gassi gehen? Ich bin gerade etwas unpässlich... Du machst es? Vielen Dank!
+npc09_3 Danke! Daaaanke! Es war ja so süß von Dir, Dich um den kleinen Struppi zu kümmern. Du bist ein ganz lieber Kerl. Wie kann ich Dir jemals danken..? Aaaah, ich weiß\fSCHMMMMMMMMMATZ!\nDu hast einen Kuss von Madame MiouMiou erhalten.
+npc09_3_mod Danke! Daaaanke! Es war ja so süß von Dir, Dich um den kleinen Komet zu kümmern. Du bist ein ganz lieber Kerl. Wie kann ich Dir jemals danken..? Aaaah, ich weiß\fSCHMMMMMMMMMATZ!\nDu hast einen Kuss von Madame MiouMiou erhalten.
+npc09_4 Danke! Daaaanke! Es war ja so süß von Dir, mit dem kleinen Struppi Gassi zu gehen. Wie kann ich Dir jemals danken..? Aaaah, ich weiß\fSCHMMMMMMMMMATZ!\nDu hast einen Kuss von Madame MiouMiou erhalten.
+
+// Struppi/BOWWOW/Komet
+bowWow2 WUFF! WUFF!\nKLÄFF! KLÄFF!
+bowWow3_0 Schöne Kleider, Make-Up und Juwelen! Ich liebe dieses Zeug! Und wenn Du etwas anderes hast... Nur her damit...!
+bowWow3_1 Schöne Kleider, Make-Up und Juwelen! Ich liebe dieses Zeug! Und wenn Du etwas anderes... UPPS! Diese [TRADE1]! Oh, ich brauche sie sofort! Ich gebe Dir dafür auch eine Dose Hundefutter...!
+bowWow3_2 Was? Du Egoist! Nicht zu fassen!
+bowWow3_3 Freude! Hier ist Deine [TRADE2]!
+bowWow_dig Wuff! Grrrabenn!
+bowWow_walk Struppi ausführen?
+
+// Trendy Game
+npc_trendy_open * WUNDERKRAN *\n1 Sp. 10 Rubine
+npc_trendy_open_alt * WUNDERKRAN *\n 1 Spiel nur 10 Rubine
+npc_trendy_no_cash Ich fürchte, das kannst Du Dir im Moment nicht leisten. Tschüss!
+npc_trendy_start Mit den [CONFIRM] und [CANCEL] Knöpfen bewegst Du den Kran. Der Rest ist Timing! Gehe vor die Knöpfe. Viel Erfolg!
+npc_trendy_again Noch ein Spiel?
+npc_trendy_closed Feierabend! Für heute ist erst mal Schluss! Komm bald wieder!
+npc_trendy_good_luck Viel Glück!
+npc_trendy_play Versuchen wir unser Glück!
+npc_trendy_no_play Lass mal lieber!
+
+// 0176: <
+npc_fisherman_0 Möchtest Du eine Runde angeln? 
+npc_fisherman_choice Es kostet Dich nur 10 Rubine pro Versuch!
+npc_fisherman_1 Das ist schade! Angeln macht so großen Spaß...
+npc_fisherman_2 Tut mir leid, Du hast nicht genug Rubine! Aber sei nicht traurig! Die Fische laufen Dir ja nicht weg! Bis später!
+npc_fisherman_3 Fein! Mit dem [DPAD] ([LEFT] & [RIGHT]) und dem Knopf kannst Du bestimmen, wo die Schnur im Wasser landen soll... Mit dem [CONFIRM] Knopf kannst Du die Schnur dann im Wasser bewegen! Hat endlich ein Fisch angebissen, holst Du ihn raus, indem Du schnell den Knopf drückst.
+npc_fisherman_4 Möchtest Du es noch einmal versuchen?
+npc_fisherman_5 Die Schnur ist gerissen!\nNoch einen Versuch?
+npc_fisherman_6 Wow! Das ist ja ein dicker Brocken! Dafür gebe ich Dir 20 Rubine.
+npc_fisherman_6_1 Noch mal?
+npc_fisherman_7 Das ist aber ein Kleiner! Für den bekommst Du nur 5 Rubine!
+npc_fisherman_7_1 Willst Du noch einmal?
+
+npc_fisherman_8 Oh, ein Großer! Und ein Herzteil hat er auch noch dabei! Außerdem bekommst Du noch 20 Rubine dafür! 
+npc_fisherman_8_full Oh, ein Großer! Und ein Herzteil hat er auch noch dabei! Damit bekommst Du einen neuen Herzcontainer! Außerdem bekommst Du noch 20 Rubine dafür! Noch einmal?
+
+npc_fisherman_8_1 Noch einmal?
+npc_fisherman_9 Im Teich gibt es keine Fische mehr!
+npc_fisherman_9_1 Willst Du es jetzt am Meer versuchen?
+npc_fisherman_10 Hab ich wirklich MEER gesagt? Das war wohl ein Versehen. Ciao!
+
+// Floß NPC
+npc_raft_0 Möchtest Du für 100 Rubine mit dem Floß fahren?
+npc_raft_1 Okay, nimm Dir einfach das Floß da draußen! Viel Spaß damit!
+// das gleiche wie beim Angler im englischsprachigen Original, hier aber abgeändert:
+npc_raft_2 Tut mir leid, Du hast nicht genug Rubine! Aber sei nicht traurig! Komm einfach später wieder, wenn Du genug hast!
+
+// Froschjunge
+npc_frog_boy_0 Er sei gegrüßt!! Vermutlich sieht Er es mir nicht an, aber einst lebte ich in einem Schloss. Doch dann wurden die Diener von den Monstern verzaubert und zwangen mich, das Schloss zu verlassen... Ich musste in die Villa fliehen... Aber, Er möchte den Schlüssel zur Urunga-Steppe? Ich kann Ihm helfen... Für eine kleine Gegenleistung... Er möge mir erst die Goldenen Blätter bringen, die ich bei der Flucht verloren habe.
+
+npc_frog_body_impressed Großartig! Finde Er alle fünf Blätter! Vergiss Er nicht, auch eine Schaufel mitzubringen!
+npc_frog_body_coward Ich hätte mir denken können, dass Er ein Feigling ist. Verlasse Er mich!!
+
+npc_frog_body_please Willkommen, [NAME]! Das sind aber noch nicht alle Blätter!
+npc_frog_body_please_alt Ah! Bonjour! [NAME], um der Gerechtigkeit willen und um meinetwillen müsse Er noch alle Blätter finden!
+
+npc_frog_body_bien Ah, sehr gut! Er hat alle Blätter finden können. Schiebe Er diese Truhe hinter mir zur Seite und Er findet, was Er gesucht hat...
+npc_frog_body_debt Ich werde Ihm immer zu Dank verpflichtet sein!
+
+npc_frog_body_bowwow Öhm! Entferne Er doch bitte diese Kreatur aus der Villa! Ich rede nicht mit Ihm, solange Er diese Unaussprechlichkeit bei sich hat! Komme Er ohne dieses Vieh wieder!
+
+//Zora
+npc_zora Ich verrate Dir etwas Wichtiges, wenn Du es für Dich behältst! Geh zum Toronga-Strand und nimm eine Lupe mit. Dort findest Du noch jemanden wie mich...
+npc_zora_alt Wenn Du ein Geheimnis für Dich behalten kannst, verrate ich Dir etwas Nützliches! Geh zum Toronga-Strand und nimm eine Lupe mit und Du wirst jemanden wie mich finden.
+
+//Alligator Erwin
+alligator_0 Willkommen im "Bananenhimmel"! Ich bin Erwin... Nebenbei sammele ich Dosenfutter aller Art. Naja, ein seltsames Hobby... Stimmt! Aber mein Bruder sammelt alte Zahnbürsten... Das liegt wohl an den Genen...
+alligator_1 Was hast Du denn da in der Hand?? NEIN! Das ist... Genau DIESE Dose fehlt in meiner Sammlung! Bitte, gib mir die [TRADE2]! Bittebittebitte!
+alligator_2 Er ist hysterisch! Was willst Du tun?
+alligator_3 Hat wohl keinen Sinn, weiter zu bitten, oder...? Solltest Du die Meinung ändern, ich bin hier!
+alligator_4 Oh, danke! Gib sie sofort her!
+alligator_5 SCHMATZ SCHMATZ!... ... RÜLPS!... Das war gut! Es ist kein fairer Tausch, aber da hast Du ein paar Bananen! Wumps!
+alligator_6 Danke nochmal! Das war lecker!
+alligator_7 Schon einmal mit Floß die Stromschnellen heruntergefahren? Das kommt gut, sag' ich Dir! Im Osten der Taltal-Höhen gibt es einen Floß-Verleih...
+
+witch_0 BRAUCHE IHN BALD, DEN PILZ IM WALD UND MACH DIR FIX EINEN ZAUBERMIX.
+witch_1 Aah! Es hat eine Schlummermorchel dabei! Ich werde daraus etwas Feines machen! Hihihi...
+witch_2 Das Pulver ist fertig! Probiere es gleich mal in der Hütte aus. Verschwende es jedoch nicht unnötig!
+witch_3 Manche Gegner ändern ihre Gestalt und Du kannst sie bezwingen. Hast Du keines mehr, bringe mir ein paar Pilze! Dann gebe ich Dir wieder etwas davon!
+
+cukeman_0 Du bist komisch!
+cukeman_0_mod Ich hab was zu sagen!
+cukeman_0_alt Spüre meinen kalten, stählernen Blick!!!
+cukeman_1 Wer unter Wasser sucht, wird manches finden!
+cukeman_1_mod Es gibt auf dieser Insel drei Lieder...
+cukeman_1_alt Ich wünschte, ich könnte auf eine tropische Insel im Süden reisen.
+cukeman_2 Kleine Teufel schenken Tragkraft...
+cukeman_2_mod Diesen drei Liedern wohnt ein Zauber inne.
+cukeman_2_alt Ich bin so müde.
+cukeman_3 Hey! Hast Du Geierwally schon besucht?
+cukeman_3_mod Wenn Du mal nicht weiterkommst, spiel eines dieser Lieder! Vielleicht hilft's ja!
+cukeman_3_alt Ich brauche es auf jeden Fall und zwar so schnell wie möglich!
+
+cukeman_0_redux Gib mir Deinen Saft, ich geb' Dir meinen...
+cukeman_1_redux NIE OHNE KONDOM!
+cukeman_2_redux Irgendwelche Sorgen, Nöte oder Probleme?
+cukeman_3_redux !STOP THE WAR! \nGIVE PEACE A CHANCE!!
+
+fairy_0 Lass mich Deine Wunden heilen! Entspanne Dich und schließe die Augen... Ommmm!
+
+// general dialog not used in the actual game
+itemShop_dialog [itemShopItem]\n[itemShopPrice] Rubine!
+itemShop_bow Bogen & Pfeile als Set nur 980 Rubine!
+itemShop_arrow 10 Pfeile 10 Rubine
+itemShop_shovel Luxus-Schaufel 200 Rubine!
+itemShop_shovel_alt Luxus-Schaufel 200 Rubine! Sieht wertvoll aus.
+itemShop_hearts Drei Herzen 10 Rubine!  
+itemShop_shield Schild 20 Rubine!
+itemShop_bomb 10 Bomben 10 Rubine
+
+itemShop_buy Kaufen
+itemShop_dont Verzichten
+itemShop_no_way Lass mal
+itemShop_no_way! Nee, danke!
+
+// Ladenbesitzer
+shopkeeper_0 Gude...! Hol Dir etwas vom Regal und bring es zur Kasse...
+shopkeeper_1 Vielen Dank! Und bis bald...!
+shopkeeper_2 Ich fürchte, das kannst Du Dir im Moment nicht leisten. Tschüss!
+shopkeeper_3 Warum willst Du etwas kaufen, was Du schon besitzt? Du dummer Kerl...!
+shopkeeper_4 Ja, bist Du noch ganz sauber? Du musst erst bezahlen. Zurück!
+shopkeeper_5 Wow! Er hat es nicht gemerkt. Aber plagt Dich jetzt nicht Dein Gewissen??? Hm?
+shopkeeper_6 Hey! Du hast meine Sachen gestohlen, aber ich will Dir die Chance geben, das wieder gut zu machen. Wenn Du mir 999 Rubine, 30 Bomben, 30 Pfeile und 20 Portionen Zauberpulver gibst, sind wir quitt. Was meinst Du?
+
+shopkeeper_debt_0 Deine Schulden abbezahlen??
+
+shopkeeper_debt_1 Es war mir ein Vergnügen, mit Dir Geschäfte zu machen. Ich werde dafür sorgen, dass Dein Name wieder rein gewaschen wird!
+shopkeeper_debt_2 Nun, das ist schade. Dann wirst Du für immer als DIEB bekannt sein!
+shopkeeper_debt_3 Tut mir leid, Junge! Du hast nicht die nötigen Mittel! Komm wieder, wenn Du alles hast, was ich will!
+
+itemShop_revenge Ich habe gesagt: "Du musst erst zahlen!" Das war eine Warnung...! Jetzt zahlst Du mit dem Leben...
+
+weatherBird  HIER RUHT DER FLIEGENDE GOCKEL
+
+rooster_0 Wow! Der Gockel lebt ja wieder! Und nett scheint er auch zu sein!
+rooster_1 SKWAAAK!
+
+// der Geist, der Link folgt
+ghost_0 ...das Haus... ...bring mich... ...das Haus... ...an der Bucht...
+// wenn man versucht ein Verließ mit ihm zu betreten
+ghost_1  ...N-N-Nein... ...Nicht hier...
+ghost_2  ...Hier... ...Reingehen... ...mein Haus...
+ghost_3 ...Nostalgia... ...come sempre... ...buuu huuuuu...
+ghost_4 .....Genug... ...Friedhof... ...bring mich... ...mein  Grab...
+ghost_5  ...Friedhof.... ...bring mich... ...mein  Grab...
+ghost_6  ...Danke... ...eine Vase... ...in meinem Haus... ...schau drunter... ...Tschühüüüss..
+
+ghost_grave_powder Haaatschiiii! .. kein Pulver mehr! Sonst verfluche ich Dich! Haaatschiiii!
+
+// Uhu Begegnungen
+// Direkt beim Fund des Schwertes am Torongastrand 
+owl_1_0 Uhuuuu! Uhuuuu!\nEs ist also Dein Schwert!\nJetzt verstehe ich, warum die Monster so unruhig sind!\fEin mutiger Jüngling ist gekommen, um den Windfisch zu wecken.\fEs heißt, man könne die Insel nicht verlassen, ohne den Windfisch aus seinem Schlaf zu holen...\fDu solltest zuerst nach Norden, in den Zauberwald.\nIch werde dort auf Dich warten! Uhuuuu!
+// Am Eingang zum Zauberwald, wenn Link bereits das Schwert hat  
+owl_1_1 Uhuu! Willkommen im Zauberwald! Du wirst diese geheimnisvolle Insel auf keiner Karte finden! Stelle Dich der Aufgabe, den Träumenden zu wecken, denn solange der Windfisch schläft, kannst Du sie nicht verlassen. Warst Du übrigens schon am Wurmpalast im Süden des Dorfes? Du findest den Schlüssel zu jenem Ort hier in diesem Wald... Der Windfisch beobachtet Dich... Uhuu!
+// Nach Erhalt des Wurmschlüssels
+owl_1_2 Uhu! Nimm diesen Schlüssel, gehe damit zum Wurmpalast und suche dort nach einem Musikinstrument! Der Windfisch wartet! Uhuu!
+// Nach Erhalt der Muschelgeige, beim Betreten des Gebietes westlich des Wurmpalastes
+owl_2_0 Uhu! Das ist ein Instrument der Sirenen. Ich hätte nicht gedacht, dass Du es wirklich findest... Dieses Instrument hat zusammen mit den sieben anderen die Kraft, den Windfisch zu wecken! Du musst sie alle sieben finden... Und ich habe die Aufgabe, Dir den Weg zu zeigen. Nun führt Dich Dein Weg in den Schleimsumpf im Norden! Und da war doch noch was... Ach ja! Uhuuuu!
+// Nach der Rettung Struppis aus der Höhle der Moblins, direkt beim Verlassen der Höhle
+owl_2_1 Uhuu! Das ist ja ein furchterregendes Tier, was Du da bei Dir hast. Vergiss nicht das Musikinstrument im Schleimsumpf.
+// Auf dem Weg hinauf zum Gipfel des Tamaranch-Berges
+owl_stairs Uhuuu! Der Windfisch ruht sanft in seinem Ei auf dem Berg! Beim Klang der acht Musikinstrumente der Sirenen wird er jedoch aufwachen. Du kannst die Insel verlassen, wenn Du sie vor dem Ei spielst, mein Freund! Nur so! Uhuu!
+// Nach Beenden der Teufelsvilla (3. Verließ)
+owl_3_0 Uhuuuu? Wie viele Instrumente hast Du bereits? Wenn Du alle acht gefunden hast, musst Du sie vor dem Ei spielen, damit der Windfisch aufwacht und Du Cocolint verlassen kannst. Gehe nun zur Durstwüste! Ihre Einwohner werden Dir den Weg weisen! Ich sage nur: Uhuu!
+// Beim Verlassen der Durstwüste, wenn Link bereits den Wunderschlüssel hat
+owl_3_1 Uhu! Der Schlüssel hat die Form eines Fisches! Du solltest zum Wasserfall in den Bergen gehen! Dort, wo das Wasser dann verschwindet, musst Du nach unten springen. Uhuu!
+// Nachdem Link das Gespenst zu dessen Grab gebracht hat
+owl_5_0 Uhu! Endlich! Da bist Du wieder! Um in das große Fischmaul zu gelangen, musst Du an einer Stelle der Zwergenbucht tauchen... Du kommst dem Windfisch immer näher. Die Zeit des Erwachens ist nicht mehr fern! Uhuu!
+// Wenn Link sich dem Bereich um den Eingang zum Maskentempel näher (Verließ 6)
+owl_6_0 Uhuuu! Uhu! Zwei Schreine... Einer im Norden von hier, der andere im Süden... Gehe erst nach Süden, wo die alten Ruinen vom Windfisch erzählen! Die Reise lohnt sich bestimmt...
+// Nachdem Link das Wandgemälde vom Windfisch gesehen hat
+owl_6_1 Uhu! Du hast das Bild gesehen? Natürlich weiß man nicht genau, ob Cocolint tatsächlich nur ein Traum des Windfisches ist... Leider weiß man immer erst nach dem Aufwachen, dass der Traum nur ein Traum gewesen ist. Im Moment kennt die Wahrheit nur der Windfisch... Vertraue Deinem Gefühl. Irgendwann wirst Du die Antwort wissen... Uhuuuu! Uhuuuu!
+// Nach Beenden des Maskentempels (Verließ 6), beim Verlassen desselben
+owl_7_0 Uhu! Die Monster auf Cocolint befürchten, dass der Windfisch bald aufwachen wird. Noch sind die Monster real und halten alles auf, was diese Insel zerstören könnte! Aber der Tag "X" ist sehr nahe..! Gehe nun auf die Adlerfestung! Fliege, Du kannst es..! Uhuuuu! Uhuuuu!
+// Direkt östlich des Tamaranch-Berges, auf einer niedrigen Ebene des Gebirges mit drei markant angeordneten Steinen darauf
+owl_7_1 Uhuuuu! Der Weg ist schwer, doch Du bist fast am Ziel. Gehe nach Osten! Der Windfisch wartet schon.
+// Nach der Rettung Marins im Taltal-Gebirge
+owl_8_0 Uhuuuu! Uhuuuu! Du kennst also das Mädchen, das die "Ballade vom Windfisch" vor dem Ei gesungen hat? Jenes Lied, das Schlafende aufweckt? Wollte sie etwa den Windfisch aufwecken? Das nächste Musikinstrument ist im Westen. Mit einem Lied kannst Du den Stein zum Leben erwecken! Zeige Deinen Mut! Der Windfisch wartet! Uhuu Uhuu!
+// Nach Öffnen des Eis des Windfischs
+owl_9_0 Der Moment ist gekommen... Der Windfisch wartet auf Dich... Gehe in das Ei... Uhuuuu! Uhuuuu!
+// Nach Besiegen der Albträume und Erklimmen der daraufhin erscheinenden Treppe
+owl_final Uhuu! Du hast es geschafft, [NAME]! Alle Albträume sind besiegt! Du hast Deine Weisheit, Deinen Mut und Deine Kraft unter Beweis gestellt! ... Ich bin Teil der Seele des Windfisches... Und es war meine Aufgabe, über diese Traumwelt zu wachen... Aber eines Tages erschienen die Albträume und begannen, hier zu wüten... Doch dann bist Du gekommen, [NAME], um uns zu retten! Ich hatte stets Vertrauen in Deinen Mut. Ich wusste, Du würdest die Albträume aufhalten können. Danke, [NAME]... Nun ist das Werk vollbracht! Gleich wird der Windfisch erwachen... Auf Wiedersehen... Uhuuuu! Uhuuuu!
+
+// Waschbär im Zauberwald 
+raccoon_0 Meine Waschbärnase ist äußerst sensibel, was Staub betrifft.
+raccoon_1 Hehehe! Du wirst Dich verlaufen! Ich sorge dafür. Hehe! Verlaufen!
+
+dog Grrrr!
+
+desert_bone_0 Ah! Vielen Dank! Dieser Staub war erfrischend... Zum Dank gibt es einen Tipp: Dort, wo der Sand Dich einsaugt, lasse Dich fallen! Mit einer Bombe musst Du hier die Wand sprengen.
+
+// Hühnchen-Typ in den Bergen - keine Übersetzung in meinem Dump für die Hälfte gefunden, todo: später nochmal drüber schauen
+chicken_dude_0 Heutzutage ist mit den Hühnern nichts mehr los! Früher flogen und flatterten sie, es war eine Freude... Und jetzt...? Keine Power mehr... GACKER! GACKER!
+chicken_dude_1 Hey, Mann! Dein Gockel fliegt ja tatsächlich! Ist ja ein Ding! Dann solltest Du Dich mal an ihn dran hängen...
+chicken_dude_2 Oh, Mann! Dieser Gockel hat ja ein Temperament! Ich fliiieeeege!
+chicken_dude_3 Möchtest Du den fliegenden Gockel einmal ausprobieren?
+chicken_dude_4 Gib mir den Gockel zurück, ich flehe Dich an!
+chicken_dude_5 Wenn Du den Gockel einmal ausleihen möchtest, komm einfach vorbei!
+chicken_dude_6 Okay, ich kann gerne noch ein bisschen warten...
+
+// Bumerang Tausch NPC
+npc_hidden_0 Letzte Nacht hat das Meer etwas wirklich Tolles angespült! Ich tausche es mit Dir gegen DAS, was Du auf dem [CANCEL]-Knopf hast...
+npc_hidden_1 Okay, gebongt...Du kannst jederzeit wieder kommen, wenn Du den Bumerang nicht mehr willst.
+npc_hidden_2 Okay! War ja nur ein Angebot!
+npc_hidden_3 Gut, dass Du hier bist! Ich hab's mir nämlich anders überlegt...Ich hätte gerne meinen Bumerang wieder! Bitte! Du bekommst auch Deinen alten Gegenstand zurück!
+npc_hidden_4 Du hast Deinen alten Gegenstand wieder - für den Bumerang...
+npc_hidden_5 Ähmmm! Hast Du nichts anderes für mich..?
+
+// bat in cave
+npcBat_Intro Wer stört mich da wieder beim Schlafen? Du???\nNa toll! Vielen Dank auch!\nFinde ich echt nett... Na warte... ... ... ... ... ...
+npcBat_End Hehe! Jetzt musst Du noch mehr Zeug mit Dir herumschleppen!\nDas geschieht Dir Recht... Bis dann! Tschö!
+
+// Todo: mehr alternativen hier anbieten, die eher dem englischen entsprechen
+npcBat_Powder Willst Du zur Strafe mehr Zauberpulver tragen können??? 
+npcBat_Bombs Willst Du zur Strafe mehr Bomben tragen können? Hehehe! 
+npcBat_Arrows Willst Du zur Strafe mehr Pfeile tragen können?? Hehehe! 
+
+bat_yes
+
+book Das Buch lesen??
+book_read Willst Du das Buch lesen?
+book_realy_read Das Buch lesen?? WIRKLICH??
+
+book_yes Ja
+book_no Nein
+book_look Lesen
+book_dont doch lieber lassen
+
+bookcase Das ist keine Truhe... Was??? Das hast Du auch gewusst? Na gut!
+
+book1_0 'WIE MAN EINEN GEGENSTAND AUS DEM MENÜ WÄHLT'
+book1_1 'Wähle den Gegenstand aus dem Untermenü aus, und belege damit die vier Face-Knöpfe oder L- und R-Knöpfe. Man kann auch mit anderen Dingen, als dem Schwert kämpfen! Finde es heraus!'
+
+book2_0 'AUTOMATISCHE PLÄNE ZEICHNEN UND MEMOBUCH'
+book2_1 'Drücke [START] und dann [SELECT], um die Karte der Insel zu sehen, die automatisch für Dich gezeichnet wird... An den schwarzen Stellen dieser Karte warst Du noch nicht. Bewege den Cursor und drücke [CONFIRM], um Informationen über die Orte zu erhalten. Auch die Tipps vom Uhu können noch mal gelesen werden!'
+
+book3_0 'DAS GEHEIMNIS DER WIRBELKLINGE'
+book3_1 'Schon seit Generationen ist die Familie des Helden mit dieser Technik gut vertraut. Drücke den Schwertknopf und halte ihn gedrückt, bis das Schwert zu blinken beginnt! Lass den Knopf los, um dann mit dem Schwert zu wirbeln.'
+
+book4_0 'DIE BENUTZUNG DES SCHILDES FÜR FORTGESCHRITTENE'
+book4_1 'Hältst Du den Knopf gedrückt, kannst Du Dich vor gegnerischen Angriffen schtüzen und manche Monster sogar wegstoßen. Den Schild gibt es auch als Sondermodell "SPIEGEL-SCHILD", der vor Strahlen aller Art schützt.'
+
+book5_0 'NICHT OHNE MEINE BOMBE!'
+book5_1 'achdem Du die Bombe hingelegt hast, kannst Du sie wieder aufheben, wenn Du den Knopf erneut drückst. Um sie jetzt zu werfen, musst Du ein weiteres Mal den Knopf drücken! Schon gewusst...?'
+
+book6_0 'DIE VORZÜGE DER TELEPORTER'
+book6_1 'Auf Cocolint gibt es einige Teleporter. Um sie benutzen zu können, musst Du Dich in das Loch fallen lassen! Du landest automatisch an einem anderen Teleporter. Du kannst nur Teleporter benutzen, die Du mit Deinen eigenen Augen gesehen hast.'
+
+book7_0 'COCOLINT KARTE'
+book7_1 (Cursor bewegen und A drücken, um die Namen der Orte zu sehen) Möchtest Du die Karte sehen?
+
+book8_0 'DIE DUNKLEN GEHEIMNISSE VON COCOLINT'
+book8_1 Was ist das??? ... ... ... ... Tja, ohne die magische Lupe wirst Du die kleinen Lettern in dem Buch wohl nicht lesen können...
+book8_2 Kann ein Ei ein Irrgarten sein?\n{[LEFT] [LEFT] [UP] [RIGHT] [RIGHT] [UP] [LEFT] [UP]}{??}... Das verstehe, wer will...
+book8_3 Kann ein Ei ein Irrgarten sein?\n{[RIGHT] [UP] [UP] [RIGHT] [UP] [UP] [RIGHT] [UP]}{??}... Das verstehe, wer will...
+book8_4 Kann ein Ei ein Irrgarten sein?\n{[LEFT] [UP] [RIGHT] [UP] [LEFT] [UP] [RIGHT] [UP]}{??}... Das verstehe, wer will...
+book8_5 Kann ein Ei ein Irrgarten sein?\n{[RIGHT] [RIGHT] [RIGHT] [RIGHT] [UP] [UP] [UP] [UP]}{??}... Das verstehe, wer will...
+
+book9_1 Die bunte Welt, verborgen unter 5 Grabsteinen\f{3[UP]  4[RIGHT]  5[UP]}{2[LEFT]  1[DOWN]   }\fSetze all Deine Kraft ein. Öffne einen neuen Weg! Wer auserwählt ist, erhält die Macht über die Farbe. Wie wohl die bunte Welt aussehen mag?
+
+// Telefon im Haus von Ulrira
+ulrira_telephone 'RRRRING RRRRING! RRRRING! KLACK! Hallo? Ist dort die Pizzeria "Da Mario"? Nun, ich hätte gerne die 4 mit Schinken, die 9 mit Mais, eine Lasagne und zwei Tiramisu! Wann können Sie kommen..? KLACK! TUTUTU... ... ... ... ... Äh! Der hat sich wohl verwählt...!
+
+// Ulrira Dialoge
+ulrira_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Frag mich alles, was diese Insel betrifft... Ruf mich an, wenn Du mal nicht weiter weißt... Tschüss! KLICK! TUTUTU...'
+ulrira_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! In der Dorfbücherei gibt es interessante Bücher. Nun, Du solltest sie mal lesen. Tschüss! KLICK! TUTUTU...'
+
+ulrira_2_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Nun, die meisten Moblins leben im Zauberwald, aber einige leben in einer Höhle bei den Taltal-Höhen! War es das, was Du wissen wolltest? Tschüss! KLICK! TUTUTU...'
+ulrira_2_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Die unzerstörbaren Blumen im Schleimsumpf sind Struppis Lieblingsspeise! Warum führst Du ihn nicht einmal dort herum? Tschüss! KLICK! TUTUTU...'
+
+ulrira_3_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Du solltest den kleinen Struppi jetzt nach Hause bringen! Madame MiouMiou wartet schon auf ihn...  Tschüss! KLICK! TUTUTU...'
+ulrira_3_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Hast Du bereits mit jedem auf der Insel gesprochen? Im Südosten des Mövendorfs beim Schicksalsacker lebt ein Mann namens Richard. Warum besuchst Du ihn nicht einmal? Tschüss! KLICK! TUTUTU...'
+ulrira_3_2 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Sag, magst Du Bananen? Sprich doch mal wieder mit den Leuten im Mövendorf! Tschüss! KLICK! TUTUTU...'
+
+ulrira_leaf_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Hast Du die 5 Goldenen Blätter noch nicht alle? Lasse Dir die gesammelten nicht wieder stehlen! Tschüss! KLICK! TUTUTU...'
+ulrira_leaf_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Hast Du noch nicht alle 5 Goldenen Blätter? Lege eine Bombe an verdächtigen Stellen! Tschüss! KLICK! TUTUTU...
+ulrira_leaf_2 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Du hast die 5 Goldenen Blätter noch nicht alle? Erschrecke doch die Krähe in der Nähe des Schlosses... Tschüss! KLICK! TUTUTU...'
+ulrira_shovel 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Hast Du schon eine Schaufel? Man kann fast überall etwas finden, wenn man gräbt. Tschüss! KLICK! TUTUTU...'
+
+ulrira_3_3 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Die Höhle in der Urunga-Steppe, auch Teufelsvilla genannt, ist Dein Ziel..! Tschüss! KLICK! TUTUTU...'
+
+ulrira_4_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! In der Durstwüste, welche im Südosten der Insel liegt, wirst Du etwas finden, das man den Wunderschlüssel nennt... Muss ich NOCH deutlicher werden?? Tschüss! KLICK! TUTUTU...'
+ulrira_4_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Meine Großmutter hat mir von den Wasserfällen in den Taltal-Höhen erzählt! Hinter einem sei angeblich etwas versteckt... Hilft Dir das?  Tschüss! KLICK! TUTUTU...'
+
+ulrira_5_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Das Fischmaul an der Zwergenbucht ist weit geöffnet? Hört sich nach einem guten Platz zum Tauchen an. Tschüss! KLICK! TUTUTU...'
+
+ulrira_6_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Warst Du schon im Maskentempel? Er ist nördlich vom Zoodorf... Eine hübsche Ruine! Tschüss! KLICK! TUTUTU...'
+
+ulrira_7_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Hast Du schon vom Fliegenden Gockel im Mövendorf gehört? Es ist lange her...Früher konnten wir mit dem Gockel fliegen, wenn wir ihn in den Händen hielten... Nun liegt er jedoch unter dem Wetterhahn! Kannst Du damit etwas anfangen? Tschüss! KLICK! TUTUTU...'
+ulrira_7_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Du bist kurz vor dem Ziel... Bis jetzt hast Du Dich tapfer geschlagen... Ach, [NAME], warst Du eigentlich mal beim Hühnerstall auf dem Berg? Es gibt dort in der Nähe eine Höhle, in der Du etwas Wichtiges finden kannst. Tschüss! KLICK! TUTUTU..'
+ulrira_7_2 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Als ich noch ein junger Kerl war, habe ich diesen Turm im Osten der Berge gesehen. Du solltest da auch mal hin! Tschüss! KLICK! TUTUTU...'
+
+ulrira_8_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Der Kopf der Schildkröte ist Dir im Weg? Dann hauche ihm einfach etwas Leben ein, und er wird sich bewegen... Tschüss! KLICK! TUTUTU...'
+ulrira_8_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Du bist kurz vor dem Ziel..! Mach Dich jetzt auf! Ich drücke Dir die Daumen... Tschüss! KLICK! TUTUTU..'
+
+ulrira_9_0 'TUUUUT! TUUUUT! Ja? Hier Ulrira! [NAME]! Es wird Zeit, dass Du mal auf den Tamaranchberg gehst, wo das Ei liegt! Sei vorsichtig, [NAME]! Tschüss! KLICK! TUTUTU...'
+ulrira_9_1 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Du hast Dich im Ei verlaufen? Hm, da kann ich Dir auch nicht helfen... Aber warst Du schon einmal in der Dorfbücherei...? Ruf mich wieder an, wenn Du eine Frage hast. Tschüss! KLICK! TUTUTU...'
+
+ulrira_wife 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Meine Frau ging ins Zoodorf und ließ mich allein. Sag ihr bitte, dass sie so bald wie möglich nach Hause kommen soll! Tschüss! KLICK! TUTUTU...'
+ulrira_ghost 'TUUUUT! TUUUUT! Ja? Hier Ulrira! An Dir hängt ein Gespenst...? Nun, dann solltest Du es dorthin bringen, wo es hin will. Tschüss! KLICK! TUTUTU..'
+ulrira_mamu 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Interessierst Du Dich neuerdings für Musik? Dann solltest Du den Frosch "Wart" im Schilderwald besuchen. Für viel Geld bringt er Dir vielleicht einen neuen Song bei! Tschüss! KLICK! TUTUTU...
+
+// TODO: not sure when this is shown in the game -> ist in meinem Textdump drin, sollte also irgendwo sein
+ulrira_seashells 'TUUUUT! TUUUUT! Ja? Hier Ulrira! Sind die Monster zu stark für Dich?? In diesem Fall solltest Du versuchen, alle Zaubermuscheln zu finden... Vertraue in Dich und Deine Kraft! Viel Glück! KLICK! TUTUTU...'
+
+// Verließ Intros
+dungeon_1           * LEVEL 1 *       \n          Wurmpalast
+dungeon_2           * LEVEL 2 *       \n          Djinn-Grotte
+dungeon_3           * LEVEL 3 *       \n          Teufelsvilla
+dungeon_4           * LEVEL 4 *       \n          Wundertunnel
+dungeon_5           * LEVEL 5 *       \n          Fischmaul
+dungeon_6           * LEVEL 6 *       \n          Maskentempel
+dungeon_7           * LEVEL 7 *       \n          Adlerfestung
+dungeon_8           * LEVEL 8 *       \n          Reptilfelsen
+
+beak_nop Die Statue will mir etwas sagen. Doch ich verstehe sie nicht, denn ihr fehlt der Schnabel!
+
+beak_d1_1 Erst musst Du die Stachis mit dem Schild berühren.
+beak_d1_2 Öffnet sich eine Tür nicht, verschiebe einen Steinblock.
+
+// Schreine
+shrine_dark Oh! Da ist eine Zeichnung auf der Wand. Es ist aber zu dunkel, um sie zu erkennen!
+shrine_message OH, EILAND COCOLINT!!! BIST NUR EINE ILLUSION... DIE MENSCHEN,... DIE MONSTER, DAS MEER, DER HIMMEL SIND NUR EIN... TRAUM DES WINDFISCHES! ...WECKST DU DEN TRÄUMENDEN, SO WIRD SICH DIESE INSEL IN LUFT AUFLÖSEN... WIE EINE SEIFENBLASE ZERPLATZEN... ... ... ... ... Was? Alles nur eine Illusion?
+
+// Verließ Nummer 2
+beak_d2_1 Senke die Bodenplatten, indem Du den blauen Schalter nutzt!
+beak_d2_2 Verschiebe die Blöcke und ein neuer Weg wird sich auftun.
+beak_d2_3 Erst den eingesperrten Hasen, zuletzt den Skelettritter...
+
+// Genie in a Bottle /todo, Begrüßung nicht gefunden
+d2_boss_0 Har har har har! Willkommen zur Henkersmahlzeit! Har har har har!
+d2_boss_0_Alt HAR HAR HAR! Hier bin ich Dein Bösewicht!! HAR HAR HAR!
+d2_boss_1 Ätschi! Bätschi! Mit meiner Vase bin ich unverwundbar!
+d2_boss_2 Ich kann mich nicht bewegen! Aber ich bin unverletzt!\nDieses mickrige Schwert zerstört die Flasche nicht!
+d2_boss_3 Ooooohh! Du hast meine Vase zerstört! Das wirst Du bereuen! Du...
+d2_boss_3_alt Ooooohh! Du hast meine Flasche zerstört! Das wirst Du bereuen! Du...
+
+// Verließ Nummer 3
+beak_d3_1 Über die großen Löcher musst Du mit viel Anlauf springen!
+beak_d3_2 Willst Du die gepanzerte schwarze Kreatur bezwingen, gib ihr explosives Futter!
+beak_d3_3 Schlage mit dem Schwert auf die verräterischen Wandstellen und achte auf das Geräusch!
+
+d3_boss Ich bin da, aber Du kannst mich nicht seeeheeen! Hihihi! Hihihi!
+
+bow_wow_cave_entry Hey! Was willst Du hier? JUNGS! Wo seid Ihr?\nIch brauche Hilfe...
+bow_wow_cave_boss Aha! Du musst der Kopfgeldjäger sein, den Madame MiouMiou gesandt hat, um ihren Köter zu retten! Du solltest erstmal DICH retten!
+bow_wow_cave_bw Du hast Struppi gerettet! Ein furchterregender Köter!
+
+castle_monkey_hunger Chi-kiiita! Chi-kiiita! Kiki der Affe! Huuuunger! Kiki Hunger hat!
+castle_monkey_bowwow Kiiiihhk! Waaas? Okay, Du Köter! Lass uns kämpfen!
+
+castle_monkey_banana {[TRADE3]!    [TRADE3]!}{Ooooh! HABEN wollen!!!}{Du Kiki geben?}
+castle_monkey_banana_yes {[TRADE3]!    [TRADE3]!}{Oooh! Kiki freut sich!}{Aaaffeeen! Kommt!}{Bedanken!}
+castle_monkey_done {Geschäft erledigt!}{Tschühüss!}{Kiki Kiki Kiki!}
+
+// Verließ Nummer 4
+beak_d4_1 Die Reihenfolge, in der Du über die blinkenden Steine wandelst, ist des Rätsels Lösung!
+
+d4_nightmare Blubber blubber! Blub blub blub!! Fudddder! Blubb! Blubber blubber!
+
+// Verließ Nummer 5
+beak_d5_1 Kannst Du ein Skelett mit dem Schwert nicht bezwingen, setze eine Bombe ein.
+beak_d5_2 Dort, wo sich das Licht der 4 Fackeln kreuzt, musst Du tauchen!
+
+master_stalfos_0 Aaaargh! Du bist stärker als ich! NOCH!!! Aber ich komme wieder!
+master_stalfos_1 Urgh! Du hast mich also gefunden...\nDu bist wirklich penetrant, weißt Du das?
+master_stalfos_2 Du schon wieder? Du gibst einfach nicht auf, oder? Okay, jetzt ist Schluss damit! Jetzt mach' ich Dich FERTIG!
+master_stalfos_3 I'm sorry, aber ich war wohl vor Dir an dieser Truhe... Wenn Du nach dem Inhalt suchst... Komm doch... Hol ihn bei mir ab! [SKULL]
+
+slime_eel_0 Zzzzzzzzzzzo! Du willzt alzzo den Windfizzzch wekken! Buzzzzzzzz!\nIch werde Dich frezzzen! Buzzz!
+slime_eel_1 Du weizzzt wohl nicht wo Du Dich befindezzzzt. Du naives Kerlchen! Dieze Inzzel izt Dein Verhängniz!
+
+// Verließ Nummer 6
+beak_d6_1 Benutze Bomben, um in die Augen der Karte zu gelangen!.
+beak_d6_2 Springe auf die Kristalle, um voran zu kommen.
+beak_d6_3 Willst Du eine Truhe öffnen, bewirf sie mit einem Steinkrug.
+
+facade_opening Hi! Soll ich Dir einen Tipp geben? Also gut, bewirf mich auf keinen Fall mit... ... Ups! Jetzt hätte ich's fast verraten... Hehe!
+facade_opening_alt Hey Blitzbirne, brauchst Du einen Tipp? Also gut, bewirf mich auf keinen Fall mit... ... Ups! Jetzt hätte ich's fast verraten... Hehe!
+facade_death Hör mir gut zu! Sollte der alte Windfisch jemals aufwachen, wird alles auf dieser Insel verschwinden. Hörst Du??? ALLES! Auch Du!!
+
+// Verließ Nummer 7
+grim_creeper_enter Hey, Typ! Willst Du zu mir? Okay Jungs, kümmert Euch um ihn...
+grim_creeper_1 Ha! Ist das alles?! Mache Dich jetzt auf etwas gefasst!
+grim_creeper_2 Du Miststück! Du hast eben meine Brüder besiegt. Dafür wirst Du bezahlen. Das schwöre ich Dir!
+grim_creeper_2_alt Du dreckige Ratte!! Du hast eben meine Brüder besiegt. Dafür wirst Du bezahlen. Das schwöre ich Dir!
+grim_creeper_3 Hier kommt Dein Vollstrecker..! Bald wirst Du es bereuen, auf der Welt zu sein... Bhhhhaaaaaaaa!!!
+grim_creeper_4 Meine Energie... ... bin besiegt... Dich erwischt es auch noch, wenn der Windfisch... aufwacht. Du und ich... wir sind sein... Traum...
+
+beak_d7_1 Springst Du vom oberen Stockwerk herunter, kommst Du zur Truhe!
+beak_d7_2 Wenn die vier Säulen gefallen sind, ist das Rätsel gelöst!
+beak_d7_3 Kannst Du die Säulen nicht überwinden, versuche, mit etwas zu werfen!
+
+// Verließ Nummer 8
+beak_d8_1 Attackiere die Kreaturen von oben herab, um den Schlüssel zu erhalten.
+beak_d8_2 Kommt Dir eine Statue seltsam vor, setze Pfeil und Bogen ein.
+beak_d8_3 Du füllst alle Löcher mit dem Stein, der Boden erzeugt, wenn Du das [DPAD] geschickt bewegst...
+
+ice_block_message Brrrrr... Dieser Eisblock ist ja verdammt hart... Und kalt! Brrrr!
+
+hot_head_0 Du bist am Ende! Niemals wirst Du die Instrumente der Sirenen zum Spielen bringen! NIIIEEEEMAAAALS!
+hot_head_1 Warum nur? Warum bist Du hierher gekommen? Ohne Dich wäre alles in Ordnung... Du darfst den Windfisch nicht aufwecken! Du bist selbst nur Teil seines Traumes!
+
+// Farb Verließ
+grave_locked Ohne Mut fehlt Dir auch die Kraft! Feiglinge können einen Grabstein nicht bewegen!
+
+beak_dc_1 Merk Dir genau: Aus Rot mache Blau!
+
+stone_hinox Gieriger Narr! Du willst mehr Kraft? Ein Clown wie Du sollte aufgeben und nach Hause gehen!
+
+giant_buzz_blob_enter Ich bin kein Schwächling! Dein mächtiges Schwert ist ein Witz!
+giant_buzz_blob_sword Du Narr! Dein Schwert versagt hier! Versuche etwas anderes!
+
+// is this only shown on the normal gameboy?
+// Tut mir leid! Dies ist das Labyrinth der Farbe. Nur jene mit der Macht über die Farbe haben Zutritt! Nur wer vermag, Blau und Rot zu erkennen, dem sei der Zutritt gewährt!
+npc_color_0 Unsere Farben wechseln stets! Bin ich rot, so ist er blau! Ist er rot, bin ich blau! Welche Farbe trage ich?
+npc_color_1 Nein! Sieh genau hin und versuche es nochmal.
+npc_color_2 Verrate es niemandem!
+npc_color_3 Die Fee erwartet Dich!
+npc_color_3_alt Die große Fee erwartet Dich!
+npc_color_4 Hast Du das Zauberpulver dabei? Nein?\nDann geh zurück!
+
+choice_Red Rot
+choice_Blue Blau
+
+hardhit_beetle_0 Blau: Sicher! Gelb: Vorsicht! Rot: Gefahr!
+hardhit_beetle_1 Blau... Versuche es erneut! Gelb: Vorsicht! Rot: Gefahr!
+hardhit_beetle_2 Gelb: Vorsicht! Rot: Gefahr! Nimm auch Du Dir Zeit...
+
+choice_RED ROT
+choice_BLUE BLAU
+choice_GREEN GRÜN
+
+color_fairy_0 Hallo [NAME]. Unglaublich, dass Du es bis hier geschafft hast. Ich gebe Dir die Macht der Farbe! Für den Angriff wähle Rot. Zur Verteidigung wähle Blau. Welche Farbe möchtest Du? 
+color_fairy_1 Rot für Angriff, Blau zur Verteidigung. Deine Wahl?
+color_fairy_2 Sicher?
+color_fairy_3 Schließe Deine Augen...
+color_fairy_4 Nun bist Du bereit!
+color_fairy_5 Willkommen zurück, [NAME]. Wenn Du nicht länger von der Kraft der Farben profitieren möchtest, kann ich Deine ursprüngliche Kleidung wiederherstellen. Möchtest Du die Kraft der Farben zurückgeben?
+color_fairy_6 Möchtest Du stattdessen zur anderen Farbe wechseln?
+
+cloak_blue Du trägst die Blaue Rüstung! Gegner fügen Dir nun halb soviel Schaden zu!
+cloak_red Du trägst die Rote Rüstung! Du strotzt nun vor Kraft!
+cloak_green Du hast die Grünen Kleider! Sie haben keine besondere Wirkung, sehen aber stilvoll aus!
+
+// Wüste
+desertLanmola Welcher Trottel läuft da auf dem Sand herum??
+
+// shell mansion
+shell_mansion_0 Ich bin der Hausgeist! Ich warte hier auf jemanden, der die Düsternis beseitigt. Finde alle versteckten Muscheln und gehe danach durch das Tor, um das perfekte Schwert zu erhalten!
+shell_mansion_1 Hmmm. Es tut sich nichts. Du hast wohl nicht genug Muscheln!
+shell_mansion_2 Meine Aufgabe ist erfüllt..
+
+npc_hippo_0 Hau ab!
+npc_hippo_1 Lass es bleiben!
+npc_hippo_2 Verschwinde!
+npc_hippo_2_alt Lass mich in Ruhe! Ich versuche, still zu sitzen, damit mein Porträt vollendet werden kann kann!
+
+npc_painter_0 Stimmt, ich bin Kroko Dilius... Die Nixenstatue an der Bucht ist eines meiner Meisterstücke... Leider ist sie nicht vollendet. Aber Du scheinst mir nicht besonders Kunst interessiert...
+npc_painter_1 Ist das die Schuppe einer Nixe? Ich habe jetzt keine Zeit, ich muss erst dieses Bild beenden! Vollende bitte Du die Statue!
+npc_painter_2 Was schnüffelst Du hier mit der Lupe herum? Lass das gefälligst!
+
+// Fotoladen
+photo_book "Die Abenteuer des [NAME]" Möchtest Du ins Album schauen?
+photo_book_text Möchtest Du ein Foto anschauen? Wähle es mit [DPAD] aus und drücke den [CONFIRM]-Knopf!
+
+// mit Begleiter betreten
+photo_mouse_follower Wir treffen uns später, wenn Du allein bist!
+
+photo_left_11 11 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_10 10 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_9 9 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_8 8 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_7 7 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_6 6 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_5 5 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_4 4 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_3 3 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_2 2 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_1 1 Bilder passen noch ins Album! Was soll ich fotografieren?
+photo_left_0 Du hast keinen Film mehr. Dein Album ist jetzt voller schöner Erinnerungsfotos!
+
+// Foto im Fotoladen
+photo_01_0 Ich LIEBE es zu fotografieren. Darf ich auch Dich fotografieren?
+photo_01_1 Stelle Dich auf den Teppich und lächle!
+photo_01_2 Ich nenne es "Ein wahrer Held". Bitte lächeln!
+photo_01_3 Wie heißt Du, mein Junge? [NAME]? Super! Hier ist Dein Album, [NAME]. Schau hinein, bevor Du gehst!
+photo_01_4 Mal sehen, ob das Album voll wird!
+photo_01_5 Lass mich ein Foto schießen!
+photo_01_6 Du willst kein Foto?\nEhrlich nicht?
+photo_01_7 Spaßbremse!
+photo_01_8 Super! Ich nenne es "Schluss mit lustig".
+photo_01_9 Hey! Ich bin noch nicht fertig! Stelle Dich nochmal auf den Teppich!
+
+// Foto Ulrira Haus
+photo_02_0 Hallo! Ich bin der Fotograf! Willst Du etwas über Ulrira wissen?
+photo_02_1 Ich nenne es "[NAME] enthüllt Ulriras Geheimnis"!
+
+// Foto Struppi/BOWWOW/KometBowWow
+photo_03_0 Hey, ein tolles Motiv! Ich nenne es "[NAME] und Struppi"! Rücke näher zu Struppi!
+photo_03_1 Grrrr!
+photo_03_2 [NAME], näher ran!
+photo_03_3 Grrrr! Grrrr!!
+photo_03_4 Grrrr! Grrrr!! GRRRR!
+photo_03_5 Näher! Okay, so ist es gut! Lächeln!
+
+// Foto Schloss
+photo_05_0 Hallo [NAME]. Ich sammle so gern Schnappschüsse! Wäre dieses alte Schloss nicht ein prima Motiv?
+photo_05_1 Noch nicht?! Ich bin es leid zu warten. Ich möchte, dass diese Goldenen Blätter bald geliefert werden! Solch ein Mut verdient ein Foto, finde Er nicht auch?
+photo_05_2 Mache Er ruhig ein Foto von mir. Aus jedem beliebigen Winkel!
+photo_05_3 Ich habe keine Angst. Ich habe mich einfach entschieden, zu Hause zu warten.
+
+// Foto Grabstein Geist
+photo_06_0 Ach, wie ich Bilder liebe. Hey, [NAME]! Was machst Du denn hier?
+photo_06_1 Du willst etwas über diesen Geist wissen? Ich wette, dank Dir ist er glücklich. Bist Du bereit für ein Foto??
+photo_06_2 Ich nenne es "Hab Angst gehabt"! Lächle!
+
+// Foto mit Marin
+marin_cliff_0 Das erste Mal, dass wir zusammen sind, [NAME].
+marin_cliff_1 . . . . .
+marin_cliff_2 Das ist ab heute unser geheimer Treffpunkt.
+marin_cliff_3 Willst Du mir etwas sagen?
+marin_cliff_4 Ich liebe Fotos! Warum machst Du nicht ein Foto, wenn wir zwei allein sind? Nenne es einfach...
+marin_cliff_5 Ich entwickle es. Sieh es Dir später an!
+
+// Foto Fountain
+photo_08_0 Hi! Ich bin es, der Fotograf! Welch ein schönes Bild! Ich nenne es "Kopf hoch"!
+photo_08_1 Ohh! Tut mir leid! Ist alles in Ordnung?! [NAME]?
+
+// Foto beim Wettervogel
+photo_09_0 Hey, Marin und [NAME]! Macht Ihr Fotos? Fotografiert jeden, den Ihr trefft. Mich bitte auch!
+photo_09_1 Ich fotografiere jetzt damit. Fertig? Bitte lächeln!
+photo_09_2 Okay, das war's! Ich gehe jetzt heim.
+
+// Foto Fischer
+photo_10_0 Ich glaube, ich werde wieder mal einen großen Fang machen!
+photo_10_1 WOW! Der ist ja riesig! Hey, Du mit der Kamera! Kannst Du ein Foto schießen?
+photo_10_2 Hey! Sei das nächste Mal vorsichtiger!
+
+// Foto Zora
+photo_11_0 Hey, erkennst Du mich? Du musst eine Lupe haben! Ich will keinen Ärger machen, ich will nur meine Ruhe haben.
+photo_11_1 Hallo! Ich bin es, der Fotograf! Du sagst, Zora sei im Haus? Das MUSS ich fotografieren! Ich nenne es: "Zora entdeckt"!
+
+// Foto aufm Berg
+photo_12_0 Hey, das ist eine perfekte Chronik Deiner Abenteuer!
+photo_12_1 Ich nenne es "Nah dran". Hmmm...
+photo_12_2 Bin zu nah dran!
+photo_12_3 Ich muss etwas zurücktreten...
+photo_12_4 Aaaaaah!
+
+// Karte
+map_tal_tal Taltal-Gebirge
+map_wind_fishs_egg Windfisch-Ei
+map_mt_tamaranch Tamaranchberg
+map_hen_house Hühnerstall
+map_telephone_booth Telefonhäuschen
+map_goponga_swamp Schleimsumpf
+map_tal_tal_heights Taltal-Höhen
+map_weird_mr_write Dr. Wrights Haus
+map_photo_both Treten Sie näher und holen Sie sich Ihr Erinnerungsfoto!
+map_raft_shop Floß-Verleih
+map_mysterious_woods Zauberwald
+map_koholint_prairie Cocolint-Steppe
+map_crazy_tracy Geierwallies\nReformhaus
+map_tabahl_wasteland Fratzenwald 
+map_kanalet_castle Schloss Kanalet
+map_rapids_ride Stromschnellen
+map_witchs_hut Hexenhäuschen
+map_cementry Friedhof
+map_fishing_pond Angelteich
+map_quadruplets_house Haus der Großfamilie
+map_dream_shrine Traumschrein
+map_ukuku_prairie Urunga-Steppe
+map_seashell_mansion Muschelbasar
+map_face_shrine Maskentempel
+map_mabe_village Mövendorf
+map_town_tool_shop Tante Emma Laden
+map_madam_meow Madame MiouMious Haus\nBISSIGER HUND!
+map_marin_tarin Marin & Tarins Zuhause
+map_village_library Dorfbücherei
+map_old_man_house Ulriras Hütte
+map_trendy_game Spielhalle
+map_south_village Süd-Mövendorf
+map_signpost_maze Schilderwald
+map_pothole_field Schicksalsacker 
+map_maraths_bay Zwergenbucht
+map_animal_village Zoodorf
+map_yarna_desert Durstwüste 
+map_richards_villa Richards Villa
+map_toronbo_shores Torongastrand 
+map_banana_house Bananenhändler
+map_bay_east Östliche Bucht
+map_house_bay Haus an der Bucht
+
+map_level_1 * LEVEL 1 *\nWurmpalast
+map_level_2 * LEVEL 2 *\nDjinn-Grotte
+map_level_3 * LEVEL 3 *\nTeufelsvilla
+map_level_4 * LEVEL 4 *\nWundertunnel
+map_level_5 * LEVEL 5 *\nFischmaul
+map_level_6 * LEVEL 6 *\nMaskentempel
+map_level_7 * LEVEL 7 *\nAdlerfestung
+map_level_8 * LEVEL 8 *\nReptilfelsen
+
+final_boss Wir sind das Produkt der Albträume... Wir haben den Windfisch in Tiefschlaf versetzt, um die Herrscher dieser Traumwelt zu werden... Und solange der alte Windfisch schläft, wird diese Insel nie verschwinden... Wenn Du nicht gekommen wärst, wir hätten hier für immer die Macht gehabt... Harharhar! Aber wer weiß... Noch hast Du uns ja nicht besiegt... Bist Du bereit?
+
+final_windfish ... ... ... ... ... ... ... ... ICH BIN DER WINDFISCH! LANGE WAR MEIN SCHLAF... IM TRAUM... EIN EI ERSCHIENEN. MIT EINER INSEL DRUMHERUM... DA WAREN TIERE UND MENSCHEN... ... ... ... ... ... ... ... ... ABER JEDER TRAUM IST EINMAL ZUENDE. UND WENN ICH GANZ WACH BIN, WIRD DIE INSEL COCOLINT VERSCHWUNDEN SEIN.. IN DEINEM GEDÄCHTNIS ABER WIRD SIE IMMER WEITERLEBEN... EINES TAGES... ERINNERST DU DICH AN COCOLINT UND DENKST... ES WAR GAR KEIN TRAUM... ... ... ... ... ... ... ... ... KOMM, [NAME]! LASS UNS GEMEINSAM AUFWACHEN!
+final_instruments SPIELE DIE ACHT INSTRUMENTE! SPIELE DAS LIED DES ERWACHENS!
+
+// credits
+// 1998
+credits_0 1998 TEAM
+
+credits_1 SUPERVISOR
+credits_1_0 TAKASHI TEZUKA
+
+credits_2 REGIE
+credits_2_0 YOSINORI TUTIYAMA
+
+credits_3 DREHBUCH
+credits_3_0 NOBUO MATSUMIYA
+
+credits_4 PROGRAMMIERUNG
+credits_4_0 EIJI NOTO
+credits_4_1 KIYOSHI KODA
+credits_4_2 SIGEHIRO KASAMATU
+
+credits_5 DESIGN
+credits_5_0 MIKIO MISHIMA
+credits_5_1 KYOKO KIMURA
+
+credits_6 MUSIK
+credits_6_0 YUICHI OZAKI
+
+credits_7 ARTWORK
+credits_7_0 KEIKO IZAWA
+
+credits_8 TECHN. BERATUNG
+credits_8_0 N KOGANEZAWA
+
+credits_9 DEUTSCHER TEXT
+credits_9_0 CLAUDE M MOYSE
+credits_9_1 THOMAS RINKE
+credits_9_2 CLUB NINTENDO
+
+credits_10 BESONDEREN DANK AN
+credits_10_0 AKIYA SAKAMOTO
+credits_10_1 HIROKO ISHIKAWA
+
+credits_11 MONITORING
+credits_11_0 SUPER MARIO CLUB
+
+// 1993
+credits_12 1993 TEAM
+
+credits_13 REGIE
+credits_13_0 TAKASHI TEZUKA
+
+credits_14 DUNGEON DESIGN
+credits_14_0 YASUHISA YAMAMURA
+
+credits_15 DREHBUCH
+credits_15_0 KENSUKE TANABE
+credits_15_1 YOSHIAKI KOIZUMI
+
+credits_16 PROGRAMMIERUNG
+credits_16_0 KAZUAKI MORITA
+credits_16_1 TAKAMITSU KUZUHARA
+
+credits_17 DESIGN
+credits_17_0 MASANAO ARIMOTO
+credits_17_1 SHIGEFUMI HINO
+
+credits_18 MUSIK
+credits_18_0 KAZUMI TOTAKA
+credits_18_1 MINAKO HAMANO
+credits_18_2 KOZUE ISHIKAWA
+
+credits_19 ILLUSTRATIONEN
+credits_19_0 YOUICHI KOTABE
+
+credits_20 DEUTSCHER TEXT
+credits_20_0 CLAUDE M MOYSE
+
+credits_21 BESONDEREN DANK AN
+credits_21_0 TOSHIHIKO NAKAGO
+credits_21_1 KOJI KONDO
+credits_21_2 TOMOAKI KUROUME
+credits_21_3 MASAICHI OKUMURA
+credits_21_4 KANAE WADA
+
+credits_22 PRODUKTIONSLEITUNG
+credits_22_0 SHIGERU MIYAMOTO
+
+credits_23 PRODUKTION
+credits_23_0 HIROSHI YAMAUCHI
+
+credits_24 
+credits_24_0 
+
+credits_25 
+credits_25_0 ENDE

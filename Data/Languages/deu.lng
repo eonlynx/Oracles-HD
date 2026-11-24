@@ -1,0 +1,410 @@
+map_overlay_close Schließen
+overlay_map Karte
+overlay_inventory Inventar
+overlay_teleport Teleportieren
+savename_thief DIEB
+
+main_menu_select_header Spielstand auswählen
+main_menu_bottom_header 
+main_menu_new_game Neues Spiel
+main_menu_settings Einstellungen
+main_menu_copy Kopieren
+main_menu_erase Löschen
+main_menu_quit Beenden
+main_menu_back Zurück
+main_menu_select Auswählen
+main_menu_tooltip Kurzinfo
+
+main_menu_delete_confirmation_header Spielstand löschen?
+main_menu_delete_confirmation_header_yes Ja
+main_menu_delete_confirmation_header_no Nein
+
+main_menu_copy_confirmation_header Spielstand kopieren?
+main_menu_copy_confirmation_header_yes Ja
+main_menu_copy_confirmation_header_no Nein
+
+main_menu_copy_header Kopie speichern
+main_menu_copy_from Von
+main_menu_copy_to Nach
+main_menu_copy_empty -Leer-
+main_menu_copy_arrow [RIGHT]
+main_menu_copy_back Zurück
+
+new_game_menu_save_name Dein Name?
+new_game_menu_back Zurück
+new_game_menu_create_file Datei erstellen
+new_game_menu_game_type Spieltyp:
+new_game_menu_gtype_settings Einstellungen
+new_game_menu_gtype_modern Modern
+new_game_menu_gtype_classic Klassisch
+new_game_menu_gtype_hybrid Hybrid
+new_game_menu_gtype_purist Purist
+
+game_menu_header Pause
+game_menu_back_to_game Zurück zum Spiel
+game_menu_settings Einstellungen
+game_menu_save_continue Speichern & fortsetzen
+game_menu_exit_to_the_menu Beenden & zum Hauptmenü
+game_menu_exit_the_game Spiel beenden
+
+game_menu_exit_header Bist du sicher?
+game_menu_exit_no Nein
+game_menu_exit_yes Ja
+
+gameover_header Game Over
+gameover_continue Weiter
+gameover_quit Beenden
+
+settings_menu_header Einstellungen
+settings_menu_game Spiel
+settings_menu_redux Redux
+settings_menu_camera Kamera
+settings_menu_video Video
+settings_menu_graphics Grafik
+settings_menu_audio Audio
+settings_menu_controls Steuerung
+settings_menu_mods Modifikationen
+settings_menu_presets Voreinstellungen
+settings_menu_cheats Cheats
+settings_menu_achieve Errungenschaften
+settings_menu_back Zurück
+
+settings_game_header Spieleinstellungen
+settings_game_language Sprache: Deutsch
+settings_game_sublanguage Textvariation:
+settings_game_sublanguage_01 Originaltext (GB/C)
+settings_game_sublanguage_02 Modernes Remake (NSW)
+settings_game_sublanguage_03 Alternative Variante
+settings_game_menubricks Menürahmen
+settings_game_menubricksA LADX
+settings_game_menubricksB Original
+settings_game_menubricksC Schwarz
+settings_game_classicsword Klassisches Schwert
+settings_game_saveposition Letzten Speicherstand wählen
+settings_game_autosave Automatisches Speichern
+settings_game_sharedstorage Im "Shared Storage" speichern
+settings_game_hide_achievement Errungenschafts-Benachrichtigungen ausblenden
+settings_game_items_on_right Inventargegenstände-HUD auf der rechten Seite
+
+settings_redux_header Redux-Einstellungen
+settings_redux_dungeonteleport Karten-Teleporter:
+settings_redux_dungeonteleport_01 Deaktiviert
+settings_redux_dungeonteleport_02 Nur Karte
+settings_redux_dungeonteleport_03 Nur Manbo
+settings_redux_dungeonteleport_04 Karte + Manbo
+settings_redux_vwfont Schriftart mit variabler Breite
+settings_redux_nohelptext Hilfetexte deaktivieren
+settings_redux_dialogskip Dialog-Überspringen aktivieren
+settings_redux_uncensor Zensur rückgängig machen
+settings_redux_unmissables Nichts ist verpassbar
+settings_redux_photoscolor Fotografien nachkolorieren
+settings_redux_noanimaldmg Tierfreund: kein Tierschaden 
+
+settings_camera_header Kameraeinstellungen
+settings_camera_cameratype Typ
+settings_camera_cameratypeA Moderne Kamera
+settings_camera_cameratypeB Klassische Kamera
+settings_camera_cameratypeC Benutzerdefinierte Kamera
+settings_camera_custommenu Kamera anpassen
+settings_camera_fogdiscovery Karten-Entdeckungsnebel
+settings_camera_fogedgesharp Nebelkanten-Schärfe
+settings_camera_fogopacity Nebeldichte
+settings_camera_fogfadetime Nebelausblendzeit
+settings_camera_camborder Klassischer Rahmen
+settings_camera_blackpercent Rahmen-Transparenz
+settings_camera_bias Klassische Randverschiebung
+settings_camera_classicscaling Klassische Skalensperre
+settings_camera_persistentitems Dauerhafte Gegenstands-Drops
+settings_camera_cameralock Kamera zentrieren
+settings_camera_smoothcamera Kamera glätten
+
+settings_camcustom_header Kamera anpassen
+settings_camcustom_modern modern
+settings_camcustom_classic klassisch
+settings_camcustom_overworld Oberwelt
+settings_camcustom_houses Häuser
+settings_camcustom_caves Höhlen
+settings_camcustom_dungeons Dungeons
+settings_camcustom_castle Schloss
+settings_camcustom_egg Windfisch-Ei
+settings_camcustom_2dMaps 2D-Spielabschnitte
+settings_camcustom_bosses Bosskämpfe
+
+settings_video_header Videoeinstellungen
+settings_video_game_scale Spielskalierung:
+settings_video_ui_scale UI-Skalierung:
+settings_video_autodetect Automatisch erkennen
+settings_video_fullscreen Bildschirmmodus:
+settings_video_fullscreen_01 Fenster
+settings_video_fullscreen_02 Randloser Vollbildmodus
+settings_video_fullscreen_03 Exklusiver Vollbildmodus
+settings_video_fps_lock Vertikale Synchronisation
+settings_video_opaquehud UI-Unschärfe deaktivieren
+settings_video_pixelsnap Pixel-Einrastung
+settings_video_pixelgrid Pixelraster-Shader
+settings_video_epilepsysafe Epilepsieschutz
+
+settings_graphics_header Grafikeinstellungen
+settings_graphics_sequencescale Sequenzskalierung
+settings_graphics_colorcorrect GBC-Farbkorrektur
+settings_graphics_shadow Dynamische Schatten
+settings_graphics_fogeffects Nebeleffekte
+settings_graphics_globallights Globale Beleuchtung
+settings_graphics_objectlights Objektbeleuchtung
+settings_graphics_screenshake Bildschirmwackel-Effekte
+settings_graphics_exscreenshake Zusätzliche Bildschirmwackel-Effekte
+settings_graphics_classicsprites Klassische Inventargegenstands-Sprites
+
+settings_audio_header Audioeinstellungen
+settings_audio_music_volume Musiklautstärke:
+settings_audio_effect_volume Effektlautstärke:
+settings_audio_classic_music Klassische Musikwechsel
+settings_audio_mute_inactive Stummschaltung bei inaktivem Fenster
+settings_audio_heartbeep Alarm bei niedriger Herzanzahl
+settings_audio_mute_powerups PowerUp-Musik deaktivieren
+settings_audio_mute_achievement Errungenschafts-Benachrichtigungen stummschalten
+
+settings_controls_header Steuerungseinstellungen
+settings_controls_onscreen Bildschirmsteuerung
+settings_controls_deadzone Analoge Totzone
+settings_controls_gamepad Controller
+settings_controls_remap Tastenbelegung ändern
+settings_controls_triggersscale Trigger verwenden für Spielskalierung
+settings_controls_sixbuttons Sechs Inventar-Tasten
+settings_controls_swapbuttons Bestätigen & Abbrechen tauschen
+settings_controls_classicmove Klassische Bewegung
+settings_controls_digitalanalog Digital-Analog
+
+settings_controls_onscreenpad Bildschirmsteuerung
+settings_controls_onscreenpad_01 Deaktiviert
+settings_controls_onscreenpad_02 Ausblenden
+settings_controls_onscreenpad_03 Immer
+settings_controls_touchmovement Bewegung
+settings_controls_touchmovement_01 Steuerkreuz + Analog
+settings_controls_touchmovement_02 Steuerkreuz Menü + Analog im Spiel
+settings_controls_touchmovement_03 Nur Steuerkreuz
+settings_controls_touchmovement_04 Nur Analog
+settings_controls_fadeopacity Ausblendungsdeckkraft
+settings_controls_shadowopacity Schattendeckkraft
+settings_controls_onscreenscale Steuerungsskalierung
+settings_controls_onscreenmiddletop Select/Start-Bildschirm oben
+settings_controls_onscreenanalogbuttons Analoge Trigger
+
+settings_controls_remapheader Tasten-Neubelegung
+settings_controls_keyboad Tastatur
+settings_controls_Up Hoch
+settings_controls_Down Runter
+settings_controls_Left Links
+settings_controls_Right Rechts
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 Stil 1
+settings_controls_style_02 Stil 2
+
+settings_mods_header Modifikationseinstellungen
+settings_mods_enemy_hp Zusätzliche Gegner-Trefferpunkte
+settings_mods_damage Schadensmultiplikator
+settings_mods_damagecd Schadensabklingzeit
+settings_mods_movespeed Zusätzliche Bewegungsgeschwindigkeit
+settings_mods_nohearts Keine Herzen werden fallen gelassen
+settings_mods_dmglaunch Kein Schleudereffekt beim Attackieren
+settings_mods_swordinteract Zusätzliche Schwert-Interaktionen
+settings_mods_mirrorreflect Spiegelt mit dem Spiegelschild
+
+settings_sword_header Schwert-Interaktionen
+settings_sword_grabnormal Gegenstands-Drops einsammeln
+settings_sword_grabworlditem Inventargegenstände einsammeln
+settings_sword_grabfairy Feen einsammeln
+settings_sword_grabsmallkeys Kleine Schlüssel einsammeln
+settings_sword_boomerang Bumerang abprallen lassen
+settings_sword_bouncebombs Bomben zurückstoßen
+settings_sword_swordblock Gegnergeschosse zerschneiden
+settings_sword_breakpots L2-Schwert zerschlägt Krüge & Schädel
+settings_sword_beamshrubs L2-Schwertstrahl zerschneidet Umgebungsobjekte
+
+settings_preset_header Voreinstellungsoptionen
+settings_preset_setdefault Standardwerte wiederherstellen
+settings_preset_setmodern Modernes Preset festlegen
+settings_preset_setclassic Klassisches Preset festlegen
+settings_preset_sethybrid Hybrid-Preset festlegen
+settings_preset_purist Puristen-Preset festlegen
+
+settings_cheats_header Cheats-Einstellungen
+settings_cheats_invincibility Unbesiegbarkeit
+settings_cheats_infiniterupees Unendlich viele Rubine
+settings_cheats_infinitepowder Unendlich viel Zauberpulver
+settings_cheats_infinitebombs Unendliche viele Bomben
+settings_cheats_infinitearrows Unendliche viele Pfeile
+settings_cheats_disableclipping Kollision deaktivieren
+settings_cheats_onehitkills Ein-Treffer-Kills
+settings_cheats_giveallitems Sämtliche Inventargegenstände besitzen
+
+achievements_header Errungenschaften
+achievements_reset Zurücksetzen
+achievements_earned Freigeschaltet
+achievements_reset_header Errungenschaften zurücksetzen?
+
+tooltip_default Wähle eine Option, um ihre Beschreibung zu sehen.
+
+photo_book_select Auswahl mit der Taste [CONFIRM].
+photo_book_cancel Abbrechen mit der Taste [CANCEL].
+
+tooltip_newgame_noname Bitte gib einen Namen ein, bevor du versuchst, ein neues Spiel zu starten.
+tooltip_newgame_entry Dies ist der Name, der mit der aktuellen Speicherdatei verknüpft ist, und der Name, mit dem NPCs den Charakter im Dialog ansprechen.
+tooltip_newgame_keyboard Die Bildschirmtastatur, mit der du den Namen für diese Speicherdatei eingeben kannst. Du kannst auch die Tastatur deines Geräts verwenden.
+tooltip_newgame_gametype0 "Einstellungen" nutzt einfach die aktuellen Einstellungen und ändert nichts automatisch. Unabhängig vom gewählten "Spieltyp" können Einstellungen später jederzeit geändert werden.
+tooltip_newgame_gametype1 "Modern" passt die Kamera auf die moderne Ansicht an, die Zoomen und freies Verschieben ermöglicht. Zusätzlich werden Musikwechsel besser an die Umgebung angepasst.
+tooltip_newgame_gametype2 "Klassisch" passt die Kamera an das Originalspiel an, teilt die Karte in "Felder" und wechselt die Kamera zwischen ihnen. Auch die Musikwechsel orientieren sich am Original.
+tooltip_newgame_gametype3 "Hybrid" nutzt die moderne Kamera in der Oberwelt und die klassische Kamera in Dungeons. Zusätzlich werden Musikwechsel an die Umgebung angepasst.
+tooltip_newgame_gametype4 "Purist" passt die Einstellungen so an, dass sie dem Originalspiel so nah wie möglich entsprechen, und minimiert die Anzahl der von diesem Port gebotenen Verbesserungen.
+tooltip_newgame_back Du verlässt die aktuelle Seite und kehrst zum Speicherdatei-Auswahlmenü zurück.
+tooltip_newgame_start Du startest ein neues Spiel mit dem eingegebenen Namen und dem ausgewählten Spieltyp.
+
+tooltip_menu_game Optionen, die das Gameplay beeinflussen, aber nicht die Struktur und das Verhalten des Grundspiels verändern.
+tooltip_menu_redux Optionen, die ursprünglich auf dem "Redux"-Romhack basieren, das Gameplay beeinflussen und das Grundspiel durch Hinzufügen neuer Funktionen verändern können.
+tooltip_menu_camera Optionen, die die Kamera betreffen. Für ein Spielerlebnis näher am Originalspiel aktiviere die "Klassische Kamera", die bildschirmbasiertes Scrollen ermöglicht.
+tooltip_menu_video Optionen zur Konfiguration der Videoeinstellungen. Kann die Skalierung von Spiel und UI sowie sonstige Einstellungen wie Fenster- oder Vollbild-Modus anpassen.
+tooltip_menu_graphics Optionen zur Konfiguration der Grafik. Es können zusätzliche Grafikeffekte wie z. B. dynamische Schatten oder Nebeleffekte aktiviert werden.
+tooltip_menu_audio Optionen zur Konfiguration des Audio. Musik- und Soundlautstärke sowie Deaktivierung der Musik beim Einsammeln von PowerUps.
+tooltip_menu_controls Optionen, die das Anpassen der Steuerung erlauben. Stelle sicher, dass du deinen Controller-Typ in den "Spiel"-Optionen ausgewählt hast, bevor du sie hier änderst.
+tooltip_menu_mods Optionen, die sowohl das Gameplay als auch die Schwierigkeit beeinflussen. Kann mehr Monster-Lebenspunkte hinzufügen, erlittenen Schaden erhöhen, Herz-Drops deaktivieren, die Bewegungsgeschwindigkeit erhöhen oder sogar Projektile mit dem Schwert blockieren.
+tooltip_menu_presets Bietet eine Reihe von voreingestellten Optionen, um das Spielerlebnis schnell an deine Wünsche anzupassen.
+tooltip_menu_cheats Aktiviert oder deaktiviert verschiedene Cheats, die das Spiel erheblich erleichtern oder einfach zum Spaß aktiviert werden können.
+tooltip_menu_achieve Öffnet die Errungenschafts-Übersicht, die die Beschreibung und den Fortschritt jeder einzelnen Errungenschaft anzeigt.
+
+tooltip_game_language Ändert die aktuelle Sprache.
+tooltip_game_sublanguage Enthält subtile Variationen in den NPC-Dialogen. Derzeit nur in wenigen Sprachen unterstützt. Community-Bemühungen zur Erweiterung dieser Option und der Skripte werden geschätzt.
+tooltip_game_menubricks Wählt die Randtextur, die in den Optionsmenüs verwendet wird, oder deaktiviert den Rand vollständig.
+tooltip_game_classicsword Diese Option lässt das Schwert sich stärker wie im Originalspiel verhalten, sodass es jeweils nur ein einzelnes Umgebungsobjekt (Büsche, Gras usw.) auf einmal zerschneiden kann.
+tooltip_game_saveposition Speichert die zuletzt ausgewählte Speicherdatei und wählt sie beim Laden des Hauptmenüs automatisch aus. Die automatische Auswahl erfolgt aufgrund der Menüstruktur nicht sofort.
+tooltip_game_autosave Speichert das Spiel automatisch bei jedem Bildschirmwechsel (außer in Dungeons). Wenn deaktiviert, nicht vergessen, manuell zu speichern!
+tooltip_game_sharedstorage Speicherdateien werden aus "/storage/emulated/0/LADXHD/SaveFiles" gelesen und dorthin geschrieben, anstatt in den abgegrenzten Speicher. Dies erfordert die Erlaubnis des Benutzers. Der Zweck ist es, Anwendungen wie "SyncThing" zu verwenden, um Spielstände geräteübergreifend zu synchronisieren.
+tooltip_game_hide_achievement Blendet die Benachrichtigungen aus, die in der unteren rechten Ecke des Bildschirms erscheinen, wenn eine Errungenschaft freigeschaltet wird. Der entsprechende Soundeffekt kann in den "Audio"-Einstellungen stummgeschaltet werden.
+tooltip_game_itemsonright Zeigt die HUD-Symbole der ausgerüsteten Inventargegenstände auf der rechten Seite des Bildschirms anstatt auf der linken.
+
+tooltip_redux_dungeonteleport_01 Diese Option erlaubt das Teleportieren zu einem abgeschlossenen Dungeon mittels der Inventarkarte. Die aktuell ausgewählte Option ist "Deaktiviert", daher ist das Teleportieren mittels der Inventarkarte nicht verfügbar.
+tooltip_redux_dungeonteleport_02 Diese Option erlaubt das Teleportieren zu einem abgeschlossenen Dungeon mittels der Inventarkarte. Die aktuell ausgewählte Option erlaubt das Teleportieren zu einem abgeschlossenen Dungeon, indem man die Karte aus dem Inventar öffnet, einen Dungeon-Knoten auswählt und die Taste [X] drückt.
+tooltip_redux_dungeonteleport_03 Diese Option erlaubt das Teleportieren zu einem abgeschlossenen Dungeon mittels der Inventarkarte. Die aktuell ausgewählte Option ist ähnlich wie die vorherige, ersetzt jedoch die Manbo-Melodie durch den Karten-Teleporter und erlaubt die Auswahl von Manbos Teich.
+tooltip_redux_dungeonteleport_04 Diese Option erlaubt das Teleportieren zu einem abgeschlossenen Dungeon mittels der Inventarkarte. Die aktuell ausgewählte Option erlaubt das Teleportieren mittels der Inventarkarte und ersetzt die Manbo-Melodie durch den Karten-Teleporter. Der Karten-Teleporter, der beim Spielen von Manbos Melodie erscheint, erlaubt ebenfalls die Auswahl von Manbos Teich.
+tooltip_redux_vwfont Ersetzt die Standardspielschriftart durch eine Schriftart von "toruzz" mit variabler Breite.
+tooltip_redux_nohelptext Deaktiviert die meisten Dialoge beim Berühren von Umgebungsobjekten, die einen noch fehlenden Inventargegenstand erfordern, und deaktiviert auch die meisten Dialoge beim Aufheben von Gegenständen und Öffnen von Truhen.
+tooltip_redux_dialogskip Ermöglicht das Überspringen von Dialogfeldern mit der "Start"-Taste, wodurch der Text schnell durchlaufen und das Dialogfenster automatisch geschlossen wird. Frage-Dialoge werden nur bis zum Punkt übersprungen, an dem eine Benutzereingabe erforderlich ist.
+tooltip_redux_uncensor Entfernt die Zensur der nordamerikanischen Spielversion und einiger anderer Spielversionen. Stellt die originalen Hippo-Sprites und den originalen Tauschhandel mit der Nixe wieder her (Gegenstand und Dialog). Stellt speziell für die deutsche Übersetzung die anzüglichen Dialoge des Gegners Buzz Blob wieder her.
+tooltip_redux_unmissables Der Muschelbasar gibt immer die beiden verpassbaren Bonus-Zaubermuscheln, sobald mindestens 5 bzw. 10 Zaubermuscheln abgeliefert werden, das Tor von Schloss Kanalet kann wieder geschlossen werden, Struppi, Marin und der Fliegende Gockel können nach Level 8 wieder Begleiter sein, der Händler bietet einen Namensrückkauf an, falls du zuvor einen Gegenstand gestohlen hattest, und das geheime Ende wird immer angezeigt.
+tooltip_redux_photoscolor Standardmäßig verwenden Fotos Sepiafarben wie in der originalen DX-Version. Diese Option verwendet stattdessen farbige Fotos von "drestrada".
+tooltip_redux_noanimaldmg Verhindert, dass Cuccos und Hunde im Mövendorf attackiert werden können. Diese Option deaktiviert deren Hitboxen vollständig.
+
+tooltip_camera_cameratype Die "Moderne Kamera" ist durchgehend auf Link zentriert und erlaubt das Heran- und Herauszoomen. Die "Klassische Kamera" ahmt die Bildschirmübergänge des Originalspiels nach. Die "Benutzerdefinierte Kamera" erlaubt es, die gewünschte Kamera je nach Spielumgebung festzulegen, in welcher Link sich zum Zeitpunkt im Spiel aufhält. Die genaue Festlegung erfolgt mittels des nächsten Menüpunktes (Kamera anpassen).
+tooltip_camera_custommenu Diese Option erlaubt das genauere Festlegen der verwendeten Kamera ("Modern" oder "Klassisch") - je nach Typ der Spielumgebung, in der Link sich zum Zeitpunkt im Spiel aufhält. Das Verwenden dieser Option setzt voraus, dass in der oberen Kameraauswahl der Kameratyp auf "Benutzerdefinierte Kamera" eingestellt ist.
+tooltip_camera_fogdiscovery Wenn die "Moderne Kamera" die aktive Kamera ist, erzeugt dies einen Nebeleffekt über Feldern, die noch nicht entdeckt wurden.
+tooltip_camera_fogedgesharp Bestimmt, wie stark sich der Rand des Nebels in entdeckte Felder eintrübt. Das Erhöhen dieses Wertes reduziert die Unschärfe und macht den Rand des Nebels schärfer. Beachte, dass es über 35% merklich abnehmende Erträge gibt.
+tooltip_camera_fogopacity Bestimmt, wie "dicht" der Nebel ist, oder besser gesagt, wie gut man durch ihn hindurchsehen kann. Das Setzen dieses Wertes auf 100% macht den Nebel vollständig undurchsichtig.
+tooltip_camera_fogfadetime Dies ist die Zeit, die ein neu entdecktes Feld beim Betreten benötigt, um sichtbar zu werden. Der Nebel blendet sich über die hier angegebene Zeit aus. Die Zeit ist in Millisekunden angegeben (1000ms = 1 Sekunde).
+tooltip_camera_camborder Wenn die "Klassische Kamera" aktiviert ist, wird ein Rand um das aktuelle Feld platziert und es werden nicht animierte Objekte ausgeblendet. Der Rand kann ein einfacher schwarzer Rand oder der Super Game Boy-Rand sein. Dies ahmt teilweise das Seitenverhältnis des ursprünglichen Game Boy nach, abzüglich der 16 HUD-Pixel.
+tooltip_camera_camborderA Keine
+tooltip_camera_camborderB Schwarz
+tooltip_camera_camborderC Super Game Boy
+tooltip_camera_blackpercent Bestimmt den Alpha-Wert des klassischen Kamerarands. Kann verwendet werden, um Teile des umliegenden Spielfelds sichtbar zu machen, ohne es vollständig abzuschneiden.
+tooltip_camera_bias Verschiebt den simulierten Viewport zur ausgewählten Position, wenn die aktuelle Skalierung nicht die gesamte vertikale Bildschirmgröße abdeckt. Diese Option funktioniert nicht, wenn der Super Game Boy-Rahmen aktiviert ist.
+tooltip_camera_biasA Zentriert
+tooltip_camera_biasB Oben
+tooltip_camera_biasC Unten
+tooltip_camera_classicscaling Das Deaktivieren dieser Option erlaubt manuelles Skalieren der "Klassischen Kamera" über die Spielskalierung, anstatt das Sichtfeld automatisch an die nächste ganzzahlige Hochskalierungsauflösung anzupassen. Diese Option kann das Sichtfeld "beschädigen", wenn sie zu groß oder zu klein eingestellt ist.
+tooltip_camera_persistentitems Wenn beim Wechseln von Feldern die "Klassische Kamera" aktiviert ist (d.h. der Bildschirm scrollt), werden Gegenstandsdrops wie Rubine, Herzen und Power-ups nicht despawnen und bleiben erhalten, wenn man zum Feld zurückkehrt.
+tooltip_camera_cameralock Sperrt die "Moderne Kamera" an Ort und Stelle. Wenn diese Option deaktiviert ist, kann der rechte Analogstick die Kamera bewegen. Hat keine Wirkung bei der "Klassischen Kamera".
+tooltip_camera_smoothcamera Fügt beim Wechseln des Kameraziels einen sanften Schwenkeffekt hinzu. Wenn deaktiviert, springt die Kamera sofort. Betrifft beide Kameras, die "Klassische Kamera" profitiert am meisten.
+
+tooltip_camcustom_overworld Wählt die Kamera, die aktiv sein soll, während Link sich in der Oberwelt aufhält.
+tooltip_camcustom_houses Wählt die Kamera, die aktiv sein soll, während Link sich in Häusern aufhält.
+tooltip_camcustom_caves Wählt die Kamera, die aktiv sein soll, während Link sich in Höhlen aufhält.
+tooltip_camcustom_dungeons Wählt die Kamera, die aktiv sein soll, während Link sich in einem Dungeon aufhält.
+tooltip_camcustom_castle Wählt die Kamera, die aktiv sein soll, während Link sich in Schloss Kanalet oder im südlichen Maskentempel aufhält.
+tooltip_camcustom_egg Wählt die Kamera, die aktiv sein soll, während Link sich im Windfisch-Ei aufhält.
+tooltip_camcustom_2dMaps Wählt die Kamera, die aktiv sein soll, während Link sich in 2D-Spielabschnitten aufhält. Diese Einstellung hat Vorrang vor den anderen hier aufgeführten Kameraeinstellungen.
+tooltip_camcustom_bosses Wählt die Kamera, die aktiv sein soll, während Link sich in Bosskämpfen oder Minibosskämpfen befindet. Diese Einstellung hat Vorrang vor den anderen hier aufgeführten Kameraeinstellungen.
+tooltip_video_game_scale Erlaubt das Heran- und Herauszoomen der Kamera, indem die Größe eines "Spielpixels" relativ zur Game Boy-Auflösung festgelegt wird. Zum Beispiel bedeutet eine Skalierung von 10, dass ein Spielpixel 10x10 Bildschirmpixel groß ist. Ein Wert unter 1x entspricht einem Prozentsatz eines Originalpixels.
+tooltip_video_ui_scale Bestimmt, wie groß die Benutzeroberfläche angezeigt wird. Der Skalierungswert ist willkürlich und korreliert nicht mit den Originalspielen. Wähle einfach deine bevorzugte Skalierung.
+tooltip_video_fullscreen Legt den aktuellen Bildschirmmodus fest: Fenster, randloser Vollbildmodus oder exklusiver Vollbildmodus. Es wird empfohlen "Randlos" zu verwenden, es sei denn, du benötigst "Exklusiv" für einen bestimmten Zweck, zum Beispiel für die Kompatibilität mit externer Software. Alt + Enter kann schnell zwischen Fenster und randlosem Vollbildmodus umschalten.
+tooltip_video_fps_lock Sperrt die Bildrate auf die aktuelle Bildwiederholrate des Bildschirms. Wenn deaktiviert, wird die Bildrate so hoch wie möglich sein.
+tooltip_video_opaquehud Deaktiviert alle UI-Unschärfeeffekte und verwendet stattdessen einfarbige Hintergründe. Dies kann die Leistung auf schwächeren Geräten verbessern.
+tooltip_video_pixelsnap Das Aktivieren dieser Option sperrt Sprite-Pixelkanten ähnlich einem LCD-Raster. Die Mindestbewegung eines Objekts beträgt einen ganzen Spielpixel. Wenn deaktiviert, können sich Objekte in Subpixel-Schritten bewegen, was auf Kosten der Genauigkeit viel "flüssiger" wirkt.
+tooltip_video_pixelgrid Ein Pixelraster wird über den gesamten Bildschirm gelegt und repliziert den "LCD-Raster"-Effekt von Retro-Konsolen/Handhelds wie dem Game Boy Color, von dem dieses Spiel stammt. Diese Funktion erfordert die Aktivierung der Option "Pixel-Einrastung" um ordnungsgemäß zu funktionieren und wird ohne deren Aktivierung keinen Effekt haben.
+tooltip_video_epilepsysafe Deaktiviert blinkende Effekte, die beim Erhöhen der maximalen Gegenstandswerte oder beim Treffen von Buzz Blobs auftreten. Deaktiviert auch andere Flacker-Effekte bei Gegnern wie Sparks und Knochenfratzen.
+
+tooptip_graphics_sequencescale Wird speziell für Ingame-Sequenzen zur UI-Skalierung hinzugefügt. Wenn die UI-Skalierung 3 ist und dies auf 2 gesetzt ist, wird die Sequenzskalierung 5. Dies umfasst Fotosequenzen, Bilder und Ingame-Zwischensequenzen. Der maximale sichere Wert ist normalerweise +2. Ein zu hoher Wert kann nicht garantieren, dass er innerhalb der Bildschirmgrenzen bleibt.
+tooltip_graphics_colorcorrect Der originale Game Boy Color hatte keinen beleuchteten Bildschirm und dämpfte die Farben, weshalb Spiele mit gesättigten Farbpaletten kompensierten. Die Farbkorrektur versucht, alles so erscheinen zu lassen, wie es auf der originalen Game Boy Color-Hardware aussah.
+tooltip_graphics_shadows Rendert dynamische Schatten auf allen Objekten in der Welt mit glatter Optik. Wenn deaktiviert, werden stattdessen Sprite-Schatten für Objekte verwendet, die einen Schatten benötigen.
+tooltip_graphics_fogeffects Deaktiviert den Nebeleffekt im Zauberwald, dem Wald direkt nördlich vom Mövendorf.
+tooltip_graphics_nogloballights Aktiviert die globale Beleuchtung, die auf alle Karten angewendet wird. Diese Beleuchtung dient dazu, die Umgebung abzudunkeln und von Objekten erzeugte Lichteffekte zu verstärken.
+tooltip_graphics_noobjectlights Aktiviert die von Objekten erzeugten Lichteffekte. Objektbeleuchtung benötigt keine globale Beleuchtung, hat ohne sie jedoch kaum Wirkung.
+tooltip_graphics_screenshake Aktiviert oder deaktiviert die originalen Bildschirmwackel-Effekte. Dazu gehören Zusammenstöße mit den Pegasus-Stiefeln, Stromschläge, das Öffnen von Dungeoneingängen, das Wackeln der Kamera bei Bossen und mehr.
+tooltip_graphics_exscreenshake Aktiviert oder deaktiviert zusätzliche Bildschirmwackel-Effekte, die im Originalspiel nicht enthalten waren. Dazu gehören Schaden an Link, Explosionen von Bomben, neue Umwelteffekte und neue Effekte bei Bossen und Gegnern.
+tooltip_graphics_classicsprites Im Originalspiel konnten die Sprites mancher Inventargegenstände (z. B. Kraftarmband, Bumerang) im Inventarmenü anders dargestellt sein als in der Spielwelt. Zur Wahrung der Konsistenz verwendet die HD-Portierung hingegen standardmäßig für jene Inventargegengstände im Inventarmenü dieselben Sprites wie in der Spielwelt. Das Aktivieren dieser Option stellt die Darstellung der unterschiedlichen Sprites wie im Originalspiel wieder her.
+
+tooltip_audio_music_volume Die Lautstärke der Spielmusik.
+tooltip_audio_effect_volume Die Lautstärke der Soundeffekte im Spiel.
+tooltip_audio_classic_music Bestimmt, wann die Musik in der Oberwelt wechselt. Deaktiviert (modern) folgt eng der Tilemap, aktiviert (klassisch) orientiert sich am Originalspiel. Der Unterschied ist subtil. Teste den Unterschied im östlichen Mövendorf.
+tooltip_audio_mute_inactive Stummschalten aller Audio- und Soundeffekte, wenn das Spielfenster nicht im Fokus ist.
+tooltip_audio_heartbeep Ein Ausschalten dieser Option deaktiviert das periodische Piepen, wenn die Herzen unter einen bestimmten Wert fallen.
+tooltip_audio_mute_powerups Beim Aufnehmen eines Götterahorns oder eines Teils der MACHT wird die spezifische Musik deaktiviert, die sonst normalerweise abgespielt wird.
+tooltip_audio_mute_achievement Deaktiviert den Soundeffekt, der abgespielt wird, wenn eine Errungenschaft freigeschaltet wird.
+
+tooltip_controls_deadzone Der prozentuale Bereich, den der Joystick bewegt werden muss, bevor eine Eingabe erkannt wird. Sofern keine Totzone (Dead Zone) in anderer Software festgelegt ist, wird empfohlen, diesen Wert nicht unter 10 % zu senken, da der Joystick sonst ungewollte Bewegungen ausführen kann. Höhere Werte als der Standard sind hilfreich bei Controllern mit Drift-Problemen.
+tooltip_controls_onscreen Ermöglicht die Konfiguration von Optionen für den Bildschirmcontroller, der exklusiv für die Android-Version ist.
+tooltip_controls_gamepad Wählt den Typ des Controllers, für den die Tastenhinweise angezeigt werden. Unterstützt Xbox-, PlayStation- und Nintendo-Controller.
+tooltip_controls_remap Ordne die Tastatur- und Controller-Tasten nach deinem Wunsch neu zu. Ändere vor dem Neubelegen den Controllertyp passend zu deinem Controller.
+tooltip_controls_triggersscale Ermöglicht das Ändern der aktuellen Spielskalierung mit den beiden oberen vorderen Tasten des Controllers (LB/RB, L1/R1, L/R). Wenn die Option "Sechs Inventar-Tasten" aktiviert ist, ändern stattdessen die beiden oberen hinteren Tasten bzw. Trigger (LT/RT, L2/R2 oder ZL/ZR) die Spielskalierung.
+tooltip_controls_sixbuttons Aktiviert sechs Controller-Tasten für Inventargegenstände anstelle von vier. Gegenstände können auf die beiden oberen vorderen Tasten (LB/RB, L1/R1, L/R) gelegt werden, und die Anpassung der Spielskalierung wird auf die beiden oberen hinteren Tasten bzw. Trigger (LT/RT, L2/R2, ZL/ZR) verschoben.
+tooltip_controls_swapconfirm Tauscht die Bestätigungs- und Abbruchtasten, die in Menüs und Dialogen verwendet werden.
+tooltip_controls_classicmove Diese Option ahmt die Bewegungsweise der Originalspiele nach, indem sie Link die Fähigkeit gibt, rückwärts zu gehen. In Kombination mit "Digital-Analog" lässt sich das ursprüngliche Bewegungsverhalten vollständig nachbilden.
+tooltip_controls_digitalanalog Entfernt den analogen Bewegungsbereich und bewegt Link in acht Richtungen entlang von 45-Grad-Winkeln (oben, unten, links, rechts und diagonal). Dadurch fühlt sich die Steuerung mehr wie im Originalspiel an, als würde es in einem Emulator gespielt.
+
+tooltip_controls_onscreenpad Aktiviert oder deaktiviert die Bildschirmsteuerung. "Deaktiviert" ist selbsterklärend. "Ausblenden" lässt die Tasten ausblenden, wenn sie nicht benutzt werden. "Immer" hält die Tasten jederzeit sichtbar.
+tooltip_controls_touchmovement Legt die Sichtbarkeit von D-Pad oder Analogstick fest. Beide können immer aktiviert sein, D-Pad für Menüs und Analogstick zum Bewegen von Link, oder es kann jeweils nur eines aktiviert sein.
+tooltip_controls_fadeopacity Wenn die Bildschirmsteuerung auf "Ausblenden" eingestellt ist, ist dies die minimale Deckkraft, die die Steuerung beibehält, bis sie gedrückt wird.
+tooltip_controls_shadowopacity Die Deckkraft des Schattens unter der Steuerung. Unabhängig vom gewählten Sichtbarkeitsmodus bleibt der Schatten gleich deckend.
+tooltip_controls_onscreenscale Der Skalierungswert der Bildschirmsteuerung.
+tooltip_controls_onscreenmiddletop Platziert die Start- und Select-Tasten oben auf dem Bildschirm anstatt unten.
+tooltip_controls_onscreenanalogbuttons Aktiviert die Bildschirmtasten für die Analogsticks LS und RS. Die RS-Taste wird verwendet, um die Kamera zu zentrieren, wenn sie nicht gesperrt ist.
+
+tooltip_mods_enemy_hp Fügt allen Gegnern global zusätzliche Trefferpunkte hinzu. Zum Beispiel, wenn 3 HP hinzugefügt werden, hätte ein Gegner mit 1 HP 4 HP und ein Boss mit 8 HP 11 HP.
+tooltip_mods_damage Multipliziert den erlittenen Schaden aus allen Quellen. Zum Beispiel, wenn auf 4 gesetzt, würde ein Angriff, der normalerweise ein halbes Herz Schaden verursacht, stattdessen 2 volle Herzen Schaden anrichten.
+tooltip_mods_damagecd Standardwert ist 16x (1056 ms). Dieser Wert ergibt sich aus dem Schadens-Cooldown-Faktor multipliziert mit der Schadens-Blinkzeit von 66 ms und bestimmt, wie lange Link nach einem Treffer unverwundbar ist.
+tooltip_mods_movespeed Erhöht die Bewegungsgeschwindigkeit prozentual, bis zu 100%. Beeinflusst alle Bewegungsarten: Gehen, Klettern, Schwimmen usw.
+tooltip_mods_nohearts Deaktiviert vollständig Herz-Drops aus allen Quellen. Die einzige Möglichkeit, sich zu heilen, ist das Fangen einer kleinen Fee, der Besuch bei einer Großen Fee oder der Kauf von Medizin bei Geierwally.
+tooltip_mods_dmglaunch Deaktiviert den Schleudereffekt beim Attackieren von Gegnern unter dem Effekt eines Teils der MACHT oder beim Tragen der Roten Rüstung aus dem Labyrinth der Farbe.
+tooltip_mods_swordinteract Diese Option erlaubt es dem Schwert, Feen einzusammeln, den Bumerang wegzustoßen und mit Bomben zu interagieren, um sie wegzuschlagen. Außerdem können das L2-Schwert und der L2-Schwertstrahl Töpfe zerstören. Der Schwertstrahl kann zusätzlich Gras und Büsche durchschneiden.
+tooltip_mods_mirrorreflect Verleiht dem Spiegelschild die Fähigkeit, Projektile auf Gegner zurückzuwerfen. Reflektierte Projektile fliegen schneller und können sogar andere Gegner beschädigen, die getroffen werden.
+
+tooltip_sword_grabnormal Schaltet die Fähigkeit ein, mit dem Schwert von Gegnern fallengelassene Gegenstände wie Rubine, Herzen, Götterahorne und Teile der MACHT einzusammeln. Erfordert ein Neuladen der Karte, um wirksam zu werden.
+tooltip_sword_grabworlditem Erlaubt das Einsammeln von Inventargegenständen mit dem Schwert, die in der Welt zu finden sind. Dazu gehören Herzcontainer, Instrumente, Goldene Blätter, Dungeon-Eingangsschlüssel und ähnliche Objekte. Erfordert ein Neuladen der Karte, um wirksam zu werden.
+tooltip_sword_grabfairy Aktiviert die Fähigkeit, Feen mit dem Schwert einzusammeln.
+tooltip_sword_grabsmallkeys Aktiviert die Fähigkeit, kleine Dungeon-Schlüssel mit dem Schwert einzusammeln. Erfordert ein Neuladen der Karte, um wirksam zu werden.
+tooltip_sword_boomerang Wenn der Bumerang geworfen wird, kann er mit dem Schwert geschlagen werden, um seinen Flug zurückzusetzen. Dies funktioniert mit jeder Art von Schwertattacke.
+tooltip_sword_bouncebombs Bomben, die du auf dem Boden platzierst, können mit dem Schwert weggeschlagen werden, um ihre Position zu verändern.
+tooltip_sword_swordblock Erlaubt es, Projektile mit dem Schwert zu zerschneiden, wenn das Timing perfekt ist, zum Beispiel Moblin-Speere oder Octorok-Schüsse.
+tooltip_sword_breakpots Ermöglicht es dem L2-Schwert und dem L2-Schwertstrahl, Töpfe und Schädel zu zerstören.
+tooltip_sword_beamshrubs Ermöglicht es dem L2-Schwertstrahl, Gras und Büsche direkt zu durchschneiden und erlaubt dem Strahl auch, Kristalle zu zerschmettern.
+
+tooltip_preset_setdefault Setzt alle Optionen auf ihre Standardwerte zurück. Einige Optionen sind davon ausgeschlossen, wie Sprache und Vollbildoptionen.
+tooltip_preset_setmodern Richtet Optionen so ein, dass sich das Spiel "moderner" anfühlt. Die Kamera erlaubt Zoomen und Verschieben durch die Welt, einige Komfortfunktionen sind aktiviert und Musikhinweise in der Oberwelt passen besser zur Umgebung.
+tooltip_preset_setclassic Richtet Optionen so ein, dass sich das Spiel "klassischer" anfühlt und sich mehr wie das Originalspiel verhält. Die traditionelle bildschirmbasierte Kamera wird verwendet, einige Komfortfunktionen sind aktiviert und Musikhinweise in der Oberwelt sind identisch mit dem Originalspiel.
+tooltip_preset_sethybrid Richtet Optionen so ein, dass das Spiel eine Mischung aus modernem und klassischem Gefühl hat. Die "Moderne Kamera" wird in der Oberwelt verwendet, während in Dungeons die "Klassische Kamera" genutzt wird. Einige Komfortfunktionen sind aktiviert und Musikhinweise in der Oberwelt passen besser zur Umgebung.
+tooltip_preset_purist Richtet Optionen so ein, dass das Spiel so nah wie möglich am Originalspiel ist, abgesehen von Komfortfunktionen, die in dieser Portierung enthalten sind. Alle Optionen, die das Spiel sich wie das Original verhalten lassen, werden gesetzt und alle zusätzlichen Komfortfunktionen werden deaktiviert.
+
+tooltip_cheats_invincibility Macht Link unempfindlich gegenüber Schaden. Im Gegensatz zum Setzen des Schadensmultiplikators auf 0 verhindert dies, dass Treffer auf Link registriert werden und er durch Angriffe von Gegnern zurückgestoßen werden kann.
+tooltip_cheats_infiniterupees Setzt die aktuelle Rubinenanzahl auf 999 und verhindert, dass sie jemals reduziert wird. Dies ist unumkehrbar! Aktiviere diese Option nicht, es sei denn, du bist damit einverstanden, deine Rubinenanzahl zu cheaten!
+tooltip_cheats_infinitepowder Setzt die Zauberpulveranzahl auf das aktuelle Maximum und verhindert, dass sie jemals reduziert wird. Dies ist unumkehrbar! Aktiviere diese Option nicht, es sei denn, du bist damit einverstanden zu cheaten!
+tooltip_cheats_infinitebombs Setzt die Bombenanzahl auf das aktuelle Maximum und verhindert, dass sie jemals reduziert wird. Dies ist unumkehrbar! Aktiviere diese Option nicht, es sei denn, du bist damit einverstanden zu cheaten!
+tooltip_cheats_infinitearrows Setzt die Pfeilanzahl auf das aktuelle Maximum und verhindert, dass sie jemals reduziert wird. Dies ist unumkehrbar! Aktiviere diese Option nicht, es sei denn, du bist damit einverstanden zu cheaten!
+tooltip_cheats_disableclipping Ermöglicht es Link, durch die meisten permanenten Objekte in der Spielwelt zu gehen. Gilt nicht für Löcher, Gegner, Wasser und Lava.
+tooltip_cheats_onehitkills Wenn die verwendete Angriffstechnik dem getroffenen Gegner potenziell Schaden zufügen kann, wird der Gegner immer mit einem einzigen Treffer besiegt.
+tooltip_cheats_giveallitems Gibt Link Zugang zu allen ausrüstbaren Inventargegenständen der höchsten Stufe. Wenn der Cheat deaktiviert wird, verbleiben nur zuvor legitim erhaltene Inventargegenstände im Inventar.

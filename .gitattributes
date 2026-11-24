@@ -1,0 +1,17 @@
+# Normalize line endings on commit; keep working tree native.
+* text=auto
+
+# Binary assets (never normalize)
+*.png   binary
+*.bmp   binary
+*.ico   binary
+*.xnb   binary
+*.gbs   binary
+*.dll   binary
+*.exe   binary
+*.so    binary
+*.dylib binary
+
+# Visual Studio / build output
+*.user  binary
+*.suo   binary

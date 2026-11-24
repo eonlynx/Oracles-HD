@@ -1,0 +1,411 @@
+map_overlay_close 关闭
+overlay_map 地图
+overlay_inventory 道具
+overlay_teleport 传送
+savename_thief 小偷
+
+main_menu_select_header Player Select
+main_menu_bottom_header 
+main_menu_new_game 新游戏
+main_menu_settings 设置
+main_menu_copy 复制
+main_menu_erase 删除
+main_menu_quit 退出
+main_menu_back 返回
+main_menu_select 选择
+main_menu_tooltip 提示
+
+main_menu_delete_confirmation_header 要删除此数据吗？
+main_menu_delete_confirmation_header_yes 确定
+main_menu_delete_confirmation_header_no 返回
+
+main_menu_copy_confirmation_header 确定要复制到这里吗？
+main_menu_copy_confirmation_header_yes 确定
+main_menu_copy_confirmation_header_no 返回
+
+main_menu_copy_header Copy Save
+main_menu_copy_from 从
+main_menu_copy_to 到
+main_menu_copy_empty 没有数据
+main_menu_copy_arrow ±
+main_menu_copy_back 返回
+
+new_game_menu_save_name 输入名字
+new_game_menu_back 返回
+new_game_menu_create_file 创建文件
+new_game_menu_game_type 游戏类型：
+new_game_menu_gtype_settings 使用设置
+new_game_menu_gtype_modern 现代
+new_game_menu_gtype_classic 经典
+new_game_menu_gtype_hybrid 混合
+new_game_menu_gtype_purist 纯粹主义者
+
+game_menu_header Menu
+game_menu_back_to_game 返回
+game_menu_settings 设置
+game_menu_save_continue 保存并继续
+game_menu_exit_to_the_menu 退出冒险
+game_menu_exit_the_game 退出游戏
+
+game_menu_exit_header Are you sure?
+game_menu_exit_no 否
+game_menu_exit_yes 是
+
+gameover_header GameOver
+gameover_continue 重新挑战
+gameover_quit 退出
+
+settings_menu_header Settings
+settings_menu_game 游戏设置
+settings_menu_redux Redux
+settings_menu_camera 摄像机
+settings_menu_video 视频
+settings_menu_graphics 图形
+settings_menu_audio 音频设置
+settings_menu_controls 控制设置
+settings_menu_mods 修改
+settings_menu_presets 预设
+settings_menu_cheats 作弊码
+settings_menu_achieve 成就
+settings_menu_back 返回
+
+settings_game_header Game Settings
+settings_game_language 语言：简体中文
+settings_game_sublanguage 语言变体：
+settings_game_sublanguage_01 原始文本
+settings_game_sublanguage_02 现代重制
+settings_game_sublanguage_03 替代版本
+settings_game_menubricks 菜单边框
+settings_game_menubricksA LADX
+settings_game_menubricksB 原版
+settings_game_menubricksC 黑色
+settings_game_classicsword 经典剑
+settings_game_saveposition 选择上次存档
+settings_game_autosave 自动保存
+settings_game_sharedstorage 保存至共享存储
+settings_game_hide_achievement 隐藏成就通知
+settings_game_items_on_right 物品栏在右侧
+
+settings_redux_header Redux Settings
+settings_redux_dungeonteleport 地图传送：
+settings_redux_dungeonteleport_01 已禁用
+settings_redux_dungeonteleport_02 仅地图
+settings_redux_dungeonteleport_03 仅曼波
+settings_redux_dungeonteleport_04 地图 + 曼波
+settings_redux_vwfont 可变宽度字体
+settings_redux_nohelptext 禁用帮助提示
+settings_redux_dialogskip 启用对话跳过
+settings_redux_uncensor 取消审查
+settings_redux_unmissables 无可错过内容
+settings_redux_photoscolor 彩色照片
+settings_redux_noanimaldmg 动物不受伤害
+
+settings_camera_header Camera Settings
+settings_camera_cameratype 类型
+settings_camera_cameratypeA 现代视角
+settings_camera_cameratypeB 经典视角
+settings_camera_cameratypeC 自定义视角
+settings_camera_custommenu 自定义视角
+settings_camera_fogdiscovery 地图探索迷雾
+settings_camera_fogedgesharp 迷雾边缘锐度
+settings_camera_fogopacity 迷雾不透明度
+settings_camera_fogfadetime 迷雾消散时间
+settings_camera_camborder 经典边框
+settings_camera_blackpercent 经典边框透明度
+settings_camera_bias 经典边框偏移
+settings_camera_classicscaling 经典缩放锁定
+settings_camera_persistentitems 持久掉落物品
+settings_camera_cameralock 镜头锁定
+settings_camera_smoothcamera 平滑镜头
+
+settings_camcustom_header 自定义视角
+settings_camcustom_modern 现代
+settings_camcustom_classic 经典
+settings_camcustom_overworld 地上世界
+settings_camcustom_houses 房屋
+settings_camcustom_caves 洞穴
+settings_camcustom_dungeons 迷宫
+settings_camcustom_castle 城堡
+settings_camcustom_egg 蛋内
+settings_camcustom_2dMaps 2D地图
+settings_camcustom_bosses 头目战
+
+settings_video_header Video Settings
+settings_video_game_scale 游戏缩放：
+settings_video_ui_scale UI 缩放：
+settings_video_autodetect 自动检测
+settings_video_fullscreen 屏幕模式:
+settings_video_fullscreen_01 窗口
+settings_video_fullscreen_02 无边框全屏
+settings_video_fullscreen_03 独占全屏
+settings_video_fps_lock 垂直同步
+settings_video_opaquehud 禁用界面模糊
+settings_video_pixelsnap 像素对齐
+settings_video_pixelgrid 像素网格着色器
+settings_video_epilepsysafe 防癫痫模式
+
+settings_graphics_header Graphics Settings
+settings_graphics_sequencescale 序列缩放增强
+settings_graphics_colorcorrect GBC色彩校正
+settings_graphics_shadow 动态阴影
+settings_graphics_fogeffects 雾效果
+settings_graphics_globallights 全局光照
+settings_graphics_objectlights 物体光照
+settings_graphics_screenshake 屏幕震动效果
+settings_graphics_exscreenshake 额外屏幕震动效果
+settings_graphics_classicsprites 经典物品精灵图
+
+settings_audio_header Audio Settings
+settings_audio_music_volume 音乐音量:
+settings_audio_effect_volume 效果音量:
+settings_audio_classic_music 经典音乐切换
+settings_audio_mute_inactive 窗口失焦静音
+settings_audio_heartbeep 低生命警告
+settings_audio_mute_powerups 无强化音乐
+settings_audio_mute_achievement 静音成就通知
+
+settings_controls_header Control Settings
+settings_controls_onscreen 屏幕控制
+settings_controls_deadzone 模拟摇杆死区
+settings_controls_gamepad 游戏手柄
+settings_controls_remap 重新映射手柄按键
+settings_controls_triggersscale 扳机键缩放画面
+settings_controls_sixbuttons 六个物品按钮
+settings_controls_swapbuttons 交换确认和取消
+settings_controls_classicmove 经典移动方式
+settings_controls_digitalanalog 数字模拟控制
+
+settings_controls_onscreenpad 屏幕控制
+settings_controls_onscreenpad_01 禁用
+settings_controls_onscreenpad_02 淡出
+settings_controls_onscreenpad_03 始终显示
+settings_controls_touchmovement 移动
+settings_controls_touchmovement_01 方向键 + 摇杆
+settings_controls_touchmovement_02 方向键菜单 + 游戏内摇杆
+settings_controls_touchmovement_03 仅方向键
+settings_controls_touchmovement_04 仅摇杆
+settings_controls_fadeopacity 淡出不透明度
+settings_controls_shadowopacity 阴影不透明度
+settings_controls_onscreenscale 控制缩放
+settings_controls_onscreenmiddletop 选择开始 屏幕顶部
+settings_controls_onscreenanalogbuttons 模拟扳机
+
+settings_controls_remapheader Button Remap
+settings_controls_keyboad 键盘
+settings_controls_Up Up
+settings_controls_Down Down
+settings_controls_Left Left
+settings_controls_Right Right
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 样式 1
+settings_controls_style_02 样式 2
+
+settings_mods_header Modifier Settings
+settings_mods_enemy_hp 敌人额外生命值
+settings_mods_damage 受伤害倍率
+settings_mods_damagecd 受伤冷却时间
+settings_mods_movespeed 额外移动速度
+settings_mods_nohearts 无心之容器掉落
+settings_mods_dmglaunch 受伤不击退
+settings_mods_swordinteract 额外剑互动
+settings_mods_mirrorreflect 镜盾反射
+
+settings_sword_header Sword Interactions
+settings_sword_grabnormal 收集掉落物
+settings_sword_grabworlditem 收集场景物品
+settings_sword_grabfairy 收集妖精
+settings_sword_grabsmallkeys 收集小钥匙
+settings_sword_boomerang 回旋镖反弹
+settings_sword_bouncebombs 击退炸弹
+settings_sword_swordblock 斩断敌方投射物
+settings_sword_breakpots L2击碎罐子和骷髅
+settings_sword_beamshrubs L2光束切割环境物体
+
+settings_preset_header Preset Settings
+settings_preset_setdefault 恢复默认设置
+settings_preset_setmodern 设置为现代预设
+settings_preset_setclassic 设置为经典预设
+settings_preset_sethybrid 设置为混合预设
+settings_preset_purist 设置为纯粹预设
+
+settings_cheats_header Cheats
+settings_cheats_invincibility 无敌
+settings_cheats_infiniterupees 无限卢比
+settings_cheats_infinitepowder 无限魔法粉
+settings_cheats_infinitebombs 无限炸弹
+settings_cheats_infinitearrows 无限箭矢
+settings_cheats_disableclipping 禁用碰撞检测
+settings_cheats_onehitkills 一击必杀
+settings_cheats_giveallitems 拥有全部物品
+
+achievements_header Achievements
+achievements_reset 重置
+achievements_earned 已获得
+achievements_reset_header Reset achievements?
+
+tooltip_default 选择一个选项以查看其提示。
+
+photo_book_select 选择 [CONFIRM] 按钮。
+photo_book_cancel 取消 [CANCEL] 按钮。
+
+tooltip_newgame_noname 在尝试开始新游戏之前，请输入有效的存档名称。
+tooltip_newgame_entry 这是当前存档使用的名字，也是NPC在对话中称呼角色的名字。
+tooltip_newgame_keyboard 屏幕键盘用于输入该存档的名字。你也可以使用设备键盘输入。
+tooltip_newgame_gametype0 “使用设置”仅使用当前设置，不会自动更改任何内容。无论选择哪种“游戏类型”，设置都可以稍后更改。
+tooltip_newgame_gametype1 “现代”会调整摄像机为现代模式，可缩放并自由移动视角，同时使音乐更贴合环境。
+tooltip_newgame_gametype2 “经典”会调整摄像机以还原原版游戏，将地图分为“区域”并在其间切换，同时匹配原版音乐。
+tooltip_newgame_gametype3 “混合”在大地图使用现代摄像机，在迷宫中使用经典摄像机，并调整音乐以贴合环境。
+tooltip_newgame_gametype4 "纯粹主义者"会调整设置，使其尽可能接近原版游戏，并最大限度减少本移植版所提供的增强功能数量。
+tooltip_newgame_back 退出当前页面并返回存档选择菜单。
+tooltip_newgame_start 使用输入的名称和选择的游戏类型开始新游戏。
+
+tooltip_menu_game 影响游戏玩法但不会改变基础结构和行为的选项。
+tooltip_menu_redux 基于“Redux”修改的选项，可能通过添加原版不存在的功能来改变游戏。
+tooltip_menu_camera 影响摄像机的选项。若想更接近原版体验，请启用“经典摄像机”。
+tooltip_menu_video 配置视频设置的选项。这些设置通常与您的屏幕和GPU相关。
+tooltip_menu_graphics 配置图形的选项。这些设置会影响游戏内图形的外观。
+tooltip_menu_audio 配置音频的选项，包括音乐和音效音量及强化时音乐设置。
+tooltip_menu_controls 自定义控制的选项。更改前请先在“游戏”中选择控制器类型。
+tooltip_menu_mods 同时影响玩法与难度的选项，可增加敌人生命、提高伤害、禁用心掉落等。
+tooltip_menu_presets 提供一系列预设选项值，可快速根据玩家喜好调整游戏体验。
+tooltip_menu_cheats 启用或禁用各种作弊码，这些作弊码可以让游戏变得更简单，也可以纯粹为了娱乐而启用。
+tooltip_menu_achieve 打开成就窗口，查看每一项成就的描述和进度。
+
+tooltip_game_language 更改当前语言。
+tooltip_game_sublanguage 包含NPC对话的细微变化，目前仅支持少数语言，欢迎社区扩展。
+tooltip_game_menubricks 选择在选项菜单中使用的边框材质，或完全禁用边框。
+tooltip_game_classicsword 此选项使剑的行为更接近原版游戏，每次只能砍击一个地形对象(灌木、草丛等)。
+tooltip_game_saveposition 存储上次选择的存档，并在加载主菜单时自动选中。由于菜单设计的限制，自动选择不是即时完成的。
+tooltip_game_autosave 每当屏幕发生切换时自动保存游戏(迷宫除外)。如果禁用，请记得手动保存！
+tooltip_game_sharedstorage 存档文件从"/storage/emulated/0/LADXHD/SaveFiles"读取和写入，而非范围存储。这需要用户授予权限。其目的是允许使用"SyncThing"等应用程序跨设备同步存档。
+tooltip_game_hide_achievement 隐藏当获得成就时在屏幕右下角弹出的成就覆盖层。音效也可以在"音频"设置中静音。
+tooltip_game_itemsonright 将装备物品图标HUD显示在屏幕右侧，而非左侧。
+
+tooltip_redux_dungeonteleport_01 此选项允许通过地图传送到已完成的迷宫。当前选中的选项是“已禁用”，因此无法通过地图传送。
+tooltip_redux_dungeonteleport_02 此选项允许通过地图传送到已完成的迷宫。当前选中的选项允许通过从物品栏进入地图、选择迷宫节点并按下 [X] 按钮来传送到已完成的迷宫。
+tooltip_redux_dungeonteleport_03 此选项允许通过地图传送到已完成的迷宫。当前选中的选项类似于前一选项，但不再从物品栏地图屏幕选择迷宫，而是用地图传送器替换曼波的歌曲，并允许选择曼波的池塘。
+tooltip_redux_dungeonteleport_04 此选项允许通过地图传送到已完成的迷宫。当前选中的选项允许通过物品栏地图传送，并用地图传送器替换曼波的歌曲。播放曼波的歌曲时出现的地图传送器也允许选择曼波的池塘。
+tooltip_redux_vwfont 将默认游戏字体替换为由“toruzz”制作的可变宽度字体。
+tooltip_redux_nohelptext 禁用触碰需要缺少物品的对象时的大部分对话，同时也禁用大部分物品拾取和开启宝箱的对话。
+tooltip_redux_dialogskip 启用使用“开始”按钮跳过对话框，可快速滚动文本并自动关闭对话窗口。问题对话仅跳过到需要用户输入的地方。
+tooltip_redux_uncensor 移除北美版及部分其他版本中的审查。恢复原版河马精灵以及美人鱼的交易物品和对话。
+tooltip_redux_unmissables 贝壳馆始终提供5和10个贝壳，卡那列城大门可重新开启，Level 8 后汪汪、玛林和飞天鸡可再次成为跟随者，商店老板在物品被盗后提供回购，始终显示隐藏结局。
+tooltip_redux_photoscolor 默认情况下，照片使用类似原版DX的棕褐色。这一选项则使用由“drestrada”提供的彩色照片。
+tooltip_redux_noanimaldmg 设置使玛贝村周围的鸡和狗无法被攻击。此选项会完全禁用它们的碰撞箱。
+
+tooltip_camera_cameratype "现代视角"以林克为中心，并可以进行缩放。"经典视角"重现了原版游戏的画面切换方式。"自定义视角"允许根据地图类型选择视角。
+tooltip_camera_custommenu 根据地图类型配置所使用的视角类型。需要将视角类型设置为"自定义视角"。
+tooltip_camera_fogdiscovery 当"现代摄像机"为当前摄像机时，此功能会在尚未探索的场地上生成迷雾效果。
+tooltip_camera_fogedgesharp 决定迷雾边缘向已探索场地模糊的程度。增加此值将减少模糊并使迷雾边缘更加清晰。请注意，超过35%后效果会出现明显的边际递减。
+tooltip_camera_fogopacity 决定迷雾的"厚度"，即能看透迷雾的程度。将此值设置为100%会使迷雾完全不透明。
+tooltip_camera_fogfadetime 这是进入新发现的场地时，该场地变为可见所需的时间。迷雾将在此处指定的时间内逐渐消散。时间以毫秒为单位（1000ms = 1秒）。
+tooltip_camera_camborder 启用经典镜头时，在当前场景周围放置边框并隐藏未动画化的对象。边框可以是基本黑色边框或超级Game Boy边框。这在一定程度上模仿了原版Game Boy的纵横比，但去掉了16像素HUD。
+tooltip_camera_camborderA 无
+tooltip_camera_camborderB 黑色
+tooltip_camera_camborderC 超级Game Boy
+tooltip_camera_blackpercent 设置经典镜头边框的透明度。可用于显示部分周围场景而不完全裁剪。
+tooltip_camera_bias 如果当前缩放比例未能覆盖屏幕的完整垂直高度，则将模拟视口偏移至所选位置。此选项在启用超级游戏男孩边框时无法使用。
+tooltip_camera_biasA 居中
+tooltip_camera_biasB 顶部
+tooltip_camera_biasC 底部
+tooltip_camera_classicscaling 禁用此选项后, 可以通过游戏缩放手动缩放“经典相机”, 而不是自动将视口适配到最近的整数倍分辨率。如果设置过大或过小, 此选项可能会“破坏”视口。
+tooltip_camera_persistentitems 当启用"经典摄像机"（即屏幕滚动）切换场地时，卢比、心心和强化道具等掉落物品不会消失，返回该场地时仍会存在。
+tooltip_camera_cameralock 在"现代摄像机"激活时锁定摄像机位置。禁用此选项时，可以使用右摇杆平移摄像机。启用"经典摄像机"时此选项无效。
+tooltip_camera_smoothcamera 每当摄像机切换目标时，添加平滑的平移效果。禁用时，摄像机将直接跳转到位置。影响两种摄像机，但"经典摄像机"受益最大。
+
+tooltip_camcustom_overworld 选择在地上世界地图上生效的视角。
+tooltip_camcustom_houses 选择在房屋类地图内生效的视角。
+tooltip_camcustom_caves 选择在洞穴类地图内生效的视角。
+tooltip_camcustom_dungeons 选择在1-8号迷宫内生效的视角。
+tooltip_camcustom_castle 选择在卡纳雷特城堡和南颜之神殿内生效的视角。
+tooltip_camcustom_egg 选择在蛋内探索时生效的视角。
+tooltip_camcustom_2dMaps 选择在2D地图上生效的视角。此项优先于其他类型。
+tooltip_camcustom_bosses 选择头目战期间生效的视角。此项优先于其他类型。
+
+tooltip_video_game_scale 决定“游戏像素”相对于Game Boy分辨率的大小。例如，缩放为10表示一个游戏像素对应10x10屏幕像素。低于1x表示原像素的百分比。
+tooltip_video_ui_scale 界面显示的大小。缩放值是任意的，与原版游戏无关。请选择你喜欢的缩放比例。
+tooltip_video_fullscreen 设置当前屏幕模式: 窗口, 无边框全屏, 和 独占全屏。除非你确实需要独占全屏用于某些特定用途, 例如与外部软件兼容, 否则建议使用无边框全屏。Alt + Enter 可以快速在窗口和无边框全屏之间切换。
+tooltip_video_fps_lock 将帧率锁定为当前屏幕刷新率。禁用后，帧率将尽可能高。
+tooltip_video_opaquehud 禁用所有界面模糊效果，改用纯色背景。这可以提升低端设备上的性能。
+tooltip_video_pixelsnap 启用此选项可将精灵像素边缘锁定到类似LCD网格的效果。任何物体移动的最小距离为一个完整的游戏像素。禁用时，物体可以以子像素步长移动，看起来更加"流畅"，但会牺牲精确度。
+tooltip_video_pixelgrid 在整个屏幕上绘制像素网格，复制像《游戏男孩彩色版》等复古游戏机的"LCD网格"效果，本游戏即源于此平台。此功能需要启用"像素对齐"才能正常运作，否则将无法使用。
+tooltip_video_epilepsysafe 禁用在提升物品上限或击中电击球时出现的闪烁效果。同时禁用敌人上的其他闪烁效果，例如火花和反妖精。
+
+tooptip_graphics_sequencescale 专门在游戏序列中添加到界面缩放。如果界面缩放为 3, 且此值为 2, 则序列缩放为 5。这包括照片序列、图片和游戏内过场动画。通常最大安全值为 +2。值过高可能无法保证不会超出屏幕范围。
+tooltip_graphics_colorcorrect 原版游戏男孩彩色版没有背光屏幕，颜色会变暗，因此游戏采用高饱和度调色板进行补偿。色彩校正旨在使画面呈现出与原版游戏男孩彩色版硬件相同的效果。
+tooltip_graphics_shadows 启用时, 阴影会根据精灵形状动态生成。禁用时, 将使用预设的精灵阴影, 但仅适用于林克、敌人和在空中的 NPC。
+tooltip_graphics_fogeffects 禁用神秘森林中的雾效果, 该森林位于玛贝村上方。
+tooltip_graphics_nogloballights 启用全局光照，应用于整个地图。此光照用于使环境变暗，并增强物体投射的光效。
+tooltip_graphics_noobjectlights 启用物体投射的光照效果。虽然物体光照不依赖全局光照，但没有全局光照几乎没有效果。
+tooltip_graphics_screenshake 启用或禁用原版屏幕震动效果，包括天马之鞋撞击物体、电击、迷宫入口开启、Boss震动屏幕等。
+tooltip_graphics_exscreenshake 启用或禁用原版游戏中没有的额外屏幕震动效果，包括林克受到伤害、炸弹爆炸、新环境效果以及新的Boss和敌人效果。
+tooltip_graphics_classicsprites 在原版游戏中，物品栏中的精灵图与游戏场地上的可能不同。本移植版选择显示单一精灵图以保持一致性。启用此选项可恢复像原版游戏一样显示不同的精灵图。
+
+tooltip_audio_music_volume 游戏音乐音量。
+tooltip_audio_effect_volume 游戏音效音量。
+tooltip_audio_classic_music 决定大地图上音乐的切换时机。禁用(现代)严格遵循瓦片地图，而启用(经典)遵循原版游戏。启用与禁用的差别较小。可在玛贝村东部测试。
+tooltip_audio_mute_inactive 当游戏窗口未处于焦点时，静音所有音频和音效。
+tooltip_audio_heartbeep 当生命值低于一定阈值时，禁用周期性的心跳声。
+tooltip_audio_mute_powerups 拾取守护果实或力量碎片时，禁用播放的音乐。
+tooltip_audio_mute_achievement 禁用获得成就时播放的音效。
+
+tooltip_controls_deadzone 摇杆响应输入前的按压范围百分比。除非其他软件中已设置死区，否则建议不要将其低于10%，否则可能导致摇杆漂移。对于存在“漂移”问题的手柄，提高此值可能有帮助。
+tooltip_controls_onscreen 允许配置仅在 Android 版本中使用的屏幕控制器选项。
+tooltip_controls_gamepad 选择用于显示按钮提示的手柄类型。支持XBox、Playstation和任天堂风格的手柄。
+tooltip_controls_remap 重新映射键盘和手柄按钮到你偏好的布局。重新映射前，请更改手柄类型以匹配你的手柄。
+tooltip_controls_triggersscale 启用通过前上方两个手柄按钮(LB/RB, L1/R1, L/R)调整当前游戏缩放。如果启用“六个物品按钮”，则改为通过后上方两个按钮/扳机(LT/RT, L2/R2, ZL/ZR)调整游戏缩放。
+tooltip_controls_sixbuttons 启用六个手柄按钮用于物品栏，而非四个。这样物品可装备在前上方两个按钮(LB/RB, L1/R1, L/R)，游戏缩放调整移至后上方两个按钮/扳机(LT/RT, L2/R2, ZL/ZR)。
+tooltip_controls_swapconfirm 交换菜单和对话框中的确认与取消按钮。
+tooltip_controls_classicmove 此选项模拟原版游戏的移动方式，使林克能够向后行走。与“数字模拟控制”结合可完全复制原版游戏的移动方式。
+tooltip_controls_digitalanalog 移除模拟摇杆范围，使林克沿45度方向(上、下、左、右及斜方向)移动。这会让操作林克的感觉更接近原版游戏，就像在模拟器中一样。
+
+tooltip_controls_onscreenpad 启用或禁用屏幕控制。"禁用" 表示关闭。"淡出" 会在未使用时使按钮淡出。"始终显示" 会让按钮始终可见。
+tooltip_controls_touchmovement 设置 D-Pad 或摇杆的可见性。可以同时始终启用两者, 使用 D-Pad 进行菜单操作并用摇杆移动林克, 或者一次只启用其中一个。
+tooltip_controls_fadeopacity 当屏幕控制设置为“淡出”时, 这是在未按下前保持的最低不透明度。
+tooltip_controls_shadowopacity 控制下方阴影的不透明度。无论设置哪种可见模式, 阴影都会保持相同的不透明度。
+tooltip_controls_onscreenscale 屏幕控制的缩放值。
+tooltip_controls_onscreenmiddletop 将 Start 和 Select 按钮放在屏幕顶部, 而不是底部。
+tooltip_controls_onscreenanalogbuttons 启用屏幕上的模拟摇杆按钮 LS 和 RS。RS 按钮在相机未锁定时用于居中相机。
+
+tooltip_mods_enemy_hp 全局增加所有敌人的生命值。例如，如果敌人生命值增加3点，那么一个拥有1点生命的敌人将变为4点生命，拥有8点生命的Boss将变为11点生命。
+tooltip_mods_damage 增加所有来源的受伤害倍数。例如，如果设置为4，本应造成半心伤害的攻击将造成2颗满心的伤害。
+tooltip_mods_damagecd 默认值为16x(1056毫秒)。这是伤害冷却系数乘以66毫秒的伤害闪烁时间，决定林克受到攻击后无敌的时间。
+tooltip_mods_movespeed 增加移动速度百分比，最高可达100%。影响所有形式的移动：走路、爬行、游泳等。
+tooltip_mods_nohearts 完全禁用所有来源的心之容器掉落。唯一的回血方式是找到妖精、拜访大妖精或从古怪崔西购买药物。
+tooltip_mods_dmglaunch 禁用在攻击敌人时的击退效果(如在力量碎片效果下或穿着衣服迷宫的红色服装时)。
+tooltip_mods_swordinteract 此选项使剑能够收集妖精、击退回旋镖，并与炸弹互动以将其击退。允许二级剑及剑气破坏罐子，二级剑气可以切割草丛和灌木。
+tooltip_mods_mirrorreflect 赋予镜盾反射投射物的能力。反射的投射物速度更快，甚至可以伤害被击中的其他敌人。
+
+tooltip_sword_grabnormal 切换用剑收集敌人掉落物的能力，例如卢比、心之容器、守护果实和力量碎片。需要重新加载地图才能生效。
+tooltip_sword_grabworlditem 允许用剑收集世界中固定的物品。这些物品包括心之容器、乐器、黄金叶子、迷宫入口钥匙等。需要重新加载地图才能生效。
+tooltip_sword_grabfairy 启用用剑收集妖精的能力。
+tooltip_sword_grabsmallkeys 启用用剑收集小迷宫钥匙的能力。需要重新加载地图才能生效。
+tooltip_sword_boomerang 当回旋镖被投掷时，可用剑击打它以重置飞行轨迹。适用于任何类型的剑攻击。
+tooltip_sword_bouncebombs 玩家放置在地面的炸弹可以用剑击打以重新定位。
+tooltip_sword_swordblock 完美时机下，允许用剑斩断投射物。例如，莫力布林的长枪或八爪投石怪射击物。
+tooltip_sword_breakpots 允许二级剑及剑气破坏罐子和骷髅。
+tooltip_sword_beamshrubs 使二级剑气能够直接切割草丛和灌木，并允许剑气击碎水晶簇。
+
+tooltip_preset_setdefault 将所有选项设置为默认值。一些选项不会被更改, 例如语言和全屏选项。
+tooltip_preset_setmodern 设置选项, 使游戏具有更“现代”的感觉。相机允许在世界中缩放和平移, 启用某些便利功能, 并且主世界的音乐提示与环境更加匹配。
+tooltip_preset_setclassic 设置选项, 使游戏具有更“经典”的感觉, 并且行为更像原始游戏。使用传统的分屏式相机, 启用部分便利功能, 并且主世界音乐提示与原始游戏完全一致。
+tooltip_preset_sethybrid 设置选项, 使游戏同时具有现代和经典的感觉。在主世界使用现代相机, 在地下城内使用经典相机。启用部分便利功能, 并且主世界音乐提示更好地与环境匹配。
+tooltip_preset_purist 设置选项, 使游戏在除本移植版本固有的便利功能之外尽可能接近原始游戏。所有能让游戏行为像原始游戏的选项都会被启用, 并禁用任何额外的便利功能。
+
+tooltip_cheats_invincibility 使林克免疫伤害。与将受到伤害倍率设置为0不同，此选项还会消除受击判定和击退效果。
+tooltip_cheats_infiniterupees 将当前卢比数量设置为999，并使其永不减少。此操作不可逆！除非你愿意作弊修改卢比数量，否则请勿启用此选项！
+tooltip_cheats_infinitepowder 将魔法粉数量设置为当前上限，并使其永不减少。此操作不可逆！除非你愿意作弊，否则请勿启用此选项！
+tooltip_cheats_infinitebombs 将炸弹数量设置为当前上限，并使其永不减少。此操作不可逆！除非你愿意作弊，否则请勿启用此选项！
+tooltip_cheats_infinitearrows 将箭矢数量设置为当前上限，并使其永不减少。此操作不可逆！除非你愿意作弊，否则请勿启用此选项！
+tooltip_cheats_disableclipping 允许林克穿过大多数实体物体。不包括坑洞、敌人、水和熔岩。
+tooltip_cheats_onehitkills 如果攻击类型能对被击中的敌人造成伤害，则该敌人将始终被一击击败。
+tooltip_cheats_giveallitems 赋予林克所有最高级别可装备物品的使用权限。禁用此作弊码后，只有合法获得的物品才会归还给玩家。

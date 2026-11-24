@@ -1,0 +1,411 @@
+map_overlay_close Stäng
+overlay_map Karta
+overlay_inventory Föremål
+overlay_teleport Teleportera
+savename_thief Tjuv
+
+main_menu_select_header Välj spelare
+main_menu_bottom_header 
+main_menu_new_game Nytt spel
+main_menu_settings Inställningar
+main_menu_copy Kopiera
+main_menu_erase Radera
+main_menu_quit Avsluta
+main_menu_back Tillbaka
+main_menu_select Välj
+main_menu_tooltip Information
+ 
+main_menu_delete_confirmation_header Radera sparfil?
+main_menu_delete_confirmation_header_yes Ja
+main_menu_delete_confirmation_header_no Nej
+
+main_menu_copy_confirmation_header Kopiera sparfil?
+main_menu_copy_confirmation_header_yes Ja
+main_menu_copy_confirmation_header_no Nej
+
+main_menu_copy_header Kopiera sparfil
+main_menu_copy_from Från
+main_menu_copy_to Till
+main_menu_copy_empty -Tom-
+main_menu_copy_arrow [RIGHT]
+main_menu_copy_back Tillbaka
+
+new_game_menu_save_name Namn:
+new_game_menu_back Tillbaka
+new_game_menu_create_file Skapa fil
+new_game_menu_game_type Speltyp:
+new_game_menu_gtype_settings Använd inställningar
+new_game_menu_gtype_modern Modern
+new_game_menu_gtype_classic Klassisk
+new_game_menu_gtype_hybrid Hybrid
+new_game_menu_gtype_purist Purist
+
+game_menu_header Meny
+game_menu_back_to_game Återvänd till spel
+game_menu_settings Inställningar
+game_menu_save_continue Spara & Fortsätt
+game_menu_exit_to_the_menu Avsluta till meny
+game_menu_exit_the_game Avsluta spel
+
+game_menu_exit_header Är du säker?
+game_menu_exit_no Nej
+game_menu_exit_yes Ja
+
+gameover_header Spel över
+gameover_continue Fortsätt
+gameover_quit Avsluta
+
+settings_menu_header Inställningar
+settings_menu_game Spel
+settings_menu_redux Redux
+settings_menu_camera Kamera
+settings_menu_video Video
+settings_menu_graphics Grafik
+settings_menu_audio Ljud
+settings_menu_controls Kontroller
+settings_menu_mods Modifierare
+settings_menu_presets Förval
+settings_menu_cheats Fusk
+settings_menu_achieve Prestationer
+settings_menu_back Tillbaka
+
+settings_game_header Spelinställningar
+settings_game_language Språk: Svenska
+settings_game_sublanguage Språk:
+settings_game_sublanguage_01 Originaltext
+settings_game_sublanguage_02 Modern remake
+settings_game_sublanguage_03 Alternativ
+settings_game_menubricks Menyram
+settings_game_menubricksA LADX
+settings_game_menubricksB Original
+settings_game_menubricksC Svart
+settings_game_classicsword Klassiskt svärd
+settings_game_saveposition Välj senaste sparfil
+settings_game_autosave Autospara
+settings_game_sharedstorage Spara i delad lagring
+settings_game_hide_achievement Dölj prestationsavisering
+settings_game_items_on_right Föremål till höger
+
+settings_redux_header Redux-inställningar
+settings_redux_dungeonteleport Kartteleportör:
+settings_redux_dungeonteleport_01 Inaktiverad
+settings_redux_dungeonteleport_02 Bara karta
+settings_redux_dungeonteleport_03 Bara Manbo
+settings_redux_dungeonteleport_04 Karta + Manbo
+settings_redux_vwfont Variabelt teckensnitt
+settings_redux_nohelptext Inga hjälpmeddelanden
+settings_redux_dialogskip Hoppa över dialog
+settings_redux_uncensor Ta bort censur
+settings_redux_unmissables Inget går att missa
+settings_redux_photoscolor Färgfotografier
+settings_redux_noanimaldmg Inga djurskador
+
+settings_camera_header Kamerainställningar
+settings_camera_cameratype Typ
+settings_camera_cameratypeA Modern kamera
+settings_camera_cameratypeB Klassisk kamera
+settings_camera_cameratypeC Anpassad kamera
+settings_camera_custommenu Anpassa Kameran
+settings_camera_fogdiscovery Kartupptäcktsdimma
+settings_camera_fogedgesharp Dimkantsskärpa
+settings_camera_fogopacity Dimopacitet
+settings_camera_fogfadetime Dimavtagningstid
+settings_camera_camborder Klassisk ram
+settings_camera_blackpercent Klassisk ram alfa
+settings_camera_bias Klassisk ramplacering
+settings_camera_classicscaling Klassiskt skalningslås
+settings_camera_persistentitems Beständiga Föremålsdroppningar
+settings_camera_cameralock Kameralås
+settings_camera_smoothcamera Mjuk kamera
+
+settings_camcustom_header Anpassa Kameran
+settings_camcustom_modern Modern
+settings_camcustom_classic Klassisk
+settings_camcustom_overworld Övervärlden
+settings_camcustom_houses Hus
+settings_camcustom_caves Grottor
+settings_camcustom_dungeons Labyrinter
+settings_camcustom_castle Slott
+settings_camcustom_egg Inuti Ägget
+settings_camcustom_2dMaps 2D-Kartor
+settings_camcustom_bosses Bossfighter
+
+settings_video_header Videoinställningar
+settings_video_game_scale Spelskala:
+settings_video_ui_scale UI-skala:
+settings_video_autodetect Auto-identifiera
+settings_video_fullscreen Skärmläge:
+settings_video_fullscreen_01 Fönster
+settings_video_fullscreen_02 Ramlös helskärm
+settings_video_fullscreen_03 Exklusiv helskärm
+settings_video_fps_lock Vertikal synkronisering
+settings_video_opaquehud Inaktivera UI-oskärpa
+settings_video_pixelsnap Pixeljustering
+settings_video_pixelgrid Pixelrutnät-shader
+settings_video_epilepsysafe Epilepsisäkert
+
+settings_graphics_header Grafikinställningar
+settings_graphics_sequencescale Sekvensskalningsförstärkare
+settings_graphics_colorcorrect GBC-Färgkorrigering
+settings_graphics_shadow Dynamiska skuggor
+settings_graphics_fogeffects Dimeffekter
+settings_graphics_globallights Global belysning
+settings_graphics_objectlights Objektbelysning
+settings_graphics_screenshake Skärmskakningseffekter
+settings_graphics_exscreenshake Extra skärmskakningseffekter
+settings_graphics_classicsprites Klassiska föremåls-sprites
+
+settings_audio_header Ljudinställningar
+settings_audio_music_volume Musikvolym:
+settings_audio_effect_volume Effektvolym:
+settings_audio_classic_music Klassiska musiksignaler
+settings_audio_mute_inactive Tysta inaktivt fönster
+settings_audio_heartbeep Alarm vid lågt antal hjärtan
+settings_audio_mute_powerups Ingen PowerUp-musik
+settings_audio_mute_achievement Tysta prestationsavisering
+
+settings_controls_header Kontrollinställningar
+settings_controls_onscreen Skärmkontroller
+settings_controls_deadzone Analog dödzon
+settings_controls_gamepad Handkontroll
+settings_controls_remap Byt plats på knappar
+settings_controls_triggersscale Utlöser fjällspelet
+settings_controls_sixbuttons Sex föremålsknappar
+settings_controls_swapbuttons Byt plats på bekräfta & avbryt
+settings_controls_classicmove Klassisk rörelse
+settings_controls_digitalanalog Digital Analog
+
+settings_controls_onscreen Kontroller på skärmen
+settings_controls_onscreenpad_01 Inaktiverad
+settings_controls_onscreenpad_02 Tona
+settings_controls_onscreenpad_03 Alltid
+settings_controls_touchmovement Rörelse
+settings_controls_touchmovement_01 D-Pad + Analog
+settings_controls_touchmovement_02 D-Pad i menyer + Analog i spelet
+settings_controls_touchmovement_03 Bara D-Pad
+settings_controls_touchmovement_04 Bara analog
+settings_controls_fadeopacity Toningsopacitet
+settings_controls_shadowopacity Skuggopacitet
+settings_controls_onscreenscale Kontrollskala
+settings_controls_onscreenmiddletop Select/Start högst upp på skärmen
+settings_controls_onscreenanalogbuttons Analoga axelknappar
+
+settings_controls_remapheader Byt plats på knappar
+settings_controls_keyboad Tangentbord
+settings_controls_Up Upp
+settings_controls_Down Ner
+settings_controls_Left Vänster
+settings_controls_Right Höger
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 Typ 1
+settings_controls_style_02 Typ 2
+
+settings_mods_header Modifierarinställningar
+settings_mods_enemy_hp Extra HP för fiender
+settings_mods_damage Skademultiplikator
+settings_mods_damagecd Skadenedkylning
+settings_mods_movespeed Rör dig snabbare
+settings_mods_nohearts Inga tappade hjärtan
+settings_mods_dmglaunch Ingen skadeknuff
+settings_mods_swordinteract Extra svärdinteraktioner
+settings_mods_mirrorreflect Spegelskölden reflekterar
+
+settings_sword_header Svärdinteraktioner
+settings_sword_grabnormal Samla in tappade föremål
+settings_sword_grabworlditem Samla in statiska föremål
+settings_sword_grabfairy Samla in feer
+settings_sword_grabsmallkeys Samla in små nycklar
+settings_sword_boomerang Rikoschettbumerang
+settings_sword_bouncebombs Flyttbara bomber
+settings_sword_swordblock Klyv fiendeprojektiler
+settings_sword_breakpots N2 Svärd krossar krukor & döskallar
+settings_sword_beamshrubs N2 Stråle skär igenom omgivn.objekt
+
+settings_preset_header Förval
+settings_preset_setdefault Återställ
+settings_preset_setmodern Modern
+settings_preset_setclassic Klassisk
+settings_preset_sethybrid Hybrid
+settings_preset_purist Purist
+
+settings_cheats_header Fuskinställningar
+settings_cheats_invincibility Osårbarhet
+settings_cheats_infiniterupees Oändligt med rupier
+settings_cheats_infinitepowder Oändligt med magiskt pulver
+settings_cheats_infinitebombs Oändligt med bomber
+settings_cheats_infinitearrows Oändligt med pilar
+settings_cheats_disableclipping Inaktivera kollision
+settings_cheats_onehitkills En träff dödar
+settings_cheats_giveallitems Ha alla föremål
+
+achievements_header Prestationer
+achievements_reset Återställ
+achievements_earned Uppnådda
+achievements_reset_header Återställ prestationer?
+
+tooltip_default Markera ett alternativ för att se beskrivning.
+
+photo_book_select Bekräfta [CONFIRM]-knapp.
+photo_book_cancel Avbryt [AVBRYT]-knapp.
+
+tooltip_newgame_noname Skriv in ett giltigt namn innan du startar ett nytt spel.
+tooltip_newgame_entry Detta är namnet på nuvarande sparfil och det namn som NPC:er kommer att referera till i spelets dialog.
+tooltip_newgame_keyboard Ett digitalt tangentbord som du kan skriva in sparfilens namn med. Du kan också skriva in namnet med ett fysiskt tangentbord.
+tooltip_newgame_gametype0 "Använd inställningar" använder nuvarande inställningar och ändrar inget automatiskt. Oavsett vilken "Speltyp" du valt så kan inställningar ändras senare.
+tooltip_newgame_gametype1 "Modernt" ändrar till modern kamera som låter dig zooma in och ut och panorera runt världen. Den aktiverar också musiksignaler som passar bättre med omgivningen.
+tooltip_newgame_gametype2 "Klassisk" justerar kamerainställningarna för att påminna om originalet som delar upp kartan i "bildrutor" och kameran byter mellan dem. Den aktiverar också musiksignaler som passar bättre med omgivningen.
+tooltip_newgame_gametype3 "Hybrid" använder den moderna kameran i övervärlden och den klassiska kameran i grottorna. Den aktiverar också musiksignaler som passar bättre med omgivningen.
+tooltip_newgame_gametype4 "Purist" justerar inställningarna för att likna originalspelet så mycket som möjligt och minimerar antalet förbättringar som erbjuds i den här porten.
+tooltip_newgame_back Lämna nuvarande sida och återgå till filvalsmenyn.
+tooltip_newgame_start Starta ett nytt spel med valt namn och vald speltyp.
+
+tooltip_menu_game Alternativ som påverkar gameplay, men som inte ändrar strukturen och beteendet på basspelet.
+tooltip_menu_redux Alternativ baserade på romhacket "Redux" som påverkar gameplay och kan ändra basspelet genom att lägga till funktioner som inte fanns ursprungligen.
+tooltip_menu_camera Alternativ som påverkar kameran. För en upplevelse närmare originalspelet, aktivera "Klassisk kamera" för rutnätsbaserat scrollande.
+tooltip_menu_video Alternativ som konfigurerar videoinställningarna. Dessa är inställningar som vanligtvis är relaterade till din skärm och GPU.
+tooltip_menu_graphics Alternativ som konfigurerar grafiken. Dessa inställningar påverkar utseendet på grafiken i spelet.
+tooltip_menu_audio Alternativ som konfigurerar ljudet. Musik- och ljudvolym samt inaktivering av musik när du plockar upp en PowerUp.
+tooltip_menu_controls Alternativ som skräddarsyr kontrollen. Se till att välja kontrolltyp från "Spel" innan du ändrar här.
+tooltip_menu_mods Alternativ som påverkar både gameplay och svårighet. Kan lägga till mer HP till monster, öka skada, inaktivera tappade hjärtan, öka rörelsehastighet, eller till och med blockera projektiler med svärdet.
+tooltip_menu_presets Erbjuder olika förval för att snabbt skräddarsy spelupplevelsen för spelaren.
+tooltip_menu_cheats Aktiverar eller inaktiverar olika fusk som kan göra spelet mycket lättare eller kan aktiveras bara för skojs skull.
+tooltip_menu_achieve Öppna prestationsfönstret som visar beskrivningen och förloppet för varje enskild prestation.
+
+tooltip_game_language Ändrar nuvarande språk.
+tooltip_game_sublanguage Innehåller subtil variation i NPC-dialog. Bara enstaka språk stöds för närvarande. Community-ansträngningar för att expandera detta alternativ och skripten vore uppskattat.
+tooltip_game_menubricks Använder ramstrukturen du valt i inställningarna eller inaktiverar ramen helt och hållet.
+tooltip_game_classicsword Detta alternativ gör att svärdet beter sig mer som i originalspelet där det bara kan hugga ett enda terrängobjekt åt gången (buskar, gräs, etc).
+tooltip_game_saveposition Lagrar den senast valda sparfilen och väljer den automatiskt när huvudmenyn laddas. Det automatiska valet sker inte omedelbart pga begränsningar i menydesignen.
+tooltip_game_autosave Sparar spelet automatiskt när en övergång till ny bildruta sker (förutom i labyrinter). Glöm inte att spara manuellt om det är inaktiverat! 
+tooltip_game_sharedstorage Sparfiler läses från och skrivs till "/storage/emulated/0/LADXHD/SaveFiles" istället för begränsad lagring. Detta kräver tillstånd från användaren. Syftet är att tillåta användning av applikationer som "SyncThing" för att synkronisera sparfiler mellan enheter.
+tooltip_game_hide_achievement Döljer prestationsöverlägget som visas i skärmens nedre högra hörn när ett prestationsmärke erhålls. Ljudeffekten kan också tystas i "Ljud"-inställningarna.
+tooltip_game_itemsonright Visar ikonerna för utrustade föremål i HUD-fönstret på höger sida av skärmen istället för till vänster.
+
+tooltip_redux_dungeonteleport_01 Detta alternativ tillåter teleportering till en avklarad labyrint via kartan. Det valda alternativet är "inaktiverat" så teleportering via kartan är inte tillgängligt.
+tooltip_redux_dungeonteleport_02 Detta alternativ tillåter teleportering till en avklarad labyrint via kartan. Det valda alternativet tillåter teleportering till en avklarad labyrint genom att gå in på kartan via föremålsskärmen, välja en labyrintnod och trycka på [X]-knappen.
+tooltip_redux_dungeonteleport_03 Detta alternativ tillåter teleportering till en avklarad labyrint via kartan. Det valda alternativet liknar det föregående alternativet, men istället för att välja en labyrint från föremålsskärmen ersätter det Manbos sång med kartteleportern och tillåter val av Manbos damm.
+tooltip_redux_dungeonteleport_04 Detta alternativ tillåter teleportering till en avklarad labyrint via kartan. Det valda alternativet tillåter teleportering via kartan på föremålsskärmen och ersätter Manbos sång med kartteleportern. Kartteleportern som visas när du spelar Manbos sång låter dig också välja Manbos damm.
+tooltip_redux_vwfont Ersätter standardteckensnittet i spelet med ett teckensnitt med variabel bredd skapat av "toruzz".
+tooltip_redux_nohelptext Inaktiverar de flesta dialogrutor när du rör vid objekt som kräver ett saknat föremål och inaktiverar även de flesta dialogrutor för föremålshämtning och öppning av kistor.
+tooltip_redux_dialogskip Låter dig hoppa över dialogrutor med "Start"-knappen vilket bläddrar igenom texten snabbt och stänger dialogrutan automatiskt. Frågedialog hoppas bara över till den punkt där användarinmatning krävs.
+tooltip_redux_uncensor Tar bort censuren som fanns i den nordamerikanska utgåvan och några andra. Återställer ursprungliga Hippo-sprites samt sjöjungfruns handelsföremål och dialog.
+tooltip_redux_unmissables Snäckskalsherrgården ger alltid 5 och 10 snäckor, porten till Kanalet slott kan öppnas igen, Bow Wow, Marin och tuppen kan bli följare igen efter nivå 8, butiksinnehavaren erbjuder återköp av namn om föremål stulits samt att det hemliga slutet alltid visas.
+tooltip_redux_photoscolor Som standard använder fotografier sepiafärger precis som den ursprungliga DX-versionen. Detta alternativ använder istället färgfotografier från "drestrada".
+tooltip_redux_noanimaldmg Gör så att gökar och hundar som finns runt byn Mabe inte kan attackeras. Detta alternativ inaktiverar deras träffytor helt.
+
+tooltip_camera_cameratype "Modern Kamera" är centrerad på Link och tillåter in- och utzoomning. "Klassisk Kamera" återskapar originalspelets skärmövergångar. "Anpassad Kamera" tillåter att kameran väljs utifrån karttypen.
+tooltip_camera_custommenu Konfigurerar vilken kameratyp som används utifrån karttypen. Kräver att kameratypen är inställd på "Anpassad Kamera".
+tooltip_camera_fogdiscovery När "Modern Kamera" är den aktiva kameran genererar detta en dimeffekt över fält som ännu inte har upptäckts.
+tooltip_camera_fogedgesharp Bestämmer hur mycket kanten av dimman suddas ut mot upptäckta fält. Att öka detta värde minskar suddigheten och gör kanten av dimman skarpare. Observera att det har märkbart avtagande avkastning över 35%.
+tooltip_camera_fogopacity Bestämmer hur "tjock" dimman är, eller snarare hur väl man kan se igenom den. Att ställa in detta värde till 100% gör dimman helt ogenomskinlig.
+tooltip_camera_fogfadetime Detta är hur lång tid det tar för ett nyupptäckt fält att bli synligt när man går in i det. Dimman tonas ut under den tid som anges här. Tid anges i millisekunder (1000ms = 1 sekund).
+tooltip_camera_camborder När den "klassiska kameran" är aktiverad placeras en ram runt den aktuella bildrutan och objekt som inte är animerade döljs. Ramen kan vara en enkel svart ram eller Super Game Boy-ramen. Detta efterliknar bildförhållandet på ursprungliga Game Boy något, minus de 16 HUD-pixlarna.
+tooltip_camera_camborderA Ingen
+tooltip_camera_camborderB Svart
+tooltip_camera_camborderC Super Game Boy
+tooltip_camera_blackpercent Bestämmer alfavärdet för den klassiska kameragränsen. Kan användas för att visa lite av omgivande bildrutor utan att klippa av dem helt.
+tooltip_camera_bias Placerar det simulerade visningsområdet enligt den valda positionen om den aktuella skalan inte täcker hela skärmens vertikala storlek. Detta alternativ fungerar inte med Super Game Boy-ramen aktiverad.
+tooltip_camera_biasA Centrerad
+tooltip_camera_biasB Överst
+tooltip_camera_biasC Nederst
+tooltip_camera_classicscaling Att inaktivera detta alternativ möjliggör manuell skalning av "Klassisk Kamera" via Spelskala istället för att automatiskt anpassa visningsområdet till närmaste heltal i skalningsupplösningen. Detta alternativ kan potentiellt "förstöra" visningsområdet om det är inställt på för stort eller för litet.
+tooltip_camera_persistentitems När man byter fält med "Klassisk Kamera" aktiverad (dvs. skärmen scrollar) kommer föremålsdroppningar som rupier, hjärtan och powerups inte att försvinna och kommer att finnas kvar när man återvänder till fältet.
+tooltip_camera_cameralock Låser kameran medan "Modern Kamera" är aktiv. När detta alternativ är inaktiverat kan höger analogstick panorera kameran. Har ingen effekt när "Klassisk Kamera" är aktiverad.
+tooltip_camera_smoothcamera När kameran byter mål läggs en smidig panoreringseffekt till. När det är inaktiverat snäpper kameran direkt på plats. Påverkar båda kamerorna, men "Klassisk Kamera" drar mest nytta av det.
+
+tooltip_camcustom_overworld Väljer kameran som är aktiv på översiktskartan.
+tooltip_camcustom_houses Väljer kameran som är aktiv inuti hustypskartor.
+tooltip_camcustom_caves Väljer kameran som är aktiv inuti grottypskartor.
+tooltip_camcustom_dungeons Väljer kameran som är aktiv inuti labyrinter.
+tooltip_camcustom_castle Väljer kameran som är aktiv inuti Kanalet-slottet och Södra Ansiktshelgedomen.
+tooltip_camcustom_egg Väljer kameran som är aktiv vid utforskning inuti ägget.
+tooltip_camcustom_2dMaps Väljer kameran som är aktiv på 2D-kartor. Har prioritet över andra typer.
+tooltip_camcustom_bosses Väljer kameran som är aktiv under bossfighter. Har prioritet över andra typer.
+
+tooltip_video_game_scale Bestämmer storleken på en "spelpixel" i förhållande till Game Boy-upplösningen. Till exempel betyder en skala på 10 att upplösningen för en spelpixel är 10x10 skärmpixlar. Under 1x är en procentandel av en originalpixel. 
+tooltip_video_ui_scale Så här ser gränssnittet ut. Skalningsvärdet är godtyckligt och korrelerar inte med originalspelen. Välj bara vilken skala du föredrar.
+tooltip_video_fullscreen Ställer in aktuellt skärmläge: Fönster, Ramlös helskärm och Exklusiv helskärm. Det rekommenderas att använda Ramlös om du inte absolut behöver Exklusiv för något specifikt ändamål, till exempel kompatibilitet med extern programvara. Alt + Enter kan snabbt växla mellan Fönster och Ramlös helskärm.
+tooltip_video_fps_lock Detta låser bildfrekvensen till din nuvarande skärmuppdateringsfrekvens. Om den är inaktiverad blir bildfrekvensen så hög som möjligt.
+tooltip_video_opaquehud Inaktiverar alla UI-effekter för oskärpa och använder solida bakgrunder istället. Detta kan förbättra prestandan på enklare enheter.
+tooltip_video_pixelsnap Att aktivera detta alternativ låser sprite-pixelkanter likt ett LCD-rutnät. Det minsta avstånd ett objekt kan röra sig är en hel spelpixel. När det är inaktiverat kan objekt röra sig i subpixelsteg vilket ser mycket "mjukare" ut på bekostnad av noggrannhet.
+tooltip_video_pixelgrid Ett pixelrutnät ritas över hela skärmen och replikerar "LCD-rutnät"-effekten från retrokonsolar som Game Boy Color där detta spel hade sitt ursprung. Denna funktion kräver "Pixeljustering" för att fungera korrekt och kommer inte att fungera utan den.
+tooltip_video_epilepsysafe Inaktiverar blinkande effekter när du uppgraderar ett föremål eller träffar en Elblobb. Inaktiverar även andra flimrande effekter på fiender som Gnistor och Antifeer.
+
+tooptip_graphics_sequencescale Tillagd till UI-skala specifikt för spelsekvenser. Så om UI-skala är 3, och detta är satt till 2, blir sekvensskalan 5. Detta inkluderar fotosekvenser, bilder och mellansekvenser i spelet. Det maximala säkra värdet är vanligtvis +2. Ett för högt värde garanterar inte att det inte överskrider skärmens gränser.
+tooltip_graphics_colorcorrect Den ursprungliga Game Boy Color hade ingen bakbelyst skärm och dämpade färgerna, så spel kompenserade med mättade färgpaletter. Färgkorrigering försöker få allt att se ut som det gjorde på den ursprungliga Game Boy Color-hårdvaran.
+tooltip_graphics_shadows När den är aktiverad genereras skuggor dynamiskt runt alla sprites med hjälp av deras form som referens. När den är inaktiverad används spriteskuggor istället, men bara för Link, Fiender och NPC:er som är i luften.
+tooltip_graphics_fogeffects Inaktiverar dimeffekten som används i den mystiska skogen precis ovanför byn Mabe.
+tooltip_graphics_nogloballights Aktiverar global belysning som appliceras på kartor. Denna belysning används för att mörklägga omgivningen och förstärka ljuseffekter från objekt.  
+tooltip_graphics_noobjectlights Aktiverar ljuseffekter orsakade av objekt. Även om objektbelysning inte kräver global belysning har den nästan ingen effekt utan den.
+tooltip_graphics_screenshake Aktiverar eller inaktiverar ursprungliga skärmskakningseffekter. Detta inkluderar att krossa objekt med Pegasus-stövlar, få en elchock, labyrintingångar som öppnas, bossar som skakar skärmen med mera.
+tooltip_graphics_exscreenshake Aktiverar eller inaktiverar extra skärmskakningseffekter som inte fanns i originalspelet. Detta inkluderar när Link tar skada, när bomber exploderar, nya omgivningseffekter samt nya boss- och fiendeeffekter.
+tooltip_graphics_classicsprites I originalspelet kunde sprites skilja sig åt i inventariet jämfört med spelplanen. Denna port väljer att visa en enda sprite för konsekvensens skull. Att aktivera detta alternativ återställer visningen av olika sprites som i originalspelet.
+
+tooltip_audio_music_volume Volymen på spelets musik. 
+tooltip_audio_effect_volume Volymen på spelets ljudeffekter.
+tooltip_audio_classic_music Avgör när musiken ändras på övervärlden. Inaktiverad (modern) respekterar kartangränserna noggrant medan aktiverad (klassisk) respekterar originalspelet. Skillnaden mellan aktiverad och inaktiverad är subtil. Använd östra delen av byn Mabe som ett test.
+tooltip_audio_mute_inactive Stänger av allt ljud och alla ljudeffekter när spelfönstret inte är i fokus.
+tooltip_audio_heartbeep Inaktiverar det pipande ljudet när antal hjärtan faller under ett visst tröskelvärde.
+tooltip_audio_mute_powerups Ingen musik när du plockar upp ett väktarekollon eller en bit av kraft.
+tooltip_audio_mute_achievement Inaktiverar ljudeffekten som spelas när ett prestationsmärke erhålls.
+
+tooltip_controls_deadzone Den procentandel av räckvidden som styrspaken trycks ner innan den svarar på inmatning. Om du inte har en dödzon inställd i annan programvara rekommenderas det att inte minska den till under 10% eftersom det kan få styrspaken att drifta. Högre värden än standardvärdet kan vara användbara för kontroller som har problem med drifta.
+tooltip_controls_onscreen Möjliggör konfiguration av alternativ för skärmkontrollen som är exklusiv för Android-porten.
+tooltip_controls_gamepad Väljer vilken typ av handkontroll som knappmeddelanden ska visas för. Stöder handkontroller i Xbox-, Playstation- och Nintendo-stil.
+tooltip_controls_remap Byt plats på tangentbords- och kontrollknapparna till den layout du föredrar. Ändra kontrolltypen så att den matchar din kontroll innan du omdefinierar den.
+tooltip_controls_triggersscale Aktiverar ändring av aktuell spelskala med de två knapparna längst upp på handkontrollen (LB/RB, L1/R1, L/R). Om alternativet "Sex föremålsknappar" är aktiverat så kommer de två knapparna/axelknapparna längst upp på baksidan (LT/RT, L2,R2, eller ZL,ZR) istället att ändra spelskalan.
+tooltip_controls_sixbuttons Aktiverar sex kontrollknappar som kan användas för föremål istället för fyra. Detta gör att föremål kan utrustas med de två främre axelknapparna (LB/RB, L1/R1, L/R) och flyttar justeringarna av spelskalan till de två bakre axelknapparna (LT/RT, L2/R2, ZL/ZR).
+tooltip_controls_swapconfirm Byter plats på bekräftelse- och avbrytsknapparna som används i menyer och dialogrutor.
+tooltip_controls_classicmove Detta alternativ efterliknar hur rörelse fungerar i originalspelen genom att ge Link möjligheten att gå baklänges. Kombinera med "Digital Analog" för att helt efterlikna hur rörelse fungerar i originalspelet.
+tooltip_controls_digitalanalog Tar bort den analoga spakens räckvidd och gör att Link kan röra sig i åtta riktningar längs 45-graders vinklar (upp, ner, vänster, höger och diagonalt). Detta kommer att få styrningen av Link att kännas mer som att du spelade originalspelet på emulator.
+
+tooltip_controls_onscreenpad Aktiverar eller inaktiverar skärmkontroller. "Inaktiverad" är självförklarande. "Tona" tonar ut knapparna när de inte används. "Alltid" behåller knappen synlig hela tiden.
+tooltip_controls_touchmovement Ställer in synligheten för D-Pad eller Analog spak. De båda kan alltid vara aktiverade, använd D-Pad för menyer och Analog för att förflytta Link, eller ha bara en av dem aktiverad åt gången.
+tooltip_controls_fadeopacity När skärmkontrollerna är inställda på "Tona" är detta den minsta opacitet som kontrollerna kommer att behålla tills de trycks ned.
+tooltip_controls_shadowopacity Skuggans opacitet under kontrollerna. Oavsett vilket synlighetsläge som är inställt förblir skuggans opacitet samma.
+tooltip_controls_onscreenscale Skalningsvärdet för kontrollerna på skärmen.
+tooltip_controls_onscreenmiddletop Placerar Start- och Select-knapparna högst upp på skärmen istället för längst ner.
+tooltip_controls_onscreenanalogbuttons Aktiverar spakknapparna LS och RS på skärmkontrollen. RS-knappen används för att centrera kameran när den är upplåst.
+
+tooltip_mods_enemy_hp Lägger till ytterligare HP till alla fiender globalt. Om man till exempel lägger till 3 HP till fiendens hälsa så skulle en fiende med 1 HP ha 4 HP och en boss med 8 HP skulle ha 11 HP.
+tooltip_mods_damage Multiplicerar mängden skada som tas från alla källor. Till exempel om den är satt till 4 och en attack skulle ta ett halvt hjärta så skulle den istället göra 2 hjärtan i skada.
+tooltip_mods_damagecd Standardvärdet är 16x (1056 ms). Detta är skadans nedkylningsfaktor multiplicerad med skadans blinktid på 66 ms, vilket resulterar i den tid som Link är oövervinnerlig efter att ha blivit träffad.
+tooltip_mods_movespeed Ökar rörelsehastigheten med en viss procentandel upp till 100% rörelsehastighet. Påverkar alla former av rörelse: gång, klättring, simning etc.
+tooltip_mods_nohearts Inaktiverar tappade hjärtan helt från alla källor. Det enda sättet att läka är att hitta en fe, besöka en fedrottning eller att köpa medicin av Galna Tracy.
+tooltip_mods_dmglaunch Inaktiverar knuffeffekten när du attackerar fiender medan du är påverkad av en bit av kraft eller när du bär de röda kläderna från Färggrottan.
+tooltip_mods_swordinteract Detta alternativ gör att svärdet kan samla in feer, slå till bumerangen och flytta bomber. Detta gör att nivå 2-svärdet och svärdstrålen kan krossa krukor och nivå 2-svärdstrålen kan skära igenom gräs och buskar.
+tooltip_mods_mirrorreflect Ger spegelskölden förmågan att reflektera projektiler tillbaka mot fiender. Reflekterade projektiler färdas snabbare och kan till och med skada andra fiender som träffas. 
+
+tooltip_sword_grabnormal Gör det möjligt att samla in föremål med svärdet som tappas av fiender såsom rupier, hjärtan, väktarekollon och bitar av kraft. Kräver en omladdning av kartan för att träda i kraft.
+tooltip_sword_grabworlditem Gör det möjligt att samla in statiska föremål du hittar i världen med svärdet. Dessa föremål inkluderar hjärtbehållare, instrument, gyllene löv, labyrintnycklar och liknande föremål. Kräver en omladdning av kartan för att träda i kraft.
+tooltip_sword_grabfairy Gör det möjligt att samla in feer med svärdet.
+tooltip_sword_grabsmallkeys Gör det möjligt att samla in små labyrintnycklar med svärdet. Kräver en omladdning av kartan för att träda i kraft.
+tooltip_sword_boomerang När bumerangen är kastad kan du slå till den med svärdet för att återställa dess färdriktning. Detta fungerar med alla typer av svärdattacker.
+tooltip_sword_bouncebombs Bomber som spelaren lägger ner på marken kan flyttas genom att slå till dem med svärdet.
+tooltip_sword_swordblock Låter dig hugga ner projektiler med svärdet om du tajmar hugget perfekt. Till exempel moblinspjut eller octorokskott.
+tooltip_sword_breakpots Gör det möjligt för nivå 2-svärdet och svärdstrålen att krossa både krukor och döskallar.
+tooltip_sword_beamshrubs Gör det möjligt för nivå 2-svärdsstrålen att skära igenom gräs och buskar samt låter även strålen krossa kristallkluster.
+
+tooltip_preset_setdefault Återställer alla alternativ till förval. Några alternativ är exkluderade såsom språk och helskärm.
+tooltip_preset_setmodern Ställer in alternativ så att spelet känns mer "modernt". Kameran tillåter zoomande och panorering runt världen, vissa livskvalitetsförbättringar är aktiverade, och musiksignaler i övervärlden passar bättre med omgivningen. 
+tooltip_preset_setclassic Ställer in alternativ så att spelet känns mer "klassiskt" och beter sig mer som originalet. Den traditionella skärmbaserade kameran används, några livskvalitetsförbättringar är aktiverade, och musiksignaler i övervärlden är identiska med originalet.
+tooltip_preset_sethybrid Ställer in alternativ så att spelet känns både klassiskt och modernt. Den moderna kameran används i övervärlden medan den klassiska används inuti labyrinterna. Några livskvalitetsförbättringar är aktiverade och musiksignaler i övervärlden passar bättre med omgivningen.
+tooltip_preset_purist Ställer in alternativ så att spelet är så nära originalet som möjligt bortsett från portspecifika livskvalitetsförbättringar. Alla alternativ som gör att spelet fungerar som originalet är aktiverade, och alla ytterligare livskvalitetsförbättringar är inaktiverade.
+
+tooltip_cheats_invincibility Gör Link immun mot skada. Till skillnad från att ställa in skademultiplikatorn till 0 eliminerar detta även träffdetektering och knuffar.
+tooltip_cheats_infiniterupees Ställer in nuvarande antal rupier till 999 och gör så att det aldrig minskar. Detta är oåterkalleligt! Aktivera inte detta alternativ om du inte är okej med att fuska med ditt rupieantal!
+tooltip_cheats_infinitepowder Ställer in mängden magiskt pulver till nuvarande maximum och gör så att det aldrig minskar. Detta är oåterkalleligt! Aktivera inte detta alternativ om du inte är okej med att fuska!
+tooltip_cheats_infinitebombs Ställer in antal bomber till nuvarande maximum och gör så att det aldrig minskar. Detta är oåterkalleligt! Aktivera inte detta alternativ om du inte är okej med att fuska!
+tooltip_cheats_infinitearrows Ställer in antal pilar till nuvarande maximum och gör så att det aldrig minskar. Detta är oåterkalleligt! Aktivera inte detta alternativ om du inte är okej med att fuska!
+tooltip_cheats_disableclipping Låter Link passera genom de flesta solida objekt. Inkluderar inte hål, fiender, vatten och lava.
+tooltip_cheats_onehitkills Om attacktypen kan tillfoga skada på den träffade fienden kommer fienden alltid att besegras med ett enda slag.
+tooltip_cheats_giveallitems Ger Link tillgång till alla utrustningsbara föremål av högsta nivå. När fusket inaktiveras återges endast legitimt erhållna föremål till spelaren.

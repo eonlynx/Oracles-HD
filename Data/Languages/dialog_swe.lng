@@ -1,0 +1,1153 @@
+// items
+smallkey Du erhöll en liten nyckel! Du kan nu öppna en låst dörr med den.
+compass Du hittade en kompass! Nu kan du se var skattkistor och mardrömmar finns gömda! Denna kompass har en ny funktion-- en ton hörs om en nyckel finns gömd i rummet som du går in i!
+dmap Äntligen fick du en karta! Tryck på START för att titta på den!
+stonebeak Du erhöll en stennäbb! Leta efter statyn som den passar i.
+
+sword1 Du hittade ditt svärd! Det måste vara ditt eftersom det har ditt namn ingraverat!
+feather Du erhöll Rocs fjäder! Det känns som om din kropp är mycket lättare!
+pegasusBoots Du fick ett par Pegasusstövlar! Om du håller ner knappen så kan du springa!
+flippers Du erhöll simfötterna! Om du trycker på B-knappen när du simmar så kan du dyka under vattnet!
+bracelet0 Du hittade Styrkearmbandet! Äntligen kan du lyfta upp krukor och stenar!
+bracelet1 Du erhöll ett kraftfullare armband! Nu kan du nästan lyfta en val!
+ocarina Du erhöll Okarinan! Lär dig spela många låtar!
+powder Du erhöll lite magiskt pulver! Försök att strö det på många saker!
+mirrorShield Du erhöll Spegelskölden! Du kan nu blocka skotten du inte kunde förut!
+hookshot Du erhöll Änterhaken! Dess kedja sträcker sig långt när du använder den!
+magicRod Du erhöll Trollspöt! Nu kan du bränna saker! Bränn på bara!
+shovel Du erhöll en spade! Nu kan du upptäcka det roliga med att gräva!
+magicPowder Du erhöll lite magiskt pulver! Prova att strö lite på diverse saker!
+bomb Du erhöll en bomb! Jättebra!
+sword2 Du erhöll ett nytt svärd! Du bör ingravera ditt namn på momangen!
+boomerang Du erhöll Bumerangen i utbyte mot det föremål du hade.
+
+shield Det är en sköld! Det finns plats för ditt namn!
+shield_intro Du fick din sköld tillbaka! Tryck på knappen för att driva tillbaka fiender med den!
+shield_back Du fick tillbaka din sköld! Du kan använda den till att vända på fiender!
+
+yoshiPickup Du erhöll en Yoshi-docka! Han har dykt upp i många spel på sistone!
+
+// playing the ocarina without having learned a song
+ocarina_bad Detta är en okarina, men du vet inte hur man spelar på den...
+ocarina_bad_marin Inte så bra... Eh? Vad? Sa jag något? Nej, du hör saker...
+
+// trading alt + 0161
+trade0 Du bytte din [TRADE0] mot [TRADE1]! Kanske kan du byta bandet mot något annat!
+trade1 Du bytte [TRADE1] mot [TRADE2]! Den är full av saftigt nötkött!
+trade2 Du gav honom [TRADE2] och fick bananer [TRADE3] i genäld! Bra affär!
+trade4 Du hittade en pinne som en apa lämnat efter sig... Du tar den!
+trade5 [TRADE4] blev till bikupa [TRADE5]! Du vet inte hur det gick till, men ta den!
+trade6 Du bytte [TRADE5] mot [TRADE6]! Den är inte lika söt, men den är utsökt!
+trade7 Du bytte [TRADE6] mot [TRADE7]!
+trade8 Du bytte [TRADE7] mot en gets brev [TRADE8]! ...Jättebra!?
+trade9 Du fick en kvast i belöning av Herr Skriv! Men fotot var inte på...
+trade10 Du bytte [TRADE9] mot en fiskekrok [TRADE10]! Vad kommer fiske kroken att bli?
+trade11 [TRADE10] blev ett halsband [TRADE11]! T-t-tur!
+trade12 Du gav tillbaka halsbandet [TRADE11] och fick ett fjäll [TRADE12] från sjöjungfruns svans. Hur ska du använda det?
+trade13 Du erhöll ett förstoringsglas! Det kommer avslöja massa saker som du inte kunnat se förut!
+
+trade11_redux [TRADE10] blev en rosa BH [TRADE11]! T-t-tur!
+trade12_redux Du återlämnade den rosa BH:n [TRADE11] och fick ett fjäll [TRADE12] från sjöjungfruns svans. Hur ska du använda det?
+
+// keyholes
+keyhole_0 Ett nyckelhål här? Det står, 'Nyckelhålet Svans'
+keyhole_1 Ett nyckelhål här? Det står, 'Nyckelhålet Slem'
+keyhole_2 Ett nyckelhål här? Det står, 'Nyckelhålet Marulk'
+keyhole_3 Ett nyckelhål här? Det står, 'Nyckelhålet Ansikte'
+keyhole_4 Ett nyckelhål här? Det står, 'Nyckelhålet Fågel'
+
+// collectables
+toadstool Du tar upp flugsvampen... Denna svamp luktar alldeles underbart! Kanske kan någon koka ihop något med denna svamp...
+toadstool_hold Detta är en fin flugsvamp som doftar alldeles underbart! Du kommer säkert få användning av den.
+
+seashell Du erhöll en sjösnäcka! Om du samlar tillräckligt många kommer något bra att hända!
+seashell_1 Du erhöll en sjösnäcka! Kan du hitta de återstående?
+seashell_2 Du erhöll alla 26 sjösnäckor! Du är en mästare på snäckjakt!
+
+heart Du erhöll ett hjärta! Dunk! En av dina hjärtbehållare fylldes!
+
+ruby20 Du erhöll 20 Rupier! BRA!
+ruby50 Du erhöll 50 Rupier! Perfekt!
+ruby100 Du erhöll 100 Rupier! Underbart!
+ruby200 Du erhöll 200 Rupier! Fantastiskt!
+
+// trendy game
+ruby30 Du erhöll 30 Rupier! Du kan spela spelet tre gånger till med dessa!
+
+heartMeter Du erhöll en hjärtbit! Tryck SELECT på menyn för att kolla.
+heartMeterFilled Du erhöll fyra hjärtbitar. Nu har du en komplett hjärtbehållare!
+
+guardianAcorn Du erhöll ett väktarekollon! Det reducerar skadan med hälften!
+pieceOfPower Du fick en bit kraft! Du känner kraften strömma genom dig!
+
+potion Du hittade en hemlig medicin! Du bör applicera den och se vad som händer!
+
+dkey1 Du erhöll Svansnyckeln! Nu kan du öppna porten till Svansgrottan!
+dkey2 Du erhöll Slemnyckeln! Nu kan du öppna porten till Ukukuprärien!
+dkey3 Du erhöll Marulksnyckeln!
+dkey4 Du erhöll Ansiktsnyckeln!
+dkey5 Du erhöll Fågelnyckeln!
+
+nightmarekey Du erhöll Mardrömsnyckeln! Nu kan du öppna dörren till Mardrömsnästet!
+
+instrument0 Du erhöll Fullmånecellon!
+instrument1 Du erhöll Snäckhornet!
+instrument2 Du erhöll Sjölilys klocka!
+instrument3 Du erhöll Surfharpan!
+instrument4 Du erhöll Marimbavinden!
+instrument5 Du erhöll Koralltriangeln!
+instrument6 Du erhöll Kvällsorgeln!
+instrument7 Du erhöll Åsktrumman!
+
+instrument0Collected ...TRÄSK... En gång öppnar sig... bland blommorna...
+instrument1Collected ...PRÄRIE... ...PRÄRIE... Prärien väntar.
+instrument2Collected ...VATTENFALL... Den ligger gömd i vattenfallet.
+instrument3Collected ...VIK... Vägen leder till viken...
+instrument4Collected ...TEMPEL... En öhemlighet i templet...
+instrument5Collected ...BERG... Något kallar på dig... från bergen...
+instrument6Collected ...OKARINA... Okarinans musik leder till...
+instrument7Collected ...ÄGG.... Ägget på berget kallar på dig!
+
+goldLeaf Du erhöll guldlövet! Tryck START för att se hur många du har!
+goldLeafLast Äntligen fann du det sista guldlövet! Gå besök Richard om den där nyckeln....
+
+signpost0 error
+signpost1 [RIGHT] Svansgrottan [DOWN] Toronbostranden
+signpost2 Mystiska skogen (Den är lite mystisk)
+signpost3 Till öst [RIGHT] Ukukuprärien Längre till öst Djurbyn
+signpost4 Akta dig för Sjöborrarna! Rör dem inte med dina bara händer!
+signpost5 Var försiktig med sprickor i golvet! En tung person bör ej stå på dem!
+
+signpost6 Kanalet Slott 10 min. [RIGHT] [UP]
+signpost7 Kanalet Slott 5 min. [RIGHT]
+signpost8 Kanalet Slott 50 steg [UP]
+
+signpost9 [RIGHT] Djurbyn [DOWN] Marthas Vik
+signpost10 Snäckskalens herrgård
+
+signpost11 Du är nära Tal Tal-toppen. Kameraaffären finns i närheten.
+signpost12 [RIGHT] Tamaranchberget [LEFT] Gopongaträsket
+signpost13 [RIGHT] Galna Tracy [DOWN] Manbos Damm
+signpost14 [RIGHT] Kyrkogården [DOWN] Ukukuprärien
+signpost15 [RIGHT] Gopongaträsket [DOWN] Mystiska Skogen
+
+signpost16 FARA! Håll dig borta! (Förutom BowWow)
+signpost17 Richards villa
+signpost19 Telefonkiosk [DOWN] Plakatlabyrinten
+
+signpost20 Tamaranchberget
+signpost21 Vill du utmana forsen med flotte? Gå till kontoret direkt, tack!
+
+signpost22 Ingång till Yarnaöknen[RIGHT]
+signpost23 [RIGHT] Välkommen till Djurbyn!
+
+signpost_Down [DOWN] DEN HÄR VÄGEN!
+signpost_Up [UP] DEN HÄR VÄGEN!
+signpost_Right [RIGHT] DEN HÄR VÄGEN!
+signpost_Left [LEFT] DEN HÄR VÄGEN!
+signpost_TryAgain BÖRJA OM FRÅN BÖRJAN IGEN!
+signpost_Great BRAVO! DU KLARADE DET! DIN BELÖNING FINNS [RIGHT] DEN HÄR VÄGEN!
+signpost_Gone PÅ TURNE MAMU
+
+talking_tree Vilken överraskning! Hej! Jag ska berätta en hemlighet för dig! Använd ditt svärd till att peta på väggar. Om du hör ett tomt klingande så kan du spränga väggen med en bomb!
+
+mamu0 Ribbit! Ribbit! Hallå, jag är sångaren, Mamu! Det verkar inte som att du vet något alls om musik! Ribbit!
+mamu1 Ribbit! Ribbit! Jag är sångaren, Mamu! Men det behöver jag inte tala om, för alla vet vem jag är! Vill du vara med och lyssna på när vi spelar? För 300 Rupier, får du lyssna på en tidigare outgiven sång! Vad sägs?
+mamu2 Synd, för vi spelar inte gratis!
+mamu3 Tack... Tack så hemskt mycket... Kväk!
+ocarina_frog_song Du lärde dig Grodans Själasång! Det är en ovanligt svängig låt... Den kan även väcka upp livlösa föremål!
+ocarina_frog_song_end Om du spelar denna sång, kommer allt runt omkring dig känna sig levande!
+
+manbo0 Jag är Manbo, solfiskens barn! Har du en okarina?
+manbo1 Nåväl... Glub Blub Bloop!
+manbo2 Ahaha! Då kan jag lära dig min sång! Bloop!
+manbo3 Aha... Du har inte en Okarina, så...Glub glub!
+manbo4 Jag är Manbo, Solfiskens barn! När jag spelar min Mambo så kan du varpa till Manbodammen! Prova denna sång i grottorna också! Cha-cha-cha!
+
+ocarina_manbo_song Du har lärt dig Manbos Mambo! När du kommer upp ur vattnet, spela den!
+
+choice_Pay Betala
+choice_Leave Lämna
+
+signHead1 VINDFISKEN ENBART SOM NAMN, FÖR DEN ÄR VARKEN ELLER.
+signHead2 MUSIK, FISKEN RÖR SIG NU I ÄGGET. SLUTET ÄR NÄRA...
+signHead3 SJÖN BÄR SKUM, SÖMN BÄR DRÖMMAR. BÅDA SLUTAR PÅ SAMMA SÄTT KRASSSCH!
+signHead4 HEMLIGHETER ÄR SOM VATTEN NÄR DET KOMMER TILL BROAR
+signHead5 VINDFISKEN SLUMRAR LÄNGE... HJÄLTENS LIV ÄR BORTA...
+signHead6 HÄROMKRING ÄR HEMLIGHETERNA NÄRA
+signHead7 Du är nära Örnens Torn. Akta dig för fågeln!
+signHead8 NU MÅSTE DU TITTA LÅNGT FÖR EN HEMLIGHET...
+signHead9 I JORDEN VILAR HEMLIGHETER, UNDER DINA FÖTTER...
+
+castle_button Hunh? Låter som om portarna öppnades! Nu kan du enkelt lämna slottet!
+castle_button_2 Hunh? Låter som att slottsporten stängdes!
+
+door_nightmarekey Det är låst! Du kan öppna dörren med Mardrömsnyckeln.
+
+dungeon_keyhole_block Hunh? Den här stenen har ett nyckelhål! Du bör komma tillbaka med en nyckel!
+rock_cracks_message Denna sten har många sprickor. Det måste finnas något sätt att splittra den...
+crystal_hard Vilken konstig grej! Det måste finnas något sätt att ta itu med detta hinder.
+
+stone Den här ser ganska tung ut! Du kan inte lyfta den med dina bara händer...
+
+// nightmares
+nightmare1 BUZZZZZ! BUZZZZ! INKRÄKTARE!
+nightmareFinal0 Denna ö kommer att försvinna... Vår värld kommer försvinna... Vår värld... Vår... värld...
+nightmareFinal1 ...[NAME], du har besegrat alla mardrömmar! Kliv upp för trappan bakom dig!
+
+// maria
+maria_0_0 Vilken lättnad! Trodde aldrig att du skulle vakna. Du har pratat i sömnen... Va? Zelda? Nej, jag heter Marin. Jag tror att du fortfarande är lite yr. Du befinner dig på ön Koholint!
+maria_0_1 Gå söderut till stranden där jag hittade dig. Sedan du kom har en massa monster dykt upp, så var försiktig.
+
+// marin standing outside
+maria_1_0 Hej! Tarin gick in i skogen för att plocka svamp men jag sjunger hellre. Lyssna på den här. Den heter 'Balladen om Vindfisken.'
+maria_1_1 Jag älskar att sjunga. Så vill du spela med mig, [NAME]?
+
+// after talking to the owl
+maria_1_2 Du, [NAME]. Tarin ligger hemma och sover. Jag förstår inte hur han kan sova en sådan här vacker dag. Det får mig att vilja sjunga. Ja, det är 'Balladen om Vindfisken!'
+
+// singing in the right village
+maria_1_3 Oj, vilken fin okarina du har! Vill du spela medan jag sjunger?
+maria_1_4 Så, vad tycks? Det är verkligen rörande eller hur? Fastnar den i ditt huvud?
+maria_1_5 Snälla! Jag vill att du ska lära dig den! Det är min favorit!
+
+maria_1_6 Snälla, kom ihåg denna sång! Du bör spela den ibland för att inte glömma den!
+maria_1_7 Snälla, glöm aldrig den här sången...eller mig...
+
+maria_1_8 De sa att 'Vindfiskens ballad' är uppvaknandets sång. Jag undrar om Vindfisken kommer att förverkliga min önskan när han vaknar?
+maria_1_9 Åh, [NAME]. Jag kommer ofta till den här byn för att sjunga också. Det verkar som om alla älskar min 'Balladen om Vindfisken!' [NAME] vilken är din favoritsång?
+
+marin_letter På stranden... Marin [MARIN]
+
+// maria at the beach
+marin_2_0 Åh, [NAME], jag är glad att du hittade hit. Kan du stanna och prata med mig en stund?
+
+// Yes! No...
+marin_2_1 Okej, då kollar jag på vågorna ett tag...
+marin_2_2 Jag undrar var alla dessa kokospalmer kommer ifrån?... Tarin säger att det inte finns något bortom havet, men jag tror det måste finnas någonting där borta. När jag hittade dig, [NAME], hoppade mitt hjärta över ett slag! Jag tänkte, denna person har kommit för att ge oss ett meddelande...
+marin_2_3 ... ... ... ... ... ... ... ... Om jag var en mås skulle jag flyga så långt jag kunde! Jag skulle flyga till platser långt borta och sjunga för folk! Undrar om mina drömmar kommer besannas om jag önskar till Vindfisken...
+marin_2_4 Lyssnar du? [NAME], lyssnar du på mig?
+marin_2_5 Humph! Du svävar alltid bland molnen! Skulle du kunna lyssna på mig nästa gång?!
+marin_2_6 Jag vill veta allt om dig... Err...Uhh,Ha ha ha ha!
+marin_2_7 Hunh? Valrossen vill att jag går till honom? Det spelar ingen roll, jag går med dig till honom...
+
+maria_collected Du fick Marin! Är detta din stora chans?
+
+// going into a dungeon
+marin_dungeon Eh? Vill du att jag ska gå in där? Nej, jag tror att jag väntar här ute. Ta hand om dig själv, [NAME]!
+marin_dungeon_leave [NAME]! Du är tillbaka! Är du skadad?
+marin_dungeon_leave_time ...Du är sen! Jag trodde inte att du skulle komma tillbaka!
+marin_dungeon_hearts ...EEEK! Du är skadad! Arrrgh! Var inte så dumdristig!
+marin_dungeon_hearts_alt ...Din idiot! Jag sa att det skulle bli så här... Eh?! Vad? Jag sa inget, jag svär!
+
+marin_cucco_0 Nej! Nej! Stackars höna! Sluta med det där!
+marin_cucco_1 Ha ha ha! Gör det! Gör det! Gör det meeeer! ... ...Hunh? Nej, det är inget... Jag menade det inte.
+
+marin_pot_0 Ja!! Ja!! Ha sönder dem! Ha sönder alla! ... ... ... ... Vad? Vad är fel?
+marin_pot_1 Ahhh! Ahhh, du är en elak pojke, [NAME]!
+
+marin_digging Bra! Gräv! Gräv! Gräv till jordens mitt!!
+
+maria_game_0 Wow! [NAME], får jag prova?!
+// Okay No Way
+maria_game_1 Snälla! Jag vill göra det! Snälla, jag ber!
+// Yes  Okay
+maria_game_2 Du är duktig! Du är proffs, eller hur? ... ... ... ... Så, stick! Proffs är inte välkomna!
+
+// walrus sequence
+maria_3_0 Ja, det är den där late valrossen! Ska vi överraska honom?
+// Yes  No...
+marin_3_1 Du har rätt! Det vore elakt att väcka honom nu. Låt honom sova ett tag till!
+maria_3_2 Wow! Han flög verkligen upp!
+maria_3_3 Hunh? Åh, han ropar på mig... Det är som vanligt. Ha ha!
+maria_3_4 [NAME], jag går till Djurbyn! Titta gärna förbi, okej?
+
+// marin falling into the fountain not falling on link
+marin_fountain Pust! Vilken överraskning!
+
+// marin in the mountains
+marin_4_0 Någon, HJÄLP!
+marin_4_1 Hej! [NAME]! Några monster la upp mig här! Vad ska jag göra?! Jag är höjdrädd!
+marin_4_2 Åhh! Vilken överraskning! Tack [NAME]!
+marin_4_3 ... ... ... ... Säg... [NAME]...
+marin_4_4 Uhh... Jag vet inte hur jag ska säga detta... men...
+marin_4_5 MAAAAAAARINNNN!
+marin_4_6 Hunh?! Tarin??! ... ... ... ... Uh... Spelar roll... Jag måste gå!
+
+marin_5_0 Tack för allt! [NAME], du är den snällaste pojken jag vet. En dag så önskade jag en sak av Vindfisken... Vad jag önskade? Jag önskade... Nej, det är en hemlighet.
+marin_5_1 [NAME], en dag så kommer du att lämna ön... Jag bara känner det i mitt hjärta... ...Glöm aldrig mig... Om du gör det så förlåter jag dig aldrig!
+
+marin_6_0 [NAME], jag har en känsla att jag inte kommer att få en till chans att... Vill du ta en promenad med mig?
+marin_6_1 Åh. Okej då ... Kanske en annan gång.
+marin_6_2 Tack [NAME], det var riktigt kul! Jag antar att det är dags att säga farväl?
+marin_6_3 [NAME]. det.. det... känns inte rätt. Snälla låt oss återvända!
+
+walrus_0 ZZZ ZZZ ZZZ ZZZ ... [MARIN] ... [MARIN] ...
+walrus_1 Arfh! Arfh! Arf! [MARIN] [MARIN]! [MARIN] [MARIN]! . .... [LINK]??
+
+animals_absorbed ... ... ... ... Den verkar vara helt inne i Marins sång!
+
+ocarina_maria_song Du har lärt dig 'Balladen om vindfisken!' Denna sång kommer alltid att finnas i ditt hjärta!
+
+// tarin house
+tarin_chest Hörru! Vad gör du i min byrå?! Vem har lärt dig sådana dumheter?
+
+// tarin
+npc02_leave Och varför har du så bråttom? Stanna ett tag. Jag har en viktig sak att tala om!
+tarin_0 Jo, [NAME], äntligen vaknade du... Mitt namn är Tarin... Hoppas du känner dig bättre... Vad? Hur visste jag ditt namn? Tycker du det är konstigt? Jo, jag såg det på baksidan av denna sköld!
+tarin_1 Åh, ja... Andra saker som denna sköljdes upp på stranden... När du går får du se upp för monster! Ända sedan du dök upp, [NAME], så har jag sett dem överallt!
+
+// after the raccoon transformation
+tarin_raccoon_2 Det sista jag minns var att jag smakade en saftig svamp... Sedan drömde jag en konstig dröm. Jag var en tvättbjörn! Jo, det låter konstigt men det var kul!
+tarin_raccoon_3 Jag är helt slut... Tror jag måste sätta mig ner ett tag innan jag beger mig hemåt.
+
+tarin_2 Jag är trött... Jag går och lägger mig nu... Zzzzzz...
+tarin_3 Hrrm... Snark... Hunh?... Om du inte vet vart du ska... ring gamle Ulrira! Zonk...Snark...
+
+// tarin with the bananas
+tarin_4 Jag var verkligen hungrig så jag gick och hämtade bananer på stranden... [NAME], om du vill ha lite, så gå och ta lite!
+
+// tarin trading sequence
+tarin_stick Åh?! [NAME], jag ser att du har en fin pinne... Skulle jag kunna få låna den en stund?
+tarin_stick_no Hmmm, [NAME], du är elak!
+
+// after the trading sequence sleeping in the bed
+tarin_5 Unnnngh! Owwwww! ... ... ... ... Jag har förlorat min aptit för honung!
+
+// lady with the broom
+npc_broom_0 Jag mår bra! Hur mår du?!
+npc_broom_1 YAHOO! Jag jobbade för hårt och nu är min kvast utsliten!
+npc_broom_2 YAHOO! YAHOO! En ny kvast?! Till mig? Eller hur?!
+npc_broom_3 Okej! I gengäld kan du få denna fiskekrok som jag hittade när jag flög förbi sjön!
+npc_broom_4 YAHOO! En ny kvast! Super!
+npc_broom_5 Då får DU sopa rent ön!
+npc_broom_bowwow Hon har varit med om en tragedi i huset på andra sidan vägen! Det är verkligen hemskt och allt jag kan göra är att sopa!
+
+npc04 Er...Uh...Hmm... Hur ska man säga... Var vänlig och ring... Utomhus... ... Det verkar som om gamle Ulrira är en blyg person...
+npc04_game Det verkar som att gamle Ulrira är en blyg person...
+
+// kid with hints
+//npc05_0 Hey, man! When you want to save just push all the Buttons at once! Uhh... Don't ask me what that means, I'm just a kid!
+npc05_1 Verkar som om du kommer att börja vid den sista dörren du gick igenom efter att du sparat... Jag är inte säker på varför eftersom jag bara är ett barn!
+npc05_2 Jag har hört att du kan trycka på SELECT för att kolla på ökartan... Men jag förstår inte vad de menar med det...
+npc05_3 Om du börjar få slut på hjärtan så bör du gå in i ett hus eller en grotta... Varför? Jag har ingen aning, jag är bara ett barn!
+
+npc_ball_left Varifrån kommer du, broder? Utanför ön? Vad är 'utanför?' Jag har aldrig funderat över det...
+npc_ball_right Det gigantiska ägget på Tamaranchberget? Det sägs att Vindfisken sover där inne... Varför? Jag vet inte heller...
+
+// kid near the weather bird or next to the shop
+npc_boy_island Va! Undrar du när vi började bo på den här ön? Vad menar du med 'när?' Den frågan ger mig huvudvärk!
+npc_boy_marin Du! Vad tycker du om Marin? Uhh... Jag vet inte, jag är bara ett barn!
+npc_boy_shrine Tjena, broder! Angående drömtemplet där... Det sägs att det finns något bra där inne... ... Jag ska nog inte säga något mer eftersom jag bara är ett barn!
+npc_boy_marin_beach Marin? Hon gillar att gå och se på havet ensam. Varför? Jag är bara ett barn, fråga inte mig!
+// kids while marin is with link
+npc_boy_marin_following Hallå... Vart ska ni gå tillsammans? Uh, jag menade inget... Jag är bara ett barn!
+npc_boy_marin_gone Hunh?! Är inte Marin med dig? Vad hände med henne?
+
+// when the player has the broom and the grandma is in the other village
+npc_boy_grandmother Farmor är inte här. Hon är i Djurbyn. Det är vad farfar Ulrira sa i telefon!
+
+// kids playing ball game after the village gets attacked
+npc_kid_attacked Hej kompis! Det är allvarligt! Ja, verkligen allvarligt!! Ja, det är det! Moblins kom till byn! Ja, det stämmer! Ett helt gäng av Moblins! Det är på riktigt! Alla gick till huset... Ja, det där huset, och sen gjorde de något vid BowWows hus! Det såg verkligen hemskt ut, med M-m-moblins! Så, jag menar, ahh! ... ... ... ... Det kanske går snabbare om du kollar själv!
+
+// chef in the right village
+npc_chef_0 Min ultimata plan är att öppna en filial i byn Mabe!
+npc_chef_1 Rik'm rak'm! Jag fick slut på ingredienser! Om jag hade honung så skulle jag kunna göra detta kungligt gott!
+npc_chef_2 Hiho! Hörru! Är det möjligtvis en [TRADE5] som du har? Jag fick just slut på sådana! Kan du tänka dig att byta mot en ananas?
+npc_chef_3 Synd, men jag vet att de är ovanliga delikatesser!
+npc_chef_4 Hi ho! Ja, jag vet, den där latmasken sover precis framför Yarnaöknen! När han väl somnat kommer han inte flytta på sig i första taget. Men du! Ta lilla Marin och låt henne väcka honom! Den latmasken skulle garanterat flyga upp om han hörde henne sjunga! Heheh heh!
+npc_chef_marin Lilla Marin! Välkommen!... ... ... ... Attans! Du är också här... Förlåt...
+
+// yoshi doll
+npc07_0 Eftersom alla ser lika ut blir jag också förvirrad ibland.
+npc07_1 Eftersom alla ser lika ut blir jag också förvirrad ibland. Förresten, min bebis vill ha en Yoshidocka. Jag såg en vid Trendspelet, men jag lyckades inte vinna den.
+npc07_2 Åh! Vill du ge dockan till min bebis?!
+npc07_3 Tsk tsk... Vad synd...
+npc07_4 Åh tack! Du är verkligen en generös person! Åh! Jag ger dig detta i gengäld!
+npc07_5 Min man är vilse i skogen! Snälla, hitta honom!
+
+npc_house_chest [NAME] kollade på byrån. Wow! Vilken fin byrå!
+npc_house_chest_marin [NAME], kollar du alltid i andra människors lådor?
+
+npc_letter_boy_0 Jag brukar hålla mig för mig själv, och mina brev... Mitt namn är Skriv! Det enda som jag ogillar med min hobby är att jag aldrig får några svar...
+npc_letter_boy_1 Vad är detta?! Ett brev till mig?! Jag blir så glad! ...Och se! Brevet kom med ett foto!
+npc_letter_boy_2 Mmm... Hon är så vacker... Jag måste ge dig något för besvär et. Hmm... Verkar som om allt jag har är denna kvast... Vad sägs om den?
+npc_letter_boy_3 Snälla! Jag insisterar att du tar denna [TRADE9]!
+npc_letter_boy_4 Åh, vilken bra hobby brevskrivande är!
+npc_letter_boy_5 Hej! Jag svarar Christine nu!
+
+npc_letter_girl_0 Du vet inte hur man handskas med en dam, va? Du skulle tagit med blommor eller något, då kanske jag skulle varit mer villig att prata med dig... Just det, i mitt fall är hibiskus att rekommendera...
+npc_letter_girl_1 Åh, du tog med en hibiskus till mig! Så gulligt! Eftersom du är en sådan gentleman måste jag få be dig om en tjänst. Vill du höra?
+npc_letter_girl_2 Jag skulle vilja att du tar detta brev till Herr Skriv som bor vid utkanten av Mystiska skogen, tack!
+npc_letter_girl_3 ...Jasså? Och jag som trodde att du var en gentleman...
+npc_letter_girl_4 Ibland kan jag inte låta bli att äta ett smaskigt papper, även om det är ett brev till min älskade Herr Skriv... Vad pinsamt!
+
+// fisher under the bridge
+npc_bridge_0 Det är ingen mening, lille vän! En fisk tog min krok... Jag kastar min lina i vattnet, men det finns inget att fånga med... Jag visste att detta skulle hända.
+npc_bridge_1 Åh! Vad har du i din hand? Det är väl inte en fiskekrok? Du borde ge mig den. Du får min nästa fångst om jag får den...
+npc_bridge_2 Du borde vara snällare mot mig! Jag trodde vi var kompisar!
+npc_bridge_3 Håll ögonen öppna och kolla hur ett proffs arbetar.
+npc_bridge_4 Oj, den var STOOR!
+npc_bridge_5 Jag kan knappt bärga mig tills jag ser vad jag fångar härnäst!
+
+tracy_give Ge
+tracy_dont Ge inte
+
+npc_tracy_0 Hej där! Jag är Galna Tracy! Jag har en liten hemlighet till salu!
+npc_tracy_1 Vill du ge mig 28 Rupier för hemligheten?
+npc_tracy_2 Vad sägs? 42 Rupier för min lilla hemlighet.
+npc_tracy_3 ...Du är så söt! Jag ger dig 7 Rupier i rabatt!
+npc_tracy_4 Ok, kom hit så applicerar jag den på dig! ... Så... Jag har applicerat min egen hemliga medicin! Den kommer att aktiveras när du förlorat alla dina hjärtan! På återseende!
+npc_tracy_5 Stick då! Kom tillbaka när du har lite pengar!
+npc_tracy_6 ... ... ... ... Men jag kommer inte sälja den till dig!
+npc_tracy_7 Nå! Jag erbjuder bara en hemlighet som kommer göra dig stark! Du är en sådan mes!!
+npc_tracy_8 Här är lite bonusuppassning! Se! Dina hjärtan är fyllda!
+
+// npc lost boy
+npc_lost_boy_0 Jepp, Papahl gick vilse, precis som han sa! Nu är jag så utsvulten så jag inte kan röra mig! Skulle du kunna ge mig lite proviant?
+npc_lost_boy_1 Du är en kall person...
+npc_lost_boy_2 Denna [TRADE6] är så smaskig! Jag ska äta [TRADE6] på direkten! Bon Appetit!
+npc_lost_boy_3 AH! Det här är inte tänkt som en belöning... Här, ta denna [TRADE7]! Det är en hibiskus!
+npc_lost_boy_4 Utsökt! Mums! Nu är jag fylld med energi!
+
+// mermaid
+npc_mermaid_0 När jag simmade tog vågorna ett viktigt halsband från min hals! Om du hittar det låter jag dig ta ett fjäll från min svans!
+npc_mermaid_1 Jag har redan kollat här!
+npc_mermaid_2 Ahh! Där är det! Där är mitt halsband! Ge mig det! Jag ger dig ett fjäll som jag lovade!
+npc_mermaid_3 Lova att du bara tar ett!
+npc_mermaid_4 Du är hjärtlös och grym!
+npc_mermaid_5 En gång bad en kostnär mig att posera för honom och han ville ha ett fjäll, också... Kan legenden om förstoringsglaset vara sann...?
+
+npc_mermaid_0_redux När jag simmade to vågorna min rosa BH... Om du hittar det låter jag dig ta ett fjäll från min svans!
+npc_mermaid_1_redux Kyaa! Pervo! Pervooo!!!
+npc_mermaid_2_redux Ahh! Där är det! Där är min rosa BH! Ge mig det! Jag ger dig ett fjäll som jag lovade!
+
+// mermaid statue
+mermaid_statue_0 SJÖJUNGFRUN av SCHULE ...Ett fjäll saknas...
+mermaid_statue_1 Du stoppade in det saknade fjället i sjöjungfrustatyn!
+
+// rabbit
+rabbit_0_0 Du! Visste du att Djurbyn och byn Mabe är systerstäder? Ja, även fast de inte är stora nog att bli kallade städer. Hur som helst, jag hörde från en väldigt tillförlitlig källa att de har ett drömtempel i Mabe, och att det finns något bra där inne... Stämmer det?
+rabbit_0_1 Jag drömde att jag förvandlades till en morot under natten. Vilken skum dröm.
+
+rabbit_1_0 Jag kan inte gå till byn Mabe på grund av alla monster. Jag hoppas att Marin är okej.
+rabbit_1_1 Eh? Hur kan ett djur prata? Hur? Jag är bara en kanin så jag har ingen aning!
+rabbit_2_0 Yarnaöknen? Det finns en väg dit i söder, men det är inte säkert att du kommer förbi om den lata valrossen är i närheten!
+rabbit_2_1 Har du hört talas om Den Flygande Tuppen? Det sägs att den bodde i byn Mabe för länge sedan. Undrar om det är sant...
+
+rabbit_3_0 Ahhh... Suck... En sådan här vacker dag så behöver vi höra en sång från Marin!
+rabbit_3_1 Aaaah, Lilla Marin... Jag vill att hon ska komma tillbaka igen... Hennes sång är bäst...
+
+rabbit_marin Ahhh! Det är hon! Lilla Marin!
+
+// dialog choices
+choice_Yes Ja
+choice_YES JA
+choice_Yes! Ja!
+choice_Okay Okej
+choice_Yeah Ja
+choice_Fine Okej då
+
+choice_No Nej
+choice_NO NEJ
+choice_No... Nej...
+choice_No! Nej!
+choice_N-No N-Nej
+choice_No_Way Aldrig
+choice_No_way Aldrig
+choice_Not_Now Inte nu
+choice_Nope Nope
+choice_Give Ge
+choice_Keep Behåll
+choice_Dont Behåll inte
+choice_Can Kan
+choice_Cant Kan inte
+
+choice_Fish Fiska
+choice_Cast Kasta
+choice_Look Titta
+
+// Marin beach sequence - asking to join Link to see the Walrus.
+choice_Yeah_Marin Ja
+choice_No_Marin... Nej...
+
+// Papahl
+npc08_0 Jepp! De är mina grabbar! Jag är Papahl, trevligt att råkas! Jag kommer gå vilse bland kullarna senare, så håll utkik efter mig, okej?
+npc08_1 Jag måste säga tack igen!
+
+// Madam MeowMeow
+npc09_0 Ho ho ho! Min BowWow är så stolt över sin fina päls!
+npc09_1 AIEEEEEEEE! Det är fruktansvärt! Min BowWow kidnappades av... Mo-MOMO-BLINS!! OHHH! AHHHH! Snälla någon! Hjälp min kära BowWow!!
+npc09_2 Åh tack! Jag är så glad att du tog tillbaka min älskling! Skulle du kunna vara snäll och ta honom på en promenad? Det skulle verkligen hjälpa mig! Du kan tänka dig det?! Tack!
+npc09_3 Ho ho ho! Jag uppskattar verkligen vad du gjorde för min stackars, BowWow! Du är en riktigt fin kille! Hur kan jag någonsin återgälda dig? Jag vet... SMAACK! Du fick en belöning av Madam MeowMew... ... ... L-llyckost!
+npc09_4 Ho ho ho! Jag uppskattar verkligen att du tog min stackars BowWow på en promenad! Hur kan jag någonsin återgälda dig? Jag vet... SMAACK! Du fick en belöning av Madam MeowMew... ... ... L-llyckost!
+
+// Bow Wow
+bowWow2 YIP YIP! YIP YIP!
+bowWow3_0 Smink! Juveler! Klänningar! Jag vill ha allt! Pust... Och några nya accessoarer skulle sitta fint...
+bowWow3_1 Smink! Juveler! Klänningar! Jag vill ha allt! Pust... Och några nya accessoarer skulle sitta fint...\nÅh! Den där rosetten! Jag behöver den! Vill du byta den mot min hundmat?
+bowWow3_2 Eh?! Jag kan inte tro det! Vad elak du är!
+bowWow3_3 Tur! Tack! Här är din [TRADE2]!
+bowWow_dig VOFF! Gräv! GLÄFS!
+bowWow_walk Ta Bow Wow på en promenad?
+
+// Trendy Game
+npc_trendy_open TRENDSPELET! Betala 10 Rupier
+npc_trendy_no_cash Sorry grabben! Du har inte tillräckligt med Rupier! Kom tillbaka när du har pengarna!
+npc_trendy_start A- och B-knapparna flyttar kranen. Resten är bara timing! Gå till knapparna för att spela! Lycka till!
+npc_trendy_again Utmana igen?
+npc_trendy_closed Vi håller på att stänga för dagen! Välkommen åter, när som helst!
+npc_trendy_good_luck Lycka till!
+npc_trendy_play Spela
+npc_trendy_no_play Nej
+
+// 0176: <
+npc_fisherman_0 Vad sägs om lite fiske, lille vän?
+npc_fisherman_choice Jag tar bara 10 Rupier...
+npc_fisherman_1 Du måste ha mer passion! Lev lite!
+npc_fisherman_2 Du har inte tillräckligt med Rupier? Oroa dig inte. Det är bara att komma tillbaka när du har mer pengar, lille vän.
+npc_fisherman_3 Okej, så här går det till. Använd [LEFT] och [RIGHT] på [PAD] för att sikta. När du fått en fisk på kroken så ska du trycka snabbt på knappen tills du får in honom!
+npc_fisherman_4 Varför inte prova en gång till, lille vän?
+npc_fisherman_5 Wow! Den lyckades undkomma! Vill du prova igen?
+npc_fisherman_6 Oj, vilken fisk! Det är en riktig baddare! Jag ger dig 20 Rupier för den! Prova igen?
+npc_fisherman_6_1 Prova igen?
+npc_fisherman_7 Det är en minsting! Jag ger dig bara 5 Rupier för den. Du borde prova igen!
+npc_fisherman_7_1 Du borde prova igen!
+
+npc_fisherman_8 Åh! Vilken stor! Och den har en hjärtbit också! Utöver det så får du 20 Rupier! Prova igen?
+npc_fisherman_8_full Åh! Det är en stor! Och den har en hjärtbit också! Du har fyllt ytterligare en hjärtbehållare! Utöver det så får du 20 Rupier! Prova igen?
+
+npc_fisherman_8_1 Prova igen?
+npc_fisherman_9 Denna damm är tömd på fisk.
+npc_fisherman_9_1 Varför inte prova din lycka i havet?
+npc_fisherman_10 Sa jag det? Glöm det, okej? Spring iväg nu.
+
+// npc raft
+npc_raft_0 Vill du följa med på en tur för 100 Rupier?
+npc_raft_1 Okej, flotten finns utomhus! Mycket nöje!
+npc_raft_2 Du har slut på Rupier? Oroa dig inte. Kom bara tillbaka när du har mer pengar, lille vän.
+
+// frog boy
+npc_frog_boy_0 Var hälsad! Det kanske inte ser så ut, men jag bodde i slottet förut! Mina tjänare gick bärsärkagång och jag tvingades fly till min villa... Så, vill du ha nyckeln till Ukukuprärien, eller? Jag kanske kan hjälpa dig... Låt oss komma till en överenskommelse? Jag vill att du hämtar det gyllene lövet som jag lämnade kvar i slottet när jag flydde...
+npc_frog_body_impressed Jag är imponerad. Det finns fem löv sammanlagt. Kom ihåg att köpa en spade på vägen tillbaka.
+npc_frog_body_coward Det hade jag aldrig trott! Jag tyckte du såg feg ut, men... Snälla, låt mig vara... gå härifrån!
+npc_frog_body_please Ah! Bonjour! [NAME], för rättvisans skull, och min, måste du hitta alla löv!
+npc_frog_body_bien Ahh! Tres bien! Jag ser att du fått tag i alla löv! Flytta denna låda och du ska finna din belöning!
+npc_frog_body_debt Jag är dig evigt tacksam för att du skaffade tillbaka mina löv!
+npc_frog_body_bowwow Ahem! Jag måste insistera att du inte tar in den där hemska besten hit! Lämna varelsen utomhus så kan vi prata! Hej då!
+
+npc_zora Om du kan bevara en hemlighet så ska jag berätta något värdefullt för dig. Gå till Toronbostranden och använd förstoringsglaset så kommer du hitta någon som jag.
+
+alligator_0 Välkommen till Sales Bananhus! Jag är Sale och detta är mitt hus! Min hobby är faktiskt att samla på sällsynt och ovanlig burkmat. Min bror är en konstnär, så jag gissar att underliga hobbyer finns i familjen!
+alligator_1 Vad har du där?! Burkmat! För tusan, ge [TRADE2] till mig! Snälla! Han är hysterisk, vad gör du?
+alligator_2 Han är hysterisk! Vad ska du göra?
+alligator_3 Jag antar att det inte skulle löna sig att be? Okej, säg till om du ändrar dig.
+alligator_4 Åh Tack! Den där tar jag!
+alligator_5 MUMS MUMS!! ... ... ... ... Det var gott! Jag vet att det inte är ett rättvist byte, men här är några bananer! MUMS...
+alligator_6 Tack än en gång! Det var mumsigt!
+alligator_7 Hej kompis! Har du någonsin åkt forsarna på en flotte? Det kan du göra nära Tal Tal-toppen! Du borde prova det!
+
+witch_0 Dubbel dubbel, möda och trubbel, en flugsvampsmix gör pulver för tricks!
+witch_1 Åhhh... du har Sovsvampen! Vi kokar ihop något så fort som möjligt!
+witch_2 Den är färdig! Ta hand om er eftersom det inte finns mycket mer! Varför inte prova lite i min hydda?
+witch_3 Bra jobbat! Använd det på dina fiender och se vad som händer. Om det tar slut så gå till skogen och plocka lite svamp så gör jag fler till dig.
+
+cukeman_0 Hej Mon!
+cukeman_1 Du känner mig, jag föredrar korta namn...
+cukeman_2 Den kan visa miljontals polygoner!
+cukeman_3 Jag behöver den verkligen, snarast!
+
+fairy_0 Låt mig hela dina skador och avlägsna stressen... Slut ögonen och slappna av...
+
+// general dialog not used in the actual game
+itemShop_dialog [itemShopItem]\n[itemShopPrice] Rupier!
+itemShop_bow Pil och bågpaket bara 980 Rupier!
+itemShop_arrow 10 Pilar 10 Rupier!
+itemShop_shovel Deluxe-spade 200 Rupier! Verkar dyrt!
+itemShop_hearts Tre hjärtan 10 Rupier!
+itemShop_shield Sköld 20 Rupier!
+itemShop_bomb Tio bomber 10 Rupier!
+
+itemShop_buy Köp
+itemShop_dont Köp inte
+itemShop_no_way Aldrig
+itemShop_no_way! Aldrig!
+
+// shopkeeper
+shopkeeper_0 Hej! Välkommen! Ser du något du gillar?! Ta bara hit det!
+shopkeeper_1 Tack så mycket! Och välkommen åter!
+shopkeeper_2 Tyvärr, grabben. Du har inte råd! Kom tillbaka när du har pengarna.
+shopkeeper_3 Aye Caramba! Grabben, du har mycket att lära! Köpa något du inte har nytta av?
+shopkeeper_4 Du där! Du måste betala! Lägg tillbaka den där!
+shopkeeper_5 Du fick saken helt gratis. Är du stolt över dig själv?
+shopkeeper_6 Hallå! Du stal mina föremål, men jag vill ge dig en chans att göra rätt för dig. Om du ger mig 999 Rupier, 30 Bomber, 30 Pilar, and 20 Magiskt pulver, så är vi kvitt. Vad sägs?
+
+shopkeeper_debt_0 Betala dina skulder?
+
+shopkeeper_debt_1 Ett nöje att göra affärer med dig. Jag ser till att rentvå ditt namn!
+shopkeeper_debt_2 Det var trist. Då kommer du vara känd som Tjuven för alltid!
+shopkeeper_debt_3 Sorry grabben! Du har inte resurserna! Kom tillbaka när du har allt jag vill ha!
+
+itemShop_revenge Jag sa åt dig att betala! Nu ska du få betala det ultimata priset!
+
+weatherBird Här vilar den flygande tuppen
+
+rooster_0 Wow! Tuppen har återhämtat sig! Han verkar väldigt vänlig!
+rooster_1 Kuckeliku!
+
+// ghost that follows link
+ghost_0 ...huset... ... ta mig... ...huset... ... vid stranden...
+ghost_1 ...N-N-Nej!... ...I-inte där!
+ghost_2 ...Här!... ...stig in i... ...mitt hus...
+ghost_3 ...Nostalgi... ...oförändrad... ...boo hoo...
+ghost_4 ...Det räcker... ...kyrkogård... ...ta mig... ...min grav...
+ghost_5 ...min grav... ...ta mig... ...min grav...
+ghost_6 ...Tack... ... en burk... ...i mitt hus... kolla inuti... ...hej då...hej då...
+
+ghost_grave_powder Host host... Strö det inte på mig... ...då måste jag lägga en förbannelse på dig! Host host...
+
+// == owl ==
+owl_1_0 Hoo! Hoo! Så du är pojken som äger svärdet... Nu förstår jag varför fienderna börjat reagera så våldsamt... En modig pojke har väckt Vindfisken... Det sägs att du inte kan lämna ön så länge Vindfisken är vaken... Du ska gå norrut till Mystiska skogen. Jag väntar på dig där! Hoo!
+owl_1_1 Hoo! Hallå, modige gosse i färd med att väcka drömmaren! Detta är Mystiska skogen! Du kommer att finna många mysterier på ön Koholint! Jag är rädd att du kommer att finna det svårt att lämna ön så länge Vindfisken sover... Har du besökt Svansgrottan som ligger söder om byn? Gå dit med nyckeln som du kommer att finna i denna skog... Vindfisken ser dig... Hoo!
+owl_1_2 Hoo! Ta nyckeln och bege dig till Svansgrottan. Finn instrumentet som finns där! Gå nu! Vindfisken väntar! Hoo!
+
+owl_2_0 Hoo! Det där är 'Sireninstrumentet!' Jag måste erkänna att jag inte trodde på dig... Instrumentet, tillsammans med sju till, har kraften att väcka Vindfisken! Du måste hitta allihop! Jag beordrades att vara din guide. Nästa destination är norrut, i Gopongaträsket!! Hoo, ses där!
+owl_2_1 Hoo! Det där var ett läskigt monster! Glöm inte, nästa instrument finns i Gopungaträsket!
+
+// post dungeon 3
+owl_3_0 Hoo! Hur många instrument har du nu? När du spelar instrumenten inför ägget, kommer Vindfisken att vakna och du kan lämna ön. Nu ska du bege dig till Yarnaöknen! De mörka, monstruösa invånarna kommer visa dig vägen! Hoo, ho!
+owl_3_1 Hoo! Nyckelns mönster visar en fisk som simmar i vattnet! Gå till bergets vattenfall! Ett hopp från toppen och du når målet!
+
+// at the grave of the ghost
+owl_5_0 Hoo! Det var ett tag sedan jag såg dig sist, pojk. Du måste dyka ner i vattnet vid Marthas Vik för att träda in i Kattfiskens näste... Ju närmare du kommer Vindfisken desto kortare tid kvar till att han vaknar. Lycka till! Hoo!
+
+// owl sitting infront of the egg on the stairs
+owl_stairs Hoo! Vindfisken sover länge och drömmer i ägget över oss... När du spelar de åtta Sireninstrumenten inför ägget så kommer han att vakna. Detta, min vän, är den enda möjlighetetn för dig att lämna ön! Hoo!
+
+// pre dungeon 6
+owl_6_0 Hoo! Det finns två tempel, ett i söder och ett i norr. Gå söderut först där de gamla ruinerna viskar om Vindfisken... Du kommer lära dig mycket där...
+owl_6_1 Hoo! Så du har läst skriften... Så länge den säger att ön är gjord av Vindfiskens dröm är ingen säker... Precis som att en kista har en skatt förrän du öppnar den, så kan du inte veta om detta är en dröm, förrän du vaknar... Den enda som verkligen vet är Vindfisken... Lita på ditt omdöme... En dag får du veta sanningen...
+
+// after dungeon 6
+owl_7_0 Hoo! Fienderna fruktar att Vindfisken ska vakna! Deras kraft är verklig! De kan ta över ön och förgöra oss! Den dagen kan komma! Gå nu till bergstornet! Flyg som en fågel! Hoo! Hoo!
+owl_7_1 Hoo, hoo! Din väg är inte lätt men du är snart vid målet. Gå österut. Vindfisken börjar bli rastlös.
+
+// after saving marin
+owl_8_0 Hoo! Flickan sjöng hennes sång inför ägget! 'Balladen om Vindfisken' är en sång om uppvaknande! Tänkte hon verkligen försöka väcka Vindfisken?! Nästa Sireninstrument finns västerut. Spela din melodi så kan de döda stenarna höra! Visa ditt mod! Vindfisken väntar på dig! Hoo!
+
+// after opening the egg
+owl_9_0 Tiden är kommen... Vindfisken väntar... Gå in i ägget...Hoo! Hoo!
+
+owl_final Hoo! Unge man, jag menar... vår hjälte! Du har besegrat mardrömmarna! Du har bevisat din visdom, mod och styrka! ... ... ... ... Som en del av Vindfiskens själ så är jag väktaren av hans drömvärld... Men en dag så klev mardrömmarna in i drömmen och skapade kaos. Då kom du och räddade denna ö... Jag har alltid litat på ditt mod att besegra mardrömmarna. Tack... Det var allt för mig... Vindfisken vaknar snart. Farväl... Hoo!
+
+// raccoon in the forest
+raccoon_0 Som tvättbjörn, är min nos väldigt känslig för saker som damm och stoft...
+raccoon_1 Heh heh heh ho! Du kommer villa bort dig, tack vare mig! Heh heh!
+
+dog GRRRR...
+
+desert_bone_0 Åhhh... Jaaa... Det där stoftet var så förfriskande... Bara för det så ska jag ge dig ett tips! Använd en bomb på ett ställe där sanden slukar dig... Det finns en belöning på andra sidan väggen... Hejdå!
+
+// chicken dude in the mountains
+chicken_dude_0 Dagens kycklingar har inte stridsandan de brukade ha! Förr i tiden kunde de flyga, flax flax! Men kolla nu? Kackel Kackel!
+chicken_dude_1 Fantastiskt! Den tuppen flyger faktiskt! Precis som jag sa, eh? Har du provat att hålla honom ovanför ditt huvud? Kackel Kackel!
+chicken_dude_2 Wooo! Äntligen! Denna flygande tupp är bäst!
+chicken_dude_3 Skulle du vilja prova den flygande tuppen?
+chicken_dude_4 Snälla ge tillbaka tuppen!
+chicken_dude_5 När du vill låna tuppen är det bara att komma förbi!
+chicken_dude_6 Okej jag väntar lite till...
+
+// hidden npc that trades the boomerang
+npc_hidden_0 Jag hittade ett bra föremål som låg uppspolat på stranden... Jag byter det mot vad du har på din B-knapp ...
+npc_hidden_1 Okej, låt oss göra det! Kom tillbaka när du inte vill ha Bumerangen längre!
+npc_hidden_2 Åh, ja, uh... okej, spelar roll.
+npc_hidden_3 Ge tillbaka Bumerangen, jag ber dig! Jag ger tillbaka föremålet du gav mig!
+npc_hidden_4 Du fick tillbaka föremålet och gav tillbaka Bumerangen.
+npc_hidden_5 Åh... Ge mig inte det föremålet... Vad sägs om något annat?
+
+// bat in cave
+npcBat_Intro Hörru du! Du väckte mig! ... Tack! Men nu tänker jag hämnas! Är du redo?
+npcBat_End Heh Heh Heh! Du förtjänade det! Kolla nu så mycket skräp du måste bära! Hah! Slappna av! Vi ses igen!
+
+npcBat_Powder Jag låter dig bära mer magipulver! He He! Är du redo?!
+npcBat_Bombs Okej, jag låter dig bära fler bomber! He He He! Är du redo?!
+npcBat_Arrows Okej, jag låter dig bära fler pilar! Heh Heh! Är du redo?!
+
+bat_yes
+
+book Läs denna bok?
+book_read Vill du läsa denna bok?
+book_realy_read Vill du verkligen läsa den?
+
+book_yes JA
+book_no NEJ
+book_look Titta
+book_dont Titta inte
+
+bookcase Detta är ingen byrå... Va? Visste du det? Okej.
+
+book1_0 'Att välja rätt föremål' Läs denna bok?
+book1_1 'Du kan välja ditt favoritföremål för Aoch B-knapparna på menyn. En del föremål kan du använda att slåss med i stället för svärdet! Prova många olika för att hitta vad som är rätt för dig!'
+
+book2_0 'Autokarta och Memoguide' Läs denna bok?
+book2_1 'Du kan se en ökarta genom att trycka på [START] följt av [SELECT]. De mörka delarna av kartan är platserna du inte besökt än. Flytta markören och tryck på [CONFIRM] för att få mer information om ett område, eller för att spela om meddelandet du fick där...' Ahhh! Så praktiskt!
+
+book3_0 'Snurrande bladets hemlighet' Läs denna bok?
+book3_1 'Snurrande bladtekniken har lärts vidare från generation till generation av hjältefamiljen. För att använda den håll ner svärdsknappen och bygg upp din stryka. När du har tillräckligt kan du släppa knappen! Klarar du detta?'
+
+book4_0 'Hur du hanterar din sköld som ett proffs!' Läs denna bok?
+book4_1 'Om du håller ner knappen så kan du försvara dig själv mot fiendeattacker, och du kan vända några fiender, också... Förutom standardskölden, finns det också en speglad variant som skyddar mot strålar'
+
+book5_0 'Kul med bomber'
+book5_1 'Efter att du satt ner en bomb så kan du plocka upp den igen genom att trycka på knappen. Sedan kan du kasta den genom att trycka ytterligare en gång. Visste du det?'
+
+book6_0 'Varphålens egenskaper' Läs denna bok?
+book6_1 'Det finns en del varphål på ön Koholint. Du kan varpa fram och tillbaka med dessa hål. Om du hoppar in i varphålet som du kom ifrån, så du att komma till nästa i sekvensen. Du kan bara varpa till ett hål som du sett med egna ögon.'
+
+book7_0 'Atlas över ön Koholint'
+book7_1 'Atlas över ön Koholint' Du kan flytta markören och kolla upp namnet på en plats... Vill du titta på denna karta?
+
+book8_0 'Koholints mörka hemligheter och mysterier' Vill du verkligen läsa den?
+book8_1 Jösses! V-vad är detta! ... ... Du kan inte läsa den lilla texten utan ett förstoringsglas...
+book8_2 Runt äggets passager... [LEFT] [LEFT] [UP] [RIGHT] [RIGHT] [UP] [LEFT] [UP]? Hmmm, denna bok ryker av hemligheter.
+book8_3 Runt äggets passager... [RIGHT] [UP] [UP] [RIGHT] [UP] [UP] [RIGHT] [UP]? Hmmm, denna bok ryker av hemligheter.
+book8_4 Runt äggets passager... [LEFT] [UP] [RIGHT] [UP] [LEFT] [UP] [RIGHT] [UP]? Hmmm, denna bok ryker av hemligheter.
+book8_5 Runt äggets passager... [RIGHT] [RIGHT] [RIGHT] [RIGHT] [UP] [UP] [UP] [UP]? Hmmm, denna bok ryker av hemligheter.
+
+book9_1 Ny färgvärld under de 5 gravstenarna. 3[UP] 4[RIGHT] 5[UP] 2[LEFT] 1[DOWN] Ta i allt vad du har. Öppna en ny väg! Den som är värdig erhåller färgens kraft. Jag undrar vad färgvärlden är?
+
+// phone in the house of ulrira
+ulrira_telephone 'BRRING! BRRING! BRRING! KLICK! Jaaaa! Det är Hinkmusen! Tack för att du ringde! Jo...' KLICK! ??? Du måste ha ringt fel nummer.
+
+// ulrira dialog
+ulrira_0 'BRRING! BRRING! Hej! Det är jag, Ulrira! Fråga mig vad som helst om ön! Ring mig om du går vilse! Hej då! KLICK!'
+ulrira_1 'BRRING! BRRING! Detta är Ulrira! Du vet, det finns ett bibliotek i byn som kan ha bra information för dig! Vi hörs senare! KLICK!'
+
+ulrira_2_0 'BRRING! BRRING! Hej, detta är Ulrira! ... De flesta Moblins bor i Mystiska Skogen, men några bor Tal Tal-toppens grottor... Jag hoppas det var det som du ville veta! KLICK!'
+ulrira_2_1 'BRRING! BRRING! Ja, detta är Ulrira. De oätbara blommorna i Gopongaträsket är BowWows favoriter. Varför inte ta honom på en promenad där? KLICK!'
+
+ulrira_3_0 'BRRING! BRRING! Ulrira till ditt förfogande! Åh? Du borde ta hem BowWow nu, Madam MeowMeow skulle uppskatta det! Hejdå! KLICK!'
+ulrira_3_1 'BRRING! BRRING! Hej, det är Ulrira!... Har du träffat alla på ön? Det finns en man vid namn Richard som bor i Potthålsfältet som ligger sydöst om byn. Varför inte besöka honom? Det är allt jag kan säga dig nu! Hejdå! KLICK!'
+ulrira_3_2 'BRRING! BRRING! Gamle Ulrira här!... Gillar du bananer? Prova att prata med folk i byn igen! Hejdå! KLICK!'
+
+ulrira_leaf_0 'BRRING! BRRING! Detta är Ulrira! Har du inte hittat de fem gyllene löven? Håll koll på de du har. Någon kan försöka ta dem! Hej då! KLICK!'
+ulrira_leaf_1 'BRRING! BRRING! Detta är Ulrira! Har du inte hittat de fem gyllene löven? Prova att bomba misstänkta platser. Hoppas detta hjälper. Hej då! KLICK!'
+ulrira_leaf_2 'BRRING! BRRING! Detta är Ulrira! Har du inte hittat de fem gyllene löven? Skräm kråkan vid slottet och se om det hjälper! Hejdå! KLICK!'
+ulrira_shovel 'BRRING! BRRING! Ulrira här! ... Spade... Köpte du en spade? Du kanske kan hitta något om du gräver här och var! Hej då! KLICK!'
+
+ulrira_3_3 'BRRING! BRRING! Ya, det är Ulrira! Grottan i Ukukuprärien är nyckeln! Ja, jag menar nyckelgrottan boktavligen! Hejdå! KLICK!'
+
+ulrira_4_0 'BRRING! BRRING! Hej, detta är Ulrira! I Yarnaöknen, som är belägen sydöst om ön, så kommer du att finna en Marulksnyckel. Hmmm... Hur mycket tydligare måste jag vara? Hej då! KLICK!'
+ulrira_4_1 'BRRING! BRRING! Detta är Ulrira! Just det, jag hörde från farmor att det finns något gömt bakom vattenfallen i Tal Tal bergen. Hjälper detta? Hejdå! KLICK!'
+
+ulrira_5_0 'BRRING! BRRING! Hej, det är Ulrira! Kattfiskens mun är öppen? Låter som en bra plats att dyka in i! Hej då! KLICK!'
+
+ulrira_6_0 'BRRING! BRRING! Ulrira här! ... Har du varit i Ansiktstemplet? Det ligger norr om Djurbyn. Det är en väldigt intressant ruin. KLICK!'
+
+ulrira_7_0 'BRRING! BRRING! Hej, det är Ulrira! Har du hört talas om den flygande tuppen från byn Mabe? På den gamla goda tiden fick vi flyga med den om vi höll den ovanför våra huvuden... Nu ligger den under kyrktuppen... Är det användbart för dig? Jag hoppas det! Hej då! KLICK!'
+ulrira_7_1 'BRRING! BRRING! Detta är Ulrira! Du gör bra ifrån dig! Dina ansträngningar kommer ta slut snart... Förresten, har du besökt hönhuset på berget? Det finns en grotta i närheten med något viktigt inuti. Hejdå! KLICK!'
+ulrira_7_2 'BRRING! BRRING! Ulrira här... Ja, jag minns att att jag såg ett högt torn i bergen när jag var liten! Du borde gå dit! Hjälper det dig? Hejdå! KLICK!'
+
+ulrira_8_0 'BRRING! BRRING! Hej, det är Ulrira! Sköldpaddans huvud är i vägen? Väck den till liv och den kommer röra på sig! Det är sant! Hej då! KLICK!'
+ulrira_8_1 'BRRING! BRRING! Ulrira här! ... Go for it! Du är nästan där! Jag hejar på dig! Hejdå! KLICK!'
+
+ulrira_9_0 'BRRING! BRRING! Hej, detta är Ulrira! [NAME], Det är dags för dig att möta ägget på Tamaranchberget! Var försiktig, [NAME]! Hej då! KLICK!'
+ulrira_9_1 'BRRING! BRRING! Detta är Ulrira! Har du gått vilse i Ägget? Hmm. Nej sir, jag kan inte hjälpa dig med det. Vad sägs om biblioteket? Och du, sluta inte ringa mig bara för att jag inte kunde ett ynka svar! KLICK!'
+
+ulrira_wife 'BRRING! BRRING! Ja, det är Ulrira! Min fru gick till djurbyn och lämnade mig alldeles ensam. Skulle du kunna be henne komma hem när hon städat klart? Hej då! KLICK!'
+ulrira_ghost 'BRRING! BRRING! Detta är Ulrira! Du hemsöks av ett spöke?! Vad sägs om att ta honom dit han vill? Hejdå! KLICK!'
+ulrira_mamu 'BRRING! BRRING! Ja, detta är Ulrira! Du börjar gilla musik, va? Jo, en groda vid namn Mamu, som bor i Plakatlabyrinten kanske kan några nya sånger, men han tar mycket betalt för att spela dem! Hej då! KLICK!'
+
+// TODO: not sure when this is shown in the game
+ulrira_seashells 'BRRING! BRRING! Ulrira talar! Är fienderna för starka för dig? I sådana fall bör du samla alla snäckskal. Tro bara på dig själv och gör ditt bästa! KLICK!'
+
+// dungeon intro
+dungeon_1 Level 1--\n     Svansgrottan
+dungeon_2 Level 2--\n     Flaskgrottan
+dungeon_3 Level 3--\n     Nyckelgrottan
+dungeon_4 Level 4--\n     Marulkstunneln
+dungeon_5 Level 5--\n     Havskattens gap
+dungeon_6 Level 6--\n     Ansiktstemplet
+dungeon_7 Level 7--\n     Örnens torn
+dungeon_8 Level 8--\n     Sköldpaddsklippan
+
+beak_nop Den här ugglestatyn försöker säga något, men du kan inte förstå den eftersom den inte har någon näbb.
+
+beak_d1_1 Vänd de taggiga med en sköld...
+beak_d1_2 Om du stöter på en dörr som du inte kan öppna så flytta ett stenblock.
+
+// shrine
+shrine_dark ?? Det är en bild på väggen, men du ser inte den för att det är för mörkt här inne...
+shrine_message TILL LÄSAREN... ÖN KOHOLINT ÄR BARA EN ILLUSION... MÄNNISKOR, MONSTER, SJÖAR, SKYN... ÄR BARA EN KULLISS I EN SOVANDES ÖGON... VÄCK DRÖMMAREN, OCH KOHOLINT KOMMER FÖRSVINNA SOM EN BUBBLA TRÄFFAR EN NÅL... DU STRANDSATTA, DU BÖR VETA SANNIGEN! ... ... ... ... Vad? Illusion?
+
+// dungeon two
+beak_d2_1 En del av golvet är upphöjt. Knacka på den blåa kristallen.
+beak_d2_2 Gör varje blockdesign likadan. En ny väg kommer att öppnas.
+beak_d2_3 Först, besegra den fängslade Pols Röst, Sedan, Stalfos.
+
+// genie
+d2_boss_0 HO HO HO! Jag är fienden denna gång! HO HO HO!
+d2_boss_1 NYAH NYAH! Du kan inte skada mig så länge jag har min flaska!
+d2_boss_2 . . . .! Jag kan inte röra mig! Men jag är fortfarande okej. Ditt lilla svärd kommer inte kunna förstöra denna flaska!
+d2_boss_3 Waaaah! Du- du förstörde min flaska! Du din... Du gör mig vansinnig!
+
+// dungeon three
+beak_d3_1 Långt borta... Var inte rädd, spring och flyg!
+beak_d3_2 För att besegra det svarta monstret med det hårda skalet, mata honom med något explosivt.
+beak_d3_3 Peta på skumma delar av väggen med ditt svärd och lyssna till ljuden som uppkommer.
+
+d3_boss NEENER NEENER! DU KAN INTE HITTA MIG! NYAH NY-AH!
+
+bow_wow_cave_entry Eh? Vem är den här skumma filuren? Okej pojkar, gör er av med honom!
+bow_wow_cave_boss Du måste vara en mördare skickad av Madam MeowMeow för att rädda byrackan! Du kom hit för att ta mig, men det är jag som kommer att ta dig!!
+bow_wow_cave_bw Du har räddat BowWow! Vilken ryslig best!
+
+castle_monkey_hunger Chi-kiita! Chikiita! Apan Kiki! Hungrig! Apan Kiki!
+castle_monkey_bowwow Kiiiki! Va?! Okej, byracka! Låt oss strida!!
+
+castle_monkey_banana [TRADE3]! [TRADE3]! Åååh! Ååh! Ge till Kiki!?
+castle_monkey_banana_yes [TRADE3]! [TRADE3]! Åååh! Ååh! Apor! Kom! Återgälda honom! Kiki!
+castle_monkey_done Apaffärer! Gjort! Hej då!? Ååh! Kiki!
+
+// dungeon four
+beak_d4_1 Skimret från plattan kommer att guida dig...
+
+d4_nightmare BLOOOP! BLOOOP! GLUB! GLUB! OGH! MAAAAT! BLOOOOP! GLUB!
+
+// dungeon five
+beak_d5_1 Om du inte kan förstöra ett skelett med ditt svärd så prova med en bomb.
+beak_d5_2 Dyk där ljusstrålarna från lyktorna korsas.
+
+master_stalfos_0 Arrgh! Jag kan inte besegra dig! Jag sticker!
+master_stalfos_1 Hjälp! Du hittade mig! Du är en riktig odåga, vet du det?!
+master_stalfos_2 Du igen?! Du verkar inte ge dig... Jag kan tydligen inte fly från dig, så låt oss få det här överstökat!
+master_stalfos_3 'Jag har det som fanns i lådan. Kom och ta det, om du kan!' Mästare [DC]
+
+slime_eel_0 Så... du är inkräktaren som sövde ner Vindfisken... KEEE-HEE-HEEEH! Jag ska äta upp dig!
+slime_eel_1 TSSSK, TSSSK! Du verkar inte förstå vad denna ö är... KEEE-HEHEEE! Vilken idiot... KEEHEE-HEH!!
+
+// dungeon six
+beak_d6_1 Gå in i utrymmet där väggarna har ögon...
+beak_d6_2 Hoppa på kristallerna för att röra dig framåt.
+beak_d6_3 För att öppna en skattkista, använd krukorna runt den.
+
+facade_opening Hörru dummer! Vill du ha ett förslag? Min svaghet är...! Oj, nu sa jag för mycket igen...
+facade_death Okej, hör upp!! Om Vindfisken vaknar kommer allt på denna ö försvinna för alltid! Och då menar jag ALLT!
+
+// dungeon seven
+grim_creeper_enter Puttefnask! Tror du att du kan besegra mig?! Okej grabbar, avlägsna denne odåga från min åsyn!
+grim_creeper_1 Ha! Är det allt du har?! Gör dig redo för DETTA!
+grim_creeper_2 Din smutsige råtta! Du... besegrade mina bröder! Du ska få betala!! Jag kommmer aldrig att glömma dig!
+grim_creeper_3 BAH! Jag tänker inte vara snäll! Du kommer önska att du aldrig fötts!!!
+grim_creeper_4 Min energi... försvinner... Jag förlorade! Men du dör också om Vindfisken vaknar! Samma för mig...du... finns...i... hans...dröm...
+
+beak_d7_1 Hoppa ner från våningen ovanför för att nå kistan på bordet.
+beak_d7_2 Gåtan är löst när pelarna faller!
+beak_d7_3 Om du inte kan kliva över muren kan du prova att kasta saker som du har i händerna.
+
+// dungeon eight
+beak_d8_1 För att besegra monstrena som har nyckeln prova att attackera dem från ett högre ställe.
+beak_d8_2 Om en staty ser konstig ut, skjut den med pilbågen.
+beak_d8_3 Fyll alla hålen med stenen som rullar, ([PAD] är nyckeln!)
+
+ice_block_message Brrrr... Detta är ett block av solitt is! Det är väldigt kallt!
+
+hot_head_0 KRACKEL-FWOOOSH! Du ska dö! Jag kommer aldrig låta dig spela på Sireninstrumenten!!
+hot_head_1 K-K-KRACKEL! Varför kom du hit? Om det inte vore för dig, skulle allt vara som förut! Du kan inte väcka Vindfisken! Kom ihåg att... även... du... är i... drömmen...
+
+// color dungeon
+grave_locked Om du inte har något mod så har du ingen styrka. Gravstenar flyttar inte på sig för ynkryggar.
+
+beak_dc_1 Här är din ledtråd. Gör alla röda blåa.
+
+stone_hinox Vilken sniken jävel! Vill du ha mer styrka?! En skojare som du kan lika gärna ge upp och gå hem!
+
+giant_buzz_blob_enter BUU! Jag är ingen vekling! Ditt patetiska svärd är ingen match för mig!
+giant_buzz_blob_sword Din dåre! Ditt svärd kommer inte att fungera! Prova något annat!
+
+// is this only shown on the normal gameboy?
+// I am sorry, but this is the Color Dungeon. Only those with the power of color may enter. If you can tell who wears red and who wears blue, you may enter. Farewell.
+npc_color_0 Våra färger är aldrig de samma! Om jag är röd så är han blå! Om han är röd så är jag blå! Vilken färg är mitt tyg? RÖTT BLÅTT
+npc_color_1 Nej, nej. Kolla närmare och försök igen.
+npc_color_2 Berätta inte för någon.
+npc_color_3 Fedrottningen väntar på dig.
+npc_color_4 Har du pulvret? Om inte så måste du återvända.
+
+choice_Red Röd
+choice_Blue Blå
+
+hardhit_beetle_0 Blått är tryggt. Gult börjar bli farligt. Rött är fara.
+hardhit_beetle_1 Blått. Börja om. Gult börjar bli farligt. Rött är fara.
+hardhit_beetle_2 Gult börjar bli farligt. Rött är fara. Ta dig tid!
+
+choice_RED RÖD
+choice_BLUE BLÅ
+choice_GREEN GRÖN
+
+color_fairy_0 Välkommen, [NAME]. Jag är imponerad att du kommit så här långt. Jag kommer ge dig färgens kraft. Om du vill ha anfall så välj röd. Om du vill ha försvar så välj blå. Vilken kraft vill du ha? RÖD BLÅ
+color_fairy_1 Rött för anfall, blått för försvar. Vilket väljer du? RÖTT BLÅTT
+color_fairy_2 Är du säker?
+color_fairy_3 Slappna av och slut ögonen.
+color_fairy_4 Jag kommer ta ut dig nu.
+color_fairy_5 Välkommen tillbaka, [NAME]. Om du inte längre vill dra nytta av färgens kraft kan jag återställa dina ursprungliga kläder. Vill du återlämna färgens kraft?
+color_fairy_6 Vill du byta till den andra färgen istället?
+
+cloak_blue Du erhöll De Blå Kläderna! Dina skador kommer att halveras!
+cloak_red Du erhöll De Röda Kläderna! Din kropp är full av energi!
+cloak_green Du erhöll De Gröna Kläderna! De har ingen speciell effekt, men de är snygga!
+
+// desert
+desertLanmola Drygt! Du är bara i vägen!
+
+// shell mansion
+shell_mansion_0 Jag är herrgårdens ande. Jag har väntat på att någon ska övervinna mörkret. Hitta alla hemliga skal och gå igenom porten för att få det ultimata svärdet!
+shell_mansion_1 Hmmm. Ingen respons. Du lär inte ha tillräckligt många skal.
+shell_mansion_2 Mitt jobb här är klart.
+
+npc_hippo_0 Stick!
+npc_hippo_1 Sluta!
+npc_hippo_2 Lämna mig ifred! Jag försöker sitta still så Schule kan måla av mig!
+
+npc_painter_0 Hej, Jag är Schule Donavitch! Sjöjungfrustatyn vid viken är mitt mästerverk! ... Om jag ska vara ärlig så är den inte klar. Konsten, den är svår för dig att förstå, eller hur?
+npc_painter_1 Är det Sjöjungfrufjället? Jag kan inte använda det nu. Jag måste jobba med denna bild. Du borde gå och göra klart sjöjungfrustatyn åt mig.
+npc_painter_2 Ach! Vad kollar du på med förstorningsglaset? Sluta upp genast!
+
+// photo house
+photo_book '[NAME]s resor' Vill du kolla på ditt album?
+photo_book_text Vilket foto vill du se? Använd [PAD] för att välja. Tryck sedan på A-knappen!
+
+// entering with a follower
+photo_mouse_follower Kom förbi senare när du är ensam!
+
+photo_left_11 11 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_10 10 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_9 9 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_8 8 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_7 7 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_6 6 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_5 5 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_4 4 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_3 3 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_2 2 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_1 1 kort kvar! Vad ska jag ta för sorts bild?
+photo_left_0 Åh nej! Du har slut på film! Glöm inte att kolla på ditt album!
+
+// photo sequence photo house
+photo_01_0 Jag ÄLSKAR att fotografera. Får jag ta ett foto på dig?
+photo_01_1 Gå till bortre änden av rummet och stå framför skärmen.
+photo_01_2 Jag ska kalla detta 'Här Står En Modig Man.' Säg omelett!
+photo_01_3 Vad är ditt namn, unge man? [NAME]? Här är ditt album, [NAME]. Ta en titt innan du går!
+photo_01_4 Låt oss se om vi kan fylla albumet!
+photo_01_5 Låt oss ta ett foto!
+photo_01_6 Inget foto?! Skojar du?
+photo_01_7 Vad synd!
+photo_01_8 Vackert! Jag ska kalla detta för 'Slutet.'
+photo_01_9 Hallå! Jag har inte tagit fotot än! Gå tillbaka och stå framför skärmen!
+
+// photo sequence ulrira house
+photo_02_0 Hej! Det är jag, fotografen! Du ser ut att vara nyfiken om farfar Ulrira.
+photo_02_1 Jag ska kalla denna '[NAME] Upptäcker Ulriras hemlighet!'
+
+// photo sequences BowWow
+photo_03_0 Det här verkar bra! Jag namnger det '[NAME] Leker med BowWow!' Går närmare BowWow nu!
+photo_03_1 Grrrr!
+photo_03_2 [NAME], kom närmare!
+photo_03_3 Grrrr! Grrrr!!
+photo_03_4 Grrrr! Grrrr!! GRRRR!
+photo_03_5 Mycket närmare! OK, jag är redo. Le!
+
+// photo sequences castle
+photo_05_0 Hej, [NAME]. Du vet att jag älskar att fotografera. Skulle detta gamla slott inte bli ett fint foto?
+photo_05_1 Inget än?! Jag är trött på att vänta. Jag vill ha de gyllene löven levererade snart! Mod som detta kräver ett foto, eller hur?
+photo_05_2 Ta ett foto på mig. Vilken vinkel du vill!
+photo_05_3 Jag är inte rädd. Jag bestämde mig bara för att vänta hemma.
+
+// photo sequences grave
+photo_06_0 Hej, [NAME]! Vad gör du här?
+photo_06_1 Vill du veta om det där spöket? Jag är säker på att du gjort honom glad. Är du redo för ett foto?
+photo_06_2 Jag ska kalla detta 'Jag var väldigt rädd.' Le!
+
+// photo sequences marin cliff
+marin_cliff_0 Det här är min första promenad med dig, [NAME].
+marin_cliff_1 . . . . .
+marin_cliff_2 Denna klippa ska bli vår hemliga plats.
+marin_cliff_3 Tänker du inte säga något?
+marin_cliff_4 Åh, vad jag älskar foton! Varför tar du inte ett foto när ingen är i närheten? Du kan kalla det...
+marin_cliff_5 Jag ska gå och framkalla detta. Kom och kolla på det senare, OK?
+
+// photo sequences fountain
+photo_08_0 Hej! Jag är fotografen! Vilket bra fototillfälle! Jag ska kalla detta 'Se upp!'
+photo_08_1 Åhh! Jag är ledsen! Är du ok?!
+
+// photo sequences weather bird
+photo_09_0 Hej, Marin och [NAME]! Tar ni foton? Ni borde ta foton på alla, inklusive mig.
+photo_09_1 Jag använder den här för att ta foton. Är du redo? Säg 'svamp!'
+photo_09_2 OK, jag är klar. Nu går jag hem.
+
+// photo sequences fisher
+photo_10_0 Jag känner på mig att jag kommer fånga en stor fisk igen.
+photo_10_1 WHOA! Den var stor! Hallå, fotosnubben! Kan du fotografera detta?
+photo_10_2 Hallå! Var försiktigare nästa gång!
+
+// photo sequences zora
+photo_11_0 Kan du se mig?! Du måste ha ett förstoringsglas. Jag är inte en bråkstake. Jag vill bara leva ifred.
+photo_11_1 Hej! Det är jag, fotografen! Du säger att Zora är i huset? Jag MÅSTE fotografera honom. Jag ska kalla det 'Jag hittade Zora.'
+
+// photo sequences mountain
+photo_12_0 Detta avspeglar dina äventyr perfekt!
+photo_12_1 Jag ska kalla detta 'Det var nära.' Hmm.
+photo_12_2 Jag är för nära.
+photo_12_3 Jag bör backa.
+photo_12_4 Aaaaaah!
+
+// map
+map_tal_tal Bergskedjan Tal Tal
+map_wind_fishs_egg Vindfiskens ägg
+map_mt_tamaranch Tamaranchberget
+map_hen_house Hönshus
+map_telephone_booth Telefonkiosk
+map_goponga_swamp Gopongaträsket
+map_tal_tal_heights Tal Tal-toppen
+map_weird_mr_write Konstiga Herr Skriv
+map_photo_both Stig fram och få ett souvenirfoto taget!
+map_raft_shop Flottaffär
+map_mysterious_woods Mystiska skogen
+map_koholint_prairie Koholintprärien
+map_crazy_tracy Galna Tracys hälsospa
+map_tabahl_wasteland Tabahls ödemark
+map_kanalet_castle Kanalet Slott
+map_rapids_ride Forsränning
+map_witchs_hut Häxans hydda
+map_cementry Kyrkogården
+map_fishing_pond Fiskdammen
+map_quadruplets_house Fyrlingarnas hus
+map_dream_shrine Drömtemplet
+map_ukuku_prairie Ukukuprärien
+map_seashell_mansion Snäckskalsherrgården
+map_face_shrine Ansiktstemplet
+map_mabe_village Byn Mabe
+map_town_tool_shop Verktygsaffären
+map_madam_meow Madam MeowMeows hus Se upp för hunden!
+map_marin_tarin Marins och Tarins hus
+map_village_library Bibliotek
+map_old_man_house Gamle Ulriras hus
+map_trendy_game Trendspelet
+map_south_village Söder om byn
+map_signpost_maze Plakatlabyrinten
+map_pothole_field Gropfältet
+map_maraths_bay Marthas Vik
+map_animal_village Djurbyn
+map_yarna_desert Yarnaöknen
+map_richards_villa Richards Villa
+map_toronbo_shores Toronbostranden
+map_banana_house Sales bananhus
+map_bay_east Öster om viken
+map_house_bay Huset vid viken
+
+map_level_1 Nivå 1-- Svansgrottan
+map_level_2 Nivå 2-- Flaskgrottan
+map_level_3 Nivå 3-- Nyckelgrottan
+map_level_4 Nivå 4-- Marulkstunneln
+map_level_5 Nivå 5-- Havskattens gap
+map_level_6 Nivå 6-- Ansiktstemplet
+map_level_7 Nivå 7-- Örnens torn
+map_level_8 Nivå 8-- Sköldpaddsklippan
+
+final_boss Vi föddes med mardrömmar...För att ta över världen, lät vi Vindfisken sova för evigt! Om Vindfisken inte vaknar, kommer ön alltid finnas kvar! Vi skulle leda denna värld... Men du var tvungen att komma hit och förstöra våra planer! Heh heh! Du kan aldrig besegra oss!!! Sätt igång!
+final_windfish ... ... ... ... ... ... ... ... JAG ÄR VINDFISKEN... LÄNGE HAR JAG SOVIT... I MINA DRÖMMAR... UPPENBARADE SIG ETT ÄGG SOM VAR OMRINGAT AV EN Ö MED MÄNNISKOR, DJUR, EN HEL VÄRLD! ... ... ... ... MEN NU, ÄR DET EN DRÖM SOM SLUTAR! NU NÄR JAG VAKNAT, KOMMER KOHOLINT ATT FÖRSVINNA... BARA ETT MINNE AV DENNA DRÖMÖ KOMMER EXISTERA I DENNA VAKNANDE VÄRLD... EN DAG KOMMER DU KANSKE MINNAS DENNA Ö... DET MINNET MÅSTE VARA DEN ÄKTA DRÖMVÄRLDEN... ... ... ... ... KOM... LÅT OSS VAKNA... TILLSAMMANS!!
+final_instruments SPELA DE ÅTTA INSTRUMENTEN! SPELA SÅNGEN OM UPPVAKNANDET!!
+
+// credits
+// 1998
+credits_0 1998 STAFF
+
+credits_1 SUPERVISOR
+credits_1_0 TAKASHI TEZUKA
+
+credits_2 DIRECTOR
+credits_2_0 YOSINORI TUTIYAMA
+
+credits_3 SCRIPT WRITER
+credits_3_0 NOBUO MATSUMIYA
+
+credits_4 PROGRAMMER
+credits_4_0 EIJI NOTO
+credits_4_1 KIYOSHI KODA
+credits_4_2 SIGEHIRO KASAMATU
+
+credits_5 CHARACTER DESIGNER
+credits_5_0 MIKIO MISHIMA
+credits_5_1 KYOKO KIMURA
+
+credits_6 SOUND COMPOSER
+credits_6_0 YUICHI OZAKI
+
+credits_7 ART WORK
+credits_7_0 KEIKO IZAWA
+
+credits_8 TECHNICAL SUPPORT
+credits_8_0 N KOGANEZAWA
+
+credits_9 SWEDISH SCRIPT
+credits_9_0 ROM RAPTOR
+credits_9_1 ROM RAPTOR
+credits_9_2 ROM RAPTOR
+
+credits_10 SPECIAL THANKS TO
+credits_10_0 AKIYA SAKAMOTO
+credits_10_1 R&D2 DEBUG STAFF
+
+credits_11 DEBUG STAFF
+credits_11_0 SUPER MARIO CLUB
+
+// 1993
+credits_12 1993 STAFF
+
+credits_13 DUNGEON DESIGNER
+credits_13_0 YASUHISA YAMAMURA
+
+credits_14 ILLUSTRATOR
+credits_14_0 KENSUKE TANABE
+
+credits_15 PRODUCER
+credits_15_0 YOSHIAKI KOIZUMI
+credits_15_1
+
+credits_16 EXECUTIVE PRODUCER
+credits_16_0 KAZUAKI MORITA
+credits_16_1 TAKAMITSU KUZUHARA
+
+credits_17
+credits_17_0 MASANAO ARIMOTO
+credits_17_1 SHIGEFUMI HINO
+
+credits_18
+credits_18_0 KAZUMI TOTAKA
+credits_18_1 MINAKO HAMANO
+credits_18_2 KOZUE ISHIKAWA
+
+credits_19
+credits_19_0 YOUICHI KOTABE
+
+credits_20
+credits_20_0 ROM RAPTOR
+
+credits_21
+credits_21_0 TOSHIHIKO NAKAGO
+credits_21_1 KOJI KONDO
+credits_21_2 TOMOAKI KUROUME
+credits_21_3 MASAICHI OKUMURA
+credits_21_4 KANAE WADA
+
+credits_22
+credits_22_0 SHIGERU MIYAMOTO
+
+credits_23
+credits_23_0 HIROSHI YAMAUCHI
+
+credits_24
+credits_24_0
+
+credits_25
+credits_25_0 THE  END
+

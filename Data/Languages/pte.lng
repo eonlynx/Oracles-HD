@@ -1,0 +1,411 @@
+map_overlay_close Fechar
+overlay_map Mapa
+overlay_inventory Inventário
+overlay_teleport Teletransporte
+savename_thief Ladrão
+
+main_menu_select_header Seleção de Jogador
+main_menu_bottom_header 
+main_menu_new_game Novo Jogo
+main_menu_settings Definições
+main_menu_copy Copiar
+main_menu_erase Apagar
+main_menu_quit Sair
+main_menu_back Voltar
+main_menu_select Selecionar
+main_menu_tooltip Dica
+ 
+main_menu_delete_confirmation_header Apagar Gravação?
+main_menu_delete_confirmation_header_yes Sim
+main_menu_delete_confirmation_header_no Não
+
+main_menu_copy_confirmation_header Copiar Gravação?
+main_menu_copy_confirmation_header_yes Sim
+main_menu_copy_confirmation_header_no Não
+
+main_menu_copy_header Copiar Gravação
+main_menu_copy_from De
+main_menu_copy_to Para
+main_menu_copy_empty -Vazio-
+main_menu_copy_arrow [RIGHT]
+main_menu_copy_back Voltar
+
+new_game_menu_save_name Introduzir Nome:
+new_game_menu_back Voltar
+new_game_menu_create_file Criar Ficheiro
+new_game_menu_game_type Tipo de Jogo:
+new_game_menu_gtype_settings Usar Definições
+new_game_menu_gtype_modern Moderno
+new_game_menu_gtype_classic Clássico
+new_game_menu_gtype_hybrid Híbrido
+new_game_menu_gtype_purist Purista
+
+game_menu_header Menu
+game_menu_back_to_game Voltar ao Jogo
+game_menu_settings Definições
+game_menu_save_continue Guardar e Continuar
+game_menu_exit_to_the_menu Sair para o Menu
+game_menu_exit_the_game Sair do Jogo
+
+game_menu_exit_header Tens a certeza?
+game_menu_exit_no Não
+game_menu_exit_yes Sim
+
+gameover_header Fim de Jogo
+gameover_continue Continuar
+gameover_quit Sair
+
+settings_menu_header Definições
+settings_menu_game Jogo
+settings_menu_redux Redux
+settings_menu_camera Câmara
+settings_menu_video Vídeo
+settings_menu_graphics Gráficos
+settings_menu_audio Áudio
+settings_menu_controls Controlos
+settings_menu_mods Modificadores
+settings_menu_presets Predefinições
+settings_menu_cheats Trapaças
+settings_menu_achieve Proezas
+settings_menu_back Voltar
+
+settings_game_header Definições de Jogo
+settings_game_language Idioma: Português (Portugal)
+settings_game_sublanguage Idioma:
+settings_game_sublanguage_01 Texto Original
+settings_game_sublanguage_02 Remake Moderno
+settings_game_sublanguage_03 Alternativo
+settings_game_menubricks Moldura do Menu
+settings_game_menubricksA LADX
+settings_game_menubricksB Original
+settings_game_menubricksC Preto
+settings_game_classicsword Espada Clássica
+settings_game_saveposition Selecionar Última Gravação
+settings_game_autosave Gravação Automática
+settings_game_sharedstorage Guardar no Armazenamento Partilhado
+settings_game_hide_achievement Ocultar Notificação de Conquista
+settings_game_items_on_right Espaços de Itens à Direita
+
+settings_redux_header Definições Redux
+settings_redux_dungeonteleport Teletransportador do Mapa:
+settings_redux_dungeonteleport_01 Desativado
+settings_redux_dungeonteleport_02 Apenas Mapa
+settings_redux_dungeonteleport_03 Apenas Manbo
+settings_redux_dungeonteleport_04 Mapa + Manbo
+settings_redux_vwfont Fonte de Largura Variável
+settings_redux_nohelptext Desativar Mensagens de Ajuda
+settings_redux_dialogskip Ativar Saltar Diálogos
+settings_redux_uncensor Desativar Censura
+settings_redux_unmissables Nada Pode ser Perdido
+settings_redux_photoscolor Fotografias a Cores
+settings_redux_noanimaldmg Animais Invencíveis
+
+settings_camera_header Definições de Câmara
+settings_camera_cameratype Tipo
+settings_camera_cameratypeA Câmara Moderna
+settings_camera_cameratypeB Câmara Clássica
+settings_camera_cameratypeC Câmara Personalizada
+settings_camera_custommenu Personalizar Câmara
+settings_camera_fogdiscovery Névoa de Descoberta do Mapa
+settings_camera_fogedgesharp Nitidez da Borda da Névoa
+settings_camera_fogopacity Opacidade da Névoa
+settings_camera_fogfadetime Tempo de Desvanecimento da Névoa
+settings_camera_camborder Moldura Clássica
+settings_camera_blackpercent Transparência da Moldura Clássica
+settings_camera_bias Viés de Borda Clássico
+settings_camera_classicscaling Bloqueio da Escala Clássica
+settings_camera_persistentitems Drops de Itens Persistentes
+settings_camera_cameralock Bloqueio da Câmara
+settings_camera_smoothcamera Câmara Suave
+
+settings_camcustom_header Personalizar Câmara
+settings_camcustom_modern Moderna
+settings_camcustom_classic Clássica
+settings_camcustom_overworld Mundo Exterior
+settings_camcustom_houses Casas
+settings_camcustom_caves Cavernas
+settings_camcustom_dungeons Masmorras
+settings_camcustom_castle Castelo
+settings_camcustom_egg Dentro do Ovo
+settings_camcustom_2dMaps Mapas 2D
+settings_camcustom_bosses Batalhas contra Chefes
+
+settings_video_header Definições de Vídeo
+settings_video_game_scale Escala do Jogo:
+settings_video_ui_scale Escala da Interface:
+settings_video_autodetect Deteção Automática
+settings_video_fullscreen Modo de Ecrã:
+settings_video_fullscreen_01 Janela
+settings_video_fullscreen_02 Ecrã Inteiro sem Margens
+settings_video_fullscreen_03 Ecrã Inteiro Exclusivo
+settings_video_fps_lock Sincronização Vertical
+settings_video_opaquehud Desativar Desfoque da Interface
+settings_video_pixelsnap Alinhamento de Pixels
+settings_video_pixelgrid Shader de grade de pixels
+settings_video_epilepsysafe Modo Anti-Epilepsia
+
+settings_graphics_header Definições Gráficas
+settings_graphics_sequencescale Amplificador da Escala de Sequência
+settings_graphics_colorcorrect Correção de Cor GBC
+settings_graphics_shadow Sombras Dinâmicas
+settings_graphics_fogeffects Efeitos de Nevoeiro
+settings_graphics_globallights Iluminação Global
+settings_graphics_objectlights Iluminação de Objetos
+settings_graphics_screenshake Efeitos de Tremor de Ecrã
+settings_graphics_exscreenshake Efeitos Extra de Tremor de Ecrã
+settings_graphics_classicsprites Sprites de Itens Clássicos
+
+settings_audio_header Definições de Áudio
+settings_audio_music_volume Volume da Música:
+settings_audio_effect_volume Volume dos Efeitos:
+settings_audio_classic_music Indicações Musicais Clássicas
+settings_audio_mute_inactive Silenciar Janela Inativa
+settings_audio_heartbeep Alarme de Corações Baixos
+settings_audio_mute_powerups Sem Música de Power-Up
+settings_audio_mute_achievement Silenciar Notificação de Conquista
+
+settings_controls_header Definições de Controlos
+settings_controls_onscreen Controlos no Ecrã
+settings_controls_deadzone Zona Morta Analógica
+settings_controls_gamepad Comando
+settings_controls_remap Mapear Botões do Comando
+settings_controls_triggersscale Gatilhos Alteram a Escala
+settings_controls_sixbuttons Seis Botões de Inventário
+settings_controls_swapbuttons Trocar Confirmar e Cancelar
+settings_controls_classicmove Movimento Clássico
+settings_controls_digitalanalog Analógico Digital
+
+settings_controls_onscreenpad Controlos no Ecrã
+settings_controls_onscreenpad_01 Desativados
+settings_controls_onscreenpad_02 Desvanecer
+settings_controls_onscreenpad_03 Sempre
+settings_controls_touchmovement Movimento
+settings_controls_touchmovement_01 D-Pad + Analógico
+settings_controls_touchmovement_02 D-Pad Menus + Analógico no Jogo
+settings_controls_touchmovement_03 Apenas D-Pad
+settings_controls_touchmovement_04 Apenas Analógico
+settings_controls_fadeopacity Opacidade de Desvanecimento
+settings_controls_shadowopacity Opacidade da Sombra
+settings_controls_onscreenscale Escala dos Controlos
+settings_controls_onscreenmiddletop Select/Start no Topo do Ecrã
+settings_controls_onscreenanalogbuttons Gatilhos Analógicos
+
+settings_controls_remapheader Mapeamento de Botões
+settings_controls_keyboad Teclado
+settings_controls_Up Cima
+settings_controls_Down Baixo
+settings_controls_Left Esquerda
+settings_controls_Right Direita
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 Estilo 1
+settings_controls_style_02 Estilo 2
+
+settings_mods_header Definições de Modificadores
+settings_mods_enemy_hp Vida (HP) Extra dos Inimigos
+settings_mods_damage Multiplicador de Dano Recebido
+settings_mods_damagecd Tempo de Invulnerabilidade
+settings_mods_movespeed Velocidade de Movimento Adicional
+settings_mods_nohearts Sem Drops de Corações
+settings_mods_dmglaunch Sem Efeito de Repulsão
+settings_mods_swordinteract Interações Extra da Espada
+settings_mods_mirrorreflect Reflexão do Mirror Shield
+
+settings_sword_header Interações da Espada
+settings_sword_grabnormal Apanhar Itens Caídos
+settings_sword_grabworlditem Apanhar Itens Fixos
+settings_sword_grabfairy Apanhar Fadas
+settings_sword_grabsmallkeys Apanhar Chaves Pequenas
+settings_sword_boomerang Ricochete do Bumerangue
+settings_sword_bouncebombs Ressalto de Bombas
+settings_sword_swordblock Cortar Projéteis Inimigos
+settings_sword_breakpots L2 Parte Potes e Crânios
+settings_sword_beamshrubs Raio L2 Corta Obj. do Ambiente
+
+settings_preset_header Definições de Predefinições
+settings_preset_setdefault Restaurar Padrões
+settings_preset_setmodern Definir Predefinição Moderna
+settings_preset_setclassic Definir Predefinição Clássica
+settings_preset_sethybrid Definir Predefinição Híbrida
+settings_preset_purist Definir Predefinição Purista
+
+settings_cheats_header Configurações de Trapaças
+settings_cheats_invincibility Invencibilidade
+settings_cheats_infiniterupees Rúpias Infinitas
+settings_cheats_infinitepowder Pó Mágico Infinito
+settings_cheats_infinitebombs Bombas Infinitas
+settings_cheats_infinitearrows Setas Infinitas
+settings_cheats_disableclipping Desativar Colisão
+settings_cheats_onehitkills Matar com um Golpe
+settings_cheats_giveallitems Ter Todos os Itens
+
+achievements_header Proezas
+achievements_reset Repor
+achievements_earned Obtido
+achievements_reset_header Repor conquistas?
+
+tooltip_default Seleciona uma opção para veres a sua descrição.
+
+photo_book_select Selecionar com o botão [CONFIRM].
+photo_book_cancel Cancelar com o botão [CANCEL].
+
+tooltip_newgame_noname Por favor, insere um nome válido para o ficheiro antes de tentares iniciar um novo jogo.
+tooltip_newgame_entry Este é o nome associado ao ficheiro de gravação atual e o nome pelo qual os NPCs se vão referir à personagem nos diálogos.
+tooltip_newgame_keyboard O teclado no ecrã permite-te inserir o nome associado a este ficheiro de gravação. Também podes usar o teclado do teu dispositivo para inserir o nome.
+tooltip_newgame_gametype0 "Usar Definições" utiliza simplesmente as definições atuais e não altera nada automaticamente. Independentemente da opção escolhida para o "Tipo de Jogo", as definições podem sempre ser alteradas mais tarde.
+tooltip_newgame_gametype1 "Moderno" ajusta as definições da câmara para usar a câmara moderna, que permite fazer zoom e deslocar a vista pelo mundo. Também configura os sinais musicais para se alinharem melhor com o ambiente.
+tooltip_newgame_gametype2 "Clássico" ajusta as definições da câmara para evocar o jogo original, que segmenta o mapa em "campos" e a câmara transita entre eles. Também configura os sinais musicais para se alinharem melhor com o jogo original.
+tooltip_newgame_gametype3 "Híbrido" usa a câmara moderna no mundo exterior e a câmara clássica no interior das masmorras. Também configura os sinais musicais para se alinharem melhor com o ambiente.
+tooltip_newgame_gametype4 "Purista" ajusta as definições para se aproximar o máximo possível do jogo original e minimiza o número de melhorias oferecidas por este port.
+tooltip_newgame_back Sai da página atual e regressa ao menu de seleção de ficheiros.
+tooltip_newgame_start Inicia um novo jogo com o nome inserido e o tipo de jogo selecionado.
+
+tooltip_menu_game Opções que afetam a jogabilidade, mas não alteram a estrutura e os comportamentos do jogo base.
+tooltip_menu_redux Opções originalmente baseadas no romhack "Redux" que afetam a jogabilidade e podem alterar o jogo base, adicionando funcionalidades que não existiam originalmente.
+tooltip_menu_camera Opções que afetam a câmara. Para uma experiência mais próxima do jogo original, ativa a "Câmara Clássica" para um deslocamento baseado no ecrã.
+tooltip_menu_video Opções para configurar as definições de vídeo. Estas definições estão geralmente relacionadas com o teu ecrã e a placa gráfica.
+tooltip_menu_graphics Opções para configurar os gráficos. Estas definições afetam a aparência dos gráficos no jogo.
+tooltip_menu_audio Opções que configuram o áudio. Permite alterar o volume da música e dos efeitos sonoros, assim como desativar a música ao apanhar power-ups.
+tooltip_menu_controls Opções que te permitem personalizar os controlos. Certifica-te de que selecionaste o tipo de comando nas opções do "Jogo" antes de os alterares aqui.
+tooltip_menu_mods Opções que afetam tanto a jogabilidade como a dificuldade. Podem adicionar mais Pontos de Vida aos monstros, aumentar o dano recebido, desativar os drops de corações, aumentar a velocidade de movimento, ou até bloquear projéteis com a espada.
+tooltip_menu_presets Oferece uma série de valores de opções predefinidas para ajustar rapidamente a experiência de jogo à escolha do jogador.
+tooltip_menu_cheats Ativa ou desativa várias trapaças que podem tornar o jogo muito mais fácil ou podem ser ativadas apenas por diversão.
+tooltip_menu_achieve Abre a janela de proezas que mostra a descrição e o progresso de cada proeza individual.
+
+tooltip_game_language Altera o idioma atual.
+tooltip_game_sublanguage Contém variações subtis nos diálogos dos NPCs. Atualmente suportado apenas em alguns idiomas. Esforços da comunidade para expandir esta opção e os guiões seriam muito apreciados.
+tooltip_game_menubricks Escolhe a textura da moldura que é usada durante os menus de opções, ou desativa a moldura por completo.
+tooltip_game_classicsword Esta opção faz com que a espada aja de forma mais parecida com o jogo original, onde apenas pode cortar um único objeto do terreno de cada vez (arbustos, relva, etc).
+tooltip_game_saveposition Memoriza o último ficheiro de gravação que foi selecionado e seleciona-o automaticamente ao carregar o menu principal. A seleção automática não é instantânea devido a limitações do design do menu.
+tooltip_game_autosave Guarda automaticamente o jogo sempre que ocorre uma transição de ecrã (exceto em masmorras). Se estiver desativado, não te esqueças de guardar o jogo manualmente! 
+tooltip_game_sharedstorage Os ficheiros de save são lidos e escritos em "/storage/emulated/0/LADXHD/SaveFiles" em vez do armazenamento restrito. Isto requer permissão do utilizador. O objetivo é permitir a utilização de aplicações como "SyncThing" para sincronizar saves entre dispositivos.
+tooltip_game_hide_achievement Oculta a sobreposição de conquistas que aparece no canto inferior direito do ecrã quando uma conquista é obtida. O efeito sonoro também pode ser silenciado nas definições de "Áudio".
+tooltip_game_itemsonright Exibe os ícones dos itens equipados no HUD no lado direito do ecrã em vez de no lado esquerdo.
+
+tooltip_redux_dungeonteleport_01 Esta opção permite o teletransporte para uma masmorra que tenha sido concluída através do mapa. A opção atualmente selecionada é "Desativado", pelo que o teletransporte através do mapa não está disponível.
+tooltip_redux_dungeonteleport_02 Esta opção permite o teletransporte para uma masmorra que tenha sido concluída através do mapa. A opção atualmente selecionada permite teletransportares-te para uma masmorra concluída entrando no mapa a partir do inventário, selecionando um nó de masmorra, e pressionando o botão [X].
+tooltip_redux_dungeonteleport_03 Esta opção permite o teletransporte para uma masmorra que tenha sido concluída através do mapa. A opção atualmente selecionada é semelhante à anterior, mas em vez de selecionar uma masmorra a partir do ecrã do mapa do inventário, substitui a canção do Manbo pelo teletransportador do mapa e permite selecionar o lago do Manbo.
+tooltip_redux_dungeonteleport_04 Esta opção permite o teletransporte para uma masmorra que tenha sido concluída através do mapa. A opção atualmente selecionada permite o teletransporte via o mapa do inventário e substitui a canção do Manbo pelo teletransportador do mapa. O teletransportador do mapa que aparece ao tocar a Canção do Manbo também permite selecionar o lago do Manbo.
+tooltip_redux_vwfont Substitui a fonte padrão do jogo por uma fonte de largura variável criada por "toruzz".
+tooltip_redux_nohelptext Desativa a maioria das caixas de diálogo ao tocar em objetos que requerem um item que te falta, e também desativa a maioria das caixas de diálogo ao apanhar itens e abrir baús.
+tooltip_redux_dialogskip Permite saltar as caixas de diálogo usando o botão "Start", que percorre rapidamente o texto e fecha a janela de diálogo automaticamente. Diálogos com perguntas só são saltados até ao ponto em que é necessária uma resposta do jogador.
+tooltip_redux_uncensor Remove a censura vista na versão norte-americana e nalgumas outras. Restaura os sprites originais do Hippo, e o item de troca e diálogo da Sereia.
+tooltip_redux_unmissables A Seashell Mansion dá sempre as recompensas de 5 e 10 conchas, o portão do Kanalet Castle pode ser reaberto, o Bow Wow, a Marin e o galo podem voltar a seguir-te após o Nível 8, o lojista oferece a recompra do teu nome se um item foi roubado, e mostra sempre o final secreto. 
+tooltip_redux_photoscolor Por predefinição as fotografias usam cores sépia como a versão DX original. Em alternativa, esta opção usa fotografias coloridas por "drestrada".
+tooltip_redux_noanimaldmg Faz com que os cuccos e os rafeiros encontrados pela Mabe Village não possam ser atacados. Esta opção desativa completamente as suas hitboxes de dano.
+
+tooltip_camera_cameratype A "Câmara Moderna" está centrada em Link e permite aproximar e afastar o zoom. A "Câmara Clássica" reproduz as transições de ecrã do jogo original. A "Câmara Personalizada" permite selecionar a câmara consoante o tipo de mapa.
+tooltip_camera_custommenu Configura o tipo de câmara utilizado consoante o tipo de mapa. Requer que o tipo de câmara esteja definido como "Câmara Personalizada".
+tooltip_camera_fogdiscovery Quando a "Câmera Moderna" é a câmera ativa, isto gera um efeito de névoa sobre os campos que ainda não foram descobertos.
+tooltip_camera_fogedgesharp Determina o quanto a borda da névoa se mistura com os campos descobertos. Aumentar este valor reduzirá o desfoque e tornará a borda da névoa mais nítida. Note que há retornos decrescentes notáveis acima de 35%.
+tooltip_camera_fogopacity Determina quão "espessa" é a névoa, ou melhor, quão bem se consegue ver através dela. Definir este valor para 100% torna a névoa completamente opaca.
+tooltip_camera_fogfadetime Este é o tempo que demora para um campo recém-descoberto se tornar visível ao entrar nele. A névoa irá desaparecer gradualmente no tempo especificado aqui. O tempo está em milissegundos (1000ms = 1 segundo).
+tooltip_camera_camborder Quando a câmara clássica está ativada, isto coloca uma moldura em redor do campo atual e esconde os objetos que não estão a ser animados. A moldura pode ser uma moldura preta básica ou a moldura do Super Game Boy. Isto simula de certa forma a proporção de aspeto do Game Boy original, menos os 16 píxeis do HUD.
+tooltip_camera_camborderA Nenhuma
+tooltip_camera_camborderB Preta
+tooltip_camera_camborderC Super Game Boy
+tooltip_camera_blackpercent Determina o valor alpha (transparência) da moldura da câmara clássica. Pode ser usado para mostrar algum do campo de jogo circundante sem o cortar por completo.
+tooltip_camera_bias Desloca o viewport simulado para a posição selecionada se a escala atual não cobrir todo o tamanho vertical do ecrã. Esta opção não funciona com a borda do Super Game Boy ativada.
+tooltip_camera_biasA Centrado
+tooltip_camera_biasB Topo
+tooltip_camera_biasC Baixo
+tooltip_camera_classicscaling Desativar esta opção permite escalar manualmente a "Câmara Clássica" através da Escala do Jogo em vez de adaptar automaticamente o campo de visão à resolução superior de número inteiro mais próxima. Esta opção tem o potencial de "quebrar" o campo de visão se for definida num valor demasiado grande ou demasiado pequeno.
+tooltip_camera_persistentitems Ao mudar de campo com a "Câmera Clássica" ativada (ou seja, a tela rola), drops de itens como rúpias, corações e powerups não desaparecerão e permanecerão ao retornar ao campo.
+tooltip_camera_cameralock Bloqueia a câmera enquanto a "Câmera Moderna" está ativa. Quando esta opção está desativada, o analógico direito pode mover a câmera. Não tem efeito quando a "Câmera Clássica" está ativada.
+tooltip_camera_smoothcamera Sempre que a câmera muda de alvo, isto adiciona um suave efeito de panorâmica. Quando desativado, a câmera irá encaixar diretamente no lugar. Afeta ambas as câmeras, mas a "Câmera Clássica" beneficia mais.
+
+tooltip_camcustom_overworld Escolhe a câmara ativa no mapa do Mundo Exterior.
+tooltip_camcustom_houses Escolhe a câmara ativa dentro de mapas do tipo casa.
+tooltip_camcustom_caves Escolhe a câmara ativa dentro de mapas do tipo caverna.
+tooltip_camcustom_dungeons Escolhe a câmara ativa dentro das masmorras.
+tooltip_camcustom_castle Escolhe a câmara ativa dentro do Castelo Kanalet e do Santuário do Rosto Sul.
+tooltip_camcustom_egg Escolhe a câmara ativa ao explorar o interior do ovo.
+tooltip_camcustom_2dMaps Escolhe a câmara ativa nos mapas 2D. Tem prioridade sobre os outros tipos.
+tooltip_camcustom_bosses Escolhe a câmara ativa durante as batalhas contra chefes. Tem prioridade sobre os outros tipos.
+
+tooltip_video_game_scale Determina o tamanho de um "píxel de jogo" relativamente à resolução do Game Boy. Por exemplo, uma escala de 10 significa que a resolução de um píxel do jogo corresponde a 10x10 píxeis no teu ecrã. Abaixo de 1x é uma percentagem de um píxel original. 
+tooltip_video_ui_scale Isto determina o quão grande é apresentada a interface de utilizador (UI). O valor da escala é arbitrário e não está correlacionado com os jogos originais. Simplesmente escolhe a escala que preferires.
+tooltip_video_fullscreen Define o modo de ecrã atual: Janela, Ecrã Inteiro sem Margens, e Ecrã Inteiro Exclusivo. É recomendado usares o modo Sem Margens a não ser que precises mesmo do modo Exclusivo para algum propósito específico, tal como compatibilidade com software externo. Premir Alt + Enter permite-te alternar rapidamente entre os modos de Janela e Ecrã Inteiro sem Margens.
+tooltip_video_fps_lock Isto bloqueia a taxa de fotogramas (FPS) à taxa de atualização do teu ecrã. Se desativado, a taxa de fotogramas será a mais alta possível.
+tooltip_video_opaquehud Desativa todos os efeitos de desfoque da interface e usa fundos sólidos em vez disso. Isto pode ajudar a melhorar a performance em dispositivos mais modestos.
+tooltip_video_pixelsnap Ativar esta opção bloqueia as bordas de pixels dos sprites de forma semelhante a uma grelha LCD. A distância mínima que qualquer objeto pode mover é um pixel de jogo inteiro. Quando desativado, os objetos podem mover-se em passos de subpixel, o que parece muito mais "suave" ao custo da precisão.
+tooltip_video_pixelgrid Uma grelha de pixels é desenhada sobre todo o ecrã, replicando o efeito de "grelha LCD" de consolas retro como a Game Boy Color, onde este jogo teve origem. Esta funcionalidade requer o "Alinhamento de Pixels" para funcionar corretamente e não funcionará sem ele.
+tooltip_video_epilepsysafe Desativa os efeitos de luzes intermitentes vistos ao aumentar os máximos dos itens ou ao bater nos Buzz Blobs. Também desativa outros efeitos intermitentes em inimigos como os Sparks e as Antifairies.
+
+tooptip_graphics_sequencescale Um acréscimo à Escala da Interface especificamente concebido para as sequências dentro do jogo. Logo, se a Escala da Interface for 3, e esta estiver configurada para 2, a escala da sequência será 5. Isto inclui as sequências fotográficas, as imagens e as cutscenes em jogo. O valor máximo de segurança costuma ser +2. Um valor demasiado elevado não te garante que estejas isento de exceder os limites do ecrã.
+tooltip_graphics_colorcorrect O Game Boy Color original não tinha ecrã retroiluminado e escurecia as cores, por isso os jogos compensavam com paletas de cores saturadas. A correção de cor tenta fazer com que tudo apareça como no hardware original do Game Boy Color.
+tooltip_graphics_shadows Quando ativado, são geradas sombras de forma dinâmica ao redor de todos os sprites usando a forma dos mesmos como referência. Quando desativado, são usadas antes as sombras de sprite originais mas apenas para o Link, os inimigos, e NPCs que se encontrem no ar.
+tooltip_graphics_fogeffects Desativa o efeito de nevoeiro usado na Floresta Misteriosa, que é a floresta que fica mesmo acima da Mabe Village.
+tooltip_graphics_nogloballights Ativa a iluminação global que é aplicada em todos os mapas. Esta iluminação é usada para escurecer o ambiente e melhora bastante os efeitos de luz emitidos pelos objetos. 
+tooltip_graphics_noobjectlights Ativa os efeitos de iluminação emitidos pelos objetos. Embora a iluminação de objetos não exija que a iluminação global esteja ativada, ela quase não tem efeito prático sem a mesma.
+tooltip_graphics_screenshake Ativa ou desativa os efeitos de tremor de ecrã originais. Isto inclui chocares contra coisas com as Pegasus Boots, seres eletrocutado, abrires as entradas das masmorras, os bosses a sacudirem o ecrã, e muito mais. 
+tooltip_graphics_exscreenshake Ativa ou desativa efeitos extras de tremor de ecrã que não estavam no jogo original. Isto inclui quando o Link sofre dano, quando bombas explodem, novos efeitos no ambiente e novos efeitos em inimigos e bosses. 
+tooltip_graphics_classicsprites No jogo original, os sprites podiam diferir no inventário em comparação ao campo de jogo. Este port opta por mostrar um único sprite para consistência. Ativar esta opção restaura a apresentação de sprites diferentes como no jogo original.
+
+tooltip_audio_music_volume O volume da música do jogo. 
+tooltip_audio_effect_volume O volume dos efeitos sonoros do jogo.
+tooltip_audio_classic_music Determina os momentos em que a música transita no mundo exterior. Quando desativado (moderno), a música respeita as zonas do tilemap de forma natural; quando ativado (clássico), a música respeita a quadrícula do jogo original. A diferença entre estar ativado ou desativado é bastante subtil. Usa a zona este da Mabe Village para testar a diferença.
+tooltip_audio_mute_inactive Silencia todo o áudio e os efeitos sonoros quando a janela do jogo não for a tua janela em foco.
+tooltip_audio_heartbeep Desativa o som do apito contínuo quando os teus corações caem abaixo de um certo limite.
+tooltip_audio_mute_powerups Ao apanhares uma Guardian Acorn ou um Piece of Power, esta opção desativa a música triunfante que começa a tocar.
+tooltip_audio_mute_achievement Desativa o efeito sonoro que é reproduzido quando uma conquista é obtida.
+
+tooltip_controls_deadzone A percentagem de curso que o analógico tem de ser pressionado antes de começar a responder ao teu comando. A não ser que tenhas a Zona Morta configurada em noutro software, recomenda-se não reduzir isto a baixo dos 10%, pois isso pode fazer com que a tua personagem flutue sem lhe tocares. Valores acima da predefinição podem ser bastante úteis para comandos que tenham problemas de "drift".
+tooltip_controls_onscreen Permite-te configurar as opções associadas aos controlos mostrados no ecrã (exclusivos ao port para Android).
+tooltip_controls_gamepad Escolhe o tipo de comando para que te sejam exibidos os botões corretos do ecrã. Suporta comandos estilo Xbox, PlayStation e Nintendo.
+tooltip_controls_remap Remapeia os botões do teclado e do teu comando para a disposição que mais gostares. Certifica-te de alterar primeiro o tipo de comando nas opções para condizer com o teu comando atual antes de procederes a um remapeamento.
+tooltip_controls_triggersscale Permite-te alterar a Escala atual do Jogo usando os dois botões frontais superiores do comando (LB/RB, L1/R1, L/R). Se a opção "Seis Botões de Inventário" estiver ativada, serão antes os dois gatilhos traseiros (LT/RT, L2/R2, ou ZL/ZR) a mudarem a Escala do Jogo.
+tooltip_controls_sixbuttons Ativa a utilização de seis botões no teu comando para equipar os teus itens do inventário, em vez dos típicos quatro. Isto faz com que os itens possam também ser equipados aos teus dois botões frontais superiores (LB/RB, L1/R1, L/R) e transpõe os ajustes da escala do jogo para os gatilhos traseiros do comando (LT/RT, L2/R2, ZL/ZR).
+tooltip_controls_swapconfirm Troca a atribuição dos botões de confirmar e cancelar usados para navegares os menus e os diálogos.
+tooltip_controls_classicmove Esta opção recria o funcionamento preciso do movimento no jogo original, cedendo ao Link a habilidade de andar para trás em câmara lenta (moonwalk). Combina esta opção em simultâneo com o "Analógico Digital" para replidares por completo o sistema e a física de movimento originais.
+tooltip_controls_digitalanalog Remove a sensibilidade fluida associada ao analógico e faz com que o movimento do Link ocorra somente ao longo das oito direções dispostas em ângulos de 45 graus (Cima, Baixo, Esquerda, Direita e nas respetivas Diagonais). Isto fará com que o controlo sobre o Link se sinta muito mais orgânico e fiel em relação ao jogo original, agindo tal e qual como se o estivesses a jogar diretamente de um emulador.
+
+tooltip_controls_onscreenpad Ativa ou desativa os controlos no ecrã. "Desativado" é autoexplicativo. "Desvanecer" fará desvanecer os botões quando não estiverem a ser ativamente usados. "Sempre" mantém todos os botões visíveis no ecrã em qualquer circunstância.
+tooltip_controls_touchmovement Define a forma como pretendes visualizar o D-Pad e/ou o Stick Analógico tátil. Ambos podem estar permanentemente visíveis, permitindo usar o D-Pad nos menus e o Analógico para mexer o Link, ou também podes configurar apenas um ou outro de cada vez.
+tooltip_controls_fadeopacity Quando os controlos de ecrã se encontram configurados para "Desvanecer", isto decide qual é a sua opacidade mínima enquanto se mantêm intocados.
+tooltip_controls_shadowopacity A opacidade da sombra que recai sob os teus controlos no ecrã. Esta opção mantém-se independentemente de que modo escolheste atribuir à tua visibilidade base.
+tooltip_controls_onscreenscale O valor estipulado que define a escala com que os teus controlos de ecrã são expostos.
+tooltip_controls_onscreenmiddletop Passa a posicionar o teu botão de Start e o teu botão Select no topo central do teu ecrã invés da habitual base inferior.
+tooltip_controls_onscreenanalogbuttons Possibilita teres também uns botões equivalentes no ecrã ao clique inerente nos analógicos (LS/L3 e RS/R3). O teu botão correspondente ao R3 torna possível que centralizes a perspetiva visual da câmara logo que a tenhas destrancado primeiro.
+
+tooltip_mods_enemy_hp Atribui uns quantos Pontos de Vida suplementares e extra à totalidade dos inimigos de uma perspetiva globalizada. Como amostra disso mesmo, se tu acrescentares 3 pontos extra à barra de HP inimigo, então uma aberração base que teria apenas 1 ponto de vida natural terá um somatório final com um total máximo de 4 HP, ao passo que os teus bosses contarão na hora do combate os seus 8 Pontos originais mais um saldo adicional equivalendo a uma marca resistente na casa dos 11.
+tooltip_mods_damage Age como um puro fator multiplicativo do total global correspondente à base inata de dano inerente a todos os impactos que possas vir a suportar quer derivado de agressões exteriores de fontes diversas como as bestas em campo tal como eventuais impactos colaterais e passivos no decorrer adverso e turbulento em campo e por todo o jogo dentro. Ilustrando isto num exemplo, no caso de teres decidido o teu fator em torno da escala nos 4 valores, se antes costumarias apenas ver drenar meia marca do teu precioso leque diário vitalício como mera amostra naturalística por via penal do jogo original então deverás sentir no lugar equivalente que o peso recai dolorosamente multiplicando as taxas por fatores colaterais de agressividade extrema vendo que nesse lugar te foram roubadas duas das tuas integridades e inteirezas formadas ao invés de pífias meias corajosas porções avulsas no painel primário visual em tela.
+tooltip_mods_damagecd Toma por base que a tua base de fator temporal padrão é estimada nativamente na casa do fator constante ao patamar de 16 vezes exatas (cujo real expoente é medido na casa correspondente do cálculo da fração intermédia de equivalência a rondar 1056 micro-segundos absolutos). A partir da base inerente tu contas na raiz deste painel com um valor numérico o qual atua puramente como agente basilar do chamado coeficiente para o tempo de recarga invulnerável para quando dás por ti em sofrimento na pele perante as ameaças. Logo ele rege por quanto tempo tu estarás num plano isento a danos antes das pancadas seguintes fazerem também elas um dente e entalhe adicional a tua pessoa.
+tooltip_mods_movespeed Incrementa de forma generalizada e ao nível transversal a base absoluta que tens de locomoção pela vasta ilha por somatórios puros associados sob escalas diretas em percentis absolutas esticando aos redondos 100%. Com ela irás observar a devida mutação benéfica atuante sob variadíssimas gamas ativas incluindo a tua agilidade andante pedestre na relva e areia por base bem tal como tu vês o Link agir também ele sob a gravidade natatória na baía assim de forma unânime por todos e por base transversal de campo até escaladas pelas vias terrestres íngremes na fronteira gélida pelas colinas afora que dás por ela de estares sempre expedito em ritmo ativo.
+tooltip_mods_nohearts Retira peremptoriamente de toda e qualquer base global existente o chamado dom inato bondoso cedido por monstros eliminados com afinco tal bem como dos caixotes de esmagos e as próprias arbustivas limpezas locais do ambiente que fiques inteirado assim por dizeres sem nenhuns pequenos doces de curas vitais para restauro orgânico dos teus pequenos estragos sob as bases orgânicas contadoras das marcas rubras e vitais exibidas permanentemente no teu painel alto ativo de observação na HUD por cima e lateralmente afixado ao extremo visível constante por ti. Restará aos teus instintos base ires num rumo para alcançares uma das raras abençoadas fadas mágicas das fendas e túmulos perdidos para restauro da energia totalizada bem como do teu bolso deverás valer e acorrer pelo teu próprio suor das faturas locais se por bem quiseres e optares visitar a excêntrica e endinheirada comerciante Tracy por via medicinal garantida a troco do preço das rupias que deténs em posse base num negócio puro.
+tooltip_mods_dmglaunch Extingue na totalidade base inata ao jogo nativo o denominado lançamento para as traseiras forçado com que tu abates momentaneamente ao golpe em choque puro por inércia os rivais da fauna aquando te deténs em porte ostensivo natural de efeito passivo constante do invólucro do fragmento apelidado com base nas energias supremas dos pequenos fragmentos do poder absoluto com o cognome originário em Piece of Power para quando andas na posse momentânea natural pelo tempo a contar do tique taque nativo em base com as fardas místicas carmesins apanhadas sob via direta oculta ao completares o labirinto opcional de colorimetria original da cor e espectro natural colorida com o nome DX de Color Dungeon inata também.
+tooltip_mods_swordinteract Adiciona à mera basilar utilidade ofensiva normal que dás com a tua excalibur na prática ativa variados efeitos secundários que aumentam a gama do seu foco colateral base por inércia e puro uso extensivo e abrangente generalizado para além de picar puramente. Passas com o seu dom agora a colher de rompante as próprias e benéficas e elusivas místicas aladas em modo rápido e prático perante eventuais despistes pelo terreno sem a base orgânica inata em jogo em não mais do que um ápice contundente de forma instantânea na captura real naturalista assim para também bater e contrariar ativamente à estalada de encontro o voo de volta perante a inércia original que a forma boomerang em arcos elípticos curvos ditava antes nas lides originais que tomava perante e sobre todos vós em combates de arcos e trajetórias com ele por alvo principal ou por bases ativas para mandares ativamente os teus explosivos ativos e em contagem descendente nas proximidades locais por aí com a inércia colateral empurrada e contundente em ricochetes para afastamento estratégico antes do boom derradeiro e passares mesmo por dom também por exemplo puro e base a poder e conseguir também rachar com a versão avançada das fadas ferreiras em dom supremo a partir dos cacos nativos e feixes brilhantes emitidos à inércia nos alvos todos aqueles teus frágeis arranjos botânicos ou até vasos empoleirados que se interponham pela via central ou à distanciada visão frontal até a estilhaçares também eles à pala nela assim pelo campo que o olho vislumbre longe em raio fixo.
+tooltip_mods_mirrorreflect Imbuí perante o teu apetrecho espelhado e impenetrável das investidas oculares de frentes ativas inatas os seus puros doms ativos refletores que te dão à luz e via por si só a aptidão para repelir ativamente de volta pelo campo na inversa e reversível forma contundente e paralela e diametral de tiro ao alvo a grande e total maioria pura contundente atirada pelas bestas do exército avesso das frentes alheias que na pele dos raios atirados perante nós com as trajetórias invertidas regressam mais velozes ainda no seu regresso rumo nativo à frente do inimigo em inércia ofensiva perigosa sendo eles também puros fatores lesivos passivos por contacto ativo cruzado ao esbarrarem eles perante as forças adversas que também caiam pelo traçado das trajetórias devolvidas até caírem redondamente todos.
+
+tooltip_sword_grabnormal Comuta entre os fatores nativos puramente restritivos do game em modo orgânico nativo que determinam a tua possibilidade basilar de te veres perante a hipótese base puramente dependente em seres ou não a ti mesmo habilitado inatamente para simplesmente alcançares pelos recursos basilares largados puramente pelas baixas do leque opositivo que dão de si os recursos vitais inatos para recompensa tua na apanha e usufruto final perante o embate ofensivo mortal entre rupias as quais apanhas assim para benefício do teu portfólio rico ativo como pequenos donativos e rubis base em formas vitais que o bater ativamente na sua pele lhes permite recolher até em apetrechos divinos do pequeno acervo sagrado com que a árvore os contempla como benesses a ti cedidos por si só numa inércia instantânea via espada com o poder contundente assim. Toma atenção com a prerrogativa pura vital em inércia de te obrigares ativamente em obrigação real ao chamado e recarregamento da área de cenário corrente como o mapa na íntegra local à vista do teu raio para tu averiguares o sucesso base passivo que tal comutação incide em efeitos notórios base na mecânica no local.
+tooltip_sword_grabworlditem Oferece-te as bases nativas em inércia orgânica plena das aptidões singulares em alcançares na estática forma base puros itens imóveis nativos pelo simples uso exímio e perito base em alcance de envergadura por extensão da tua própria arma nativa laminada em alcance por exemplo puramente nos casos emblemáticos da tua recetividade na expansão cardíaca das tuas metades até às divinas dádivas douradas da coroa orgânica do arbusto para com os guardiões reais a troco dos sons celestiais na clave ou a inércia para abrires e deteres em posse plena puramente inata e original o teu trunfo de chaves vitais inatas nas escotilhas basilares ou puramente com inércia em bases raras e inatas. Toma atenção com a prerrogativa pura vital em inércia de te obrigares ativamente em obrigação real ao chamado e recarregamento da área de cenário corrente como o mapa na íntegra local à vista do teu raio para tu averiguares o sucesso base passivo que tal comutação incide em efeitos notórios base na mecânica no local.
+tooltip_sword_grabfairy Concede a pura competência nativa orgânica que se baseia por extensão em esticões precisos com a tua arma laminada puramente baseada numa capacidade passiva em ti cravada de puxar puramente para teu restauro imediato as aladas e divinas deidades basilares inatas base que curam à simples estocada e alcance da arma a que te sujeitas em inércia base na apanha de proximidades ativas no seu traçado local puramente ao toque e alcance passivos.
+tooltip_sword_grabsmallkeys Fomenta por bases da mecânica uma competência pura do domínio e proficiência inata a ti atribuído e focado por expansão puramente pela ponta e gume em poderes atrair na base contundente pelo aço esticado as pequeníssimas engrenagens basilares das masmorras inatas puramente em inércia vital à porta fechada por aí aos montes com base estendida em puxada vital à inércia com a tua lamina perante ti mesmo esticada assim ao longe sem dar o peito físico inato real do teu corpo natural pela proximidade colada base que impõe na matriz de captura real de objetos nativos do género e espécime orgânico local puro. Toma atenção com a prerrogativa pura vital em inércia de te obrigares ativamente em obrigação real ao chamado e recarregamento da área de cenário corrente como o mapa na íntegra local à vista do teu raio para tu averiguares o sucesso base passivo que tal comutação incide em efeitos notórios base na mecânica no local.
+tooltip_sword_boomerang O simples facto perante a investida e pura largada base da curva lançada ao longe rumo ativo do item curvo a qual rege o princípio de trajetória em torno de arcos parabólicos perante a inércia colateral que impõe agora a possibilidade inata de ser de novo e pura embate comtundente base ser revertida e pura contundente com base na pancada em que a arma afiada e impetuosa o intercete por vias da espada nativa do portador original para repor os valores de curso inatos assim de rajada limpa no voo ativo passivo independentemente do género ofensivo efetuado da tua parte desde giratórios e meras diretas nativas e simples ofensas inatas a ele.
+tooltip_sword_bouncebombs Baseada num pressuposto da inércia pura da dinâmica que fomenta a tua liberdade natural as bombas passíveis à inércia pousadas passivamente nas proximidades em contagem decrescente pelo próprio impulsionador inato das mesmas nas imediações poderão sob simples toques agressivos com o ferro serem contundentes atiradas a novas esferas e reposicionadas via pancadas rudes em arremessos inatos sem pegar lhes de volta ao colo e base a base pura em instantes voláteis cruciais e fulcrais à evasão tática local e perene nas hostilidades ao longe por precauções bélicas puras em combate ativo no terreno à pala do alcance ativo passivo pelo gume do material assim exposto ao ressalto perene para todos vocês que apreciam as belas táticas evasivas perenes locais.
+tooltip_sword_swordblock Permite que as afiadas perenes puras em estocadas peritas com o timing exato local consigam a pura e imaculada glória da cortada fulminante dos disparos opositivos na base puramente perene aos dardos orgânicos arremessados perante as feras dos moblins ou mesmo perante os calibres balísticos rochosos inatos aos teus temíveis moluscos octoroks inatos nas águas e pradarias a atirarem aos montes perante os nativos em defesa de campos inatos puros à defesa hostil da base armada à inércia limpa com mestria exata dos cortes no decurso passivo.
+tooltip_sword_breakpots Impõe perante as mecânicas que a arma laminada no estado inato máximo forjado ao escalão 2 inato e as respetivas puras e divinas setas luminosas que de lá puramente com a inércia da base do teu vigor máximo são destiladas possam doravante ambas por igual medida puramente perene arrebentar os frágeis receptáculos do olario basilar bem como esmigalhar de forma contundente passiva na íntegra perene do solo inato toda a caveira sinistra basilar nativa por aí no terreno puramente em cacos com as suas ofensas perenes à inércia base dos projeteis e afins puros da lâmina do dito patamar sagrado nativo original aos contos das lendas ativas no imaginário das relíquias em Koholint Island ativas no teu jogo agora em pleno vigor mecânico e inato.
+tooltip_sword_beamshrubs Permite que o raio de espada de nível 2 corte diretamente pela erva e arbustos, e também permite que o raio quebre aglomerados de cristais.
+
+tooltip_preset_setdefault Coloca as ditas e passivas tuas regulações inatas nos níveis de regência base puramente predefinidos do momento do arranque e estado de conceção inicial. Algumas parcelas puras do escopo em causa contudo preservam na íntegra inata as suas definições imaculadas incólumes não se submetendo puramente à dita regressão sistémica nas gamas do vernáculo inato a base no idioma puro e bases inatas nos domínios associados a visualizações abrangentes puros do dito e crasso estado perene ao uso em janelas restritas puras a ti ou tela total em imersões totais ativas na regência local passiva e natural à visualização puramente nativa em inércia pura a tela toda por exemplo original passivo no ecrã teu ao momento de uso.
+tooltip_preset_setmodern Organiza a totalidade nativa por vias ativas numa seleção em prol de garantir ao momento basilar em que tomas regência perene pura do comando da tua deambulação a base por si moderna no teu uso puro do momento que tomas no dito sistema para com as dinâmicas naturais inatas perenes que são ditadas na base. Da tua câmara que passa a desvendar em fluidez passível pura num zoom imaculado ao teu ritmo que impões e na locomoção panorâmica de base nas vistas em redor, às comodidades baseadas puros confortos táticos do port introduzido como qualidades inatas basais de jogatina do port em questão estarem por ti também no uso em modo de disponibilidade em massa perene e até na simples pura naturalidade basilar que transborda inata perene a partir do pano que embala no terreno as lides sonoras ao momento em fluída adequação inata por locais assim mais consentâneos originais puros perenes do mundo original em ambiente puro. 
+tooltip_preset_setclassic Agrupa nas tuas matrizes orgânicas todas aquelas que puramente conferem bases à inércia perene e imaculada da jogabilidade pura inata a era de transatos idos saudosos das antigas purezas nativas retro da franquia em modo orgânico para passivamente sentires-te que ativamente jogas sob condutas da base dos purismos passivos ativamente passados da sua pureza da gameboy base inata pura a mecânica da altura. Usa-se a câmara inata de restrições por limitação basilar nas tuas transições por salto inato nos tabuleiros do visor puramente e na base da matriz perene das benesses ativas ao lazer retêm-se uns quão parcos purismos no conforto tático de facilitação do percurso no momento em que passivamente perene a inércia da partitura em solo mantém e retém inata a base quadrícula orgânica pura como estipula o jogo do seu ancestral inato passado original do hardware em tempo ativo.
+tooltip_preset_sethybrid Harmoniza a tua lista basilar nas ditas seleções puras por via de facultar por sua vez à pura base e regência inata perene à jogabilidade a inércia conjunta simbiótica da modernidade pura e inata do controlo atual com os tons clássicos por si da saudade. Puxas para ti ao ar livre inato do teu céu a livre perspetiva da visualização das maravilhas nativas da ilha nas deambulações panorâmicas puros mas entras pura e simplesmente nativo às transições dos teus antepassados sob as catacumbas e fossos originais num visor puramente transato da quadra inata da área nos calabouços de inércia à tela limitada base de origem. Algumas ajudas táticas puros passivas perenes encontram as suas aberturas disponíveis no meio prático também para o teu uso na jornada com base inata à paisagem em sons adaptáveis por regências originais de cenário inato para as tuas sinfonias orgânicas basilares passivas da deambulação perene natural pura ao deambular exterior.
+tooltip_preset_purist Fixa para o teu rumo a totalidade pura e exata inata de regulações nativas na via perene pura ativamente em função uníssona sob cópia exata fiel das raízes base puras puritanas originais puramente ditadas nas limitações e mecânicas da máquina e catucho da lenda original pura excluindo apenas os melhoramentos perenes a base na própria alçada obrigatória puramente arquitetural dos portes atuais para o PC em hardware de 32 bits a rodar lides dos sistemas atuais puros nativos e passíveis em vigor da contemporaneidade em código puramente portado inato perene. Desativa-se à justa da conta em pleno todas as tuas premissas puros perenes táticas dos bónus e do lazer que dás por elas para agilizar o percurso em qualidades inerentes puramente passivas assim para na reversa impores ativamente puras bases que dão à lide as sensações nativas exatas perenes passivas ativas originais perenes do lançamento puritano basilar perene passivo na tua viagem pela mítica passiva nativa original do jogo.
+
+tooltip_cheats_invincibility Torna Link imune a danos. Ao contrário de definir o Multiplicador de Dano Recebido como 0, isto também elimina a deteção de golpes e o recuo.
+tooltip_cheats_infiniterupees Define a contagem atual de rúpias para 999 e faz com que nunca seja reduzida. Isto é irreversível! Não atives esta opção a menos que estejas bem com fazer batota na tua contagem de rúpias!
+tooltip_cheats_infinitepowder Define a contagem de pó mágico para o máximo atual e faz com que nunca seja reduzida. Isto é irreversível! Não atives esta opção a menos que estejas bem com fazer batota!
+tooltip_cheats_infinitebombs Define a contagem de bombas para o máximo atual e faz com que nunca seja reduzida. Isto é irreversível! Não atives esta opção a menos que estejas bem com fazer batota!
+tooltip_cheats_infinitearrows Define a contagem de setas para o máximo atual e faz com que nunca seja reduzida. Isto é irreversível! Não atives esta opção a menos que estejas bem com fazer batota!
+tooltip_cheats_disableclipping Permite que Link passe pela maioria dos objetos sólidos. Não inclui buracos, inimigos, água e lava.
+tooltip_cheats_onehitkills Se o tipo de ataque pode causar dano ao inimigo atingido, o inimigo será sempre derrotado com um único golpe.
+tooltip_cheats_giveallitems Dá a Link acesso a todos os itens equipáveis do nível mais alto. Quando a batota é desativada, apenas os itens obtidos legitimamente serão devolvidos ao jogador.

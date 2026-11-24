@@ -1,0 +1,411 @@
+map_overlay_close Close
+overlay_map Map
+overlay_inventory Inventory
+overlay_teleport Teleport
+savename_thief Thief
+
+main_menu_select_header Player Select
+main_menu_bottom_header 
+main_menu_new_game New Game
+main_menu_settings Settings
+main_menu_copy Copy
+main_menu_erase Erase
+main_menu_quit Quit
+main_menu_back Back
+main_menu_select Select
+main_menu_tooltip Tooltip
+
+main_menu_delete_confirmation_header Erase Save?
+main_menu_delete_confirmation_header_yes Yes
+main_menu_delete_confirmation_header_no No
+
+main_menu_copy_confirmation_header Copy Save?
+main_menu_copy_confirmation_header_yes Yes
+main_menu_copy_confirmation_header_no No
+
+main_menu_copy_header Copy Save
+main_menu_copy_from From
+main_menu_copy_to To
+main_menu_copy_empty -Empty-
+main_menu_copy_arrow [RIGHT]
+main_menu_copy_back Back
+
+new_game_menu_save_name Name Entry:
+new_game_menu_back Back
+new_game_menu_create_file Create File
+new_game_menu_game_type Game Type:
+new_game_menu_gtype_settings Use Settings
+new_game_menu_gtype_modern Modern
+new_game_menu_gtype_classic Classic
+new_game_menu_gtype_hybrid Hybrid
+new_game_menu_gtype_purist Purist
+
+game_menu_header Menu
+game_menu_back_to_game Return to Game
+game_menu_settings Settings
+game_menu_save_continue Save & Continue
+game_menu_exit_to_the_menu Quit to Menu
+game_menu_exit_the_game Exit Game
+
+game_menu_exit_header Are you sure?
+game_menu_exit_no No
+game_menu_exit_yes Yes
+
+gameover_header GameOver
+gameover_continue Continue
+gameover_quit Quit
+
+settings_menu_header Settings
+settings_menu_game Game
+settings_menu_redux Redux
+settings_menu_camera Camera
+settings_menu_video Video
+settings_menu_graphics Graphics
+settings_menu_audio Audio
+settings_menu_controls Controls
+settings_menu_mods Modifiers
+settings_menu_presets Presets
+settings_menu_cheats Cheats
+settings_menu_achieve Achievements
+settings_menu_back Back
+
+settings_game_header Game Settings
+settings_game_language Language: English
+settings_game_sublanguage Language:
+settings_game_sublanguage_01 Original Text
+settings_game_sublanguage_02 Modern Remake
+settings_game_sublanguage_03 Alternative
+settings_game_menubricks Menu Border
+settings_game_menubricksA LADX
+settings_game_menubricksB Original
+settings_game_menubricksC Black
+settings_game_classicsword Classic Sword
+settings_game_saveposition Select Last Save
+settings_game_autosave Autosave
+settings_game_sharedstorage Saves in Shared Storage
+settings_game_hide_achievement Hide Achievement Notification
+settings_game_items_on_right Item Slots on Right
+
+settings_redux_header Redux Settings
+settings_redux_dungeonteleport Map Teleporter:
+settings_redux_dungeonteleport_01 Disabled
+settings_redux_dungeonteleport_02 Map Only
+settings_redux_dungeonteleport_03 Manbo Only
+settings_redux_dungeonteleport_04 Map + Manbo
+settings_redux_vwfont Variable Width Font
+settings_redux_nohelptext Disable Helper Messages
+settings_redux_dialogskip Enable Dialog Skip
+settings_redux_uncensor Disable Censorship
+settings_redux_unmissables Nothing is Missable
+settings_redux_photoscolor Colored Photographs
+settings_redux_noanimaldmg No Animal Damage
+
+settings_camera_header Camera Settings
+settings_camera_cameratype Type
+settings_camera_cameratypeA Modern Camera
+settings_camera_cameratypeB Classic Camera
+settings_camera_cameratypeC Custom Camera
+settings_camera_custommenu Customize Camera
+settings_camera_fogdiscovery Map Discovery Fog
+settings_camera_fogedgesharp Fog Edge Sharpness
+settings_camera_fogopacity Fog Opacity
+settings_camera_fogfadetime Fog Fade Time
+settings_camera_camborder Classic Border
+settings_camera_blackpercent Classic Border Alpha
+settings_camera_bias Classic Border Bias
+settings_camera_classicscaling Classic Scale Lock
+settings_camera_persistentitems Persistent Item Drops
+settings_camera_cameralock Camera Lock
+settings_camera_smoothcamera Smooth Camera
+
+settings_camcustom_header Customize Camera
+settings_camcustom_modern Modern
+settings_camcustom_classic Classic
+settings_camcustom_overworld Overworld
+settings_camcustom_houses Houses
+settings_camcustom_caves Caves
+settings_camcustom_dungeons Dungeons
+settings_camcustom_castle Castle
+settings_camcustom_egg Inside Egg
+settings_camcustom_2dMaps 2D Maps
+settings_camcustom_bosses Boss Fights
+
+settings_video_header Video Settings
+settings_video_game_scale Game Scale:
+settings_video_ui_scale UI Scale:
+settings_video_autodetect Auto-Detect
+settings_video_fullscreen Screen Mode:
+settings_video_fullscreen_01 Window
+settings_video_fullscreen_02 Borderless Fullscreen
+settings_video_fullscreen_03 Exclusive Fullscreen
+settings_video_fps_lock Vertical Sync
+settings_video_opaquehud Disable UI Blur
+settings_video_pixelsnap Pixel Snapping
+settings_video_pixelgrid Pixel Grid Shader
+settings_video_epilepsysafe Epilepsy Safe
+
+settings_graphics_header Graphics Settings
+settings_graphics_sequencescale Sequence Scale Amplifier
+settings_graphics_colorcorrect GBC Color Correction
+settings_graphics_shadow Dynamic Shadows
+settings_graphics_fogeffects Fog Effects
+settings_graphics_globallights Global Lighting
+settings_graphics_objectlights Object Lighting
+settings_graphics_screenshake Screen Shake Effects
+settings_graphics_exscreenshake Extra Screen Shake Effects
+settings_graphics_classicsprites Classic Item Sprites
+
+settings_audio_header Audio Settings
+settings_audio_music_volume Music Volume:
+settings_audio_effect_volume Effect Volume:
+settings_audio_classic_music Classic Music Cues
+settings_audio_mute_inactive Mute Inactive Window
+settings_audio_heartbeep Low Hearts Alarm
+settings_audio_mute_powerups No PowerUp Music
+settings_audio_mute_achievement Mute Achievement Notification
+
+settings_controls_header Control Settings
+settings_controls_onscreen On-Screen Controls
+settings_controls_deadzone Analog Dead Zone
+settings_controls_gamepad Gamepad
+settings_controls_remap Remap Controller Buttons
+settings_controls_triggersscale Triggers Scale Game
+settings_controls_sixbuttons Six Inventory Buttons
+settings_controls_swapbuttons Swap Confirm & Cancel
+settings_controls_classicmove Classic Movement
+settings_controls_digitalanalog Digital Analog
+
+settings_controls_onscreenpad On-Screen Controls
+settings_controls_onscreenpad_01 Disabled
+settings_controls_onscreenpad_02 Fade
+settings_controls_onscreenpad_03 Always
+settings_controls_touchmovement Movement
+settings_controls_touchmovement_01 D-Pad + Analog
+settings_controls_touchmovement_02 D-Pad Menus + Analog In-Game
+settings_controls_touchmovement_03 D-Pad Only
+settings_controls_touchmovement_04 Analog Only
+settings_controls_fadeopacity Fade Opacity
+settings_controls_shadowopacity Shadow Opacity
+settings_controls_onscreenscale Controls Scale
+settings_controls_onscreenmiddletop Select/Start Screen Top
+settings_controls_onscreenanalogbuttons Analog Triggers
+
+settings_controls_remapheader Button Remap
+settings_controls_keyboad Keyboard
+settings_controls_Up Up
+settings_controls_Down Down
+settings_controls_Left Left
+settings_controls_Right Right
+settings_controls_A A
+settings_controls_B B
+settings_controls_X X
+settings_controls_Y Y
+settings_controls_LB LB
+settings_controls_RB RB
+settings_controls_LT LT
+settings_controls_RT RT
+settings_controls_Select Select
+settings_controls_Start Start
+settings_controls_style_01 Style 1
+settings_controls_style_02 Style 2
+
+settings_mods_header Modifier Settings
+settings_mods_enemy_hp Extra Enemy HP
+settings_mods_damage Damage Taken Multiplier
+settings_mods_damagecd Damage Cooldown
+settings_mods_movespeed Added Move Speed
+settings_mods_nohearts No Heart Drops
+settings_mods_dmglaunch No Damage Launch
+settings_mods_swordinteract Extra Sword Interactions
+settings_mods_mirrorreflect Mirror Shield Reflects
+
+settings_sword_header Sword Interactions
+settings_sword_grabnormal Collect Item Drops
+settings_sword_grabworlditem Collect Static Items
+settings_sword_grabfairy Collect Fairies
+settings_sword_grabsmallkeys Collect Small Keys
+settings_sword_boomerang Ricochet Boomerang
+settings_sword_bouncebombs Knockback Bombs
+settings_sword_swordblock Slice Enemy Projectiles
+settings_sword_breakpots L2 Smashes Pots & Skulls
+settings_sword_beamshrubs L2 Beam Cuts Env. Objects
+
+settings_preset_header Preset Settings
+settings_preset_setdefault Restore Defaults
+settings_preset_setmodern Set Modern Preset
+settings_preset_setclassic Set Classic Preset
+settings_preset_sethybrid Set Hybrid Preset
+settings_preset_purist Set Purist Preset
+
+settings_cheats_header Cheats Settings
+settings_cheats_invincibility Invincibility
+settings_cheats_infiniterupees Infinite Rupees
+settings_cheats_infinitepowder Infinite Magic Powder
+settings_cheats_infinitebombs Infinite Bombs
+settings_cheats_infinitearrows Infinite Arrows
+settings_cheats_disableclipping Disable Clipping
+settings_cheats_onehitkills One Hit Kills
+settings_cheats_giveallitems Have All Items
+
+achievements_header Achievements
+achievements_reset Reset
+achievements_earned Earned
+achievements_reset_header Reset achievements?
+
+tooltip_default Select an option to view its tooltip.
+
+photo_book_select Select [CONFIRM] Button.
+photo_book_cancel Cancel [CANCEL] Button.
+
+tooltip_newgame_noname Please enter a valid name for the file before attempting to start a new game.
+tooltip_newgame_entry This is the name associated with the current save file and the name of the character that NPCs will refer to the character as in dialog.
+tooltip_newgame_keyboard The on-screen keyboard that can enter the name associated with this save file. You can also use your device's keyboard to enter a name.
+tooltip_newgame_gametype0 "Use Settings" simply uses the current settings and does not automatically change anything. Regardless of what option is picked for "Game Type", settings can always be changed later.
+tooltip_newgame_gametype1 "Modern" adjusts camera settings to use the modern camera which allows zooming in and out and panning across the world. It also sets up music cues to better align with the environment.
+tooltip_newgame_gametype2 "Classic" adjusts camera settings to be reminiscent of the original game which segments the map into "fields" and the camera will transition between them. It also sets up music cues to better align with the original game.
+tooltip_newgame_gametype3 "Hybrid" uses the modern camera when on the overworld and classic camera when inside dungeons. It also sets up music cues to better align with the environment.
+tooltip_newgame_gametype4 "Purist" adjusts settings to match the original game as closely as possible and minimizes the number of enhancements offered by this port.
+tooltip_newgame_back Exit the current page and return to the file selection menu.
+tooltip_newgame_start Start a new game with the entered name and the selected game type.
+
+tooltip_menu_game Options that affect gameplay but don't alter the structure and behaviors of the base game.
+tooltip_menu_redux Options originally based on the "Redux" romhack that affect gameplay and may alter the base game by adding features that did not originally exist.
+tooltip_menu_camera Options that affect the camera. For an experience closer to the original game, enable the "Classic Camera" to have screen based scrolling.
+tooltip_menu_video Options that configure the video settings. These are the settings usually related to your screen and GPU.
+tooltip_menu_graphics Options that configure the graphics. These settings affect the appearance of in-game graphics.
+tooltip_menu_audio Options that configure the audio. Music and sound volume as well as disabling the music when collecting powerups.
+tooltip_menu_controls Options that allow customizing your controls. Make sure to select your controller type from "Game" options before changing them here.
+tooltip_menu_mods Options that affect both gameplay and difficulty. Can add more monster Hit Points, increase damage taken, disable heart drops, increase movement speed, or even block projectiles with the sword.
+tooltip_menu_presets Offers a bunch of preset option values to quickly tailor the game experience to the player's choosing.
+tooltip_menu_cheats Enables or disables various cheats that can make the game much easier or can be enabled just for fun.
+tooltip_menu_achieve Open the achievements window that shows the description and progress of each individual achievement.
+
+tooltip_game_language Changes the current language.
+tooltip_game_sublanguage Contains subtle variations in NPC dialogs. Currently only supported in few languages. Community efforts to expand this option and the scripts would be appreciated.
+tooltip_game_menubricks Chooses the border texture that is used during the options menus or disables the border altogether.
+tooltip_game_classicsword This option makes the sword act more like the original game where it can only chop a single terrain object at a time (bushes, grass, etc).
+tooltip_game_saveposition Stores the last save file that was selected and auto-selects it upon loading the main menu. The auto-selection is not instantaneous due to limitations in the menu design.
+tooltip_game_autosave Automatically saves the game whenever a screen transition takes place (except in dungeons). If disabled, don't forget to manually save! 
+tooltip_game_sharedstorage Save files are duplicated to "/storage/emulated/0/LADXHD/SaveFiles" which acts as the primary save location over scoped storage. This requires permission from the user. The purpose is to allow using applications like "SyncThing" to sync saves across devices.
+tooltip_game_hide_achievement Hides the achievement overlay that pops up in the bottom right corner or the screen when an achievement is earned. The sound effect can also be muted in the "Audio" settings.
+tooltip_game_itemsonright Displays the equipped item icons HUD on the right side of the screen instead of the left.
+
+tooltip_redux_dungeonteleport_01 This option allows teleporting to a dungeon that has been cleared via the map. The currently selected option is "Disabled" so teleportation via the map is not available.
+tooltip_redux_dungeonteleport_02 This option allows teleporting to a dungeon that has been cleared via the map. The currently selected option allows teleporting to a cleared dungeon by entering the map from the inventory, selecting a dungeon node, and pressing the [X] button.
+tooltip_redux_dungeonteleport_03 This option allows teleporting to a dungeon that has been cleared via the map. The currently selected option is similar to the previous option but instead of selecting a dungeon from the inventory map screen, it replaces Manbo's song with the map teleporter and allows selecting Manbo's pond.
+tooltip_redux_dungeonteleport_04 This option allows teleporting to a dungeon that has been cleared via the map. The currently selected option allows teleporting via the inventory map and replaces Manbo's song with the map teleporter. The map teleporter that appears when playing Manbo's Song also allows selecting Manbo's pond.
+tooltip_redux_vwfont Replaces the default game font with a variable width font made by "toruzz".
+tooltip_redux_nohelptext Disables most dialogs when touching objects that require a missing item and also disables most item pickup and open chest dialogs.
+tooltip_redux_dialogskip Enables skipping dialog boxes with the "Start" button which rapidly scrolls through the text and auto-closes the dialog window. Question dialogs are only skipped up to the point where user input is required.
+tooltip_redux_uncensor Removes censorship seen in the North American release and some others. Restores original Hippo sprites and the Mermaid's trade item and dialog.
+tooltip_redux_unmissables Seashell mansion always gives the 5 and 10 shells, Kanalet Castle gate can be reopened, Bow Wow, Marin, and the rooster can be followers again after Level 8, shopkeeper offers name buyback if item was stolen, and always show the secret ending. 
+tooltip_redux_photoscolor By default photographs use sepia colors like the original DX version. This option instead uses colored photographs by "drestrada".
+tooltip_redux_noanimaldmg Makes it so cuccos and mutts found around Mabe Village can not be attacked. This option completely disables their hitboxes.
+
+tooltip_camera_cameratype "Modern Camera" is centered on Link and allows zooming in and out. "Classic Camera" replicates the screen transitions of the original game. "Custom Camera" allows selecting the camera based on the type of map.
+tooltip_camera_custommenu Configures the type of camera that is used based on the map type. Requires camera type to be set to "Custom Camera".
+tooltip_camera_fogdiscovery When the "Modern Camera" is the active camera, this generates a fog effect over fields that have not yet been discovered. 
+tooltip_camera_fogedgesharp Determines how much the edge of the fog blurs into discovered fields. Increasing this value will reduce the blur and make the edge of the fog sharper. Note that it has diminising returns that are noticeable above 35%.
+tooltip_camera_fogopacity Determines how "thick" the fog is, or rather how well you can see through it. Setting this value to 100% makes the fog completely opaque. 
+tooltip_camera_fogfadetime This is how long it takes for a newly discovered field to become visible when entering it. The fog will fade out over the time specified here. Time is in milliseconds (1000ms = 1 second).
+tooltip_camera_camborder When "Classic Camera" is enabled, this places a border around the current field and hides objects that are not animated. The border can be a basic black border or the Super Game Boy border. This somewhat mimics the aspect ratio of the original Game Boy, minus the 16 HUD pixels.
+tooltip_camera_camborderA None
+tooltip_camera_camborderB Black
+tooltip_camera_camborderC Super Game Boy
+tooltip_camera_blackpercent Determines the alpha of the "Classic Camera" border. Can be used to show some of the surrounding game field without cutting it off completely.
+tooltip_camera_bias Biases the "Classic Camera" simulated viewport to the selected position if the current scale does not cover the entire vertical size of the screen. This option does not work with the Super Game Boy border enabled.
+tooltip_camera_biasA Centered
+tooltip_camera_biasB Top
+tooltip_camera_biasC Bottom
+tooltip_camera_classicscaling Disabling this option allows manually scaling the "Classic Camera" via the Game Scale instead of automatically fitting the viewport to the nearest integer upscale resolution. This option has the potential to "break" the viewport if it's set too large or too small.
+tooltip_camera_persistentitems When changing fields when "Classic Camera" is enabled (a.k.a. the screen scrolls), items drops such as rupees, hearts, and powerups will not despawn and will remain when returning to the field.
+tooltip_camera_cameralock Locks the camera in place while "Modern Camera" is active. When this option is disabled, the right analog stick can pan the camera around. Has no effect when "Classic Camera" is enabled.
+tooltip_camera_smoothcamera Whenever the camera changes targets, this adds a smooth panning effect. When disabled, the camera will snap into place. Affects both cameras, but "Classic Camera" benefits the most.
+
+tooltip_camcustom_overworld Chooses the camera that is active while on the overworld map.
+tooltip_camcustom_houses Chooses the camera that is active while inside house type maps.
+tooltip_camcustom_caves Chooses the camera that is active while inside cave type maps.
+tooltip_camcustom_dungeons Chooses the camera that is active while inside dungeons.
+tooltip_camcustom_castle Chooses the camera that is active while inside Kanalet Castle and Southern Face Shrine.
+tooltip_camcustom_egg Chooses the camera that is active while exploring inside the egg.
+tooltip_camcustom_2dMaps Chooses the camera that is active on 2D maps. Takes priority over other types.
+tooltip_camcustom_bosses Chooses the camera that is active during boss fights. Takes priority over other types.
+
+tooltip_video_game_scale Determines the size of a "game pixel" relative to the Game Boy resolution. For example, a scale of 10 means that the resolution of a game pixel is 10x10 screen pixels. Below 1x is a percentage of an original pixel. 
+tooltip_video_ui_scale This is how large the UI appears. The scaling value is arbitrary and does not correlate with the original games. Just choose whichever scale you prefer.
+tooltip_video_fullscreen Sets the current screen mode: Window, Borderless Fullscreen, and Exclusive Fullscreen. It is recommended to use Borderless unless you absolutely need Exclusive for some specific purpose, such as compatibility with external software. Alt + Enter can quickly toggle between Window and Borderless Fullscreen.
+tooltip_video_fps_lock This locks the framerate to your current screen refresh rate. If disabled then framerate will be as high as possible.
+tooltip_video_opaquehud Disables all UI blur effects and uses solid backgrounds instead. This can improve performance on lower-end devices.
+tooltip_video_pixelsnap Enabling this option locks sprite pixel edges similar to an LCD grid. The minimum distance any object can move is one full game pixel. When disabled, objects can move in subpixel steps which appears much "smoother" at the cost of accuracy.
+tooltip_video_pixelgrid A pixel grid is drawn over the entire screen, replicating the "LCD grid" effect of retro consoles like the Game Boy Color where this game originated. This feature requires "Pixel Snapping" to properly function and will not work without it.
+tooltip_video_epilepsysafe Disables flashing effects seen when upgrading item maximums or when hitting Buzz Blobs. Also disables other flickering effects on enemies such as Sparks and Antifairies.
+
+tooptip_graphics_sequencescale Added to UI Scale specifically for in-game sequences. So if UI Scale is 3, and this is set to 2, sequence scale will be 5. This includes photo sequences, pictures, and in-game cutscenes. The max safe value is usually +2. Too high of a value can not guarantee that it will not exceed the bounds of the screen.
+tooltip_graphics_colorcorrect The original Game Boy Color did not have a backlit screen and dimmed the colors, so games compensated with saturated color palettes. Color correction attempts to make everything appear as it did on the original Game Boy Color hardware.
+tooltip_graphics_shadows When enabled, shadows are dynamically generated around all sprites using their shape as a reference. When disabled, sprite shadows are instead used but only for Link, enemies, and NPCs that are in the air.
+tooltip_graphics_fogeffects Disables the fog effect used in the Mysterious Woods, which is the forest just above Mabe Village.
+tooltip_graphics_nogloballights Enables global lighting that is applied across maps. This lighting is used to darken the environment and enhances lighting effects cast by objects.
+tooltip_graphics_noobjectlights Enables lighting effects cast by objects. While object lighting does not require global lighting it has almost no effect without it.
+tooltip_graphics_screenshake Enables or disables original screen shake effects. This includes smashing into things with Pegasus Boots, getting electrocuted, dungeon entrances opening up, bosses shaking the screen, and more.
+tooltip_graphics_exscreenshake Enables or disables extra screen shake effects that were not in the original game. This includes when Link takes damage, when bombs explode, new environment effects, and new boss and enemy effects.
+tooltip_graphics_classicsprites In the original game, sprites could differ in the inventory versus on the game field. This port chooses to show a single sprite for consistency. Enabling this option restores showing different sprites like the original game.
+
+tooltip_audio_music_volume The volume of the game's music. 
+tooltip_audio_effect_volume The volume of the game's sound effects.
+tooltip_audio_classic_music Determines when music changes on the overworld. Disabled (modern) closely respects the tilemap while enabled (classic) respects the original game. The difference between enabled & disabled is subtle. Use east Mabe Village as a test.
+tooltip_audio_mute_inactive Mutes all audio and sound effects when the game window is not the currently focused window.
+tooltip_audio_heartbeep Disables the periodic beeping sound effect when hearts fall below a certain threshold.
+tooltip_audio_mute_powerups When picking up a Guardian Acorn or Piece of Power, this option disables the music that plays.
+tooltip_audio_mute_achievement Disables the sound effect that plays when an achievement is earned.
+
+tooltip_controls_deadzone The percentage of range that the joystick is pressed before it responds to input. Unless you have a Dead Zone set in other software, it is recommended not to reduce it lower than 10% as it may cause your joystick to float. Higher values than default can be useful for controllers that have "drifting" issues.
+tooltip_controls_onscreen Allows configuration of options for the on-screen controller exclusive to the Android port.
+tooltip_controls_gamepad Chooses the type of controller to display button prompts for. Supports XBox, Playstation, and Nintendo style controllers.
+tooltip_controls_remap Remap keyboard and controller buttons to whatever layout you prefer. Change the controller type to match your controller before remapping.
+tooltip_controls_triggersscale Enables changing the current Game Scale with the two top-front controller buttons (LB/RB, L1/R1, L/R). If the option "Six Inventory Buttons" is enabled, the two top-back buttons/triggers (LT/RT, L2,R2, or ZL,ZR) will instead change the Game Scale.
+tooltip_controls_sixbuttons Enables six controller buttons that can be used for inventory items instead of four. This makes it so items can be equipped on the two top-front buttons (LB/RB, L1/R1, L/R) and moves the game scale adjustments to the two top-back buttons/triggers (LT/RT, L2/R2, ZL/ZR).
+tooltip_controls_swapconfirm Swaps the confirm and cancel buttons used in menus and dialogs.
+tooltip_controls_classicmove This option mimics the way movement works in the original games by giving Link the ability to walk backwards. Combine with "Digital Analog" to fully replicate how movement works in the original game.
+tooltip_controls_digitalanalog Removes the analog stick range and makes it move Link in eight directions along 45 degree angles (Up, Down, Left, Right, and Diagonals). This will make controlling Link feel more like the original game as if it were played in an emulator.
+
+tooltip_controls_onscreenpad Enables or disables on screen controls. "Disabled" is self explanatory. "Fade" will fade out the buttons when not in use. "Always" keeps the button visible at all time.
+tooltip_controls_touchmovement Sets visibility of the D-Pad or Analog Stick. They can both be always enabled, use D-Pad for menus and Analog for moving Link, or have only one of them enabled at a time.
+tooltip_controls_fadeopacity When the on-screen controls are set to "Fade", this is the minimum opacity that the controls will remain at until pressed.
+tooltip_controls_shadowopacity The opacity of the shadow under the controls. No matter which visibility mode is set, the shadow remains the same opacity.
+tooltip_controls_onscreenscale The scaling value of the on the on-screen controls.
+tooltip_controls_onscreenmiddletop Places the Start and Select buttons on the top of the screen instead of the bottom.
+tooltip_controls_onscreenanalogbuttons Enables the analog stick on-screen buttons LS and RS. The RS button is used to center the camera when it is unlocked.
+
+tooltip_mods_enemy_hp Adds additional Hit Points to all enemies globally. For example, if adding 3 HP to enemy health, then an enemy with 1 HP would have 4 HP and a boss with 8 HP would have 11 HP.
+tooltip_mods_damage Multiplies the amount of damage taken from all sources. For example, if set to 4 and an attack would deal a half heart, it would instead deal 2 full hearts of damage.
+tooltip_mods_damagecd Default value is 16x (1056ms). This is the damage cooldown factor multiplied by the damage blink time of 66ms which results in the amount of time that Link is invincible for after taking a hit.
+tooltip_mods_movespeed Increases movement speed by a percentage, up to 100% movement speed. Affects all forms of movement: walking, climbing, swimming, etc.
+tooltip_mods_nohearts Completely disables heart drops from all sources. The only way to heal is to find a fairy, visit a Great Fairy, or to buy the medicine from Crazy Tracy.
+tooltip_mods_dmglaunch Disables the launching effect when attacking enemies while under the effect of a Piece of Power or when wearing the Red Tunic from the Color Dungeon.
+tooltip_mods_swordinteract This option makes the sword able to collect fairies, knock away the boomerang, and interact with bombs allowing it to knock them away. It allows the level 2 sword and sword beam to break pots and the level 2 sword beam can cut through grass and bushes.
+tooltip_mods_mirrorreflect Gives the Mirror Shield the ability to reflect projectiles back at enemies. Reflected projectiles travel faster and can even damage other enemies that are hit. 
+
+tooltip_sword_grabnormal Toggles the ability to collect items with the sword that are dropped by enemies such as Rupees, Hearts, Guardian Acorn, and Piece of Power. Requires a map reload to take effect.
+tooltip_sword_grabworlditem Allows collecting static items with the sword that are found in the world. These items include Heart Containers, Instruments, Golden Leaves, Dungeon Entrance Keys, and similar items. Requires a map reload to take effect.
+tooltip_sword_grabfairy Enables the ability to collect fairies with the sword.
+tooltip_sword_grabsmallkeys Enables the ability to collect small dungeon keys with the sword. Requires a map reload to take effect.
+tooltip_sword_boomerang When the boomerang is thrown, the sword can be used to smack it and reset its flight. This works with any type of sword attack.
+tooltip_sword_bouncebombs Bombs that the player sets down on the ground can be whacked with the sword to reposition them.
+tooltip_sword_swordblock Allows cutting down projectiles with the sword when timed perfectly. For example, moblin spears or octorok shots.
+tooltip_sword_breakpots Makes it possible for the level 2 sword and sword beam to break both pots and skulls.
+tooltip_sword_beamshrubs Makes it possible for the level 2 sword beam to cut straight through grass and bushes and also allows the beam to smash crystal clusters.
+
+tooltip_preset_setdefault Sets all options to their default values. Some options are excluded such as language and fullscreen options.
+tooltip_preset_setmodern Sets up options so that the game has a more "modern" feel to it. The camera allows zooming and panning around the world, certain quality of life features are enabled, and music cues on the overworld better line up with the environment. 
+tooltip_preset_setclassic Sets up options so that the game has a more "classic" feel to it and behaves more like the original game. The traditional screen based camera is used, some quality of life features are enabled, and overworld music cues are identical to the original game.
+tooltip_preset_sethybrid Sets up options so that the game has a mix of both a modern and classic feel to it. The modern camera is used on the overworld while the classic camera is used inside dungeons. Some quality of life features are enabled and overworld music cues better line up with the environment.
+tooltip_preset_purist Sets up options so that the game is as close to the original game as possible aside from any quality of life features inherent to this port. Any option available to make the game behave like the original game is set, and any bonus quality of life features are disabled.
+
+tooltip_cheats_invincibility Makes Link impervious to damage. Unlike setting the Damage Taken Multiplier to 0, this also eliminates hit detection and knockback.
+tooltip_cheats_infiniterupees Sets current rupee count to 999 and makes it so the count is never reduced. This is irreversible! Do not enable this option unless you are fine with cheating!
+tooltip_cheats_infinitepowder Sets magic powder count to the current max and makes it so the count is never reduced. This is irreversible! Do not enable this option unless you are fine with cheating!
+tooltip_cheats_infinitebombs Sets bombs count to the current max and makes it so the count is never reduced. This is irreversible! Do not enable this option unless you are fine with cheating!
+tooltip_cheats_infinitearrows Sets arrows count to the current max and makes it so the count is never reduced. This is irreversible! Do not enable this option unless you are fine with cheating!
+tooltip_cheats_disableclipping Allows Link to pass through most solid objects. Does not include holes, enemies, water, and lava.
+tooltip_cheats_onehitkills If the type of attack can deal damage to the enemy hit, the enemy will always be defeated in a single blow.
+tooltip_cheats_giveallitems Gives Link access to all equippable items of the highest tier. When the cheat is disabled, only items that have been legitimately obtained will be returned to the player.

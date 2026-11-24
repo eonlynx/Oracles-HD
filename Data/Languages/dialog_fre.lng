@@ -1,0 +1,1174 @@
+// items
+smallkey Tu as une Petite Clé. Tu peux ouvrir une porte verrouillée!
+compass Tu as la Boussole! Maintenant, tu peux voir où sont cachés les Coffres et le Boss! Si une Clé est dans une salle, un son te préviendra! C'est ça le progrès...
+dmap Tu as une Carte! Appuie sur [START] pour la consulter!
+stonebeak Vous trouvez un bec de pierre! Allez compléter une statue de chouette.
+
+sword1 Tu as retrouvé ton Epée! C'est la tienne car il y a ton nom dessus!
+feather Tu as la Plume! Soudain, tu es plus léger que l'air!
+pegasusBoots Tu as les Bottes de Pégase! Garde le bouton enfoncé et tu fileras comme le vent!
+flippers Tu as les Palmes! Appuie sur [CANCEL] quand tu nages : tu pourras alors plonger!
+bracelet0 Tu as trouvé le Bracelet! Génial! Tu peux soulever des jarres et des pierres!
+bracelet1 Tu as trouvé le Super Bracelet! Tu pourrais même soulever... un éléphant!
+ocarina Tu as l'Ocarina! J'espère que tu pourras jouer plusieurs airs!
+powder Tu as la Poudre Magique! Essaie de la saupoudrer sur plein de choses!
+mirrorShield Tu as trouvé le Bouclier-Reflet! Maintenant, tu peux bloquer le laser...
+hookshot Tu as le Grappin! Tu vas voir comment la chaîne s'étire!
+magicRod Tu as le Bâton de Feu! Brûle! Brûle! Brûle tout ce que tu veux!
+shovel Tu as la Pelle! Maintenant, tu peux creuser où tu veux!
+magicPowder Tu as gagné la Poudre Magique! Tu peux la saupoudrer sur plein de trucs!
+bomb Vous obtenez une bombe! Bien joué!
+sword2 Tu as une nouvelle Epée! N'oublie pas de graver ton nom dessus!
+boomerang Tu as échangé ton objet contre le Boomerang.
+
+shield Tu as gagné le Bouclier!\nTu peux même y graver ton nom!
+shield_intro Vous récupérez votre bouclier! Utilisez-le pour repousser vos ennemis!
+shield_back Vous récupérez votre bouclier! Utilisez-le pour repousser vos ennemis!
+
+yoshiPickup Tu as gagné un Yoshi! On le voit dans tous les jeux, celui-là!
+
+// playing the ocarina without having learned a song
+ocarina_bad C'est un Ocarina mais tu ne sais pas comment en jouer...
+ocarina_bad_marin Pas terrible... Pardon? J'ai dit quelque chose? Hé, ça suffit la parano...
+
+// trading alt + 0161
+trade0 Tu échanges ton [TRADE0] contre ce Ruban [TRADE1]. Peut-être le troqueras-tu par la suite...
+trade1 Tu as échangé le [TRADE1] contre la pâtée [TRADE2]!
+trade2 Tu lui as donné une [TRADE2] en échange de bananes [TRADE3].
+trade4 Tu prends le bâton que le singe a laissé.
+trade5 Tu as échangé le [TRADE4] contre le Miel [TRADE5]. Pour quoi faire, tu verras bien!
+trade6 Tu as échangé le [TRADE5] contre l'Ananas [TRADE6]. Il est juteux!
+trade7 Tu as échangé l'[TRADE6] contre l'hibiscus [TRADE7]!!
+trade8 Tu as échangé l'[TRADE7] contre une lettre de chèvre [TRADE8]... Super!
+trade9 Mr Wright t'a offert un balais [TRADE9]. Mais... cette photo... ce n'est pas...
+trade10 Tu as échangé le [TRADE9] contre le [TRADE10]! Que feras-tu de celui-ci?
+trade11 [TRADE10] devient un collier [TRADE11]! Génial!
+trade12 Vous échangez le collier contre une écaille [TRADE12]... A quoi sert- elle?
+trade13 Tu as la Loupe [TRADE13]! Elle te montrera ce que tu ne pouvais pas voir auparavant!
+
+trade11_redux Le [TRADE10] est devenu un soutien-gorge rose [TRADE11] ! Q-q-quelle chance !
+trade12_redux Tu as rendu le soutien-gorge rose [TRADE11] et obtenu une écaille [TRADE12] de la queue de la sirène. Comment vas-tu l'utiliser ?
+
+// keyholes
+keyhole_0 Une serrure ici?\nHum, voyons : Serrure Flagello
+keyhole_1 Une serrure ici?\nHum, voyons : Serrure Cyclope
+keyhole_2 Une serrure ici?\nHum, voyons : Serrure Poisson
+keyhole_3 Une serrure ici?\nHum, voyons : Serrure Masque
+keyhole_4 Une serrure ici?\nHum, voyons : Serrure Vautour
+
+// collectables
+toadstool Tu as trouvé le Champignon! Un arôme subtil exalte ton sens de l'odorat.
+toadstool_hold Si tu brandis le Champignon, un arôme subtil se répandra!
+
+seashell Tu as trouvé un Coquillage! Collectes-en beaucoup pour faire du troc...
+seashell_1 Tu as trouvé un Coquillage! Es-tu capable de trouver les autres?
+seashell_2 Tu as trouvé les 26 Coquillages! Tu es un maître chasseur de coquillages!
+
+heart Tu as gagné un Cœur! Toute ton énergie est restaurée!
+
+ruby20 Tu as trouvé 20 rubis. Ó joie!
+ruby50 Tu as trouvé 50 rubis. Merveilleux!
+ruby100 Tu as trouvé 100 rubis. Fantastique!
+ruby200 Tu as trouvé 200 rubis. Quelle extase!
+
+// trendy game
+ruby30 Tu as gagné 30 rubis! Tu peux jouer encore 3 fois!
+
+heartMeter Un quart de cœur! Appuyez sur [START] sur le sous-écran.
+heartMeterFilled Tu as collecté 4 Fragments de Cœur. Tu as maintenant un Cœur complet!
+
+guardianAcorn Tu as le Gland! Tu seras mieux protégé contre les ennemis!
+pieceOfPower Un Fragment de Puissance!!! Tu peux sentir l'énergie envahir ton corps!
+
+potion Vous trouvez le médicament secret! A quoi cela peut-il servir?
+
+dkey1 Tu as la Clé Flagello! Tu peux ouvrir la porte de la Cave Flagello!
+dkey2 Tu as la Clé Cyclope! Vite! Va vers l'entrée de La Prairie!
+dkey3 Tu as la Clé Poisson!
+dkey4 Tu as la Clé Masque!
+dkey5 Tu as la Clé Vautour!
+
+nightmarekey Tu as la Clé du Boss. Tu peux ouvrir la porte de son repaire!
+
+instrument0 Tu as le Violon des Vagues!
+instrument1 Tu as la Conque de l'Ecume!
+instrument2 Tu as la Cloche des Algues!
+instrument3 Tu as la Harpe du Reflux!
+instrument4 Tu as le Xylophone Marin!
+instrument5 Tu as le Triangle de Corail!
+instrument6 Tu as l'Orgue de l'Embellie!
+instrument7 Tu as le Tambour des Marées!
+
+instrument0Collected {...MARAIS...} La route mène au marais fleuri.
+instrument1Collected {...PRAIRIE...}{...PRAIRIE...} Elle t'attend.
+instrument2Collected {...CASCADE...} C'est caché sous la cascade.
+instrument3Collected {...BAIE...} Ta route passe par la baie.
+instrument4Collected {...TEMPLE...} Il renferme le secret de l'île.
+instrument5Collected {...MONTAGNE...} Elle t'appelle.
+instrument6Collected {...OCARINA...} Sa musique te guidera.
+instrument7Collected L'heure a sonné. L'œuf Sacré te réclame.
+
+goldLeaf Une Feuille d'Or! Appuyez sur [START] pour voir combien vous en avez!
+goldLeafLast Tu as trouvé la dernière Feuille d'Or! Amène-les chez Richard. Parle-lui de la Clé...
+
+signpost0 error
+signpost1 [RIGHT] Cave Flagello\n[DOWN] Plage Coco
+signpost2 Forêt Enchantée\n(Un peu énigmatique)
+signpost3 Est [RIGHT] Prairie\fPlus à l'Est\nVillage des Animaux
+signpost4 Attention aux oursins! Se protéger avec un bouclier!
+signpost5 Attention au plancher fissuré. Rondouillards : abstenez-vous!
+
+signpost6 Château Canulet 10 min.\n[RIGHT] [UP]
+signpost7 Château Canulet 5 min. [RIGHT]
+signpost8 Château Canulet 50 pas [UP]
+
+signpost9 [RIGHT] Village des Animaux\n[DOWN] Baie de Martha
+signpost10 Maison aux Coquillages
+
+signpost11 Tu es près du Plateau Tartare. Le photographe n'est pas loin.
+signpost12 [RIGHT] Mt Tamaranch\n[LEFT] Mrs Anémones
+signpost13 [RIGHT] Chez Monique\n[DOWN] Mare Bobo
+signpost14 [RIGHT] Cimetière\n[DOWN] La Prairie
+signpost15 [RIGHT] Mrs Anémones\n[DOWN] Forêt Enchantée
+
+signpost16 Accès interdit!\n(sauf Toutou)
+signpost17 Villa de Richard
+signpost19 Cabine téléphonique
+
+signpost20 Mt Tamaranch
+signpost21 Tu veux descendre les rapides en radeau? Renseigne-toi à l'intérieur.
+
+signpost22 [RIGHT] Entrée des \nDunes de Yarna
+signpost23 Entrée du Village des Animaux
+
+signpost_Down [DOWN] Par ici!
+signpost_Up [UP] Par ici!
+signpost_Right [RIGHT] Par ici!
+signpost_Left [LEFT] Par ici!
+signpost_TryAgain RETOUR A LA CASE DEPART!
+signpost_Great TU AS REUSSI! PAR ICI [RIGHT] LA SURPRISE!!
+signpost_Gone EN TOURNEE\nSigné : WART
+
+talking_tree Quelle surprise! Ecoute-moi bien, car je vais te dire un secret : avec ton épée, frappe les murs des labyrinthes. Si le son est creux, détruis ce mur avec une Bombe!
+
+mamu0 Croâ croâ! Je suis Wart, le chanteur. Tu es nul en musique! Reviens avec du matos, vieux! Croâ croâ!
+mamu1 Croâ croâ! Je suis Wart, le chanteur. Inutile de me présenter : je suis le roi du Rap... Tu veux rester et nous écouter? Pour 300 rubis, on te chante un méga morceau! Alors?...
+mamu2 De toute façon, on ne fait pas dans le bénévolat...
+mamu3 Merci... Je suis ému. Merci... Croâ!
+ocarina_frog_song Tu as appris la chanson des Grenouilles. C'est cool non? Tu peux donc insuffler la vie dans les objets.
+ocarina_frog_song_end Si tu joues cet air, certains objets s'animeront!
+
+manbo0 Je suis Manbo, descendant du Poisson-Lune. As-tu l'Ocarina?
+manbo1 Ah bon?! Glou Glou...
+manbo2 Alors, je vais t'apprendre ma chanson!
+manbo3 Oh! Tu n'as pas d'Ocarina... Gloup Gloup!
+manbo4 Je suis Manbo, descendant du Poisson-Lune. Joue mon Mambo pour te téléporter à la mare Bobo. Joue aussi dans les donjons!
+
+ocarina_manbo_song Tu as appris le Mambo de Manbo! Quand tu sors de l'eau, joue cet air!
+
+choice_Pay Oui
+choice_Leave Non
+
+signHead1 LE POISSON-REVE, NE L'EST-T'IL QUE DE NOM?
+signHead2 VA VOIR L'ŒUF SACRE. IL REPOND AUX SONS.
+signHead3 LORSQUE TU TE REVEILLES, LE REVE CESSE. ... LES MONSTRES AUSSI.
+signHead4 LES SECRETS SONT COMME L'EAU SOUS LE PONT.
+signHead5 LE POISSON-REVE. S'IL NE SE REVEILLE PAS, TU PERIRAS...
+signHead6 TOUT PRES D'ICI, DORT UN SECRET.
+signHead7 Tu es proche de la Tour. Prends garde au rapace!
+signHead8 PRES D'ICI, PAS DE SECRET.
+signHead9 SOUS TES PIEDS, DORT UN SECRET.
+
+castle_button La porte semble être ouverte. Tu pourras donc sortir sans aucun problème.
+castle_button_2 La porte semble être fermé.
+
+door_nightmarekey Evidemment! C'est fermé! Tu dois trouver la clé du Boss.
+
+dungeon_keyhole_block Ce bloc a un trou de serrure! Il te faudrait une Clé!
+rock_cracks_message Ce rocher est très fissuré... Il doit y avoir un moyen de le casser...
+crystal_hard Oh! Quel drôle d'objet! Peut-être que tu peux le briser en fonçant dedans.
+
+stone Oh là... C'est bien trop lourd! Tu n'y arriveras jamais rien que par la force de tes bras!
+
+// nightmares
+nightmare1 {GRRR! GRR!}{UN INTRRRUS!}
+nightmareFinal0 Cette île va disparaître... Notre monde va disparaître... Notre monde... Notre... monde...!!
+nightmareFinal1 ...[NAME], tu as battu Maléficio! Va et monte les escaliers!
+
+// maria
+maria_0_0 Ah! Enfin... J'ai cru que tu n'allais jamais te réveiller. Tu devais cauchemarder.\fQuoi? Zelda?? Tu dois être encore patraque! Je suis Marine!\nTu es sur l'île Cocolint!
+maria_0_1 Suis la route du Sud, vers la plage là où je t'ai trouvé. Depuis que tu as échoué ici, des monstres terribles rôdent dans le coin. Sois prudent...
+
+// marin standing outside
+maria_1_0 Bonjour [NAME]! Tarkin est parti dans la forêt chercher des champignons. Moi,je préfère chanter. Ecoute ceci : c'est la Ballade du Poisson-Rêve.
+maria_1_1 J'adore chanter! Et toi [NAME], qu'est-ce que tu aimes?
+
+// after talking to the owl
+maria_1_2 [NAME], Tarkin fait la sieste à la maison. Je préfère chanter. Oui! Pourquoi pas la Ballade du Poisson-Rêve?
+
+// singing in the right village
+maria_1_3 Mais c'est un Ocarina que tu as là! Veux-tu en jouer pendant que je chante?
+maria_1_4 Alors, comment tu la trouves? N'est-elle pas émouvante? Sauras-tu t'en souvenir?
+maria_1_5 Je t'en prie! Apprends-la. C'est ma chanson préférée!!
+
+maria_1_6 Tu fredonneras cette chanson de temps à autre pour ne pas l'oublier!
+maria_1_7 N'oublie jamais ma Ballade! ... Ni moi...
+
+maria_1_8 On dit que la Ballade du Poisson-Rêve est la Chanson d'Eveil. Si le Poisson-Rêve se réveille, exaucera-t'il mon vœu?
+maria_1_9 Hé [NAME], je viens souvent chanter dans ce village. Tout le monde adore ma Ballade du Poisson-Rêve. Et toi [NAME], qu'est-ce que tu aimes?
+
+marin_letter Sur la plage... "Marine" [MARIN]
+
+// maria at the beach
+marin_2_0 Oh [NAME], tu savais où me trouver! Veux-tu qu'on parle un peu?
+
+// Yes! No...
+marin_2_1 Peuh! Je regarderai la mer alors!
+marin_2_2 D'où vient cette noix de coco? Tarkin me dit qu'il n'y a rien par-delà la mer. Moi, je suis persuadée du contraire! Tu sais [NAME], quand je t'ai vu mon cœur s'est mis à battre la chamade... Je suis sûre que tu es le messager que j'attendais!
+marin_2_3 ... ... ... ... ... ... ... ... Si j'étais une mouette, je m'envolerais loin, très loin! Je visiterais des pays et chanterais pour tous! Si j'exprime un vœu au Poisson-Rêve, l'exaucera-t'il?
+marin_2_4 Hé, tu écoutes? [NAME], es-tu sûr que tu m'écoutes?
+marin_2_5 Ho, tu descends de ton nuage? Tu pourrais au moins m'écouter!
+marin_2_6 J'aimerais tant connaître ton pays, [NAME]! Un jour mmm...
+marin_2_7 Comment? Le Morse? D'accord, je t'accompagne.
+
+maria_collected Marine se joint à toi! C'est la chance da ta vie!?
+
+// going into a dungeon
+marin_dungeon Quoi? Tu veux entrer là? Heu, je préfère attendre dehors. Sois prudent [NAME]!
+marin_dungeon_leave [NAME], te voici enfin! Es-tu blessé?
+marin_dungeon_leave_time Il était temps! Je ne pensais pas te revoir!
+marin_dungeon_hearts Ne crois-tu pas que tu as subi assez de dégâts? Fais un peu plus attention!
+marin_dungeon_hearts_alt Abru##! Je t'avais dit d'être prudent! Pardon?... Tu as dû mal entendre...
+
+marin_cucco_0 Youpi! Vas-y! Encore... Pardon? Mais non! Je n'ai rien dit. Je plaisantais!
+marin_cucco_1 La pauvre poule!\nArrête donc!
+
+marin_pot_0 Oui, oui!! Casse-les! Casse tout! ... ... ... ... Quoi? Il y a un problème?
+marin_pot_1 Oh là là! Ce n'est pas bien [NAME]!
+
+marin_digging Vas-y!! Creuse... Creuse encore!
+
+maria_game_0 Génial, [NAME]! Je peux? Tu es d'accord?
+// Okay No Way
+maria_game_1 Allez! Je veux essayer! Ça doit être fun!
+// Yes  Okay
+maria_game_2 Tu es douée! Tu dois être une pro, hein? ... ... ... ... Zou du vent! On ne veut pas de pros ici...
+
+
+// walrus sequence
+maria_3_0 C'est ce gros lard de morse! On lui fait peur?
+// Yes  No...
+marin_3_1 Tu as raison. On va le laisser dormir.
+maria_3_2 Ha ha ha! Ton réveil était plutôt brutal hein?...
+maria_3_3 Tiens donc? Il m'appelle? Oh là là, c'est toujours pareil.
+maria_3_4 Je vais au Village des Animaux. Rejoins-moi après, [NAME].
+
+// marin falling into the fountain not falling on link
+marin_fountain Ouah, super! Quelle surprise!
+
+// marin in the mountains
+marin_4_0 Au secours!!
+marin_4_1 Hé [NAME]! Des monstres horribles m'ont posée ici! J'ai peur car j'ai le vertige.
+marin_4_2 J'ai eu peur... [NAME], merci!
+marin_4_3 ... ... ... ... ... ... ... ... [NAME], euh...
+marin_4_4 Euh, voyons... Comment te dire... tu sais...
+marin_4_5 MAAAARIIIIINE!!
+marin_4_6 Holà, Tarkin... ... ... ... ... Non non, rien! Je dois partir.
+
+marin_5_0 Merci pour ton aide [NAME]. Tu étais génial. Tout à l'heure, j'ai fait part d'un vœu au Poisson-Rêve. Ce que c'était? C'est un secret!
+marin_5_1 Un jour [NAME], tu quitteras cette île. C'est vrai! Mon cœur ne saurait mentir. Ne m'oublie pas car jamais je ne pourrais te pardonner!
+
+marin_6_0 [NAME], j'ai le sentiment que je n'aurai pas une autre chance... Veux-tu marcher avec moi ?  
+marin_6_1 Oh. D'accord alors... Peut-être une autre fois.  
+marin_6_2 Merci [NAME], c'était très amusant ! Je suppose que c'est un au revoir pour l'instant ?  
+marin_6_3 [NAME]. Je... je... je ne me sens pas bien avec ça. S'il te plaît, faisons demi-tour !
+
+walrus_0 {ZZZ ZZZ ZZZ ZZZ}{... [MARIN] ... [MARIN] ...}
+walrus_1 {Moûhhh! Moûhhh!}{[MARIN]  [MARIN]! [MARIN] [MARIN]!}{... [LINK] ??}
+
+animals_absorbed {... ... ... ...}La chanson de Marine semble l'envoûter!
+
+ocarina_maria_song Tu as appris la Ballade du Poisson-Rêve. La jolie chanson de Marine est gravée en toi.
+
+// tarin house
+tarin_chest Ho! Tu fais quoi dans ma commode? Franch'ment, ça va la tête?
+
+// tarin
+npc02_leave Hé mon gars, attends un peu! J'ai quêqu' chose à te dire!
+tarin_0 Salut [NAME]! T'es réveillé... J'suis Tarkin... Tu t'sens mieux? Quoi? Comment j'sais ton nom? Ben, c'est gravé sur le Bouclier! Ben, d'ailleurs il est à toi! J'te l'donne!
+tarin_1 Au fait! Y'a un autre bidule qui est resté sur la plage. Si tu y vas, fais attention aux monstres! Car, depuis que t'es ici [NAME], des monstres, y'en a partout!
+
+// after the raccoon transformation
+tarin_raccoon_2 J'ai croqué dans un champignon. Et j'suis devenu un raton-laveur! Après, j'sais plus trop, mais c'était trop rigolo!!
+tarin_raccoon_3 Oh là là!! J'me sens tout drôle! Faut m'reposer avant d'rentrer.
+
+tarin_2 Je suis éreinté! J'vais faire un p'tit somme. ZZZ...ZZZ...
+tarin_3 ZZZ...ZZZ... Quêqu' chose que t'as pas compris? Téléphone à Pépé le Ramollo. ZZZ...ZZZ...
+
+// tarin with the bananas
+tarin_4 J'avais la dalle alors j'suis allé chercher des bananes sur la plage! MIAM MIAM! [NAME] si t'en veux, fais comm'moi.
+
+// tarin trading sequence
+tarin_stick [NAME]! Ton truc me plaît. J'te donne du Miel pour c'Bâton. Alors?
+tarin_stick_no [NAME], t'es qu'un radin!
+
+// after the trading sequence sleeping in the bed
+tarin_5 Aïe aïe ouille! ... ... ... ... J'en ai marre de ces abeilles!
+
+
+// lady with the broom
+npc_broom_0 YOUPI! J'ai la pêche! Et toi?
+npc_broom_1 YOUPI! J'ai trop travaillé et mon balai est tout usé!
+npc_broom_2 YOUPI YOUPI!!! Un balai neuf! Merci... C'est pour moi?
+npc_broom_3 En récompense, je te donne un Hameçon que j'ai trouvé au bord de la rivière.
+npc_broom_4 YOUPI! Un balai neuf! C'est le top...
+npc_broom_5 Alors, TU balaieras l'île!
+npc_broom_bowwow Il s'est passé une véritable tragédie chez ma voisine d'en face! Que faire? Moi, je ne sais que balayer!!
+
+npc04 Heu... Hum... Comment dire? Téléphone... A l'extérieur...
+npc04_game Pépé le Ramollo n'a pas l'air d'être un grand causeur...
+
+// kid with hints
+//npc05_0 M'sieu! Pour sauvegarder, appuyez sur tous les boutons à la fois! Heu, je n'en sais pas plus, je ne suis qu'un gosse!
+npc05_1 Ben... Après une sauvegarde, vous pouvez redémarrer à la dernière porte par laquelle vous êtes passé! Pourquoi? Je n'en sais rien, je suis un môme!
+npc05_2 J'ai entendu dire qu'on peut appuyer sur [START] puis [SELECT] pour voir la carte de l'ile... Mais je ne comprends pas ce que ca veut dire...
+npc05_3 Si vos Cœurs diminuent trop, entrez dans une maison ou une grotte. Pourquoi? Je ne sais pas, je suis trop petit!
+
+npc_ball_left M'sieu! D'où vous venez? De l'extérieur? Je ne connais pas ce mot, je suis trop petit!
+npc_ball_right L'œuf Sacré du Mt Tamaranch? Il paraît que le Poisson-Rêve dort dedans. Je ne sais pas, je suis un môme!
+
+// kid near the weather bird or next to the shop
+npc_boy_island Depuis quand nous vivons sur cette île? Qu'est-ce que cela signifie : depuis quand? N'oubliez pas que je ne suis qu'un gosse!
+npc_boy_marin M'sieu! Que pensez-vous de Marine? Moi? Ben! Je ne suis qu'un gosse!
+npc_boy_shrine Hé M'sieu! A propos du Gîte des Rêves... A l'intérieur, il y a un ... Mais comme je ne suis qu'un gosse, je n'en dirai pas plus!
+npc_boy_marin_beach Souvent, Marine va toute seule regarder la mer. Pourquoi? Je ne sais pas moi, je ne suis qu'un gosse!
+// kids while marin is with link
+npc_boy_marin_following Où allez-vous tous les deux? Mais non, je n'insinue rien! Moi, je ne suis qu'un gosse!
+npc_boy_marin_gone Quoi? Marine n'est plus là? Que lui est-il arrivé?
+
+// when the player has the broom and the grandma is in the other village
+npc_boy_grandmother Grand mère n'est pas ici. Elle est au Village des Animaux. C'est ce que le grand père a dit au téléphone!
+
+// kids playing ball game after the village gets attacked
+npc_kid_attacked M'sieu! M'sieu! C'est terrible, c'est horrible! c'est c'est... Des Gogo... des Momo... des Moblins sont venus dans le village! Ils étaient une armée... Ils...ils... Ils sont sortis! Ils sont entrés! Oui, c'est ça! Il sont entrés là et ils ont pris le Minou, non non... Ils ont pris Toutou!! ... ... ... ... ... ... ... ... Il vaudrait mieux que tu ailles voir ce qui s'est passé!
+
+// chef in the right village
+npc_chef_0 J'aimerais tant ouvrir un 4 **** au Village des Mouettes!
+npc_chef_1 Il me manque des ingrédients. C'est embêtant. Si j'avais du Miel, ce serait parfait!
+npc_chef_2 C'est du [TRADE5] que tu as là! J'en ai besoin! Tu ne veux pas d'Ananas à la place?
+npc_chef_3 Flûte alors! Tu regretteras de ne pas avoir goûté à ce délice!
+npc_chef_4 Ho oui! Je connais bien les Dunes de Yarna. Mais leur entrée située au Sud du Village est bloquée par une drôle de créature. Et quand celle-ci dort, pas moyen de la réveiller. J'ai une idée : amène Marine avec toi et fais-la chanter pour réveiller cet animal!
+npc_chef_marin Bonjour Marine! Tu vas bien? ... ... ... ... Oh excuse-moi, je ne t'avais pas vu...
+
+// yoshi doll
+npc07_0 Ces quatre là se ressemblent tant que moi-même, je m'y perds...
+npc07_1 Au fait sais-tu où trouver un Yoshi? J'en ai vu un au jeu du hasard mais je n'ai pas pu l'avoir.
+npc07_2 Tu offres ce Yoshi à mon bébé?
+npc07_3 Tant pis... C'est dommage!
+npc07_4 Oh! Merci! Tu es un gentil garçon. En échange, je te donne ceci.
+npc07_5 Mon mari est perdu dans les bois! Va le sauver!
+
+npc_house_chest [NAME] a inspecté la commode.\nC'est un objet d'art... ...
+npc_house_chest_marin [NAME], tu fouilles souvent dans les tiroirs des gens?
+
+npc_letter_boy_0 Bonjour, je suis Mr Wright. Mon hobby, c'est écrire des lettres... Le problème, c'est que quand j'écris, je n'ai jamais de réponse...
+npc_letter_boy_1 Une lettre? Pour moi? Mais c'est formidable... Il y a même une photo!
+npc_letter_boy_2 Ohhh... Quelle beauté! J'aimerais te remercier mais je n'ai que ce balai à t'offrir... En veux-tu?
+npc_letter_boy_3 Vraiment, j'insiste... Prends ce [TRADE9]!
+npc_letter_boy_4 L'écriture, c'est vraiment mon hobby!
+npc_letter_boy_5 Bonjour! Je réponds à Christine!
+
+
+npc_letter_girl_0 Tu ne connais pas l'étiquette quand tu rends visite à une dame?? Si tu m'avais apporté des fleurs, j'aurais été plus loquace. Personnellement, j'adore les hibiscus...
+npc_letter_girl_1 Oh, tu m'as apporté un [TRADE7]! Comme c'est gentil! J'ai une faveur à te demander. Je peux?
+npc_letter_girl_2 J'aimerais te confier une lettre pour Mr Wright, qui habite dans la Forêt. Merci d'avance!
+npc_letter_girl_3 Ah bon... Et dire que je te prenais pour un gentilhomme!
+npc_letter_girl_4 Je ne peux pas m'empêcher de grignoter du papier. Quel délice! ... Même les lettres de mon cher Mr Wright! ... J'ai honte!!
+
+// fisher under the bridge
+npc_bridge_0 Je suis embêté car un poisson a emporté mon hameçon. Je ne pêche qu'avec un fil, et forcément... je ne peux rien attraper!!
+npc_bridge_1 Mais qu'est-ce que tu as dans la main? N'est-ce pas un Hameçon? Si tu me le donnes, je te ferai don de ma prochaine prise. D'accord?
+npc_bridge_2 D'accord... Ce n'est pas une raison pour m'agresser!
+npc_bridge_3 Ouvre les yeux et mate le pro.
+npc_bridge_4 WHOAAAA!!! Il est ENORME!
+npc_bridge_5 Je me demande ce que je vais encore attraper!
+
+
+tracy_give Oui
+tracy_dont Non
+
+npc_tracy_0 Je suis Monique la Lunatique. Je vends des remèdes secrets qui te feront péter la forme!
+npc_tracy_1 Mon secret coûte 28 rubis. Tu es intéressé?
+npc_tracy_2 Mon secret coûte 42 rubis. Tu es intéressé?
+npc_tracy_3 Tu es un amour! Pour la peine, tu ne paieras que 7 rubis!
+npc_tracy_4 Merci bien! Voilà, je viens de l'appliquer sur toi! Ce remède agira si tu perds tes Cœurs! Reviens quand tu veux!!
+npc_tracy_5 Tu plaisantes?? Reviens plutôt quand tu auras de l'argent...
+npc_tracy_6 ... ... ... ... Non, je ne t'en vendrai pas!!
+npc_tracy_7 Flûte, zut!! Je voulais juste te rendre plus puissant! Tu n'es qu'une poule mouillée!
+npc_tracy_8 Voici un petit bonus. Je restaure tous tes Cœurs!
+
+// npc lost boy
+npc_lost_boy_0 Je te l'avais prédit : je me suis perdu! J'ai trop faim pour faire un pas de plus. Me nourriras-tu?
+npc_lost_boy_1 C'est pas sympa!
+npc_lost_boy_2 Cet [TRADE6] a l'air délicieux! En remerciement, je mange l'[TRADE6].
+npc_lost_boy_3 Au fait!! Voici un petit cadeau. Je te donne cet [TRADE7]... C'est un Hibiscus.
+npc_lost_boy_4 Quel délice! Cela me donne des forces!
+
+// mermaid
+npc_mermaid_0 J'étais en train de nager et une vague a emporté mon collier! Si tu le trouves je te donnerai une écaille de queue!
+npc_mermaid_1 J'ai déjà cherché par là.
+npc_mermaid_2 Ahh! Le voilà! C'est mon collier! Donne! Donne-le moi! Je t'offrirai une écaille!
+npc_mermaid_3 N'en prends qu'une seule! A-Ah! UNE SEULE!
+npc_mermaid_4 Méchant! Je te hais!
+npc_mermaid_5 Après une séance de pose, un artiste voulait une écaille. La légende de la Loupe est-elle vraie...?
+
+npc_mermaid_0_redux Quand je nageais dans la baie, les vagues ont emporté mon soutien-gorge rose... Si tu le retrouves, je te laisserai prendre une écaille de ma queue !
+npc_mermaid_1_redux Petit coquin!
+npc_mermaid_2_redux Ahh ! C'est ça ! C'est mon soutien-gorge rose ! Donne-le-moi ! Rends-le-moi ! Je te donnerai une écaille comme promis !
+
+// mermaid statue
+mermaid_statue_0 LA PETITE SIRENE par ALLIGODALI? ... Il manque une écaille...?
+mermaid_statue_1 Tu déposes l'écaille qui manquait sur la Petite Sirène!
+
+// rabbit
+rabbit_0_0 Savais-tu que les Villages des Animaux et des Mouettes étaient des villes jumelées? Des villes, c'est un bien grand mot... Villages jumeaux serait mieux! D'après une source sûre, à l'intérieur du Gîte des Rêves, il y a un... Crois-tu que c'est vrai?
+rabbit_0_1 Cette nuit, j'ai rêvé que j'étais une carotte. Drôle de rêve pour un lapin...
+
+rabbit_1_0 Je ne peux aller au Village. Les monstres sont si nombreux! Marine est-elle en vie?
+rabbit_1_1 Pourquoi les animaux parlent? Je ne sais pas! Je ne suis qu'un lapin moi!
+
+rabbit_2_0 Les Dunes de Yarna? Leur entrée est au Sud, mais tu ne peux pas y aller ; une bestiole est affalée de tout son long!
+rabbit_2_1 Connais-tu le Coq Volant? Autrefois, il aurait vécu dans le Village des Mouettes. Je me demande si c'est vrai!
+
+rabbit_3_0 Une chanson de Marine par un si beau jour, ce serait le pied!
+rabbit_3_1 Vivement que Marine revienne! Sa chanson est trop géniale!
+
+rabbit_marin Oui c'est elle! C'est Marine!
+
+
+// dialog choices
+choice_Yes Oui
+choice_YES OUI
+choice_Yes! Oui!
+choice_Okay Oui!
+choice_Yeah Oui
+choice_Fine Oui
+
+choice_No Non
+choice_NO NON
+choice_No... Non...
+choice_No! Non!
+choice_N-No Non
+choice_No_Way Non
+choice_No_way Non
+choice_Not_Now Non
+choice_Nope Non
+choice_Give Oui
+choice_Keep Non
+choice_Dont Non
+choice_Can Oui
+choice_Cant Non
+
+choice_Fish Oui
+choice_Cast Oui
+choice_Look Oui
+
+// Marin beach sequence - asking to join Link to see the Walrus.
+choice_Yeah_Marin Oui
+choice_No_Marin... Non...
+
+// Papahl
+npc08_0 Je suis Papounet le papa des quadruplés. Plus tard, je me perdrai dans les montagnes. Tu viendras m'aider, hein?
+npc08_1 Merci pour l'autre fois!
+
+// Madam MeowMeow
+npc09_0 Hmmm... Mon Toutou est si fier de son pelage!
+npc09_1 Au secours! Quelle horreur! Toutou a été chien-nappé par des Moblins! OHH! AHH! Je t'en prie, va secourir mon Toutou!
+npc09_2 Ah! Tu m'as ramené mon Toutou adoré! Quelle joie! Et en plus, tu veux aller le promener? Cela m'arrange! Du fond de mon cœur, merci!
+npc09_3 Je te suis vraiment reconnaissante! C'est si gentil d'avoir ramené mon Toutou! Comment te prouver ma gratitude??\fBISOU BISOU...\nTu as eu la récompense de Mme Miaou Miaou.\nPetit veinard...
+npc09_4 Je te suis vraiment reconnaissante! C'est si gentil d'avoir promené mon Toutou! Comment te prouver ma gratitude??\fBISOU BISOU...\nTu as eu la récompense de Mme Miaou Miaou.\nPetit veinard...
+
+// Bow Wow
+bowWow2 Ouaf Ouaf!\nOuaf Ouaf!
+bowWow3_0 Ouaf Ouaf! Je suis un chien très branché! J'aimerais avoir des accessoires à la mode!
+bowWow3_1 Ouaf Ouaf! Je suis un chien très branché! J'aimerais avoir des accessoires à la mode!\nCe [TRADE1], c'est d'un chic! Il me le faut absolument... Tu l'échanges contre ma pâtée?
+bowWow3_2 Je n'arrive pas à y croire... Tu es nul!
+bowWow3_3 Génial, merci!\nEn échange, voici ma [TRADE2]...
+bowWow_dig Wouf! Creuse!
+bowWow_walk Emmener Bow Wow en promenade?
+
+// Trendy Game
+npc_trendy_open JEU DE HASARD\nLa partie : 10 rubis.
+npc_trendy_no_cash Désolé petit! Tu n'as pas assez de rubis. Reviens donc plus tard.
+npc_trendy_start [CONFIRM] & [CANCEL] déplacent la grue. Après, tu dois calculer ton timing... Dirige-toi vers les boutons. Bonne chance!
+npc_trendy_again Un autre essai?
+npc_trendy_closed Ça suffit pour aujourd'hui... Tu reviendras un autre jour!
+npc_trendy_good_luck Bonne chance!
+npc_trendy_play Oui
+npc_trendy_no_play Non
+
+// 0176: <
+npc_fisherman_0 Une partie de pêche, mon gars?
+npc_fisherman_choice Ça ne te coûtera que 10 rubis...
+npc_fisherman_1 Vis ta vie! Sois un peu plus motivé!
+npc_fisherman_2 Tu n'as pas assez de rubis. Reviens quand tu seras plus fortuné, petit gars!
+npc_fisherman_3 Avec [LEFT] et [RIGHT] sur le [DPAD], évalue la distance de ton lancer. Une fois que le poisson est ferré, appuie rapidement sur le bouton [CONFIRM] pour le remonter!
+npc_fisherman_4 Un autre essai?
+npc_fisherman_5 Oh non! Le fil s'est cassé!\nUn autre essai?
+npc_fisherman_6 Il est énorme! En récompense, je t'offre 20 rubis.
+npc_fisherman_6_1 Un autre essai?
+npc_fisherman_7 Ce n'est que du fretin. Tu n'auras que 5 rubis.
+npc_fisherman_7_1 Tu devrais encore essayer!
+
+npc_fisherman_8 C'est un gros! Et en plus, il a un Fragment de Cœur! Je t'offre aussi 20 rubis.
+npc_fisherman_8_full C'est un gros! Et en plus, il a un Fragment de Cœur! Maintenant, tu as un Cœur complet. Je t'offre aussi 20 rubis.
+
+npc_fisherman_8_1 Un autre essai?
+npc_fisherman_9 Il n'y a plus de poissons!
+npc_fisherman_9_1 Veux-tu essayer la pêche en mer?
+npc_fisherman_10 C'était pour rigoler... Allez, salut!
+
+
+// npc raft
+npc_raft_0 Une balade en radeau pour 100 rubis?
+npc_raft_1 Il y en a un à l'extérieur. Amuse-toi bien!
+// same string as for the fisherman
+npc_raft_2 Tu n'as pas assez de rubis. Reviens quand tu seras plus fortuné, petit gars!
+
+// frog boy
+npc_frog_boy_0 Cela semble incroyable, mais avant, je vivais dans un château. Je me suis enfui quand mes gardes ont été ensorcelés... Et toi, tu cherches la clé de La Prairie? Ecoute, j'ai un marché à te proposer : quand je me suis enfui, j'ai oublié mes Feuilles d'Or. Peux-tu me les ramener, mon cher ami?
+
+npc_frog_body_impressed Il existe en tout cinq feuilles d'Or. Souviens-toi d'acheter une pelle.
+npc_frog_body_coward Qu'ouïs-je?? Un refus? Je ne puis supporter les pleutres! Hors de ma vue, paysan! ...
+
+npc_frog_body_please [NAME] mon ami, au nom de la justice et... en mon nom... tu dois trouver les 5 Feuilles!
+
+npc_frog_body_bien Cher ami, tu as retrouvé mes Feuilles! Fort bien donc. Déplace cette boîte. Une surprise t'attend!
+npc_frog_body_debt Grâce à toi, j'ai mes Feuilles! Je te suis reconnaissant.
+
+npc_frog_body_bowwow Hum, comment te dire? Mais! ... Je fais une allergie aux poils... On discutera quand tu seras sans ce Toutou. Tchao!
+
+npc_zora Si tu sais garder un secret écoute ceci... Va sur la plage Coco et utilise une loupe. Tu y trouveras un ami.
+
+alligator_0 Bienvenue chez AlligoBanane! Ici j'entrepose. Mon hobby, c'est collectionner des boîtes de conserve. Mon frère cadet est un artiste. Moi... Je suis plus terre à terre. J'adore manger!
+alligator_1 Mais qu'est-ce que tu as là? Je t'en prie, donne-moi cette [TRADE2] ... Je t'en SUPPLIE!
+alligator_2 Alors, que décides-tu?
+alligator_3 Tant pis! Mais si tu changes d'avis, reviens vite me voir!
+alligator_4 Merci! Vite! A table!
+alligator_5 MIAM MIAM! ... ... ... ... Quel délice! En récompense, je t'offre des Bananes. Hmm! Quel régal!
+alligator_6 Encore merci!
+alligator_7 As-tu déjà essayé de descendre des rapides? A l'Est du Plateau Tartare tu peux...
+
+witch_0 C'est une perte de temps! Pour ma poudre, il me faut le Champignon de la forêt.
+witch_1 Tu m'apportes le Champignon qui endort. Bon! Dare dare! Je te concocte une mixture!!
+witch_2 Ça y est! Tout est prêt! Attention, il y en a peu! Veux-tu la tester ici?
+witch_3 Bien joué! Essaie donc ceci sur tes ennemis et... Surprise! Si tu es à court va chercher des champignons dans la forêt. Je te préparerai une nouvelle dose!
+
+cukeman_0 Yo, t'es québlo!
+cukeman_1 Il est 9H59, ça dissuade...
+cukeman_2 Les nanas de la Hotline, c'est des pros!
+cukeman_3 Gros bisous de Kyoto! VERO 
+
+fairy_0 Je vais panser tes blessures et remonter ton énergie. Ferme les yeux.
+
+
+// general dialog not used in the actual game
+itemShop_dialog [itemShopItem]\n[itemShopPrice] rubis!
+itemShop_bow Arc & Flèches : 980 rubis!
+itemShop_arrow 10 Flèches : 10 rubis!
+itemShop_shovel Pelle de qualité 200 rubis! C'est pas donné!
+itemShop_hearts Trois Cœurs 10 rubis!
+itemShop_shield Bouclier personnalisé. 20 rubis!
+itemShop_bomb Ten 10 Bombes : 10 rubis!
+
+itemShop_buy Oui
+itemShop_dont Non
+itemShop_no_way Non
+itemShop_no_way! Non
+
+// shopkeeper
+shopkeeper_0 Bienvenue! Apporte ici ce que tu veux acheter.
+shopkeeper_1 Merci beaucoup! Et au plaisir!
+shopkeeper_2 Désolé petit! Tu n'as pas assez de rubis. Reviens donc plus tard.
+shopkeeper_3 Mama mia! Tu n'es pas encore rôdé... Pourquoi acheter des choses inutiles?
+shopkeeper_4 Hé! Une minute! Tu dois payer!
+shopkeeper_5 Tu as pu sortir sans payer? Tu n'as pas honte, voyou?!
+shopkeeper_6 Hé ! Tu m'as volé mes objets, mais je veux te donner une chance de réparer les dégâts. Si tu me donnes 999 rubis, 30 bombes, 30 flèches et 20 poudres magiques, je dis que nous sommes quittes. Qu'en penses-tu ?
+
+shopkeeper_debt_0 Rembourser vos dettes ?
+
+shopkeeper_debt_1 C'est un plaisir de faire affaire avec vous. Je veillerai à blanchir votre nom !
+shopkeeper_debt_2 Eh bien, c'est dommage. Alors tu seras à jamais connu comme un voleur!
+shopkeeper_debt_3 Désolé, mon garçon ! Tu n'as pas les ressources ! Reviens quand tu auras tout ce que je veux!
+
+itemShop_revenge Je t'avais bien dit de me payer. Tu vas le regretter...
+
+weatherBird Ci-gît le Coq Volant.
+
+rooster_0 Quelle surprise, tu as ressuscité le coq!! Il a l'air content.
+rooster_1 SKOUAAAK!
+
+// ghost that follows link
+ghost_0 Amène-moi dans mon ancienne maison! Vers la baie...
+// trying to enter a dungon
+ghost_1 Non!! Pas là!
+ghost_2 Oui, entre! C'est bien ma maison!
+ghost_3 Que de souvenirs ... Rien n'a changé. Bouhhh!
+ghost_4 Assez... Je veux aller à ma tombe!
+ghost_5 Cimetière! Amène-moi à ma tombe...
+ghost_6 Merci! Dans ma maison, regarde sous les jarres. Sayonara!
+
+ghost_grave_powder Atchoum... Retire donc cette poudre... Sinon, je vais te maudire... Atchoum...
+
+
+// == owl ==
+owl_1_0 Hou hou!\nCette épée est donc à toi! ...\fJe comprends pourquoi les monstres s'agitent tant : celui qui doit réveiller le Poisson-Rêve est arrivé!\fOn dit que pour quitter l'île, cette personne doit d'abord le réveiller...\fViens me voir dans la Forêt Enchantée, au Nord du village.\nJe t'y attends. Hou hou!
+owl_1_1 Hou! Bienvenue à la Forêt Enchantée, mon brave garçon! L'île Cocolint abonde en mystères et n'existe sur aucune carte. Son règlement est unique! Tu ne pourras pas la quitter tant que le Poisson-Rêve dormira. A propos, as-tu visité la Cave Flagello, située au Sud du village? Vas-y avec la Clé cachée dans la Forêt. Le Poisson-Rêve te regarde. Hou!
+owl_1_2 Hou! Avec cette clé, va à la Cave Flagello. Prends l'Instrument qui y est dissimulé. Dépêche-toi! Le Poisson-Rêve attend! Hou!
+
+owl_2_0 Hou! C'est un des Instruments des Sirènes! Tu es brave et je t'avais sous-estimé... Cet Instrument - utilisé avec les 7 autres - a le pouvoir de réveiller le Poisson-Rêve. Collecte ces 8 Instruments! Je suis ici pour t'indiquer le chemin... Maintenant, va au Marais des Anémones, situé au Nord! Hou!
+owl_2_1 Hou! Ton compagnon a l'air féroce! N'oublie pas, le 2ème Instrument se trouve dans le Marais!
+
+// post dungeon 3
+owl_3_0 Hou! Combien d'Instruments as-tu collectés? Quand tu joueras des Instruments face à l'œuf, le Poisson-Rêve se réveillera et tu pourras quitter l'île. Va vite vers les Dunes de Yarna! L'horrible monstre noir des sables t'indiquera le chemin! Hou hou!
+owl_3_1 Hou! Cette clé évoque un poisson remontant une cascade. Va à cette cascade, fais disparaître l'eau et saute du sommet.
+
+// at the grave of the ghost
+owl_5_0 Hou! Cela fait longtemps qu'on ne s'est rencontrés! Plonge dans la Baie de Martha et entre dans la gueule du Poisson-Chat. Plus tu es près du Poisson-Rêve, plus son sommeil est agité... Tu es dans la bonne voie. Hou!
+
+// owl sitting infront of the egg on the stairs
+owl_stairs Hou! Le Poisson-Rêve sommeille dans l'œuf, là haut. Il rêve, rêve! Il se réveillera si tu te tiens face à I'œuf et que tu joues des 8 Instruments. Ainsi seulement, pourras-tu quitter l'île... Hou!!
+
+// pre dungeon 6
+owl_6_0 Hou! Au Sud et au Nord, se trouvent deux temples. Va d'abord au Sud, là où des Ruines antiques parlent du Poisson-Rêve. Tu en sauras sûrement plus...
+owl_6_1 Hou! Je vois que tu as lu ce Marbre ancien. Il dit que l'île est issue des songes du Poisson-Rêve, mais personne n'en est sûr... Qui peut savoir ce que contient un coffre tant qu'il n'a pas été ouvert? Qui peut deviner s'il rêve tant qu'il ne s'est pas réveillé? Le Poisson-Rêve est le seul qui sait... Suis ton instinct. Ainsi, tu sauras... Hou hou!
+
+// after dungeon 6
+owl_7_0 Hou! Les monstres de cette île ont peur que le Poisson-Rêve ne s'éveille. Leur pouvoir est bien réel! Ils pourraient conquérir l'île et anéantir leurs ennemis. Va à la tour de la montagne en volant comme un oiseau! Hou!
+// after dungeon 6 on the mountain entry
+owl_7_1 Hou hou! Ton périple est ardu mais tu y es presque... Va vers l'Est. Le Poisson du Vent a besoin de sommeil.
+
+// after saving marin
+owl_8_0 Hou! Cette fille a chanté en face de l'œuf sa "Ballade du Poisson-Rêve". Mais c'est la Chanson d'Eveil! Désirait-elle vraiment le réveiller? Le prochain Instrument est dans le Roc de la Tortue. Anime ces rocs. Sois brave! Le Poisson-Rêve attend... Hou hou!
+
+// after opening the egg
+owl_9_0 Hou hou! Le Poisson-Rêve t'attend. Entre dans l'œuf... Hou hou!
+
+owl_final Hou! Petit! Heu pardon! Maître [NAME], tu as anéanti les monstres! Tu as fait preuve de force, de sagesse et de courage! ... ... ... ... Etant un des esprits du Poisson-Rêve, je protégeais son monde onirique... Hélas, un jour le Cauchemar envahit son rêve et menaça la paix de l'île. Mais toi [NAME], tu devins notre espoir. J'ai toujours cru en toi! Merci [NAME]. Ma tâche est accomplie et je dois réintégrer le Poisson-Rêve. Adieu... Hou!
+
+// raccoon in the forest
+raccoon_0 J'suis un raton-laveur espiègle. Et j'aime pas du tout c'qu'est poudreux...
+raccoon_1 Hé hé! Tu vas te perdre dans la Forêt. Hi hi! Bien fait!!
+
+dog GRRR...
+
+desert_bone_0 Cette Poudre est si fraîche! Pour ta peine, voici un indice : si tu es avalé par les sables mouvants, place une Bombe là où tu tombes. De l'autre côté, une surprise t'attend. Salut!
+
+// chicken dude in the mountains
+chicken_dude_0 De nos jours, les coqs n'ont plus la même combativité! Autrefois, j'avais un coq qui volait! Ce n'est pas une blague!
+chicken_dude_1 Fantastique! Ce coq vole vraiment! Tu vois que je ne mentais pas. Essaie par toi-même : brandis-le!!
+chicken_dude_2 Un coq volant, c'est bien trop marrant...
+chicken_dude_3 Veux-tu faire un tour avec le coq volant ?
+chicken_dude_4 Rends-moi le coq, je t'en supplie !
+chicken_dude_5 Quand tu voudras emprunter le coq, passe simplement me voir !
+chicken_dude_6 D'accord, ça ne me dérange pas d'attendre un peu plus longtemps...
+
+// hidden npc that trades the boomerang
+npc_hidden_0 Sur la plage, j'ai ramassé une merveille. Je te l'échange contre l'objet qui est dans [CANCEL].
+npc_hidden_1 Marché conclu! Quand le Boomerang ne te sert plus, reviens ici!
+npc_hidden_2 Ah bon... Dans ce cas...
+npc_hidden_3 Rends-moi le Boomerang et je te rendrai ton objet!
+npc_hidden_4 Tu as récupéré ton objet. Tu as rendu le Boomerang.
+npc_hidden_5 Non... Pas cet objet! Choisis-en un autre.
+
+// bat in cave
+npcBat_Intro Dis donc toi! Merci de m'avoir dérangé pendant ma sieste!\nTiens, j'ai un cadeau pour toi.\nTu es prêt?
+npcBat_End Hi hi hi! C'est bien fait pour toi! Tu as vu tout ce que tu dois porter!!!\nAllez, salut!
+
+npcBat_Powder Tu veux plus de Poudre Magique? Tu es prêt?
+npcBat_Bombs Tu veux plus de Bombes? Tu es prêt?
+npcBat_Arrows Tu veux plus de Flèches? Tu es prêt?
+
+bat_yes Oui
+
+book Tu veux le lire?
+book_read Voulez-vous lire ce livre?
+book_realy_read Tu veux le lire?
+
+book_yes Oui
+book_no Non
+book_look Lire
+book_dont Non
+
+bookcase Ce n'est pas une commode... Quoi? Tu avais remarqué?... OK!
+
+book1_0 'CHOISIR LE BON OBJET'
+book1_1 'Choisis l'objet désiré dans le Sous-Ecran en appuyant sur les quatre Face-Buttons ou les boutons L et R. Certains objets remplacent une épée lors d'un combat. Essaie-les tous pour avoir le plus adéquat!'
+
+book2_0 'CONSEILS ET CARTE'
+book2_1 'Tu peux voir la carte de l'île en appuyant sur les boutons [START] puis [SELECT]. Les zones sombres de la carte sont les endroits que tu n'as pas encore visités. Déplace le curseur et appuie sur le bouton [CONFIRM] pour obtenir plus d'informations sur une zone ou rejouer le message que tu as reçu là...'
+
+book3_0 'TOUT SUR L'EPEE TOURNOYANTE!'
+book3_1 'Cette technique spéciale se transmet de génération en génération. Maintiens enfoncé le bouton correspondant à l'épée pour augmenter ta force. Quand c'est suffisant, relâche-le. Crois-tu que tu peux le faire?'
+
+book4_0 'DE LA BONNE UTILISATION D'UN BOUCLIER'
+book4_1 'En maintenant A ou B enfoncé, tu peux parer les attaques et repousser les ennemis. En plus du bouclier standard, il y en a un qui te protège des lasers!'
+
+book5_0 'LES BOMBES'
+book5_1 'Pour reprendre une bombe au sol, appuie tout de suite sur le bouton la contrôlant. Puis jette-la en appuyant encore sur le même bouton. Connaissais-tu cette astuce?'
+
+book6_0 'TELEPORTATION'
+book6_1 'Sur Cocolint, il y a des trous Warp. Téléporte-toi en sautant dedans. Replonge dans le trou d'où tu sors pour être téléporté en succession. Tu ne peux pas te téléporter vers un trou qui n'est pas encore apparu à l'écran!'
+
+book7_0 'ATLAS DE COCOLINT'
+book7_1 'Choisis un lieu grâce au curseur et appuie sur A pour afficher son nom. Veux-tu le consulter?'
+
+book8_0 MYSTERES ET SECRETS DE COCOLINT
+book8_1 Impossible! Il te faut la Loupe pour lire les petits caractères...
+book8_2 Dans l'œuf, on tourne tourne tourne...\n{[LEFT] [LEFT] [UP] [RIGHT] [RIGHT] [UP] [LEFT] [UP]}Hum! C'est très énigmatique.
+book8_3 Dans l'œuf, on tourne tourne tourne...\n{[RIGHT] [UP] [UP] [RIGHT] [UP] [UP] [RIGHT] [UP]}Hum! C'est très énigmatique.
+book8_4 Dans l'œuf, on tourne tourne tourne...\n{[LEFT] [UP] [RIGHT] [UP] [LEFT] [UP] [RIGHT] [UP]}Hum! C'est très énigmatique.
+book8_5 Dans l'œuf, on tourne tourne tourne...\n{[RIGHT] [RIGHT] [RIGHT] [RIGHT] [UP] [UP] [UP] [UP]}Hum! C'est très énigmatique.
+
+book9_1 Un monde de couleur sous 5 pierres tombales\f{3[UP]  4[RIGHT]  5[UP]}{2[LEFT]  1[DOWN]   }\fTeste ton courage. Ouvre un nouveau chemin! Le valeureux aura le pouvoir des couleurs. Quel est le monde de couleur?
+
+// phone in the house of ulrira
+ulrira_telephone DRING DRING! DRING! Hello! Madonna à l'appaouïelle. No darling... CLIC! Tu as dû faire un faux numéro!
+
+// ulrira dialog
+ulrira_0 DRING DRING!! Pépé le Ramollo à l'appareil... Je sais tout de cette île! Si tu te perds, passe-moi un coup de fil! Salut! CLIC!
+ulrira_1 DRING DRING!! Pépé le Ramollo à l'appareil... Il y a une bibliothèque dans le village. Peut-être apportera-t'elle une réponse à tes questions? Salut! CLIC!
+
+ulrira_2_0 DRING DRING!! Pépé le Ramollo à l'appareil... Habitants de la Forêt Enchantée, les Moblins vivent également dans la cave du Plateau Tartare. Salut! CLIC!
+ulrira_2_1 DRING DRING!! Pépé le Ramollo à l'appareil... Les fleurs du Marais des Anémones sont les préférées de Toutou. C'est ce qu'on dit... Pourquoi n'y vas-tu pas? Salut! CLIC!
+
+ulrira_3_0 DRING DRING!! Pépé le Ramollo à l'appareil... Tu devrais ramener Toutou à Mme Miaou Miaou. Elle sera folle de joie. Salut! CLIC!
+ulrira_3_1 DRING DRING!! Pépé le Ramollo à l'appareil... As-tu rencontré tous les gens de cette île? Au Sud-Est du village, à côté du Champ aux Pièges, vit un homme appelé Richard. Je te conseille d'aller le voir. Salut! CLIC!
+ulrira_3_2 DRING DRING!! Pépé le Ramollo à l'appareil... Si tu veux des bananes, parle de nouveau aux gens du village. Salut! CLIC!
+
+ulrira_leaf_0 DRRING! DRRING! C'est moi! Pépé! Tu n'as pas trouvé les cinq feuilles d'Or? Fais attention à ne pas perdre celles en ta possession! CLIC!
+ulrira_leaf_1 DRRING! DRRING! C'est moi! Pépé! Tu n'as pas trouvé les cinq feuilles d'Or? Utilise tes bombes et on verra bien! CLIC!
+ulrira_leaf_2 DRRING! DRRING! C'est moi! Pépé! Tu n'as pas trouvé les cinq feuilles d'Or? Va faire peur au corbeau près du château! CLIC!
+ulrira_shovel DRING DRING!! Pépé le Ramollo à l'appareil... As-tu acheté une Pelle? Creuse le sol, peut-être auras-tu de la chance? Salut! CLIC!
+
+ulrira_3_3 DRING DRING!! Pépé le Ramollo à l'appareil... Va vite à la Cave aux Clés, située dans La Prairie. Salut! CLIC!
+
+ulrira_4_0 DRING DRING!! Pépé le Ramollo à l'appareil... Apparemment, dans les Dunes de Yarna, au Sud-Est de l'île, se trouve la Clé-Poisson. Ecoute, je ne peux pas être plus explicite que cela... Salut! CLIC!
+ulrira_4_1 DRING DRING!! Pépé le Ramollo à l'appareil... D'après Mamie Youpi, quelque chose est caché derrière la Cascade de la Cordillère. Ce renseignement t'est utile? Salut! CLIC!
+
+ulrira_5_0 DRING DRING!! Pépé le Ramollo à l'appareil... Dans la Baie, un Poisson-Chat ouvre sa gueule. Va donc y nager. Salut! CLIC!
+
+ulrira_6_0 DRING DRING!! Pépé le Ramollo à l'appareil... Es-tu allé au Temple du Masque situé au Nord du Village des Animaux? Salut! CLIC!
+
+ulrira_7_0 DRING DRING!! Pépé le Ramollo à l'appareil... Connais-tu le Coq Volant du Village des Mouettes? Autrefois, je m'agrippais à ses pattes et je volais! Hélas... Il est mort et gît désormais sous la Girouette. Salut! CLIC!
+ulrira_7_1 DRING DRING!! Pépé le Ramollo à l'appareil... Tu te défends très bien! As-tu visité le Poulailler, en haut de la montagne? A côté, il y a une cave qui renferme un objet important. Salut! CLIC!
+ulrira_7_2 DRING DRING!! Pépé le Ramollo à l'appareil... De mon temps, il y avait une Tour dans la partie est de la Cordillère. Tu devrais aller y faire un tour! Salut! CLIC!
+
+ulrira_8_0 DRING DRING!! Pépé le Ramollo à l'appareil... La tête de la tortue te gêne? Donne-lui de la vie pour la déplacer... Salut! CLIC!
+ulrira_8_1 DRING DRING!! Oui c'est Pépé! Courage, encore un effort... Je suis de tout cœur avec toi. Vas-y mon gars!
+
+ulrira_9_0 DRING DRING!! Pépé le Ramollo à l'appareil... Dirige-toi vers l'œuf Sacré, niché en haut du Mt Tamaranch. [NAME], sois prudent. Salut! CLIC!
+ulrira_9_1 DRING DRING!! Pépé le Ramollo à l'appareil... Tu t'es perdu dans l'œuf? Désolé, mais je ne peux pas t'aider! Va donc te renseigner à la Bibliothèque. Désolé hein! Salut! CLIC!
+
+ulrira_wife DRING! DRING! C'est moi! Pépé! Ma femme est allée au Village des Animaux et m'a laissé tout seul... Peux-tu lui dire de revenir à la maison quand elle aura fini de faire le ménage? Salut! CLIC!
+ulrira_ghost DRING DRING!! Pépé le Ramollo à l'appareil... Tu es hanté par un fantôme? Je te conseille de l'amener là où il veut. Salut! CLIC!
+ulrira_mamu DRING DRING!! Pépé le Ramollo à l'appareil... Tu aimerais chanter? Va voir Wart la Grenouille. Il habite dans le Dédale des Panneaux. Il est bon mais un peu cher... Salut! CLIC!
+
+// TODO: not sure when this is shown in the game
+ulrira_seashells DRING DRING!! Pépé le Ramollo à l'appareil... Tes ennemis sont coriaces? Collecte donc tous les Coquillages. Sois confiant! Bonne chance! Salut! CLIC!
+
+
+// dungeon intro
+dungeon_1 Niveau 1\n     CAVE FLAGELLO
+dungeon_2 Niveau 2\n     GROTTE DU GENIE
+dungeon_3 Niveau 3\n     CAVE AUX CLES
+dungeon_4 Niveau 4\n     ABIME DU POISSON
+dungeon_5 Niveau 5\n     POISSON-CHAT
+dungeon_6 Niveau 6\n     TEMPLE DU MASQUE
+dungeon_7 Niveau 7\n     TOUR DU VAUTOUR
+dungeon_8 Niveau 8\n     ROC DE LA TORTUE
+
+beak_nop Cette statue veut me dire quelque chose mais je ne comprends rien! Elle n'a pas de bec...
+
+beak_d1_1 Si tu vois les pointes, pense à utiliser ton Bouclier.
+beak_d1_2 Si une porte ne s'ouvre pas, déplace un bloc.
+
+
+// shrine
+shrine_dark?? Un dessin est gravé sur le mur. Mais tu ne peux pas le voir car c'est trop sombre...
+shrine_message L'ILE COCOLINT N'EST QU'UNE ILLUSION... MER, CIEL, MONSTRES, HUMAINS... RIEN N'EST REEL. L'ILE N'EXISTE QUE DANS LES SONGES DU POISSON-REVE. IL S'EVEILLERA ET ELLE DISPARAITRA. NAUFRAGE, TU DOIS CONNAITRE LA VERITE... ... ... ... ... Quoi? Illusion?
+
+
+// dungeon two
+beak_d2_1 Une partie du sol s'élève. Actionne le cristal bleu.
+beak_d2_2 Si les blocs se ressemblent, un nouveau chemin s'ouvrira.
+beak_d2_3 D'abord un lapin et en dernier, un spectre...
+
+// genie
+d2_boss_0 HI HI HI!! Attends un peu, que je m'occupe de toi... HI HI!
+d2_boss_1 NANANA!!! Tu ne m'auras pas tant que j'aurai ma jarre!
+d2_boss_2 . . . .! Je ne peux pas bouger!\nMais je vais bien. Ta petite épée ne pourra pas briser cette bouteille!
+d2_boss_3 Quoi? Tu as osé? Tu as cassé ma jarre. Alors là! Je suis furax!!
+
+// dungeon three
+beak_d3_1 Si loin...\nNe crains rien. Fonce et vole!
+beak_d3_2 Pour vaincre le monstre noir à la carapace, fais-lui manger un plat pimenté.
+beak_d3_3 Frappe de ton épée certains murs et écoute bien.
+
+d3_boss {BONK! BONK!}{Tu ne m'auras pas!}{BONK!}
+
+bow_wow_cave_entry C'est qui ce freluquet? Les gars, débarrassez-moi vite de lui!
+bow_wow_cave_boss Tu es venu chercher Toutou? Tu dois être le mercenaire envoyé par Mme Miaou Miaou. Je vais te corriger!!
+bow_wow_cave_bw Tu as trouvé Toutou! Il a l'air féroce...
+
+castle_monkey_hunger Kkkkk! Kiki le singe! Kiki a faim! Kkkkkk!
+castle_monkey_bowwow Kiiiki! Quoi? OK sale chien, on va se battre!
+
+castle_monkey_banana {[TRADE3]!    [TRADE3]!}{Miam Miam!}{Pour Kiki?}
+castle_monkey_banana_yes {[TRADE3]!    [TRADE3]!}{Kiki!}{Les copains, venez!}{On va le remercier!}
+castle_monkey_done {Le pont des singes}{est prêt!}{Salut! Kiki!}
+
+// dungeon four
+beak_d4_1 La lueur des tuiles sera ton guide...
+
+d4_nightmare {GLOU GLOU!}{GLOUP! GLOUP!}{MIAM! A MANGER!}{GLOUP! GLOUP!}
+
+// dungeon five
+beak_d5_1 Si ton épée ne peut vaincre un squelette, essaie une bombe.
+beak_d5_2 Plonge là où se croisent les lumières des flambeaux...
+
+master_stalfos_0 Ah! Je ne peux pas te battre! J'abandonne!
+master_stalfos_1 Quoi?? Tu m'as trouvé?\nTu es pire qu'un pot de colle!
+master_stalfos_2 Encore toi? Tu n'arrêteras jamais? Je vais te rosser!\nD'accord... Allons-y!
+master_stalfos_3 J'ai ce qu'il y avait dans ce coffre. Viens le chercher si tu oses! Signé : [SKULL]
+
+slime_eel_0 Ah Ah! Tu es l'intrus venu réveiller le Poisson-Rêve...\nTu vas me servir de déjeuner!
+slime_eel_1 AHHH! Tu ne connais pas encore cette île! Tu es vraiment naïf... AHHH!
+
+// dungeon six
+beak_d6_1 Fracasse le mur des Yeux du Masque!
+beak_d6_2 Chevauche les cristaux pour avancer.
+beak_d6_3 Utilise les jarres pour ouvrir un coffre.
+
+facade_opening Hé petit! Besoin d'un indice? Mon point faible c'est la... Ouh, j'ai failli trop en dire...
+facade_death Je parle trop... Mais si le Poisson-Rêve s'éveille, tout ce qui se trouve sur cette île disparaîtra! Oui... TOUT!
+
+// dungeon seven
+grim_creeper_enter Alors petit? Tu cherches la bagarre? Allez les gars, débarrassez-moi de cet avorton!
+grim_creeper_1 Ha! C'est tout ce que tu as?! Prépare-toi à... ... ça! ...
+grim_creeper_2 Sale type! Tu as battu mes gars! Tu vas le payer! Je saurai te retrouver!!
+grim_creeper_3 Cette fois-ci, je vais t'avoir, c'est sûr... Je vais t'écraser comme une vulgaire fourmi!
+grim_creeper_4 J'ai perdu... Toi aussi, tu vas perdre si le Poisson-Rêve s'éveille... Tout comme moi, tu es... dans son rêve...
+
+beak_d7_1 Saute pour accéder au coffre de la table.
+beak_d7_2 Le rébus est résolu si les 4 piliers tombent.
+beak_d7_3 Jeter pour progresser.
+
+// dungeon eight
+beak_d8_1 Détruis les monstres à la clé par le haut.
+beak_d8_2 Utilise l'arc sur une statue étrange.
+beak_d8_3 Comble tous les trous avec le roc qui roule et cette [DPAD] est la solution!
+
+ice_block_message Brrrr... Ce sont des blocs de glace!! Je suis gelé!
+
+hot_head_0 SPLASHHH! Tu vas mourir! Jamais, je ne te laisserai jouer des Instruments des Sirènes!
+hot_head_1 NON!!!... Si tu n'étais pas venu ici, rien n'aurait changé. Tu ne peux pas réveiller le Poisson-Rêve! N'oublie pas... Nous faisons... tous partie... de son rêve...
+
+// color dungeon
+grave_locked Abandonne si tu es un lâche. Seul le courage peut déplacer les tombes.
+
+beak_dc_1 Voici un indice : Rouge devient Bleu.
+
+stone_hinox Fou cupide! Tu veux plus de puissance?! Un bouffon tel que toi est indigne!
+
+giant_buzz_blob_enter BOU! Ta lame est pitoyable! Tu ne pourras jamais me battre!
+giant_buzz_blob_sword Jeune sot! Ton épée ne marche pas! Essaie donc autre chose!
+
+// is this only shown on the normal gameboy?
+// Désolé mais ceci est le donjon de la couleur. Seuls ceux au pouvoir de la couleur peuvent entrer. Si tu peux dire qui porte du rouge et qui porte du bleu, tu pourras entrer. Adieu.
+npc_color_0 Nos couleurs changent! Si je suis rouge, il sera bleu! Et inversement... De quelle couleur sont mes habits?
+npc_color_1 Non! Regarde bien et essaie encore une fois.
+npc_color_2 N'en parle à personne.
+npc_color_3 La fée t'attend.
+npc_color_4 As-tu la poudre?\nVa la chercher si tu ne l'as pas.
+
+choice_Red Rouge
+choice_Blue Bleu
+
+hardhit_beetle_0 Bleu est normal.\nJaune : attention et rouge : danger.
+hardhit_beetle_1 Bleu : commencer.\nJaune : attention.\nRouge : danger.
+hardhit_beetle_2 Jaune : attention.\nRouge : danger.\nPrends ton temps.
+
+choice_RED ROUGE
+choice_BLUE BLEU
+choice_GREEN VERT
+
+color_fairy_0 Sois le bienvenu [NAME]. Je te félicite d'être venu jusqu'ici. Je vais te remettre le pouvoir de la couleur. Choisis rouge pour l'attaque ou bleu pour la défense. Quel pouvoir veux-tu?
+color_fairy_1 Choisis rouge pour l'attaque ou bleu pour la défense. Quel pouvoir veux-tu?
+color_fairy_2 Es-tu sûr?
+color_fairy_3 Ferme les yeux.
+color_fairy_4 Je vais te mener dehors.
+color_fairy_5 Bon retour, [NAME]. Si tu ne souhaites plus bénéficier du pouvoir de la couleur, je peux te rendre tes vêtements d'origine. Veux-tu rendre le pouvoir de la couleur ?
+color_fairy_6 Préférerais-tu passer à l'autre couleur ?
+
+cloak_blue Vous obtenez les habits bleus! Votre endurance est doublée!
+cloak_red Vous obtenez les habits rouges! Vous débordez d'énergie!
+cloak_green Tu as obtenu les Vêtements Verts ! Ils n'ont aucun effet spécial, mais ils sont élégants !
+
+// desert
+desertLanmola Minable! Ne vois-tu pas que tu me gênes!
+
+// shell mansion
+shell_mansion_0 Je suis l'esprit du manoir... Triomphe des ténèbres, trouve les coquillages et emprunte les portes pour gagner l'Epée!
+shell_mansion_1 Hmmm. Pas de réponse. Vous n'avez pas assez de coquillages.
+shell_mansion_2 Ma mission est terminée.
+
+npc_hippo_0 Va-t'en!
+npc_hippo_1 Arrête!
+npc_hippo_2 Va-t'en! Tu vois pas que je pose? Le beau Sven doit faire mon portrait!
+
+npc_painter_0 Ya, je zuis Sven Donavitch! La ztatue de la zirène près de la baie est mon chef-d'œuvre inachevé... L'art... Z'est dur, hein?
+npc_painter_1 Cezi est-ce la fameuze écaille? Je dois terminer zette peinture. Va donc voir la ztatue de la zirène, OK?
+npc_painter_2 Que pasa? Pero, qué fais-tu avec la Loupe? Arrrrête! Pobrecito...
+
+// photo house
+photo_book "Les voyages de [NAME]." Veux-tu regarder ton album?
+photo_book_text Quelle photo veux-tu voir? Utilise [DPAD] pour choisir et appuie sur [CONFIRM]!
+
+// entering with a follower
+photo_mouse_follower Reviens me voir quand tu seras seul!
+
+photo_left_11 11 photos à prendre! Quel type de photo t'intéresse?
+photo_left_10 10 photos à prendre! Quel type de photo t'intéresse?
+photo_left_9 9 photos à prendre! Quel type de photo t'intéresse?
+photo_left_8 8 photos à prendre! Quel type de photo t'intéresse?
+photo_left_7 7 photos à prendre! Quel type de photo t'intéresse?
+photo_left_6 6 photos à prendre! Quel type de photo t'intéresse?
+photo_left_5 5 photos à prendre! Quel type de photo t'intéresse?
+photo_left_4 4 photos à prendre! Quel type de photo t'intéresse?
+photo_left_3 3 photos à prendre! Quel type de photo t'intéresse?
+photo_left_2 2 photos à prendre! Quel type de photo t'intéresse?
+photo_left_1 1 photo à prendre! Quel type de photo t'intéresse?
+photo_left_0 Oh non! La pellicule est finie! Pense à regarder ton album!
+
+// photo sequence photo house
+photo_01_0 J'ADORE prendre les gens en photo. Puis-je te tirer le portrait?
+photo_01_1 Va au fond de la salle et fais face à l'écran.
+photo_01_2 Fais-moi ton plus beau sourire!
+photo_01_3 Quel est ton nom jeune homme? [NAME]? Alors... Voici ton album, [NAME]. Regarde-le avant de partir!
+photo_01_4 Voyons si nous pouvons remplir cet album!
+photo_01_5 On prend une photo?
+photo_01_6 Pas de photo?!\nTu te fiches de moi?
+photo_01_7 Quel dommage!
+photo_01_8 Génial! Appelons cette photo "Game Over".
+photo_01_9 Hé! Je n'ai pas encore pris ta photo! Retourne faire face à l'écran!
+
+// photo sequence ulrira house
+photo_02_0 Salut! C'est moi le photographe! Tu te poses des questions sur Pépé le Ramollo?
+photo_02_1 Appelons ceci "[NAME] Découvre le secret de pépé!"
+
+// photo sequences BowWow
+photo_03_0 Fantastique!\nAppelons ceci : "[NAME] joue avec Toutou!" Maintenant approche-toi de Toutou!
+photo_03_1 Grrrr!
+photo_03_2 [NAME], approche-toi!
+photo_03_3 Grrrr! Grrrr!!
+photo_03_4 Grrrr! Grrrr!! GRRRR!
+photo_03_5 Plus près! OK, c'est bon... On sourit!
+
+// photo sequences castle
+photo_05_0 Hé, [NAME]. Mon truc à moi c'est de prendre des photos. Ce vieux château est splendide, non?
+photo_05_1 Rien?! J'en ai plus que marre d'attendre. Je veux les feuilles d'Or... MAINTENANT!
+photo_05_2 Tout ceci mérite une photo... Tire-moi le portrait, OK?
+photo_05_3 J'ai pas peur. Je veux juste rester chez moi.
+
+// photo sequences grave
+photo_06_0 J'adore les photos! Hé, [NAME]! Que fais-tu dans le coin?
+photo_06_1 Qui est ce fantôme? Je suis sûr qu'il est heureux grâce à toi. Es-tu prêt pour la photo?
+photo_06_2 Appelons-la : "J'ai eu très peur". Souriez!
+
+// photo sequences marin cliff
+marin_cliff_0 C'est ma première balade avec toi, [NAME].
+marin_cliff_1 . . . . .
+marin_cliff_2 Cette falaise sera notre jardin secret.
+marin_cliff_3 Tu ne parles pas?
+marin_cliff_4 J'adore les photos! Pourquoi ne pas prendre une photo à l'écart de tous? Appelons-la.....
+marin_cliff_5 Je vais la développer. Viens vite la voir!
+
+// photo sequences fountain
+photo_08_0 Bonjour! Je suis le photographe! Quel belle occasion de faire une photo! Appelons-la : "Belle tête"!
+photo_08_1 Oh désolée! Rien de cassé [NAME]?
+
+// photo sequences weather bird
+photo_09_0 Hé! Marine et [NAME]! Allez- vous prendre des photos? Pourquoi ne pas photographier tout le monde? Moi y compris?
+photo_09_1 Voici mon bel appareil photo. Tu es prêt? On sourit!
+photo_09_2 OK, j'ai fini. J'me rentre.
+
+// photo sequences fisher
+photo_10_0 Je suis sûr d'attraper un gros poisson.
+photo_10_1 WHOA! Il est énorme! Hé le photographe! Peux-tu prendre une photo?
+photo_10_2 Fais plus attention la prochaine fois!
+
+// photo sequences zora
+photo_11_0 Hé! Tu peux me voir?! T'as de bons yeux, toi! Je ne suis pas un violent, je veux juste vivre en paix.
+photo_11_1 Salut! C'est moi le photographe! Quoi? Zora est là? Il faut que je prenne une photo! Je vais l'appeler "J'ai trouvé Zora".
+
+// photo sequences mountain
+photo_12_0 Voilà qui représente ton aventure à la perfection!
+photo_12_1 Appelons ceci : "C'était juste".
+photo_12_2 Je suis trop près.
+photo_12_3 Je dois reculer.
+photo_12_4 Aaaaaah!
+
+// map
+map_tal_tal Cordillère Tartare
+map_wind_fishs_egg ŒUF SACRE
+map_mt_tamaranch Mt Tamaranch
+map_hen_house Poulailler
+map_telephone_booth Cabine téléphonique
+map_goponga_swamp Marais des Anémones
+map_tal_tal_heights Plateau Tartare
+map_weird_mr_write Chez Mr Wright le Loufoque
+map_photo_both Viens te faire tirer le portrait!
+map_raft_shop Location de radeaux
+map_mysterious_woods Forêt Enchantée
+map_koholint_prairie Plaine Cocolint
+map_crazy_tracy Pharmacie de Monique
+map_tabahl_wasteland Morne Plaine
+map_kanalet_castle Château Canulet
+map_rapids_ride Descente des Rapides
+map_witchs_hut Hutte de la Sorcière
+map_cementry Cimetière
+map_fishing_pond Etang
+map_quadruplets_house Chez les Quadruplés
+map_dream_shrine Gîte des Rêves
+map_ukuku_prairie La Prairie
+map_seashell_mansion Maison aux Coquillages
+map_face_shrine Temple du Masque
+map_mabe_village Village des Mouettes
+map_town_tool_shop Bazar du Centre
+map_madam_meow Chez Mme Miaou Miaou\nChien méchant!
+map_marin_tarin Chez Marine et Tarkin
+map_village_library Bibliothèque
+map_old_man_house Chez Pépé le Ramollo
+map_trendy_game Jeu de hasard
+map_south_village Sud du Village
+map_signpost_maze Dédale des Panneaux
+map_pothole_field Champ des Pièges
+map_maraths_bay Baie de Martha
+map_animal_village Village des Animaux
+map_yarna_desert Dunes de Yarna
+map_richards_villa Villa de Richard
+map_toronbo_shores Plage Coco
+map_banana_house Chez AlligoBanane
+map_bay_east Est de la Baie
+map_house_bay Maison de la Baie
+
+
+map_level_1 Niveau 1\n     CAVE FLAGELLO
+map_level_2 Niveau 2\n     GROTTE DU GENIE
+map_level_3 Niveau 3\n     CAVE AUX CLES
+map_level_4 Niveau 4\n     ABIME DU POISSON
+map_level_5 Niveau 5\n     POISSON-CHAT
+map_level_6 Niveau 6\n     TEMPLE DU MASQUE
+map_level_7 Niveau 7\n     TOUR DU VAUTOUR
+map_level_8 Niveau 8\n     ROC DE LA TORTUE
+
+
+final_boss Nous provenons des Cauchemars. Pour dominer ce monde, nous avons provoqué un sommeil sans fin chez le Poisson-Rêve. Tant qu'il dort, l'île existera! Nous sommes les Maîtres ici et toi avorton, tu arrives pour contrecarrer nos plans? Ha ha! Tu ne nous battras jamais! Tu vas périr...
+
+final_windfish ... ... ... ... ... ... ... ... JE SUIS LE POISSON-REVE! LONG FUT MON SOMMEIL... DANS MES SONGES, UN ŒUF APPARUT, PUIS UNE ILE L'ENTOURA... DES GENS... DES ANIMAUX... UN MONDE ETAIT NE! ... ... ... ... MAIS LE REVE A TOUJOURS UNE FIN, C'EST LE DESTIN! QUAND JE M'EVEILLERAI, COCOLINT DISPARAITRA... OR, LE SOUVENIR DE CETTE ILE DOIT RESTER DANS NOS CœURS EN TANT QUE REALITE... TOI AUSSI UN JOUR, TU TE SOUVIENDRAS. CE SOUVENIR DOIT RESTER REEL DANS UN MONDE DE REVES... VIENS [NAME], EVEILLONS-NOUS ENSEMBLE!!
+final_instruments JOUE LA CHANSON DE L'EVEIL!!
+
+// credits
+// 1998
+credits_0 1998 STAFF
+
+credits_1 SUPERVISEUR
+credits_1_0 TAKASHI TEZUKA
+
+credits_2 REALISATEUR
+credits_2_0 YOSINORI TUTIYAMA
+
+credits_3 SCENARISTE
+credits_3_0 NOBUO MATSUMIYA
+
+credits_4 PROGRAMMEUR
+credits_4_0 EIJI NOTO
+credits_4_1 KIYOSHI KODA
+credits_4_2 SIGEHIRO KASAMATU
+
+credits_5 INFOGRAPHIE
+credits_5_0 MIKIO MISHIMA
+credits_5_1 KYOKO KIMURA
+
+credits_6 MONTAGE SONORE
+credits_6_0 YUICHI OZAKI
+
+credits_7 ART WORK
+credits_7_0 KEIKO IZAWA
+
+credits_8 SUPPORT TECHNIQUE
+credits_8_0 N KOGANEZAWA
+
+credits_9 TEXTES FRANCAIS
+credits_9_0 JULIEN BARDAKOFF
+credits_9_1 
+credits_9_2 
+
+credits_10 REMERCIEMENTS A
+credits_10_0 AKIYA SAKAMOTO
+credits_10_1 R&D2 DEBUG STAFF
+
+credits_11 DEBUG STAFF
+credits_11_0 SUPER MARIO CLUB
+
+// 1993
+credits_12 1993 STAFF
+
+credits_13 REALISATEUR
+credits_13_0 TAKASHI TEZUKA
+
+credits_14 CONCEPTEUR DONJONS
+credits_14_0 YASUHISA YAMAMURA
+
+credits_15 SCENARISTE
+credits_15_0 KENSUKE TANABE
+credits_15_1 YOSHIAKI KOIZUMI
+
+credits_16 PROGRAMMEUR
+credits_16_0 KAZUAKI MORITA
+credits_16_1 TAKAMITSU KUZUHARA
+
+credits_17 INFOGRAPHIE
+credits_17_0 MASANAO ARIMOTO
+credits_17_1 SHIGEFUMI HINO
+
+credits_18 MONTAGE SONORE
+credits_18_0 KAZUMI TOTAKA
+credits_18_1 MINAKO HAMANO
+credits_18_2 KOZUE ISHIKAWA
+
+credits_19 ILLUSTRATEUR
+credits_19_0 YOUICHI KOTABE
+
+credits_20 TEXTES FRANCAIS
+credits_20_0 DAN OWSEN
+
+credits_21 REMERCIEMENTS A
+credits_21_0 TOSHIHIKO NAKAGO
+credits_21_1 KOJI KONDO
+credits_21_2 TOMOAKI KUROUME
+credits_21_3 MASAICHI OKUMURA
+credits_21_4 KANAE WADA
+
+credits_22 PRODUCTEUR
+credits_22_0 SHIGERU MIYAMOTO
+
+credits_23 PRODUCTEUR DELEGUE
+credits_23_0 HIROSHI YAMAUCHI
+
+credits_24 
+credits_24_0 
+
+credits_25 
+credits_25_0 THE END

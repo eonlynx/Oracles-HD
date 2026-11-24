@@ -1,0 +1,1152 @@
+// items
+smallkey Encontraste uma Chave Pequena!\nAgora podes abrir uma porta trancada.
+compass Encontraste a Bússola!\nAgora, podes ver onde os baús e os Nightmares estão escondidos!\fEsta Bússola tem uma nova função: um som indicar-te-á se há uma chave escondida numa sala quando entrares!
+dmap Finalmente, tens um Mapa!\nPressiona o Botão [START] para lhe dares uma olhadela!
+stonebeak Encontraste um Bico de Pedra!\nVamos encontrar a estátua de coruja a que ele pertence.
+
+sword1 Encontraste a tua Espada! Deve ser a tua porque tem o teu nome gravado nela!
+feather Conseguiste a Pena de Roc! Parece que o teu corpo está muito mais leve!
+pegasusBoots Conseguiste as Botas de Pégaso! Se mantiveres o Botão pressionado, poderás correr!
+flippers Conseguiste as Barbatanas! Se pressionares o Botão [CANCEL] enquanto nadas, poderás mergulhar debaixo de água!
+bracelet0 Encontraste a Bracelete do Poder! Finalmente, podes levantar potes e pedras!
+bracelet1 Conseguiste uma Bracelete do Poder mais forte! Agora quase consegues levantar uma baleia!
+ocarina Conseguiste a Ocarina! Deves aprender a tocar muitas músicas!
+powder Conseguiste Pó Mágico! Tenta borrifá-lo em várias coisas!
+mirrorShield Tens o Escudo Refletor! Agora podes refletir os feixes que não conseguias bloquear antes!
+hookshot Conseguiste o Gancho! A sua corrente estica muito quando o usas!
+magicRod Conseguiste a Vara Mágica! Agora podes queimar coisas! Queima-as! Queima, baby, queima!
+shovel Conseguiste uma Pá! Agora podes sentir a alegria de cavar!
+magicPowder Conseguiste um pouco de Pó Mágico! Experimenta borrifá-lo numa variedade de coisas!
+bomb Conseguiste uma Bomba!\nMuito bem!
+sword2 Conseguiste uma nova Espada! Deves colocar o teu nome nela imediatamente!
+boomerang Conseguiste o Bumerangue em troca do item que tinhas.
+
+shield É um Escudo!\nHá espaço para o teu nome!
+shield_intro Recuperaste o teu escudo! Pressiona o botão e repele os inimigos com ele!
+shield_back Tens o teu escudo de volta! Podes usá-lo para virar os inimigos!
+
+yoshiPickup Ganhaste um boneco Yoshi! Ultimamente, ele parece aparecer em muitos jogos!
+
+// playing the ocarina without having learned a song
+ocarina_bad Bem, é uma Ocarina, mas não sabes como tocá-la...
+ocarina_bad_marin Não é muito bom... Eh? O quê? Eu disse alguma coisa? Não, estás a ouvir coisas...
+
+// trading alt + 0161
+trade0 Trocaste o teu [TRADE0] por [TRADE1]! Talvez possas trocar o laço por outra coisa!
+trade1 Trocaste [TRADE1] por [TRADE2]! Está cheio de carne suculenta!
+trade2 Deste-lhe [TRADE2] e recebeste bananas [TRADE3] em troca! Bom negócio!
+trade4 Encontraste um pau que um macaco deixou para trás...\nApanhaste-o!
+trade5 [TRADE4] transformou-se no favo de mel [TRADE5]! Não tens a certeza de como isso aconteceu, mas aceita-o!
+trade6 Trocaste [TRADE5] por [TRADE6]! Não é tão doce, mas é delicioso!
+trade7 Trocaste o [TRADE6] pelo [TRADE7]!
+trade8 Trocaste o [TRADE7] pela carta © de uma cabra [TRADE8]! ...Ótimo!?
+trade9 Recebeste uma Vassoura como recompensa do Sr. Write! Mas aquela foto não era de...
+trade10 Trocaste [TRADE9] pelo anzol de pesca [TRADE10]! O que o anzol de pesca se tornará?
+trade11 O [TRADE10] transformou-se num colar [TRADE11]! Q-q-que sorte!
+trade12 Devolveste o colar [TRADE11] e recebeste uma escama [TRADE12] da cauda da sereia. Como vais usar isto?
+trade13 Tens a Lente de Aumento [TRADE13]! Ela revelará muitas coisas que não conseguias ver antes!
+
+trade11_redux O [TRADE10] transformou-se num sutiã cor-de-rosa [TRADE11]! Q-q-que sorte!
+trade12_redux Devolveste o sutiã cor-de-rosa [TRADE11] e recebeste uma escama [TRADE12] da cauda da sereia. Como vais usá-la?
+
+// keyholes
+keyhole_0 Hunh? Um buraco de fechadura aqui? \nDiz, 'Chave da Cauda'
+keyhole_1 Hunh? Um buraco de fechadura aqui?\nDiz, 'Chave de Lodo'
+keyhole_2 Hunh? Um buraco de fechadura aqui?\nDiz, 'Chave do Pescador'
+keyhole_3 Hunh? Um buraco de fechadura aqui?\nDiz, 'Chave da Face'
+keyhole_4 Hunh? Um buraco de fechadura aqui?\nDiz, 'Chave do Pássaro'
+
+// collectables
+toadstool Apanhaste o cogumelo... Ao segurá-lo sobre a tua cabeça, um aroma suave flui para as tuas narinas.
+toadstool_hold É o cogumelo que colheste na floresta. Para que serve? Ao segurá-lo sobre a cabeça, um aroma suave entra nas tuas narinas.
+
+seashell Encontraste uma Concha Secreta! Se colecionares muitas destas conchas, algo de bom vai acontecer!
+seashell_1 Encontraste uma Concha Secreta! Consegues encontrar as restantes?
+seashell_2 Encontraste todas as 26 Conchas Secretas! És um mestre caçador de conchas!
+
+heart Tens um Coração! Bateu! Um dos teus Recipientes de Coração está cheio!
+
+ruby20 Ganhaste 20 Rupias! ALEGRIA!
+ruby50 Ganhaste 50 Rupias!\nMuito bom!
+ruby100 Ganhaste 100 Rupias!\nEstás Feliz!
+ruby200 Ganhaste 200 Rupias!\nEstás em Êxtase!
+
+// trendy game
+ruby30 São 30 Rupias! Podes jogar o jogo mais três vezes com isto!
+
+heartMeter Conseguiste um Pedaço de Coração! Pressiona [START] para abrires o Menu e veres.
+heartMeterFilled Apanhaste quatro Pedaços de Coração. Agora, tens um Recipiente de Coração completo!
+
+guardianAcorn Tens uma Bolota Guardiã!\nEla reduzirá o dano que recebes para metade!
+pieceOfPower Tens um Pedaço de Poder!\nPodes sentir a energia a fluir através de ti!
+
+potion Encontraste o remédio secreto! Deves aplicá-lo e ver o que acontece!
+
+dkey1 Conseguiste a Chave da Cauda! Agora podes abrir o portão da Caverna da Cauda!
+dkey2 Conseguiste a Chave de Lodo! Agora podes abrir o portão na Pradaria Ukuku!
+dkey3 Conseguiste a Chave do Pescador!
+dkey4 Conseguiste a Chave da Face!
+dkey5 Conseguiste a Chave do Pássaro!
+
+nightmarekey Tens a Chave do Boss! Agora podes abrir a porta para a Toca do Nightmare!
+
+instrument0 Conseguiste o Violoncelo da Lua Cheia!
+instrument1 Conseguiste a Trompa de Búzio!
+instrument2 Conseguiste o Sino do Lírio do Mar!
+instrument3 Conseguiste a Harpa do Surf!
+instrument4 Conseguiste a Marimba do Vento!
+instrument5 Conseguiste o Triângulo de Coral!
+instrument6 Conseguiste o Órgão da Calmaria Noturna!
+instrument7 Conseguiste o Tambor do Trovão!
+
+instrument0Collected {...PÂNTANO...}{Um caminho abre-se...}{nas flores...}
+instrument1Collected {...PRADARIA...}{...PRADARIA...} A Pradaria está à espera...
+instrument2Collected {...CASCATA...}{Está escondida na...}{cascata...}
+instrument3Collected {...BAÍA...}{A tua estrada vai dar à}{baía...}
+instrument4Collected {...SANTUÁRIO...}{O segredo de uma ilha no}{santuário...}
+instrument5Collected {...MONTANHA...}{Algo chama...}{das montanhas...}
+instrument6Collected {...OCARINA...}{A música da Ocarina}{guia-te...}
+instrument7Collected {...OVO....}{O Ovo na montanha}{chama-te!}
+
+goldLeaf Encontraste uma Folha Dourada! Pressiona [START] para ver quantas já apanhaste!
+goldLeafLast Até que enfim! Conseguiste a última Folha Dourada! Agora vai ter com o Richard sobre aquela chave...
+
+signpost0 erro
+signpost1 [RIGHT] Caverna da Cauda\n[DOWN] Costas Toronbo
+signpost2 Floresta Misteriosa\n(É um pouco\n misteriosa)
+signpost3 Este [RIGHT] Pradaria\n         Ukuku\fMais a Este\n  Vila dos Animais
+signpost4 Cuidado com os ouriços-do-mar!\nNão lhes toques com as mãos nuas!
+signpost5 Cuidado com os pisos rachados! Pessoas pesadas não se devem colocar sobre eles!
+
+signpost6 Kanalet Castle 10 Min. [RIGHT] [UP]
+signpost7 Kanalet Castle 5 Min. [RIGHT]
+signpost8 Kanalet Castle 50 Passos [UP]
+
+signpost9 [RIGHT] Vila dos Animais\n[DOWN] Baía de Martha
+signpost10 Mansão das Conchas
+
+signpost11 Estás perto das Colinas Tal Tal. A Loja de Fotografias fica aqui perto.
+signpost12 [RIGHT] Monte Tamaranch\n[LEFT] Pântano Goponga
+signpost13 [RIGHT] Tracy Louca\n[DOWN] Manbo's Pond
+signpost14 [RIGHT] Cemitério\n[DOWN] Pradaria Ukuku
+signpost15 [RIGHT] Pântano Goponga\n[DOWN] Floresta Misteriosa
+
+signpost16 PERIGO!\nNão entres!\n(Exceto BowWow)
+signpost17 Vila do Richard
+signpost19 Cabine Telefónica\n[DOWN] Labirinto de Placas
+
+signpost20 Monte Tamaranch 
+signpost21 Queres desafiar os rápidos do rio numa jangada? Dirige-te ao escritório imediatamente, por favor!
+
+signpost22 Entrada para o\nDeserto Yarna [RIGHT]
+signpost23 [RIGHT] Bem-vindo à\nVila dos Animais!
+
+signpost_Down [DOWN] VAI POR AQUI
+signpost_Up [UP] VAI POR AQUI
+signpost_Right [RIGHT] VAI POR AQUI
+signpost_Left [LEFT] VAI POR AQUI
+signpost_TryAgain TENTA NOVAMENTE DESDE O INÍCIO
+signpost_Great FANTÁSTICO! CONSEGUISTE! A TUA RECOMPENSA É [RIGHT] POR AQUI!
+signpost_Gone SAIU EM DIGRESSÃO\nMAMU
+
+talking_tree Bem, isso foi uma surpresa! Ei! Vou contar-te um segredo! Usa a tua espada para picar as paredes da masmorra... Se ouvires um som oco, poderás quebrar a parede com uma Bomba!
+
+mamu0 Ribbit! Ribbit! Ei, cara, eu sou o Mamu, na voz! Irmão, parece que não percebes nada de música! Ribbit!
+mamu1 Ribbit! Ribbit! Sou o Mamu, na voz! Mas não preciso de te dizer isso, pois não? Toda a gente me conhece! Queres ficar por aqui e ouvir-nos a tocar? Por 300 Rupias, deixamos-te ouvir uma faixa inédita! O que dizes?
+mamu2 Bem, que pena, mas nós não tocamos de graça!
+mamu3 Obrigado... Muito obrigado... Croak!
+ocarina_frog_song Aprendeste a The Frog's Song of Soul! É uma música muito comovente... Pode até dar vida a coisas inanimadas!
+ocarina_frog_song_end Se tocares esta música, farás com que tudo à tua volta pareça mais vivo!
+
+manbo0 Eu sou Manbo, filho do Sun Fish! Tens uma Ocarina?
+manbo1 Muito Bem...\nGlub Blub Bloop!
+manbo2 Ahaha! Então posso ensinar-te a minha música! Bloop!
+manbo3 Aha... Não tens uma Ocarina, então... Glub glub!
+manbo4 Eu sou Manbo, filho do Sun Fish! Quando tocares o meu Mambo, podes teleportar-te para o Manbo Pond! Experimenta esta música também nas masmorras! Cha-cha-cha!
+
+ocarina_manbo_song Aprendeste o Manbo's Mambo! Quando saíres da água, toca-a!
+
+choice_Pay Pagar
+choice_Leave Sair
+
+signHead1 O NOME WIND FISH NÃO PASSA DE ILUSÃO, NÃO É PEIXE NEM VENTO, PRESTA ATENÇÃO.
+signHead2 DENTRO DO OVO O PEIXE DORME UM SONO PROFUNDO, SÓ A MÚSICA O TRARÁ DE VOLTA A ESTE MUNDO...
+signHead3 O MAR GERA ESPUMA, O SONO GERA SONHOS. AMBOS ACABAM COM ESTRONDOS MEDONHOS: CRASSSH!
+signHead4 OS SEGREDOS COMO A ÁGUA VÃO-SE ESCONDER, PROCURA DEBAIXO DA PONTE PARA OS PODERES VER.
+signHead5 SE O WIND FISH DORMIR PELA ETERNIDADE, A VIDA DO HERÓI DESVANECERÁ DE VERDADE...
+signHead6 POR AQUI, SE BEM PROCURARES, ENCONTRARÁS SEGREDOS ESCONDIDOS NESTES LARES.
+signHead7 ESTÁS PERTO DA TORRE DA ÁGUIA, É VERDADE. CUIDADO COM O PÁSSARO E A SUA MALDADE!
+signHead8 SE UM SEGREDO QUERES ENCONTRAR, BEM LONGE DAQUI TERÁS DE O PROCURAR.
+signHead9 SEGREDOS DORMEM NO SOLO, BEM ESCONDIDOS... DEBAIXO DAS TUAS SOLAS, LÁ ESTÃO ADORMECIDOS.
+
+castle_button Hunh? Parece que o portão do castelo se abriu! Podes sair facilmente do castelo agora!
+castle_button_2 Hunh? Parece que o portão do castelo se fechou!
+
+door_nightmarekey Eh? Está trancada! Podes abrir a porta com a Chave do Boss.
+
+dungeon_keyhole_block Hunh? Esta rocha tem um buraco de fechadura! Deverias voltar com uma chave!
+rock_cracks_message Esta rocha tem muitas rachaduras... Deve haver alguma maneira de a quebrar...
+crystal_hard Oh? Que objeto estranho! Deve haver alguma forma de lidar com este obstáculo.
+
+stone Uau! Isto parece bem pesado! Não o conseguirás levantar apenas com as tuas mãos nuas...
+
+// nightmares
+nightmare1 {BUZZZZZ! BUZZZZ!}{FORASSSSTEIRO!}
+nightmareFinal0 Esta ilha vai desaparecer... O nosso mundo vai desaparecer... O nosso mundo... O nosso... mundo...
+nightmareFinal1 ...[NAME], derrotaste todos os Nightmares! Sobe as escadas à tua frente!
+
+// maria
+maria_0_0 Que alívio! Achei que nunca mais acordarias! Estavas a revirar-te na cama...\fO quê? Zelda? Não, o meu nome é Marin! Ainda te deves estar a sentir um pouco tonto.\nEstás na Ilha Koholint!
+maria_0_1 Segue o caminho para sul para chegares à praia onde te encontrei. Desde que deste à costa, tem andado muitos monstros desagradáveis na zona, portanto, tem cuidado, ok?
+
+// marin standing outside
+maria_1_0 Olá! O Tarin foi para a floresta procurar cogumelos, mas eu prefiro cantar. Ouve isto, chama-se 'Balada do Wind Fish.'
+maria_1_1 Eu simplesmente adoro cantar - o que posso dizer? O que é que tu gostas de fazer, [NAME]?
+
+// after talking to the owl
+maria_1_2 [NAME], o Tarin está a dormir a sesta em casa. Não sei como ele consegue dormir num dia tão bonito! Isso dá-me vontade de cantar uma música... Sim, a música é a 'Balada do Wind Fish'!
+
+// singing in the right village
+maria_1_3 Ei! Essa é uma bela Ocarina que tens aí! Queres acompanhar-me enquanto eu canto?
+maria_1_4 Então, o que achas? É realmente comovente, não é? Fica-te na cabeça?
+maria_1_5 Por favor! Quero que a aprendas! Esta música é a minha favorita!
+
+maria_1_6 Por favor, lembra-te desta música! Deves tocá-la de vez em quando para a manteres fresca na tua memória!
+maria_1_7 Por favor, nunca te esqueças desta música... ou de mim...
+
+maria_1_8 Dizem que a 'Balada do Wind Fish' é uma canção de despertar. Pergunto-me: se o Wind Fish acordar, realizará ele o meu desejo?
+maria_1_9 Oh, [NAME]. Eu também venho com frequência a esta vila para cantar! Parece que quase toda a gente adora a minha 'Balada do Wind Fish!' [NAME], qual é a tua música favorita?
+
+marin_letter Na praia... Marin [MARIN]
+
+// maria at the beach
+marin_2_0 Oh, [NAME], fico feliz que tenhas encontrado este lugar. Queres ficar a conversar comigo um bocado?  
+
+// Yes! No...
+marin_2_1 Okay, vou ficar apenas a olhar para as ondas por um bocado...
+marin_2_2 Pergunto-me de onde virão estes coqueiros? ...O Tarin diz que não há nada para além do mar, mas eu acredito que deve haver algo lá longe... Quando te descobri, [NAME], o meu coração deu um pulo! Pensei: esta pessoa veio para nos dar uma mensagem...
+marin_2_3 ... ... ... ... ... ... ... ... Se eu fosse uma gaivota, voaria o mais longe que pudesse! Voaria para lugares distantes e cantaria para muitas pessoas! ...Se eu fizesse um pedido ao Wind Fish, pergunto-me se o meu sonho se tornaria realidade... ... ...
+marin_2_4 Ei! Estás a ouvir? [NAME], estás a ouvir-me?
+marin_2_5 Humph! Tens sempre a cabeça na lua! Podes ouvir-me da próxima vez, por favor?!
+marin_2_6 Quero saber tudo sobre ti... Err... Uhh, Ha ha ha ha!
+marin_2_7 Hunh? A morsa quer que eu vá ter com ela? Não importa, eu irei contigo ter com ela...
+
+maria_collected Apanhaste a Marin! É esta a tua grande oportunidade?
+
+// going into a dungeon
+marin_dungeon Eh? Queres que eu vá aí para dentro? Não, acho que vou esperar cá fora... Cuida de ti, [NAME]!
+marin_dungeon_leave [NAME]! Estás de volta! Estás magoado?
+marin_dungeon_leave_time ...Estás atrasado! Pensei que nunca mais voltasses!
+marin_dungeon_hearts ...EEEK! Estás magoado! Arrrgh! Não sejas tão imprudente!
+marin_dungeon_hearts_alt ...Seu idiota! Eu disse-te que isso ia acontecer... Eh?! O quê? Eu não disse nada, a sério!
+
+marin_cucco_0 Não!  Não! Pobre Cucco!\nPára com isso!
+marin_cucco_1 Ha ha ha! Faz isso! Faz isso! Faz isso maaaais! ... ... Hunh? Não, não é nada... Não era isso que eu queria dizer.
+
+marin_pot_0 Sim!! Sim!! Parte-os! Parte-os todos! ... ... ... ... O quê? O que há de errado?
+marin_pot_1 Ahhh! Ahhh, és um menino mau, [NAME]!
+
+marin_digging Fantástico! Cava! Cava! Cava até ao centro da terra!!
+
+maria_game_0 Uau! [NAME], posso tentar?! O que me dizes?
+// Okay No Way
+maria_game_1 Vá lá! Eu quero tentar! Posso? Parece tão divertido!
+// Yes  Okay
+maria_game_2 És bom! És um pro, não és? ... ... ... ... Bem, põe-te a andar! Pros não são permitidos aqui!
+
+// walrus sequence
+maria_3_0 Sim, é aquela morsa preguiçosa! Vamos dar-lhe uma pequena surpresa?
+// Yes  No...
+marin_3_1 Tens razão, seria uma maldade acordá-la agora! Vamos deixá-la dormir mais um pouco!
+maria_3_2 Aha ha ha! Uau! Ele certamente acordou com um sobressalto!
+maria_3_3 Hunh? Ah, ele está a chamar-me... É o mesmo de sempre... Ha ha!
+maria_3_4 [NAME], estou a ir para a Vila dos Animais! Por favor, dá lá um salto, ok?
+
+// marin falling into the fountain not falling on link
+marin_fountain Ufa! Que surpresa!
+
+// marin in the mountains
+marin_4_0 Alguém, SOCORRO!
+marin_4_1 Hey! [NAME]! Alguns monstros puseram-me aqui em cima! O que devo fazer?! Tenho medo de alturas!!
+marin_4_2 Yow! Isso foi uma surpresa! [NAME], obrigada!
+marin_4_3 ... ... ... ... ... ... ... ... Diz-me... [NAME] ...
+marin_4_4 Uhh... não sei bem como dizer isto... mas...
+marin_4_5 MAAAAAAARINNNN!!
+marin_4_6 Hunh?! Tarin??! ... ... ... ... Uh... Esquece, eu... Eu tenho de ir!
+
+marin_5_0 Obrigada por tudo! [NAME], és o rapaz mais simpático que conheço. Um dia, fiz um pedido ao Wind Fish... Qual foi o pedido? Foi... Não, é segredo!
+marin_5_1 [NAME], algum dia vais deixar esta ilha... Eu sinto-o no meu coração... ...Nunca te esqueças de mim... Se te esqueceres, nunca te vou perdoar!
+
+marin_6_0 [NAME], tenho a sensação de que não terei outra oportunidade para... Queres dar um passeio comigo?
+marin_6_1 Oh. Tudo bem então... Talvez noutra altura.
+marin_6_2 Obrigada [NAME], foi muito divertido! Suponho que seja um adeus por agora?
+marin_6_3 [NAME]. Eu.. eu... não me sinto bem com isto. Por favor, vamos voltar!
+
+walrus_0 {ZZZ ZZZ ZZZ ZZZ}{... [MARIN] ... [MARIN] ...}
+walrus_1 {Arfh! Arfh! Arf!}{[MARIN]  [MARIN]! [MARIN]   [MARIN]!}{..... [LINK]??}
+
+animals_absorbed {... ... ... ...}Parece estar totalmente absorvido pela música da Marin!
+
+ocarina_maria_song Aprendeste a 'Balada do Wind Fish!' Esta música ficará para sempre no teu coração!
+
+// tarin house
+tarin_chest Ei! O que estás a fazer no meu baú?! Onde é que aprendeste a fazer uma coisa dessas?!
+
+// tarin
+npc02_leave Whoa, rapaz! Para onde vais com tanta pressa? Senta-te aí um pouco, tenho uma coisa para te dizer!
+tarin_0 Bem, [NAME], finalmente voltaste a ti... O meu nome é Tarin... Espero que te estejas a sentir melhor... O quê? Como sei o teu nome? Achas estranho, eh? Bem, vi-o na parte de trás deste escudo!
+tarin_1 Oh, sim... Algumas outras coisas como esta deram à costa na praia... Se fores lá procurar, tem cuidado com os monstros! Desde que apareceste, [NAME], tenho-os visto por todo o lado!
+
+// after the raccoon transformation
+tarin_raccoon_2 A última coisa de que me lembro foi de dar uma trinca num grande e suculento cogumelo... Depois, tive o sonho mais esquisito... Eu era um guaxinim! Sim, parece estranho, mas garanto-te que foi divertido!
+tarin_raccoon_3 Estou exausto... Acho que vou descansar um pouco antes de ir para casa...
+
+tarin_2 Estou cansado... Vou dormir agora... Zzzzzz...
+tarin_3 Hrrrm...Ronco... Hunh?... Se não sabes... liga ao velho Ulrira! Zonk...Ronco...
+
+// tarin with the bananas
+tarin_4 Eu estava cheio de fome, por isso fui apanhar bananas na praia... [NAME], se quiseres algumas, deverias ir lá buscar!
+
+// tarin trading sequence
+tarin_stick Oh?! [NAME], vejo que tens um belo pau... Podes emprestar-mo por um segundo?
+tarin_stick_no Hmmm, [NAME], és mau!
+
+// after the trading sequence sleeping in the bed
+tarin_5 Unnnngh! Aiiiii! ... ... ... ... Perdi definitivamente o apetite por mel!
+
+// lady with the broom
+npc_broom_0 YAHOO! Estou ótima, e tu?!
+npc_broom_1 YAHOO! Trabalhei demais e agora a minha vassoura está gasta até ao cabo!
+npc_broom_2 YAHOO! YAHOO! Uma vassoura nova?! Para mim? É, não é?!
+npc_broom_3 Okay! Em troca, podes ficar com este anzol de pesca que encontrei quando varri a margem do rio!
+npc_broom_4 YAHOO! Uma vassoura nova! Esplêndido!
+npc_broom_5 Então TU varres a ilha!
+npc_broom_bowwow Ela sofreu uma tragédia terrível na casa do outro lado da rua! É simplesmente horrível, e tudo o que posso fazer é varrer!
+
+npc04 Er...Uh...Hmm...Como dizer... Por favor liga... Lá fora... ...
+npc04_game Parece que o velho Ulrira é um tipo tímido, pessoalmente...
+
+// kid with hints
+//npc05_0 Ei, cara! Quando quiseres gravar, prime todos os Botões de uma vez! Uhh... Não me perguntes o que isso significa, sou apenas uma criança!
+npc05_1 Bem, parece que depois de gravares, vais começar na última porta pela qual passaste... Não sei bem porque é que isso acontece, porque sou apenas uma criança!
+npc05_2 Ouvi dizer que podes pressionar [START] e depois [SELECT] para ver o mapa da ilha... Mas não entendo o que isso quer dizer...
+npc05_3 Quando estiveres a ficar sem Corações, é melhor entrares numa casa ou caverna... Porquê? Não faço ideia, sou apenas uma criança!
+
+npc_ball_left De onde és, irmão? ...De fora da ilha? O que é 'fora'? Nunca pensei nisso...
+npc_ball_right O ovo gigante no topo do Monte Tamaranch? Dizem que o Wind Fish está a dormir lá dentro... Porquê? Eu também não sei...
+
+// kid near the weather bird or next to the shop
+npc_boy_island Fixe! Estás a perguntar-me quando é que começamos a viver nesta ilha? O que queres dizer com 'quando'? Whoa! Esse conceito faz a minha cabeça doer!
+npc_boy_marin Ei, cara! O que achas da Marin? Uhh... não sei, sou apenas uma criança!
+npc_boy_shrine Ei, ei, mano! Sobre o Santuário dos Sonhos ali... Dizem que há algo de bom lá dentro... ... É melhor não dizer mais nada, pois sou apenas uma criança!
+npc_boy_marin_beach A Marin? Ela gosta de ficar a olhar para o oceano sozinha... Porquê? Ei, eu sou apenas uma criança, não me perguntes a mim!
+// kids while marin is with link
+npc_boy_marin_following Ei... Para onde é que vocês os dois vão juntos? Hunh? Uh, eu não quis dizer nada... Sou apenas uma criança!
+npc_boy_marin_gone Hunh?! A Marin não está contigo? O que é que lhe aconteceu?
+
+// when the player has the broom and the grandma is in the other village
+npc_boy_grandmother A avozinha não está aqui. Ela está na Vila dos Animais. Foi o que o Avô Ulrira disse ao telefone!
+
+// kids playing ball game after the village gets attacked
+npc_kid_attacked Ei companheiro! O caso é sério! Sim, muito sério!! Sim, é mesmo! Os Moblins vieram à vila! Sim, é verdade! Um bando inteiro de Moblins! Então... É a sério! Foram todos para a casa... Sim, aquela casa, e depois fizeram qualquer coisa na casa do Bow Wow!! Foi uma cena muito má, com os M-m-moblins! Então, quero eu dizer, ahh! ... ... ... ... ... ... ... ... É capaz de ser mais rápido ires ver por ti mesmo o que aconteceu!
+
+// chef in the right village
+npc_chef_0 O meu plano final é abrir uma filial na Vila Mabe!
+npc_chef_1 Rik'm rak'm! Fiquei sem ingredientes! Se eu tivesse mel, podia fazer um banquete digno de um rei!
+npc_chef_2 Hi ho! Ei, tu! Isso é por acaso um [TRADE5] que tens aí? Acabei de ficar sem! Queres trocá-lo por um ananás?
+npc_chef_3 É uma pena, mas compreendo que seja uma iguaria rara!
+npc_chef_4 Hi ho! Sim, eu sei, aquela banheira de banha está a dormir mesmo no caminho para o Deserto Yarna! Quando ele adormece, não se mexe durante muitoooo tempo. Mas ei! Leva a pequena Marin e acorda-o com a música dela! Aquele preguiçoso acordava num salto se a ouvisse cantar, de certeza! Heh heh heh!
+npc_chef_marin HI HO! Pequena Marin! Bem-vinda! ... ... ... ... Oh, bolas! Tu também cá estás... Desculpa...
+
+// yoshi doll
+npc07_0 Como eles são todos parecidos, às vezes até eu me confundo...
+npc07_1 A propósito, o meu bebé quer um boneco Yoshi. Eu vi um no Jogo da Grua, mas não consegui apanhá-lo.
+npc07_2 Oh! Podes dar esse boneco ao meu bebé?!
+npc07_3 Tsk tsk... Que pena...
+npc07_4 Oh, obrigada! És de facto uma pessoa muito generosa! Ah! Dar-te-ei isto em troca!
+npc07_5 O meu marido está perdido na floresta! Por favor, vai encontrá-lo!
+
+npc_house_chest [NAME] inspecionou o baú.\nUau! Este é um belo baú!
+npc_house_chest_marin [NAME], tu olhas sempre para dentro das gavetas das outras pessoas?
+
+npc_letter_boy_0 Bem... Eu cá fico na minha, eu e as minhas cartas... O meu nome é Write! A única coisa que não gosto no meu passatempo é que nunca recebo uma resposta...
+npc_letter_boy_1 O que é isto?! Uma carta para mim?! Estou tão feliz! ...E vê só! A carta trazia uma fotografia!
+npc_letter_boy_2 Mmm... Ela é tão linda... Tenho de te dar algo pelo incómodo... Hmm... Bem, parece que tudo o que tenho é esta vassoura... que tal?
+npc_letter_boy_3 Por favor! Eu insisto mesmo que fiques com esta [TRADE9]!
+npc_letter_boy_4 Oh sim! Escrever cartas é um passatempo fantástico!
+npc_letter_boy_5 Olá! Estou a escrever a minha resposta à Christine agora!
+
+npc_letter_girl_0 Não conheces a etiqueta adequada ao lidar com uma senhora, pois não? Deverias ter trazido flores ou algo assim, então eu poderia estar mais inclinada a conversar contigo... Ah, sim, no meu caso, hibiscos são os melhores...
+npc_letter_girl_1 Oh, trouxeste-me um hibisco! Que querido! Bem, como és um cavalheiro, tenho um pedido a fazer-te. Podes ouvir-me? 
+npc_letter_girl_2 Gostava que levasses esta carta a um Sr. Write que mora na fronteira da Floresta Misteriosa, por favor!
+npc_letter_girl_3 ...É assim? E eu a pensar que eras um cavalheiro...
+npc_letter_girl_4 Sabes, às vezes não consigo evitar de comer um delicioso pedaço de papel, mesmo que seja uma carta para o meu querido Sr. Write... Que vergonha!
+
+// fisher under the bridge
+npc_bridge_0 Não vale a pena, amiguinho! Um peixe levou-me o anzol... Continuo a lançar a minha linha à água, mas não tenho tido sorte... Já calculava que isto fosse acontecer...
+npc_bridge_1 Oh! O que é isso que tens na mão? Não é um anzol de pesca, pois não? É melhor dares-mo. Eu dou-te a minha próxima pescaria se mo deres...
+npc_bridge_2 Devias ser mais simpático para mim! Pensei que fôssemos amigos!
+npc_bridge_3 Fica de olhos abertos e observa um profissional a trabalhar.
+npc_bridge_4 Fixe, esse é GRANDALHÃO!
+npc_bridge_5 Mal posso esperar para ver o que vou apanhar a seguir!
+
+tracy_give Dar
+tracy_dont Não dar
+
+npc_tracy_0 Olá, rapazão! Eu sou a Crazy Tracy! Tenho um pequeno segredo para vender que te vai dar muito power!
+npc_tracy_1 Dás-me 28 Rupias pelo meu segredo?
+npc_tracy_2 O que achas? 42 Rupias pelo meu pequeno segredo...
+npc_tracy_3 ...És tão fofinho!\nVou dar-te um desconto de 7 Rupias!
+npc_tracy_4 Muito bem, vem cá e eu vou esfregar isso em ti! ...Pronto... Apliquei-te o meu próprio remédio secreto! Ele fará efeito quando perderes toda a tua energia! Aparece outra vez, rapazão!
+npc_tracy_5 Põe-te a andar, então! Volta quando tiveres dinheiro!
+npc_tracy_6 ... ... ... ... Mas não to vou vender!
+npc_tracy_7 Bem! Eu só te estou a oferecer um segredo que te deixará forte! És mesmo um medricas!!
+npc_tracy_8 Aqui tens um tratamento bónus! Contempla! Os teus Corações estão cheios!
+
+// npc lost boy
+npc_lost_boy_0 Sim, o Papahl perdeu-se, exatamente como ele disse! Agora, estou tão esfomeado que não me consigo mexer! Podes dar-me alguns mantimentos?
+npc_lost_boy_1 És um homem frio...
+npc_lost_boy_2 Este [TRADE6] é tão delicioso! Vou comer o [TRADE6] agora mesmo! Bom apetite!
+npc_lost_boy_3 AH! Isto não era para ser uma recompensa... Aqui, fica com este [TRADE7]! É um hibisco!
+npc_lost_boy_4 Delicioso! Nham! Estou cheio de energia, agora!
+
+// mermaid
+npc_mermaid_0 Quando eu estava a nadar na baía, as ondas tiraram-me um colar muito importante do pescoço! Se o encontrares, deixo-te tirar uma escama da minha cauda!
+npc_mermaid_1 Eu já procurei por aqui!
+npc_mermaid_2 Ahh! É isso! Esse é o meu colar! Dá cá! Devolve-mo! Vou dar-te uma escama como prometi!
+npc_mermaid_3 Promete! Só podes tirar uma!
+npc_mermaid_4 És um sem coração e cruel!
+npc_mermaid_5 Uma vez um artista pediu-me para posar para ele, e ele também queria uma escama... Será a lenda da Lente de Aumento verdadeira...?
+
+npc_mermaid_0_redux Quando eu estava a nadar na baía, as ondas levaram-me o meu sutiã cor-de-rosa... Se o encontrares, deixo-te tirar uma escama da minha cauda!
+npc_mermaid_1_redux Kyaa! Pervertido! Perveeertido!!!
+npc_mermaid_2_redux Ahh! É isso! Esse é o meu sutiã cor-de-rosa! Dá cá! Devolve-mo já! Vou dar-te uma escama como prometi!
+
+// mermaid statue
+mermaid_statue_0 A SEREIA LAMENTOSA Por SCHULE? ...Falta-lhe uma escama...
+mermaid_statue_1 Colocaste a escama que faltava na estátua da sereia!
+
+// rabbit
+rabbit_0_0 Ei! Sabias que a Vila dos Animais e a Vila Mabe são cidades irmãs? Sim, mesmo que não sejam grandes o suficiente para serem chamadas de cidades... Enfim, ouvi de uma fonte muito segura que eles têm um Dream Shrine em Mabe, e que tem algo bom lá dentro... Será verdade?
+rabbit_0_1 Sonhei que me tinha transformado numa cenoura a noite passada... Que sonho mais estranho...
+
+rabbit_1_0 Não posso ir à Vila Mabe por causa de todos os monstros. Espero que a Marin esteja bem.
+rabbit_1_1 Eh? Como é que um animal pode falar? Como? Ei, eu sou apenas um coelho, então não sei!
+rabbit_2_0 Deserto Yarna? Há um caminho para chegar lá pelo sul, mas talvez não consigas passar se aquela morsa preguiçosa estiver no caminho!
+rabbit_2_1 Já ouviste falar do Galo Voador? Dizem que vivia na Vila Mabe há muito tempo atrás... Pergunto-me se será verdade...
+
+rabbit_3_0 Ahhh... Suspiro... Num dia tão agradável, só precisamos de uma música da Marin!
+rabbit_3_1 Aaaah, Pequena Marin... Quero que ela volte outra vez... A música dela é a melhor...
+
+rabbit_marin Ahhh! É ela!\nPequena Marin!!
+
+// dialog choices
+choice_Yes Sim
+choice_YES SIM
+choice_Yes! Sim!
+choice_Okay Okay
+choice_Yeah Ya
+choice_Fine Tudo bem
+
+choice_No Não
+choice_NO NÃO
+choice_No... Não...
+choice_No! Não!
+choice_N-No N-Não
+choice_No_Way Sem hipótese
+choice_No_way Sem hipótese
+choice_Not_Now Agora não
+choice_Nope Não
+choice_Give Dar
+choice_Keep Ficar
+choice_Dont Não
+choice_Can Podes
+choice_Cant Não Podes
+
+choice_Fish Pescar
+choice_Cast Lançar
+choice_Look Olhar
+
+// Marin beach sequence - asking to join Link to see the Walrus.
+choice_Yeah_Marin Ya
+choice_No_Marin... Não...
+
+// Papahl
+npc08_0 Yep! Aqueles são os meus rapazes! Eu sou o Papahl, prazer em conhecer-te! Mais logo vou estar perdido nas colinas, por isso fica atento a mim, ouviste?
+npc08_1 Tenho que dizer, obrigado mais uma vez!
+
+// Madam MeowMeow
+npc09_0 Ho ho ho! O meu BowWow está tão orgulhoso do seu belo casaco de pêlo!
+npc09_1 AIEEEEEEEE! É terrrrível! O meu BowWow foi raptado por... Mo-mo-MOBLINS!! OHHH! AHHHH! Por favor! Alguém que ajude o meu pobre BowWow!!
+npc09_2 Oh obrigada! Estou tão feliz por teres trazido o meu bebé de volta! Agora, poderias ser um querido e levá-lo a passear? Isso ajudar-me-ia imenso! Vais fazê-lo?! Obrigada!
+npc09_3 Ho ho ho! Agradeço-te imenso o que fizeste pelo meu pobre e precioso BowWow! És um rapaz muito simpático! Como poderei alguma vez retribuir-te? Já sei...\fSMOOOOOOOCH!\nRecebeste uma recompensa da Madame Miau-Miau... ... ...\nQ-q-que sorte!
+npc09_4 Ho ho ho! Agradeço-te imenso teres levado o meu pobre e precioso BowWow a passear! Como poderei alguma vez retribuir-te? Já sei...\fSMOOOOOOOCH!\nRecebeste uma recompensa da Madame Miau-Miau... ... ...\nQ-q-que sorte!
+
+// Bow Wow
+bowWow2 YIP YIP!\nYIP YIP!
+bowWow3_0 Maquilhagem! Jóias! Vestidos! Quero tudo! suspiro... E alguns acessórios novos calhavam bem...
+bowWow3_1 Maquilhagem! Jóias! Vestidos! Quero tudo! suspiro... E alguns acessórios novos calhavam bem...\nOh! Essa Fita! Eu preciso dela! Queres trocar pela comida do meu cão?        
+bowWow3_2 Eh?! Não posso acreditar! És o pior!!
+bowWow3_3 Que sorte! Obrigada!\nBem, aqui tens a tua [TRADE2]!
+bowWow_dig WOOF! Cava! RUFF!
+bowWow_walk Levar o Bow Wow a passear?
+
+// Trendy Game
+npc_trendy_open JOGO DA GRUA!\nUma Jogada 10 Rs.
+npc_trendy_no_cash Desculpa, garoto! Não tens Rupias! Volta quando tiveres dinheiro!
+npc_trendy_start Os botões [CONFIRM] e [CANCEL] movem a grua... O resto é apenas timing! Vai até aos botões para jogar! Boa Sorte!
+npc_trendy_again Desafiar Outra Vez?
+npc_trendy_closed Vamos fechar por hoje! Volta quando quiseres!
+npc_trendy_good_luck Boa Sorte!
+npc_trendy_play Jogar
+npc_trendy_no_play Não
+
+// 0176: <
+npc_fisherman_0 Que tal ires à pesca, amiguinho?
+npc_fisherman_choice Só te vou cobrar 10 Rupias...
+npc_fisherman_1 Precisas de ter mais paixão! Vive um pouco a vida!
+npc_fisherman_2 Estás com falta de Rupias? Não te preocupes com isso. Volta quando tiveres mais dinheiro, amiguinho.
+npc_fisherman_3 Okay, é assim que fazes. Usa [LEFT] e [RIGHT] no [DPAD] para apontares a distância do lançamento. Assim que fisgares um peixe, pressiona rapidamente o botão [CONFIRM] para o puxar!
+npc_fisherman_4 Porque não tentas só mais uma vez, amiguinho?
+npc_fisherman_5 Uau! Esse escapou-se!\nQueres tentar novamente?
+npc_fisherman_6 Uau! Belo Peixe! É um grandalhão!! Vou dar-te um prémio de 20 Rupias!
+npc_fisherman_6_1 Tentar novamente?
+npc_fisherman_7 É um pequenote! Só te vou dar 5 Rupias de prémio por isso.
+npc_fisherman_7_1 Deverias tentar outra vez!
+
+npc_fisherman_8 Oh! É um grande! E traz um Pedaço de Coração também! Ganhaste um prémio de 20 Rupias além disso!
+npc_fisherman_8_full Oh! É um grande! E traz um Pedaço de Coração também! Completaste mais um Recipiente de Coração! Além disso, levas um prémio de 20 Rupias! Queres tentar outra vez?
+
+npc_fisherman_8_1 Tentar novamente?
+npc_fisherman_9 Este lago ficou sem peixes.
+npc_fisherman_9_1 Porque não vais tentar a tua sorte para o mar?
+npc_fisherman_10 Eu disse isso? Esquece, está bem? Podes ir andando...
+
+// npc raft
+npc_raft_0 Queres dar um passeio de jangada por cem Rupias?
+npc_raft_1 Okay, a jangada está pronta para ti lá fora! Diverte-te!
+npc_raft_2 Estás com falta de Rupias? Não te preocupes com isso. Volta quando tiveres mais dinheiro, amiguinho.
+
+// frog boy
+npc_frog_boy_0 Saudações! Não o dirias pela minha aparência, mas eu costumava viver no castelo! Os meus servos ficaram furiosos e fui forçado a fugir para a minha villa... Então, queres a chave para a Pradaria Ukuku, não é? Eu sou capaz de te conseguir ajudar...  Vamos fazer... um acordo, sim? Quero que recuperes a Folha Dourada que deixei no castelo quando fugi...
+npc_frog_body_impressed Estou impressionado. Existem cinco folhas no total. Lembra-te de comprar uma pá no teu caminho de volta.
+npc_frog_body_coward Ora, eu nunca! Achei que parecias um cobarde, mas...  Por favor, deixa-me... sai apenas daqui!
+npc_frog_body_please Ah! Bonjour! [NAME], por amor à justiça, e pelo meu próprio bem, tens de encontrar todas as folhas!
+npc_frog_body_bien Ahh! Tres Bien! Vejo que recuperaste todas as folhas! Agora, move esta caixa e encontrarás a tua recompensa!
+npc_frog_body_debt Estou eternamente em dívida para contigo por me devolveres as folhas!
+npc_frog_body_bowwow Ahem! A sério, tenho de insistir que não tragas essa fera horrível cá para dentro! Deixa a criatura lá fora e depois podemos falar! Adeus!
+
+npc_zora Se mantiveres isto em segredo, conto-te algo útil. Vai a Toronbo Shores, usa a lente de aumento e vais encontrar alguém como eu.
+
+alligator_0 Bem-vindo à Casa das Bananas do Sale! Eu sou o Sale, esta é a minha casa! Na verdade, o meu passatempo é colecionar comida enlatada rara e invulgar. O meu irmão é artista, por isso calculo que passatempos bizarros sejam de família!
+alligator_1 O que é isso que tens aí?! É comida enlatada! Pelo amor de Deus, homem, dá essa [TRADE2] a MIM!! POR FAVOR!
+alligator_2 Ele está histérico! O que fazes?
+alligator_3 Suponho que implorar não servirá de nada? Bem, se mudares de ideias, diz-me.
+alligator_4 Oh obrigado! Vou levar isso!
+alligator_5 MUNCH MUNCH!! ... ... ... ... Estava espetacular! Sei que não é uma troca muito justa, mas aqui estão algumas bananas! YUM...
+alligator_6 Obrigado outra vez! Estava delicioso!
+alligator_7 Olá amigo! Alguma vez desceste os rápidos numa jangada? Podes fazê-lo, perto de Tal Tal Heights! Devias tentar!
+
+witch_0 Duplo duplo, aflição e sarilho, uma mistura de cogumelo faz pó para truques e brilho!
+witch_1 Ahhh... Tem o Cogumelo Sonolento, lá isso tem! Vamos já misturar isto num instante, pois vamos!
+witch_2 Está pronto, sim está! Tem cuidado, que não tem muito! Porque não experimentas um pouco na minha cabana?
+witch_3 Bom trabalho! Usa-o nos teus inimigos e vê o que acontece. Se ficares sem ele, vai à floresta, apanha uns cogumelos, e eu farei-te mais.
+
+cukeman_0 Hey Mon!
+cukeman_1 Já me conheces, gosto mais de nomes curtos...
+cukeman_2 Consegue mostrar milhões de polígonos!
+cukeman_3 Eu preciso mesmo disso, o mais rápido possível!
+
+fairy_0 Deixa-me curar as tuas feridas e livrar-te de todo esse stress... Fecha os olhos e relaxa...
+
+// general dialog not used in the actual game
+itemShop_dialog [itemShopItem]\n[itemShopPrice] Rupias!
+itemShop_bow Conjunto de Arco e Flecha apenas 980 Rupias!
+itemShop_arrow 10 Flechas 10 Rupias
+itemShop_shovel Pá Deluxe 200 Rupias! Parece cara!
+itemShop_hearts Três Corações 10 Rupias!  
+itemShop_shield Escudo 20 Rupias!
+itemShop_bomb Dez Bombas 10 Rupias  
+
+itemShop_buy Comprar
+itemShop_dont Não Comprar
+itemShop_no_way Sem hipótese
+itemShop_no_way! Sem hipótese!
+
+// shopkeeper
+shopkeeper_0 Ei! Bem-vindo! Vês alguma coisa que gostes?! É só trazeres aqui!
+shopkeeper_1 Muito obrigado! E volta sempre!
+shopkeeper_2 Desculpa, garoto! Não tens Rupias suficientes! Volta quando tiveres o dinheiro!
+shopkeeper_3 Aye Caramba! Rapaz, tens muito a aprender, a tentar comprar uma coisa para a qual não tens uso nenhum!
+shopkeeper_4 Ei! Tu! Pára! Tens que pagar! Põe isso no lugar!
+shopkeeper_5 Sabes que mais? Levaste-o de graça. Estás orgulhoso de ti próprio?
+shopkeeper_6 Ei! Tu roubaste os meus itens, mas quero dar-te a oportunidade de corrigires as coisas. Se me deres 999 Rupias, 30 Bombas, 30 Flechas e 20 Pós Mágicos, ficamos quites. O que me dizes?
+
+shopkeeper_debt_0 Pagar as tuas dívidas?
+
+shopkeeper_debt_1 Foi um prazer fazer negócios contigo. Vou certificar-me de limpar o teu nome!
+shopkeeper_debt_2 Que pena. Então serás conhecido para sempre como Ladrão!
+shopkeeper_debt_3 Desculpa, garoto! Não tens os recursos necessários! Volta quando tiveres tudo o que eu quero!
+
+itemShop_revenge Eu não estava a brincar quando disse paga! Agora, vais pagar o preço máximo!!
+
+weatherBird Aqui Dorme O Galo Voador
+
+rooster_0 Uau! O Galo recuperou! Parece ser muito amigável!
+rooster_1 SQUAAAWK!
+
+// ghost that follows link
+ghost_0 {...a casa...}{...leva-me...}{...a casa...}{...na baía...}
+ghost_1 {...N-N-Não!...}{...A-aí não!}
+ghost_2 {...Aqui!...}{...entra...}{...na minha casa...}
+ghost_3 {...Nostalgia...}{...não mudou...}{...boo hoo...}
+ghost_4 {...Chega...}{...cemitério...}{...leva-me...}{...ao meu túmulo...}
+ghost_5 {...o meu túmulo...}{...leva-me...}{...o meu túmulo...}
+ghost_6 {...Obrigado...}{...um jarro...}{...na minha casa...}{...olha lá para dentro..}{...adeus...adeus...}
+
+ghost_grave_powder Cough Cough... Não polvilhes isso em mim... ...terei de te lançar uma maldição! Cough Cough...
+
+// == owl ==
+owl_1_0 Hoot! Hoot!\nEntão tu és o rapaz que possui a espada...\fAgora entendo por que razão os monstros começam a agir de forma tão violenta...\fUm rapaz corajoso veio para acordar o Wind Fish...\fDiz-se que não podes sair da ilha a menos que acordes o Wind Fish...\fDeves seguir agora para norte, para a Floresta Misteriosa.\nEstarei à tua espera lá! Hoot!
+owl_1_1 Hoot! Ho, coragem rapaz, na tua jornada para acordar o sonhador! Bem-vindo à Floresta Misteriosa! Muitos mistérios irás encontrar nesta ilha inexplorada de Koholint! Receio que possas achar um tanto difícil sair da ilha enquanto o Wind Fish dorme a sesta. ...Por falar nisso, já alguma vez visitaste a Caverna da Cauda, que fica a sul da vila? Vai até lá com a chave que encontrares nesta floresta... O Wind Fish está a observar... Hoot!
+owl_1_2 Hoot! Pega na chave e vai até à Caverna da Cauda. Recupera o Instrumento que está lá escondido! Vai agora! O Wind Fish está à tua espera! Hooot!
+
+owl_2_0 Hoooot! Isso é um 'Instrumento das Sereias'! Tenho de admitir, ao princípio não acreditei que fossem reais... Esse Instrumento, juntamente com os outros sete do conjunto, tem o poder de acordar o Wind Fish! Tens de os colecionar a todos! Fui encarregue de te dar instruções... O teu próximo objetivo fica a norte, no Pântano Goponga!! Hoot, sem dúvida!
+owl_2_1 Hoot! É um animal assustador esse que tens aí! Não te esqueças, o próximo Instrumento está no Pântano Goponga!
+
+// post dungeon 3
+owl_3_0 Hoot! Quantos Instrumentos já conseguiste até agora? Quando tocares os Instrumentos em frente ao Ovo, o Wind Fish acordará e tu poderás sair desta ilha. Agora, deves apressar-te para o Deserto Yarna! Os habitantes sombrios e monstruosos da areia mostrar-te-ão o caminho! Hoot Hoot!
+owl_3_1 Hoot! O formato da chave mostra um peixe, a nadar por uma cascata de água acima! Vai agora para a cascata da montanha! Um salto do topo e alcançarás o teu objetivo!
+
+// at the grave of the ghost
+owl_5_0 Hoot! Já passou algum tempo desde que os nossos caminhos se cruzaram, rapaz. Tens de mergulhar nas águas de Martha's Bay para entrar na Fauce do Peixe-Gato... Quanto mais te aproximas do Wind Fish, mais inquieto se torna o seu sono. Segue em frente! Hoot!
+
+// owl sitting infront of the egg on the stairs
+owl_stairs Hoooot! O Wind Fish dorme longa e profundamente no Ovo lá no alto... Quando tocares os oito Instrumentos das Sereias em frente ao Ovo, ele despertará. Esta, meu amigo, é a única forma de saíres da ilha! Hoo!
+
+// pre dungeon 6
+owl_6_0 Hoot! Existem dois santuários, um a norte, outro a sul. Primeiro, vai para o sul, onde ruínas ancestrais falam sobre o Wind Fish... Aprenderás muito por lá...
+owl_6_1 Hoot! Vejo que já leste o relevo... Apesar de dizer que a ilha é apenas um sonho do Wind Fish, ninguém tem a certeza... Tal como não podes saber se um baú tem tesouros antes de o abrires, também não podes dizer que isto é um sonho até acordares... O único que sabe com toda a certeza é o Wind Fish... Confia nos teus sentimentos... Um dia saberás com toda a certeza...
+
+// after dungeon 6
+owl_7_0 Hoot! Os muitos monstros desta ilha temem que o Wind Fish esteja prestes a despertar! O poder dos monstros é real! Eles podem conquistar a ilha e destruir os seus inimigos! Esse dia pode chegar em breve! Agora, vai para a torre da montanha! Voa como um pássaro! Hoot! Hoot!
+owl_7_1 Hoot hoot! O teu caminho não é fácil, mas estás quase lá. Vai para este. O Wind Fish está a ficar inquieto.
+
+// after saving marin
+owl_8_0 Hoot! Aquela rapariga cantou a canção dela em frente ao Ovo! A sua 'Balada do Wind Fish' é uma canção de despertar! Teria ela realmente a intenção de acordar o Wind Fish?! O próximo Instrumento das Sereias está no oeste. Toca as tuas melodias para que as pedras inanimadas possam ouvir! Mostra a tua coragem! O Wind Fish aguarda-te! Hoot!
+
+// after opening the egg
+owl_9_0 A hora chegou... O Wind Fish aguarda... Entra no Ovo... Hoot! Hoot!
+
+owl_final Hoot! Jovem rapaz, quero dizer... [NAME], o herói! Derrotaste os Nightmares! Provaste a tua sabedoria, coragem e poder! ... ... ... ... Sendo parte do espírito do Wind Fish, sou o guardião do seu mundo dos sonhos... Mas um dia, os Nightmares entraram no sonho e começaram a espalhar o caos. Foi então que tu, [NAME], vieste para salvar a ilha... Sempre confiei na tua coragem para repelir os Nightmares. Obrigado, [NAME]... O meu trabalho aqui terminou... O Wind Fish irá acordar em breve. Adeus...Hoot!
+
+// raccoon in the forest
+raccoon_0 Como guaxinim, o meu nariz é mmmuito sensível a coisas como pó e poeira...
+raccoon_1 Heh heh heh ho! Vais perder-te, graças a mim!  Heh heh!
+
+dog GRRRR...
+
+desert_bone_0 Ahhh... Siiim... Essa poeira era tão refrescante... Por causa disso, vou dar-te uma dica! Usa uma Bomba num lugar onde a areia te engula... Há um presentinho do outro lado da parede... Adeus!
+
+// chicken dude in the mountains
+chicken_dude_0 Os Cuccos de hoje em dia já não têm o espírito lutador que costumavam ter! Nos velhos tempos, conseguiam voar, flap flap! Mas agora, vês? Cluck cluck!
+chicken_dude_1 Uau! Incrível! Aquele Cucco está mesmo a voar! É tal e qual como eu disse, eh? Já tentaste segurá-lo acima da tua cabeça? Cluck Cluck!
+chicken_dude_2 Wooo! Finalmente! Este Galo Voador é o maior!
+chicken_dude_3 Queres dar uma volta com o Galo Voador?
+chicken_dude_4 Devolve o galo, eu imploro-te!
+chicken_dude_5 Sempre que quiseres o galo emprestado, é só passares por aqui!
+chicken_dude_6 Tudo bem, não me importo de esperar mais um bocado...
+
+// hidden npc that trades the boomerang
+npc_hidden_0 Encontrei um bom item que deu à costa na praia... Troco contigo pelo que tens no teu botão [CANCEL]...
+npc_hidden_1 Okay, vamos lá! Quando já não quiseres o Bumerangue, volta cá!
+npc_hidden_2 Oh, sim, uh... okay, o que seja.
+npc_hidden_3 Devolve-me o Bumerangue, peço-te! Eu devolvo-te o item que me deste!
+npc_hidden_4 O item voltou para ti. Devolveste o Bumerangue.
+npc_hidden_5 Ah... Não me dês esse item... Que tal outra coisa?
+
+// bat in cave
+npcBat_Intro Ei, miúdo! Acordaste-me de uma bela sesta!! ...Muito obrigado!\nMas agora, vou ter a minha vingança!\nEstás pronto?!
+npcBat_End Heh Heh Heh! Bem mereces! Agora olha para toda essa tralha que tens de carregar!\nHah! Cuida-te! Vemo-nos por aí!
+
+npcBat_Powder Vou deixar que carregues mais Pó Mágico! He He! Estás pronto?! 
+npcBat_Bombs Okay, vou deixar que carregues mais Bombas! He He He! Estás pronto?! 
+npcBat_Arrows Muito bem, vou deixar-te ter mais flechas! Heh Heh! Estás pronto?! 
+
+bat_yes
+
+book Ler este livro?
+book_read Queres ler este livro?
+book_realy_read Tens a certeza que queres lê-lo?
+
+book_yes SIM
+book_no NÃO
+book_look Olhar
+book_dont Não
+
+bookcase Isto não é um baú... O quê? Tu sabias isso? Okay.
+
+book1_0 'Selecionar O Item Certo Para Ti'
+book1_1 'Podes selecionar o teu item favorito para os quatro botões frontais ou os botões L e R no Sub-Menu. Ao usar diferentes itens, podes lutar sem uma espada! Tenta várias coisas diferentes para encontrares o que é melhor para ti!'
+
+book2_0 'Mapa Automático E Livro Guia De Memorandos'
+book2_1 'Podes ver o mapa da ilha ao pressionar os botões [START] e depois [SELECT]. As partes escuras do mapa são os locais que ainda não visitaste. Move o cursor e pressiona o Botão [CONFIRM] para obteres mais informações sobre uma área, ou para reveres a mensagem que recebeste lá...' Ahhh! Que conveniente!
+
+book3_0 'Segredos Da Lâmina Giratória'
+book3_1 'A técnica da Lâmina Giratória tem sido passada de geração em geração pela família do herói. Para usá-la, mantém o Botão da Espada pressionado e acumula o teu poder. Quando tiveres o suficiente, podes soltar o Botão! Consegues dominar isto?'
+
+book4_0 'Como Manusear O Teu Escudo Como Um Profissional!'
+book4_1 'Se mantiveres o Botão pressionado, podes defender-te dos ataques inimigos, e podes virar alguns inimigos também... Para além do escudo normal, também existe um tipo espelhado que consegue defender contra feixes!'
+
+book5_0 'Diversão Com Bombas'
+book5_1 'Depois de pousares uma Bomba, podes pegá-la ao pressionar o Botão novamente. Depois podes atirá-la ao pressionar o Botão mais uma vez. Este pequeno truque é um estrondo!'
+
+book6_0 'As Propriedades Dos Buracos De Teleporte'
+book6_1 'Existem alguns Buracos de Teleporte na Ilha Koholint. Podes teleportar-te para lá e para cá usando estes buracos. Se saltares para o Buraco de Teleporte onde chegaste, voltarás para o próximo na sequência. Só te podes teleportar para um buraco que tenhas visto com os teus próprios olhos...'
+
+book7_0 'Atlas Da Ilha Koholint'
+book7_1 Podes mover o cursor e procurar o nome de um lugar... Queres dar uma vista de olhos neste mapa?
+
+book8_0 'Segredos Negros E Mistérios De Koholint'
+book8_1 Gasp! O-o que é isto?! ... ... Não consegues ler estas letras tão pequenas sem a ajuda de uma Lente de Aumento...
+book8_2 As voltas e voltinhas, as passagens do Ovo...\n{[LEFT] [LEFT] [UP] [RIGHT] [RIGHT] [UP] [LEFT] [UP]}{??}...Hmmmmmm, este livro cheira a segredos...
+book8_3 As voltas e voltinhas, as passagens do Ovo...\n{[RIGHT] [UP] [UP] [RIGHT] [UP] [UP] [RIGHT] [UP]}{??}...Hmmmmmm, este livro cheira a segredos...
+book8_4 As voltas e voltinhas, as passagens do Ovo...\n{[LEFT] [UP] [RIGHT] [UP] [LEFT] [UP] [RIGHT] [UP]}{??}...Hmmmmmm, este livro cheira a segredos...
+book8_5 As voltas e voltinhas, as passagens do Ovo...\n{[RIGHT] [RIGHT] [RIGHT] [RIGHT] [UP] [UP] [UP] [UP]}{??}...Hmmmmmm, este livro cheira a segredos...
+
+book9_1 Novo mundo da cor debaixo das 5 lápides.\f{3[UP]  4[RIGHT]  5[UP]}{2[LEFT]  1[DOWN]   }\fTenta com toda a tua força. Abre um novo caminho! Aquele que for digno recebe o poder da cor. Pergunto-me o que será o mundo da cor?
+
+// phone in the house of ulrira
+ulrira_telephone 'BRRING! BRRING! BRRING! CLICK! Siiim! É o Bucket Mouse! Obrigado por ligar! ...Pois... CLICK!' ??? ... Deves ter marcado o número errado...
+
+// ulrira dialog
+ulrira_0 'BRRING! BRRING! Olá! Sou eu, Ulrira! Pergunta-me qualquer coisa sobre a ilha! Se te perderes, liga-me! Adeus! CLICK!'
+ulrira_1 'BRRING! BRRING! Ulrira a falar! Sabes, há uma biblioteca na vila que deve ter boas informações para ti! Falamos mais tarde! CLICK!'
+
+ulrira_2_0 'BRRING! BRRING! Olá, daqui fala o Ulrira! ...Bem, a maioria dos Moblins vive na Floresta Misteriosa, mas alguns vivem nas cavernas das Colinas Tal Tal... Espero que seja isso que querias saber! CLICK!'
+ulrira_2_1 'BRRING! BRRING! Sim, é o Ulrira. As Flores Indigestas do Pântano Goponga... Essas flores são as favoritas do BowWow. Porque não o levas a dar um passeio por lá? CLICK!'
+
+ulrira_3_0 'BRRING! BRRING! Ulrira ao teu dispor! Oh? Deverias levar o BowWow para casa agora, a Madame Miau-Miau agradeceria! Adeus! CLICK!'
+ulrira_3_1 'BRRING! BRRING! Olá, é o Ulrira! ...Já conheceste toda a gente na ilha? Há um homem chamado Richard que vive no Campo dos Buracos, a sudeste da vila. Porque não lhe fazes uma visita? É tudo o que te posso dizer por agora! Adeus! CLICK!'
+ulrira_3_2 'BRRING! BRRING! Velho Ulrira aqui! ...Gostas de bananas? Tenta falar outra vez com as pessoas da vila! Adeus! CLICK!'
+
+ulrira_leaf_0 'BRRING! BRRING! Sim, é o Ulrira! Ainda não encontraste as 5 Folhas Douradas? Fica de olho nas que já tens. Alguém pode tentar roubá-las! Adeus! CLICK!'
+ulrira_leaf_1 'BRRING! BRRING! Sim, é o Ulrira! Ainda não encontraste as 5 Folhas Douradas? Tenta usar bombas em lugares suspeitos. Espero que ajude. Adeus! CLICK!'
+ulrira_leaf_2 'BRRING! BRRING! Sim, é o Ulrira! Ainda não encontraste as 5 Folhas Douradas? Vai assustar aquele corvo ao pé do castelo e vê se isso ajuda! Adeus! CLICK!'
+ulrira_shovel 'BRRING! BRRING! Ulrira aqui! ... Pá... Por acaso compraste uma pá? Podes vir a encontrar alguma coisa se cavares por aí! Adeus! CLICK!'
+
+ulrira_3_3 'BRRING! BRRING! Sim, é o Ulrira! A caverna na Pradaria Ukuku é a chave! Sim, refiro-me à Caverna da Chave. Adeus! CLICK!'
+
+ulrira_4_0 'BRRING! BRRING! Olá, aqui fala o Ulrira! No Deserto Yarna, que fica a sudeste na ilha, encontrarás algo chamado Chave do Pescador. Hmmm... Quão mais óbvio é que eu tenho de ser? Adeus! CLICK!'
+ulrira_4_1 'BRRING! BRRING! Daqui Ulrira! Oh, ouvi dizer pela névoa que haverá algo escondido atrás das cascatas nas Montanhas Tal Tal. Isso ajuda-te? Adeus! CLICK!'
+
+ulrira_5_0 'BRRING! BRRING! Olá, é o Ulrira! A boca do peixe-gato está bem aberta? Parece um lugar espetacular para mergulhar! Adeus! CLICK!'
+
+ulrira_6_0 'BRRING! BRRING! Ulrira aqui! ... Já foste ao Santuário da Face? Fica a norte da Vila dos Animais. É uma ruína muito interessante... CLICK!'
+
+ulrira_7_0 'BRRING! BRRING! Olá, é o Ulrira! Já ouviste falar do Galo Voador da Vila Mabe? Nos bons velhos tempos, costumava dar-nos boleia se o segurássemos acima da nossa cabeça... Agora está deitado debaixo do Cata-vento... Será isto útil para ti? Espero bem que sim! Adeus! CLICK!'
+ulrira_7_1 'BRRING! BRRING! Olá, é o Ulrira! Estás a ir lindamente! Os teus esforços vão dar frutos muito em breve... Por acaso, já visitaste o Galinheiro na montanha? Tem uma caverna perto que tem algo de importante lá dentro. Adeus! CLICK!'
+ulrira_7_2 'BRRING! BRRING! Ulrira aqui... Sim, quando eu era apenas um miúdo, lembro-me de ver uma torre muito alta nas montanhas! Deverias lá ir! Foi útil para ti? Adeus! CLICK!'
+
+ulrira_8_0 'BRRING! BRRING! Olá, é o Ulrira! A cabeça da tartaruga está a bloquear-te o caminho? Dá-lhe vida e ela mover-se-á! É verdade! É mesmo! Adeus! CLICK!'
+ulrira_8_1 'BRRING! BRRING! Ulrira aqui! ... Força! Estás quase lá! Estou a torcer por ti! Adeus! CLICK!'
+
+ulrira_9_0 'BRRING! BRRING! Olá, fala o Ulrira! [NAME], chegou a hora de enfrentares o Ovo no Monte Tamaranch! Tem cuidado, [NAME]! Adeus! CLICK!'
+ulrira_9_1 'BRRING! BRRING! Daqui fala o Ulrira! Estás perdido no Ovo? Hmmmm. Não senhor, aí não te consigo ajudar de maneira nenhuma. Que tal a biblioteca? E ei, não deixes de me ligar só porque eu não sabia responder a uma perguntinha de nada! CLICK!'
+
+ulrira_wife 'BRRING! BRRING! Sim, é o Ulrira! A minha mulher foi à Vila dos Animais e deixou-me todo sozinho. Podes dizer-lhe para vir para casa assim que terminar as limpezas? Adeus! CLICK!'
+ulrira_ghost 'BRRING! BRRING! Daqui Ulrira! Agora estás a ser assombrado por um fantasma?! Bem, que tal levá-lo onde ele quer ir? Adeus! CLICK!'
+ulrira_mamu 'BRRING! BRRING! Sim, é o Ulrira! Estás a começar a gostar de música, eh? Bem, um sapo chamado Mamu, que vive no Labirinto de Placas, é capaz de saber umas músicas novas, mas ele cobra bastante para as tocar! Adeus! CLICK!'
+
+// TODO: not sure when this is shown in the game
+ulrira_seashells 'BRRING! BRRING! Ulrira a falar! Os teus inimigos são demasiado fortes para ti? Nesse caso, é melhor ires colecionar todas as Conchas Secretas... Acredita em ti próprio e dá o teu melhor! CLICK!'
+
+// dungeon intro
+dungeon_1 Nível 1--\n     Caverna da Cauda
+dungeon_2 Nível 2--\n     Gruta da Garrafa
+dungeon_3 Nível 3--\n     Caverna da Chave
+dungeon_4 Nível 4--\n     Túnel do Pescador
+dungeon_5 Nível 5--\n     Fauces do Peixe-Gato
+dungeon_6 Nível 6--\n     Santuário da Face
+dungeon_7 Nível 7--\n     Torre da Águia
+dungeon_8 Nível 8--\n     Rocha da Tartaruga
+
+beak_nop Esta estátua de coruja está a tentar dizer-te algo, mas não a consegues entender porque não tem bico.
+
+beak_d1_1 Afasta os inimigos com espinhos usando um escudo...
+beak_d1_2 Se houver uma porta que não consigas abrir, move um bloco de pedra.
+
+// shrine
+shrine_dark ?? Há uma imagem esculpida na parede, mas não consegues ver o que é por estar muito escuro aqui...
+shrine_message AO QUE ENCONTRAR... A ILHA DE KOHOLINT, NÃO É MAIS QUE UMA ILUSÃO... HUMANO, MONSTRO, MAR, CÉU... UMA CENA NA PÁLPEBRA DO OLHO DE QUEM DORME... ACORDA O SONHADOR, E KOHOLINT DESVANECERÁ TAL COMO UMA BOLHA NUMA AGULHA... NÁUFRAGO, TU DEVERIAS SABER A VERDADE! ... ... ... ... O quê?  Ilusão?
+
+// dungeon two
+beak_d2_1 Parte do chão está elevada. Toca no cristal azul.
+beak_d2_2 Faz com que o design de todos os blocos fique igual. Um novo caminho irá abrir-se.
+beak_d2_3 Primeiro, derrota o Pols Voice aprisionado, Por último, o Stalfos...
+
+// genie
+d2_boss_0 HO HO HO! Eu sou o teu vilão desta vez!! HO HO HO!
+d2_boss_1 NYAH NYAH! Não me consegues magoar desde que eu tenha a minha garrafa!
+d2_boss_2 . . . .! Não me consigo mexer!\nMas ainda estou perfeitamente bem. A tua espadinha não vai conseguir quebrar esta garrafa!
+d2_boss_3 Waaaah! Tu- tu partiste a minha garrafa! Ora tu... Estás a deixar-me de cabeça perdida!!!
+
+// dungeon three
+beak_d3_1 Ao longe...\nNão tenhas medo, corre e voa!
+beak_d3_2 Para derrotares o monstro negro da carapaça dura, dá-lhe algo explosivo para ele comer.
+beak_d3_3 Pica partes suspeitas da parede com a tua espada e ouve os sons que ela faz.
+
+d3_boss {NEENER NEENER!}{Não me consegues encontrar!}{NYAH NYAH!}
+
+bow_wow_cave_entry Ennh? Quem é este anão com ar suspeito?!\nOkay rapazes, vamos tratar dele!
+bow_wow_cave_boss Deves ser um assassino enviado pela Madame Miau-Miau para resgatar o rafeiro! Tu vieste aqui apanhar-me a mim, mas sou eu que te vou apanhar a ti!!
+bow_wow_cave_bw Tu salvaste o BowWow! Que fera mais assustadora!
+
+castle_monkey_hunger Chi-kiita! Chi-kiita! Kiki o macaco! Com fome! Kiki o macaco!
+castle_monkey_bowwow Kiiiki! O quê?! Muito bem, rafeiro! Vamos à luta!!
+
+castle_monkey_banana {[TRADE3]!    [TRADE3]!}{Oooh!  Oooh!}{Dar ao Kiki!?}
+castle_monkey_banana_yes {[TRADE3]!    [TRADE3]!}{Oooh! Ooh! Kiki!}{Macacos!  Venham!}{Paguem-lhe! Kiki!}
+castle_monkey_done {Monkey business!}{Feito!  Adeus adeus!}{Oooh!  Kiki!}
+
+// dungeon four
+beak_d4_1 O brilho do azulejo será o teu guia...
+
+d4_nightmare {BLOOOP! BLOOOP!  }{GLUB!  GLUB!   }{OGGGH!  COMIDAAA!}{BLOOOOP!  GLUB!   }
+
+// dungeon five
+beak_d5_1 Se não conseguires destruir um esqueleto com a tua espada, tenta usar uma bomba.
+beak_d5_2 Mergulha debaixo de onde os feixes das tochas se cruzam...
+
+master_stalfos_0 Arrgh! Não consigo vencer-te! Vou pôr-me daqui para fora!
+master_stalfos_1 Gulp! Encontraste-me!\nÉs um pirralho intolerável, sabias disso?!
+master_stalfos_2 Tu outra vez?! Tu continuas sempre a vir... Eu não consigo aguentar mais que tu!\nMuito bem, vamos a isso!
+master_stalfos_3 'Eu fiquei com o que estava cá dentro da caixa. Vem buscar, se fores capaz!' Mestre [SKULL]
+
+slime_eel_0 Ssso...tu és o forasssteiro, que veio para acordar o Wind Fisssh... KEEE-HEE-HEEEH!\nEu vou devorar-te!
+slime_eel_1 TSSSK, TSSSK! Tu não p-pareces sssaber que tipo de ilha é esssta... KEEE-HEEE-HEEE! Que tolo... KEE-HEE-HEH!!
+
+// dungeon six
+beak_d6_1 Entra no espaço onde os olhos têm paredes...
+beak_d6_2 Salta para cima dos cristais para seguires em frente.
+beak_d6_3 Para abrires um baú de tesouro, usa os potes à sua volta.
+
+facade_opening Ei lerdo! Precisas de uma dica? O meu ponto fraco é... !! Oops! Lá vou eu, a falar demais outra vez...
+facade_death Okay, ouve bem! Se o Wind Fish acordar, tudo nesta ilha vai desaparecer para sempre! E quando eu digo tudo é... TUDO!
+
+// dungeon seven
+grim_creeper_enter Ei anão! Achas que dás conta de mim?! Muito bem rapazes, tirem este traste da minha frente!
+grim_creeper_1 Ha! Era só isso que tinhas?! Prepara-te para ISTO!
+grim_creeper_2 Seu rato nojento! Tu v-v-v... derrotaste os meus irmãos! Tu vais pagar!! Eu nunca me vou esquecer de ti!
+grim_creeper_3 BAH! Não vou ter qualquer piedade! Vou fazer com que desejes nunca ter nascido!!
+grim_creeper_4 A minha energia... desapareceu... eu... perdi! Mas tu vais ficar perdido também, se o Wind Fish acordar! Tal como eu... tu ...estás... no... sonho dele...
+
+beak_d7_1 Salta do chão superior para alcançar o baú na mesa.
+beak_d7_2 O enigma é resolvido quando os pilares caírem!
+beak_d7_3 Se não conseguires passar por cima dos postes, tenta atirar coisas que tenhas nas mãos.
+
+// dungeon eight
+beak_d8_1 Para derrotares os monstros que guardam a chave, ataca-os a partir de um plano mais alto.
+beak_d8_2 Se a estátua parecer estranha, atira nela com o arco.
+beak_d8_3 Preenche todos os buracos com a rocha rolante, esta ([DPAD]) é a chave!
+
+ice_block_message Brrrr... Isto é um bloco de gelo sólido! Está muito frio!
+
+hot_head_0 CRACKLE-FWOOOSH! Estás acabado! Eu nunca deixarei que toques nos Instrumentos das Sereias!!
+hot_head_1 C-C-CRACKLE! Porque vieste aqui? Se não fosses tu, nada disto teria de mudar! Tu não consegues acordar o Wind Fish! Lembra-te, tu... também...estás no... ...sonho...
+
+// color dungeon
+grave_locked Se não tens coragem, então não tens força. Lápides não se movem para cobardes.
+
+beak_dc_1 Aqui tens a tua pista. Torna tudo o que é vermelho, azul.
+
+stone_hinox Que tolo ganancioso! Queres mais poder?! Um bufão como tu mais vale desistir e ir para casa!
+
+giant_buzz_blob_enter BOO! Não sou nenhum fracalhote! A tua espada miserável não é páreo para mim!
+giant_buzz_blob_sword Seu tolo! A tua espada não vai funcionar! Tenta outra coisa qualquer!
+
+// is this only shown on the normal gameboy?
+// I am sorry, but this is the Color Dungeon. Only those with the power of color may enter. If you can tell who wears red and who wears blue, you may enter. Farewell.
+npc_color_0 As nossas cores nunca são a mesma! Se eu sou vermelho, ele é azul! Se ele é vermelho, eu sou azul! De que cor é o meu tecido?
+npc_color_1 Não,  não. Olha com mais atenção e tenta de novo.
+npc_color_2 Não digas a ninguém.
+npc_color_3 A rainha fada está à tua espera.
+npc_color_4 Tens o Pó Mágico?\nSe não, tens de voltar para trás.
+
+choice_Red Vermelho
+choice_Blue Azul
+
+hardhit_beetle_0 Azul é seguro. Amarelo é cuidado. Vermelho é perigo.
+hardhit_beetle_1 Azul. Recomeça. Amarelo é cuidado. Vermelho é perigo.
+hardhit_beetle_2 Amarelo é cuidado. Vermelho é perigo, Pensa com atenção.
+
+choice_RED VERMELHO
+choice_BLUE AZUL
+choice_GREEN VERDE
+
+color_fairy_0 Bem-vindo, [NAME]. Admiro-te por teres chegado tão longe. Vou dar-te o poder da cor. Se queres ataque, escolhe vermelho. Se queres defesa escolhe azul. Qual é o poder que queres?
+color_fairy_1 Vermelho para ataque, azul para defesa. O que vais escolher?  
+color_fairy_2 Tens a certeza?
+color_fairy_3 Relaxa e fecha os teus olhos.
+color_fairy_4 Vou agora levar-te cá para fora.
+color_fairy_5 Bem-vindo de volta, [NAME]. Se já não desejas beneficiar do poder da cor, posso restaurar as tuas roupas originais. Desejas devolver o poder da cor?
+color_fairy_6 Preferes mudar para a outra cor?
+
+cloak_blue Conseguiste as Roupas Azuis! O teu dano será reduzido para metade!
+cloak_red Conseguiste as Roupas Vermelhas! O teu corpo está repleto de energia!
+cloak_green Conseguiste as Roupas Verdes! Não têm qualquer efeito especial, mas dão-te muito estilo!
+
+// desert
+desertLanmola Que aborrecimento! Tu só me estás a estorvar!
+
+// shell mansion
+shell_mansion_0 Eu sou o espírito da mansão. Estive à espera que alguém superasse a escuridão. Encontra todas as conchas secretas e atravessa o portão para receberes a espada derradeira!
+shell_mansion_1 Hmmm. Sem resposta. Não deves ter conchas suficientes.
+shell_mansion_2 O meu trabalho aqui chegou ao fim.
+
+npc_hippo_0 Vai-te embora!
+npc_hippo_1 Pára com isso!
+npc_hippo_2 Deixa-me em paz! Estou a tentar ficar quieto para que o Schule possa pintar o meu retrato!
+
+npc_painter_0 Ya, Eu cou Schule Donavitch! A eztatua da zereia na baía e a minha obra prima! ... Pra fafar verdath, eza obra athna nao zta pronta! A arte... e defifilez para ti ender, ne verdao?
+npc_painter_1 Izzo e uma Ezkama de Sereia? Nao pozz usar afgora. Tengo tarbalhar netza zena. Tuh thrias ender finilar a ezetatua para mim.
+npc_painter_2 Ach! Pára o qze tezt a olhadilhar para eztra lethe? Pare afghara metsmo!
+
+// photo house
+photo_book 'As Viagens de [NAME]' Queres dar uma olhadela no teu álbum?
+photo_book_text Que fotografia gostarias de ver? Usa [DPAD] para selecionar, e depois pressiona o Botão [CONFIRM]!
+
+// entering with a follower
+photo_mouse_follower Vem ver-me mais logo, quando estiveres sozinho!
+
+photo_left_11 Faltam 11 fotos! Que tipo de foto deveria tirar?
+photo_left_10 Faltam 10 fotos! Que tipo de foto deveria tirar?
+photo_left_9 Faltam 9 fotos! Que tipo de foto deveria tirar?
+photo_left_8 Faltam 8 fotos! Que tipo de foto deveria tirar?
+photo_left_7 Faltam 7 fotos! Que tipo de foto deveria tirar?
+photo_left_6 Faltam 6 fotos! Que tipo de foto deveria tirar?
+photo_left_5 Faltam 5 fotos! Que tipo de foto deveria tirar?
+photo_left_4 Faltam 4 fotos! Que tipo de foto deveria tirar?
+photo_left_3 Faltam 3 fotos! Que tipo de foto deveria tirar?
+photo_left_2 Faltam 2 fotos! Que tipo de foto deveria tirar?
+photo_left_1 Falta 1 foto! Que tipo de foto deveria tirar?
+photo_left_0 Oh não! Ficaste sem rolo! Não te esqueças de olhar para o teu álbum!
+
+// photo sequence photo house
+photo_01_0 Eu simplesmente ADORO tirar fotografias. Deixas-me tirar-te uma fotografia?
+photo_01_1 Vai para o fundo da sala e coloca-te em frente ao ecrã.
+photo_01_2 A esta vou dar o nome de 'Aqui Está Um Homem Corajoso'. Diz 'Cheese'!
+photo_01_3 Como é que te chamas, jovem? [NAME]? Bem, aqui tens o teu álbum, [NAME]. Dá-lhe uma espreitadela antes de saíres!
+photo_01_4 Vamos ver se conseguimos preencher o teu álbum!
+photo_01_5 Vamos tirar uma fotografia!
+photo_01_6 Não há foto?!\nEstás no gozo comigo?
+photo_01_7 Que estucha!
+photo_01_8 Lindo! A esta vou dar o nome de 'Game Over.'
+photo_01_9 Ei! Ainda não te tirei a foto! Volta para lá e coloca-te à frente do ecrã!
+
+// photo sequence ulrira house
+photo_02_0 Olá! Sou eu, o fotógrafo! Pareces curioso com o Avô Ulrira.
+photo_02_1 Vou chamar a isto '[NAME] Descobre o Segredo do Ulrira!'
+
+// photo sequences BowWow
+photo_03_0 Ei, isso parece ótimo! Vou chamar de '[NAME] Brinca Com O BowWow!' Agora chega-te mais perto do BowWow!
+photo_03_1 Grrrr!
+photo_03_2 [NAME], chega-te mais!
+photo_03_3 Grrrr! Grrrr!!
+photo_03_4 Grrrr! Grrrr!! GRRRR!
+photo_03_5 Muito mais perto! OK, estou pronto. Sorri!
+
+// photo sequences castle
+photo_05_0 Olá, [NAME]. Tu sabes que eu adoro tirar fotos. Este velho castelo não dava uma bela foto?
+photo_05_1 Ainda nada?! Estou a ficar farto de esperar. Quero essas Folhas Douradas entregues logo! Uma coragem deste género bem que merece uma fotografia, não achas?
+photo_05_2 Força tira lá uma foto minha. Do ângulo que tu quiseres!
+photo_05_3 Eu não estou com medo. Só decidi esperar em casa.
+
+// photo sequences grave
+photo_06_0 Ah como eu adoro fotos. Ei, [NAME]! O que é que tu andas a fazer por aqui?
+photo_06_1 Queres saber coisas sobre aquele fantasma? Aposto que ele está todo contente graças a ti. Estás pronto para uma fotografia?
+photo_06_2 Vou dar a esta o nome de 'Eu Tive Muito Medo'. Sorri!
+
+// photo sequences marin cliff
+marin_cliff_0 Esta é a minha primeira caminhada contigo, [NAME].
+marin_cliff_1 . . . . .
+marin_cliff_2 Este penhasco será o nosso lugar secreto. 
+marin_cliff_3 Não vais dizer nada?
+marin_cliff_4 Oh como eu adoro tirar fotografias! Porque é que não tiras uma fotografia quando não houver ninguém por perto?\nPodes chamar-lhe de . . .
+marin_cliff_5 Eu vou lá revelar isto. Vem cá ver depois, OK?
+
+// photo sequences fountain
+photo_08_0 Olá! Sou o fotógrafo! Que grande momento para uma foto! Vou chamar a isto 'Cuidado Com a Cabeça!'
+photo_08_1 Ohh! Peço desculpa! Estás bem?! [NAME]?
+
+// photo sequences weather bird
+photo_09_0 Ei, Marin e [NAME]! Vocês estão a tirar fotos? Deveriam tirar fotos de toda a gente, a incluir eu.
+photo_09_1 Eu uso isto para tirar fotos. Estão prontos? Digam 'cogumelo!'
+photo_09_2 OK, já acabei. Vou para casa agora.
+
+// photo sequences fisher
+photo_10_0 Tenho o pressentimento que vou apanhar de novo um peixão.
+photo_10_1 WHOA! Aquele era cá dos grandes! Ei, sr. das fotografias! Podes tirar uma fotografia disto?
+photo_10_2 Ei! Vê lá se tens mais cuidadinho para a próxima!
+
+// photo sequences zora
+photo_11_0 Ei, consegues ver-me?! Tu deves ter uma lente de aumento. Eu não arranjo confusões com ninguém. Eu só quero viver em paz.
+photo_11_1 Olá malta! Sou eu, o fotógrafo! Disseste que o Zora estava na casa? Eu TENHO de tirar uma foto disso. Vou chamá-la de 'Encontrei o Zora.'
+
+// photo sequences mountain
+photo_12_0 Ei, isto representa as tuas aventuras perfeitamente!
+photo_12_1 Vou chamar a esta 'Pela Margem de Um Triz'. Hmm.
+photo_12_2 Estou perto demais.
+photo_12_3 Devo recuar um pouco.
+photo_12_4 Aaaaaah!
+
+// map
+map_tal_tal Montanhas Tal Tal
+map_wind_fishs_egg Ovo do Wind Fish
+map_mt_tamaranch Monte Tamaranch
+map_hen_house Galinheiro
+map_telephone_booth Cabine Telefónica
+map_goponga_swamp Pântano Goponga
+map_tal_tal_heights Colinas Tal Tal
+map_weird_mr_write Sr. Write o Estranho
+map_photo_both Aproxime-se e tire a sua foto de recordação!
+map_raft_shop Loja da Jangada
+map_mysterious_woods Floresta Misteriosa
+map_koholint_prairie Pradaria Koholint
+map_crazy_tracy Spa Medicinal\nda Tracy Louca
+map_tabahl_wasteland Ermos de Tabahl
+map_kanalet_castle Castelo Kanalet
+map_rapids_ride Rápidos da Jangada
+map_witchs_hut Cabana da Bruxa
+map_cementry Cemitério
+map_fishing_pond Lago de Pesca
+map_quadruplets_house Casa dos Quádruplos
+map_dream_shrine Santuário dos Sonhos
+map_ukuku_prairie Pradaria Ukuku
+map_seashell_mansion Mansão das Conchas
+map_face_shrine Santuário da Face
+map_mabe_village Vila Mabe
+map_town_tool_shop Loja de Ferramentas
+map_madam_meow Casa da Madame Miau-Miau\nCuidado com o Cão!
+map_marin_tarin Casa da Marin e do Tarin
+map_village_library Biblioteca da Vila
+map_old_man_house Casa do Avô Ulrira
+map_trendy_game Jogo da Grua
+map_south_village Sul da Vila
+map_signpost_maze Labirinto de Placas
+map_pothole_field Campo dos Buracos
+map_maraths_bay Baía de Martha
+map_animal_village Vila dos Animais
+map_yarna_desert Deserto Yarna
+map_richards_villa Vila do Richard
+map_toronbo_shores Costas Toronbo
+map_banana_house Casa das Bananas do Sale
+map_bay_east Este da Baía
+map_house_bay Casa na Baía
+
+map_level_1 Nível 1--\n     Caverna da Cauda
+map_level_2 Nível 2--\n     Gruta da Garrafa
+map_level_3 Nível 3--\n     Caverna da Chave
+map_level_4 Nível 4--\n     Túnel do Pescador
+map_level_5 Nível 5--\n     Fauces do Peixe-Gato
+map_level_6 Nível 6--\n     Santuário da Face
+map_level_7 Nível 7--\n     Torre da Águia
+map_level_8 Nível 8--\n     Rocha da Tartaruga
+
+final_boss Nascemos de pesadelos... Para conquistar este mundo, fizemos com que o Wind Fish dormisse sem parar! Se o Wind Fish não acordar, esta ilha nunca desaparecerá! Nós teríamos sido os mestres deste lugar... Mas tu tiveste de vir para cá estragar-nos os planos! Heh heh! Nunca nos consegues derrotar!!! Vamos a isto!
+final_windfish ... ... ... ...  ... ... ... ... EU SOU O WIND FISH... O MEU SONO TEM SIDO LONGO... NOS MEUS SONHOS... UM OVO APARECEU E ESTAVA RODEADO POR UMA ILHA, COM PESSOAS, ANIMAIS, UM MUNDO INTEIRO! ... ... ... ... MAS, NA VERDADE, É DA NATUREZA DOS SONHOS CHEGAREM AO FIM! QUANDO EU ACORDAR, KOHOLINT TERÁ DESAPARECIDO... APENAS A RECORDAÇÃO DESTE MUNDO DE SONHO EXISTIRÁ NO MUNDO DESPERTO... ALGUM DIA, TU PODERÁS RELEMBRAR ESTA ILHA... ESSA RECORDAÇÃO SERÁ O VERDADEIRO MUNDO DE SONHO... ... ... ... ... VEM, [NAME]... VAMOS DESPERTAR... JUNTOS!!
+final_instruments TOCA OS OITO INSTRUMENTOS! TOCA A CANÇÃO DO DESPERTAR!!
+
+// credits
+// 1998
+credits_0 1998 EQUIPA
+
+credits_1 SUPERVISOR
+credits_1_0 TAKASHI TEZUKA
+
+credits_2 DIRETOR
+credits_2_0 YOSINORI TUTIYAMA
+
+credits_3 ARGUMENTISTA
+credits_3_0 NOBUO MATSUMIYA
+
+credits_4 PROGRAMADOR
+credits_4_0 EIJI NOTO
+credits_4_1 KIYOSHI KODA
+credits_4_2 SIGEHIRO KASAMATU
+
+credits_5 DESIGN DE PERSONAGENS
+credits_5_0 MIKIO MISHIMA
+credits_5_1 KYOKO KIMURA
+
+credits_6 COMPOSITOR DE SOM
+credits_6_0 YUICHI OZAKI
+
+credits_7 ARTE FINAL
+credits_7_0 KEIKO IZAWA
+
+credits_8 SUPORTE TÉCNICO
+credits_8_0 N KOGANEZAWA
+
+credits_9 GUIÃO EM INGLÊS
+credits_9_0 JIM WORNELL
+credits_9_1 KEIKO TAMURA
+credits_9_2 TAMAYO ITO
+
+credits_10 AGRADECIMENTOS ESPECIAIS
+credits_10_0 AKIYA SAKAMOTO
+credits_10_1 EQUIPA DE DEBUG RD2
+
+credits_11 EQUIPA DE DEBUG
+credits_11_0 SUPER MARIO CLUB
+
+// 1993
+credits_12 1993 EQUIPA
+
+credits_13 DIRETOR
+credits_13_0 TAKASHI TEZUKA
+
+credits_14 DESIGN DE MASMORRAS
+credits_14_0 YASUHISA YAMAMURA
+
+credits_15 ARGUMENTISTA
+credits_15_0 KENSUKE TANABE
+credits_15_1 YOSHIAKI KOIZUMI
+
+credits_16 PROGRAMADOR
+credits_16_0 KAZUAKI MORITA
+credits_16_1 TAKAMITSU KUZUHARA
+
+credits_17 DESIGN DE PERSONAGENS
+credits_17_0 MASANAO ARIMOTO
+credits_17_1 SHIGEFUMI HINO
+
+credits_18 COMPOSITOR DE SOM
+credits_18_0 KAZUMI TOTAKA
+credits_18_1 MINAKO HAMANO
+credits_18_2 KOZUE ISHIKAWA
+
+credits_19 ILUSTRAÇÃO
+credits_19_0 YOUICHI KOTABE
+
+credits_20 GUIÃO EM INGLÊS
+credits_20_0 DAN OWSEN
+
+credits_21 AGRADECIMENTOS ESPECIAIS
+credits_21_0 TOSHIHIKO NAKAGO
+credits_21_1 KOJI KONDO
+credits_21_2 TOMOAKI KUROUME
+credits_21_3 MASAICHI OKUMURA
+credits_21_4 KANAE WADA
+
+credits_22 PRODUTOR
+credits_22_0 SHIGERU MIYAMOTO
+
+credits_23 PRODUTOR EXECUTIVO
+credits_23_0 HIROSHI YAMAUCHI
+
+credits_24 
+credits_24_0 
+
+credits_25 
+credits_25_0 FIM
