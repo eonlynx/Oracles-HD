@@ -117,9 +117,9 @@ public sealed class TilesetRenderer
                 {
                     var srcX = flipX ? TileSize - 1 - x : x;
                     var srcY = flipY ? TileSize - 1 - y : y;
-                    // The disassembly PNGs store 0 = white .. 3 = black, while the
-                    // CGB palette index is 0 = lightest. Invert the shade.
-                    var shade = 3 - tile[srcY * TileSize + srcX];
+                    // The PNG PLTE is [255,170,85,0]: index 0 is white and already
+                    // equals CGB shade 0. Do not invert.
+                    var shade = tile[srcY * TileSize + srcX];
                     image[originX + x, originY + y] = _colors[palette * 4 + shade];
                 }
             }

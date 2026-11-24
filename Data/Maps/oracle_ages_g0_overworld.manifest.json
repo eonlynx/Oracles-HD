@@ -207,11 +207,11 @@
   "outputs": [
     {
       "path": "Previews/oracle_ages_g0_overworld.png",
-      "sha256": "8ace5f465ae2a8fbe511b1d44bf9a5bc7d73404560916470f111274485403d5e"
+      "sha256": "a92664726d5ed21a2de70edfcb2ce805b5ed2f91e1884eac911477636242d41f"
     },
     {
       "path": "Tilesets/oracle_ages_g0_overworld.png",
-      "sha256": "7c7a0e85d6c29084a036d33fdf626b5ca9549bec9b5ca8f5ff8520f82efb7d7c"
+      "sha256": "e1c8c1187f6b837a31d331514f01dc48df510aa8a1710086a7238b8aa34e78c6"
     },
     {
       "path": "oracle_ages_g0_overworld.map",

@@ -79,11 +79,11 @@
   "outputs": [
     {
       "path": "Previews/oracle_ages_g0_r49.png",
-      "sha256": "e78985f756f1d4cd502297b858b31b44ba5e169ab11da2a258acfe04585da502"
+      "sha256": "bf479913150a60f78593bda15a81f65997d37c0894352a62c7b2c56be0497f9f"
     },
     {
       "path": "Tilesets/oracle_ages_t00.png",
-      "sha256": "fae48e5043ac3dad4e2fd6482e3c97438de5e877617f31356d926ee7f0cdac74"
+      "sha256": "c3e292b740f3724e09776735d00651f861865547bcd36e3ba128afc66b6c14e5"
     },
     {
       "path": "oracle_ages_g0_r49.map",

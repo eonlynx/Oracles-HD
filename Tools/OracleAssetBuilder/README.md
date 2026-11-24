@@ -15,7 +15,7 @@ This tool is **not** part of the game build. The game project excludes
 | 2bpp PNG decode (dependency-free) | Done |
 | Metatile mappings + CGB attributes | Done |
 | VRAM tile offset (`(tile + 0x80) & 0xff`) | Done |
-| Inverted shade (`3 - raw`) | Done |
+| PLTE shade order (0 = white; no inversion) | Done |
 | Tileset palettes 2-7 | Done |
 | Common BG palette 0 (`paletteData48e0`) | Done |
 | RGBA PNG writer + DX-HD `.map` writer | Done |
@@ -56,8 +56,10 @@ These were verified against `ooa-godot` (`OracleRoomData.RenderRoom`),
    `groupNTilesets.bin`. Bit 7 is a unique-gfx flag, not part of the index.
 2. **Mapping tile bytes are GB tilemap numbers**: the VRAM slot is
    `(tile + 0x80) & 0xff`.
-3. **The disassembly PNGs are inverted**: PNG 0 is white, 3 is black. The CGB
-   palette index is `3 - png`.
+3. **The disassembly PNG palette is `[255,170,85,0]`**: PNG index 0 is white
+   and already equals CGB shade 0. Do **not** invert the shade. (`ooa-godot`
+   reads RGBA and computes `(255 - red + 42) / 85`, which yields the same
+   index.)
 4. **Mapping row layout**: bytes 0-3 are the four tile indices (top-left,
    top-right, bottom-left, bottom-right); bytes 4-7 are the four attributes
    (palette 0-2, VRAM bank bit 3, flip X bit 5, flip Y bit 6, priority bit 7).
