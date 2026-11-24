@@ -17,6 +17,8 @@ namespace ProjectZ
                     editorMode = true;
                 else if (arg == "loadSave")
                     loadFirstSave = true;
+                else if (arg == "oracle")
+                    Game1.OracleOverworld = true;
             }
 
             try

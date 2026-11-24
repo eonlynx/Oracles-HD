@@ -41,6 +41,13 @@ public sealed class RoomBuilder
         for (var metatile = 0; metatile < 256; metatile++)
             atlas.GetOrAdd(tilesetId, metatile, () => renderer.RenderMetatile(mappings, metatile));
 
+        var collisions = _content.GetCollisions(info.Layout);
+        var collisionMode = info.CollisionModeAndDungeon >> 4;
+        var composer = new AnimationComposer(_content.Animation);
+        var collisionMap = new byte[width, height];
+        var terrainMap = new byte[width, height];
+        var placements = new List<MapAnimationPlacement>();
+
         var layer0 = new int[width, height];
         var distinct = new HashSet<int>();
         var missingPalette = new HashSet<int>();
@@ -53,6 +60,28 @@ public sealed class RoomBuilder
                 var metatile = layout.Tiles[y * width + x];
                 distinct.Add(metatile);
                 layer0[x, y] = atlas.GetOrAdd(tilesetId, metatile, () => renderer.RenderMetatile(mappings, metatile));
+
+                var terrain = _content.GetTerrain(collisionMode, metatile);
+                terrainMap[x, y] = terrain;
+                var collisionByte = collisions[metatile];
+                collisionMap[x, y] = terrain is 1 or 2 or 3 or 5
+                    ? (byte)0xFF
+                    : collisionByte < 0x10 ? collisionByte : (byte)0;
+
+                var variants = composer.GetVariants(tilesetId, metatile, info.Animation, mappings, renderer);
+                if (variants != null)
+                {
+                    var frames = new int[variants.Count];
+                    var durations = new int[variants.Count];
+                    for (var i = 0; i < variants.Count; i++)
+                    {
+                        frames[i] = atlas.GetOrAddKey(
+                            AnimationComposer.VariantKey(tilesetId, metatile, info.Animation, i),
+                            () => variants[i].Image);
+                        durations[i] = variants[i].DurationMs;
+                    }
+                    placements.Add(new MapAnimationPlacement(x, y, frames, durations));
+                }
 
                 for (var part = 0; part < 4; part++)
                 {
@@ -80,7 +109,7 @@ public sealed class RoomBuilder
         Directory.CreateDirectory(_tilesetsDir);
         atlas.SavePng(tilesetPath);
 
-        DxMapWriter.Write(mapPath, tilesetName, width, height, layers);
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements);
 
         Directory.CreateDirectory(Path.GetDirectoryName(previewPath)!);
         var preview = _content.RenderRoomPreview(layout, atlas, tilesetId);

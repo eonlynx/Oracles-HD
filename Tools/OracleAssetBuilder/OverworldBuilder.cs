@@ -49,6 +49,16 @@ public sealed class OverworldBuilder
         var renderers = new Dictionary<int, TilesetRenderer>();
         var usedRooms = new List<int>();
         var skipped = new List<int>();
+        var composer = new AnimationComposer(_content.Animation);
+        var collisionMap = new byte[width, height];
+        var terrainMap = new byte[width, height];
+        var placements = new List<MapAnimationPlacement>();
+
+        // Outside rooms and the skipped indoor cell are solid so Link cannot
+        // walk into the void until interiors are generated.
+        for (var y = 0; y < height; y++)
+            for (var x = 0; x < width; x++)
+                collisionMap[x, y] = 0xFF;
 
         for (var room = 0; room < 256; room++)
         {
@@ -65,7 +75,9 @@ public sealed class OverworldBuilder
             }
 
             var info = _content.GetTileset(tilesetId);
-            if (!info.IsOutdoors)
+            // TILESETFLAG_MAKU marks the Maku Tree screen; it has no OUTDOORS
+            // bit but is part of the overworld map (top/ooa-godot map it to 0x38).
+            if (!info.IsOutdoors && !info.IsMaku)
             {
                 skipped.Add(room);
                 continue;
@@ -78,6 +90,8 @@ public sealed class OverworldBuilder
             }
 
             var mappings = _content.GetMappings(info.Layout);
+            var collisions = _content.GetCollisions(info.Layout);
+            var collisionMode = info.CollisionModeAndDungeon >> 4;
 
             OracleContent.RoomLayout layout;
             try
@@ -98,7 +112,32 @@ public sealed class OverworldBuilder
                 {
                     var metatile = layout.Tiles[y * layout.Width + x];
                     var atlasIndex = atlas.GetOrAdd(tilesetId, metatile, () => renderer.RenderMetatile(mappings, metatile));
-                    layer[gridX * RoomWidth + x, gridY * RoomHeight + y] = atlasIndex;
+
+                    var mapX = gridX * RoomWidth + x;
+                    var mapY = gridY * RoomHeight + y;
+                    layer[mapX, mapY] = atlasIndex;
+
+                    var terrain = _content.GetTerrain(collisionMode, metatile);
+                    terrainMap[mapX, mapY] = terrain;
+                    var collisionByte = collisions[metatile];
+                    collisionMap[mapX, mapY] = terrain is 1 or 2 or 3 or 5
+                        ? (byte)0xFF
+                        : collisionByte < 0x10 ? collisionByte : (byte)0;
+
+                    var variants = composer.GetVariants(tilesetId, metatile, info.Animation, mappings, renderer);
+                    if (variants != null)
+                    {
+                        var frames = new int[variants.Count];
+                        var durations = new int[variants.Count];
+                        for (var i = 0; i < variants.Count; i++)
+                        {
+                            frames[i] = atlas.GetOrAddKey(
+                                AnimationComposer.VariantKey(tilesetId, metatile, info.Animation, i),
+                                () => variants[i].Image);
+                            durations[i] = variants[i].DurationMs;
+                        }
+                        placements.Add(new MapAnimationPlacement(mapX, mapY, frames, durations));
+                    }
                 }
             }
         }
@@ -116,7 +155,7 @@ public sealed class OverworldBuilder
         Directory.CreateDirectory(_tilesetsDir);
         atlas.SavePng(tilesetPath);
 
-        DxMapWriter.Write(mapPath, tilesetName, width, height, layers);
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements);
 
         Directory.CreateDirectory(Path.GetDirectoryName(previewPath)!);
         var preview = RenderPreview(layer, atlas);
@@ -189,6 +228,7 @@ public sealed class OverworldBuilder
             skippedRooms = skippedRooms.Count,
             atlasMetatiles,
             roomIds = usedRooms.Select(r => $"0x{r:x2}").ToArray(),
+            skippedRoomIds = skippedRooms.Select(r => $"0x{r:x2}").ToArray(),
             outputs = new[] { mapPath, tilesetPath, previewPath }
                 .OrderBy(p => p, StringComparer.Ordinal)
                 .Select(p => new

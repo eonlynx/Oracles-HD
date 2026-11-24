@@ -135,6 +135,8 @@ namespace ProjectZ
         private static bool _initRenderTargets;
         public static bool FinishedLoading => _finishedLoading;
         public static bool LoadFirstSave;
+        public static bool OracleOverworld;
+        private static bool _oracleStarted;
 
 #if DEBUG
         private MapTest _mapTest;
@@ -395,6 +397,13 @@ namespace ProjectZ
 
             if (_finishedLoading)
             {
+                // Development entry: boot straight into the generated Oracle map.
+                if (OracleOverworld && !_oracleStarted)
+                {
+                    _oracleStarted = true;
+                    ScreenManager.ChangeScreen(Values.ScreenNameGame);
+                    GameManager.StartNewGame(0, "Oracle");
+                }
 
                 if (EditorMode)
                 {

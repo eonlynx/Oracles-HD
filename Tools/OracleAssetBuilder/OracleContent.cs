@@ -19,6 +19,7 @@ public sealed class OracleContent
     public OracleRepo Repo { get; }
     public int Group { get; }
     public IReadOnlyList<TilesetInfo> Tilesets => _tilesets;
+    public OracleAnimationData Animation { get; }
 
     private readonly IReadOnlyList<TilesetInfo> _tilesets;
     private readonly Dictionary<int, byte[]> _mappings = new();
@@ -29,6 +30,10 @@ public sealed class OracleContent
     private readonly string _uniqueGfxHeadersPath;
     private readonly string _paletteHeadersPath;
     private readonly string _groupTilesetsPath;
+    private readonly string _tilePropertiesDir;
+    private readonly Dictionary<int, Dictionary<int, byte>> _hazards = new();
+    private readonly Dictionary<int, Dictionary<int, byte>> _tileTypes = new();
+    private readonly Dictionary<string, int> _tileTypeConstants = new(StringComparer.Ordinal);
     private readonly byte[]? _roomPacks;
     private readonly Dictionary<int, (string Mappings, string Collisions)> _layoutHeaders;
 
@@ -43,6 +48,9 @@ public sealed class OracleContent
         _roomPacks = ReadOptionalRoomPacks(group);
         _layoutHeaders = AsmParser.ParseLayoutHeaders(Path.Combine(repo.DataDir, "tilesetHeaders.s"));
 
+        Animation = new OracleAnimationData(repo);
+        _tilePropertiesDir = Path.Combine(repo.DataDir, "tile_properties");
+        LoadTileProperties();
         var paletteDataPath = Path.Combine(repo.DataDir, "paletteData.s");
         _paletteData = AsmParser.ParsePaletteData(paletteDataPath);
 
@@ -127,6 +135,142 @@ public sealed class OracleContent
 
         return info.LayoutGroup;
     }
+
+    private void LoadTileProperties()
+    {
+        var constantsPath = Path.Combine(Repo.Root, "constants", "common", "tileTypes.s");
+        if (File.Exists(constantsPath))
+        {
+            foreach (var line in File.ReadLines(constantsPath))
+            {
+                var match = System.Text.RegularExpressions.Regex.Match(
+                    line, @"\.define\s+TILETYPE_(?<name>\w+)\s+\$(?<value>[0-9a-fA-F]+)");
+                if (match.Success)
+                    _tileTypeConstants[match.Groups["name"].Value] =
+                        int.Parse(match.Groups["value"].Value, System.Globalization.NumberStyles.HexNumber);
+            }
+        }
+
+        ParseModeTable(Path.Combine(_tilePropertiesDir, "hazards.s"), _hazards);
+        ParseModeTable(Path.Combine(_tilePropertiesDir, "tileTypeMappings.s"), _tileTypes);
+    }
+
+    private void ParseModeTable(string path, Dictionary<int, Dictionary<int, byte>> target)
+    {
+        if (!File.Exists(path))
+            return;
+
+        var modes = new List<int>();
+        var current = new Dictionary<int, byte>();
+        var hasData = false;
+
+        void Flush()
+        {
+            if (current.Count == 0)
+                return;
+
+            foreach (var mode in modes)
+                target[mode] = new Dictionary<int, byte>(current);
+
+            modes.Clear();
+            current.Clear();
+            hasData = false;
+        }
+
+        foreach (var raw in File.ReadLines(path))
+        {
+            var line = raw.Trim();
+            var modeMatch = System.Text.RegularExpressions.Regex.Match(line, @"^@(?<name>\w+):");
+            if (modeMatch.Success)
+            {
+                if (hasData)
+                    Flush();
+
+                var mode = ModeFor(modeMatch.Groups["name"].Value);
+                if (mode.HasValue)
+                    modes.Add(mode.Value);
+                continue;
+            }
+
+            if (!line.StartsWith(".db", StringComparison.Ordinal) || modes.Count == 0)
+                continue;
+
+            var tokens = line[3..].Split(new[] { ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            if (tokens.Length < 2)
+                continue;
+
+            var tile = ParseNumber(tokens[0]);
+            var value = ParseNumberOrSymbol(tokens[1]);
+            if (tile is < 0 or > 255 || value is < 0 or > 255)
+                continue;
+
+            current[tile] = (byte)value;
+            hasData = true;
+        }
+
+        Flush();
+    }
+
+    private static int? ModeFor(string label) => label switch
+    {
+        "overworld" => 0,
+        "indoors" => 1,
+        "dungeons" => 2,
+        "sidescrolling" => 3,
+        "underwater" => 4,
+        "five" => 5,
+        _ => null,
+    };
+
+    private int ParseNumberOrSymbol(string token)
+    {
+        if (token.StartsWith('$') || char.IsDigit(token[0]))
+            return ParseNumber(token);
+
+        return _tileTypeConstants.TryGetValue(token, out var value) ? value : -1;
+    }
+
+    private static int ParseNumber(string token)
+    {
+        if (token.StartsWith('$'))
+            return int.Parse(token[1..], System.Globalization.NumberStyles.HexNumber);
+        return int.TryParse(token, out var value) ? value : -1;
+    }
+
+    /// <summary>
+    /// Terrain byte consumed by the engine:
+    /// 1 water, 2 deep water, 3 lava, 4 grass, 5 hole. Water/hole/lava are made
+    /// solid until swimming and falling are implemented.
+    /// </summary>
+    public byte GetTerrain(int mode, int metatile)
+    {
+        mode = Math.Clamp(mode, 0, 5);
+
+        var hazard = _hazards.TryGetValue(mode, out var hazards) && hazards.TryGetValue(metatile, out var h) ? h : 0;
+        var type = _tileTypes.TryGetValue(mode, out var types) && types.TryGetValue(metatile, out var t) ? t : 0;
+
+        var lava = Constant("LAVA");
+        var hole = Constant("HOLE");
+        var water = Constant("WATER");
+        var sea = Constant("SEAWATER");
+        var grass = Constant("GRASS");
+        var whirlpool = Constant("WHIRLPOOL");
+
+        if (hazard == 4 || type == lava)
+            return 3;
+        if (hazard == 2 || type == hole)
+            return 5;
+        if (hazard == 1 || type == water || type == whirlpool)
+            return type == sea ? (byte)2 : (byte)1;
+        if (type == sea)
+            return 2;
+        if (type == grass)
+            return 4;
+
+        return 0;
+    }
+
+    private int Constant(string name) => _tileTypeConstants.TryGetValue(name, out var value) ? value : -1;
 
     public string GetMappingPath(int layout)
     {

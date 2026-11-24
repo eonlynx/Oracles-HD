@@ -24,6 +24,12 @@ namespace ProjectZ.InGame.Map
         private Point _lastFieldPosition;
         public int[,] UpdateMap;
 
+        // Oracle asset pipeline: per-tile solidity (quadrant bits / 0xff) and
+        // terrain flags, plus the tile-map animation timeline from the .map.
+        public byte[,] CollisionMap;
+        public byte[,] TerrainMap;
+        public List<TileAnimation> TileAnimations = new List<TileAnimation>();
+
         public Color LightColor;
 
         public string MapName;
@@ -86,6 +92,10 @@ namespace ProjectZ.InGame.Map
             MapMusic = new[] { -1, -1, -1 };
             UseShadows = true;
             LightState = 0;
+
+            CollisionMap = null;
+            TerrainMap = null;
+            TileAnimations.Clear();
 
             ShadowHeight = Values.ShadowHeightDefault;
             ShadowRotation = Values.ShadowRotationDefault;
@@ -310,6 +320,87 @@ namespace ProjectZ.InGame.Map
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Tile-based solidity for Oracle maps. Collision bytes below $10 are
+        /// quadrant bits (3=TL, 2=TR, 1=BL, 0=BR); $ff is a full solid tile
+        /// (generated for water/holes/lava until swimming/falling exists).
+        /// </summary>
+        public bool IsSolid(RectangleF box)
+        {
+            if (CollisionMap == null)
+                return false;
+
+            var startX = Math.Max(0, (int)Math.Floor(box.Left / Values.TileSize));
+            var endX = Math.Min(CollisionMap.GetLength(0) - 1, (int)Math.Floor((box.Right - 0.001f) / Values.TileSize));
+            var startY = Math.Max(0, (int)Math.Floor(box.Top / Values.TileSize));
+            var endY = Math.Min(CollisionMap.GetLength(1) - 1, (int)Math.Floor((box.Bottom - 0.001f) / Values.TileSize));
+
+            for (var y = startY; y <= endY; y++)
+            {
+                for (var x = startX; x <= endX; x++)
+                {
+                    var value = CollisionMap[x, y];
+                    if (value == 0)
+                        continue;
+                    if (value == 0xFF)
+                        return true;
+                    if (value >= 0x10)
+                        continue;
+
+                    for (var quadrant = 0; quadrant < 4; quadrant++)
+                    {
+                        if ((value & (1 << quadrant)) == 0)
+                            continue;
+
+                        var offsetX = quadrant is 0 or 2 ? 8 : 0;
+                        var offsetY = quadrant is 0 or 1 ? 8 : 0;
+                        var quadrantBox = new RectangleF(
+                            x * Values.TileSize + offsetX, y * Values.TileSize + offsetY,
+                            Values.TileSize / 2, Values.TileSize / 2);
+
+                        if (quadrantBox.Intersects(box))
+                            return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public void ApplyTerrainToFieldStates()
+        {
+            if (TerrainMap == null || StateMap == null)
+                return;
+
+            for (var y = 0; y < TerrainMap.GetLength(1) && y < StateMap.GetLength(1); y++)
+            {
+                for (var x = 0; x < TerrainMap.GetLength(0) && x < StateMap.GetLength(0); x++)
+                {
+                    switch (TerrainMap[x, y])
+                    {
+                        case 1:
+                            StateMap[x, y] |= MapStates.FieldStates.Water;
+                            break;
+                        case 2:
+                            StateMap[x, y] |= MapStates.FieldStates.DeepWater;
+                            break;
+                        case 3:
+                            StateMap[x, y] |= MapStates.FieldStates.Lava;
+                            break;
+                        case 4:
+                            StateMap[x, y] |= MapStates.FieldStates.Grass;
+                            break;
+                    }
+                }
+            }
+        }
+
+        public void UpdateTileAnimations(float deltaTime)
+        {
+            for (var i = 0; i < TileAnimations.Count; i++)
+                TileAnimations[i].Update(this, deltaTime);
         }
 
         public void Dig(Point position, Vector2 diggerPosition, int dir)

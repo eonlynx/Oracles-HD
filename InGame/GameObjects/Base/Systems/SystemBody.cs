@@ -520,6 +520,16 @@ namespace ProjectZ.InGame.GameObjects.Base.Systems
                 !body.FieldRectangle.Contains(box.Rectangle()) && body.FieldRectangle.Contains(oldBox.Rectangle()))
                 return true;
 
+            // Oracle maps carry a per-tile collision layer. Block walking bodies
+            // against solid quadrants/full tiles before testing map objects.
+            if (!ignoreField &&
+                (collisionTypes & (Values.CollisionTypes.Normal | Values.CollisionTypes.NPCWall)) != 0 &&
+                Game1.GameManager.MapManager.CurrentMap.IsSolid(box.Rectangle()))
+            {
+                collidingBox = box;
+                return true;
+            }
+
             var cBox = Box.Empty;
             if (Game1.GameManager.MapManager.CurrentMap.Objects.Collision(
                 box, body.IgnoreInsideCollision ? oldBox : Box.Empty, collisionTypes, body.CollisionTypesIgnore, direction, body.Level, ref cBox))

@@ -101,7 +101,9 @@ public sealed class TilesetRenderer
         }
     }
 
-    public RgbaImage RenderMetatile(byte[] mappings, int metatile)
+    public RgbaImage RenderMetatile(byte[] mappings, int metatile) => RenderMetatile(mappings, metatile, null);
+
+    public RgbaImage RenderMetatile(byte[] mappings, int metatile, IReadOnlyDictionary<int, byte[]>? slotOverrides)
     {
         var image = new RgbaImage(MetatileSize, MetatileSize);
         var baseIndex = metatile * 8;
@@ -119,7 +121,10 @@ public sealed class TilesetRenderer
                 palette = 0;
 
             var bankTiles = bank == 0 ? _tilesBank0 : _tilesBank1;
-            var tile = bankTiles[SlotFor(tileIndex, bank)];
+            var slot = SlotFor(tileIndex, bank);
+            var tile = slotOverrides != null && slotOverrides.TryGetValue(slot, out var overrideTile)
+                ? overrideTile
+                : bankTiles[slot];
             if (tile == null)
                 continue;
 

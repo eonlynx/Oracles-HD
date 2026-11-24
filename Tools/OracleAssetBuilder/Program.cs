@@ -49,6 +49,7 @@ public static class Program
             "room" => BuildRoom(content, group, oracleOptions, options, outDir, tilesetsDir),
             "overworld" => BuildOverworld(content, group, oracleOptions, outDir, tilesetsDir),
             "inspect" => Inspect(content, options, oracleOptions),
+            "inspect-anim" => InspectAnim(content, options),
             _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld' or 'inspect'."),
         };
     }
@@ -90,6 +91,14 @@ public static class Program
         Console.WriteLine($"  tileset  {result.TilesetPath}");
         Console.WriteLine($"  preview  {result.PreviewPath}");
         Console.WriteLine($"  manifest {result.ManifestPath}");
+        return 0;
+    }
+
+    private static int InspectAnim(OracleContent content, Dictionary<string, string> options)
+    {
+        var group = ParseHex(Get(options, "group", "0"));
+        Console.WriteLine(content.Animation.Describe(group));
+        Console.WriteLine($"animation headers: {content.Animation.Headers.Count}");
         return 0;
     }
 

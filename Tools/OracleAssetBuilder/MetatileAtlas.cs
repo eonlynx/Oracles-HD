@@ -33,6 +33,16 @@ public sealed class MetatileAtlas
         return index;
     }
 
+    public int GetOrAddKey(long key, Func<RgbaImage> render)
+    {
+        if (_lookup.TryGetValue(key, out var existing))
+            return existing;
+        var index = _images.Count;
+        _images.Add(render());
+        _lookup.Add(key, index);
+        return index;
+    }
+
     public bool TryGetIndex(int tilesetId, int metatile, out int index)
     {
         return _lookup.TryGetValue(Key(tilesetId, metatile), out index);

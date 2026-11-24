@@ -248,6 +248,9 @@ namespace ProjectZ.InGame.SaveLoad
             // load the objects
             LoadObjects(reader, map);
 
+            // optional Oracle sections appended after the native map data
+            LoadOracleSections(reader, map);
+
             // close the file
             reader.Close();
 
@@ -256,6 +259,69 @@ namespace ProjectZ.InGame.SaveLoad
                 map.DigMap = DataMapSerializer.LoadData(fileName + ".data");
             else
                 map.DigMap = new string[map.MapWidth, map.MapHeight];
+        }
+
+        private static void LoadOracleSections(StreamReader reader, Map.Map map)
+        {
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
+                switch (line.Trim())
+                {
+                    case "#oracle-collision v1":
+                        map.CollisionMap = ReadByteMap(reader);
+                        break;
+
+                    case "#oracle-terrain v1":
+                        map.TerrainMap = ReadByteMap(reader);
+                        break;
+
+                    case "#oracle-anim v1":
+                        var count = Convert.ToInt32(reader.ReadLine());
+                        for (var i = 0; i < count; i++)
+                        {
+                            var row = reader.ReadLine();
+                            if (string.IsNullOrEmpty(row))
+                                break;
+
+                            var parts = row.Split(';');
+                            var frames = Array.ConvertAll(parts[0].Split(','), value => Convert.ToInt32(value));
+                            var durations = Array.ConvertAll(parts[1].Split(','), value => Convert.ToInt32(value));
+                            var x = Convert.ToInt32(parts[2]);
+                            var y = Convert.ToInt32(parts[3]);
+
+                            var animation = new TileAnimation(x, y, frames, durations);
+                            animation.Apply(map);
+                            map.TileAnimations.Add(animation);
+                        }
+                        break;
+                }
+            }
+
+            map.ApplyTerrainToFieldStates();
+        }
+
+        private static byte[,] ReadByteMap(StreamReader reader)
+        {
+            var width = Convert.ToInt32(reader.ReadLine());
+            var height = Convert.ToInt32(reader.ReadLine());
+            var map = new byte[width, height];
+
+            for (var y = 0; y < height; y++)
+            {
+                var row = reader.ReadLine() ?? "";
+                for (var x = 0; x < width; x++)
+                {
+                    var offset = x * 2;
+                    if (offset + 1 < row.Length)
+                        map[x, y] = Convert.ToByte(row.Substring(offset, 2), 16);
+                }
+            }
+
+            return map;
         }
 
         public static void CreateEmptyHoleMap(TileMap holeMap, int width, int height)

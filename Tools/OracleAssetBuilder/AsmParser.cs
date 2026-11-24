@@ -19,6 +19,7 @@ public sealed record TilesetInfo(
     int Animation)
 {
     public bool IsOutdoors => (Flags & 0x01) != 0;
+    public bool IsMaku => (Flags & 0x02) != 0;
     public bool IsIndoors => (Flags & 0x04) != 0;
     public bool IsDungeon => (Flags & 0x08) != 0;
     public bool IsSideScroll => (Flags & 0x20) != 0;

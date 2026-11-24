@@ -48,6 +48,8 @@ namespace ProjectZ.InGame.Map
 
             CurrentMap.UpdateMapUpdateState();
 
+            CurrentMap.UpdateTileAnimations(Game1.DeltaTime);
+
             UpdateCamera();
         }
 

@@ -25,26 +25,30 @@ This tool is **not** part of the game build. The game project excludes
 | Layout-label aliases (`tilesetLayoutGroupXX`) | Done (e.g. $20 -> `tilesetMappings1b`) |
 | Past cliff palette rewrite (6 -> 0) | Done (`setPastCliffPalettesToRed`) |
 | Maku / Jabu / companion overrides | Done (save-dependent flags) |
-| Animated tiles | **Blocked** — see below |
-| Collisions, objects, warps | TODO (Phase 3+) |
+| Animated tiles (atlas + `.map` timeline) | Done |
+| Tile collisions + terrain (`.map` sections) | Done |
+| Runtime overworld entry (`--oracle`) | Done |
+| Room objects (Maku Tree eyes, NPCs, warps) | TODO (Phase 4) |
 
-## Animated tiles: open question
+## Animated tiles: resolved
 
-The engine's own source comments and `oracles-decomp` agree that each
-`animationData` pair is `(gfxIndex, delay)`: `code/animations.s` says
-`e = animation gfx index`, and `updateAnimationDataPointer` queues the first
-byte and stores the second as the counter. `top/engine/neighbours/animation.c`
-does the same.
+`oracles-disasm/tools/dump/dumpAnimationData.py` names the pair explicitly:
 
-`ooa-godot`'s importer, however, parses the pair as `(duration, gfxIndex)`
-(`Import-BackgroundAnimations.ps1`, `tracks.tsv`), and its regressions expect
-that order. Both cannot be right, and the difference changes every animation
-schedule.
+```python
+counter = rom[address]
+gfxIndex = rom[address + 1]
+```
 
-Before baking animation frames into the atlas and emitting a map-level tile
-animation table, this order must be confirmed against a built ROM (WLA-DX) or a
-recorded trace. No `.ani` file is generated: the agreed design is to append the
-frames to the existing atlas and embed the timeline in the existing `.map`.
+and writes `.db counter gfxIndex`. The order is **`(delay, gfxIndex)`**. This
+matches `ooa-godot`'s importer/regressions, which pin waterfall headers
+`0, 24, 32`; those are the second bytes of `animationDataWaterfall`
+(`.db $03 $00`, `.db $01 $18`, `.db $04 $20`).
+
+Frames are rendered into the **existing atlas** as metatile variants; the
+timeline is embedded in the **existing `.map`** under `#oracle-anim v1`. No
+`.ani` or extra data file is generated. `Map.UpdateTileAnimations` swaps the
+visual atlas index; collision and terrain are separate sections and never
+change with the animation.
 
 ## Commands
 

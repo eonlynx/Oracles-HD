@@ -1404,10 +1404,18 @@ namespace ProjectZ.InGame.Things
 
             MapManager.Camera.ForceUpdate(MapManager.GetCameraTargetLink());
 
-            // load the map
-            MapManager.ObjLink.SetNextMapPosition(new Vector2(MapManager.ObjLink.PosX, MapManager.ObjLink.PosY));
-            ((MapTransitionSystem)GameSystems[typeof(MapTransitionSystem)]).LoadMapFromFile("house1.map", true, true, Values.MapFirstTransitionColor, false);
-            ((MapTransitionSystem)GameSystems[typeof(MapTransitionSystem)]).AdditionalBlackScreenDelay = Values.GameSaveBlackScreen;
+            // load the map (Oracle development entry loads the generated overworld)
+            var oracle = Game1.OracleOverworld;
+            var startPosition = oracle
+                ? new Vector2(9 * Values.FieldWidth + Values.FieldWidth / 2f,
+                              3 * Values.FieldHeight + Values.FieldHeight / 2f)
+                : new Vector2(MapManager.ObjLink.PosX, MapManager.ObjLink.PosY);
+            var startMap = oracle ? "oracle_ages_g0_overworld.map" : "house1.map";
+
+            MapManager.ObjLink.SetNextMapPosition(startPosition);
+            var transitionSystem = (MapTransitionSystem)GameSystems[typeof(MapTransitionSystem)];
+            transitionSystem.LoadMapFromFile(startMap, true, true, Values.MapFirstTransitionColor, false);
+            transitionSystem.AdditionalBlackScreenDelay = oracle ? 0 : Values.GameSaveBlackScreen;
         }
 
         public void LoadSaveFile(int slot)
