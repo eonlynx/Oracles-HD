@@ -27,15 +27,15 @@ public sealed class RoomBuilder
         _tilesetsDir = tilesetsDir;
     }
 
-    public RoomBuildResult Build(int group, int room, bool largeRoom, int? backgroundPaletteHeader)
+    public RoomBuildResult Build(int group, int room, bool largeRoom, int? backgroundPaletteHeader, OracleOptions options)
     {
-        var tilesetId = _content.GetRoomTileset(room);
+        var tilesetId = _content.GetRoomTileset(room, options);
         var info = _content.GetTileset(tilesetId);
         var mappings = _content.GetMappings(info.Layout);
-        var layout = _content.GetRoomLayout(info.LayoutGroup, room, largeRoom);
+        var layout = _content.GetRoomLayout(_content.GetLayoutGroup(room, info, options), room, largeRoom);
         var width = layout.Width;
         var height = layout.Height;
-        var renderer = _content.CreateRenderer(tilesetId, backgroundPaletteHeader);
+        var renderer = _content.CreateRenderer(tilesetId, backgroundPaletteHeader, room, options);
 
         var atlas = new MetatileAtlas(64);
         for (var metatile = 0; metatile < 256; metatile++)
@@ -60,7 +60,7 @@ public sealed class RoomBuilder
                     var attributes = mappings[metatile * 8 + 4 + part];
                     if (!renderer.IsPaletteLoaded(attributes & 0x07))
                         missingPalette.Add(metatile);
-                    if (!renderer.IsTileLoaded(tile))
+                    if (!renderer.IsTileLoaded(tile, (attributes & 0x08) != 0 ? 1 : 0))
                         missingTiles.Add(metatile);
                 }
             }
@@ -86,7 +86,7 @@ public sealed class RoomBuilder
         var preview = _content.RenderRoomPreview(layout, atlas, tilesetId);
         Png.SaveRgba(previewPath, preview);
 
-        WriteManifest(manifestPath, stem, group, room, info, renderer, mapPath, tilesetPath, previewPath);
+        WriteManifest(manifestPath, stem, group, room, info, renderer, layout.SourcePath, mapPath, tilesetPath, previewPath);
 
         return new RoomBuildResult(
             mapPath, tilesetPath, previewPath, manifestPath,
@@ -110,6 +110,7 @@ public sealed class RoomBuilder
         int room,
         TilesetInfo info,
         TilesetRenderer renderer,
+        string layoutPath,
         string mapPath,
         string tilesetPath,
         string previewPath)
@@ -122,9 +123,9 @@ public sealed class RoomBuilder
             Path.Combine(_content.Repo.DataDir, "paletteData.s"),
             Path.Combine(_content.Repo.DataDir, "tilesets.s"),
             Path.Combine(_content.Repo.RoomsDir, $"group{group}Tilesets.bin"),
-            Path.Combine(_content.Repo.TilesetLayoutsDir, $"tilesetMappings{info.Layout:x2}.bin"),
-            Path.Combine(_content.Repo.TilesetLayoutsDir, $"tilesetCollisions{info.Layout:x2}.bin"),
-            Path.Combine(_content.Repo.RoomsDir, "small", $"room{info.LayoutGroup:x2}{room:x2}.bin"),
+            _content.GetMappingPath(info.Layout),
+            _content.GetCollisionPath(info.Layout),
+            layoutPath,
         };
         inputs.AddRange(renderer.SourcePngs);
 

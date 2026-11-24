@@ -1,0 +1,85 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 2,
+  "game": "ages",
+  "entry": "oracle_ages_g4_r20",
+  "group": 4,
+  "room": "0x20",
+  "tileset": {
+    "id": "0x36",
+    "layout": "0x21",
+    "layoutGroup": "0x04",
+    "gfxHeader": "0x61",
+    "uniqueGfxHeader": "0x00",
+    "paletteHeader": "0x41",
+    "flags": "0x08",
+    "outdoors": false,
+    "indoors": false,
+    "sideScroll": false,
+    "underwater": false
+  },
+  "inputs": [
+    {
+      "path": "data/ages/gfxHeaders.s",
+      "sha256": "a80380f668c565f0ea4d0c2ae24317adc42343ae98cae6b21375cfcb2e8462e9"
+    },
+    {
+      "path": "data/ages/paletteData.s",
+      "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
+    },
+    {
+      "path": "data/ages/paletteHeaders.s",
+      "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
+    },
+    {
+      "path": "data/ages/tilesets.s",
+      "sha256": "bf2dec6c3946360b7409cd8257cd0cdacc3012dfac7076d129709adb6f901510"
+    },
+    {
+      "path": "data/ages/uniqueGfxHeaders.s",
+      "sha256": "39c05b2dc9347f8a81ee9bf4946890822112a3b50091274e4d8ad5ab5451f0bc"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_dungeon_standard_1.png",
+      "sha256": "1f22a9e7d989201be9af7dc0efc6b17b4d29c2587c31085bd9202d9377f4c8e1"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_dungeon_standard_2.png",
+      "sha256": "6825711b805a9a4c167899feb7bcddc9e6052931d2ebe218ffe3cb351c5892ff"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_spirits_grave.png",
+      "sha256": "31cf49350648c153d072abfe2251d4ea65e907f109714e10f55c1a47db42aa00"
+    },
+    {
+      "path": "rooms/ages/group4Tilesets.bin",
+      "sha256": "3186f9e200c4d057b6fa65dcc74b6b5c36797d7d4d8026632c9fc7900fc23be9"
+    },
+    {
+      "path": "rooms/ages/large/room0420.bin",
+      "sha256": "cd2f896dbb9820a5a059616252b8bf0ba26513d8260f00c3fce1d46276424243"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetCollisions21.bin",
+      "sha256": "a3248d756cd5982e8dd18125aa30be78989879895ff32f5f0c1ca68fb07c2702"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetMappings21.bin",
+      "sha256": "913b58e4e8f3ac6671710a0967958bdbf50207d5c0e8e52a9017964d93958464"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "Previews/oracle_ages_g4_r20.png",
+      "sha256": "989f73176f6bcbbf8ca82ff48949844b9bc54f42902c69105cf41c8438a312ec"
+    },
+    {
+      "path": "Tilesets/oracle_ages_t36.png",
+      "sha256": "74a4abe7dd808cb9f517180ff6037085b9aed38f1b4a65afbcbfb873d8b0a510"
+    },
+    {
+      "path": "oracle_ages_g4_r20.map",
+      "sha256": "9db480edd1909d14f2fe57d16c884680d1551fbb52574931a647a58ebb32a4bf"
+    }
+  ]
+}

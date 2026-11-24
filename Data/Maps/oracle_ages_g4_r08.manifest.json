@@ -1,0 +1,85 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 2,
+  "game": "ages",
+  "entry": "oracle_ages_g4_r08",
+  "group": 4,
+  "room": "0x08",
+  "tileset": {
+    "id": "0x35",
+    "layout": "0x20",
+    "layoutGroup": "0x04",
+    "gfxHeader": "0x60",
+    "uniqueGfxHeader": "0x00",
+    "paletteHeader": "0x4d",
+    "flags": "0x88",
+    "outdoors": false,
+    "indoors": false,
+    "sideScroll": false,
+    "underwater": false
+  },
+  "inputs": [
+    {
+      "path": "data/ages/gfxHeaders.s",
+      "sha256": "a80380f668c565f0ea4d0c2ae24317adc42343ae98cae6b21375cfcb2e8462e9"
+    },
+    {
+      "path": "data/ages/paletteData.s",
+      "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
+    },
+    {
+      "path": "data/ages/paletteHeaders.s",
+      "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
+    },
+    {
+      "path": "data/ages/tilesets.s",
+      "sha256": "bf2dec6c3946360b7409cd8257cd0cdacc3012dfac7076d129709adb6f901510"
+    },
+    {
+      "path": "data/ages/uniqueGfxHeaders.s",
+      "sha256": "39c05b2dc9347f8a81ee9bf4946890822112a3b50091274e4d8ad5ab5451f0bc"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_dungeon_standard_1.png",
+      "sha256": "1f22a9e7d989201be9af7dc0efc6b17b4d29c2587c31085bd9202d9377f4c8e1"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_dungeon_standard_2.png",
+      "sha256": "6825711b805a9a4c167899feb7bcddc9e6052931d2ebe218ffe3cb351c5892ff"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_maku_path.png",
+      "sha256": "c2787b0c47638c9366db0913113710dab4365b0fff3253f396c52050f5c927c8"
+    },
+    {
+      "path": "rooms/ages/group4Tilesets.bin",
+      "sha256": "3186f9e200c4d057b6fa65dcc74b6b5c36797d7d4d8026632c9fc7900fc23be9"
+    },
+    {
+      "path": "rooms/ages/large/room0408.bin",
+      "sha256": "1ad751c5c12811c10783eddf49d86859b1e9530e4639636376baae1d297602db"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetCollisions1b.bin",
+      "sha256": "7e67a6f0e5ab68ea93bbfb702e57e6dddcc13f8fa02cce6e5b23925d4e287124"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetMappings1b.bin",
+      "sha256": "7db23e795269ee5b4e855ac80fa877a2b384cb74bca9ddad58a47a9d8d2f6acf"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "Previews/oracle_ages_g4_r08.png",
+      "sha256": "1d390853eea5896c953c5fd2906164d9b67932a53d13cd408873d4e8a6b29447"
+    },
+    {
+      "path": "Tilesets/oracle_ages_t35.png",
+      "sha256": "ee917e3a294b2945884646b491e630d7f2420ed3b57096f16e9f3017e944fa77"
+    },
+    {
+      "path": "oracle_ages_g4_r08.map",
+      "sha256": "45c5e4640919b061aac7cf894bc646a6c595ff3b1c76650711b2592189ceb626"
+    }
+  ]
+}

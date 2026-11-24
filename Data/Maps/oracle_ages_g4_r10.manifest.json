@@ -1,0 +1,81 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 2,
+  "game": "ages",
+  "entry": "oracle_ages_g4_r10",
+  "group": 4,
+  "room": "0x10",
+  "tileset": {
+    "id": "0x4c",
+    "layout": "0x32",
+    "layoutGroup": "0x04",
+    "gfxHeader": "0x6d",
+    "uniqueGfxHeader": "0x00",
+    "paletteHeader": "0x51",
+    "flags": "0x28",
+    "outdoors": false,
+    "indoors": false,
+    "sideScroll": true,
+    "underwater": false
+  },
+  "inputs": [
+    {
+      "path": "data/ages/gfxHeaders.s",
+      "sha256": "a80380f668c565f0ea4d0c2ae24317adc42343ae98cae6b21375cfcb2e8462e9"
+    },
+    {
+      "path": "data/ages/paletteData.s",
+      "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
+    },
+    {
+      "path": "data/ages/paletteHeaders.s",
+      "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
+    },
+    {
+      "path": "data/ages/tilesets.s",
+      "sha256": "bf2dec6c3946360b7409cd8257cd0cdacc3012dfac7076d129709adb6f901510"
+    },
+    {
+      "path": "data/ages/uniqueGfxHeaders.s",
+      "sha256": "39c05b2dc9347f8a81ee9bf4946890822112a3b50091274e4d8ad5ab5451f0bc"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_sidescroll_1.png",
+      "sha256": "361848dfe0293266df97efa0d811e321ac7f51d74541c23b46651be119b385d9"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_sidescroll_2.png",
+      "sha256": "9980e54c8883316183311928ab61473c56c39bb03d1bd633eb08871ebc0dbd94"
+    },
+    {
+      "path": "rooms/ages/group4Tilesets.bin",
+      "sha256": "3186f9e200c4d057b6fa65dcc74b6b5c36797d7d4d8026632c9fc7900fc23be9"
+    },
+    {
+      "path": "rooms/ages/large/room0410.bin",
+      "sha256": "137b3242b90228b65af52c518d028aaa24e9fab01f93fa5f09eb38457a64d5ac"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetCollisions2b.bin",
+      "sha256": "6f9c6b44afab9f998cee71405c137d2da0abbbfc3045e75af3445929a6681c71"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetMappings2b.bin",
+      "sha256": "de54da4974a256459a05aec77860b4f33fc71c559a53604bf9d251217a346856"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "Previews/oracle_ages_g4_r10.png",
+      "sha256": "f8bc546ff531e5b48048bc0b9716e5ff339ba7164e8e60bf51034a2ea6b28865"
+    },
+    {
+      "path": "Tilesets/oracle_ages_t4c.png",
+      "sha256": "91432714f5c504040e2d4f78f355f8ca1b93adde260b81b516311e2310294c11"
+    },
+    {
+      "path": "oracle_ages_g4_r10.map",
+      "sha256": "70cff1977b1c993861d1ef1e48c7b3e590a9776475caaf98d7475cf4526fa8e7"
+    }
+  ]
+}

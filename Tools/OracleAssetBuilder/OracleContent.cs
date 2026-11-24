@@ -1,5 +1,15 @@
-
 namespace Oracles.Tools.AssetBuilder;
+
+/// <summary>Save-dependent switches used by checkTilesetOverride and companion layouts.</summary>
+public sealed record OracleOptions(
+    int? Companion = null,
+    bool MakuSaved = false,
+    bool JabuUnderwater = false)
+{
+    public const int Ricky = 0x0B;
+    public const int Dimitri = 0x0C;
+    public const int Moosh = 0x0D;
+}
 
 /// <summary>
 /// Resolved view of one game's disassembly tables. Tables are parsed once per run.
@@ -7,6 +17,7 @@ namespace Oracles.Tools.AssetBuilder;
 public sealed class OracleContent
 {
     public OracleRepo Repo { get; }
+    public int Group { get; }
     public IReadOnlyList<TilesetInfo> Tilesets => _tilesets;
 
     private readonly IReadOnlyList<TilesetInfo> _tilesets;
@@ -15,27 +26,44 @@ public sealed class OracleContent
     private readonly Dictionary<string, Rgb555[]> _paletteData;
 
     private readonly string _gfxHeadersPath;
+    private readonly string _uniqueGfxHeadersPath;
     private readonly string _paletteHeadersPath;
-    private readonly string _tilesetsPath;
     private readonly string _groupTilesetsPath;
+    private readonly byte[]? _roomPacks;
+    private readonly Dictionary<int, (string Mappings, string Collisions)> _layoutHeaders;
 
     public OracleContent(OracleRepo repo, int group)
     {
         Repo = repo;
+        Group = group;
         _gfxHeadersPath = Path.Combine(repo.DataDir, "gfxHeaders.s");
+        _uniqueGfxHeadersPath = Path.Combine(repo.DataDir, "uniqueGfxHeaders.s");
         _paletteHeadersPath = Path.Combine(repo.DataDir, "paletteHeaders.s");
-        _tilesetsPath = Path.Combine(repo.DataDir, "tilesets.s");
         _groupTilesetsPath = Path.Combine(repo.RoomsDir, $"group{group}Tilesets.bin");
+        _roomPacks = ReadOptionalRoomPacks(group);
+        _layoutHeaders = AsmParser.ParseLayoutHeaders(Path.Combine(repo.DataDir, "tilesetHeaders.s"));
 
         var paletteDataPath = Path.Combine(repo.DataDir, "paletteData.s");
         _paletteData = AsmParser.ParsePaletteData(paletteDataPath);
 
         var symbols = new Dictionary<string, int>(StringComparer.Ordinal);
         AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_gfxHeadersPath, "m_GfxHeaderStart"));
-        AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(Path.Combine(repo.DataDir, "uniqueGfxHeaders.s"), "m_UniqueGfxHeaderStart"));
+        AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_uniqueGfxHeadersPath, "m_UniqueGfxHeaderStart"));
         AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_paletteHeadersPath, "m_PaletteHeaderStart"));
 
-        _tilesets = AsmParser.ParseTilesetData(_tilesetsPath, symbols);
+        _tilesets = AsmParser.ParseTilesetData(Path.Combine(repo.DataDir, "tilesets.s"), symbols);
+    }
+
+    private byte[]? ReadOptionalRoomPacks(int group)
+    {
+        var name = group switch
+        {
+            0 => "roomPacksPresent.bin",
+            1 => "roomPacksPast.bin",
+            _ => "roomPacks.bin",
+        };
+        var path = Path.Combine(Repo.RoomsDir, name);
+        return File.Exists(path) ? File.ReadAllBytes(path) : null;
     }
 
     private static void AddSymbols(Dictionary<string, int> target, Dictionary<string, int> source)
@@ -55,15 +83,61 @@ public sealed class OracleContent
         return _tilesets[tilesetId];
     }
 
-    public int GetRoomTileset(int room)
+    /// <summary>
+    /// loadTilesetData_body: bit 7 is OR'd into wTilesetUniqueGfx (a flag); the
+    /// tileset index is the low seven bits. checkTilesetOverride then adjusts it
+    /// for a few save-dependent cases.
+    /// </summary>
+    public int GetRoomTileset(int room, OracleOptions options)
     {
         var bytes = File.ReadAllBytes(_groupTilesetsPath);
         if (bytes.Length < 256)
             throw new InvalidDataException($"{_groupTilesetsPath}: expected 256 bytes, found {bytes.Length}.");
 
-        // loadTilesetData_body: bit 7 is OR'd into wTilesetUniqueGfx (a flag);
-        // the tileset index itself is the low seven bits.
-        return bytes[room & 0xFF] & 0x7F;
+        var tileset = bytes[room & 0xFF] & 0x7F;
+
+        // checkTilesetOverride@checkMakuTreeSaved: saved Maku Tree room uses $24.
+        if (Group == 0 && (room & 0xFF) == 0x38 && options.MakuSaved)
+            tileset += 2;
+
+        // checkTilesetOverride@checkJabuFlooded: flooded Jabu floor uses $3f.
+        if (options.JabuUnderwater && tileset == 0x3E)
+            tileset += 1;
+
+        if (tileset >= _tilesets.Count)
+            throw new InvalidDataException($"Room 0x{room:x2}: resolved tileset 0x{tileset:x2} is outside the tileset table.");
+
+        return tileset;
+    }
+
+    /// <summary>
+    /// checkTilesetOverride's companion branch only changes the layout group:
+    /// Ricky keeps the base layout, Dimitri uses group 1, Moosh/other group 3.
+    /// </summary>
+    public int GetLayoutGroup(int room, TilesetInfo info, OracleOptions options)
+    {
+        if (Group == 0 &&
+            _roomPacks is { Length: >= 256 } &&
+            _roomPacks[room & 0xFF] == 0x7F &&
+            options.Companion is { } companion &&
+            companion != OracleOptions.Ricky)
+        {
+            return companion == OracleOptions.Dimitri ? 1 : 3;
+        }
+
+        return info.LayoutGroup;
+    }
+
+    public string GetMappingPath(int layout)
+    {
+        var label = _layoutHeaders.TryGetValue(layout, out var header) ? header.Mappings : $"tilesetMappings{layout:x2}";
+        return Path.Combine(Repo.TilesetLayoutsDir, label + ".bin");
+    }
+
+    public string GetCollisionPath(int layout)
+    {
+        var label = _layoutHeaders.TryGetValue(layout, out var header) ? header.Collisions : $"tilesetCollisions{layout:x2}";
+        return Path.Combine(Repo.TilesetLayoutsDir, label + ".bin");
     }
 
     public byte[] GetMappings(int layout)
@@ -71,7 +145,7 @@ public sealed class OracleContent
         if (_mappings.TryGetValue(layout, out var cached))
             return cached;
 
-        var path = Path.Combine(Repo.TilesetLayoutsDir, $"tilesetMappings{layout:x2}.bin");
+        var path = GetMappingPath(layout);
         var data = File.ReadAllBytes(path);
         if (data.Length != 2048)
             throw new InvalidDataException($"{path}: expected 2048 bytes, found {data.Length}.");
@@ -84,7 +158,7 @@ public sealed class OracleContent
         if (_collisions.TryGetValue(layout, out var cached))
             return cached;
 
-        var path = Path.Combine(Repo.TilesetLayoutsDir, $"tilesetCollisions{layout:x2}.bin");
+        var path = GetCollisionPath(layout);
         var data = File.ReadAllBytes(path);
         if (data.Length != 256)
             throw new InvalidDataException($"{path}: expected 256 bytes, found {data.Length}.");
@@ -96,7 +170,7 @@ public sealed class OracleContent
     /// A room layout with its stride removed. Small rooms are 10x8; layout groups
     /// 4/5 store 11 rows of 16 bytes, of which 10x8 (normal) or 15x11 (large) are used.
     /// </summary>
-    public sealed record RoomLayout(int Width, int Height, byte[] Tiles);
+    public sealed record RoomLayout(int Width, int Height, byte[] Tiles, string SourcePath);
 
     public RoomLayout GetRoomLayout(int layoutGroup, int room, bool largeRoom)
     {
@@ -106,7 +180,7 @@ public sealed class OracleContent
             var data = File.ReadAllBytes(small);
             if (data.Length != 80)
                 throw new InvalidDataException($"{small}: expected 80 bytes, found {data.Length}.");
-            return new RoomLayout(10, 8, data);
+            return new RoomLayout(10, 8, data, small);
         }
 
         var large = Path.Combine(Repo.RoomsDir, "large", $"room{layoutGroup:x2}{room:x2}.bin");
@@ -124,29 +198,31 @@ public sealed class OracleContent
             for (var x = 0; x < width; x++)
                 tiles[y * width + x] = stored[y * 16 + x];
 
-        return new RoomLayout(width, height, tiles);
+        return new RoomLayout(width, height, tiles, large);
     }
 
-    public TilesetRenderer CreateRenderer(int tilesetId, int? backgroundPaletteHeader)
+    public TilesetRenderer CreateRenderer(int tilesetId, int? backgroundPaletteHeader, int room, OracleOptions options)
     {
         var info = GetTileset(tilesetId);
-        var renderer = new TilesetRenderer(tilesetId);
+        var renderer = new TilesetRenderer(tilesetId)
+        {
+            // setPastCliffPalettesToRed: overworld collisions, past flag, room != $38.
+            PastCliffPalettes = info.IsPastOrSubrosia &&
+                                (info.CollisionModeAndDungeon >> 4) == 0 &&
+                                (room & 0xFF) != 0x38,
+        };
 
         renderer.LoadGraphics(AsmParser.ParseGfxHeader(_gfxHeadersPath, info.Gfx), Repo);
 
-        // Unique graphics are loaded after the main tileset and replace tiles at
-        // the same VRAM destinations. They are part of the room's visible tileset.
+        // Unique graphics load after the main header and replace tiles at the
+        // same VRAM destinations.
         if (info.UniqueGfx != 0)
-            renderer.LoadGraphics(AsmParser.ParseGfxHeader(Path.Combine(Repo.DataDir, "uniqueGfxHeaders.s"), info.UniqueGfx), Repo);
+            renderer.LoadGraphics(AsmParser.ParseGfxHeader(_uniqueGfxHeadersPath, info.UniqueGfx), Repo);
 
-        // Background palette 0 is the engine's common palette (PALH_0f installs
-        // paletteData48e0; see ooa-godot BackgroundPaletteState). It is not part
-        // of the tileset palette header, which only loads 2-7.
+        // Background palette 0 is the engine's common palette (paletteData48e0).
         if (_paletteData.TryGetValue("paletteData48e0", out var commonBackground))
             renderer.ApplyPalette(0, 1, commonBackground);
 
-        // Optional extra background palette (useful for experiments). The tileset
-        // palette overrides 2-7 afterwards.
         if (backgroundPaletteHeader.HasValue)
             ApplyPaletteHeader(renderer, backgroundPaletteHeader.Value);
 

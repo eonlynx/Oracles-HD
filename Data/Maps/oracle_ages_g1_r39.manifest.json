@@ -1,0 +1,105 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 2,
+  "game": "ages",
+  "entry": "oracle_ages_g1_r39",
+  "group": 1,
+  "room": "0x39",
+  "tileset": {
+    "id": "0x16",
+    "layout": "0x14",
+    "layoutGroup": "0x02",
+    "gfxHeader": "0x41",
+    "uniqueGfxHeader": "0x05",
+    "paletteHeader": "0x33",
+    "flags": "0x81",
+    "outdoors": true,
+    "indoors": false,
+    "sideScroll": false,
+    "underwater": false
+  },
+  "inputs": [
+    {
+      "path": "data/ages/gfxHeaders.s",
+      "sha256": "a80380f668c565f0ea4d0c2ae24317adc42343ae98cae6b21375cfcb2e8462e9"
+    },
+    {
+      "path": "data/ages/paletteData.s",
+      "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
+    },
+    {
+      "path": "data/ages/paletteHeaders.s",
+      "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
+    },
+    {
+      "path": "data/ages/tilesets.s",
+      "sha256": "bf2dec6c3946360b7409cd8257cd0cdacc3012dfac7076d129709adb6f901510"
+    },
+    {
+      "path": "data/ages/uniqueGfxHeaders.s",
+      "sha256": "39c05b2dc9347f8a81ee9bf4946890822112a3b50091274e4d8ad5ab5451f0bc"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_forest_of_time_1.png",
+      "sha256": "6e441db407899c8ffa0486184bd19ee5639ff865900b2598ff446d70703a2bfa"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_forest_of_time_2.png",
+      "sha256": "9551add9a01cbecce76c1e325c000b183782b6fd9764ee58e847376e10632bbc"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_forest_of_time_3.png",
+      "sha256": "8ff84b600625a6aa508fd3553171d25481556ac433ebdc382f84e2fe2429cf61"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_lynna_city_1.png",
+      "sha256": "4e87936f404e77d2948b9a51e735a8952d92c89a80bf44a203523d023ff12143"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_lynna_city_2.png",
+      "sha256": "90dce1026799da7912de282ade55d34925d0b0f940856a2fa95cddcfc75b8d6a"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_lynna_city_3.png",
+      "sha256": "accc94df4a121fe9c94e6e4f7c6108637fa71a6bb0ac96859ce76208411a8ad0"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_overworld_past.png",
+      "sha256": "6f132f77dd1e8ce0e15d10083ecc29a8844533533da656b312224b01f8a93b1f"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_overworld_standard.png",
+      "sha256": "4c03ff841c0cb4770742fb20a90e177978875e14b8e68f5c5875242aef84c60c"
+    },
+    {
+      "path": "rooms/ages/group1Tilesets.bin",
+      "sha256": "9ae3b60cd2f3b73585911f1c28869c01a63bd64c19d6ca87bfe15c32f5cb60e3"
+    },
+    {
+      "path": "rooms/ages/small/room0239.bin",
+      "sha256": "b85ad1a56d43606e92ce9ee8cd8ae54329c4c039f74f8448d557ea7f54a4cbe0"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetCollisions14.bin",
+      "sha256": "2a5a79825f1771d406a4ecf0403f343da7db11940b9b78ca7127f7956dbe4cbd"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetMappings14.bin",
+      "sha256": "098aaeadc14b66a6d82c1fe8d86ef268a80262494eb82289c15d665f3773babf"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "Previews/oracle_ages_g1_r39.png",
+      "sha256": "e30070ea4f0b0e8c85a361ff94877c8c1508e756b9da5b29d9232a1483e52320"
+    },
+    {
+      "path": "Tilesets/oracle_ages_t16.png",
+      "sha256": "0e01379f5dde97ee3aa01dc462052495c3b188f0a5ba2b88fba7e8b8db000ab6"
+    },
+    {
+      "path": "oracle_ages_g1_r39.map",
+      "sha256": "7f2d2a97d1f427fba70a7627bfa3e6567fb60c3a7b2aa7eed27f662c6490268a"
+    }
+  ]
+}

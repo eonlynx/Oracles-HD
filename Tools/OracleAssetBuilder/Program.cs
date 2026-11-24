@@ -36,20 +36,24 @@ public static class Program
         var outDir = Get(options, "out", OracleRepo.FindDefaultOutput());
         var tilesetsDir = Get(options, "tilesets", Path.Combine(outDir, "Tilesets"));
         var group = ParseHex(Get(options, "group", "0"));
+        var oracleOptions = new OracleOptions(
+            ParseCompanion(options),
+            options.ContainsKey("maku-saved"),
+            options.ContainsKey("jabu-underwater"));
 
         var repo = new OracleRepo(disasm, game);
         var content = new OracleContent(repo, group);
 
         return command switch
         {
-            "room" => BuildRoom(content, group, options, outDir, tilesetsDir),
-            "overworld" => BuildOverworld(content, group, outDir, tilesetsDir),
-            "inspect" => Inspect(content, options),
+            "room" => BuildRoom(content, group, oracleOptions, options, outDir, tilesetsDir),
+            "overworld" => BuildOverworld(content, group, oracleOptions, outDir, tilesetsDir),
+            "inspect" => Inspect(content, options, oracleOptions),
             _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld' or 'inspect'."),
         };
     }
 
-    private static int BuildRoom(OracleContent content, int group, Dictionary<string, string> options, string outDir, string tilesetsDir)
+    private static int BuildRoom(OracleContent content, int group, OracleOptions oracleOptions, Dictionary<string, string> options, string outDir, string tilesetsDir)
     {
         var room = ParseHex(Get(options, "room", "00"));
         if (room is < 0 or > 0xFF)
@@ -59,7 +63,7 @@ public static class Program
 
         var builder = new RoomBuilder(content, outDir, tilesetsDir);
         var largeRoom = options.ContainsKey("large");
-        var result = builder.Build(group, room, largeRoom, bgPalette);
+        var result = builder.Build(group, room, largeRoom, bgPalette, oracleOptions);
 
         Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} group {group} room 0x{room:x2}");
         Console.WriteLine($"  tileset 0x{result.TilesetId:x2}  layout 0x{result.Layout:x2}  layout group 0x{result.LayoutGroup:x2}");
@@ -75,10 +79,10 @@ public static class Program
         return 0;
     }
 
-    private static int BuildOverworld(OracleContent content, int group, string outDir, string tilesetsDir)
+    private static int BuildOverworld(OracleContent content, int group, OracleOptions oracleOptions, string outDir, string tilesetsDir)
     {
         var builder = new OverworldBuilder(content, outDir, tilesetsDir);
-        var result = builder.Build(group);
+        var result = builder.Build(group, oracleOptions);
         Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} group {group} overworld");
         Console.WriteLine($"  rooms {result.Rooms}, skipped non-outdoors {result.SkippedRooms}");
         Console.WriteLine($"  size {result.WidthTiles}x{result.HeightTiles} tiles, atlas {result.AtlasMetatiles} metatiles");
@@ -89,7 +93,7 @@ public static class Program
         return 0;
     }
 
-    private static int Inspect(OracleContent content, Dictionary<string, string> options)
+    private static int Inspect(OracleContent content, Dictionary<string, string> options, OracleOptions oracleOptions)
     {
         var tilesetId = ParseHex(Get(options, "tileset", "00"));
         var info = content.GetTileset(tilesetId);
@@ -99,8 +103,8 @@ public static class Program
         Console.WriteLine($"  gfx header 0x{info.Gfx:x2}  unique 0x{info.UniqueGfx:x2}  palette 0x{info.Palette:x2}");
         Console.WriteLine($"  layout 0x{info.Layout:x2}  layout group 0x{info.LayoutGroup:x2}  animation 0x{info.Animation:x2}");
 
-        var renderer = content.CreateRenderer(tilesetId, null);
-        Console.WriteLine($"  loaded tiles: {renderer.LoadedTileCount}/256");
+        var renderer = content.CreateRenderer(tilesetId, null, 0, oracleOptions);
+        Console.WriteLine($"  loaded tiles: bank0 {renderer.LoadedTileCountBank0}/128, bank1 {renderer.LoadedTileCountBank1}/256");
         Console.WriteLine($"  palettes loaded: {string.Join(", ", Enumerable.Range(0, 8).Where(renderer.IsPaletteLoaded).Select(i => i.ToString()))}");
         return 0;
     }
@@ -128,6 +132,20 @@ public static class Program
         }
 
         return (command, options);
+    }
+
+    private static int? ParseCompanion(Dictionary<string, string> options)
+    {
+        if (!options.TryGetValue("companion", out var value))
+            return null;
+
+        return value.ToLowerInvariant() switch
+        {
+            "ricky" => OracleOptions.Ricky,
+            "dimitri" => OracleOptions.Dimitri,
+            "moosh" => OracleOptions.Moosh,
+            _ => throw new ArgumentException("--companion must be ricky, dimitri or moosh."),
+        };
     }
 
     private static string Get(Dictionary<string, string> options, string key, string fallback)

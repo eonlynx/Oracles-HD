@@ -140,6 +140,60 @@ public static class AsmParser
         return entries;
     }
 
+    /// <summary>
+    /// Maps a tileset layout index (tileset byte 5) to the mapping and collision
+    /// labels named by tilesetLayoutGroupXX. Several layout indices alias the same
+    /// data (for example layout $20 uses tilesetMappings1b).
+    /// </summary>
+    public static Dictionary<int, (string Mappings, string Collisions)> ParseLayoutHeaders(string path)
+    {
+        var result = new Dictionary<int, (string, string)>();
+        var mappingsRegex = new Regex(@"m_TilesetLayoutHeader\s+\$\w+\s+(?<label>tilesetMappings\w+)\s+w3TileMappingIndices", RegexOptions.Compiled);
+        var collisionsRegex = new Regex(@"m_TilesetLayoutHeader\s+\$\w+\s+(?<label>tilesetCollisions\w+)\s+w3TileCollisions", RegexOptions.Compiled);
+        var groupRegex = new Regex(@"^tilesetLayoutGroup(?<index>[0-9a-fA-F]{2}):", RegexOptions.Compiled);
+
+        int? current = null;
+        string? mappings = null;
+        string? collisions = null;
+
+        void Flush()
+        {
+            if (current is { } index && mappings != null && collisions != null)
+                result[index] = (mappings, collisions);
+        }
+
+        foreach (var raw in File.ReadLines(path))
+        {
+            var line = StripComment(raw);
+            if (line.Length == 0)
+                continue;
+
+            var group = groupRegex.Match(line);
+            if (group.Success)
+            {
+                Flush();
+                current = ParseHexCapture(group.Groups["index"].Value);
+                mappings = null;
+                collisions = null;
+                continue;
+            }
+
+            if (current is null)
+                continue;
+
+            var mapping = mappingsRegex.Match(line);
+            if (mapping.Success)
+                mappings = mapping.Groups["label"].Value;
+
+            var collision = collisionsRegex.Match(line);
+            if (collision.Success)
+                collisions = collision.Groups["label"].Value;
+        }
+
+        Flush();
+        return result;
+    }
+
     public static Dictionary<string, Rgb555[]> ParsePaletteData(string path)
     {
         var result = new Dictionary<string, Rgb555[]>(StringComparer.Ordinal);

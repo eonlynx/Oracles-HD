@@ -21,9 +21,30 @@ This tool is **not** part of the game build. The game project excludes
 | RGBA PNG writer + DX-HD `.map` writer | Done |
 | Single room (10x8 / 15x11 storage) | Done |
 | Ages overworld stitch (OUTDOORS rooms) | Done |
-| VRAM bank 0 graphics | TODO |
-| Room-specific tileset overrides | TODO |
-| Collisions, objects, warps, animations | TODO (Phase 3+) |
+| VRAM bank 0 + bank 1 tiles | Done (Ages room layouts use bank 1) |
+| Layout-label aliases (`tilesetLayoutGroupXX`) | Done (e.g. $20 -> `tilesetMappings1b`) |
+| Past cliff palette rewrite (6 -> 0) | Done (`setPastCliffPalettesToRed`) |
+| Maku / Jabu / companion overrides | Done (save-dependent flags) |
+| Animated tiles | **Blocked** — see below |
+| Collisions, objects, warps | TODO (Phase 3+) |
+
+## Animated tiles: open question
+
+The engine's own source comments and `oracles-decomp` agree that each
+`animationData` pair is `(gfxIndex, delay)`: `code/animations.s` says
+`e = animation gfx index`, and `updateAnimationDataPointer` queues the first
+byte and stores the second as the counter. `top/engine/neighbours/animation.c`
+does the same.
+
+`ooa-godot`'s importer, however, parses the pair as `(duration, gfxIndex)`
+(`Import-BackgroundAnimations.ps1`, `tracks.tsv`), and its regressions expect
+that order. Both cannot be right, and the difference changes every animation
+schedule.
+
+Before baking animation frames into the atlas and emitting a map-level tile
+animation table, this order must be confirmed against a built ROM (WLA-DX) or a
+recorded trace. No `.ani` file is generated: the agreed design is to append the
+frames to the existing atlas and embed the timeline in the existing `.map`.
 
 ## Commands
 
@@ -38,6 +59,13 @@ dotnet run --project Tools/OracleAssetBuilder -- overworld --game ages
 
 # Print a tileset's tables
 dotnet run --project Tools/OracleAssetBuilder -- inspect --game ages --tileset 00
+
+# Save-dependent tileset/layout overrides (checkTilesetOverride)
+dotnet run --project Tools/OracleAssetBuilder -- overworld --game ages --group 1
+dotnet run --project Tools/OracleAssetBuilder -- room --game ages --group 4 --room 01
+dotnet run --project Tools/OracleAssetBuilder -- room --game ages --room 39 --companion dimitri
+dotnet run --project Tools/OracleAssetBuilder -- room --game ages --room 38 --maku-saved
+dotnet run --project Tools/OracleAssetBuilder -- room --game ages --group 4 --room 3e --jabu-underwater
 ```
 
 Outputs:

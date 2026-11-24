@@ -1,15 +1,16 @@
 namespace Oracles.Tools.AssetBuilder;
 
 /// <summary>
-/// A decoded Oracle tileset: 256 8x8 2bpp tiles (VRAM banks flattened) plus the
-/// eight 4-colour background palettes used by its metatile attributes.
+/// A decoded Oracle tileset: two VRAM banks of 2bpp tiles plus the eight
+/// four-colour background palettes used by its metatile attributes.
 /// </summary>
 public sealed class TilesetRenderer
 {
     public const int TileSize = 8;
     public const int MetatileSize = 16;
 
-    private readonly byte[]?[] _tiles = new byte[256][];
+    private readonly byte[]?[] _tilesBank0 = new byte[256][];
+    private readonly byte[]?[] _tilesBank1 = new byte[256][];
     private readonly Rgba[] _colors = new Rgba[8 * 4];
     private readonly bool[] _paletteLoaded = new bool[8];
 
@@ -17,25 +18,36 @@ public sealed class TilesetRenderer
     public IReadOnlyList<string> SourcePngs => _sourcePngs;
     private readonly List<string> _sourcePngs = new();
 
+    /// <summary>
+    /// Ages draws past-overworld cliffs with the present palette by rewriting
+    /// attribute palette 6 to palette 0 for metatiles $40..$ff
+    /// (code/ages/loadTilesetData.s:setPastCliffPalettesToRed).
+    /// </summary>
+    public bool PastCliffPalettes { get; set; }
+
     public TilesetRenderer(int tilesetId)
     {
         TilesetId = tilesetId;
-        // Unloaded palettes render black instead of throwing. Phase 2 reports them.
         for (var i = 0; i < _colors.Length; i++)
             _colors[i] = Rgba.Black;
     }
 
     public bool IsPaletteLoaded(int palette) => palette is >= 0 and < 8 && _paletteLoaded[palette];
 
-    public bool IsTileLoaded(int tile) => _tiles[(tile + 0x80) & 0xFF] != null;
+    public bool IsTileLoaded(int tile, int bank)
+    {
+        var bankTiles = bank == 0 ? _tilesBank0 : _tilesBank1;
+        return bankTiles[SlotFor(tile, bank)] != null;
+    }
 
-    public int LoadedTileCount => _tiles.Count(t => t != null);
+    public int LoadedTileCountBank0 => _tilesBank0.Count(t => t != null);
+    public int LoadedTileCountBank1 => _tilesBank1.Count(t => t != null);
 
     public void LoadGraphics(IEnumerable<GfxEntry> entries, OracleRepo repo)
     {
         foreach (var entry in entries)
         {
-            if (!TryGetTileOffset(entry.Destination, out var offset))
+            if (!TryGetTileLocation(entry.Destination, out var bank, out var offset))
                 continue;
 
             var pngPath = repo.FindPng(entry.Name);
@@ -47,6 +59,7 @@ public sealed class TilesetRenderer
             var image = Png.LoadIndexed2bpp(pngPath);
             var tilesX = image.Width / TileSize;
             var tilesY = image.Height / TileSize;
+            var target = bank == 0 ? _tilesBank0 : _tilesBank1;
 
             for (var ty = 0; ty < tilesY; ty++)
             {
@@ -61,7 +74,7 @@ public sealed class TilesetRenderer
                         for (var x = 0; x < TileSize; x++)
                             tile[y * TileSize + x] = image[tx * TileSize + x, ty * TileSize + y];
 
-                    _tiles[tileIndex] = tile;
+                    target[tileIndex] = tile;
                 }
             }
         }
@@ -97,14 +110,16 @@ public sealed class TilesetRenderer
         {
             var tileIndex = mappings[baseIndex + part];
             var attributes = mappings[baseIndex + 4 + part];
+            var bank = (attributes & 0x08) != 0 ? 1 : 0;
             var palette = attributes & 0x07;
             var flipX = (attributes & 0x20) != 0;
             var flipY = (attributes & 0x40) != 0;
 
-            // The mapping stores a GB tilemap number: slots start at $8800, so the
-            // VRAM slot is (tile + $80) & $ff (see ooa-godot OracleRoomData.RenderRoom).
-            var slot = (tileIndex + 0x80) & 0xFF;
-            var tile = _tiles[slot];
+            if (PastCliffPalettes && metatile >= 0x40 && palette == 6)
+                palette = 0;
+
+            var bankTiles = bank == 0 ? _tilesBank0 : _tilesBank1;
+            var tile = bankTiles[SlotFor(tileIndex, bank)];
             if (tile == null)
                 continue;
 
@@ -117,8 +132,7 @@ public sealed class TilesetRenderer
                 {
                     var srcX = flipX ? TileSize - 1 - x : x;
                     var srcY = flipY ? TileSize - 1 - y : y;
-                    // The PNG PLTE is [255,170,85,0]: index 0 is white and already
-                    // equals CGB shade 0. Do not invert.
+                    // PNG PLTE is [255,170,85,0]: index 0 is white and already CGB shade 0.
                     var shade = tile[srcY * TileSize + srcX];
                     image[originX + x, originY + y] = _colors[palette * 4 + shade];
                 }
@@ -128,18 +142,35 @@ public sealed class TilesetRenderer
         return image;
     }
 
-    private static bool TryGetTileOffset(int destination, out int offset)
+    /// <summary>
+    /// GB tilemap tile numbers map to VRAM slots at $8800 with a +$80 wrap.
+    /// Bank 0 holds $8000-$87ff (128 tiles); the mapping byte's low seven bits
+    /// address it.
+    /// </summary>
+    private static int SlotFor(int tile, int bank)
     {
-        // Destination low nibble is the VRAM bank; the tileset's 256 tiles start at $8800.
+        return bank == 0 ? tile & 0x7F : (tile + 0x80) & 0xFF;
+    }
+
+    private static bool TryGetTileLocation(int destination, out int bank, out int offset)
+    {
+        bank = destination & 0x0F;
         var address = destination & 0xFFF0;
-        if (address is < 0x8800 or > 0x97F0)
+
+        if (bank == 0 && address is >= 0x8000 and <= 0x87F0)
         {
-            offset = -1;
-            return false;
+            offset = (address - 0x8000) / 16;
+            return true;
         }
 
-        offset = (address - 0x8800) / 16;
-        return true;
+        if (bank == 1 && address is >= 0x8800 and <= 0x97F0)
+        {
+            offset = (address - 0x8800) / 16;
+            return true;
+        }
+
+        offset = -1;
+        return false;
     }
 
     private static byte Expand5(byte value)

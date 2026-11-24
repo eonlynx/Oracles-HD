@@ -33,7 +33,7 @@ public sealed class OverworldBuilder
         _tilesetsDir = tilesetsDir;
     }
 
-    public OverworldBuildResult Build(int group)
+    public OverworldBuildResult Build(int group, OracleOptions options)
     {
         var game = _content.Repo.Game;
         var grid = game == "ages" ? 14 : 16;
@@ -57,7 +57,7 @@ public sealed class OverworldBuilder
             if (gridX >= grid || gridY >= grid)
                 continue;
 
-            var tilesetId = _content.GetRoomTileset(room);
+            var tilesetId = _content.GetRoomTileset(room, options);
             if (tilesetId >= _content.Tilesets.Count)
             {
                 skipped.Add(room);
@@ -73,7 +73,7 @@ public sealed class OverworldBuilder
 
             if (!renderers.TryGetValue(tilesetId, out var renderer))
             {
-                renderer = _content.CreateRenderer(tilesetId, null);
+                renderer = _content.CreateRenderer(tilesetId, null, room, options);
                 renderers.Add(tilesetId, renderer);
             }
 
@@ -82,7 +82,7 @@ public sealed class OverworldBuilder
             OracleContent.RoomLayout layout;
             try
             {
-                layout = _content.GetRoomLayout(info.LayoutGroup, room, largeRoom: false);
+                layout = _content.GetRoomLayout(_content.GetLayoutGroup(room, info, options), room, largeRoom: false);
             }
             catch (FileNotFoundException)
             {
