@@ -1,0 +1,174 @@
+using System.Text.Json;
+
+namespace Oracles.Tools.AssetBuilder;
+
+public sealed record RoomBuildResult(
+    string MapPath,
+    string TilesetPath,
+    string PreviewPath,
+    string ManifestPath,
+    int TilesetId,
+    int Layout,
+    int LayoutGroup,
+    int DistinctMetatiles,
+    int MissingPaletteMetatiles,
+    int MissingTileMetatiles);
+
+public sealed class RoomBuilder
+{
+    private readonly OracleContent _content;
+    private readonly string _outDir;
+    private readonly string _tilesetsDir;
+
+    public RoomBuilder(OracleContent content, string outDir, string tilesetsDir)
+    {
+        _content = content;
+        _outDir = outDir;
+        _tilesetsDir = tilesetsDir;
+    }
+
+    public RoomBuildResult Build(int group, int room, bool largeRoom, int? backgroundPaletteHeader)
+    {
+        var tilesetId = _content.GetRoomTileset(room);
+        var info = _content.GetTileset(tilesetId);
+        var mappings = _content.GetMappings(info.Layout);
+        var layout = _content.GetRoomLayout(info.LayoutGroup, room, largeRoom);
+        var width = layout.Width;
+        var height = layout.Height;
+        var renderer = _content.CreateRenderer(tilesetId, backgroundPaletteHeader);
+
+        var atlas = new MetatileAtlas(64);
+        for (var metatile = 0; metatile < 256; metatile++)
+            atlas.GetOrAdd(tilesetId, metatile, () => renderer.RenderMetatile(mappings, metatile));
+
+        var layer0 = new int[width, height];
+        var distinct = new HashSet<int>();
+        var missingPalette = new HashSet<int>();
+        var missingTiles = new HashSet<int>();
+
+        for (var y = 0; y < height; y++)
+        {
+            for (var x = 0; x < width; x++)
+            {
+                var metatile = layout.Tiles[y * width + x];
+                distinct.Add(metatile);
+                layer0[x, y] = atlas.GetOrAdd(tilesetId, metatile, () => renderer.RenderMetatile(mappings, metatile));
+
+                for (var part = 0; part < 4; part++)
+                {
+                    var tile = mappings[metatile * 8 + part];
+                    var attributes = mappings[metatile * 8 + 4 + part];
+                    if (!renderer.IsPaletteLoaded(attributes & 0x07))
+                        missingPalette.Add(metatile);
+                    if (!renderer.IsTileLoaded(tile))
+                        missingTiles.Add(metatile);
+                }
+            }
+        }
+
+        var layer1 = EmptyLayer(width, height);
+        var layer2 = EmptyLayer(width, height);
+        var layers = new List<int[,]> { layer0, layer1, layer2 };
+
+        var stem = $"oracle_{_content.Repo.Game}_g{group:x1}_r{room:x2}";
+        var tilesetName = $"oracle_{_content.Repo.Game}_t{tilesetId:x2}.png";
+        var mapPath = Path.Combine(_outDir, stem + ".map");
+        var tilesetPath = Path.Combine(_tilesetsDir, tilesetName);
+        var previewPath = Path.Combine(_outDir, "Previews", stem + ".png");
+        var manifestPath = Path.Combine(_outDir, stem + ".manifest.json");
+
+        Directory.CreateDirectory(_tilesetsDir);
+        atlas.SavePng(tilesetPath);
+
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(previewPath)!);
+        var preview = _content.RenderRoomPreview(layout, atlas, tilesetId);
+        Png.SaveRgba(previewPath, preview);
+
+        WriteManifest(manifestPath, stem, group, room, info, renderer, mapPath, tilesetPath, previewPath);
+
+        return new RoomBuildResult(
+            mapPath, tilesetPath, previewPath, manifestPath,
+            tilesetId, info.Layout, info.LayoutGroup,
+            distinct.Count, missingPalette.Count, missingTiles.Count);
+    }
+
+    private static int[,] EmptyLayer(int width, int height)
+    {
+        var layer = new int[width, height];
+        for (var y = 0; y < height; y++)
+            for (var x = 0; x < width; x++)
+                layer[x, y] = -1;
+        return layer;
+    }
+
+    private void WriteManifest(
+        string path,
+        string stem,
+        int group,
+        int room,
+        TilesetInfo info,
+        TilesetRenderer renderer,
+        string mapPath,
+        string tilesetPath,
+        string previewPath)
+    {
+        var inputs = new List<string>
+        {
+            Path.Combine(_content.Repo.DataDir, "gfxHeaders.s"),
+            Path.Combine(_content.Repo.DataDir, "uniqueGfxHeaders.s"),
+            Path.Combine(_content.Repo.DataDir, "paletteHeaders.s"),
+            Path.Combine(_content.Repo.DataDir, "paletteData.s"),
+            Path.Combine(_content.Repo.DataDir, "tilesets.s"),
+            Path.Combine(_content.Repo.RoomsDir, $"group{group}Tilesets.bin"),
+            Path.Combine(_content.Repo.TilesetLayoutsDir, $"tilesetMappings{info.Layout:x2}.bin"),
+            Path.Combine(_content.Repo.TilesetLayoutsDir, $"tilesetCollisions{info.Layout:x2}.bin"),
+            Path.Combine(_content.Repo.RoomsDir, "small", $"room{info.LayoutGroup:x2}{room:x2}.bin"),
+        };
+        inputs.AddRange(renderer.SourcePngs);
+
+        var manifest = new
+        {
+            tool = "OracleAssetBuilder",
+            format = 2,
+            game = _content.Repo.Game,
+            entry = stem,
+            group,
+            room = $"0x{room:x2}",
+            tileset = new
+            {
+                id = $"0x{info.Index:x2}",
+                layout = $"0x{info.Layout:x2}",
+                layoutGroup = $"0x{info.LayoutGroup:x2}",
+                gfxHeader = $"0x{info.Gfx:x2}",
+                uniqueGfxHeader = $"0x{info.UniqueGfx:x2}",
+                paletteHeader = $"0x{info.Palette:x2}",
+                flags = $"0x{info.Flags:x2}",
+                outdoors = info.IsOutdoors,
+                indoors = info.IsIndoors,
+                sideScroll = info.IsSideScroll,
+                underwater = info.IsUnderwater,
+            },
+            inputs = inputs
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(p => p, StringComparer.Ordinal)
+                .Select(p => new
+                {
+                    path = Path.GetRelativePath(_content.Repo.Root, p).Replace('\\', '/'),
+                    sha256 = OracleRepo.Sha256(p),
+                })
+                .ToArray(),
+            outputs = new[] { mapPath, tilesetPath, previewPath }
+                .OrderBy(p => p, StringComparer.Ordinal)
+                .Select(p => new
+                {
+                    path = Path.GetRelativePath(_outDir, p).Replace('\\', '/'),
+                    sha256 = OracleRepo.Sha256(p),
+                })
+                .ToArray(),
+        };
+
+        File.WriteAllText(path, JsonSerializer.Serialize(manifest, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+    }
+}
