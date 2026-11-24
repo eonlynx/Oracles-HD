@@ -71,11 +71,11 @@
     },
     {
       "path": "Tilesets/oracle_ages_t4c.png",
-      "sha256": "91432714f5c504040e2d4f78f355f8ca1b93adde260b81b516311e2310294c11"
+      "sha256": "712bec4d0050c1db778343afcde1b22f02d87af2996b48e63c5aa3f22eac63b5"
     },
     {
       "path": "oracle_ages_g4_r10.map",
-      "sha256": "70cff1977b1c993861d1ef1e48c7b3e590a9776475caaf98d7475cf4526fa8e7"
+      "sha256": "4d9320ad56dc8db1dd6c3ff8b713112a6d6227c5a0570479fab36a6de453f785"
     }
   ]
 }

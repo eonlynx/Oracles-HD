@@ -24,10 +24,10 @@ inside the prebuilt `.exe` files shipped in the repository, never in the source.
 | Platform | Backend | Status |
 |---|---|---|
 | Windows x64 | DirectX 11 (WindowsDX) | **Working** (Phase 1) |
-| Linux x64 | OpenGL (DesktopGL) | **WIP** — waiting for sources/port |
-| macOS (Intel/ARM) | OpenGL/Metal (DesktopGL) | **WIP** — waiting for sources/port |
-| Windows | Vulkan | **WIP** — waiting for sources/port |
-| Windows | DirectX 12 | **WIP** — waiting for sources/port |
+| Linux x64 | OpenGL (DesktopGL) | **WIP** - waiting for sources/port |
+| macOS (Intel/ARM) | OpenGL/Metal (DesktopGL) | **WIP** - waiting for sources/port |
+| Windows | Vulkan | **WIP** - waiting for sources/port |
+| Windows | DirectX 12 | **WIP** - waiting for sources/port |
 
 No speculative dependency has been added: the `.csproj` keeps
 `MonoGame.Framework.WindowsDX` so the only verified build stays green.
@@ -41,7 +41,7 @@ No speculative dependency has been added: the `.csproj` keeps
 2. Isolate the WinForms dependencies that are still unconditional
    (`Program.cs` uses `MessageBox` without `#if WINDOWS`; the rest is already
    guarded).
-3. Build content (`.fx` → MGFX) per platform; today `Content/Content.mgfx` is
+3. Build content (`.fx` -> MGFX) per platform; today `Content/Content.mgfx` is
    produced with the Windows pipeline.
 4. Verify startup and rendering on every backend before closing the matrix.
 

@@ -4,9 +4,9 @@
   "game": "ages",
   "entry": "oracle_ages_g1_overworld",
   "group": 1,
-  "rooms": 195,
-  "skippedRooms": 1,
-  "atlasMetatiles": 1009,
+  "rooms": 196,
+  "skippedRooms": 0,
+  "atlasMetatiles": 1646,
   "roomIds": [
     "0x00",
     "0x01",
@@ -58,6 +58,7 @@
     "0x35",
     "0x36",
     "0x37",
+    "0x38",
     "0x39",
     "0x3a",
     "0x3b",
@@ -204,18 +205,19 @@
     "0xdc",
     "0xdd"
   ],
+  "skippedRoomIds": [],
   "outputs": [
     {
       "path": "Previews/oracle_ages_g1_overworld.png",
-      "sha256": "0757164f6c9f9f65fe8d084c8991adf355c5c81a7be25c8556d4a6e3228637f4"
+      "sha256": "d2cb7c0c743c0a350729886208db3341b89543a9b6693809ba472fdf555ad148"
     },
     {
       "path": "Tilesets/oracle_ages_g1_overworld.png",
-      "sha256": "44248b437d4412364afd6ffee1c939a57f04d2138646b66ea131162f577227f6"
+      "sha256": "1ec5a4ff6492f57c9d349e8e64c6eca07a6c2e5f96375cafd102806b46116647"
     },
     {
       "path": "oracle_ages_g1_overworld.map",
-      "sha256": "df127f12d5e9ca4e5788b296f5691b454e07c1ab75dc7b44788d79819678dfd7"
+      "sha256": "5be541a0f0e7ac78cdcf6556c1bb197b58ae173b5ec72510e5326dc550bd7191"
     }
   ]
 }
