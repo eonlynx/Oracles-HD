@@ -15,8 +15,13 @@ namespace ProjectZ.InGame.Things
 
         public void Load()
         {
-            // go through the .lng files and fill the _languageStrings dictionary array
-            var files = Directory.GetFiles(Values.PathLanguageFolder);
+            // Go through the .lng files and fill the _languageStrings dictionary array.
+            // Load order must be deterministic: UI files first, then dialog files, so a
+            // key repeated in both (for example choice_*) keeps the dialog definition.
+            var files = Directory.GetFiles(Values.PathLanguageFolder)
+                .OrderBy(file => Path.GetFileName(file).StartsWith("dialog_", StringComparison.Ordinal) ? 1 : 0)
+                .ThenBy(file => file, StringComparer.Ordinal)
+                .ToArray();
             var languageStrings = new Dictionary<string, Dictionary<string, string>>();
             // the default (first) entry is english
             languageStrings.Add("eng", new Dictionary<string, string>());
@@ -63,21 +68,24 @@ namespace ProjectZ.InGame.Things
                 var strLine = reader.ReadLine();
                 var spacePosition = strLine.IndexOf(' ');
 
-                if (spacePosition < 0 || strLine.StartsWith("//"))
+                // Comments use either "//" or a single "/".
+                if (spacePosition < 0 || strLine.StartsWith("/", StringComparison.Ordinal))
                     continue;
 
                 var strKey = strLine.Substring(0, spacePosition);
 
-                // empty string
+                // Some .lng revisions repeat a key (choice_* in both the UI and the
+                // dialog file, settings_controls_onscreen twice in swe.lng). Keep the
+                // last definition instead of throwing on the duplicate.
                 if (spacePosition + 1 >= strLine.Length)
                 {
-                    dictionary.Add(strKey, "");
+                    dictionary[strKey] = "";
                     continue;
                 }
 
                 var strValue = strLine.Substring(spacePosition + 1);
 
-                dictionary.Add(strKey, strValue);
+                dictionary[strKey] = strValue;
             }
 
             reader.Close();
