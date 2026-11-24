@@ -1,0 +1,4 @@
+[submodule "external/oracles-disasm"]
+	path = external/oracles-disasm
+	url = https://github.com/Stewmath/oracles-disasm.git
+	branch = master
