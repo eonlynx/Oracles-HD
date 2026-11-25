@@ -9,10 +9,10 @@ not new features.
 
 | Next block | Verdict | Why |
 |---|---|---|
-| Bytecode scripts / cutscenes | **GO after a bounded state/room refactor** | The importer can emit command tables, but `OracleFlagState` is static and there is no room-entry event hook. Both are cheap to add now and block every scripted event. |
+| Bytecode scripts / cutscenes | **GO** | `OracleSessionState`, `OracleRoomRuntime` (load/enter hooks + entry-effect table), `OracleGameProfile` and the typed behaviour table are in; the command runner is the next block. |
 | Enemies / combat | **NO-GO yet** | Object streams only emit interactions; enemy/PART/item placements, handler identity and a runtime construction seam are missing. |
 | Dungeons | **NO-GO yet** | Metadata exists, but stairs/fall/source-transition warp modes, large rooms, floor layouts, per-room flags and camera locks remain. |
-| Seasons | **NO-GO yet** | `OracleFlagState`, `InteractionBehaviors` flag parsing and the development entry still assume Ages values/paths. Needs a game profile, not more branches. |
+| Seasons | **NO-GO for content yet** | `OracleGameProfile` now holds flags/portal/groups and `--game` is generic, but no Seasons maps/content are generated and the Ages-only events are gated by profile. |
 | `roomGfxChanges` | **GO** | It is importer/render work; it does not require a new runtime abstraction and does not affect Maku `$38`, whose tiles and `$30` palette match the reference. |
 
 The current slice is coherent enough to keep; it is not yet coherent enough to
@@ -184,16 +184,16 @@ importable and save-compatible as scripts, enemies, floors and Seasons arrive.
 | Concern | `ooa-godot` | Oracles-HD today | Verdict / action |
 |---|---|---|---|
 | Import products | `tools/import_oracles/{Shared,Ages,Seasons}` producers validate ROM + disasm and write per-game `assets/oracle/<game>/` tables/gfx with schemas and manifests; runtime `GeneratedTable`/databases read them. | `OracleAssetBuilder` commands (`room`, `overworld`, `interiors`) parse `.s` on demand and write `.map` + manifests; `InteractionBehaviors` scans each interaction block. | Keep the command builders. New cross-cutting facts (behaviours, scripts, room-entry effects, enemies) should become typed generated tables with schema validation, not more regex inside builders. |
-| Room content | `IRoomContent.LoadRoom(group, room, save, runtime, tick, toggle)` + `RoomSession` own the current room, animation tick, visits, minimap, palette and room state. | One `.map` per room (or a stitched overworld) + `OracleMapInfo`; `MapManager` owns the current map; no room session. | Add a small `OracleRoomRuntime` around `MapManager` (current group/room, entry direction, room load/entry events). Do not copy the full `RoomSession`. |
+| Room content | `IRoomContent.LoadRoom(group, room, save, runtime, tick, toggle)` + `RoomSession` own the current room, animation tick, visits, minimap, palette and room state. | `OracleRoomRuntime` owns current group/room/entry direction over `MapManager`; `MapTransitionSystem.MapLoading/MapLoaded` fire around object construction and Link placement. | Keep the small runtime; do not copy the full `RoomSession` until save/minimap/animations need it. |
 | Entity lifecycle | `IRoomEntityFactory` constructs content; `RoomEntityManager` executes ordered object streams, slots, freezes, outgoing sets and capability interfaces. | `ObjectManager.ObjectList` + DX-HD `GameObject` constructors; `oracleSprite`/`oracleWarp`/`oracleTimePortal` read flat `.map` parameters. | Add an `OracleEntityFactory`/registry (id/subid -> constructor) and typed placement records before enemy AI. Use DX-HD pools, `SystemBody`, `SystemAi`; do not import the ECS. |
 | Scripts | `CutsceneCommandCatalog` loads schema-validated command streams; `CutsceneCommandRunner` + host interfaces execute them; event databases bind actors/flags/text. | None. | Adapt the command-table + runner shape. Start with one room-entry event family to prove the host contract, then generalise. |
-| State / save | `OracleSaveData` is the native `$550` image (0x80 global flags, per-room flag tables, visited/minimap, inventory); `OracleRuntimeState` mirrors live WRAM fields. | `OracleFlagState` is static: 256 booleans, **one** `RoomFlags` byte, no save, no runtime fields. | **Blocking refactor.** Replace with an instance `OracleSessionState` (global flags, per-group/room flags, room state, entry direction, save hooks). Keep a thin dev facade only. |
-| Room-entry effects | `RoomEntryEffectDatabase` is a 7-row data table (group, room, handler, source) plus `IRoomEntryEvent` cutscene hosts; e.g. Ralph portal music/departure. | Per-object source-derived entry gate; no room-wide effects or entry-event registry. | Adapt the small table + event registry. The per-object gate remains for actor visibility; room-wide effects get the table. |
+| State / save | `OracleSaveData` is the native `$550` image (0x80 global flags, per-room flag tables, visited/minimap, inventory); `OracleRuntimeState` mirrors live WRAM fields. | `OracleSessionState` is an instance with 0x80 global flags, per-group/room flag bytes, room state, entry direction and capture/restore; save-image wiring is still pending. `OracleFlagState` is a dev facade. | Keep the session; bind it to `OracleSaveData` when the save owner lands. |
+| Room-entry effects | `RoomEntryEffectDatabase` is a 7-row data table (group, room, handler, source) plus `IRoomEntryEvent` cutscene hosts; e.g. Ralph portal music/departure. | `RoomEntryEffects` parses `roomSpecificCode.s` and emits `#oracle-room-effects v1`; `OracleRoomRuntime` dispatches handlers and code-hosted Ralph/EnterPast events. | Keep the table; add music/minimap/respawn owners as they land. |
 | Transitions | `RoomTransitionController`/`ScreenTransitionRenderer` with room packs, palette handoff, scroll modes. | `MapTransitionSystem` + warps/portals; warp mode is a fade only. | Keep DX-HD transitions; add `sourceTransition`/mode (walk-off, instant, fall, stairs) and floor metadata. |
 | Game packs | `Games/Ages` and `Games/Seasons` content + enums; `Features` shared; pack identity validated (save/runtime/content must match). | Importer understands `--game`, but runtime/tool constants are Ages: `OracleFlagState` flags, portal behavior, `--room` `oracle_ages_g2`, Ages tileset-override parser. | Add `OracleGameProfile` (flag table, portal behavior, groups, map naming, tileset overrides) before Seasons. Pack identity check is cheap and prevents mixed state. |
-| `InteractionBehaviors` | Per-feature importers validate the exact source used by each feature (Maku, Ralph, Impa, ...). | One generic parser for collision/flags/palette/warp/entry. | More general and cleaner than per-feature regexes, but it must emit a typed table and read game-specific flag tables; otherwise it silently uses Ages values for Seasons. |
+| `InteractionBehaviors` | Per-feature importers validate the exact source used by each feature (Maku, Ralph, Impa, ...). | One generic parser for collision/flags/palette/warp/entry; emits a typed, manifest-backed TSV and reads `.ifdef`-filtered game flags. | Keep it; add per-feature validations only where the generic helpers cannot express a scripted state. |
 | Room-entry events | `IRoomEntryEvent` + per-event databases (`RalphPortalEvent`, `EnterPastEvent`, `MakuTreeDisappearanceEvent`, ...). | None; one-shot actors are hidden by source entry gate, scripts not run. | Highest-value next adaptation: one small event registry and one event to validate. |
-| Seasons readiness | Shared `Features`; game-specific `Games/*`; save/inventory/runtime carry `OracleGame`. | Ages-shaped flags/paths and one Ages-only portal object. | Not ready; fix with `OracleGameProfile` + pack identity now, content later. |
+| Seasons readiness | Shared `Features`; game-specific `Games/*`; save/inventory/runtime carry `OracleGame`. | `OracleGameProfile` holds flags/portal/groups and `--game` is generic; no Seasons maps/content yet. | Architecture ready; content/import is the remaining gate. |
 
 ### 7.1 Is `InteractionBehaviors` better than `ooa-godot`?
 
@@ -203,39 +203,42 @@ It is weaker in three specific ways that should be fixed now:
 
 1. It returns ad-hoc strings/records; emit a **typed, schema-validated table**
    (`interaction_behaviors`) consumed by `EntityAtlas` and future tools.
-2. It reads `constants/common/globalFlags.s` without honouring
-   `.ifdef ROM_AGES/ROM_SEASONS`; Seasons would receive Ages flag numbers.
-3. It mixes source facts with policy (portal activation, entry direction). Keep
-   the facts in the table and the policy in game/runtime owners.
+2. It now honours `.ifdef ROM_AGES/ROM_SEASONS`; the earlier Ages-only flag
+   table was fixed in this block.
+3. It emits facts (collision, gates, palette, warp, entry) while portal policy
+   and game flags live in `OracleGameProfile`; keep that split when scripts need
+   more facts.
 
 `ooa-godot`'s `RoomEntryEffectDatabase` is the one small structure clearly better
 than ours: room-wide entry effects are data rows, not per-object code. Adopt it.
 
 ### 7.2 Recommendation and order
 
-**Refactor first, but bounded.** The current base is not ready for scripts
-because state is static and there is no room-entry lifecycle; those two are
+**Refactor first, but bounded.** The current base was not ready for scripts
+because state was static and there was no room-entry lifecycle; those two are
 cheap now and expensive after more content. Do not rewrite the importer or clone
 `ooa-godot`'s ECS.
 
+**Status (2026-11-25): steps 1-4 are implemented and verified in this block; the
+next block is the script engine.**
+
 Order:
 
-1. **State (blocking):** instance `OracleSessionState` with 0x80 global flags,
+1. **State:** instance `OracleSessionState` with 0x80 global flags,
    per-group/room flag storage, room state modifier, entry direction and future
-   save hooks; `OracleFlagState` becomes a dev-only facade.
-2. **Room lifecycle:** `OracleRoomRuntime` with `OnRoomLoaded`/`OnRoomEntered`
-   and a small `OracleRoomEntryEffects` table (adapt `RoomEntryEffectDatabase`).
-   Use it first for the Ralph/past-villager events.
+   save hooks; `OracleFlagState` is a dev-only facade. **Done.**
+2. **Room lifecycle:** `OracleRoomRuntime` with `MapLoading`/`MapLoaded` and a
+   small `OracleRoomEntryEffects` table (adapted from `RoomEntryEffectDatabase`).
+   Ralph/past-villager events registered. **Done (first pass).**
 3. **Game profile:** `OracleGameProfile` for flag tables, portal behavior, groups
-   and map naming; make `InteractionBehaviors` read the selected game's flags.
-4. **Typed behavior table:** move `InteractionBehaviors` output into the
-   generated table layer with a schema and manifest hash.
-5. **Then scripts:** generated command streams + a `CutsceneCommandRunner`-style
+   and map naming; `InteractionBehaviors` reads `.ifdef`-filtered flags. **Done.**
+4. **Typed behavior table:** sorted TSV + manifest from `InteractionBehaviors`.
+   **Done.**
+5. **Next: scripts** - generated command streams + a `CutsceneCommandRunner`-style
    host; start with room-entry events and one script family.
 6. **Then enemies:** `OracleEntityFactory` + emitted enemy/PART/item placements.
 7. **Dungeons:** warp modes, floor layouts, large rooms; **Seasons** after the
-   game profile and content pack boundaries exist.
+   content pack boundaries exist.
 
-The immediate next implementation block can be (1)+(2)+(3) in 2-3 commits, then
-scripts. `roomGfxChanges` can interleave; it is independent importer work.
+`roomGfxChanges` can interleave; it is independent importer work.
 

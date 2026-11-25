@@ -116,8 +116,11 @@ Phase 3/4 evidence:
 | Flag gate on | Same with `--flag FINISHEDGAME` | Statue appears right of the Maku Tree with `PALH_c7` colours |
 | NPC collision | Interior `2:e7`; hold Up toward the dog (`$54`) | Link stops at the solid tile instead of passing through |
 | Source-derived collision | Room `0:39`; enter normally | Ralph `$37:$0d` is hidden (source requires entry from the right); the past villager `$3a:$0d` is a different NPC |
-| Time portal present->past | Boot `oracle --pos 1480,431`; step down and back up | Map becomes `oracle_ages_g1_overworld.map` at the same world position; past palette and Maku sprout |
+| Time portal present->past | Boot `oracle --pos 1480,431`; step down and back up | Map becomes `oracle_ages_g1_overworld.map` at the same world position; Maku sprout |
 | Time portal past->present | From the arrival portal, step off and back on | Map returns to `oracle_ages_g0_overworld.map`; Maku Tree visible |
+| Past Maku colours | Space `1:$38` after the portal | Teal pond and blue bubbles; `$38` is excluded from `setPastCliffPalettesToRed` |
+| Room lifecycle | Enter `0:$39` normally vs from the right | Ralph is hidden normally and appears only for the right-entry event; the past villager is a different interaction |
+| Behaviour table | Regenerate twice | `oracle_ages_interaction_behaviors.tsv` + manifest are identical; rows include `$37:$0d` entry=1 and `$6b:$15` flag=$14/palette=$c7 |
 
 ## 5. Known false positives / artifacts
 
@@ -144,7 +147,10 @@ Run before each milestone commit:
 - [ ] Determinism check -> True.
 - [ ] `room --group 4 --room 01` -> no missing-tile/palette warning.
 - [ ] `interiors --game ages` -> 22 maps, 0 importer warnings.
-- [ ] Entity atlas -> 221 entries, 37 interaction ids, 6 Maku frames.
+- [ ] Entity atlas deterministic; `oracle_<game>_interaction_behaviors.tsv` + manifest deterministic.
+- [ ] Past `1:$38` keeps the teal Maku water; `$40..$7f` rewrite and room `$38` exclusion verified.
+- [ ] `OracleRoomRuntime` load/enter hooks fire; `MapLoading` precedes object construction and `MapLoaded` follows Link.
+- [ ] `--game ages --room e7` resolves the generic interior map; `--flag` names use `OracleGameProfile`.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
 - [ ] Maku eyes/expressions render and blink; the room uses palette `$30` with pink flowers.

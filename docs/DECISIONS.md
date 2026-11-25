@@ -211,7 +211,7 @@ When a record is superseded, add a new one instead of editing history.
   (`--companion`, `--maku-saved`, `--jabu-underwater`) with no override by
   default. The companion branch is modeled as a layout-group change (Ricky 0,
   Dimitri 1, Moosh/other 3), matching `ooa-godot`. Past cliffs rewrite palette 6
-  to 0 for metatiles `$40..$ff`, collision mode 0, room != `$38`.
+  to 0 for metatiles `$40..$7f`, collision mode 0, room != `$38`.
 
 ## ADR-024 - Defer WLA-DX; validate animations visually
 
@@ -401,3 +401,20 @@ When a record is superseded, add a new one instead of editing history.
   without a big-bang rewrite. Typed generated tables for behaviours, scripts and
   enemy placements replace further ad-hoc parsing; `roomGfxChanges` can proceed
   independently.
+
+## ADR-036 - Typed interaction behaviour table
+
+- **Status:** accepted.
+- **Decision:** `InteractionBehaviors` emits a sorted TSV plus manifest
+  (`oracle_<game>_interaction_behaviors.*`) containing solid tile/radii, required
+  or forbidden global flag, sprite palette header, time-warp and entry-direction
+  facts. Portal activation, game flag tables and actor events stay in
+  `OracleGameProfile`/`OracleRoomRuntime`; the table is facts, not policy.
+- **Why:** the generic parser replaced the per-id `InteractionRules` table, but
+  its output was only in memory. A typed, manifest-backed artifact makes the
+  behaviour reviewable, deterministic and reusable by the script/enemy importers
+  without adding regex to each builder. `.ifdef ROM_AGES/ROM_SEASONS` filtering
+  keeps Ages values out of Seasons.
+- **Consequence:** the runtime keeps consuming the per-object `.map` fields; the
+  table is the tooling/audit contract. New facts must be added to the parser and
+  the table together.

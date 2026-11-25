@@ -1,0 +1,883 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "interaction_behaviors",
+  "rows": 246,
+  "inputs": [
+    {
+      "path": "constants/common/globalFlags.s",
+      "sha256": "0adc42ac810c408120fd5d6725ebf7426b5a0e7c84543c09f75873ab81286c12"
+    },
+    {
+      "path": "data/ages/paletteHeaders.s",
+      "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
+    },
+    {
+      "path": "object_code/ages/interactions/97.s",
+      "sha256": "1578b74b3730539dfb9699f023d09b9cbafe6067cb1dc49593813c9119755428"
+    },
+    {
+      "path": "object_code/ages/interactions/a8.s",
+      "sha256": "7702891c21024452eae2da5a30b1b1f9e53e519854b9a3d0375810fbeaf0cd74"
+    },
+    {
+      "path": "object_code/ages/interactions/accessory.s",
+      "sha256": "525b6ba25df89b92b8604ac170ef5dc30c8c0c5848e67f498a64166b8f0b621b"
+    },
+    {
+      "path": "object_code/ages/interactions/adlar.s",
+      "sha256": "a755eb02c57dac66833fc45aa36f8ee30b635dfbf6f389d5627f99912fa4acc4"
+    },
+    {
+      "path": "object_code/ages/interactions/ambi.s",
+      "sha256": "eef2796cb6c95c657f53ce8c62161f15e324e9539959346a72d9165dc13f623f"
+    },
+    {
+      "path": "object_code/ages/interactions/ambisPalaceButton.s",
+      "sha256": "81548c376a6167958e006e8bb0fad7643600c72a1cee791dabc97389e4ad0add"
+    },
+    {
+      "path": "object_code/ages/interactions/ball.s",
+      "sha256": "30b59264de03b400a267f04d0c4538d1c2713da52b29a0e12fcbd4ada778de5f"
+    },
+    {
+      "path": "object_code/ages/interactions/bear.s",
+      "sha256": "07d839d23644830c97f1ee54dfa84d7c6509ccf34bd46ac51b5f0385353afb33"
+    },
+    {
+      "path": "object_code/ages/interactions/bird.s",
+      "sha256": "c835d5610835114840e432fbba7ad4d391acaf0e29030dc75d04982b129f4eed"
+    },
+    {
+      "path": "object_code/ages/interactions/blackTowerDoorHandler.s",
+      "sha256": "0fcac7f3f8debb3717262e50bf0d595cefe0578c4bea25402e62afc77102df1d"
+    },
+    {
+      "path": "object_code/ages/interactions/bombUpgradeFairy.s",
+      "sha256": "b024fa11d51f370763a971e674be206506d5233ffb361fc99791f0e3a0d7ae39"
+    },
+    {
+      "path": "object_code/ages/interactions/bookOfSealsPodium.s",
+      "sha256": "3ef1cd174b3e11a673b14736e682d20bf990c94aaae31a02cea60e53f40d79b1"
+    },
+    {
+      "path": "object_code/ages/interactions/boy.s",
+      "sha256": "db8a1a4f5666185e6447e765f37161ad3d73f4b51808775a38e397cd30a8f3e5"
+    },
+    {
+      "path": "object_code/ages/interactions/boy2.s",
+      "sha256": "fcd2ab3cad534b140bd32fa9e614eafd7cbb9fc3a13f83b9ff83b9c2c5dc073f"
+    },
+    {
+      "path": "object_code/ages/interactions/carpenter.s",
+      "sha256": "cfc8dadb4e4d8880f18860c3e715cceb76487fc1adad59b11b7ff718171545ae"
+    },
+    {
+      "path": "object_code/ages/interactions/cheval.s",
+      "sha256": "fe75c928e88476fddc1a671155ccbaf96fa9fab27173af28a80fe13d54026d4b"
+    },
+    {
+      "path": "object_code/ages/interactions/childJabu.s",
+      "sha256": "95ca2074ada9c15b51ed3b8abfba715ef787b4c70185c04e298e61cfb818039d"
+    },
+    {
+      "path": "object_code/ages/interactions/circularSidescrollPlatform.s",
+      "sha256": "8851e47cc3bfddfbbca64ef4a98d13f576142bab5547b07112b2a6f20c38baf7"
+    },
+    {
+      "path": "object_code/ages/interactions/cloakedTwinrova.s",
+      "sha256": "df968aafc1c656754528368d443b7d760c5edcf32dd4e1196e3c16677750ed63"
+    },
+    {
+      "path": "object_code/ages/interactions/coloredCube.s",
+      "sha256": "ec550cbe563cbd00756c934e1136b8207712d292a679c3f750f40f555b5cf697"
+    },
+    {
+      "path": "object_code/ages/interactions/coloredCubeFlame.s",
+      "sha256": "a2e4bdc6d9c85f2c5f00b3c088095b8b58bfda44490644b8bc6e2420512ed124"
+    },
+    {
+      "path": "object_code/ages/interactions/comedian.s",
+      "sha256": "c07a58c37c5d4bdf10b3dc311fb11a9a6ae01d5852e41551055085e17a9fb201"
+    },
+    {
+      "path": "object_code/ages/interactions/companionScripts.s",
+      "sha256": "bafc08978b96d8e048e7032fd9f7c8a2e2fea6e3e359a1289d161b74cf875bf9"
+    },
+    {
+      "path": "object_code/ages/interactions/decoration.s",
+      "sha256": "df4d98a364880a55e9cc8f806191d86bf6c0092d3d7d3e59f0e63c408b5f5c9a"
+    },
+    {
+      "path": "object_code/ages/interactions/dekuScrub.s",
+      "sha256": "a6851762cca3eeed2915ec3e6133a1d74c4baed99d1bf56b87ba641d2e06d575"
+    },
+    {
+      "path": "object_code/ages/interactions/din.s",
+      "sha256": "4edfc9dfa7e82b59a2586c2c9520e2de34eae8911e83a55faaf3f84920e8a3a1"
+    },
+    {
+      "path": "object_code/ages/interactions/disappearingSidescrollPlatform.s",
+      "sha256": "096aef927153e499ca1ba13fe2e616132530bb202f41b66f5403c932b03bdb50"
+    },
+    {
+      "path": "object_code/ages/interactions/dumbellMan.s",
+      "sha256": "6556b04d889b5bc3068bbe0f9d13bdc348d67bf55d66ffe27dd87aa68b33bb64"
+    },
+    {
+      "path": "object_code/ages/interactions/dungeonEvents.s",
+      "sha256": "3b4688ae94880244100996627b3169fbc87e93d29db2fa271b41c4b8cfd8a252"
+    },
+    {
+      "path": "object_code/ages/interactions/dungeonScript.s",
+      "sha256": "4f4677324f94ac43e43c3b9efe236ccac4e54d10c75407d3416560827faaca44"
+    },
+    {
+      "path": "object_code/ages/interactions/explosionWithDebris.s",
+      "sha256": "4a081d06a494a3fbadc05ff6dd2cbccb8df7760c23e3e90555fae1f30a88b360"
+    },
+    {
+      "path": "object_code/ages/interactions/extendableBridge.s",
+      "sha256": "b6cebce6343f82ba460a9645a827c43ddfe57db35864eacb12c39fc7df1ee416"
+    },
+    {
+      "path": "object_code/ages/interactions/fairyHidingMinigame.s",
+      "sha256": "d1ec2667b153acd859c70ad1d513e21093d3817ea7ee02d8956bc1b1b504e21c"
+    },
+    {
+      "path": "object_code/ages/interactions/fakeOctorok.s",
+      "sha256": "afd0de89142519cd510172b2f5e2ac4722a0666e9be3be1a4a96577499744b0a"
+    },
+    {
+      "path": "object_code/ages/interactions/fallingRock.s",
+      "sha256": "332df3c29145473b5d96dc4c45e3308dad7e50d0059231cb0f5020d27f20f02e"
+    },
+    {
+      "path": "object_code/ages/interactions/femaleVillager.s",
+      "sha256": "cbe37b59308851d8911434e6c0f3ffc4e9e3fce0e418599d95ca7ee8dc4af9c7"
+    },
+    {
+      "path": "object_code/ages/interactions/floorColorChanger.s",
+      "sha256": "941e657a4e8e410018c2f410a58506c6c445e76734b96e8df3dd3df7aaf75963"
+    },
+    {
+      "path": "object_code/ages/interactions/forestFairy.s",
+      "sha256": "cb5e194dc191914068385aa74a138e713abfd0ed84e6b2cae981d4047cd6d510"
+    },
+    {
+      "path": "object_code/ages/interactions/ghiniHarassingMoosh.s",
+      "sha256": "972ef7da8a731483f70d024b95adfd4e261f547618603053c1e204b199427ab2"
+    },
+    {
+      "path": "object_code/ages/interactions/ghostVeran.s",
+      "sha256": "146f40a254c9a94049b3abf8c2bb95f0b351169a838f397478a6436eb1e51fa7"
+    },
+    {
+      "path": "object_code/ages/interactions/goron.s",
+      "sha256": "f0bb56d977f472df15c7b245ef086fd2549e0047a47f84bd7864cbde22a68c4f"
+    },
+    {
+      "path": "object_code/ages/interactions/goronElder.s",
+      "sha256": "c77c6bbd12aa2ea64381d1aa6683ad1b52521a07b6f5b09afe02e0ae9af752f2"
+    },
+    {
+      "path": "object_code/ages/interactions/greatFairy.s",
+      "sha256": "6d6c87b77a14e87829118dc75d82e6bdd83906442c6ec9ef8da9781dd988ba3d"
+    },
+    {
+      "path": "object_code/ages/interactions/hardhatWorker.s",
+      "sha256": "560a63b00fb770f9f2e601d0cbb822d84ef5acb3745b678d1fb1bb36bccc5e2b"
+    },
+    {
+      "path": "object_code/ages/interactions/harpOfAgesSpawner.s",
+      "sha256": "e9f739c0c3fac74d2e8270f2f6df2384f67370a0b5c7fff06de1da66cd1f47f4"
+    },
+    {
+      "path": "object_code/ages/interactions/humanVeran.s",
+      "sha256": "6796a5e9191a579df5e1157c4db347d5db9bcf5c6ceb78fcf112d8d7d5eaeb4b"
+    },
+    {
+      "path": "object_code/ages/interactions/impaInCutscene.s",
+      "sha256": "6153a2c6cc2541cec7546c910ec385151dde434e0d4ec763a32ec077094a4f21"
+    },
+    {
+      "path": "object_code/ages/interactions/impaNpc.s",
+      "sha256": "71101a2e93c92de50523a4613a95c04dc7b81afcfa16d2ae58a7895bd6d827dc"
+    },
+    {
+      "path": "object_code/ages/interactions/introSprite.s",
+      "sha256": "1814c0601380ad6f9bdf7c7fbe9f278335e066c99d7ddf2690eb0fb51f33e3f9"
+    },
+    {
+      "path": "object_code/ages/interactions/kingMoblinDefeated.s",
+      "sha256": "5649492e5f138b40b52735881bb77c8846c023b196ada1bd5e71af5606969ba6"
+    },
+    {
+      "path": "object_code/ages/interactions/kingZora.s",
+      "sha256": "4b65aeb87f0a7c6e6a964dd5fddfc99dd91c51cd2ebc449e60db000a96e7be1f"
+    },
+    {
+      "path": "object_code/ages/interactions/knowItAllBird.s",
+      "sha256": "1ba5fc65ced55c2821ce2431924ca6eb8bc3cf958b4abbe32f239f1ad010a112"
+    },
+    {
+      "path": "object_code/ages/interactions/lever.s",
+      "sha256": "3ab6dda1a3b32b93742535f822c6327071d583ca654b3180179c889e0e0652b2"
+    },
+    {
+      "path": "object_code/ages/interactions/leverLavaFiller.s",
+      "sha256": "5949f3506b671c43664d8ac91264a189d7317829d54d9c877c72cd114788311d"
+    },
+    {
+      "path": "object_code/ages/interactions/librarian.s",
+      "sha256": "66e4013dbacaab926801dfea5cee86ed1946dba3f1b0ce5a55412fd6d5590698"
+    },
+    {
+      "path": "object_code/ages/interactions/linkedGameGhini.s",
+      "sha256": "c4e6a2c85ec4d1a2546695f8f682eab139029d9fe0aa3956ca8f081511eb43ad"
+    },
+    {
+      "path": "object_code/ages/interactions/makuConfetti.s",
+      "sha256": "495907afe4b8581aec9466e1e2c24dea5502ce76756a046c9ee72f0e23e4e3bc"
+    },
+    {
+      "path": "object_code/ages/interactions/makuFlower.s",
+      "sha256": "61335fdc7a20c3a0708b936f4fc2463a4dd97e12d9ef33e90cb8a112b4e1ae0a"
+    },
+    {
+      "path": "object_code/ages/interactions/makuGateOpening.s",
+      "sha256": "e05e0108089e22106bf4a82513ce663d3671cce80525f0d9e57457eeb45a73b2"
+    },
+    {
+      "path": "object_code/ages/interactions/makuSeed.s",
+      "sha256": "963b46a1a43a1b7339163a60b7cdb6f46e85373774313db465ce918dec13adf9"
+    },
+    {
+      "path": "object_code/ages/interactions/makuSeedAndEssences.s",
+      "sha256": "fe4b6f66ef6e5bb6be4f2ab9e75f8015aa24d3f97e2457af9ec70ccf7e6d807a"
+    },
+    {
+      "path": "object_code/ages/interactions/makuSprout.s",
+      "sha256": "de95fbc0fd2b6c749ce43efbfaf7d814bdcb33bfccdc8de1fc7ebecd7278a33f"
+    },
+    {
+      "path": "object_code/ages/interactions/makuTree.s",
+      "sha256": "2bb31f60beac15e20e1ded1866e39f36aead50f90d359d590ba4a525a4c84985"
+    },
+    {
+      "path": "object_code/ages/interactions/mamamuDog.s",
+      "sha256": "7206ba120f4d2c6a3ae273208a6ca57a6ff4cec3a767924588a813f7921d3e1c"
+    },
+    {
+      "path": "object_code/ages/interactions/mamamuYan.s",
+      "sha256": "95e8ae444769eefb6575999775cb834177467d328beeaaa3cc0a4af064e00aca"
+    },
+    {
+      "path": "object_code/ages/interactions/maskSalesman.s",
+      "sha256": "e0773757da384e633624e3b9a49b741d0536e4fe22ea1d3b905171dcc9ca6e1f"
+    },
+    {
+      "path": "object_code/ages/interactions/masterDiver.s",
+      "sha256": "5e7af8516f455faee1a726beab0d7da34a7fda953a923bd0c4a55f8d2ff805fa"
+    },
+    {
+      "path": "object_code/ages/interactions/minecartGate.s",
+      "sha256": "db81b81d24176b8dfdd688af577dc3296b151edb4176ee1e3fd1fedc0251c2a3"
+    },
+    {
+      "path": "object_code/ages/interactions/miscMan.s",
+      "sha256": "524c4322a8c8ab1c463217ff6344935d1aed9264460f0fb9218a2b08a2421438"
+    },
+    {
+      "path": "object_code/ages/interactions/miscMan2.s",
+      "sha256": "f7abf2e0b832cf459996be12ad59c30abf5e5e070dfdfa9eee72093f858a03db"
+    },
+    {
+      "path": "object_code/ages/interactions/miscPuzzles.s",
+      "sha256": "dce47b950f7cd3384b6d6a3d2dfb6273d37118bc343951b1ea6c12780ef2e8e3"
+    },
+    {
+      "path": "object_code/ages/interactions/miscellaneous1.s",
+      "sha256": "40964e5983dd518233d3b39d62b76bf634301b19f6328dbde908007018688e09"
+    },
+    {
+      "path": "object_code/ages/interactions/miscellaneous2.s",
+      "sha256": "296d13d1d63fd495ab77e5967305c2f280640ff1dbe734fe4f9594286d8e9c68"
+    },
+    {
+      "path": "object_code/ages/interactions/moblin.s",
+      "sha256": "430251f25fb9a10c2f7434525d48632670f53bbbc85901267bb840f95d512ace"
+    },
+    {
+      "path": "object_code/ages/interactions/monkey.s",
+      "sha256": "54ea3bcb74fbed0875006020f68218cbcf58a206eeac0105089297835e620a7c"
+    },
+    {
+      "path": "object_code/ages/interactions/monkeyMain.s",
+      "sha256": "de2ffa55d3f8b0ded1778021bd9cfcde1267a434ee8baa118e69186d2eba246c"
+    },
+    {
+      "path": "object_code/ages/interactions/mustacheMan.s",
+      "sha256": "951f68420d117214c009d0a5e670d9be127bcaaa7c64ce858c4abdeaa000c0c2"
+    },
+    {
+      "path": "object_code/ages/interactions/nayru.s",
+      "sha256": "f0d9b38a689e9c2248d9de2d94653986a002c0e66bd4302101762bf35d6adad9"
+    },
+    {
+      "path": "object_code/ages/interactions/nayruSavedCutscene.s",
+      "sha256": "db295273ffb50517e0dc81aff589ff0da4ea4090b56238ea7192acbba4ebcd80"
+    },
+    {
+      "path": "object_code/ages/interactions/octogonSplash.s",
+      "sha256": "025a69479be843f71852ac02513080806330699abd26f240e94c3b19433542b4"
+    },
+    {
+      "path": "object_code/ages/interactions/oldLady.s",
+      "sha256": "cd01ce854cc5fcf89e09abbc5c913f1815ec48ea58a33b2a7ec3f575aa5ef618"
+    },
+    {
+      "path": "object_code/ages/interactions/oldMan.s",
+      "sha256": "7414a1a3a53d7509b696178d03e096555240499635684a9fb4ce429afd0efdb1"
+    },
+    {
+      "path": "object_code/ages/interactions/oldManWithRupees.s",
+      "sha256": "7759923d07c5f19e165b728f82beec9de15fa3587301981be28b6a99c10a02f2"
+    },
+    {
+      "path": "object_code/ages/interactions/oldZora.s",
+      "sha256": "2b36f1ee6126e69f52c1178d4b7f00a8f533d97cfc819a9079a400d61205bff5"
+    },
+    {
+      "path": "object_code/ages/interactions/pastGirl.s",
+      "sha256": "eb3781cfac75d356d8f6e6232baee358543de4be881ea42271e6aa7c5d790825"
+    },
+    {
+      "path": "object_code/ages/interactions/pastGuy.s",
+      "sha256": "d8e831f7b48d2cc6d648f0b4313a70de338605673caa00e803f0dc2c33abe991"
+    },
+    {
+      "path": "object_code/ages/interactions/pastOldLady.s",
+      "sha256": "4e652598eb1448ce68b532068307fa2ae7c289c35f5f8d991b8ce937ffbe8764"
+    },
+    {
+      "path": "object_code/ages/interactions/patch.s",
+      "sha256": "9af6bbe0b50dedc5959fad3fb0d92b3fe02b857860d7c9c19b37c12661b0acca"
+    },
+    {
+      "path": "object_code/ages/interactions/pickaxeWorker.s",
+      "sha256": "91cfb15c54678de04f9f6b0c4bcefedc076337523b5c3b14c697474a0ef630c7"
+    },
+    {
+      "path": "object_code/ages/interactions/pirate.s",
+      "sha256": "dd79399fb1345c447f454da39ee0d0297fb202bfec2677791b0001e73b670854"
+    },
+    {
+      "path": "object_code/ages/interactions/pirateCaptain.s",
+      "sha256": "d3e39d910a40df105d787c51968542b8a6b08a81b9eb087286a5b5f1fe4f76fb"
+    },
+    {
+      "path": "object_code/ages/interactions/pirateShip.s",
+      "sha256": "a51037629b386d4b4720b1087a67892fe6064bb211e122b257d7c1f307be2fee"
+    },
+    {
+      "path": "object_code/ages/interactions/playHarpSong.s",
+      "sha256": "0002f605c34488f29d2beab3f6f28aab0102cdb557f01063f66bc92929e309a1"
+    },
+    {
+      "path": "object_code/ages/interactions/playNayruMusic.s",
+      "sha256": "42eca49da413be5009b8ac359bafb5d87384b86ad1d2bae48caecd62e51daeac"
+    },
+    {
+      "path": "object_code/ages/interactions/plen.s",
+      "sha256": "216b6ca57f1ccb7286034e4bb88b7c96819885e7a4b10990887a23e51061d089"
+    },
+    {
+      "path": "object_code/ages/interactions/poe.s",
+      "sha256": "42cccecea8573d8c0e7dc28f23e5bfeae8f2d5b533aad4c29321fef74090ea77"
+    },
+    {
+      "path": "object_code/ages/interactions/possessedNayru.s",
+      "sha256": "2e9043efacf6542de29254b389eef1089d5bb38bdf7701dfcaea8af23d4508f7"
+    },
+    {
+      "path": "object_code/ages/interactions/postman.s",
+      "sha256": "93ef2ab82996e0bed38197c277f5ed2b322311b4bcadbf2515b9eae7a4169332"
+    },
+    {
+      "path": "object_code/ages/interactions/pushblockSynchronizer.s",
+      "sha256": "596294182ce0e07df5f276bfa6e1c7588a86bd822228d7974be41ad7090fba35"
+    },
+    {
+      "path": "object_code/ages/interactions/rabbit.s",
+      "sha256": "bb2cd7975d022d1368d0ae47c2ae92a0bf5d29c62c11b72943c4b9c12bac236b"
+    },
+    {
+      "path": "object_code/ages/interactions/rabbitMain.s",
+      "sha256": "a263b049e15b5b9fc525c5619f1f23ad23c6c47dc78ba662e48f7731819baf47"
+    },
+    {
+      "path": "object_code/ages/interactions/raft.s",
+      "sha256": "ffc773787e6f8c358f4d9b3476b31e1671e1029153b9470a30253b4f3f1e3833"
+    },
+    {
+      "path": "object_code/ages/interactions/rafton.s",
+      "sha256": "818e56c78af0eeb4469a353ee702d525b7afca9dcdbf099e9c55a27cfc430645"
+    },
+    {
+      "path": "object_code/ages/interactions/raftwreckCutscene.s",
+      "sha256": "b899cf4c1bd6b02d28dd173b31773be326a88cc355a63378030f3a446b85c278"
+    },
+    {
+      "path": "object_code/ages/interactions/raftwreckCutsceneHelper.s",
+      "sha256": "6829126b2cc5c3feb9afd1f8988c7dafb0c00457b7b7d67dc66f0e410c9aec9b"
+    },
+    {
+      "path": "object_code/ages/interactions/ralph.s",
+      "sha256": "8dcb549d211c5ac5eb2afbff31f00d233dc7fc2c93aa61fdc0af4cb5c3f1fc19"
+    },
+    {
+      "path": "object_code/ages/interactions/remoteMakuCutscene.s",
+      "sha256": "7005e2093098024a598cce5086139c45018832c551ef4af0b090f3d2e1103e65"
+    },
+    {
+      "path": "object_code/ages/interactions/rickysGloveSpawner.s",
+      "sha256": "7a3fdfb08d6a626c0a2154d81718fd5c3696a79a09c8f91814c63920272bb3ea"
+    },
+    {
+      "path": "object_code/ages/interactions/rosa.s",
+      "sha256": "10a05c7e4b0fdd025849e66c1b4fae149aa234729569d7e627674da9e76df25a"
+    },
+    {
+      "path": "object_code/ages/interactions/sarcophagus.s",
+      "sha256": "160375620e371515f401436c973f07d7b898967e9f00a75a4ea1bc758d770dbc"
+    },
+    {
+      "path": "object_code/ages/interactions/screenDistortion.s",
+      "sha256": "94b247f25599cefaf5ff30ae641606fd5f686d0847f3b63b337ac585bc44c704"
+    },
+    {
+      "path": "object_code/ages/interactions/shootingGallery.s",
+      "sha256": "0eb68c74745d0fa19e297df1757b40065984e62854df9c78f1c2648103777097"
+    },
+    {
+      "path": "object_code/ages/interactions/slateSlot.s",
+      "sha256": "a5de6f3aa7160691a5afa5bfa6427cade4feac01ccffe03432de73924d9a577a"
+    },
+    {
+      "path": "object_code/ages/interactions/smallKeyOnEnemy.s",
+      "sha256": "288fbdf28b4cdb618e443a095bbff560ed232ecc133eb4e6d956d3f0dc7c5319"
+    },
+    {
+      "path": "object_code/ages/interactions/smogBoss.s",
+      "sha256": "514f8053fd509839bbafe257aaf380848e7e9532e810479fb5c073251f45c8c4"
+    },
+    {
+      "path": "object_code/ages/interactions/soldier.s",
+      "sha256": "ce179f9697eb88e0c50d0261c85decedfc69ab5ebb07bfe8b0a4d48763193f21"
+    },
+    {
+      "path": "object_code/ages/interactions/sparkle.s",
+      "sha256": "ad4b4b4fe61f05b0cdb12bb2d691f6bbb8d31061bb28c758609facfb1cd1a000"
+    },
+    {
+      "path": "object_code/ages/interactions/specialWarp.s",
+      "sha256": "f89372ed64686760e5ef50ef5d7fc6cad918b4b90096908ec6ae292a57fe0865"
+    },
+    {
+      "path": "object_code/ages/interactions/stonePanel.s",
+      "sha256": "d144d429add888a9c5fab0e1eb9fcc8785c98e3cdd2605331851db4baeb866b0"
+    },
+    {
+      "path": "object_code/ages/interactions/subrosian.s",
+      "sha256": "2b3afaa4eb2ed7f979758102af2a9e64e3e17dd37be45d2de4307e0a971deee5"
+    },
+    {
+      "path": "object_code/ages/interactions/sword.s",
+      "sha256": "854dd86d9e2551799e5cd3cf0e97703da3ab251c6544a1e5303368f89ce7b805"
+    },
+    {
+      "path": "object_code/ages/interactions/symmetryNpc.s",
+      "sha256": "14cfab9b6b5ea26c06ec79612857790c19c5588c29b789472f3c009cd4816e34"
+    },
+    {
+      "path": "object_code/ages/interactions/tileFiller.s",
+      "sha256": "6b6d79668888e40740ca4230bb67bd5d05b9b29e488272bc5f6ac2491675968e"
+    },
+    {
+      "path": "object_code/ages/interactions/timeportal.s",
+      "sha256": "e3070e5f83889b55c4ccbde689496ff4421cdde1bc1c4bf2f755871fda7c027f"
+    },
+    {
+      "path": "object_code/ages/interactions/timeportalSpawner.s",
+      "sha256": "3803260fce1b6a0b2c2f38dde6378d3d26f57e33b48f9d7532af741f1a7b22a4"
+    },
+    {
+      "path": "object_code/ages/interactions/timewarp.s",
+      "sha256": "45f2eb103285b16506111208f33d1b11b4445fea64a6b0401c372acf21ce2874"
+    },
+    {
+      "path": "object_code/ages/interactions/tingle.s",
+      "sha256": "acd163ee775dd98efda75b8e74973c814bc0b7e1574d2b6567909131578ce23b"
+    },
+    {
+      "path": "object_code/ages/interactions/toggleFloor.s",
+      "sha256": "0b1376e5fe9d6be2f60031b8d0d160809e84dcf4684e478926fba53955e0b8ea"
+    },
+    {
+      "path": "object_code/ages/interactions/toiletHand.s",
+      "sha256": "d9feeaaed238b7e4c33011e047dd8cad1299db580ac1ee679019afebaa2a2e05"
+    },
+    {
+      "path": "object_code/ages/interactions/tokay.s",
+      "sha256": "036f52276b8b35f393db9c8f80a002befcf3f3bb1cd0ee1e93553507a6407f94"
+    },
+    {
+      "path": "object_code/ages/interactions/tokayCutsceneEmberSeed.s",
+      "sha256": "8b24dd6f830aaff6143d685cdb587e777964f5ca3885acdd6c681b785edfba5c"
+    },
+    {
+      "path": "object_code/ages/interactions/tokayMeat.s",
+      "sha256": "9772a3fb9063a9e4d032b8b0f4817d07b165bf57891b8d18b453bd961fafe75f"
+    },
+    {
+      "path": "object_code/ages/interactions/tokayShopItem.s",
+      "sha256": "56b134ea488bcaeed9393c16129ac12f37dd72f611d8dd98b424963ac0dbdcc8"
+    },
+    {
+      "path": "object_code/ages/interactions/tokkey.s",
+      "sha256": "9268d5a36470789862e5aa5c17045b9598b42b46d4ed65a98ff24ab7cb38b48f"
+    },
+    {
+      "path": "object_code/ages/interactions/touchingBook.s",
+      "sha256": "153509726840e7f441b8a54b784aafe54a063fabc903bfe9e70ab7183134d614"
+    },
+    {
+      "path": "object_code/ages/interactions/triforceStone.s",
+      "sha256": "64779c31ac6ca6b20e4b979376c8566b2cfa6fecd2ce6574d50c74f647632791"
+    },
+    {
+      "path": "object_code/ages/interactions/triggerTranslator.s",
+      "sha256": "a4c2fbd1c2b0af7c01298e0d295b3e2791c03115a8421b779ccb2c906c4701a4"
+    },
+    {
+      "path": "object_code/ages/interactions/troy.s",
+      "sha256": "fc36efec4803326b71a73e2175433fcabab02bfacf25031a8613eb72eaeebee0"
+    },
+    {
+      "path": "object_code/ages/interactions/tuniNut.s",
+      "sha256": "97745f5e9912eecc1bbd4250450883fc6d0b3f5df9bd18b2a9f3068fff938801"
+    },
+    {
+      "path": "object_code/ages/interactions/tuniNutMain.s",
+      "sha256": "f20b0f9b3545d10df9826cc2d81d5160e2b780f887e3d8494b608f920b0c6a09"
+    },
+    {
+      "path": "object_code/ages/interactions/twinrova.s",
+      "sha256": "b6ae3eb4ba46d9dff3183af37bbb8994fe86392cf09203600f0b3fc4ac091d44"
+    },
+    {
+      "path": "object_code/ages/interactions/twinrova3.s",
+      "sha256": "cf33a8f246b6e348c2778353da2bf9d98022ffc4b303f13aa5cacf12e0107572"
+    },
+    {
+      "path": "object_code/ages/interactions/twinrovaInCutscene.s",
+      "sha256": "db045b8d110101334ab645feb85549b48d1a33ad649feeb0680c7141fdd22b7e"
+    },
+    {
+      "path": "object_code/ages/interactions/veranCutsceneFace.s",
+      "sha256": "bb339b789d1c47c1798e0942a6c6fa20285b8ff89e5af963d69c3b68b5a34df8"
+    },
+    {
+      "path": "object_code/ages/interactions/veranCutsceneWallmaster.s",
+      "sha256": "ff663fcd51a25626112dbeaa982b12a6ac53f8633c70d0d1d0c2a6435bd3b715"
+    },
+    {
+      "path": "object_code/ages/interactions/villager.s",
+      "sha256": "15d065c5b4a9c753c11e8df9c8e88644bb67cdfe4715a8dda3b5020fa0367657"
+    },
+    {
+      "path": "object_code/ages/interactions/vire.s",
+      "sha256": "63c763e4ecf46c93f19adb0e77adecdaef2fdbd0108fe124d7d4bce2469a7122"
+    },
+    {
+      "path": "object_code/ages/interactions/volcanoHandler.s",
+      "sha256": "49bb4bdbc65a29b4e6a6d7f85ec78e28da73b8a3f211241568fd1e65792be18b"
+    },
+    {
+      "path": "object_code/ages/interactions/waterPushblock.s",
+      "sha256": "97ef21346e67299137f703144c3c962b036e2d925d883c2f9d6ca654d9c9fe19"
+    },
+    {
+      "path": "object_code/ages/interactions/wildTokayController.s",
+      "sha256": "c0825fad0c305f310385762bd16b963748b3c7ca21b45f3de584d12b9d2ad8e4"
+    },
+    {
+      "path": "object_code/ages/interactions/zelda.s",
+      "sha256": "beb71d071570f284554a194da681834bffc56d0daf86976cd97599ee3aa582ad"
+    },
+    {
+      "path": "object_code/ages/interactions/zora.s",
+      "sha256": "24c549e86c7d97e64242d23a6743480adaf8b4af8fb79c9324d10670faeb0841"
+    },
+    {
+      "path": "object_code/common/interactions/banana.s",
+      "sha256": "884dc4aafa9d98f66017bab1a075b95781c84ae9a42ab9ae71d8fc46f47ec1f6"
+    },
+    {
+      "path": "object_code/common/interactions/bipin.s",
+      "sha256": "9819710cd2daf35f6402d50739df58902a23a1f9893aded6f195d5e23e09d539"
+    },
+    {
+      "path": "object_code/common/interactions/bipinBlossomFamilySpawner.s",
+      "sha256": "43400c54932248878414a3d4084b73a6e9273935a7821cbbe54556ccba0a954d"
+    },
+    {
+      "path": "object_code/common/interactions/blossom.s",
+      "sha256": "c9a9ce993fb3c2e4c1042649a41520f291a3e5f0ea2c4ef04930cfceb5c5a6b4"
+    },
+    {
+      "path": "object_code/common/interactions/bombFlower.s",
+      "sha256": "88943a147b48b36f716d5bc2aa427519492fab3078cbdaa424f341709dd2a77a"
+    },
+    {
+      "path": "object_code/common/interactions/breakTileDebris.s",
+      "sha256": "7aab19785c500883036730159a84cb216a048dec69d492551d3f037c82c9c357"
+    },
+    {
+      "path": "object_code/common/interactions/bubble.s",
+      "sha256": "899495caf1b0bc52ec0bb4350ec2751c73287a50fe81939c7e466dd7a6ea3bf5"
+    },
+    {
+      "path": "object_code/common/interactions/businessScrub.s",
+      "sha256": "318c4c078039d8e599a27d0f233f50e9c475b6965ecedd534f779c7586e8bef8"
+    },
+    {
+      "path": "object_code/common/interactions/c1.s",
+      "sha256": "998fb4dd801904063a497ab969d3802ceafc1e9e6b6175e122cc92ad8620f8a8"
+    },
+    {
+      "path": "object_code/common/interactions/cf.s",
+      "sha256": "3c443abc990bc6efc9b2990320cfaefd018145057812681e8a6b03a401d54b02"
+    },
+    {
+      "path": "object_code/common/interactions/child.s",
+      "sha256": "b184eb33e12446d636552888eb522c4c3cb9685b7d46535a991ce2b64889df84"
+    },
+    {
+      "path": "object_code/common/interactions/companionSpawner.s",
+      "sha256": "7e1c9dfb30717fc1ee92eb41f19594cd23a57ccd7515da9bc525241e33508629"
+    },
+    {
+      "path": "object_code/common/interactions/companionTutorial.s",
+      "sha256": "21649990ced91120ff4eccb351d965a19d26b7946fba3464071329069c3c952a"
+    },
+    {
+      "path": "object_code/common/interactions/createObjectAtEachTileindex.s",
+      "sha256": "3e0e12fa6f8f06100580f441bfddf8ddd5b204f892937549b33217fabdb292ac"
+    },
+    {
+      "path": "object_code/common/interactions/creditsTextHorizontal.s",
+      "sha256": "fd073e3752530f6d2ae51f51e428cb658ada9bdc29d67be43b9671c1eaee0190"
+    },
+    {
+      "path": "object_code/common/interactions/creditsTextVertical.s",
+      "sha256": "d2ce55530f490c3d713a1611053384df6ceeb86bdf3320c2237c2d80efb7c301"
+    },
+    {
+      "path": "object_code/common/interactions/doorController.s",
+      "sha256": "756a161cf76353fb552e685e15070def362148b40640c5d6ee22237d924ad092"
+    },
+    {
+      "path": "object_code/common/interactions/dungeonKeySprite.s",
+      "sha256": "ed52fcb99efd22212b5f662f061e2b2d88ffa0315f5b86527f5afbb7f9ae7122"
+    },
+    {
+      "path": "object_code/common/interactions/dungeonStuff.s",
+      "sha256": "bebc52c0dab8d2d3f7fb50d941ecbb28bc9f08879ef17962d63623ff8dcc2357"
+    },
+    {
+      "path": "object_code/common/interactions/endgameCutsceneBipsomFamily.s",
+      "sha256": "995fc4107f3f19c531bd21b29c33835adf2856c8498d06e91123430fc82fc297"
+    },
+    {
+      "path": "object_code/common/interactions/eraOrSeasonInfo.s",
+      "sha256": "9fa473e038c878a3c42d0cf6841ff9ebde4fe9f9d107ad6d788487785fa60090"
+    },
+    {
+      "path": "object_code/common/interactions/essence.s",
+      "sha256": "b1a5d9a21257d335427933f10b6854e66a032dfa102b2afee10c07daa9459e56"
+    },
+    {
+      "path": "object_code/common/interactions/exclamationMark.s",
+      "sha256": "81d2e851e1f49f0bcac1c626a05b3956f130ae0a92e4e1b800513edbed9ae686"
+    },
+    {
+      "path": "object_code/common/interactions/explosion.s",
+      "sha256": "1534f19695a55c2788befc12ed98c149c1a635a2080aa9832074e4e095270d23"
+    },
+    {
+      "path": "object_code/common/interactions/fallDownHole.s",
+      "sha256": "7936e2512b6dfb793dc783d1fed624f5101645ec2ae6294c59f5790a8bb37bea"
+    },
+    {
+      "path": "object_code/common/interactions/farore.s",
+      "sha256": "905eb0e9638f44c24125c3af821048b73ee00f6a2afcd385f10334a531a11301"
+    },
+    {
+      "path": "object_code/common/interactions/faroreGiveItem.s",
+      "sha256": "d51e369cb3bae08c792e746ec9db7411619e2161fd69050d2ea6d1968488d2a3"
+    },
+    {
+      "path": "object_code/common/interactions/faroreMakeChest.s",
+      "sha256": "7f1f47d9a12d2071bd202ce78313629f60f71a22f7075b3b1edb9cfa9a2823e4"
+    },
+    {
+      "path": "object_code/common/interactions/faroresMemory.s",
+      "sha256": "20367b64d4acce5596c6ced46ed5f50ba8beae0d9ac87669a3fd376d4e3b391c"
+    },
+    {
+      "path": "object_code/common/interactions/finalDungeonEnergy.s",
+      "sha256": "3672a531e214d6ad8003d8aa4939b79e134cbca979b91dc70eddf64d49d21ef1"
+    },
+    {
+      "path": "object_code/common/interactions/floatingImage.s",
+      "sha256": "b14e50e0450f59643a1968a78e738e92140cf32f2bc38ddd351b698b1adb6875"
+    },
+    {
+      "path": "object_code/common/interactions/gameCompleteDialog.s",
+      "sha256": "03d19552de6bc285072beefd595d9ed59648f0a11040acc542f51021284aeb02"
+    },
+    {
+      "path": "object_code/common/interactions/gashaSpot.s",
+      "sha256": "b6d43b48e3edee2c1d7159405fd77451cd824646c9b638a472a4dce7bcf70962"
+    },
+    {
+      "path": "object_code/common/interactions/horonDogCredits.s",
+      "sha256": "698d6cfb75db028bb45bdb14a919a84597ea178e94ba143ce47cbd394fc42ef0"
+    },
+    {
+      "path": "object_code/common/interactions/introBird.s",
+      "sha256": "90452263d4e6cc61713c616c84ce55c0065de5f16eaf859c029a7e8337c8f1a4"
+    },
+    {
+      "path": "object_code/common/interactions/introSprites1.s",
+      "sha256": "c7d30cd062f848da95ef81d603830719aa14ed02f5535aea439b88899f068538"
+    },
+    {
+      "path": "object_code/common/interactions/kissHeart.s",
+      "sha256": "d2209d39fa25dd2ec32beb2d8073a23761b14bae77d2264efb65e3df2721b41e"
+    },
+    {
+      "path": "object_code/common/interactions/linkShip.s",
+      "sha256": "9622879dbcc69e49e7073bd83b97b15b90288dc9a57453451ce290dedfbcdaec"
+    },
+    {
+      "path": "object_code/common/interactions/minecart.s",
+      "sha256": "b2e1aacc2b7c1f92408e88dde8848f3f79faf2ec5f6791d7d0b1a85f48a43623"
+    },
+    {
+      "path": "object_code/common/interactions/minibossPortal.s",
+      "sha256": "8309e9e1ed1b007323b55d4dbee4871c2e9669c42ffb88f9826e39ba7536151c"
+    },
+    {
+      "path": "object_code/common/interactions/movingPlatform.s",
+      "sha256": "8a55bc4339650d469ee29da7980275eb7e31eda8091a261ff7fca3344af64878"
+    },
+    {
+      "path": "object_code/common/interactions/movingSidescrollConveyor.s",
+      "sha256": "f7a1dedae76ed83b164fded96ebb79706c0a56c83a739ded5183d44bc19088e4"
+    },
+    {
+      "path": "object_code/common/interactions/movingSidescrollPlatform.s",
+      "sha256": "c37f22fde8d9d4aa61069725a99a1e623d58923e3aeaf4689ae30306fa51a8c0"
+    },
+    {
+      "path": "object_code/common/interactions/nayruRalphCredits.s",
+      "sha256": "6a194f360f67ec11247b64425daf5062d4518bbca0a81c9763102b314736504e"
+    },
+    {
+      "path": "object_code/common/interactions/overworldKeySprite.s",
+      "sha256": "dbba1f8994827c22704a28ac0b3ceb4b50d2f02361d22df8023083360590a332"
+    },
+    {
+      "path": "object_code/common/interactions/pushblock.s",
+      "sha256": "58eb9a4c0003934a0017274c49c26279ca49d90b9398212c16511b88579f8da1"
+    },
+    {
+      "path": "object_code/common/interactions/pushblockTrigger.s",
+      "sha256": "4e6fdc6df0104b466b17af262053bf240055e09bf880231e3c66e0a722d255a3"
+    },
+    {
+      "path": "object_code/common/interactions/ringHelpBook.s",
+      "sha256": "9834b515a958db258f746d64d83cf00a61d55c569f0fbfd489ec7793a47a04b5"
+    },
+    {
+      "path": "object_code/common/interactions/roller.s",
+      "sha256": "2a76b7003d13d739c479bbf210f952c3e62b2f6e334ce19cf85296260d1d5cc4"
+    },
+    {
+      "path": "object_code/common/interactions/seasonsFairy.s",
+      "sha256": "3c9b2b1366f4f2182316faaaed9e422f94c6fba281d949e8def062febd1a2aa8"
+    },
+    {
+      "path": "object_code/common/interactions/shopItem.s",
+      "sha256": "eecbd76ec6a36c93608f59664e97ac0d3ce62cc6f0fee6c1605285aaf82c3311"
+    },
+    {
+      "path": "object_code/common/interactions/shopkeeper.s",
+      "sha256": "90011577e4504b5f4f7b2d25a799803b44f637eee9a173040a4219b1fa89c71f"
+    },
+    {
+      "path": "object_code/common/interactions/spinner.s",
+      "sha256": "2250bfd5f98725c1e2927bce63e74939dd8f5666985d976252b0c37343d53942"
+    },
+    {
+      "path": "object_code/common/interactions/statueEyeball.s",
+      "sha256": "4f1acb23a37ee65aa6be3d591600b1dc6ee8424e9ea1b657c4dc0cc74a5f47e5"
+    },
+    {
+      "path": "object_code/common/interactions/switchTileToggler.s",
+      "sha256": "13a7a4b4eb2d8cd4d1ebd44471ced5ff5ec8df188f7a84d76729ad0e33c4b367"
+    },
+    {
+      "path": "object_code/common/interactions/syrup.s",
+      "sha256": "b48b7609477d39db0102d849abd17c0e6cff2acca097d56793d096c617337f9e"
+    },
+    {
+      "path": "object_code/common/interactions/syrupCucco.s",
+      "sha256": "c2eac753a595e1733e31abd899f976fe8893f3b88fe9db90055884e01cab8960"
+    },
+    {
+      "path": "object_code/common/interactions/titlescreenClouds.s",
+      "sha256": "98df3326780b45f57b92232bc2c656d13a548e037e206c7f086abd5ffdd99599"
+    },
+    {
+      "path": "object_code/common/interactions/treasure.s",
+      "sha256": "f286681fd375cffdb647ffaa40cfc24fc022e4a230b452d6aacd4dbdd94d10e3"
+    },
+    {
+      "path": "object_code/common/interactions/twinrovaFlame.s",
+      "sha256": "9c02d4f078079307c5cb61ec0061d181eb24db773d07e957e453c7047d24aef1"
+    },
+    {
+      "path": "object_code/common/interactions/vasu.s",
+      "sha256": "afcb6d05764f1e1bde7a9e5133ed61e96987935c5f61c08b4b2038044c7c64fe"
+    },
+    {
+      "path": "object_code/common/interactions/woodenTunnel.s",
+      "sha256": "04097a5d189c428633c8af7b05b8b4bf922076a98dba98c2649191e4d9c9786e"
+    },
+    {
+      "path": "object_code/common/interactions/zeldaApproachTrigger.s",
+      "sha256": "16f6ffe1ddab47179df93bf75f89d5dcea6a331191a1eb6e3aa71c7f8433fee4"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
+      "sha256": "80d56093dbbaca445edfdcc86def27b31005c7e063008e72f9927ae8ed4b6ef0"
+    }
+  ]
+}

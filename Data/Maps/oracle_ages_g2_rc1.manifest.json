@@ -21,6 +21,10 @@
   },
   "inputs": [
     {
+      "path": "code/ages/roomSpecificCode.s",
+      "sha256": "756811917cfb79460bda1bd7236a937f54d556a9606159982372bf383bb4b48d"
+    },
+    {
       "path": "data/ages/gfxHeaders.s",
       "sha256": "a80380f668c565f0ea4d0c2ae24317adc42343ae98cae6b21375cfcb2e8462e9"
     },
@@ -143,6 +147,10 @@
       "sha256": "3bc7ac3d6dffc7d7f9dd097cb789bf905a389b98fb32162c7b651f0d0066c879"
     },
     {
+      "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
+      "sha256": "80d56093dbbaca445edfdcc86def27b31005c7e063008e72f9927ae8ed4b6ef0"
+    },
+    {
       "path": "Previews/oracle_ages_g2_rc1.png",
       "sha256": "d2108ca1c9d10598be7840c58873b807e62b5f45e07564757ef02c520c299bec"
     },
@@ -152,7 +160,7 @@
     },
     {
       "path": "oracle_ages_g2_rc1.map",
-      "sha256": "f4e6073927ad61e4416357ace29045544f6d5aa64f460137cd3b4be2ad64ea86"
+      "sha256": "d83614b011052738926882c62f45f5fdcf1203768b05cac986b4d19544aed294"
     }
   ]
 }

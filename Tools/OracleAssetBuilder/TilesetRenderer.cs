@@ -20,7 +20,7 @@ public sealed class TilesetRenderer
 
     /// <summary>
     /// Ages draws past-overworld cliffs with the present palette by rewriting
-    /// attribute palette 6 to palette 0 for metatiles $40..$ff
+    /// attribute palette 6 to palette 0 for metatiles $40..$7f
     /// (code/ages/loadTilesetData.s:setPastCliffPalettesToRed).
     /// </summary>
     public bool PastCliffPalettes { get; set; }
@@ -118,7 +118,7 @@ public sealed class TilesetRenderer
             var flipX = (attributes & 0x20) != 0;
             var flipY = (attributes & 0x40) != 0;
 
-            if (PastCliffPalettes && metatile >= 0x40 && palette == 6)
+            if (PastCliffPalettes && metatile >= 0x40 && metatile < 0x80 && palette == 6)
                 palette = 0;
 
             var bankTiles = bank == 0 ? _tilesBank0 : _tilesBank1;

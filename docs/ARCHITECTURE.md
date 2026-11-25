@@ -28,7 +28,8 @@ SHA-256 of inputs and outputs.
 | Game state | `GameManager` | Equipment, health, overlays, systems, save manager. |
 | World | `MapManager`, `Map`, `TileMap`, `ObjectManager` | DX-HD large-map model; Oracle data is a normal map. |
 | Physics | `SystemBody`, `ObjectManager.Collision` | Object collisions plus the new tile collision test. |
-| Oracle state | `OracleFlagState` (temporary) | 0x80-ish global flags, one room-flag byte, room-state modifier; session-only. Replaced by `OracleSessionState` in the next block (AUDIT section 7). |
+| Oracle state | `OracleSessionState`, `OracleRoomRuntime`, `OracleGameProfile` | Per-session 0x80 global flags, per-group/room flag bytes, room state, entry direction, capture/restore. The static `OracleFlagState` is a dev facade. |
+| Room lifecycle | `MapTransitionSystem.MapLoading/MapLoaded`, `OracleRoomRuntime` | `MapLoading` runs after metadata and before objects; `MapLoaded` runs after Link is placed. Room-entry effects come from `roomSpecificCode.s`. |
 | Collision/terrain data | `Map.CollisionMap`, `Map.TerrainMap` | Loaded from the `.map` Oracle sections. |
 | Tile animation | `Map.TileAnimations`, `TileAnimation` | Swaps atlas indices; no extra files. |
 | UI | `OverlayManager`, `Pages/`, `Interface/` | Still LA-shaped; to be replaced. |
@@ -44,12 +45,12 @@ On the first update after resources finish loading, `Game1.Update`:
 2. calls `GameManager.StartNewGame(0, "Oracle")`.
 
 `StartNewGame` selects `Game1.OracleStartMap` (default
-`oracle_ages_g0_overworld.map`) and spawns Link at
-`Game1.OracleStartPosition` (default the centre of room `0x39`). The
-development flags `--room e7`, `--pos x,y` and `--map <file>.map` override the
-map and position. It uses the existing `MapTransitionSystem.LoadMapFromFile`, so
-camera setup and the first fade are the DX-HD paths. The switch is
-development-only; no menu entry was added.
+`oracle_ages_g0_overworld.map`, or the selected profile's overworld) and spawns
+Link at `Game1.OracleStartPosition` (default the centre of room `0x39`). The
+development flags `--game ages|seasons`, `--room e7`, `--pos x,y` and
+`--map <file>.map` override the game, map and position. It uses the existing
+`MapTransitionSystem.LoadMapFromFile`, so camera setup and the first fade are the
+DX-HD paths. The switch is development-only; no menu entry was added.
 
 ## 4. Engine additions
 
@@ -62,12 +63,15 @@ development-only; no menu entry was added.
 | `InGame/SaveLoad/SaveLoadMap.cs` | Parses the trailing Oracle sections after the native object list. |
 | `InGame/GameObjects/Base/Systems/SystemBody.cs` | Blocks walking bodies against solid tiles before object collision. |
 | `InGame/Things/GameManager.cs` | Oracle map/position selection in `StartNewGame`. |
-| `Game1.cs`, `Program.cs` | `--oracle`, `--room`, `--pos` development entry. |
+| `InGame/Things/OracleSessionState.cs` | Per-session global/room flags, room state, entry direction and save snapshot. |
+| `InGame/Map/OracleRoomRuntime.cs` | Room load/enter lifecycle, `roomSpecificCode` effects and code-hosted events (Ralph/EnterPast). |
+| `InGame/Map/OracleGameProfile.cs` | Ages/Seasons flags, portal policy, groups and map naming. |
+| `InGame/GameSystems/MapTransitionSystem.cs` | `MapLoading`/`MapLoaded` hooks and `PostLoadActions` (portal arrival). |
+| `Game1.cs`, `Program.cs` | `--oracle`, `--game`, `--room`, `--pos`, `--map` development entry. |
 | `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; routes through `MapTransitionSystem`. |
 | `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames; source-derived collision, flag/entry gates. |
 | `InGame/GameObjects/Things/ObjOracleTimePortal.cs` | `interactionBeginTimewarp` portals; toggles group through `MapTransitionSystem` and spawns the arrival portal. |
 | `InGame/GameObjects/Things/OracleSpriteFrames.cs` | Shared frame/duration parsing for Oracle sprites. |
-| `InGame/GameSystems/MapTransitionSystem.cs` | `PostLoadActions` hook for gameplay spawns that belong to the freshly loaded map (time-portal arrival). |
 | `InGame/GameObjects/GameObjectTemplates.cs` | Registers `oracleWarp`, `oracleSprite`, `oracleTimePortal`; no parallel object system. |
 
 Design constraints:
@@ -87,6 +91,9 @@ Design constraints:
 | `OracleRepo.cs` | Paths, PNG index, SHA-256, default roots. |
 | `AsmParser.cs` | Header indices, gfx/palette headers, palette data, tileset data, layout-label aliases. |
 | `OracleContent.cs` | Resolved tables, room tileset/overrides, layout and room files, renderer factory, tile properties. |
+| `OracleGameConfig.cs` | Per-game overworld groups/interior group (importer counterpart of `OracleGameProfile`). |
+| `RoomEntryEffects.cs` | `roomSpecificCode.s` group tables -> `#oracle-room-effects` rows. |
+| `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry facts + typed TSV/manifest. |
 | `TilesetRenderer.cs` | Two VRAM banks, palettes, metatile rendering, past cliffs, animation overrides. |
 | `MetatileAtlas.cs` | Packed 16px metatiles, base and animation-variant keys. |
 | `OracleAnimation.cs` | Groups/tracks/headers/sheets, `(delay, gfxIndex)` parsing. |

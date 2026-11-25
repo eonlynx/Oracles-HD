@@ -52,6 +52,12 @@ namespace ProjectZ.InGame.GameSystems
         /// </summary>
         public readonly System.Collections.Generic.List<System.Action<ProjectZ.InGame.Map.Map>> PostLoadActions = new();
 
+        /// <summary>Invoked on the loader thread after map metadata is parsed and before objects are built.</summary>
+        public System.Action<ProjectZ.InGame.Map.Map> MapLoading;
+
+        /// <summary>Invoked on the main thread after the new map and Link are active.</summary>
+        public System.Action<ProjectZ.InGame.Map.Map> MapLoaded;
+
         private float _changeMapCount;
 
         // will be reset after each transition
@@ -414,6 +420,7 @@ namespace ProjectZ.InGame.GameSystems
 
                 // load the map file
                 SaveLoadMap.LoadMap(mapFileName, _gameMapManager.NextMap);
+                MapLoading?.Invoke(_gameMapManager.NextMap);
                 // create the objects
                 _gameMapManager.NextMap.Objects.LoadObjects();
 
@@ -451,6 +458,9 @@ namespace ProjectZ.InGame.GameSystems
 
             // finish loading map
             _gameMapManager.FinishLoadingMap(_gameMapManager.CurrentMap);
+
+            // Oracle room lifecycle: entry effects and code-hosted events.
+            MapLoaded?.Invoke(_gameMapManager.CurrentMap);
 
             MapManager.ObjLink.UpdateMapTransitionIn(0);
 

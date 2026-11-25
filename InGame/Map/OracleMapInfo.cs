@@ -1,5 +1,14 @@
+using System.Collections.Generic;
+
 namespace ProjectZ.InGame.Map
 {
+    public sealed class OracleRoomEffectInfo
+    {
+        public int Group;
+        public int Room;
+        public int Handler;
+    }
+
     /// <summary>
     /// Read-only metadata emitted by OracleAssetBuilder. It carries converted
     /// room/era/kind values so runtime code does not derive them from map file
@@ -19,17 +28,12 @@ namespace ProjectZ.InGame.Map
         public int Floor = -1;
         public int Dungeon = -1;
         public string Camera = "follow";
+        public readonly List<OracleRoomEffectInfo> RoomEffects = new();
 
         public bool IsOverworld => Kind == "overworld";
         public bool IsInterior => Kind == "interior";
         public bool IsDungeon => Kind == "dungeon";
         public bool IsPast => Era == "past";
         public bool FixedCamera => Camera == "fixed";
-
-        /// <summary>Generated overworld map file for a group (0 present, 1 past).</summary>
-        public static string OverworldMap(string game, int group)
-        {
-            return $"oracle_{game}_g{group}_overworld.map";
-        }
     }
 }

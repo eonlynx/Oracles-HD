@@ -1,3 +1,6 @@
+using System.Text;
+using System.Text.Json;
+
 namespace Oracles.Tools.AssetBuilder;
 
 public sealed record ComposedInteraction(
@@ -47,8 +50,9 @@ public static class EntityAtlas
         var paletteHeadersPath = Path.Combine(repo.DataDir, "paletteHeaders.s");
         var paletteDataPath = Path.Combine(repo.DataDir, "paletteData.s");
         var paletteData = AsmParser.ParsePaletteData(paletteDataPath);
+        var interactionPairs = CollectInteractions(streams, warps, repo.Game);
 
-        foreach (var pair in CollectInteractions(streams, warps))
+        foreach (var pair in interactionPairs)
         {
             try
             {
@@ -91,28 +95,81 @@ public static class EntityAtlas
         var directory = ResolveMapObjectsDir(mapsOutDir);
         var stem = FileStem(repo.Game);
         atlas.Write(Path.Combine(directory, stem + ".png"), Path.Combine(directory, stem + ".atlas"));
+        WriteBehaviorTable(repo, behaviors, interactionPairs, mapsOutDir);
 
         warnings = issues;
         return result;
     }
 
+    public static string BehaviorTablePath(string mapsOutDir, string game)
+    {
+        return Path.Combine(ResolveMapObjectsDir(mapsOutDir),
+            $"oracle_{game}_interaction_behaviors.tsv");
+    }
+
+    private static void WriteBehaviorTable(OracleRepo repo, InteractionBehaviors behaviors,
+        IReadOnlyList<(int Id, int SubId)> pairs, string mapsOutDir)
+    {
+        var tablePath = BehaviorTablePath(mapsOutDir, repo.Game);
+        var manifestPath = Path.ChangeExtension(tablePath, ".manifest.json");
+        Directory.CreateDirectory(Path.GetDirectoryName(tablePath)!);
+
+        var builder = new StringBuilder();
+        builder.Append("id\tsubid\tsolid\tradius_y\tradius_x\trequires_flag\tforbidden_flag\tpalette_header\ttime_warp\tentry_direction\n");
+        foreach (var pair in pairs.OrderBy(p => p.Id).ThenBy(p => p.SubId))
+        {
+            var behavior = behaviors.For(pair.Id, pair.SubId);
+            builder.Append($"0x{pair.Id:x2}\t0x{pair.SubId:x2}\t{(behavior.SolidTile ? 1 : 0)}\t");
+            builder.Append($"{behavior.RadiusY}\t{behavior.RadiusX}\t");
+            builder.Append($"{behavior.RequiresFlag}\t{behavior.ForbiddenFlag}\t");
+            builder.Append(behavior.SpritePaletteHeader >= 0 ? $"0x{behavior.SpritePaletteHeader:x2}" : "-1");
+            builder.Append($"\t{(behavior.TimeWarp ? 1 : 0)}\t{behavior.RequiresEntryDirection}\n");
+        }
+        File.WriteAllText(tablePath, builder.ToString(), new UTF8Encoding(false));
+
+        var manifest = new
+        {
+            tool = "OracleAssetBuilder",
+            format = 1,
+            game = repo.Game,
+            entry = "interaction_behaviors",
+            rows = pairs.Count,
+            inputs = behaviors.SourcePaths
+                .Select(path => new
+                {
+                    path = Path.GetRelativePath(repo.Root, path).Replace('\\', '/'),
+                    sha256 = OracleRepo.Sha256(path),
+                })
+                .ToArray(),
+            outputs = new[]
+                {
+                    new
+                    {
+                        path = Path.GetRelativePath(mapsOutDir, tablePath).Replace('\\', '/'),
+                        sha256 = OracleRepo.Sha256(tablePath),
+                    },
+                },
+        };
+        File.WriteAllText(manifestPath,
+            JsonSerializer.Serialize(manifest, new JsonSerializerOptions { WriteIndented = true }) + "\n",
+            new UTF8Encoding(false));
+    }
+
     /// <summary>
-    /// Positioned interactions from both overworlds (groups 0 and 1) and from
-    /// every present interior reachable from a group-0 warp (group 2). This is
-    /// deliberately a stable plan, not a function of which command runs.
+    /// Positioned interactions from every game overworld and from every
+    /// present interior reachable from a group-0 warp. This is deliberately a
+    /// stable plan, not a function of which command runs.
     /// </summary>
     public static IReadOnlyList<(int Id, int SubId)> CollectInteractions(
-        RoomObjectStreams streams, OracleWarpData warps)
+        RoomObjectStreams streams, OracleWarpData warps, string game)
     {
         var ids = new SortedSet<(int, int)>();
-        for (var room = 0; room < 256; room++)
-            AddRoom(streams, 0, room, ids);
-
-        for (var room = 0; room < 256; room++)
-            AddRoom(streams, 1, room, ids);
+        foreach (var group in OracleGameConfig.OverworldGroups(game))
+            for (var room = 0; room < 256; room++)
+                AddRoom(streams, group, room, ids);
 
         foreach (var room in InteriorRooms(warps))
-            AddRoom(streams, 2, room, ids);
+            AddRoom(streams, OracleGameConfig.InteriorGroup(game), room, ids);
 
         return ids.ToArray();
     }

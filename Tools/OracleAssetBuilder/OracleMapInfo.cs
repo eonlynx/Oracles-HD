@@ -16,9 +16,11 @@ public sealed record OracleMapInfo(
     int Room,
     int Floor,
     int Dungeon,
-    string Camera)
+    string Camera,
+    IReadOnlyList<RoomEntryEffect> RoomEffects)
 {
-    public static OracleMapInfo Overworld(string game, int group, int grid)
+    public static OracleMapInfo Overworld(string game, int group, int grid,
+        IReadOnlyList<RoomEntryEffect>? roomEffects = null)
     {
         return new OracleMapInfo(
             game, group,
@@ -26,11 +28,13 @@ public sealed record OracleMapInfo(
             "overworld",
             10, 8, grid, grid,
             -1, -1, -1,
-            "follow");
+            "follow",
+            roomEffects ?? Array.Empty<RoomEntryEffect>());
     }
 
     public static OracleMapInfo SingleRoom(string game, int group, int room,
-        int roomWidth, int roomHeight, string kind, string camera)
+        int roomWidth, int roomHeight, string kind, string camera,
+        IReadOnlyList<RoomEntryEffect>? roomEffects = null)
     {
         return new OracleMapInfo(
             game, group,
@@ -39,6 +43,7 @@ public sealed record OracleMapInfo(
             roomWidth, roomHeight,
             0, 0,
             room, -1, -1,
-            camera);
+            camera,
+            roomEffects ?? Array.Empty<RoomEntryEffect>());
     }
 }

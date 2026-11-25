@@ -54,7 +54,7 @@ namespace ProjectZ.InGame.GameObjects.Things
             _anchorX = posX;
             _anchorY = posY;
 
-            if (!IsPortalActive(subId))
+            if (!Game1.OracleProfile.IsPortalActive(subId, OracleFlagState.Current))
             {
                 IsDead = true;
                 return;
@@ -77,26 +77,6 @@ namespace ProjectZ.InGame.GameObjects.Things
             _sprite = new CSprite(_loaded[0], EntityPosition);
             AddComponent(DrawComponent.Index, new DrawCSpriteComponent(_sprite, layer));
             AddComponent(UpdateComponent.Index, new UpdateComponent(Update));
-        }
-
-        /// <summary>
-        /// INTERAC_TIMEPORTAL_SPAWNER state 0: subid 1 is open until the Maku
-        /// Tree is saved; subid 2 is open until the Seed Satchel is obtained
-        /// (this dev build has no satchel, so it stays open). Ordinary subid 0
-        /// portals wait for the Tune of Echoes and its room flag. Bit 7 marks a
-        /// portal created by a timewarp, which is always open.
-        /// </summary>
-        private static bool IsPortalActive(int subId)
-        {
-            if ((subId & 0x80) != 0)
-                return true;
-
-            return (subId & 0x0F) switch
-            {
-                1 => !OracleFlagState.Get(OracleFlagState.MakuTreeSaved),
-                2 => true,
-                _ => false,
-            };
         }
 
         private void Update()
@@ -160,7 +140,7 @@ namespace ProjectZ.InGame.GameObjects.Things
             if (info == null || !info.IsOverworld)
                 return;
 
-            var nextMap = OracleMapInfo.OverworldMap(info.Game, info.Group ^ 1);
+            var nextMap = OracleGameProfile.For(info.Game).OverworldMap(info.Group ^ 1);
 
             // The native warp destination is a tile position; Link's feet sit on
             // the bottom row of that tile. Using the interaction anchor directly

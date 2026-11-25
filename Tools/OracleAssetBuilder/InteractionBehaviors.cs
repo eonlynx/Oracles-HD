@@ -35,6 +35,7 @@ public sealed class InteractionBehaviors
     private readonly Dictionary<(int Id, int SubId), InteractionBehavior> _behaviors = new();
     private readonly Dictionary<string, int> _paletteHeaders = new(StringComparer.Ordinal);
     private readonly Dictionary<string, int> _globalFlags = new(StringComparer.Ordinal);
+    private readonly List<string> _sourcePaths = new();
 
     private static readonly Regex TopLabelRegex = new(
         @"^(?<label>[A-Za-z_][A-Za-z0-9_]*):\s*$", RegexOptions.Compiled);
@@ -55,8 +56,12 @@ public sealed class InteractionBehaviors
 
     public InteractionBehaviors(OracleRepo repo)
     {
-        LoadGlobalFlags(Path.Combine(repo.Root, "constants", "common", "globalFlags.s"));
-        LoadPaletteHeaders(Path.Combine(repo.DataDir, "paletteHeaders.s"));
+        var globalFlagsPath = Path.Combine(repo.Root, "constants", "common", "globalFlags.s");
+        var paletteHeadersPath = Path.Combine(repo.DataDir, "paletteHeaders.s");
+        LoadGlobalFlags(globalFlagsPath, repo.Game);
+        LoadPaletteHeaders(paletteHeadersPath);
+        _sourcePaths.Add(globalFlagsPath);
+        _sourcePaths.Add(paletteHeadersPath);
 
         foreach (var root in new[]
                  {
@@ -66,9 +71,26 @@ public sealed class InteractionBehaviors
         {
             if (!Directory.Exists(root))
                 continue;
-            foreach (var file in Directory.EnumerateFiles(root, "*.s"))
+            foreach (var file in Directory.EnumerateFiles(root, "*.s").OrderBy(p => p, StringComparer.Ordinal))
+            {
+                _sourcePaths.Add(file);
                 ParseFile(file);
+            }
         }
+    }
+
+    /// <summary>Sorted source inputs used by this parser (for the generated table manifest).</summary>
+    public IReadOnlyList<string> SourcePaths =>
+        _sourcePaths.Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(path => path, StringComparer.Ordinal)
+            .ToArray();
+
+    public IReadOnlyList<KeyValuePair<(int Id, int SubId), InteractionBehavior>> Snapshot()
+    {
+        return _behaviors
+            .OrderBy(pair => pair.Key.Id)
+            .ThenBy(pair => pair.Key.SubId)
+            .ToArray();
     }
 
     public InteractionBehavior For(int id, int subId)
@@ -78,12 +100,50 @@ public sealed class InteractionBehaviors
             : new InteractionBehavior(false, 0, 0, -1, -1, -1, false, -1);
     }
 
-    private void LoadGlobalFlags(string path)
+    private void LoadGlobalFlags(string path, string game)
     {
         if (!File.Exists(path))
             return;
+
+        var active = true;
+        var stack = new Stack<(bool Parent, bool Cond)>();
         foreach (var raw in File.ReadAllLines(path))
         {
+            var line = raw.Trim();
+            if (line.StartsWith(".ifdef ", StringComparison.Ordinal))
+            {
+                var token = line[".ifdef ".Length..].Trim();
+                var cond = token == "ROM_AGES" ? game == "ages" :
+                    token == "ROM_SEASONS" ? game == "seasons" : false;
+                stack.Push((active, cond));
+                active &= cond;
+                continue;
+            }
+            if (line.StartsWith(".ifndef ", StringComparison.Ordinal))
+            {
+                var token = line[".ifndef ".Length..].Trim();
+                var cond = token == "ROM_AGES" ? game != "ages" :
+                    token == "ROM_SEASONS" ? game != "seasons" : true;
+                stack.Push((active, cond));
+                active &= cond;
+                continue;
+            }
+            if (line.StartsWith(".else", StringComparison.Ordinal) && stack.Count > 0)
+            {
+                var (parent, cond) = stack.Pop();
+                stack.Push((parent, !cond));
+                active = parent && !cond;
+                continue;
+            }
+            if (line.StartsWith(".endif", StringComparison.Ordinal) && stack.Count > 0)
+            {
+                var (parent, _) = stack.Pop();
+                active = parent;
+                continue;
+            }
+            if (!active)
+                continue;
+
             var match = GlobalFlagRegex.Match(raw);
             if (match.Success)
                 _globalFlags.TryAdd(match.Groups["name"].Value, ParseHex(match.Groups["value"].Value));

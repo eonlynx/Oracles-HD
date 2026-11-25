@@ -83,12 +83,11 @@ Layout aliases are resolved through `tilesetLayoutGroupXX`: layout `$20` uses
 - BG palette **0** is the engine common palette `paletteData48e0`
   (see `ooa-godot` `BackgroundPaletteState`). Slot 1 is the textbox palette.
 - Past cliffs: when the tileset has `TILESETFLAG_PAST`, collision mode 0 and
-  the room is not `$38`, every attribute palette 6 in metatiles `$40..$ff`
+  the room is not `$38`, every attribute palette 6 in metatiles `$40..$7f`
   becomes 0 (`setPastCliffPalettesToRed`).
-- Maku Tree scene: `makuTree.s` loads `PALH_8f` (BG 2-7 from
-  `paletteData4500`) before the interaction runs. Room `0:$38` therefore uses
-  `$8f`, not the tileset palette `$30`; this is what restores the sign/flower
-  colours on the right side.
+- Maku Tree scene: rooms use their tileset palette (`$30` for `0:$38`, including
+  the pink flowers). `makuTree.s` loads `PALH_8f` only for the disappearance
+  cutscene; it must not be applied statically.
 
 ## 5. `.map` format
 
@@ -136,6 +135,20 @@ including houses/caves of 160x128 and joined dungeon floors, matching DX-HD.
 derived from map size. `Map.CameraTarget` is the existing DX-HD mechanism for
 that explicit case. The importer is the only writer of this header; the runtime
 only reads the already-converted values.
+
+### 5.0.1 Room-entry effects
+
+```
+#oracle-room-effects v1
+<count>
+<group>;<room>;<handler> x count
+```
+
+Rows come from `roomSpecificCode.s` group tables. `handler` is the native jump
+index (0x04/0x05/0x08/0x09/0x0a/0x0b/0x0c are the supported room-wide effects;
+others are explicit no-ops until their owners land). `OracleRoomRuntime` applies
+the rows for the current `(group, room)` on `MapLoaded`; code-hosted events
+(e.g. Ralph/EnterPast) are registered separately.
 
 ### 5.1 Collision
 
@@ -289,13 +302,16 @@ carried on `oracleSprite`:
 - `roomFlagMask=0x80`, `roomFlagValue=0`: `obj_BeforeEvent` branch.
 - `roomFlagMask=0x80`, `roomFlagValue=0x80`: `obj_AfterEvent` branch.
 
-The runtime evaluates these in `OracleFlagState.IsVisible`. The dev entry can
-set flags with `--flag FINISHEDGAME`, `--room-state N` and `--room-flags N`.
+The runtime evaluates these in `OracleSessionState.IsVisible` (through the
+`OracleFlagState` dev facade). The dev entry can set flags with `--flag
+FINISHEDGAME`, `--room-state N` and `--room-flags N`; `--room-flags` applies to
+the next entered room only.
 
-`collisionRadius` follows `ooa-godot` `NpcCharacter` (`CollisionRadius=6`, a
-12x12 blocking box). It defaults to 6 for ordinary NPCs/actors and is 0 for the
-Maku eyes, flame, flower and tree decoration. The runtime adds a
-`BoxCollisionComponent` only when the radius is positive.
+`solidTile`, `radiusY` and `radiusX` are source-derived per interaction:
+`objectMarkSolidPosition`/`wRoomCollisions` mark a 16x16 tile box;
+`objectSetCollideRadius/Radii` set explicit Y/X radii; otherwise there is no
+collision. The box is centred on the interaction anchor and clamped to
+`EntitySize`.
 
 ## 6. Atlas and manifest
 
@@ -322,9 +338,24 @@ Data/Map Objects/oracle_<game>_entities.atlas
 - The interaction anchor is the centre of a 16x16 object cell
   (`ooa-godot` `SpriteBounds`). The atlas offset is
   `rawOamMinX - 8, rawOamMinY - 16`; the map object stores that offset.
-- The same plan (all positioned group-0 interactions plus the group-2 interior
-  set) is used by both `overworld` and `interiors`, so either command produces
-  the same atlas.
+- The same plan (positioned interactions for every configured overworld group
+  plus the interiors reachable from a group-0 warp) is used by both `overworld`
+  and `interiors`, so either command produces the same atlas.
+
+### 6.2 Interaction behaviour table
+
+`Data/Map Objects/oracle_<game>_interaction_behaviors.tsv` is a sorted,
+schema-stable projection of `InteractionBehaviors`:
+
+```
+id  subid  solid  radius_y  radius_x  requires_flag  forbidden_flag
+palette_header  time_warp  entry_direction
+```
+
+`oracle_<game>_interaction_behaviors.manifest.json` records the parsed source
+files (SHA-256) and the table hash. The TSV is generated/gitignored; the manifest
+is committed. The runtime still consumes the per-object `.map` fields, so this
+table is the audit/tooling contract for scripts/enemies.
 - Entity atlases are gitignored; their SHA-256 is in the manifest.
 
 ## 7. Room inclusion in the overworld grid

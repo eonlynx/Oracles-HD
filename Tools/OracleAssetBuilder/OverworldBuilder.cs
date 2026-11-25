@@ -185,7 +185,8 @@ public sealed class OverworldBuilder
         atlas.SavePng(tilesetPath);
 
         DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap,
-            placements, mapObjects, OracleMapInfo.Overworld(_content.Repo.Game, group, grid));
+            placements, mapObjects, OracleMapInfo.Overworld(_content.Repo.Game, group, grid,
+                _content.GetRoomEntryEffects(group)));
 
         foreach (var warning in warnings)
             Console.WriteLine($"  warning: {warning}");
@@ -381,7 +382,9 @@ public sealed class OverworldBuilder
                     mapPath, tilesetPath, previewPath,
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".png"),
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".atlas"),
+                    EntityAtlas.BehaviorTablePath(_outDir, _content.Repo.Game),
                 }
+                .Where(File.Exists)
                 .OrderBy(p => p, StringComparer.Ordinal)
                 .Select(p => new
                 {

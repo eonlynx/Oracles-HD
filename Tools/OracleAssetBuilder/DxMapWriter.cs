@@ -76,6 +76,14 @@ public static class DxMapWriter
             writer.WriteLine($"camera={mapInfo.Camera}");
         }
 
+        if (mapInfo != null && mapInfo.RoomEffects.Count > 0)
+        {
+            writer.WriteLine("#oracle-room-effects v1");
+            writer.WriteLine(mapInfo.RoomEffects.Count);
+            foreach (var effect in mapInfo.RoomEffects)
+                writer.WriteLine($"{effect.Group};{effect.Room};{effect.Handler}");
+        }
+
         if (collision != null)
             WriteByteMap(writer, "#oracle-collision v1", collision);
 

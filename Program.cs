@@ -11,6 +11,10 @@ namespace ProjectZ
         {
             var editorMode = false;
             var loadFirstSave = false;
+            int? roomArg = null;
+            string? mapArg = null;
+            var positionExplicit = false;
+            var flagArgs = new System.Collections.Generic.List<string>();
 
             for (var i = 0; i < args.Length; i++)
             {
@@ -21,22 +25,24 @@ namespace ProjectZ
                     loadFirstSave = true;
                 else if (arg == "oracle")
                     Game1.OracleOverworld = true;
+                else if (arg == "--game" && i + 1 < args.Length)
+                {
+                    Game1.OracleGame = args[++i].Trim().ToLowerInvariant();
+                    _ = ProjectZ.InGame.Map.OracleGameProfile.For(Game1.OracleGame);
+                }
                 else if (arg == "--room" && i + 1 < args.Length)
                 {
-                    // Development entry: boot directly into a generated present
-                    // interior (group 2), e.g. --room e7.
+                    // Development entry: boot a generated interior, e.g. --room e7.
                     var value = args[++i].TrimStart('$');
                     if (value.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
                         value = value[2..];
-                    var room = Convert.ToInt32(value, 16);
-                    Game1.OracleStartMap = $"oracle_ages_g2_r{room:x2}.map";
-                    Game1.OracleStartPosition = new Microsoft.Xna.Framework.Vector2(80, 120);
+                    roomArg = Convert.ToInt32(value, 16);
                 }
                 else if (arg == "--map" && i + 1 < args.Length)
                 {
                     // Development entry: boot a generated Oracle map by name,
                     // e.g. --map oracle_ages_g1_overworld.map.
-                    Game1.OracleStartMap = args[++i];
+                    mapArg = args[++i];
                 }
                 else if (arg == "--pos" && i + 1 < args.Length)
                 {
@@ -44,14 +50,40 @@ namespace ProjectZ
                     if (parts.Length == 2 &&
                         float.TryParse(parts[0], out var x) &&
                         float.TryParse(parts[1], out var y))
+                    {
                         Game1.OracleStartPosition = new Microsoft.Xna.Framework.Vector2(x, y);
+                        positionExplicit = true;
+                    }
                 }
                 else if (arg == "--flag" && i + 1 < args.Length)
-                    Game1.OracleDevFlags.Add(ParseFlag(args[++i]));
+                    flagArgs.Add(args[++i]);
                 else if (arg == "--room-state" && i + 1 < args.Length)
                     Game1.OracleRoomStateModifier = ParseHex(args[++i]);
                 else if (arg == "--room-flags" && i + 1 < args.Length)
+                {
                     Game1.OracleRoomFlags = ParseHex(args[++i]);
+                    Game1.OracleRoomFlagsSet = true;
+                }
+            }
+
+            if (Game1.OracleOverworld)
+            {
+                foreach (var flag in flagArgs)
+                    Game1.OracleDevFlags.Add(Game1.OracleProfile.ParseFlag(flag));
+
+                if (mapArg != null)
+                    Game1.OracleStartMap = mapArg;
+                else if (roomArg is int room)
+                {
+                    Game1.OracleStartMap = Game1.OracleProfile.InteriorMap(room);
+                    if (!positionExplicit)
+                        Game1.OracleStartPosition = new Microsoft.Xna.Framework.Vector2(80, 120);
+                }
+                else
+                {
+                    Game1.OracleStartMap = Game1.OracleProfile.OverworldMap(
+                        Game1.OracleProfile.OverworldGroups[0]);
+                }
             }
 
             try
@@ -64,16 +96,6 @@ namespace ProjectZ
                MessageBox.Show(exception.StackTrace, exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                throw;
             }
-        }
-
-        private static int ParseFlag(string value)
-        {
-            return value.ToUpperInvariant() switch
-            {
-                "FINISHEDGAME" => OracleFlagState.FinishedGame,
-                "INTRO_DONE" => OracleFlagState.IntroDone,
-                _ => ParseHex(value),
-            };
         }
 
         private static int ParseHex(string value)

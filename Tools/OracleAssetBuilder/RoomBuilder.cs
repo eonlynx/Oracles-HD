@@ -128,7 +128,7 @@ public sealed class RoomBuilder
         // future puzzle can set Map.CameraTarget explicitly.
         var camera = "follow";
         var mapInfo = OracleMapInfo.SingleRoom(_content.Repo.Game, group, room,
-            width, height, kind, camera);
+            width, height, kind, camera, _content.GetRoomEntryEffects(group));
 
         DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, objects, mapInfo);
 
@@ -217,6 +217,7 @@ public sealed class RoomBuilder
                     mapPath, tilesetPath, previewPath,
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".png"),
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".atlas"),
+                    EntityAtlas.BehaviorTablePath(_outDir, _content.Repo.Game),
                 }
                 .Where(File.Exists)
                 .OrderBy(p => p, StringComparer.Ordinal)

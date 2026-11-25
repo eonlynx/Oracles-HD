@@ -1,10 +1,8 @@
 using System;
-using System.Globalization;
 using Microsoft.Xna.Framework;
 using ProjectZ.InGame.GameObjects.Base;
 using ProjectZ.InGame.GameObjects.Base.CObjects;
 using ProjectZ.InGame.GameObjects.Base.Components;
-using ProjectZ.InGame.Map;
 using ProjectZ.InGame.SaveLoad;
 using ProjectZ.InGame.Things;
 
@@ -45,10 +43,11 @@ namespace ProjectZ.InGame.GameObjects.Things
             }
 
             // One-shot room-entry actors (ralph.s:@initSubid0d) delete themselves
-            // unless Link entered from the direction the source checks.
+            // unless Link entered from the direction the source checks. The
+            // direction comes from the Oracle room lifecycle, not from a
+            // per-object rule.
             if (requiresEntryDirection >= 0 &&
-                MapManager.ObjLink != null &&
-                MapManager.ObjLink.DirectionEntry != requiresEntryDirection)
+                OracleFlagState.EntryDirection != requiresEntryDirection)
             {
                 IsDead = true;
                 return;

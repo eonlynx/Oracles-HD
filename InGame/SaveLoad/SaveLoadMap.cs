@@ -284,6 +284,23 @@ namespace ProjectZ.InGame.SaveLoad
                         index = ReadOracleMapInfo(lines, index + 1, map);
                         break;
 
+                    case "#oracle-room-effects v1":
+                        index++;
+                        var effectCount = Convert.ToInt32(lines[index++]);
+                        for (var i = 0; i < effectCount; i++)
+                        {
+                            var parts = lines[index++].Split(';');
+                            if (parts.Length != 3 || map.OracleInfo == null)
+                                continue;
+                            map.OracleInfo.RoomEffects.Add(new OracleRoomEffectInfo
+                            {
+                                Group = Convert.ToInt32(parts[0]),
+                                Room = Convert.ToInt32(parts[1]),
+                                Handler = Convert.ToInt32(parts[2]),
+                            });
+                        }
+                        break;
+
                     case "#oracle-collision v1":
                         map.CollisionMap = ReadByteMap(lines, ref index);
                         break;

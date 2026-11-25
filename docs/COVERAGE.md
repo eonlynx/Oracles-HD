@@ -10,11 +10,12 @@ a system is implemented.
 | Area | Source inventory | Implemented | Notes |
 |---|---|---|---|
 | Overworld rooms (present) | 196 | 196 generated | Group 0, 140x112, collisions/terrain/animations. |
-| Overworld rooms (past) | 196 | 196 generated | Group 1, 140x112, past cliffs/collisions/terrain/animations; group-specific room objects. |
+| Overworld rooms (past) | 196 | 196 generated | Group 1, 140x112, past cliffs (`$40..$7f`, room `$38` excluded), collisions/terrain/animations; group-specific room objects. Past `1:$38` keeps teal Maku water. |
 | Present interiors / underwater (group 2) | 256 room slots | 22 maps | Reachable from group-0 warps; 10x8; group 3 not generated. |
 | Dungeon rooms | groups 4/5 | 5 sample rooms | No floor layouts; 10x8 / 15x11 storage. |
 | Enemies / bosses (files) | 37 Ages + 71 common = 108 | 0 | Bosses are included in these files. |
-| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | source-derived, 150+ placements | Positioned interactions with default animation; collision/flags/palette/entry direction parsed from each interaction's code. Maku `$87` renders/blinks. Scripts and facing pending. |
+| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | source-derived, 150+ placements | Positioned interactions with default animation; collision/flags/palette/entry direction parsed from each interaction's code and emitted as `interaction_behaviors.tsv` + manifest. Maku `$87` renders/blinks. Scripts and facing pending. |
+| Room-entry effects | `roomSpecificCode.s` | 4 group-0 + 4 group-1 rooms | `OracleRoomRuntime` dispatches supported handlers; Ralph/EnterPast events registered. Music/minimap/respawn owners pending. |
 | Warps / doors | `warpSources.s`, `warpDestinations.s`, `warpTiles.s` | 13 entry + 11 exit | Group-0 tile/pointer/edge sources; present interiors only. |
 | Time portals | `$e1`, `$de`, `timeportalSpawner.s` | 14 spawners + dynamic return | Present <-> past at the same world position through `MapTransitionSystem`. |
 | Items / treasure behaviours (files) | 3 Ages + 22 common = 25 | 0 | Treasure IDs are `$63` entries in `treasureObjectData` (ROM_DATA_FORMATS section 5.4). |

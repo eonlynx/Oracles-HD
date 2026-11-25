@@ -67,6 +67,8 @@ namespace ProjectZ.InGame.Things
         public int SideBlurRenderTargetHeight => BlurRenderTargetHeight * 2;
 
         public MapManager MapManager = new MapManager();
+        public OracleSessionState OracleSession { get; } = new();
+        public OracleRoomRuntime OracleRooms { get; private set; }
         public OverlayManager InGameOverlay = new OverlayManager();
         public SaveManager SaveManager = new SaveManager();
         public ItemManager ItemManager = new ItemManager();
@@ -175,11 +177,24 @@ namespace ProjectZ.InGame.Things
         public GameManager()
         {
             ResetMusic();
+            OracleFlagState.Use(OracleSession);
 
             GameSystems.Add(typeof(MapTransitionSystem), new MapTransitionSystem(MapManager));
             GameSystems.Add(typeof(GameOverSystem), new GameOverSystem());
             GameSystems.Add(typeof(EndingSystem), new EndingSystem());
             GameSystems.Add(typeof(MapShowSystem), new MapShowSystem());
+
+            var transition = (MapTransitionSystem)GameSystems[typeof(MapTransitionSystem)];
+            transition.MapLoading += map =>
+            {
+                if (OracleRooms != null)
+                    OracleRooms.OnMapLoading(map);
+            };
+            transition.MapLoaded += map =>
+            {
+                if (OracleRooms != null)
+                    OracleRooms.OnMapLoaded(map);
+            };
         }
 
         public void Load(ContentManager content)
@@ -1406,8 +1421,11 @@ namespace ProjectZ.InGame.Things
 
             // load the map (Oracle development entry loads the generated overworld)
             var oracle = Game1.OracleOverworld;
-            OracleFlagState.Reset(Game1.OracleDevFlags, Game1.OracleRoomStateModifier);
-            OracleFlagState.RoomFlags = (byte)Game1.OracleRoomFlags;
+            OracleSession.Reset(Game1.OracleDevFlags, Game1.OracleRoomStateModifier,
+                Game1.OracleProfile.IntroFlag);
+            OracleSession.PendingRoomFlags = Game1.OracleRoomFlagsSet ? Game1.OracleRoomFlags : -1;
+            if (oracle)
+                OracleRooms = new OracleRoomRuntime(OracleSession, Game1.OracleProfile);
             var startPosition = oracle
                 ? Game1.OracleStartPosition ??
                   new Vector2(9 * Values.FieldWidth + Values.FieldWidth / 2f,

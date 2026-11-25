@@ -33,8 +33,8 @@ Status legend:
 | VRAM bank 0 + bank 1 | Partial | Both pools load; Ages room layouts tested use bank 1. |
 | Tileset palettes 2-7 | Done | `paletteHeaders.s` + `paletteData.s`. |
 | BG palette 0 | Done | `paletteData48e0` common palette. |
-| Past cliff rewrite (6 -> 0) | Done | `setPastCliffPalettesToRed`, room `$38` excluded. |
-| Overrides (`checkTilesetOverride`) | Done | Companion layout 1/3, Maku saved +2, Jabu +1 (CLI flags). |
+| Past cliff rewrite (6 -> 0) | Done | `setPastCliffPalettesToRed`: metatiles `$40..$7f`, collision mode 0, room byte `$38` excluded (group prefix masked). |
+| Overrides (`checkTilesetOverride`) | Done | Room `$38` and past-cliff exceptions parsed from `loadTilesetData.s`; companion layout 1/3, Maku saved +2, Jabu +1 (CLI flags). |
 | Animated tiles | Done | Frames in the existing atlas; timeline in `.map`; no `.ani`. |
 | Tile collisions | Partial | Quadrant bits + water/hole/lava solid; special collisions (`>=0x10`, bridges/rails) not yet exact. |
 | Terrain (`FieldStates`) | Partial | Water, deep water, lava, grass; swimming/falling not implemented. |
@@ -46,6 +46,10 @@ Status legend:
 | Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Group 1 overworld and time portals are in; past group 3 interiors and dungeons pending. |
 | Time portals (Ages) | Done (first pass) | `$e1` objects whose source calls `interactionBeginTimewarp` become `oracleTimePortal`; group toggles at the same world position through `MapTransitionSystem`, and the arrival portal is spawned after load. |
 | Room palette | Done | Rooms use their tileset `PALH` (e.g. `$30` for `$38`); the `$8f` load belongs to the disappearance cutscene, not the static room. |
+| Session state (`OracleSessionState`) | Done (first pass) | 0x80 global flags, flags per `(group, room)`, room state, entry direction and capture/restore hooks; `OracleFlagState` is a dev facade only. |
+| Room lifecycle (`OracleRoomRuntime`) | Done (first pass) | `MapTransitionSystem.MapLoading` (before objects) and `MapLoaded` (after Link); `OracleRoomEntryEffects` parses `roomSpecificCode.s`; Ralph/EnterPast events registered for Ages. |
+| Game profile (`OracleGameProfile`) | Partial | Ages/Seasons flags (`.ifdef`-aware), portal policy, overworld groups, map naming and `--game`; Seasons content generation is still pending. |
+| Interaction behaviour table | Done | Typed, sorted TSV + manifest (`Data/Map Objects/oracle_<game>_interaction_behaviors.*`), emitted from `InteractionBehaviors`. |
 | Dungeon floor layouts | Not started | `dungeonLayouts.s` not parsed; sample rooms only. |
 | Text / dialogue | Not started | LA `.lng` files still used. |
 | Audio (Oracle GBS) | Not started | DX-HD GBS player ready; Oracle `.gbs` not built. |
@@ -91,9 +95,14 @@ Validation artifacts (generated, gitignored): `Data/Maps/Previews/`,
 - The four treetop cutscene rooms (`$e0`,`$e1`,`$e2`,`$f1`, tileset `$25`,
   header `$71`: common + top) render with their red-and-green canopy outline;
   background palette 0 is the shared `paletteData48e0` from `PALH_0f`.
-- One-shot room-entry cutscene actors (e.g. Ralph `$37:$0d`) are hidden unless
-  their source entry condition holds; their scripts/removal flags (e.g. the past
-  villager `$3a:$0d` after flag `$41`) are not implemented yet.
+- The past Maku room `1:$38` keeps its Maku-tree palette: `setPastCliffPalettesToRed`
+  only rewrites metatiles `$40..$7f` and skips room byte `$38`. The teal pond and
+  blue bubbles match the in-game reference; treating `ROOM_AGES_138` as `$138`
+  or rewriting up to `$ff` turned them red.
+- One-shot room-entry cutscene actors (e.g. Ralph `$37:$0d`) are evaluated by
+  `OracleRoomRuntime`; they stay hidden unless their source entry condition
+  holds. Their scripts/removal flags (e.g. the past villager `$3a:$0d` after flag
+  `$41`) still need the command runner.
 - Special tiles whose graphics are loaded by room code may show placeholder
   colours until `roomGfxChanges` is imported.
 - Bridges/rails and other special collisions are treated as free or full-solid
@@ -127,8 +136,9 @@ Estimates are phase-weighted, not line counts:
 
 See `ROADMAP.md` -> "Immediate next tasks". The Phase 3/4 acceptance (enter an
 interior through a warp, see the animated Maku eyes, load first NPCs) is met for
-the present-day slice. Next: past interiors/dungeons, one-shot room-entry
-cutscenes (`RalphPortalEvent`, `EnterPastEvent`), `roomGfxChanges`
-(shops/signs), enemies/parts.
+the present-day slice. Infrastructure for scripts is in: session state, room
+load/enter hooks, room-entry effect table, game profile and typed interaction
+behaviour table. Next: the script engine (`CutsceneCommandCatalog` +
+`CutsceneCommandRunner`), then enemies/parts, dungeons and Seasons content.
 
 Per-content inventory (enemies, NPCs, items, scripts): `COVERAGE.md`.

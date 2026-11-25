@@ -208,6 +208,10 @@
   "skippedRoomIds": [],
   "inputs": [
     {
+      "path": "code/ages/roomSpecificCode.s",
+      "sha256": "756811917cfb79460bda1bd7236a937f54d556a9606159982372bf383bb4b48d"
+    },
+    {
       "path": "data/ages/interactionAnimations.s",
       "sha256": "362fe60cf3c5f4613430f4596d330a19947890fe2e69cfad1da329a3229e5d3e"
     },
@@ -278,16 +282,20 @@
       "sha256": "3bc7ac3d6dffc7d7f9dd097cb789bf905a389b98fb32162c7b651f0d0066c879"
     },
     {
+      "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
+      "sha256": "80d56093dbbaca445edfdcc86def27b31005c7e063008e72f9927ae8ed4b6ef0"
+    },
+    {
       "path": "Previews/oracle_ages_g1_overworld.png",
-      "sha256": "12301e21c5b31652aa234d9d4facc7414b7afcbe25f1f52504e0a78254bb935e"
+      "sha256": "092f6b3a8464a364b201c037cb67eac499d25777aeb720f1c71012ef38b03132"
     },
     {
       "path": "Tilesets/oracle_ages_g1_overworld.png",
-      "sha256": "c29bc47b3476a60e424785cd6e2601ba982fec8b04d8b55843c7f5eedbce38fb"
+      "sha256": "3d1e43cd0cef9d464cb2000f95f03acda9e0e1083b7e184cb81d06bcbfc53754"
     },
     {
       "path": "oracle_ages_g1_overworld.map",
-      "sha256": "0100633079c778403bb437c5887c48fa1755aec71e4287b12556f2534faedeec"
+      "sha256": "991928aa0fa2f853dcc754e16428b52bc7e628427db605bb74e76c4f2c9c51df"
     }
   ]
 }

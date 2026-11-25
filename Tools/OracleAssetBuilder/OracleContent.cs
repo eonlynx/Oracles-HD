@@ -39,6 +39,7 @@ public sealed class OracleContent
     private readonly int _makuOverrideRoom;
     private readonly int _makuOverrideIncrement;
     private readonly int _pastCliffExcludedRoom;
+    private readonly IReadOnlyList<RoomEntryEffect> _roomEntryEffects;
 
     public OracleContent(OracleRepo repo, int group)
     {
@@ -64,10 +65,14 @@ public sealed class OracleContent
 
         _tilesets = AsmParser.ParseTilesetData(Path.Combine(repo.DataDir, "tilesets.s"), symbols);
 
-        var overrideRules = ParseTilesetOverrideRules(Path.Combine(repo.Root, "code", "ages", "loadTilesetData.s"));
-        _makuOverrideRoom = overrideRules.MakuRoom;
-        _makuOverrideIncrement = overrideRules.MakuIncrement;
-        _pastCliffExcludedRoom = overrideRules.PastCliffExcludedRoom;
+        var overrideRules = repo.Game == "ages"
+            ? ParseTilesetOverrideRules(Path.Combine(repo.Root, "code", "ages", "loadTilesetData.s"))
+            : (-1, 0, -1);
+        _makuOverrideRoom = overrideRules.Item1;
+        _makuOverrideIncrement = overrideRules.Item2;
+        _pastCliffExcludedRoom = overrideRules.Item3;
+        _roomEntryEffects = RoomEntryEffects.Parse(
+            Path.Combine(repo.Root, "code", repo.Game, "roomSpecificCode.s"));
     }
 
     private static (int MakuRoom, int MakuIncrement, int PastCliffExcludedRoom)
@@ -93,7 +98,7 @@ public sealed class OracleContent
             {
                 var room = System.Text.RegularExpressions.Regex.Match(line, @"cp\s+<ROOM_AGES_([0-9a-fA-F]+)");
                 if (room.Success)
-                    makuRoom = Convert.ToInt32(room.Groups[1].Value, 16);
+                    makuRoom = Convert.ToInt32(room.Groups[1].Value, 16) & 0xFF;
                 if (line.Contains("inc (hl)", StringComparison.Ordinal))
                     makuIncrement++;
             }
@@ -102,7 +107,7 @@ public sealed class OracleContent
                 var room = System.Text.RegularExpressions.Regex.Match(line, @"cp\s+<ROOM_AGES_([0-9a-fA-F]+)");
                 if (room.Success)
                 {
-                    pastCliffRoom = Convert.ToInt32(room.Groups[1].Value, 16);
+                    pastCliffRoom = Convert.ToInt32(room.Groups[1].Value, 16) & 0xFF;
                     block = "";
                 }
             }
@@ -419,6 +424,7 @@ public sealed class OracleContent
         Add(Path.Combine(Repo.DataDir, "interactionOamData.s"));
         Add(Path.Combine(Repo.DataDir, "objectGfxHeaders.s"));
         Add(Path.Combine(Repo.DataDir, "paletteData.s"));
+        Add(Path.Combine(Repo.Root, "code", Repo.Game, "roomSpecificCode.s"));
 
         var objectsDir = Path.Combine(Repo.Root, "objects", Repo.Game);
         foreach (var file in new[]
@@ -431,8 +437,12 @@ public sealed class OracleContent
         return paths;
     }
 
-    public TilesetRenderer CreateRenderer(int tilesetId, int? backgroundPaletteHeader, int room, OracleOptions options)
+    public IReadOnlyList<RoomEntryEffect> GetRoomEntryEffects(int group)
     {
+        return _roomEntryEffects.Where(effect => effect.Group == group).ToArray();
+    }
+
+    public TilesetRenderer CreateRenderer(int tilesetId, int? backgroundPaletteHeader, int room, OracleOptions options)    {
         var info = GetTileset(tilesetId);
         var renderer = new TilesetRenderer(tilesetId)
         {

@@ -26,3 +26,4 @@ Data/Maps/Tilesets/oracle_*.png
 Data/Maps/Previews/
 Data/Map Objects/oracle_*.png
 Data/Map Objects/oracle_*.atlas
+Data/Map Objects/oracle_*_interaction_behaviors.tsv
