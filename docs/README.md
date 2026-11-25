@@ -141,7 +141,7 @@ plans.
 ## Current snapshot
 
 - Base: Links-Awakening-DX-HD v2.0.6 (`2e68849`).
-- Latest implementation commit: `1414941` (present interiors, warps, Oracle
+- Latest implementation commit: `3540239` (present interiors, warps, Oracle
   object pipeline, animated Maku eyes).
 - Target: `net8.0-windows` / MonoGame 3.8.1.303 WindowsDX; 0 build errors.
 - Runtime entry: `Oracles-HD.exe oracle` (development switch).
