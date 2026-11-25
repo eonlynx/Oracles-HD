@@ -275,15 +275,15 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_entities.atlas",
-      "sha256": "737d0af28b64de5bb329383c5f5743167c603a12b35770b03d175c4a03982d2e"
+      "sha256": "9124680ed15d4ed679fbb162b8c26e4fac466d4f7440afd4f4f8064a48427c07"
     },
     {
       "path": "../Map Objects/oracle_ages_entities.png",
-      "sha256": "c75229165a0948f6f350a11cd513128a766b03a74a3c949d9b0125dd90d6053e"
+      "sha256": "e226ea3a9ce54be618c1d6f15f91cb21eeba2bfecbd968df600d9a41803520b1"
     },
     {
       "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
-      "sha256": "2d3777152e662e60449e7bb766a0aeae4eb844cf9f95593faf0b398c595af565"
+      "sha256": "da657e0c4342a3d8f17eeb47eed2916695a5ac7bd097d382073aa6109d7c9f78"
     },
     {
       "path": "Previews/oracle_ages_g0_overworld.png",
@@ -303,7 +303,7 @@
     },
     {
       "path": "oracle_ages_g0_overworld.map",
-      "sha256": "58fac68315b0db8d871932a91b34276f1d0e5ab214cf49b9b3138741cc993b56"
+      "sha256": "ca1a53b5b0a818b7b56452157d04a3d462790919b7fd9eb2a6b416d70d7a887a"
     }
   ]
 }

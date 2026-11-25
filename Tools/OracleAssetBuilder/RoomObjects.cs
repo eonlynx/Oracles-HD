@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace Oracles.Tools.AssetBuilder;
 
 public sealed record RoomInteraction(
-    int Id, int SubId, int X, int Y,
+    int Id, int SubId, int X, int Y, int Var03,
     byte ConditionMask, byte RoomFlagMask, byte RoomFlagValue, string Source);
 
 public sealed record RoomEnemy(
@@ -93,6 +93,28 @@ public sealed class RoomObjectStreams
         var visited = new HashSet<string>(StringComparer.Ordinal);
         ParseBlock(label, block, interactions, enemies, parts, items, visited,
             conditionMask: 0, roomFlagMask: 0, roomFlagValue: 0);
+
+        // A parent initializer can own a child object-data block. The child
+        // rows keep their own visibility rules, so this is only placement.
+        foreach (var parent in interactions.ToArray())
+        {
+            var childGroup = InteractionVisibility.ChildGroup(
+                parent.Id, parent.SubId, parent.Var03);
+            if (childGroup == null || !_blocks.TryGetValue(childGroup, out var childBlock))
+                continue;
+            var childInteractions = new List<RoomInteraction>();
+            var childEnemies = new List<RoomEnemy>();
+            var childParts = new List<RoomPart>();
+            var childItems = new List<RoomItem>();
+            ParseBlock(childGroup, childBlock, childInteractions, childEnemies, childParts,
+                childItems, new HashSet<string>(StringComparer.Ordinal),
+                parent.ConditionMask, parent.RoomFlagMask, parent.RoomFlagValue);
+            interactions.AddRange(childInteractions);
+            enemies.AddRange(childEnemies);
+            parts.AddRange(childParts);
+            items.AddRange(childItems);
+        }
+
         return new RoomObjectData(interactions, enemies, parts, items,
             interactions.Count(interaction => interaction.ConditionMask != 0));
     }
@@ -159,6 +181,11 @@ public sealed class RoomObjectStreams
                 var values = ParseArguments(interaction.Groups["args"].Value);
                 if (values.Count >= 4)
                     interactions.Add(new RoomInteraction(values[0], values[1], values[3], values[2],
+                        values.Count >= 5 ? values[4] : 0,
+                        conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}"));
+                else if (values.Count >= 2)
+                    interactions.Add(new RoomInteraction(values[0], values[1], -1, -1,
+                        values.Count >= 3 ? values[2] : 0,
                         conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}"));
                 continue;
             }
@@ -351,3 +378,4 @@ public sealed class RoomObjectStreams
     private static int ParseHex(string value) =>
         int.Parse(value, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
 }
+

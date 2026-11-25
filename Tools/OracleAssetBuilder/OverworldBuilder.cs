@@ -221,6 +221,8 @@ public sealed class OverworldBuilder
 
         foreach (var interaction in roomData.Interactions)
         {
+            if (interaction.X < 0 || interaction.Y < 0)
+                continue;
             if (interaction.Id >= 0x200 ||
                 !spritePlan.TryGetValue((interaction.Id, interaction.SubId), out var sprite))
                 continue;
@@ -233,7 +235,7 @@ public sealed class OverworldBuilder
                 mapObjects.Add(new MapObjectPlacement("oracleTimePortal", new[]
                 {
                     (gridX * roomWidth * 16 + interaction.X).ToString(),
-                    (gridY * roomHeight * 16 + interaction.Y).ToString(),
+                    (gridY * roomHeight * 16 + interaction.Y + InteractionVisibility.PositionOffsetY(interaction.Id, interaction.SubId, interaction.Var03)).ToString(),
                     string.Join(',', sprite.FrameIds),
                     string.Join(',', sprite.Durations),
                     sprite.OffsetX.ToString(),
@@ -245,10 +247,15 @@ public sealed class OverworldBuilder
                 continue;
             }
 
+            var hasRules = InteractionVisibility.HasRules(
+                interaction.Id, interaction.SubId, interaction.Var03);
+            var requires = hasRules ? -1 : sprite.RequiresFlag;
+            var forbidden = hasRules ? -1 : sprite.ForbiddenFlag;
+
             mapObjects.Add(new MapObjectPlacement("oracleSprite", new[]
             {
                 (gridX * roomWidth * 16 + interaction.X).ToString(),
-                (gridY * roomHeight * 16 + interaction.Y).ToString(),
+                (gridY * roomHeight * 16 + interaction.Y + InteractionVisibility.PositionOffsetY(interaction.Id, interaction.SubId, interaction.Var03)).ToString(),
                 string.Join(',', sprite.FrameIds),
                 string.Join(',', sprite.Durations),
                 sprite.OffsetX.ToString(),
@@ -257,8 +264,9 @@ public sealed class OverworldBuilder
                 sprite.LoopStart.ToString(),
                 sprite.Id.ToString(),
                 sprite.SubId.ToString(),
-                sprite.RequiresFlag.ToString(),
-                sprite.ForbiddenFlag.ToString(),
+                interaction.Var03.ToString(),
+                requires.ToString(),
+                forbidden.ToString(),
                 interaction.ConditionMask.ToString(),
                 interaction.RoomFlagMask.ToString(),
                 interaction.RoomFlagValue.ToString(),
@@ -268,6 +276,9 @@ public sealed class OverworldBuilder
                 sprite.RequiresEntryDirection.ToString(),
             }));
         }
+
+        EnemyAtlas.AddPlacements(mapObjects, _content.Repo, _outDir, roomData,
+            gridX * roomWidth * 16, gridY * roomHeight * 16);
 
         // Warps that leave the stitched overworld for an interior, past
         // interior, or dungeon. Edge warps between overworld groups stay
@@ -454,3 +465,6 @@ public sealed class OverworldBuilder
         File.WriteAllText(path, JsonSerializer.Serialize(manifest, new JsonSerializerOptions { WriteIndented = true }) + "\n");
     }
 }
+
+
+

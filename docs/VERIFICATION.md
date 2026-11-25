@@ -45,7 +45,7 @@ section or the `oracleSprite` durations.
 
 | Ages past interiors (group 3) | 16 maps from group-1 warps, 16 interactions, 4 items | 
 | Ages dungeon tables | 16 dungeons; `dungeons --dungeon 05` = 45 rooms/2 floors, 28 interactions, 67 enemies, 20 parts, 37 items | 
-| Ages entity placements | 1,199 typed rows across groups 0-5 (random enemies marked) |
+| Ages entity placements | 1,199 typed rows across groups 0-5 (random enemies marked) |\n| Dependency audit | `audit --game ages` -> 5,437 condition rows + symbol table; every WRAM/global-flag/object-stream reference has source file and line |\n| Enemy atlas | `oracle_ages_enemies.png/.atlas`; Octorok `$09:00..02` four cardinal animations composed |
 
 ### 2.1 Performance
 
@@ -146,12 +146,12 @@ Phase 3/4 evidence:
 | Time portal present->past | Boot `oracle --pos 1480,431`; step down and back up | Map becomes `oracle_ages_g1_overworld.map` at the same world position; Maku sprout |
 | Time portal past->present | From the arrival portal, step off and back on | Map returns to `oracle_ages_g0_overworld.map`; Maku Tree visible |
 | Past Maku colours | Space `1:$38` after the portal | Teal pond and blue bubbles; `$38` is excluded from `setPastCliffPalettesToRed` |
-| Dungeon map | `oracle --map oracle_ages_g4_ra3.map --pos 80,120` | Loads the generated dungeon map with `kind=dungeon`, group 4, floor/dungeon metadata; no exception |
+| Dungeon map | `oracle --map oracle_ages_g4_ra3.map --pos 80,120` | Loads the generated dungeon map with `kind=dungeon`, group 4, floor/dungeon metadata; no exception |\n| Story-state scene | `oracle --pos 1400,431` (clean pre-intro) vs `--intro-done` | Pre-intro shows `$6b:$01` audience (Nayru/Ralph/bear/animals); later state hides it and uses `$5d:$02`/`$37:$0d`; `$37:$11` waits for `FINISHEDGAME` |\n| Octorok visible | Same Maku approach; inspect upper room | Specific Octorok sprite appears at its source position and animates |
 | Past interior | `oracle --map oracle_ages_g3_r2f.map --pos 80,120` | Loads a generated group-3 interior map |
 | Room lifecycle | Enter `0:$39` from `0:$38` (cross right) vs from another edge | Ralph is presented before the crossing when approaching right; hidden for other entries; the past villager is a different interaction |
 | Behaviour table | Regenerate twice | `oracle_ages_interaction_behaviors.tsv` + manifest are identical; rows include `$37:$0d` entry=1 and `$6b:$15` flag=$14/palette=$c7 |
 | Script table | Regenerate twice | `oracle_ages_scripts.tsv` + `oracle_ages_script_bindings.tsv` and the manifest are identical; bindings include `$37:$0d -> ralphSubid0dScript` and `$3a:$0d -> villagerSubid0dScript` |
-| Ralph cutscene | `ORACLE_SCRIPT_TRACE=1 oracle --map oracle_ages_g0_overworld.map --pos 1424,431 --entry 0`; wait for the overworld trace, hold Right ~1.2 s | Log shows `presentation $37:$0d visible=True prospective dir=1` before `room 0:39 dir 1`; script starts, sets global flag `$40`, deletes Ralph and ends |
+| Ralph cutscene | `ORACLE_SCRIPT_TRACE=1 oracle --map oracle_ages_g0_overworld.map --pos 1424,431 --entry 0 --intro-done`; wait for the overworld trace, hold Right ~1.2 s | Log shows `presentation $37:$0d visible=True prospective dir=1` before `room 0:39 dir 1`; script starts, sets global flag `$40`, deletes Ralph and ends |
 | Past villager cutscene | `ORACLE_SCRIPT_TRACE=1 oracle --map oracle_ages_g1_overworld.map --pos 1480,431 --entry 0` | Script runs `jumpAndWaitUntilLanded`, skips text, moves down/right, sets flag `$41`, deletes the villager and ends |
 | Completed one-shot | Same past map with `--flag ENTER_PAST_DONE` | No script start; the binding's `completed_flag=$41` suppresses presentation and activation |
 | No pop-in | Boot `0:$38`, wait for map load, observe `0:$39` before crossing | Ralph is already drawn in the neighbour room; crossing does not change his visibility |
@@ -187,7 +187,7 @@ Run before each milestone commit:
 - [ ] Continuous room tracking updates `OracleSessionState` on stitched-map crossings; room presentation shows entry-gated actors before the boundary (no pop-in).
 - [ ] `ralphSubid0dScript` runs on right entry, sets `$40`, deletes Ralph and restores input; the completed guard suppresses him afterwards.
 - [ ] `villagerSubid0dScript` runs on past `1:$39`, jumps/lands, moves down/right, sets `$41`, deletes the villager and restores input.
-- [ ] Script command/binding TSV + manifest regenerate deterministically; no generated script TSV is staged.\n- [ ] `dungeons --dungeon N` writes dungeon/layout tables + maps; no generated dungeon TSV is staged.\n- [ ] `ORACLE_PERF_TRACE=1` startup and map-load marks recorded; no per-frame presentation scan remains.
+- [ ] Script command/binding TSV + manifest regenerate deterministically; no generated script TSV is staged.\n- [ ] `dungeons --dungeon N` writes dungeon/layout tables + maps; no generated dungeon TSV is staged.\n- [ ] `ORACLE_PERF_TRACE=1` startup and map-load marks recorded; no per-frame presentation scan remains.\n- [ ] `audit --game ages` exports the exhaustive condition/symbol tables; no audit TSV staged.\n- [ ] Clean pre-intro state shows `$6b:$01` audience; `--intro-done` switches to the later bear/Ralph state without cross-room exclusions.
 - [ ] `--game ages --room e7` resolves the generic interior map; `--flag` names use `OracleGameProfile`.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
@@ -229,4 +229,6 @@ Run before each milestone commit:
   ~3k animated cells; measure before optimizing.
 - **Coverage:** a passing check proves the exercised path, not universal
   parity. Record unsupported paths explicitly in `STATUS.md`/`COVERAGE.md`.
+
+
 

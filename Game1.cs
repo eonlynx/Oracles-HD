@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -141,6 +141,7 @@ namespace ProjectZ
         public static string OracleStartMap = "oracle_ages_g0_overworld.map";
         public static Vector2? OracleStartPosition;
         public static int OracleEntryDirection = -1;
+        public static int OracleIntroFlag = -1;
         public static readonly System.Collections.Generic.List<int> OracleDevFlags = new();
         public static int OracleRoomStateModifier;
         public static int OracleRoomFlags;
@@ -997,3 +998,4 @@ namespace ProjectZ
         }
     }
 }
+

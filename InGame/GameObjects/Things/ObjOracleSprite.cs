@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using ProjectZ.InGame.GameObjects.Base;
 using ProjectZ.InGame.GameObjects.Base.CObjects;
 using ProjectZ.InGame.GameObjects.Base.Components;
+using ProjectZ.InGame.Map;
 using ProjectZ.InGame.SaveLoad;
 using ProjectZ.InGame.Things;
 
@@ -17,6 +18,7 @@ namespace ProjectZ.InGame.GameObjects.Things
     {
         public int InteractionId { get; }
         public int SubId { get; }
+        public int Var03 { get; }
         public int RequiresEntryDirection { get; }
 
         // Script-visible actor state. Runtime scripts own these values; the
@@ -45,15 +47,17 @@ namespace ProjectZ.InGame.GameObjects.Things
 
         public ObjOracleSprite(Map.Map map, int posX, int posY, string frames,
             string durations, int offsetX, int offsetY, int layer, int loopStart,
-            int interactionId, int subId, int requiresFlag, int forbiddenFlag, int roomStateMask,
+            int interactionId, int subId, int var03, int requiresFlag, int forbiddenFlag, int roomStateMask,
             int roomFlagMask, int roomFlagValue, bool solidTile, int radiusY, int radiusX,
             int requiresEntryDirection) : base(map)
         {
             InteractionId = interactionId;
             SubId = subId;
+            Var03 = var03;
             RequiresEntryDirection = requiresEntryDirection;
 
-            if (!OracleFlagState.IsVisible(requiresFlag, forbiddenFlag, roomStateMask,
+            if (!OracleVisibilityEvaluator.IsVisible(OracleFlagState.Current,
+                    interactionId, subId, var03, requiresFlag, forbiddenFlag, roomStateMask,
                     roomFlagMask, roomFlagValue))
             {
                 IsDead = true;
@@ -134,3 +138,4 @@ namespace ProjectZ.InGame.GameObjects.Things
         }
     }
 }
+

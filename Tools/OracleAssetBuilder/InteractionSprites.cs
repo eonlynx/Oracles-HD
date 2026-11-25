@@ -15,6 +15,9 @@ public sealed record InteractionAnimation(InteractionFrame[] Frames, int LoopSta
 
 public sealed record InteractionGraphics(int GfxHeader, int TileBase, int Palette, int DefaultAnimation);
 
+public sealed record EnemyDataRow(int GfxHeader, int Collision, string? SubidTable, int Flags);
+public sealed record EnemySubidRow(int Extra, int Flags);
+
 public sealed record ComposedSprite(RgbaImage Image, int OffsetX, int OffsetY);
 
 /// <summary>
@@ -44,12 +47,13 @@ public sealed class InteractionSprites
         @"\.dw\s+(?<label>[A-Za-z_][A-Za-z0-9_]*)", RegexOptions.Compiled);
 
     private static readonly Regex AnimationLabelRegex = new(
-        @"^interactionAnimation(?<id>[0-9a-fA-F]+)(?<loop>Loop)?:\s*$", RegexOptions.Compiled);
+        @"^(?:interaction|enemy)Animation(?<id>[0-9a-fA-F]+)(?<loop>Loop)?:\s*$", RegexOptions.Compiled);
 
     private static readonly Regex HexByteRegex = new(
         @"\$(?<value>[0-9a-fA-F]{1,2})", RegexOptions.Compiled);
 
     private readonly string _gfxDir;
+    private readonly string _gfxCommonDir;
     private readonly Dictionary<int, InteractionGraphics> _inlineData = new();
     private readonly Dictionary<string, List<InteractionGraphics>> _subidData = new(StringComparer.Ordinal);
     private readonly Dictionary<int, string[]> _gfxHeaders = new();
@@ -61,15 +65,21 @@ public sealed class InteractionSprites
     private readonly Dictionary<string, OamBlock[]> _oamBlocks = new(StringComparer.Ordinal);
     private readonly Dictionary<int, SpriteSheet> _sheets = new();
     private readonly Rgba[][] _palettes;
+    private readonly Dictionary<int, EnemyDataRow> _enemyData = new();
+    private readonly Dictionary<string, List<EnemySubidRow>> _enemySubidData = new(StringComparer.Ordinal);
 
     public InteractionSprites(OracleRepo repo)
     {
         _gfxDir = repo.GfxCompressibleDir;
+        _gfxCommonDir = repo.GfxCommonDir;
 
         LoadInteractionData(Path.Combine(repo.DataDir, "interactionData.s"));
         LoadGfxHeaders(Path.Combine(repo.DataDir, "objectGfxHeaders.s"));
+        LoadEnemyData(Path.Combine(repo.DataDir, "enemyData.s"));
         LoadAnimations(Path.Combine(repo.DataDir, "interactionAnimations.s"));
+        LoadAnimations(Path.Combine(repo.DataDir, "enemyAnimations.s"));
         LoadOamBlocks(Path.Combine(repo.DataDir, "interactionOamData.s"));
+        LoadOamBlocks(Path.Combine(repo.DataDir, "enemyOamData.s"));
         _palettes = LoadStandardPalettes(Path.Combine(repo.DataDir, "paletteData.s"));
     }
 
@@ -189,6 +199,50 @@ public sealed class InteractionSprites
         return frames.Length > 0;
     }
 
+    /// <summary>
+    /// Composes an enemy animation using the same OAM pipeline as interactions.
+    /// The synthetic key keeps enemy and interaction id spaces disjoint; the
+    /// actual table labels are resolved from enemyAnimations.s/enemyOamData.s.
+    /// </summary>
+    public bool TryComposeEnemy(int enemyId, int subid, out ComposedSprite[] frames,
+        out int[] durations, out int loopStart)
+    {
+        frames = Array.Empty<ComposedSprite>();
+        durations = Array.Empty<int>();
+        loopStart = 0;
+        if (!TryGetEnemyGraphics(enemyId, subid, out var graphics))
+            return false;
+
+        var key = 0x200 + enemyId;
+        var animationTable = $"enemy{enemyId:x2}Animations";
+        var pointerTable = $"enemy{enemyId:x2}OamDataPointers";
+        if (!_animationTables.TryGetValue(animationTable, out var animations) ||
+            animations.Count == 0 ||
+            !_oamPointerStarts.ContainsKey(pointerTable))
+            return false;
+
+        _inlineData[key] = graphics;
+        _animationTables[$"interaction{key:x}Animations"] = animations;
+        _oamPointerStarts[$"interaction{key:x}OamDataPointers"] =
+            _oamPointerStarts[pointerTable];
+        return TryCompose(key, subid, out frames, out durations, out loopStart);
+    }
+
+    private bool TryGetEnemyGraphics(int enemyId, int subid, out InteractionGraphics graphics)
+    {
+        graphics = default;
+        if (!_enemyData.TryGetValue(enemyId, out var row))
+            return false;
+
+        var flags = row.Flags;
+        if (row.SubidTable != null && _enemySubidData.TryGetValue(row.SubidTable, out var rows) &&
+            rows.Count > 0)
+            flags = rows[Math.Min(subid, rows.Count - 1)].Flags;
+        graphics = new InteractionGraphics(row.GfxHeader,
+            (flags & 0x0f) * 2, (flags >> 4) & 0x07, 0);
+        return graphics.GfxHeader != 0;
+    }
+
     private void DrawBlock(RgbaImage image, SpriteSheet sheet, InteractionGraphics graphics, OamBlock block,
         int originX, int originY, IReadOnlyDictionary<int, Rgba[]>? paletteOverrides)
     {
@@ -268,6 +322,8 @@ public sealed class InteractionSprites
     private SpriteSheet? LoadSheet(string name)
     {
         var path = Path.Combine(_gfxDir, name + ".png");
+        if (!File.Exists(path))
+            path = Path.Combine(_gfxCommonDir, name + ".png");
         if (!File.Exists(path))
             return null;
         var image = Png.LoadIndexed2bpp(path);
@@ -387,6 +443,74 @@ public sealed class InteractionSprites
         }
     }
 
+    private void LoadEnemyData(string path)
+    {
+        if (!File.Exists(path))
+            return;
+
+        var subidTable = (string?)null;
+        var enemyRegex = new Regex(
+            @"^/\*\s*0x(?<id>[0-9a-fA-F]{2})\s*\*/\s*m_EnemyData\s+(?<args>[^;]+)",
+            RegexOptions.Compiled);
+        var subidRegex = new Regex(
+            @"^m_EnemySubidData\s+\$(?<extra>[0-9a-fA-F]+)\s+\$(?<flags>[0-9a-fA-F]+)",
+            RegexOptions.Compiled);
+        var hexRegex = new Regex(@"\$(?<value>[0-9a-fA-F]+)", RegexOptions.Compiled);
+        var enemyId = -1;
+
+        foreach (var raw in File.ReadAllLines(path))
+        {
+            var line = StripComment(raw).Trim();
+            if (line.Length == 0)
+                continue;
+
+            var label = LabelRegex.Match(line);
+            if (label.Success)
+            {
+                var name = label.Groups["label"].Value;
+                if (name.EndsWith("SubidData", StringComparison.Ordinal))
+                    subidTable = name;
+                else
+                    subidTable = null;
+                if (line.StartsWith("m_EnemySubidDataEnd", StringComparison.Ordinal))
+                    subidTable = null;
+                continue;
+            }
+
+            if (line.StartsWith("m_EnemySubidDataEnd", StringComparison.Ordinal))
+            {
+                subidTable = null;
+                continue;
+            }
+
+            var subid = subidRegex.Match(line);
+            if (subid.Success && subidTable != null)
+            {
+                if (!_enemySubidData.TryGetValue(subidTable, out var rows))
+                    _enemySubidData[subidTable] = rows = new List<EnemySubidRow>();
+                rows.Add(new EnemySubidRow(
+                    ParseHex(subid.Groups["extra"].Value),
+                    ParseHex(subid.Groups["flags"].Value)));
+                continue;
+            }
+
+            var enemy = enemyRegex.Match(line);
+            if (!enemy.Success)
+                continue;
+
+            enemyId = ParseHex(enemy.Groups["id"].Value);
+            var args = hexRegex.Matches(enemy.Groups["args"].Value);
+            var values = new List<int>();
+            foreach (Match arg in args)
+                values.Add(ParseHex(arg.Groups["value"].Value));
+            if (values.Count >= 4)
+                _enemyData[enemyId] = new EnemyDataRow(values[0], values[1], null, values[3]);
+            else if (values.Count >= 2)
+                _enemyData[enemyId] = new EnemyDataRow(values[0], values[1],
+                    enemy.Groups["args"].Value.Trim(), 0);
+        }
+    }
+
     private void LoadAnimations(string path)
     {
         var lines = File.ReadAllLines(path);
@@ -403,9 +527,11 @@ public sealed class InteractionSprites
             if (label.Success)
             {
                 currentTable = label.Groups["label"].Value;
-                if (currentTable.StartsWith("interaction", StringComparison.Ordinal) &&
+                if ((currentTable.StartsWith("interaction", StringComparison.Ordinal) ||
+                     currentTable.StartsWith("enemy", StringComparison.Ordinal)) &&
                     currentTable.EndsWith("Animations", StringComparison.Ordinal) &&
-                    currentTable != "interactionAnimationTable")
+                    currentTable != "interactionAnimationTable" &&
+                    currentTable != "enemyAnimationTable")
                 {
                     tableOrder.Add(currentTable);
                     tableValues[currentTable] = new List<string>();
@@ -421,7 +547,8 @@ public sealed class InteractionSprites
                 continue;
 
             var dw = DwRegex.Match(line);
-            if (dw.Success && dw.Groups["label"].Value.StartsWith("interactionAnimation", StringComparison.Ordinal))
+            if (dw.Success && (dw.Groups["label"].Value.StartsWith("interactionAnimation", StringComparison.Ordinal) ||
+                    dw.Groups["label"].Value.StartsWith("enemyAnimation", StringComparison.Ordinal)))
                 tableValues[currentTable].Add(dw.Groups["label"].Value);
         }
 
@@ -446,14 +573,16 @@ public sealed class InteractionSprites
             if (label.Success)
             {
                 var name = label.Groups["label"].Value;
-                if (name.StartsWith("interaction", StringComparison.Ordinal) &&
+                if ((name.StartsWith("interaction", StringComparison.Ordinal) ||
+                     name.StartsWith("enemy", StringComparison.Ordinal)) &&
                     name.EndsWith("OamDataPointers", StringComparison.Ordinal))
                     _oamPointerStarts[name] = _oamPointerStream.Count;
                 continue;
             }
 
             var dw = DwRegex.Match(line);
-            if (dw.Success && dw.Groups["label"].Value.StartsWith("interactionOamData", StringComparison.Ordinal))
+            if (dw.Success && (dw.Groups["label"].Value.StartsWith("interactionOamData", StringComparison.Ordinal) ||
+                dw.Groups["label"].Value.StartsWith("enemyOamData", StringComparison.Ordinal)))
                 _oamPointerStream.Add(dw.Groups["label"].Value);
         }
 
@@ -653,3 +782,12 @@ public sealed class InteractionSprites
         }
     }
 }
+
+
+
+
+
+
+
+
+

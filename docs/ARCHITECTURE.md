@@ -68,7 +68,7 @@ DX-HD paths. The switch is development-only; no menu entry was added.
 | `InGame/Things/GameManager.cs` | Oracle map/position selection in `StartNewGame`. |
 | `InGame/Things/OracleSessionState.cs` | Per-session global/room flags, room state, entry direction and save snapshot. |
 | `InGame/Map/OracleRoomRuntime.cs` | Room load/enter lifecycle, `roomSpecificCode` effects, continuous stitched-map room tracking and presentation hand-off. |
-| `InGame/Map/OracleScriptRuntime.cs` | Active runners, source-cited actor bindings, neighbour presentation pass, `asm15` helpers and completion guards. |
+| `InGame/Map/OracleScriptRuntime.cs` | Active runners, source-cited actor bindings, neighbour presentation pass, `asm15` helpers and completion guards. |\n| `InGame/Map/OracleVisibilityEvaluator.cs` | Single save/progress gate for all actors: global flags, room-state bits and per-entity story rules; no per-room exclusion. |
 | `InGame/Scripting/CutsceneCommandCatalog.cs` | Validates and loads `oracle_<game>_scripts.tsv` and `oracle_<game>_script_bindings.tsv`. |
 | `InGame/Scripting/CutsceneCommandRunner.cs` | Native-order interpreter (counter1/counter2, callstack, yield/block/end). |
 | `InGame/Map/OracleGameProfile.cs` | Ages/Seasons flags, portal policy, groups and map naming. |
@@ -126,7 +126,7 @@ second emulator instance.
 | `OracleGameConfig.cs` | Per-game overworld groups/interior group (importer counterpart of `OracleGameProfile`). |
 | `RoomEntryEffects.cs` | `roomSpecificCode.s` group tables -> `#oracle-room-effects` rows. |
 | `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry facts + typed TSV/manifest. |
-| `ScriptImporter.cs` | Resolves event script closures, encodes typed command indices/targets and emits source-cited actor bindings + manifest. |
+| `ScriptImporter.cs` | Resolves event script closures, encodes typed command indices/targets and emits source-cited actor bindings + manifest. |\n| `DependencyAudit.cs` | Scans `object_code/*`, `objects/*`, `scripts/*`, `code/*` and exports every WRAM/global-flag/room-flag/object-stream condition with entity scope and source line. |\n| `InteractionVisibility.cs` | Emits source-cited story-state rules and child-object groups for room actors (e.g. `$6b:$01` pre-intro audience, `$5d:$02` post-intro bear). |\n| `EnemyAtlas.cs` | Composes enemy animations/OAM into `oracle_<game>_enemies.png/.atlas`; Octorok is the first species. |
 | `TilesetRenderer.cs` | Two VRAM banks, palettes, metatile rendering, past cliffs, animation overrides. |
 | `MetatileAtlas.cs` | Packed 16px metatiles, base and animation-variant keys. |
 | `OracleAnimation.cs` | Groups/tracks/headers/sheets, `(delay, gfxIndex)` parsing. |
@@ -169,4 +169,5 @@ These are summarized here instead of separate speculative documents (ADR-027).
 The canonical hierarchy and fidelity rules are in `PROJECT_PRINCIPLES.md`. In
 short: executed game/trace > `oracles-disasm`/`oracles-decomp`/`top` on
 contradictions > `ooa-godot` as accelerator > assumptions in `DECISIONS.md`.
+
 

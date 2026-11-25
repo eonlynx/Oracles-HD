@@ -455,3 +455,36 @@ When a record is superseded, add a new one instead of editing history.
   (global flags, room state, subid conditions) must feed presentation, and
   animated neighbours should be posed/looped rather than frozen. Enemies and
   parts will use the same presentation/activation split.
+
+## ADR-038 - One save/progress visibility evaluator; no cross-room exclusion
+
+- **Status:** accepted.
+- **Decision:** every room entity's visibility is decided by
+  `OracleVisibilityEvaluator`, fed by `OracleSessionState`: global flags,
+  current-room flags, room-state bits and source-cited `(id,subid,var03)` rules.
+  The rules are generated/curated from the native initializers; runtime code
+  never checks whether the same NPC is "already in another room".
+- **Why:** the duplication of Ralph and the bear was not a placement bug; it
+  was two story states being evaluated simultaneously. `$6b:$01` owns the
+  pre-`INTRO_DONE` audience (`nayruAndAnimalsInIntro`), while `$5d:$02` and
+  `$37:$0d` are later room variants. `$37:$11` requires `FINISHEDGAME`. A
+  cross-room exclusion would pass the screenshot test while breaking saves and
+  story order.
+- **Consequence:** a clean session starts before `INTRO_DONE`; `--intro-done`
+  opts into the later state for development checks. New initializer conditions
+  extend the generated rules, never ad-hoc runtime branches.
+
+## ADR-039 - Exhaustive dependency audit
+
+- **Status:** accepted.
+- **Decision:** `OracleAssetBuilder audit` scans every source file under
+  `object_code/*`, `objects/*`, `scripts/*` and `code/*`, exporting every
+  `GLOBALFLAG_*`, `w*`/`h*` WRAM symbol and object-stream condition with entity
+  kind/id/subid, scope, source file and line. `oracle_<game>_symbols.tsv` lists
+  resolved flag values and `.define` symbols.
+- **Why:** the forest-animal mismatch showed that discovering conditions one
+  object at a time is not acceptable. The audit gives the complete reference
+  set; runtime rule tables are reviewed against it.
+- **Consequence:** the audit is exhaustive as a reference map, not a semantic
+  interpreter of every branch. Every newly encoded rule must cite a row from
+  this table.

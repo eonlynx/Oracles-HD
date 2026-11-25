@@ -32,3 +32,6 @@ Data/Maps/Scripts/oracle_*_script_bindings.tsv
 Data/Maps/Entities/oracle_*_entity_placements.tsv
 Data/Maps/Dungeons/oracle_*_dungeons.tsv
 Data/Maps/Dungeons/oracle_*_dungeon_layouts.tsv
+Data/Maps/Visibility/oracle_*_visibility.tsv
+Data/Maps/Audit/oracle_*_entity_conditions.tsv
+Data/Maps/Audit/oracle_*_symbols.tsv

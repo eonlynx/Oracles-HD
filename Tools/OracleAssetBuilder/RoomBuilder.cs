@@ -223,6 +223,9 @@ public sealed class RoomBuilder
                     ScriptImporter.TablePath(_outDir, _content.Repo.Game),
                     ScriptImporter.BindingTablePath(_outDir, _content.Repo.Game),
                     EntityPlacements.TablePath(_outDir, _content.Repo.Game),
+                    InteractionVisibility.TablePath(_outDir, _content.Repo.Game),
+                    EnemyAtlas.PngPath(_outDir, _content.Repo.Game),
+                    EnemyAtlas.AtlasPath(_outDir, _content.Repo.Game),
                     OracleDungeons.DungeonTablePath(_outDir, _content.Repo.Game),
                     OracleDungeons.LayoutTablePath(_outDir, _content.Repo.Game),
                 }

@@ -64,6 +64,10 @@ namespace ProjectZ
                     if (int.TryParse(args[++i], out var entry) && entry is >= 0 and <= 3)
                         Game1.OracleEntryDirection = entry;
                 }
+                else if (arg == "--no-intro")
+                    Game1.OracleIntroFlag = -1;
+                else if (arg == "--intro-done")
+                    Game1.OracleIntroFlag = Game1.OracleProfile.IntroFlag;
                 else if (arg == "--flag" && i + 1 < args.Length)
                     flagArgs.Add(args[++i]);
                 else if (arg == "--room-state" && i + 1 < args.Length)
@@ -118,3 +122,4 @@ namespace ProjectZ
         }
     }
 }
+

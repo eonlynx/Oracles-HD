@@ -50,6 +50,7 @@ public static class Program
             "overworld" => BuildOverworld(content, group, oracleOptions, outDir, tilesetsDir),
             "interiors" => BuildInteriors(content, oracleOptions, options, outDir, tilesetsDir),
             "dungeons" => BuildDungeons(content, oracleOptions, options, outDir, tilesetsDir),
+            "audit" => BuildAudit(content, outDir),
             "inspect" => Inspect(content, options, oracleOptions),
             "inspect-anim" => InspectAnim(content, options),
             _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld', 'interiors', 'dungeons' or 'inspect'."),
@@ -148,6 +149,17 @@ public static class Program
             Console.WriteLine($"  map      {map}");
         foreach (var warning in result.Warnings)
             Console.WriteLine($"  warning: {warning}");
+        return 0;
+    }
+
+    private static int BuildAudit(OracleContent content, string outDir)
+    {
+        DependencyAudit.Build(content.Repo, outDir, out var warnings);
+        Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} dependency audit");
+        foreach (var warning in warnings)
+            Console.WriteLine($"  warning: {warning}");
+        Console.WriteLine($"  conditions {DependencyAudit.EntityPath(outDir, content.Repo.Game)}");
+        Console.WriteLine($"  symbols    {DependencyAudit.SymbolPath(outDir, content.Repo.Game)}");
         return 0;
     }
 

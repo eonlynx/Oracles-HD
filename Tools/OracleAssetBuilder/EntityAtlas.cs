@@ -100,6 +100,8 @@ public static class EntityAtlas
         issues.AddRange(scriptWarnings);
         EntityPlacements.Build(repo, streams, mapsOutDir, out var placementWarnings);
         issues.AddRange(placementWarnings);
+        InteractionVisibility.Build(repo, mapsOutDir);
+        EnemyAtlas.EnsureBuilt(repo, mapsOutDir);
 
         warnings = issues;
         return result;

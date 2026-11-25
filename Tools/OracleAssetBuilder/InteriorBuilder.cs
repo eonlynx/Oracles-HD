@@ -79,13 +79,20 @@ public sealed class InteriorBuilder
     {
         foreach (var interaction in roomData.Interactions)
         {
+            if (interaction.X < 0 || interaction.Y < 0)
+                continue;
             if (!plan.TryGetValue((interaction.Id, interaction.SubId), out var sprite))
                 continue;
+
+            var hasRules = InteractionVisibility.HasRules(
+                interaction.Id, interaction.SubId, interaction.Var03);
+            var requires = hasRules ? -1 : sprite.RequiresFlag;
+            var forbidden = hasRules ? -1 : sprite.ForbiddenFlag;
 
             objects.Add(new MapObjectPlacement("oracleSprite", new[]
             {
                 (interaction.X + offsetX).ToString(),
-                (interaction.Y + offsetY).ToString(),
+                (interaction.Y + offsetY + InteractionVisibility.PositionOffsetY(interaction.Id, interaction.SubId, interaction.Var03)).ToString(),
                 string.Join(',', sprite.FrameIds),
                 string.Join(',', sprite.Durations),
                 (sprite.OffsetX + offsetX).ToString(),
@@ -94,8 +101,9 @@ public sealed class InteriorBuilder
                 sprite.LoopStart.ToString(),
                 sprite.Id.ToString(),
                 sprite.SubId.ToString(),
-                sprite.RequiresFlag.ToString(),
-                sprite.ForbiddenFlag.ToString(),
+                interaction.Var03.ToString(),
+                requires.ToString(),
+                forbidden.ToString(),
                 interaction.ConditionMask.ToString(),
                 interaction.RoomFlagMask.ToString(),
                 interaction.RoomFlagValue.ToString(),
@@ -105,6 +113,9 @@ public sealed class InteriorBuilder
                 sprite.RequiresEntryDirection.ToString(),
             }));
         }
+
+        EnemyAtlas.AddPlacements(objects, _content.Repo, _outDir, roomData,
+            offsetX, offsetY);
     }
 
     public IReadOnlyList<MapObjectPlacement> AddWarpObjects(int group, int room,
@@ -249,3 +260,6 @@ public sealed class InteriorBuilder
         return (x, y, fallbackDirection);
     }
 }
+
+
+

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -1425,8 +1425,11 @@ namespace ProjectZ.InGame.Things
 
             // load the map (Oracle development entry loads the generated overworld)
             var oracle = Game1.OracleOverworld;
-            OracleSession.Reset(Game1.OracleDevFlags, Game1.OracleRoomStateModifier,
-                Game1.OracleProfile.IntroFlag);
+            // Development entry starts from a clean new-game story state:
+            // INTRO_DONE is not set until the intro event actually runs.
+            // --intro-done opts into the post-intro state for scene checks.
+            var introFlag = oracle ? Game1.OracleIntroFlag : Game1.OracleProfile.IntroFlag;
+            OracleSession.Reset(Game1.OracleDevFlags, Game1.OracleRoomStateModifier, introFlag);
             OracleSession.PendingRoomFlags = Game1.OracleRoomFlagsSet ? Game1.OracleRoomFlags : -1;
             if (oracle)
                 OracleRooms = new OracleRoomRuntime(OracleSession, Game1.OracleProfile);
