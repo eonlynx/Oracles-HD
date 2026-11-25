@@ -108,7 +108,7 @@ public sealed class OverworldBuilder
                 // Present Maku Tree rooms keep the wood palette installed by
                 // the native interaction (makuTree.s:PALH_8f). The past uses
                 // its own tileset/palette and must not be rewritten.
-                if (group == 0 && info.IsMaku)
+                if (group == 0 && _content.UsesMakuTreeWoodPalette(info))
                     _content.ApplyMakuTreePalette(renderer);
                 renderers.Add(tilesetId, renderer);
             }

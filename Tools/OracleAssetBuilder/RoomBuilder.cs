@@ -47,7 +47,7 @@ public sealed class RoomBuilder
         }
         var renderer = _content.CreateRenderer(tilesetId, backgroundPaletteHeader, room, options);
         var appliedPaletteHeader = info.Palette;
-        if (group == 0 && info.IsMaku && _content.MakuTreePaletteHeader >= 0)
+        if (group == 0 && _content.UsesMakuTreeWoodPalette(info))
         {
             _content.ApplyMakuTreePalette(renderer);
             appliedPaletteHeader = _content.MakuTreePaletteHeader;

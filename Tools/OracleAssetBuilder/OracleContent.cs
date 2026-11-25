@@ -40,6 +40,7 @@ public sealed class OracleContent
     private readonly int _makuOverrideIncrement;
     private readonly int _pastCliffExcludedRoom;
     private readonly int _makuTreePaletteHeader;
+    private readonly int _makuTreeTilesetPaletteHeader;
     private readonly IReadOnlyList<RoomEntryEffect> _roomEntryEffects;
 
     /// <summary>
@@ -82,6 +83,10 @@ public sealed class OracleContent
         _makuOverrideIncrement = overrideRules.Item2;
         _pastCliffExcludedRoom = overrideRules.Item3;
         _makuTreePaletteHeader = ParseMakuTreePaletteHeader(repo, symbols);
+        _makuTreeTilesetPaletteHeader =
+            symbols.TryGetValue("PALH_TILESET_MAKU_TREE", out var makuTilesetPalette)
+                ? makuTilesetPalette
+                : -1;
         _roomEntryEffects = RoomEntryEffects.Parse(
             Path.Combine(repo.Root, "code", repo.Game, "roomSpecificCode.s"));
     }
@@ -134,6 +139,9 @@ public sealed class OracleContent
     private static int ParseMakuTreePaletteHeader(OracleRepo repo,
         IReadOnlyDictionary<string, int> symbols)
     {
+        if (repo.Game != "ages")
+            return -1;
+
         var path = Path.Combine(repo.Root, "object_code", repo.Game,
             "interactions", "makuTree.s");
         if (!File.Exists(path))
@@ -157,6 +165,11 @@ public sealed class OracleContent
     /// the tileset header. Only palette 7 differs, so the ground/tree palettes
     /// remain those from the tileset table.
     /// </summary>
+    public bool UsesMakuTreeWoodPalette(TilesetInfo info) =>
+        _makuTreePaletteHeader >= 0 &&
+        info.IsMaku &&
+        info.Palette == _makuTreeTilesetPaletteHeader;
+
     public void ApplyMakuTreePalette(TilesetRenderer renderer)
     {
         if (_makuTreePaletteHeader >= 0)

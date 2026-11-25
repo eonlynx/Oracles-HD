@@ -492,11 +492,12 @@ When a record is superseded, add a new one instead of editing history.
 ## ADR-040 - Present Maku palette comes from the interaction, not a flat room color
 
 - **Status:** accepted.
-- **Decision:** present Maku tilesets (`TILESETFLAG_MAKU`, group 0) apply
-  `PALH_8f` after the tileset's `PALH_TILESET_MAKU_TREE` header. The header is
-  parsed from `object_code/ages/interactions/makuTree.s`; the asset builder
-  records `appliedPaletteHeader` in each room manifest. Past groups keep their
-  own palette.
+- **Decision:** present Maku tilesets whose own header is exactly
+  `PALH_TILESET_MAKU_TREE` (not the separate Maku Tree Top `$31` header) apply
+  `PALH_8f` after that header. `PALH_8f` is parsed from
+  `object_code/ages/interactions/makuTree.s`; the asset builder records
+  `appliedPaletteHeader` in each room manifest. Past groups keep their own
+  palette.
 - **Why:** `PALH_8f` changes only BG palette 7: the lower fence and portal spot
   become gold/brown instead of the pink/white flower palette. The previous
   static `$30` render made those areas look uncolored. Applying it at the
