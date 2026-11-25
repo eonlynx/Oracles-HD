@@ -1,6 +1,6 @@
 # Progress and parity tracker
 
-Snapshot: **2026-11-25**, Maku palette/tile-change block (Ralph `$37:$0d`, past
+Snapshot: **2026-11-25**, commit `bd3161f`, Maku palette/tile-change block (Ralph `$37:$0d`, past
 villager `$3a:$0d`, continuous room presentation, visibility/audit), base
 Links-Awakening-DX-HD v2.0.6 (`2e68849`).
 
