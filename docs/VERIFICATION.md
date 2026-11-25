@@ -31,6 +31,8 @@ Current results (commit `76659a6`, Phase 3/4 slice):
 |---|---|
 | Ages group 0 | 196/196 rooms, 0 skipped, 140x112 tiles, atlas 1.566, 3.251 animations |
 | Ages group 1 | 196/196 rooms, 0 skipped, 140x112 tiles, atlas 1.646, 4.129 animations |
+| Map metadata | every Oracle map starts with `#oracle-map v1`; interior `2:e7` has `group=2 kind=interior camera=fixed` |
+| Camera | `2:e7` is centred by `Map.CameraTarget`; the overworld keeps DX-HD follow |
 | Ages present interiors (group 2) | 22 maps, 22 sprite objects, 11 exit warps, 0 importer warnings |
 | Overworld object pass | 101 sprites + 13 interior-entry warps |
 | Entity atlas | 220 frames from 36 interaction ids; Maku `$87:00` has 6 frames |
@@ -138,6 +140,8 @@ Run before each milestone commit:
 - [ ] Maku eyes render and blink; palette `$8f` sign/flower colours are correct.
 - [ ] Tile animation crop differs between two frames.
 - [ ] Collision: Link stops at water/cliff.
+- [ ] Root cause checked against `ooa-godot` / `oracles-decomp` / `top` before
+  applying any fix (no fix-by-trial).
 - [ ] Manifests updated; no generated asset staged.
 - [ ] No GB conversion arithmetic added to `InGame/` (review the diff).
 - [ ] No `.bak`/`.tmp`/debug log/dead branch from an experiment.

@@ -112,6 +112,30 @@ Native DX-HD part (unchanged):
 Oracle sections are appended after the native object list. The DX-HD loader
 ignores trailing lines; Oracles-HD parses them in `SaveLoadMap.LoadOracleSections`.
 
+### 5.0 Map metadata
+
+```
+#oracle-map v1
+game=ages
+group=0
+era=present|past
+kind=overworld|interior|dungeon|room
+roomWidth=10
+roomHeight=8
+gridWidth=14
+gridHeight=14
+room=38
+floor=-1
+dungeon=-1
+camera=follow|fixed
+```
+
+`room=-1` for a stitched overworld. `camera=fixed` is used **only** for
+isolated one-screen rooms (160x128); the runtime sets `Map.CameraTarget` to the
+map centre. Overworlds, joined dungeon floors and larger rooms keep DX-HD's
+smooth follow camera. The importer is the only writer of this header; the
+runtime only reads the already-converted values.
+
 ### 5.1 Collision
 
 ```

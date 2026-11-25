@@ -129,7 +129,8 @@ public sealed class OverworldBuilder
                 for (var x = 0; x < layout.Width; x++)
                 {
                     var metatile = layout.Tiles[y * layout.Width + x];
-                    var atlasIndex = atlas.GetOrAdd(tilesetId, metatile, () => renderer.RenderMetatile(mappings, metatile));
+                    var atlasIndex = atlas.GetOrAdd(tilesetId, metatile,
+                        () => renderer.RenderMetatile(mappings, metatile));
 
                     var mapX = gridX * RoomWidth + x;
                     var mapY = gridY * RoomHeight + y;
@@ -183,7 +184,8 @@ public sealed class OverworldBuilder
         Directory.CreateDirectory(_tilesetsDir);
         atlas.SavePng(tilesetPath);
 
-        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, mapObjects);
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap,
+            placements, mapObjects, OracleMapInfo.Overworld(_content.Repo.Game, group, grid));
 
         foreach (var warning in warnings)
             Console.WriteLine($"  warning: {warning}");

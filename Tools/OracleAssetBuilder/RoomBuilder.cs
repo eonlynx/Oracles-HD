@@ -118,7 +118,19 @@ public sealed class RoomBuilder
         Directory.CreateDirectory(_tilesetsDir);
         atlas.SavePng(tilesetPath);
 
-        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, objects);
+        var kind = group switch
+        {
+            2 => "interior",
+            4 or 5 => "dungeon",
+            _ => "room",
+        };
+        // DX-HD keeps the smooth follow camera. Lock only isolated one-screen
+        // rooms; larger rooms/floors stay continuous.
+        var camera = width <= 10 && height <= 8 ? "fixed" : "follow";
+        var mapInfo = OracleMapInfo.SingleRoom(_content.Repo.Game, group, room,
+            width, height, kind, camera);
+
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, objects, mapInfo);
 
         Directory.CreateDirectory(Path.GetDirectoryName(previewPath)!);
         var preview = _content.RenderRoomPreview(layout, atlas, tilesetId);
@@ -206,6 +218,7 @@ public sealed class RoomBuilder
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".png"),
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".atlas"),
                 }
+                .Where(File.Exists)
                 .OrderBy(p => p, StringComparer.Ordinal)
                 .Select(p => new
                 {

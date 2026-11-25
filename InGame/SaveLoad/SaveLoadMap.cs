@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.Xna.Framework;
 using ProjectZ.InGame.GameObjects;
 using ProjectZ.InGame.Map;
 using ProjectZ.InGame.Things;
@@ -263,27 +264,40 @@ namespace ProjectZ.InGame.SaveLoad
 
         private static void LoadOracleSections(StreamReader reader, Map.Map map)
         {
+            var lines = new List<string>();
             while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
+                lines.Add(reader.ReadLine());
 
-                switch (line.Trim())
+            var index = 0;
+            while (index < lines.Count)
+            {
+                var line = lines[index].Trim();
+                if (string.IsNullOrWhiteSpace(line))
                 {
+                    index++;
+                    continue;
+                }
+
+                switch (line)
+                {
+                    case "#oracle-map v1":
+                        index = ReadOracleMapInfo(lines, index + 1, map);
+                        break;
+
                     case "#oracle-collision v1":
-                        map.CollisionMap = ReadByteMap(reader);
+                        map.CollisionMap = ReadByteMap(lines, ref index);
                         break;
 
                     case "#oracle-terrain v1":
-                        map.TerrainMap = ReadByteMap(reader);
+                        map.TerrainMap = ReadByteMap(lines, ref index);
                         break;
 
                     case "#oracle-anim v1":
-                        var count = Convert.ToInt32(reader.ReadLine());
+                        index++;
+                        var count = Convert.ToInt32(lines[index++]);
                         for (var i = 0; i < count; i++)
                         {
-                            var row = reader.ReadLine();
+                            var row = lines[index++];
                             if (string.IsNullOrEmpty(row))
                                 break;
 
@@ -298,21 +312,72 @@ namespace ProjectZ.InGame.SaveLoad
                             map.TileAnimations.Add(animation);
                         }
                         break;
+
+                    default:
+                        index++;
+                        break;
                 }
             }
 
             map.ApplyTerrainToFieldStates();
         }
 
-        private static byte[,] ReadByteMap(StreamReader reader)
+        private static int ReadOracleMapInfo(List<string> lines, int index, Map.Map map)
         {
-            var width = Convert.ToInt32(reader.ReadLine());
-            var height = Convert.ToInt32(reader.ReadLine());
+            var info = new OracleMapInfo();
+            while (index < lines.Count)
+            {
+                var line = lines[index].Trim();
+                if (string.IsNullOrWhiteSpace(line) || line.StartsWith("#oracle-", StringComparison.Ordinal))
+                    break;
+
+                var split = line.Split('=', 2);
+                if (split.Length == 2)
+                {
+                    var key = split[0].Trim();
+                    var value = split[1].Trim();
+                    switch (key)
+                    {
+                        case "game": info.Game = value; break;
+                        case "group": info.Group = Convert.ToInt32(value); break;
+                        case "era": info.Era = value; break;
+                        case "kind": info.Kind = value; break;
+                        case "roomWidth": info.RoomWidth = Convert.ToInt32(value); break;
+                        case "roomHeight": info.RoomHeight = Convert.ToInt32(value); break;
+                        case "gridWidth": info.GridWidth = Convert.ToInt32(value); break;
+                        case "gridHeight": info.GridHeight = Convert.ToInt32(value); break;
+                        case "room": info.Room = Convert.ToInt32(value); break;
+                        case "floor": info.Floor = Convert.ToInt32(value); break;
+                        case "dungeon": info.Dungeon = Convert.ToInt32(value); break;
+                        case "camera": info.Camera = value; break;
+                    }
+                }
+
+                index++;
+            }
+
+            map.OracleInfo = info;
+
+            // DX-HD keeps the smooth follow camera. Only isolated one-screen
+            // rooms opt into the fixed camera, using the existing CameraTarget.
+            if (info.FixedCamera)
+                map.CameraTarget = new Vector2(
+                    map.MapWidth * Values.TileSize / 2f,
+                    map.MapHeight * Values.TileSize / 2f);
+
+            return index;
+        }
+
+        private static byte[,] ReadByteMap(List<string> lines, ref int index)
+        {
+            index++;
+            var width = Convert.ToInt32(lines[index++]);
+            var height = Convert.ToInt32(lines[index++]);
             var map = new byte[width, height];
 
             for (var y = 0; y < height; y++)
             {
-                var row = reader.ReadLine() ?? "";
+                var row = lines[index++];
                 for (var x = 0; x < width; x++)
                 {
                     var offset = x * 2;

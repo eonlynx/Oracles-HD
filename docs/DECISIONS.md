@@ -291,3 +291,19 @@ When a record is superseded, add a new one instead of editing history.
 - **Limit:** this is a first pass for positioned interactions with their default
   animation. Enemies, parts, item drops, scripted animation/facing and
   `roomGfxChanges` remain separate work.
+
+## ADR-030 - Map metadata and camera policy
+
+- **Status:** accepted (project owner).
+- **Decision:** every Oracle `.map` starts its Oracle sections with
+  `#oracle-map v1`: game, group, era, kind, room size, grid, room, floor,
+  dungeon and camera. The runtime reads it into `Map.OracleInfo`.
+- **Camera:** keep DX-HD's smooth follow camera everywhere it works, including
+  stitched overworlds and joined dungeon floors. Use `Map.CameraTarget` only for
+  isolated one-screen rooms (160x128) or a puzzle that explicitly requires a
+  fixed view. This preserves the DX-HD feel while giving Oracle room identity.
+- **Why:** string map names and pixel positions cannot identify era/room/floor;
+  enemies, scripts, save/respawn and dungeon logic need this metadata.
+- **Consequence:** the importer owns the conversion; runtime code does not
+  derive group/era from file names. The fixed camera is data-driven, not a
+  second camera system.

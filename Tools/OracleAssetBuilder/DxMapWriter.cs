@@ -24,7 +24,8 @@ public static class DxMapWriter
         byte[,]? collision = null,
         byte[,]? terrain = null,
         IReadOnlyList<MapAnimationPlacement>? animations = null,
-        IReadOnlyList<MapObjectPlacement>? objects = null)
+        IReadOnlyList<MapObjectPlacement>? objects = null,
+        OracleMapInfo? mapInfo = null)
     {
         if (layers.Count == 0)
             throw new ArgumentException("At least one tile layer is required.", nameof(layers));
@@ -57,6 +58,23 @@ public static class DxMapWriter
         }
 
         WriteObjects(writer, objects);
+
+        if (mapInfo != null)
+        {
+            writer.WriteLine("#oracle-map v1");
+            writer.WriteLine($"game={mapInfo.Game}");
+            writer.WriteLine($"group={mapInfo.Group}");
+            writer.WriteLine($"era={mapInfo.Era}");
+            writer.WriteLine($"kind={mapInfo.Kind}");
+            writer.WriteLine($"roomWidth={mapInfo.RoomWidth}");
+            writer.WriteLine($"roomHeight={mapInfo.RoomHeight}");
+            writer.WriteLine($"gridWidth={mapInfo.GridWidth}");
+            writer.WriteLine($"gridHeight={mapInfo.GridHeight}");
+            writer.WriteLine($"room={mapInfo.Room}");
+            writer.WriteLine($"floor={mapInfo.Floor}");
+            writer.WriteLine($"dungeon={mapInfo.Dungeon}");
+            writer.WriteLine($"camera={mapInfo.Camera}");
+        }
 
         if (collision != null)
             WriteByteMap(writer, "#oracle-collision v1", collision);

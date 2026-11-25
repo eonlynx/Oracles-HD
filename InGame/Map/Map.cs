@@ -30,6 +30,10 @@ namespace ProjectZ.InGame.Map
         public byte[,] TerrainMap;
         public List<TileAnimation> TileAnimations = new List<TileAnimation>();
 
+        // Oracle map identity (group/era/kind/room/camera), emitted by the
+        // importer. Null for native DX-HD maps.
+        public OracleMapInfo OracleInfo;
+
         public Color LightColor;
 
         public string MapName;
@@ -96,6 +100,7 @@ namespace ProjectZ.InGame.Map
             CollisionMap = null;
             TerrainMap = null;
             TileAnimations.Clear();
+            OracleInfo = null;
 
             ShadowHeight = Values.ShadowHeightDefault;
             ShadowRotation = Values.ShadowRotationDefault;

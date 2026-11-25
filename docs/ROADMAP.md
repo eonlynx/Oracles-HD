@@ -47,6 +47,7 @@ no corrupt tiles; manifests match.
 - [x] Tile collision blocks water/cliffs.
 - [x] Terrain flags (water/deep/lava/grass).
 - [x] Tile animation runs.
+- [x] `#oracle-map v1` metadata and data-driven camera policy.
 - [x] Interiors as separate maps + warps (present group 2, 22 maps).
 - [x] Door/tile and screen-edge warps through `MapTransitionSystem`.
 - [ ] Doors, stairs, holes, overworld teleporters (native LA objects).

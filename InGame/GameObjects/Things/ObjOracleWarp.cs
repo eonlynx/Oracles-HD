@@ -41,8 +41,8 @@ namespace ProjectZ.InGame.GameObjects.Things
             EntitySize = new Rectangle(0, 0, Math.Max(1, width), Math.Max(1, height));
 
             _trigger = new Rectangle(posX, posY, Math.Max(1, width), Math.Max(1, height));
-            _tileX = posX / 16;
-            _tileY = posY / 16;
+            _tileX = posX / Values.TileSize;
+            _tileY = posY / Values.TileSize;
             _nextMap = nextMap;
             _spawnPosition = new Vector2(spawnX, spawnY);
             _direction = Math.Clamp(direction, 0, 3);
@@ -64,8 +64,8 @@ namespace ProjectZ.InGame.GameObjects.Things
                 return;
 
             var position = link.EntityPosition.Position;
-            var feetX = (int)(position.X / 16);
-            var feetY = (int)(position.Y / 16);
+            var feetX = (int)(position.X / Values.TileSize);
+            var feetY = (int)(position.Y / Values.TileSize);
             var onWarpTile = feetX == _tileX && feetY == _tileY;
 
             // A door tile is often only half-walkable (the top half is the
