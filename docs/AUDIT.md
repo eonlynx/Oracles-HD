@@ -1,6 +1,6 @@
 # Architecture audit - Phase 3/4 slice
 
-Snapshot: **2026-11-25**, implementation `3540239`. This audit covers the
+Snapshot: **2026-11-25**, implementation `b5119ed`. This audit covers the
 present slice, the past overworld, time portals and the plumbing that will be
 reused by scripts, enemies, dungeons and Seasons. It records structural debt,
 not new features.
