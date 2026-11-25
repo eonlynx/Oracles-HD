@@ -141,7 +141,7 @@ plans.
 ## Current snapshot
 
 - Base: Links-Awakening-DX-HD v2.0.6 (`2e68849`).
-- Latest implementation commit: `bd3161f` (Maku wood palette,
+- Latest implementation commit: `da0546c` (Maku wood palette,
   singleTileChanges, story-state visibility, enemy atlas).
 - Target: `net8.0-windows` / MonoGame 3.8.1.303 WindowsDX; 0 build errors.
 - Runtime entry: `Oracles-HD.exe oracle` (development switch).
