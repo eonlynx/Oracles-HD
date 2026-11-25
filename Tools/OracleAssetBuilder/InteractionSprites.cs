@@ -47,7 +47,7 @@ public sealed class InteractionSprites
         @"\.dw\s+(?<label>[A-Za-z_][A-Za-z0-9_]*)", RegexOptions.Compiled);
 
     private static readonly Regex AnimationLabelRegex = new(
-        @"^(?:interaction|enemy)Animation(?<id>[0-9a-fA-F]+)(?<loop>Loop)?:\s*$", RegexOptions.Compiled);
+        @"^(?:interaction|enemy|part)Animation(?<id>[0-9a-fA-F]+)(?<loop>Loop)?:\s*$", RegexOptions.Compiled);
 
     private static readonly Regex HexByteRegex = new(
         @"\$(?<value>[0-9a-fA-F]{1,2})", RegexOptions.Compiled);
@@ -78,14 +78,17 @@ public sealed class InteractionSprites
         LoadEnemyData(Path.Combine(repo.DataDir, "enemyData.s"));
         LoadAnimations(Path.Combine(repo.DataDir, "interactionAnimations.s"));
         LoadAnimations(Path.Combine(repo.DataDir, "enemyAnimations.s"));
+        LoadAnimations(Path.Combine(repo.DataDir, "partAnimations.s"));
         LoadOamBlocks(Path.Combine(repo.DataDir, "interactionOamData.s"));
         LoadOamBlocks(Path.Combine(repo.DataDir, "enemyOamData.s"));
+        LoadOamBlocks(Path.Combine(repo.DataDir, "partOamData.s"));
         _palettes = LoadStandardPalettes(Path.Combine(repo.DataDir, "paletteData.s"));
     }
 
     public bool TryCompose(int interactionId, int subid, out ComposedSprite[] frames,
         out int[] durations, out int loopStart,
-        IReadOnlyDictionary<int, Rgba[]>? paletteOverrides = null)
+        IReadOnlyDictionary<int, Rgba[]>? paletteOverrides = null,
+        int? animationOverride = null)
     {
         frames = Array.Empty<ComposedSprite>();
         durations = Array.Empty<int>();
@@ -104,7 +107,8 @@ public sealed class InteractionSprites
         if (!_animationTables.TryGetValue(animationTable, out var animations) || animations.Count == 0)
             return false;
 
-        var animationIndex = Math.Clamp(graphics.DefaultAnimation, 0, animations.Count - 1);
+        var animationIndex = Math.Clamp(animationOverride ?? graphics.DefaultAnimation,
+            0, animations.Count - 1);
         var animationLabel = animations[animationIndex];
         if (!_animations.TryGetValue(animationLabel, out var animation))
             return false;
@@ -226,6 +230,62 @@ public sealed class InteractionSprites
         _oamPointerStarts[$"interaction{key:x}OamDataPointers"] =
             _oamPointerStarts[pointerTable];
         return TryCompose(key, subid, out frames, out durations, out loopStart);
+    }
+
+    /// <summary>
+    /// Composes a native part (enemy projectile) from partAnimations.s and
+    /// partData.s. The part shares an object gfx header with other actors, so
+    /// the caller supplies the header and its tile-base/palette attributes.
+    /// </summary>
+    public bool TryComposePart(int partId, int gfxHeader, int tileBase, int palette,
+        out ComposedSprite[] frames, out int[] durations, out int loopStart)
+    {
+        frames = Array.Empty<ComposedSprite>();
+        durations = Array.Empty<int>();
+        loopStart = 0;
+
+        var key = 0x300 + partId;
+        var animationTable = $"part{partId:x2}Animations";
+        var pointerTable = $"part{partId:x2}OamDataPointers";
+        if (!_animationTables.TryGetValue(animationTable, out var animations) ||
+            animations.Count == 0 ||
+            !_oamPointerStarts.ContainsKey(pointerTable))
+            return false;
+
+        _inlineData[key] = new InteractionGraphics(gfxHeader, tileBase, palette, 0);
+        _animationTables[$"interaction{key:x}Animations"] = animations;
+        _oamPointerStarts[$"interaction{key:x}OamDataPointers"] =
+            _oamPointerStarts[pointerTable];
+        return TryCompose(key, 0, out frames, out durations, out loopStart);
+    }
+
+    /// <summary>
+    /// Composes one cardinal enemy animation (0=up, 1=right, 2=down, 3=left
+    /// as stored in enemyAnimations.s).
+    /// </summary>
+    public bool TryComposeEnemyDirection(int enemyId, int subid, int animationIndex,
+        out ComposedSprite[] frames, out int[] durations, out int loopStart)
+    {
+        frames = Array.Empty<ComposedSprite>();
+        durations = Array.Empty<int>();
+        loopStart = 0;
+        if (!TryGetEnemyGraphics(enemyId, subid, out var graphics))
+            return false;
+
+        var key = 0x400 + enemyId * 0x10 + animationIndex;
+        var animationTable = $"enemy{enemyId:x2}Animations";
+        var pointerTable = $"enemy{enemyId:x2}OamDataPointers";
+        if (!_animationTables.TryGetValue(animationTable, out var animations) ||
+            animations.Count == 0 ||
+            !_oamPointerStarts.ContainsKey(pointerTable))
+            return false;
+
+        _inlineData[key] = graphics;
+        _animationTables[$"interaction{key:x}Animations"] = animations;
+        _oamPointerStarts[$"interaction{key:x}OamDataPointers"] =
+            _oamPointerStarts[pointerTable];
+        return TryCompose(key, subid, out frames, out durations, out loopStart,
+            animationOverride: animationIndex);
     }
 
     private bool TryGetEnemyGraphics(int enemyId, int subid, out InteractionGraphics graphics)
@@ -528,10 +588,12 @@ public sealed class InteractionSprites
             {
                 currentTable = label.Groups["label"].Value;
                 if ((currentTable.StartsWith("interaction", StringComparison.Ordinal) ||
-                     currentTable.StartsWith("enemy", StringComparison.Ordinal)) &&
+                     currentTable.StartsWith("enemy", StringComparison.Ordinal) ||
+                     currentTable.StartsWith("part", StringComparison.Ordinal)) &&
                     currentTable.EndsWith("Animations", StringComparison.Ordinal) &&
                     currentTable != "interactionAnimationTable" &&
-                    currentTable != "enemyAnimationTable")
+                    currentTable != "enemyAnimationTable" &&
+                    currentTable != "partAnimationTable")
                 {
                     tableOrder.Add(currentTable);
                     tableValues[currentTable] = new List<string>();
@@ -548,7 +610,8 @@ public sealed class InteractionSprites
 
             var dw = DwRegex.Match(line);
             if (dw.Success && (dw.Groups["label"].Value.StartsWith("interactionAnimation", StringComparison.Ordinal) ||
-                    dw.Groups["label"].Value.StartsWith("enemyAnimation", StringComparison.Ordinal)))
+                    dw.Groups["label"].Value.StartsWith("enemyAnimation", StringComparison.Ordinal) ||
+                    dw.Groups["label"].Value.StartsWith("partAnimation", StringComparison.Ordinal)))
                 tableValues[currentTable].Add(dw.Groups["label"].Value);
         }
 
@@ -574,7 +637,8 @@ public sealed class InteractionSprites
             {
                 var name = label.Groups["label"].Value;
                 if ((name.StartsWith("interaction", StringComparison.Ordinal) ||
-                     name.StartsWith("enemy", StringComparison.Ordinal)) &&
+                     name.StartsWith("enemy", StringComparison.Ordinal) ||
+                     name.StartsWith("part", StringComparison.Ordinal)) &&
                     name.EndsWith("OamDataPointers", StringComparison.Ordinal))
                     _oamPointerStarts[name] = _oamPointerStream.Count;
                 continue;
@@ -582,7 +646,8 @@ public sealed class InteractionSprites
 
             var dw = DwRegex.Match(line);
             if (dw.Success && (dw.Groups["label"].Value.StartsWith("interactionOamData", StringComparison.Ordinal) ||
-                dw.Groups["label"].Value.StartsWith("enemyOamData", StringComparison.Ordinal)))
+                dw.Groups["label"].Value.StartsWith("enemyOamData", StringComparison.Ordinal) ||
+                dw.Groups["label"].Value.StartsWith("partOamData", StringComparison.Ordinal)))
                 _oamPointerStream.Add(dw.Groups["label"].Value);
         }
 

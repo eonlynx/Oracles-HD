@@ -75,7 +75,7 @@ public static class AsmParser
         return result;
     }
 
-    public static IReadOnlyList<GfxEntry> ParseGfxHeader(string path, int index)
+    public static IReadOnlyList<GfxEntry> ParseGfxHeader(string path, int index, bool allowEmpty = false)
     {
         var entries = new List<GfxEntry>();
         var inside = false;
@@ -103,9 +103,39 @@ public static class AsmParser
                 entries.Add(new GfxEntry(entry.Groups["name"].Value, ParseHexCapture(entry.Groups["dest"].Value)));
         }
 
-        if (entries.Count == 0)
+        if (entries.Count == 0 && !allowEmpty)
             throw new InvalidDataException($"{path}: gfx header ${index:x2} has no entries (or does not exist).");
         return entries;
+    }
+
+    /// <summary>
+    /// Palette-only unique headers end with m_GfxHeaderEnd PALH_x instead of
+    /// graphic entries (e.g. the Ancient Tomb boss header $14).
+    /// </summary>
+    public static string? ParseGfxHeaderEndPalette(string path, int index)
+    {
+        var inside = false;
+        foreach (var line in File.ReadLines(path))
+        {
+            var start = IndexedStart.Match(line);
+            if (start.Success &&
+                start.Groups["macro"].Value is "m_GfxHeaderStart" or "m_UniqueGfxHeaderStart")
+            {
+                inside = ParseHexCapture(start.Groups["index"].Value) == index;
+                continue;
+            }
+
+            if (!inside)
+                continue;
+
+            if (line.Contains("m_GfxHeaderEnd", StringComparison.Ordinal))
+            {
+                var match = Regex.Match(line, @"m_GfxHeaderEnd\s+(?<palette>PALH_[A-Za-z0-9_]+)");
+                return match.Success ? match.Groups["palette"].Value : null;
+            }
+        }
+
+        return null;
     }
 
     public static IReadOnlyList<PaletteEntry> ParsePaletteHeader(string path, int index)

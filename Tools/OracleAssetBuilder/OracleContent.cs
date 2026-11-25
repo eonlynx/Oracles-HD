@@ -29,6 +29,7 @@ public sealed class OracleContent
     private readonly string _gfxHeadersPath;
     private readonly string _uniqueGfxHeadersPath;
     private readonly string _paletteHeadersPath;
+    private readonly Dictionary<string, int> _paletteHeaderSymbols;
     private readonly string _groupTilesetsPath;
     private readonly string _tilePropertiesDir;
     private readonly Dictionary<int, Dictionary<int, byte>> _hazards = new();
@@ -72,7 +73,8 @@ public sealed class OracleContent
         var symbols = new Dictionary<string, int>(StringComparer.Ordinal);
         AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_gfxHeadersPath, "m_GfxHeaderStart"));
         AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_uniqueGfxHeadersPath, "m_UniqueGfxHeaderStart"));
-        AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_paletteHeadersPath, "m_PaletteHeaderStart"));
+        _paletteHeaderSymbols = AsmParser.ParseHeaderStartIndices(_paletteHeadersPath, "m_PaletteHeaderStart");
+        AddSymbols(symbols, _paletteHeaderSymbols);
 
         _tilesets = AsmParser.ParseTilesetData(Path.Combine(repo.DataDir, "tilesets.s"), symbols);
 
@@ -265,9 +267,24 @@ public sealed class OracleContent
             }
         }
 
+        var tileIndicesPath = Path.Combine(Repo.Root, "constants", "common", "tileIndices.s");
+        if (File.Exists(tileIndicesPath))
+        {
+            foreach (var line in File.ReadLines(tileIndicesPath))
+            {
+                var match = System.Text.RegularExpressions.Regex.Match(
+                    line, @"\.define\s+(?<name>TILEINDEX_\w+)\s+\$(?<value>[0-9a-fA-F]+)");
+                if (match.Success)
+                    _tileTypeConstants[match.Groups["name"].Value] =
+                        int.Parse(match.Groups["value"].Value, System.Globalization.NumberStyles.HexNumber);
+            }
+        }
+
         ParseModeTable(Path.Combine(_tilePropertiesDir, "hazards.s"), _hazards);
         ParseModeTable(Path.Combine(_tilePropertiesDir, "tileTypeMappings.s"), _tileTypes);
     }
+
+    public int GetConstant(string name) => Constant(name);
 
     private void ParseModeTable(string path, Dictionary<int, Dictionary<int, byte>> target)
     {
@@ -512,9 +529,20 @@ public sealed class OracleContent
         renderer.LoadGraphics(AsmParser.ParseGfxHeader(_gfxHeadersPath, info.Gfx), Repo);
 
         // Unique graphics load after the main header and replace tiles at the
-        // same VRAM destinations.
+        // same VRAM destinations. Palette-only unique headers are valid; their
+        // palette is installed after the tileset palette below.
+        int? uniquePaletteHeader = null;
         if (info.UniqueGfx != 0)
-            renderer.LoadGraphics(AsmParser.ParseGfxHeader(_uniqueGfxHeadersPath, info.UniqueGfx), Repo);
+        {
+            renderer.LoadGraphics(AsmParser.ParseGfxHeader(
+                _uniqueGfxHeadersPath, info.UniqueGfx, allowEmpty: true), Repo);
+
+            var uniquePalette = AsmParser.ParseGfxHeaderEndPalette(
+                _uniqueGfxHeadersPath, info.UniqueGfx);
+            if (uniquePalette != null &&
+                _paletteHeaderSymbols.TryGetValue(uniquePalette, out var header))
+                uniquePaletteHeader = header;
+        }
 
         // Background palette 0 is the engine's common palette (paletteData48e0).
         if (_paletteData.TryGetValue("paletteData48e0", out var commonBackground))
@@ -524,6 +552,9 @@ public sealed class OracleContent
             ApplyPaletteHeader(renderer, backgroundPaletteHeader.Value);
 
         ApplyPaletteHeader(renderer, info.Palette);
+
+        if (uniquePaletteHeader.HasValue)
+            ApplyPaletteHeader(renderer, uniquePaletteHeader.Value);
         return renderer;
     }
 

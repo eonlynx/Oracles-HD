@@ -12,8 +12,9 @@ submodule. Record the commit and the exact counts with each milestone.
 dotnet build -c Debug
 ```
 
-Expected: **0 errors**. The 48 warnings are the upstream v2.0.6 warnings
-(unused fields, nullable annotations in `Game1`, manifest DPI).
+Expected: **0 errors**. The ~50 warnings are the upstream v2.0.6 warnings
+(unused fields, nullable annotations in `Game1`, manifest DPI) plus the
+existing test-harness fields.
 
 ## 2. Asset import
 
@@ -47,7 +48,8 @@ section or the `oracleSprite` durations.
 | Ages dungeon tables | 16 dungeons; `dungeons --dungeon 05` = 45 rooms/2 floors, 28 interactions, 67 enemies, 20 parts, 37 items | 
 | Ages entity placements | 1,199 typed rows across groups 0-5 (random enemies marked) |
 | Dependency audit | `audit --game ages` -> 5,437 condition rows + symbol table; every WRAM/global-flag/object-stream reference has source file and line |
-| Enemy atlas | `oracle_ages_enemies.png/.atlas`; Octorok `$09:00..02` four cardinal animations composed |
+| Enemy atlas | `oracle_ages_enemies.png/.atlas`; Octorok `$09:00..02` four cardinal poses (`d0..d3`) plus PART18 `p18` composed |
+| Enemy/part stats | `Data/Map Objects/oracle_ages_enemy_stats.tsv` and `oracle_ages_part_stats.tsv` (gitignored, regenerated with the atlas); Octorok rows match `enemy09SubidData`/`extraEnemyData.s`, PART18 matches `partData.s:$18` |
 
 ### 2.1 Performance
 
@@ -105,10 +107,37 @@ Development entries:
 Oracles-HD.exe oracle --room e7
 # Override the spawn point in map pixels.
 Oracles-HD.exe oracle --pos 1360,470
+# Grant an inventory item to the clean Oracle new game (combat checks).
+Oracles-HD.exe oracle --equip sword1
+# Keep enemy AI targets still for deterministic combat checks.
+Oracles-HD.exe oracle --freeze-enemies
 ```
 
 The runtime switch is `Game1.OracleOverworld` / `OracleStartMap` /
 `OracleStartPosition`; the normal LA intro/menu still runs without `oracle`.
+
+### 4.1 First enemy runtime checks (Octorok `$09:01` at `1520,352`)
+
+```powershell
+$env:ORACLE_SCRIPT_TRACE = '1'
+Oracles-HD.exe oracle --map oracle_ages_g0_overworld.map --pos 1500,360 --equip sword1
+```
+
+Expected/observed:
+
+- the Octorok walks in cardinal directions, changes facing with movement and
+  pauses between walks (native `octorok.s` counters);
+- it fires PART18 only while Link is in the same room; moving Link to the
+  adjacent room stops the shots;
+- rocks render with the imported `$18` frames and can damage Link;
+- a sword swing from above registers damage (`lives 2 -> 1 -> 0` in the trace),
+  applies knockback without crossing solid tree tiles, and removes the enemy;
+- the native shadow follows the enemy and the sprite anchor keeps its feet on
+  the ground.
+
+The map row for the hosted enemy contains
+`oracleOctorok;...;oracle_ages_p18_00;...;oracle_ages_e09_01_d0..d3`.
+Unsupported enemies still emit `oracleSprite`.
 
 ### Screenshot harness
 

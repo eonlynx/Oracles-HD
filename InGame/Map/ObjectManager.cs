@@ -683,6 +683,24 @@ namespace ProjectZ.InGame.Map
             objectParameter[0] = owner;
             var constructor = GameObjectTemplates.ObjectSpawner[objectId];
 
+            // Generated maps may predate newly appended optional template
+            // parameters (e.g. Oracle enemy directional frames). Pad missing
+            // entries with the template defaults so stale generated maps keep
+            // loading instead of failing reflection.
+            var parameters = constructor.GetParameters();
+            if (objectParameter.Length < parameters.Length)
+            {
+                var padded = new object[parameters.Length];
+                Array.Copy(objectParameter, padded, objectParameter.Length);
+                for (var i = objectParameter.Length; i < parameters.Length; i++)
+                    padded[i] = parameters[i].HasDefaultValue
+                        ? parameters[i].DefaultValue
+                        : parameters[i].ParameterType.IsValueType
+                            ? Activator.CreateInstance(parameters[i].ParameterType)
+                            : null;
+                objectParameter = padded;
+            }
+
             return (GameObject)constructor.Invoke(objectParameter);
         }
 

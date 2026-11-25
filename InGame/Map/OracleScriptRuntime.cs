@@ -329,8 +329,12 @@ namespace ProjectZ.InGame.Map
         public void ApplySpeed()
         {
             var velocity = OracleActorMovement.Velocity(_actor.ScriptSpeed, _actor.ScriptAngle);
-            _actor.EntityPosition.X += velocity.X / 256f;
-            _actor.EntityPosition.Y += velocity.Y / 256f;
+            _actor.Body.VelocityTarget = velocity / 256f;
+        }
+
+        public void StopSpeed()
+        {
+            _actor.Body.VelocityTarget = Vector2.Zero;
         }
 
         public void WriteObjectByte(int address, int value)
@@ -348,7 +352,7 @@ namespace ProjectZ.InGame.Map
 
         public void SetActorZ(int zFixed)
         {
-            _actor.EntityPosition.Z = -zFixed / 256f;
+            _actor.SetScriptZ(-zFixed / 256f);
         }
 
         public int ReadMemory(int address) => _runtime.ReadMemory(address);
@@ -381,6 +385,7 @@ namespace ProjectZ.InGame.Map
                 case "beginJump":
                     _zFixed = 0;
                     _speedZ = -0x200;
+                    _actor.BeginScriptJump();
                     WriteMemory(1, 0);
                     PlaySound("SND_JUMP");
                     break;
@@ -392,14 +397,15 @@ namespace ProjectZ.InGame.Map
                     {
                         _zFixed = 0;
                         _speedZ = 0;
+                        _actor.EndScriptJump();
                         WriteMemory(1, 0x80);
                     }
                     else
                     {
                         _speedZ += 0x30;
+                        SetActorZ(_zFixed);
                         WriteMemory(1, 0);
                     }
-                    SetActorZ(_zFixed);
                     break;
                 }
 

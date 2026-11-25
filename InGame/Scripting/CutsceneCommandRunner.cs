@@ -84,6 +84,8 @@ namespace ProjectZ.InGame.Scripting
             {
                 if (--_counter2 != 0)
                     _host.ApplySpeed();
+                else
+                    _host.StopSpeed();
                 return;
             }
 
@@ -256,6 +258,7 @@ namespace ProjectZ.InGame.Scripting
         void SetSpeed(int speed);
         void SetAngle(int angle);
         void ApplySpeed();
+        void StopSpeed();
         void WriteObjectByte(int address, int value);
         void SetActorVisible(bool visible);
         void SetActorZ(int zFixed);

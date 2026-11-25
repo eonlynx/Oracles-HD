@@ -27,6 +27,9 @@ Data/Maps/Previews/
 Data/Map Objects/oracle_*.png
 Data/Map Objects/oracle_*.atlas
 Data/Map Objects/oracle_*_interaction_behaviors.tsv
+Data/Map Objects/oracle_*_enemy_stats.tsv
+Data/Map Objects/oracle_*_part_stats.tsv
+Data/Maps/Map Objects/
 Data/Maps/Scripts/oracle_*_scripts.tsv
 Data/Maps/Scripts/oracle_*_script_bindings.tsv
 Data/Maps/Entities/oracle_*_entity_placements.tsv

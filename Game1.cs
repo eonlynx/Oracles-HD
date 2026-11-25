@@ -143,6 +143,8 @@ namespace ProjectZ
         public static int OracleEntryDirection = -1;
         public static int OracleIntroFlag = -1;
         public static readonly System.Collections.Generic.List<int> OracleDevFlags = new();
+        public static readonly System.Collections.Generic.List<string> OracleDevEquipment = new();
+        public static bool OracleFreezeEnemies;
         public static int OracleRoomStateModifier;
         public static int OracleRoomFlags;
         public static bool OracleRoomFlagsSet;

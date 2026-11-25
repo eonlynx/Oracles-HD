@@ -17,6 +17,7 @@ namespace ProjectZ
             string? mapArg = null;
             var positionExplicit = false;
             var flagArgs = new System.Collections.Generic.List<string>();
+            var equipArgs = new System.Collections.Generic.List<string>();
 
             for (var i = 0; i < args.Length; i++)
             {
@@ -70,6 +71,14 @@ namespace ProjectZ
                     Game1.OracleIntroFlag = Game1.OracleProfile.IntroFlag;
                 else if (arg == "--flag" && i + 1 < args.Length)
                     flagArgs.Add(args[++i]);
+                else if (arg == "--equip" && i + 1 < args.Length)
+                    // Development entry: grant an inventory item to the clean
+                    // Oracle new game, e.g. --equip sword1 for combat checks.
+                    equipArgs.Add(args[++i]);
+                else if (arg == "--freeze-enemies")
+                    // Development entry: keep enemy AI targets still so a
+                    // deterministic combat check can aim at a known position.
+                    Game1.OracleFreezeEnemies = true;
                 else if (arg == "--room-state" && i + 1 < args.Length)
                     Game1.OracleRoomStateModifier = ParseHex(args[++i]);
                 else if (arg == "--room-flags" && i + 1 < args.Length)
@@ -83,6 +92,8 @@ namespace ProjectZ
             {
                 foreach (var flag in flagArgs)
                     Game1.OracleDevFlags.Add(Game1.OracleProfile.ParseFlag(flag));
+                foreach (var item in equipArgs)
+                    Game1.OracleDevEquipment.Add(item);
 
                 if (mapArg != null)
                     Game1.OracleStartMap = mapArg;

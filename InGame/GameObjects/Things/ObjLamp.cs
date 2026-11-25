@@ -9,7 +9,7 @@ using ProjectZ.InGame.Things;
 
 namespace ProjectZ.InGame.GameObjects.Things
 {
-    internal class ObjLamp : GameObject
+    internal class ObjLamp : GameObject, ILamp
     {
         private readonly Animator _animator;
 

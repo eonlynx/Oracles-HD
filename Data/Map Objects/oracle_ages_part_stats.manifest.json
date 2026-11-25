@@ -1,0 +1,19 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "part_stats",
+  "rows": 91,
+  "inputs": [
+    {
+      "path": "data/ages/partData.s",
+      "sha256": "33eff94a74c93e4771d372463060ded36499c4c8618e3fc62f4c7a9ca584469c"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "../Map Objects/oracle_ages_part_stats.tsv",
+      "sha256": "580dfe3baadbd83e57bccd1aa511fbc2158f125dda9d9fa3f5807f111603d1fc"
+    }
+  ]
+}

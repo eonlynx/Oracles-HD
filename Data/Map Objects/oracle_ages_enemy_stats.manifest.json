@@ -1,0 +1,19 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "enemy_stats",
+  "rows": 3,
+  "inputs": [
+    {
+      "path": "data/ages/enemyData.s",
+      "sha256": "a9469bf4248fdb61e5da2a2ef57f2c688d2b67cdbe2979681ddc1511c0747872"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "../Map Objects/oracle_ages_enemy_stats.tsv",
+      "sha256": "1b7aaf3021ee75b8542acfae3086dcc92675a40aa70985bffad7670c6d04134e"
+    }
+  ]
+}

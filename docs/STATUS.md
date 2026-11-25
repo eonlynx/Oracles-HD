@@ -1,7 +1,7 @@
 # Progress and parity tracker
 
-Snapshot: **2026-11-25**, commit `da0546c`, Maku palette/tile-change block (Ralph `$37:$0d`, past
-villager `$3a:$0d`, continuous room presentation, visibility/audit), base
+Snapshot: **2026-11-25**, P0.1/P0.2/P1.1 block on top of `5a08547` (native
+actor anchor/shadows, torch host, Octorok host + PART18), base
 Links-Awakening-DX-HD v2.0.6 (`2e68849`).
 
 Status legend:
@@ -20,7 +20,7 @@ Status legend:
 | Runtime startup | Done | `--oracle` boots directly into the generated overworld; opt-in `ORACLE_PERF_TRACE=1` timestamps startup/map loads (`docs/PERFORMANCE.md`). |
 | Map metadata (`#oracle-map v1`) | Done | Group/era/kind/room size/grid/room/floor/dungeon/camera; parsed into `Map.OracleInfo`. |
 | Camera policy | Done | DX-HD smooth follow everywhere, including houses; `Map.CameraTarget` only for explicit gameplay/puzzle locks. |
-| DX-HD native alignment | Audit complete / refactor pending | Entities still use `oracleSprite` presentation only; shadows, bodies, light/darkness, enemy/chest/door components are native but unused. P0 actor+shadow and P0 room-light refactor are the gate before new enemies/dungeons. `AUDIT.md` section 9 / `ARCHITECTURE.md` section 8. |
+| DX-HD native alignment | P0.1/P0.2 done; P1.1 partial | `oracleSprite` now uses the native body/draw/shadow/collision stack with a feet anchor. Torches use `ObjOracleTorch`/`ILamp` + `ObjRoomDarkener`; `$08` stays off, `$09` starts on. First native enemy host (`ObjOracleOctorok`) is wired. `AUDIT.md` section 9 / `ARCHITECTURE.md` section 8. |
 | Multiplatform (Linux/macOS/OpenGL/Vulkan/DX12) | Blocked | Upstream v2.0.6 is WindowsDX-only; sources not in the repository. See `PLATFORM.md`. |
 | Legacy LA cleanup | Not started | Policy in `CLEANUP.md`; LA data still backs the fallback boot/menu. |
 
@@ -53,10 +53,10 @@ Status legend:
 | Room lifecycle (`OracleRoomRuntime`) | Done (first pass) | `MapTransitionSystem.MapLoading` (before objects) and `MapLoaded` (after Link); continuous stitched-map room tracking; `OracleRoomEntryEffects` parses `roomSpecificCode.s`. |
 | Room presentation (no pop-in) | Done (first pass) | Entry-gated actors are presented for the edge Link would cross, including neighbours; scripts start only on the real crossing; completed one-shot guards suppress the actor immediately. ADR-037. |
 | Story-state visibility | Done (first pass) | One `OracleVisibilityEvaluator` reads global flags, room-state bits and source-cited rules keyed by `(id,subid,var03)`. Pre-intro `$6b:$01` audience and post-intro `$5d:$02` animals are sequential states, not cross-room exclusions. `--intro-done` selects the later state. |
-| Enemy atlas / Octorok | Partial | `enemyData`, `enemyAnimations` and `enemyOamData` compose into `oracle_ages_enemies.*`; specific Octoroks are placed and animated. Runtime AI/combat is the next step; random enemies remain intentionally unplaced. |
+| Enemy atlas / Octorok | Hosted (first species) | `enemyData`, `enemyAnimations`, `enemyOamData` and `partData` compose into `oracle_ages_enemies.*`; `$09:00..02` export four cardinal poses and PART18. `ObjOracleOctorok` uses native body/AI/hittable/damage/pushable/shadow, native `octorok.s` timing, room-gated projectiles, sword damage, knockback and death. Other species remain presentation-only; see `ENEMY_MAPPING.md`. |
 | Script engine (`CutsceneCommandCatalog`/Runner) | Partial | Typed command stream + manifest and source-cited `(interaction, subid)` bindings; native counter1/counter2 order, callstack, jump/gravity and Ralph helpers. Verified `$37:$0d` (flag `$40`, delete) and `$3a:$0d` (flag `$41`, jump, move, delete). Text is deliberately skipped; `setanimation` records the index but the atlas still carries only the default animation; audio pending. |
 | Game profile (`OracleGameProfile`) | Partial | Ages/Seasons flags (`.ifdef`-aware), portal policy, overworld groups, map naming and `--game`; Seasons content generation is still pending. |
-| Enemy/part/item placements | Partial | Native object streams now emit typed placements (1,199 rows across groups 0-5 for Ages), including condition/room-flag gates and random-enemy marking. Runtime construction/AI is not wired yet. |
+| Enemy/part/item placements | Partial | Native object streams emit typed placements (1,199 rows across groups 0-5 for Ages), including condition/room-flag gates and random-enemy marking. The first supported rows now emit `oracleOctorok` with imported stats, cardinal frames and PART18 data; unsupported rows stay presentation-only. |
 | Interaction behaviour table | Done | Typed, sorted TSV + manifest (`Data/Map Objects/oracle_<game>_interaction_behaviors.*`), emitted from `InteractionBehaviors`. |
 | Script command tables | Done (first family) | `Data/Maps/Scripts/oracle_<game>_scripts.*` and `oracle_<game>_script_bindings.*`; deterministic, sorted, with source hashes and completed-flag guards. Generated TSV/JSON are gitignored; manifests are committed. |
 | Dungeon floor layouts | Partial | `dungeonData.s` + `dungeonLayouts.s` parsed into typed tables; `dungeons --dungeon N` builds all rooms of a dungeon (dungeon `$05` has 45 rooms/2 floors). Same-floor edge connections use room properties; stairs/fall routing and large rooms remain pending. |
@@ -92,6 +92,26 @@ Validation artifacts (generated, gitignored): `Data/Maps/Previews/`,
 - Verified: enter room `0:66` -> interior `2:e7` through the door; exit `2:e7`
   through the bottom edge -> room `0:66`; eyes animate.
 
+### P1.1 first enemy host
+
+- `docs/ENEMY_MAPPING.md` classifies the Oracle `ENEMY_*` catalog against the
+  103 DX-HD enemy classes and records the first hosted species.
+- `ObjOracleOctorok` (`$09:$00..02`) imports stats from `enemyData.s`/
+  `extraEnemyData.s`, four cardinal OAM poses from `enemyAnimations.s` and
+  `PART_OCTOROK_PROJECTILE` (`$18`) from `partData.s`/`partAnimations.s`.
+- Movement follows `octorok.s`: random cardinal walk for one of
+  `{25,33,41,49}` frames, 1-in-4 chance to head toward Link, native stand
+  counters, native `random & var32` shoot roll, 16-frame windup and 32-frame
+  post-shot wait. Cardinal facing uses the verified art order
+  right/down/left/up.
+- Combat is native-component based: body collision, sword hittable, damage
+  field, knockback restricted to the tile-collision path, death state, shadow
+  and a bouncy PART18 projectile. The projectile is not spawned inside solid
+  tiles.
+- Enemies only fire when the player is in the same Oracle room
+  (`OracleSession.Room`), even when the camera culling margin still updates
+  them.
+
 ### Known Ages artifacts
 
 - The Maku Tree canopy and lower band are **not** black in `0:$38`. The static
@@ -116,8 +136,10 @@ Validation artifacts (generated, gitignored): `Data/Maps/Previews/`,
   colours until `roomGfxChanges` is imported.
 - Bridges/rails and other special collisions are treated as free or full-solid
   conservatively.
-- NPCs use their default animation; facing/script animations, enemies, parts and
-  items are not loaded yet.
+- NPCs use their default animation; facing/script animations and item frames
+  are still pending. Enemy `$09:00..02` is the first species with composed
+  cardinal frames, movement and PART18; the rest of the catalog keeps the
+  presentation-only fallback until promoted via `ENEMY_MAPPING.md`.
 
 ## 3. Oracle of Seasons
 

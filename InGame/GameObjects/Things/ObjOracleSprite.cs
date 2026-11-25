@@ -10,9 +10,11 @@ using ProjectZ.InGame.Things;
 namespace ProjectZ.InGame.GameObjects.Things
 {
     /// <summary>
-    /// Draws a pre-composed Oracle sprite animation. The importer bakes the OAM
-    /// composition into the generated atlas and embeds the frame list and
-    /// timeline in the .map, so no .ani or sidecar animation file is needed.
+    /// Native-backed Oracle actor. The interaction anchor is the actor's feet,
+    /// matching ObjPersonNew/EnemyOctorok; the composed OAM is drawn with a
+    /// CSprite draw offset above that anchor. Body/Draw/Shadow components are
+    /// the DX-HD ones, so Y-sorting, water/grass feet effects, gravity, tile
+    /// collision and the native shadow pass are inherited instead of reimplemented.
     /// </summary>
     internal class ObjOracleSprite : GameObject
     {
@@ -20,6 +22,8 @@ namespace ProjectZ.InGame.GameObjects.Things
         public int SubId { get; }
         public int Var03 { get; }
         public int RequiresEntryDirection { get; }
+
+        public BodyComponent Body => _body;
 
         // Script-visible actor state. Runtime scripts own these values; the
         // sprite only exposes the native object bytes the commands address.
@@ -33,14 +37,45 @@ namespace ProjectZ.InGame.GameObjects.Things
 
         public void SetScriptVisible(bool visible)
         {
-            if (_sprite != null)
-                _sprite.IsVisible = visible;
+            if (_sprite == null)
+                return;
+
+            _sprite.IsVisible = visible;
+            _body.IsActive = visible;
+            _draw.IsActive = visible;
+            _shadow.IsActive = visible;
+            if (_collision != null)
+                _collision.IsActive = visible;
+        }
+
+        public void BeginScriptJump()
+        {
+            _body.IgnoresZ = true;
+            _body.Position.Z = 0;
+            _body.Velocity.Z = 0;
+        }
+
+        public void SetScriptZ(float z)
+        {
+            _body.Position.Z = z;
+            _body.Velocity.Z = 0;
+        }
+
+        public void EndScriptJump()
+        {
+            _body.IgnoresZ = false;
+            _body.Position.Z = 0;
+            _body.Velocity.Z = 0;
         }
 
         private readonly DictAtlasEntry[] _frames;
         private readonly int[] _durations;
         private readonly int _loopStart;
         private readonly CSprite _sprite;
+        private readonly BodyComponent _body;
+        private readonly BodyDrawComponent _draw;
+        private readonly BodyDrawShadowComponent _shadow;
+        private readonly BodyCollisionComponent _collision;
 
         private int _frame;
         private float _elapsed;
@@ -79,43 +114,75 @@ namespace ProjectZ.InGame.GameObjects.Things
             _durations = OracleSpriteFrames.LoadDurations(durations, _frames.Length);
             _loopStart = Math.Clamp(loopStart, 0, _frames.Length - 1);
 
-            // DX-HD's draw pool sorts by EntityPosition and expects the sprite
-            // top-left there; negative EntitySize offsets cull incorrectly.
-            // Keep the composed top-left for now and record the tall-actor
-            // depth limitation in the audit instead of adding a second anchor.
-            EntityPosition = new CPosition(posX + offsetX, posY + offsetY, 0);
+            // Native convention: EntityPosition is the feet/anchor. The OAM
+            // canvas is drawn above it through CSprite.DrawOffset. EntitySize
+            // uses the same negative offset so culling sees the full frame.
+            EntityPosition = new CPosition(posX, posY, 0);
+            var width = _frames[0].SourceRectangle.Width;
+            var height = _frames[0].SourceRectangle.Height;
 
-            EntitySize = new Rectangle(0, 0,
-                _frames[0].SourceRectangle.Width, _frames[0].SourceRectangle.Height);
+            _sprite = new CSprite(_frames[0], EntityPosition, new Vector2(offsetX, offsetY));
 
-            _sprite = new CSprite(_frames[0], EntityPosition);
-            AddComponent(DrawComponent.Index, new DrawCSpriteComponent(_sprite, layer));
+            // Source collision describes the body footprint. A solid tile is
+            // the native objectMarkSolidPosition contract; explicit radii use
+            // objectSetCollideRadius/Radii. Actors without either still get a
+            // small body so they inherit field state, gravity and shadows.
+            int bodyX;
+            int bodyY;
+            int bodyWidth;
+            int bodyHeight;
+            if (solidTile)
+            {
+                bodyX = -8;
+                bodyY = -8;
+                bodyWidth = 16;
+                bodyHeight = 16;
+            }
+            else if (radiusY > 0 || radiusX > 0)
+            {
+                bodyX = -Math.Max(1, radiusX);
+                bodyY = -Math.Max(1, radiusY);
+                bodyWidth = Math.Max(2, radiusX * 2);
+                bodyHeight = Math.Max(2, radiusY * 2);
+            }
+            else
+            {
+                bodyX = -4;
+                bodyY = -8;
+                bodyWidth = 8;
+                bodyHeight = 8;
+            }
+
+            _body = new BodyComponent(EntityPosition, bodyX, bodyY,
+                bodyWidth, bodyHeight, Math.Max(8, bodyHeight))
+            {
+                Gravity = -0.15f,
+                Drag = 0.85f,
+                DragAir = 0.99f,
+            };
+
+            // Culling must cover both the composed OAM and the body footprint.
+            var minX = Math.Min(offsetX, bodyX);
+            var minY = Math.Min(offsetY, bodyY);
+            var maxX = Math.Max(offsetX + width, bodyX + bodyWidth);
+            var maxY = Math.Max(offsetY + height, bodyY + bodyHeight);
+            EntitySize = new Rectangle(minX, minY, maxX - minX, maxY - minY);
+
+            _draw = new BodyDrawComponent(_body, _sprite, layer);
+            _shadow = new BodyDrawShadowComponent(_body, _sprite);
+            AddComponent(BodyComponent.Index, _body);
+            AddComponent(DrawComponent.Index, _draw);
+            AddComponent(DrawShadowComponent.Index, _shadow);
+
+            if (solidTile || radiusY > 0 || radiusX > 0)
+            {
+                _collision = new BodyCollisionComponent(_body,
+                    Values.CollisionTypes.Enemy | Values.CollisionTypes.PushIgnore);
+                AddComponent(CollisionComponent.Index, _collision);
+            }
 
             if (requiresEntryDirection >= 0)
                 _sprite.IsVisible = false;
-
-            // Native object collision: objectMarkSolidPosition marks the object's
-            // tile solid (16x16); objectSetCollideRadius/Radii give an explicit
-            // Y/X radius. The body is always centred on the interaction anchor
-            // (the object's feet), not on the OAM top-left.
-            if (solidTile || radiusY > 0 || radiusX > 0)
-            {
-                var boxHeight = solidTile ? 16 : radiusY * 2;
-                var boxWidth = solidTile ? 16 : radiusX * 2;
-                boxHeight = Math.Min(boxHeight, EntitySize.Height);
-                boxWidth = Math.Min(boxWidth, EntitySize.Width);
-
-                var anchorX = posX - (int)EntityPosition.X;
-                var anchorY = posY - (int)EntityPosition.Y;
-                var boxX = Math.Clamp(anchorX - boxWidth / 2, 0, EntitySize.Width - boxWidth);
-                var boxY = Math.Clamp(anchorY - boxHeight / 2, 0, EntitySize.Height - boxHeight);
-
-                if (boxWidth > 0 && boxHeight > 0)
-                    AddComponent(CollisionComponent.Index, new BoxCollisionComponent(
-                        new CBox(EntityPosition, boxX, boxY, 0,
-                            boxWidth, boxHeight, 16),
-                        Values.CollisionTypes.Normal));
-            }
 
             if (_frames.Length > 1)
                 AddComponent(UpdateComponent.Index, new UpdateComponent(Update));
@@ -138,4 +205,3 @@ namespace ProjectZ.InGame.GameObjects.Things
         }
     }
 }
-

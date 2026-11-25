@@ -74,6 +74,7 @@ public sealed class DungeonBuilder
                     var objects = new List<MapObjectPlacement>();
                     roomObjects.AddSpriteObjects(objects, roomData, plan, 0, 0);
                     AddDungeonWarps(objects, dungeons, dungeon, layout, row, col, room);
+                    AddRoomAtmosphere(objects, content, options, dungeons, dungeon, room);
                     var result = roomBuilder.Build(dungeon.Group, room, false, null, options,
                         objects,
                         mapLayout => roomObjects.AddWarpObjects(
@@ -85,6 +86,67 @@ public sealed class DungeonBuilder
 
         return new DungeonBuildResult(dungeonId, dungeon.Group, rooms, dungeon.Floors,
             maps, issues, interactions, enemies, parts, items);
+    }
+
+    /// <summary>
+    /// DUNGEONROOMPROPERTY_DARK ($80) is the native dungeon dark-room bit.
+    /// DX-HD already owns the light shader and its map object; emit the native
+    /// blackener instead of teaching OracleRoomRuntime a second lighting pass.
+    /// </summary>
+    private static void AddRoomAtmosphere(List<MapObjectPlacement> objects,
+        OracleContent content, OracleOptions options, OracleDungeons dungeons,
+        DungeonInfo dungeon, int room)
+    {
+        var properties = dungeons.RoomProperties(dungeon.Group, room);
+        if ((properties & 0x80) == 0)
+            return;
+
+        // ObjDungeonBlacker sets Map.UseLight and Map.LightColor. The source
+        // color/alpha are the native dungeon defaults until the Oracle
+        // palette-thread constants are mapped separately.
+        objects.Add(new MapObjectPlacement("dungeonBlacker", new[]
+        {
+            "0", "0", "255", "255", "255", "140",
+        }));
+
+        var tilesetId = content.GetRoomTileset(room, options);
+        var info = content.GetTileset(tilesetId);
+        var layout = content.GetRoomLayout(
+            content.GetLayoutGroup(room, info, options), room, largeRoom: false);
+        // A light source must correspond to an actual lit tile. Unlit torches
+        // ($08) are intentionally left dark; the native lightable-torch pass
+        // changes them to $09 before a light is justified.
+        var litTorch = content.GetConstant("TILEINDEX_LIT_TORCH");
+        var unlitTorch = content.GetConstant("TILEINDEX_UNLIT_TORCH");
+        if (litTorch < 0 || unlitTorch < 0)
+            return;
+
+        var hasTorches = false;
+        for (var y = 0; y < layout.Height; y++)
+            for (var x = 0; x < layout.Width; x++)
+            {
+                var tile = layout.Tiles[y * layout.Width + x];
+                if (tile != litTorch && tile != unlitTorch)
+                    continue;
+
+                hasTorches = true;
+                objects.Add(new MapObjectPlacement("oracleTorch", new[]
+                {
+                    (x * 16).ToString(), (y * 16).ToString(),
+                    tile == litTorch ? "true" : "false",
+                }));
+            }
+
+        if (hasTorches)
+        {
+            // The room darkener counts the native Lamp tag and ILamp.IsOn().
+            // Unlit ($08) torches keep the room dark; lit ($09) torches are
+            // already on and can brighten it.
+            objects.Add(new MapObjectPlacement("roomDarkener", new[]
+            {
+                "0", "0", "0.55", "0.25",
+            }));
+        }
     }
 
     private void AddDungeonWarps(List<MapObjectPlacement> objects, OracleDungeons dungeons,

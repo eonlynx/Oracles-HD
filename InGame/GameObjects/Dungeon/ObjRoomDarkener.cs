@@ -66,11 +66,8 @@ namespace ProjectZ.InGame.GameObjects.Dungeon
 
             foreach (var gameObject in _lamps)
             {
-                if (gameObject is ObjLamp lamp)
-                {
-                    if (lamp.IsOn())
-                        onCount++;
-                }
+                if (gameObject is ILamp lamp && lamp.IsOn())
+                    onCount++;
             }
 
             // blend from _bright to _dark depending on how many lamps in the room are on

@@ -227,6 +227,8 @@ namespace ProjectZ.InGame.GameObjects
             ObjectTemplates.Add("oracleWarp", new GameObjectTemplate(typeof(ObjOracleWarp), new object[] { "", 0, 0, 3, 16, 16, 0 }));
             ObjectTemplates.Add("oracleSprite", new GameObjectTemplate(typeof(ObjOracleSprite), new object[] { "", "", 0, 0, Values.LayerPlayer, 0, 0, 0, -1, -1, 0, 0, 0, 0, false, 0, 0, -1 }));
             ObjectTemplates.Add("oracleTimePortal", new GameObjectTemplate(typeof(ObjOracleTimePortal), new object[] { "", "", 0, 0, Values.LayerPlayer, 0, 0 }));
+            ObjectTemplates.Add("oracleTorch", new GameObjectTemplate(typeof(ObjOracleTorch), new object[] { false }));
+            ObjectTemplates.Add("oracleOctorok", new GameObjectTemplate(typeof(ObjOracleOctorok), new object[] { "", "", 0, 0, 0, 2, 1, 0x14, 7, "", "", 0, 0, 0x50, 2, 0x50, "" }));
 
             ObjectTemplates.Add("lowFloor", new GameObjectTemplate(typeof(ObjFloor), new object[] { -2 }));
             ObjectTemplates.Add("water", new GameObjectTemplate(typeof(ObjWater), new object[] { -2 }));

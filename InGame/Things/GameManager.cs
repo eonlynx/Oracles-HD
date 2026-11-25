@@ -1430,6 +1430,18 @@ namespace ProjectZ.InGame.Things
             // --intro-done opts into the post-intro state for scene checks.
             var introFlag = oracle ? Game1.OracleIntroFlag : Game1.OracleProfile.IntroFlag;
             OracleSession.Reset(Game1.OracleDevFlags, Game1.OracleRoomStateModifier, introFlag);
+            if (oracle)
+            {
+                // Development entry equipment (--equip). The normal Oracle
+                // new game grants these through story scripts instead.
+                for (var equipSlot = 0; equipSlot < Game1.OracleDevEquipment.Count; equipSlot++)
+                {
+                    var itemName = Game1.OracleDevEquipment[equipSlot];
+                    CollectItem(new GameItemCollected(itemName) { Count = 1 }, equipSlot);
+                    OracleScriptRuntime.Trace(
+                        $"dev equip {itemName} slot {equipSlot} sword level {SwordLevel}");
+                }
+            }
             OracleSession.PendingRoomFlags = Game1.OracleRoomFlagsSet ? Game1.OracleRoomFlags : -1;
             if (oracle)
                 OracleRooms = new OracleRoomRuntime(OracleSession, Game1.OracleProfile);
