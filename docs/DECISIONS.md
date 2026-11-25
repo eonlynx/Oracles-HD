@@ -299,14 +299,16 @@ When a record is superseded, add a new one instead of editing history.
   `#oracle-map v1`: game, group, era, kind, room size, grid, room, floor,
   dungeon and camera. The runtime reads it into `Map.OracleInfo`.
 - **Camera:** keep DX-HD's smooth follow camera everywhere it works, including
-  stitched overworlds and joined dungeon floors. Use `Map.CameraTarget` only for
-  isolated one-screen rooms (160x128) or a puzzle that explicitly requires a
-  fixed view. This preserves the DX-HD feel while giving Oracle room identity.
+  stitched overworlds, houses/caves of 160x128 and joined dungeon floors.
+  `Map.CameraTarget` is only set by gameplay that explicitly requires a fixed
+  view; do not derive a fixed camera from map size. This matches the DX-HD code
+  path (`ObjDoor` transitions leave `centerCamera` false and houses have no
+  camera object).
 - **Why:** string map names and pixel positions cannot identify era/room/floor;
   enemies, scripts, save/respawn and dungeon logic need this metadata.
 - **Consequence:** the importer owns the conversion; runtime code does not
-  derive group/era from file names. The fixed camera is data-driven, not a
-  second camera system.
+  derive group/era from file names. `CameraTarget` remains a gameplay override,
+  not a second camera system.
 
 ## ADR-031 - Semantic object identity and flag-gated spawn
 

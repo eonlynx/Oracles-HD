@@ -358,13 +358,10 @@ namespace ProjectZ.InGame.SaveLoad
 
             map.OracleInfo = info;
 
-            // DX-HD keeps the smooth follow camera. Only isolated one-screen
-            // rooms opt into the fixed camera, using the existing CameraTarget.
-            if (info.FixedCamera)
-                map.CameraTarget = new Vector2(
-                    map.MapWidth * Values.TileSize / 2f,
-                    map.MapHeight * Values.TileSize / 2f);
-
+            // DX-HD follows Link in houses and other 160x128 rooms; it only
+            // locks when gameplay explicitly assigns Map.CameraTarget. Keep the
+            // metadata field for a future puzzle override, but do not derive a
+            // fixed camera from map size.
             return index;
         }
 

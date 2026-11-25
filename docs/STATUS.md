@@ -19,7 +19,7 @@ Status legend:
 | .NET 8 build | Done | `net8.0-windows`, 0 errors, 46 pre-existing warnings. |
 | Runtime startup | Done | `--oracle` boots directly into the generated overworld. |
 | Map metadata (`#oracle-map v1`) | Done | Group/era/kind/room size/grid/room/floor/dungeon/camera; parsed into `Map.OracleInfo`. |
-| Camera policy | Done | DX-HD smooth follow by default; `Map.CameraTarget` only for isolated one-screen rooms. |
+| Camera policy | Done | DX-HD smooth follow everywhere, including houses; `Map.CameraTarget` only for explicit gameplay/puzzle locks. |
 | Multiplatform (Linux/macOS/OpenGL/Vulkan/DX12) | Blocked | Upstream v2.0.6 is WindowsDX-only; sources not in the repository. See `PLATFORM.md`. |
 | Legacy LA cleanup | Not started | Policy in `CLEANUP.md`; LA data still backs the fallback boot/menu. |
 

@@ -55,7 +55,7 @@ was added.
 | File | Change |
 |---|---|
 | `InGame/Map/Map.cs` | `CollisionMap`, `TerrainMap`, `TileAnimations`, `OracleInfo`; `IsSolid`, `ApplyTerrainToFieldStates`, `UpdateTileAnimations`. |
-| `InGame/Map/OracleMapInfo.cs` | Reads group/era/kind/room/floor/camera metadata; fixed camera only for isolated one-screen rooms. |
+| `InGame/Map/OracleMapInfo.cs` | Reads group/era/kind/room/floor/camera metadata; `CameraTarget` remains an explicit gameplay override. |
 | `InGame/Map/TileAnimation.cs` | New: per-cell frame/duration timeline. |
 | `InGame/Map/MapManager.cs` | Calls `UpdateTileAnimations(Game1.DeltaTime)` each update. |
 | `InGame/SaveLoad/SaveLoadMap.cs` | Parses the trailing Oracle sections after the native object list. |

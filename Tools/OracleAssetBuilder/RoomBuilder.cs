@@ -124,9 +124,9 @@ public sealed class RoomBuilder
             4 or 5 => "dungeon",
             _ => "room",
         };
-        // DX-HD keeps the smooth follow camera. Lock only isolated one-screen
-        // rooms; larger rooms/floors stay continuous.
-        var camera = width <= 10 && height <= 8 ? "fixed" : "follow";
+        // Match DX-HD: follow by default in every map, including houses. A
+        // future puzzle can set Map.CameraTarget explicitly.
+        var camera = "follow";
         var mapInfo = OracleMapInfo.SingleRoom(_content.Repo.Game, group, room,
             width, height, kind, camera);
 

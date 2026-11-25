@@ -130,11 +130,12 @@ dungeon=-1
 camera=follow|fixed
 ```
 
-`room=-1` for a stitched overworld. `camera=fixed` is used **only** for
-isolated one-screen rooms (160x128); the runtime sets `Map.CameraTarget` to the
-map centre. Overworlds, joined dungeon floors and larger rooms keep DX-HD's
-smooth follow camera. The importer is the only writer of this header; the
-runtime only reads the already-converted values.
+`room=-1` for a stitched overworld. `camera=follow` is the default everywhere,
+including houses/caves of 160x128 and joined dungeon floors, matching DX-HD.
+`camera=fixed` is reserved for an explicit puzzle/gameplay override; it is not
+derived from map size. `Map.CameraTarget` is the existing DX-HD mechanism for
+that explicit case. The importer is the only writer of this header; the runtime
+only reads the already-converted values.
 
 ### 5.1 Collision
 
