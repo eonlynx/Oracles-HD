@@ -68,14 +68,16 @@ namespace ProjectZ.InGame.GameObjects.Things
             // anchor, i.e. a 12x12 blocking box. Effects use radius 0.
             if (collisionRadius > 0)
             {
-                // Keep the blocking box inside the sprite rectangle; the atlas
-                // origin already centres normal 16x16 NPCs on the interaction
-                // anchor.
-                var boxX = Math.Max(0, _frames[0].SourceRectangle.Width / 2 - collisionRadius);
-                var boxY = Math.Max(0, _frames[0].SourceRectangle.Height / 2 - collisionRadius);
+                // DX-HD asserts that a BoxCollisionComponent stays inside
+                // EntitySize. Some imported actors are only 8px wide, so clamp
+                // the box to the frame instead of crashing the map load.
+                var boxWidth = Math.Min(collisionRadius * 2, EntitySize.Width);
+                var boxHeight = Math.Min(collisionRadius * 2, EntitySize.Height);
+                var boxX = (EntitySize.Width - boxWidth) / 2;
+                var boxY = (EntitySize.Height - boxHeight) / 2;
                 AddComponent(CollisionComponent.Index, new BoxCollisionComponent(
                     new CBox(EntityPosition, boxX, boxY, 0,
-                        collisionRadius * 2, collisionRadius * 2, 16),
+                        boxWidth, boxHeight, 16),
                     Values.CollisionTypes.Normal));
             }
 

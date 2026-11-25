@@ -8,9 +8,9 @@ dungeons. It records abstraction debt, not new features.
 
 | Next block | Verdict | Why |
 |---|---|---|
-| `roomGfxChanges` | **GO** | It is importer/render work; it does not require a new runtime abstraction. It will replace the temporary Maku `$8f` branch. |
-| Present -> past transitions | **NO-GO yet** | The runtime has no map/era/room metadata. Warps are file-name strings; room logic cannot identify era or room from a world position. |
-| Dungeons | **NO-GO yet** | Same metadata gap, plus stairs/fall/source-transition warp modes, large rooms and camera locking. |
+| `roomGfxChanges` | **GO** | It is importer/render work; it does not require a new runtime abstraction and does not affect Maku `$38`, whose tiles and `$8f` palette already match the reference. |
+| Present -> past transitions | **GO** | `#oracle-map v1` now provides group/era/kind/room; map transitions can distinguish the two overworlds without reading file names. |
+| Dungeons | **NO-GO yet** | Metadata exists, but stairs/fall/source-transition warp modes, large rooms and camera locking remain. |
 
 The present slice is coherent enough to keep; it is not yet coherent enough to
 scale to enemies, era changes or floors without a small refactor.
@@ -136,8 +136,9 @@ following are bridges:
    walk-off, instant, fall and dungeon stairs through the existing
    `MapTransitionSystem`/`ObjLink` state. Reuse `ObjDoor` semantics where they
    fit; do not add a second transition system.
-5. **Sprite palette context**: importer applies room `m_PaletteHeaderSpr` and
-   object extra graphics. This is also the right place to finish the Maku
+5. **Sprite palette context**: importer applies per-room `m_PaletteHeaderSpr` and
+   object extra graphics (the `$87` chain `$04`+`$05` is ported; per-room sprite
+   palettes 6/7 remain). This is the right place to finish the Maku
    sign/flower and post-game statue presentation.
 6. **Camera policy**: lock small maps to their centre or clamp to bounds; add a
    dungeon camera mode. Use `Map.CameraTarget`.

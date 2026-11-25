@@ -108,7 +108,8 @@ Phase 3/4 evidence:
 |---|---|---|
 | Enter interior | Boot `oracle --pos 1037,880`; hold Up into room `0:66`'s door | Map changes to `oracle_ages_g2_re7.map` |
 | Exit interior | Boot `oracle --room e7 --pos 76,108`; hold Down into the bottom edge | Map changes to `oracle_ages_g0_overworld.map`, spawn at room `0:66`'s door |
-| Maku eyes | Boot `oracle --pos 1360,470`; observe `$87` | Eyes and mouth render on the upper trunk |
+| Maku eyes | Boot `oracle --pos 1360,470`; observe `$87` | Eyes, expressions and smile render on the upper trunk |
+| Maku reference | Compare `Data/Maps/Previews/oracle_ages_g0_r38.png` with the original `Oracle_Of_Ages_-_Maku_Tree.png` | Same teal pond, blue bubble foliage, brown trunk and face; no black canopy/lower band |
 | Eye animation | Burst of frames over 3.3 s | Frame 0 open, then half/closed frames; loop returns to open |
 | Object anchor | Interior `2:e7` dog (`$54`) and person (`$53`) | Sprites centred on the native interaction positions |
 | Flag gate off | Boot `oracle --pos 1360,470` | `$6b:$15` Link statue absent |
@@ -120,8 +121,10 @@ Phase 3/4 evidence:
 - Link's idle animation changes pixels; exclude his 64x64 screen box when
   measuring water animation.
 - The Maku Tree scene uses `PALH_8f` (BG 2-7), not the plain tileset palette
-  `$30`; the eyes themselves use standard sprite palette 3. The missing
-  canopy/lower band are `roomGfxChanges`, not object placement.
+  `$30`; the eyes themselves use standard sprite palette 3 (2/3 XORed). The
+  canopy and lower band are static tileset $22 graphics (header `$70`:
+  common + bottom) and match the original screenshot. The face/expressions
+  also need the object-gfx chain `$04`+`$05`; they are not `roomGfxChanges`.
 - `WindowWidth/Height` include the title bar/border; map-to-screen crops must
   account for it.
 - The overworld/internals are intentionally stitched or separate maps; a
@@ -140,7 +143,9 @@ Run before each milestone commit:
 - [ ] Entity atlas -> 221 entries, 37 interaction ids, 6 Maku frames.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
-- [ ] Maku eyes render and blink; palette `$8f` sign/flower colours are correct.
+- [ ] Maku eyes/expressions render and blink; palette `$8f` sign/flower colours are correct.
+- [ ] `$87` composes object-gfx headers `$04`+`$05`; no missing tiles on expression frames.
+- [ ] NPC collision box stays inside the sprite frame (narrow 8px actors do not crash the map).
 - [ ] Tile animation crop differs between two frames.
 - [ ] Collision: Link stops at water/cliff.
 - [ ] Root cause checked against `ooa-godot` / `oracles-decomp` / `top` before

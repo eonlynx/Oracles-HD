@@ -339,4 +339,26 @@ When a record is superseded, add a new one instead of editing history.
   `BoxCollisionComponent` lies within the object bounds.
 - **Consequence:** NPCs block Link and each other through the existing
   `CollisionComponent`/`SystemBody` path. Per-NPC `objectSetCollideRadii` values
-  can refine the default later without changing the object model.
+  can refine the default later without changing the object model. The box is
+  clamped to `EntitySize` because some imported actors are only 8px wide; a
+  fixed 12x12 box would trip DX-HD's `GameObject.AddComponent` assertion and
+  abort the map load.
+
+## ADR-033 - Maku Tree extra object-gfx chain
+
+- **Status:** accepted.
+- **Decision:** `InteractionSprites` grows the composed sheet for `$87` by
+  walking consecutive `objectGfxHeaders.s` entries until the stop bit:
+  `$04 spr_makuadultsprites_1` (no `, 1`) then
+  `$05 spr_makuadultsprites_2, 1`. The second 128x16 sheet is appended after
+  the first, matching `interactionLoadExtraGraphics` +
+  `loadGraphics.s:@nextExtraGfxIndex` and ooa-godot
+  `Import-MakuTreeData.ps1`.
+- **Why:** `$87` OAM frames use tiles `$20-$2e` (mouths, eyebrows, cheeks) that
+  live in `$05`. Composing only `$04` silently dropped those blocks, so the
+  face's expression frames were incomplete. The Maku Tree's canopy/lower band
+  are static tileset $22 graphics (header `$70`), not `treeGfxHeaderTable`
+  (`TREE_GFXH_07..0a` are the scent/pegasus/gale/mystery trees).
+- **Consequence:** the importer keeps the native chain semantics instead of a
+  per-sheet list; the continuation is resolved generically by the stop bit and
+  currently applied only to `$87`, the only interaction that requests it.

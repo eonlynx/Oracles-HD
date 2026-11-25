@@ -25,7 +25,7 @@ public static class InteractionRules
             (0x87, _) => new InteractionRule(-1, -1, -1, 0), // Maku Tree eyes
             (0x89, _) => new InteractionRule(-1, -1, -1, 0), // flame
             (0xe5, _) => new InteractionRule(-1, -1, -1, 0), // flower/book/seedling
-            (0x71, _) => new InteractionRule(-1, -1, -1, 0), // tree/seed decoration
+            (0x71, _) => new InteractionRule(-1, -1, -1, 0), // companion scripts
 
             // Ordinary NPC/actor default from ooa-godot NpcCharacter.
             _ => new InteractionRule(-1, -1, -1, 6),

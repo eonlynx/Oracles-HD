@@ -53,6 +53,7 @@ public sealed class InteractionSprites
     private readonly Dictionary<int, InteractionGraphics> _inlineData = new();
     private readonly Dictionary<string, List<InteractionGraphics>> _subidData = new(StringComparer.Ordinal);
     private readonly Dictionary<int, string[]> _gfxHeaders = new();
+    private readonly HashSet<int> _gfxHeaderStops = new();
     private readonly Dictionary<string, List<string>> _animationTables = new(StringComparer.Ordinal);
     private readonly Dictionary<string, int> _oamPointerStarts = new(StringComparer.Ordinal);
     private readonly List<string> _oamPointerStream = new();
@@ -102,7 +103,7 @@ public sealed class InteractionSprites
         if (!_oamPointerStarts.TryGetValue(pointerKey, out var pointerStart))
             return false;
 
-        var sheet = GetSheet(graphics.GfxHeader);
+        var sheet = GetComposedSheet(interactionId, graphics.GfxHeader);
         if (sheet == null)
             return false;
 
@@ -204,6 +205,40 @@ public sealed class InteractionSprites
         }
     }
 
+    private SpriteSheet? GetComposedSheet(int interactionId, int gfxHeader)
+    {
+        // INTERAC_MAKU_TREE calls interactionLoadExtraGraphics. ooa-godot's
+        // Import-MakuTreeData.ps1 resolves object gfx header $04 and appends
+        // the continuation header $05 (spr_makuadultsprites_2) after the first
+        // 16-tile sheet, exactly like the stop-bit walk in loadGraphics.s.
+        // Its OAM blocks use tiles $20-$2e, which live in that second sheet.
+        if (interactionId == 0x87)
+            return GetExtraGfxChain(gfxHeader);
+
+        return GetSheet(gfxHeader);
+    }
+
+    private SpriteSheet? GetExtraGfxChain(int gfxHeader)
+    {
+        var sheet = GetSheet(gfxHeader);
+        if (sheet == null)
+            return null;
+
+        for (var id = gfxHeader; !_gfxHeaderStops.Contains(id);)
+        {
+            id++;
+            if (!_gfxHeaders.TryGetValue(id, out var names) || names.Length == 0)
+                break;
+
+            var next = LoadSheet(names[0]);
+            if (next == null || next.Width != sheet.Width)
+                break;
+            sheet = SpriteSheet.Vertical(sheet, next);
+        }
+
+        return sheet;
+    }
+
     private SpriteSheet? GetSheet(int gfxHeader)
     {
         if (_sheets.TryGetValue(gfxHeader, out var cached))
@@ -212,20 +247,9 @@ public sealed class InteractionSprites
         if (!_gfxHeaders.TryGetValue(gfxHeader, out var sheetNames) || sheetNames.Length == 0)
             return null;
 
-        // A continuation chain is rare for interactions; compose the sheets
-        // vertically using the same 128-pixel slot model as ooa-godot. If the
-        // widths differ, keep the first sheet and reject the rest.
         var sheet = LoadSheet(sheetNames[0]);
         if (sheet == null)
             return null;
-
-        for (var i = 1; i < sheetNames.Length; i++)
-        {
-            var next = LoadSheet(sheetNames[i]);
-            if (next == null || next.Width != sheet.Width)
-                break;
-            sheet = SpriteSheet.Vertical(sheet, next);
-        }
 
         _sheets[gfxHeader] = sheet;
         return sheet;
@@ -344,28 +368,13 @@ public sealed class InteractionSprites
                 continue;
 
             var id = ParseHex(match.Groups["id"].Value);
-            var names = new List<string> { match.Groups["name"].Value };
-            var rest = match.Groups["rest"].Value;
-            if (Regex.IsMatch(rest, @",\s*1\s*$"))
-            {
-                // The next header is the continuation sheet.
-                var next = FindNextGfxName(path, id + 1);
-                if (next != null)
-                    names.Add(next);
-            }
-            _gfxHeaders[id] = names.ToArray();
-        }
-    }
+            _gfxHeaders[id] = new[] { match.Groups["name"].Value };
 
-    private static string? FindNextGfxName(string path, int id)
-    {
-        foreach (var raw in File.ReadLines(path))
-        {
-            var match = GfxHeaderRegex.Match(raw);
-            if (match.Success && ParseHex(match.Groups["id"].Value) == id)
-                return match.Groups["name"].Value;
+            // loadGraphics.s:@nextExtraGfxIndex walks consecutive object gfx
+            // headers until the second parameter has bit 7 set (`, 1`).
+            if (Regex.IsMatch(match.Groups["rest"].Value, @",\s*1\s*$"))
+                _gfxHeaderStops.Add(id);
         }
-        return null;
     }
 
     private void LoadAnimations(string path)

@@ -38,10 +38,10 @@ Status legend:
 | Animated tiles | Done | Frames in the existing atlas; timeline in `.map`; no `.ani`. |
 | Tile collisions | Partial | Quadrant bits + water/hole/lava solid; special collisions (`>=0x10`, bridges/rails) not yet exact. |
 | Terrain (`FieldStates`) | Partial | Water, deep water, lava, grass; swimming/falling not implemented. |
-| Room-specific graphics (`roomGfxChanges`) | Not started | Maku Tree canopy/bottom still render black until this is imported. |
-| Objects / interactions (first pass) | Partial | 37 interaction ids composed into one atlas; positioned interactions only, default animation. `INTERAC_MAKU_TREE $87` eyes render and blink. |
+| Room-specific graphics (`roomGfxChanges`) | Not started | Shops, gasha spots and sign/tile rewrites are still pending. The Maku Tree room `$38` needs none: its tiles and palette match the original screenshot. |
+| Objects / interactions (first pass) | Partial | 37 interaction ids composed into one atlas; positioned interactions only, default animation. `INTERAC_MAKU_TREE $87` composes object-gfx headers `$04`+`$05` (`spr_makuadultsprites_1/2`), so its eyes, expressions and smile render and blink. |
 | Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, requires/forbids, `obj_Condition` and before/after room-flag gates. `$6b:$15` post-game statue is hidden by default and appears with `--flag FINISHEDGAME`. |
-| NPC collision | Partial | Ordinary NPCs/actors use the `ooa-godot` 6px radius (12x12 box); Maku eyes/flame/flower/tree decoration are non-solid. Per-NPC radii still pending. |
+| NPC collision | Partial | Ordinary NPCs/actors use the `ooa-godot` 6px radius (12x12 box, clamped to the frame); Maku eyes/flame/flower/tree decoration are non-solid. Per-NPC radii still pending. |
 | Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is composed for `$6b:$15`; general per-room sprite palette application is still pending. |
 | Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Past group 3 and dungeons pending. |
 | Maku Tree palette (`PALH_8f`) | Done | Room `$38` uses palette header `$8f` per `makuTree.s`, not tileset `$30`. |
@@ -72,14 +72,22 @@ Validation artifacts (generated, gitignored): `Data/Maps/Previews/`,
 - Present interiors: 22 maps, 22 sprite objects, 11 exit warps.
 - Entity atlas: 244 frame entries from 36 interaction ids.
 - Maku Tree: 6 composed OAM frames (`$87:00`), blink timeline
-  `3000,66,66,66,66,66` ms, palette header `$8f`.
+  `3000,66,66,66,66,66` ms, palette header `$8f`. The importer composes the
+  object-gfx chain `$04`+`$05` (`spr_makuadultsprites_1/2`), matching
+  `interactionLoadExtraGraphics` and ooa-godot `Import-MakuTreeData.ps1`.
 - Verified: enter room `0:66` -> interior `2:e7` through the door; exit `2:e7`
   through the bottom edge -> room `0:66`; eyes animate.
 
 ### Known Ages artifacts
 
-- The Maku Tree canopy and lower band are black until `roomGfxChanges` is
-  imported. The eyes themselves are an object, not a tile.
+- The Maku Tree canopy and lower band are **not** black in `0:$38`. The static
+  tileset $22 (header `$70`: common + bottom) plus palette `$8f` reproduce the
+  original screenshot (`Oracle_Of_Ages_-_Maku_Tree.png`) exactly: teal pond,
+  blue bubble foliage, brown trunk and face. The earlier black reading came
+  from the missing object-gfx continuation sheet (`$05`), now composed.
+- The four treetop cutscene rooms (`$e0`,`$e1`,`$e2`,`$f1`, tileset `$25`,
+  header `$71`: common + top) render with their red-and-green canopy outline;
+  background palette 0 is the shared `paletteData48e0` from `PALH_0f`.
 - The right-side sign/flower are room graphics; only the palette is correct
   today.
 - Special tiles whose graphics are loaded by room code may show placeholder
@@ -115,7 +123,7 @@ Estimates are phase-weighted, not line counts:
 
 See `ROADMAP.md` -> "Immediate next tasks". The Phase 3/4 acceptance (enter an
 interior through a warp, see the animated Maku eyes, load first NPCs) is met for
-the present-day slice. Next: `roomGfxChanges` (Maku canopy/sign graphics),
-enemies/parts, and past/dungeon interiors.
+the present-day slice. Next: past group 1 overworld and time portals,
+`roomGfxChanges` (shops/signs), enemies/parts, and past/dungeon interiors.
 
 Per-content inventory (enemies, NPCs, items, scripts): `COVERAGE.md`.
