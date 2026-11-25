@@ -25,5 +25,11 @@ namespace ProjectZ.InGame.Map
         public bool IsDungeon => Kind == "dungeon";
         public bool IsPast => Era == "past";
         public bool FixedCamera => Camera == "fixed";
+
+        /// <summary>Generated overworld map file for a group (0 present, 1 past).</summary>
+        public static string OverworldMap(string game, int group)
+        {
+            return $"oracle_{game}_g{group}_overworld.map";
+        }
     }
 }

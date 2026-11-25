@@ -103,7 +103,29 @@ public sealed class InteractionSprites
         if (!_oamPointerStarts.TryGetValue(pointerKey, out var pointerStart))
             return false;
 
-        var sheet = GetComposedSheet(interactionId, graphics.GfxHeader);
+        // A continuation object-gfx sheet is part of the native loaded-object
+        // graphics chain. Detect the need from the OAM tiles themselves: any
+        // block that addresses a cell beyond the base sheet pulls the next
+        // header in the chain (until the stop bit), for every interaction.
+        var maxCell = 0;
+        foreach (var label in animations)
+        {
+            if (!_animations.TryGetValue(label, out var candidate))
+                continue;
+            foreach (var frame in candidate.Frames)
+            {
+                var pointerIndex = pointerStart + frame.PointerOffset / 2;
+                if (pointerIndex < 0 || pointerIndex >= _oamPointerStream.Count)
+                    continue;
+                var oamLabel = _oamPointerStream[pointerIndex];
+                if (!_oamBlocks.TryGetValue(oamLabel, out var blocks))
+                    continue;
+                foreach (var block in blocks)
+                    maxCell = Math.Max(maxCell, ((graphics.TileBase + block.Tile) & 0xfe) / 2);
+            }
+        }
+
+        var sheet = GetSheetWithContinuation(graphics.GfxHeader, maxCell);
         if (sheet == null)
             return false;
 
@@ -205,35 +227,23 @@ public sealed class InteractionSprites
         }
     }
 
-    private SpriteSheet? GetComposedSheet(int interactionId, int gfxHeader)
-    {
-        // INTERAC_MAKU_TREE calls interactionLoadExtraGraphics. ooa-godot's
-        // Import-MakuTreeData.ps1 resolves object gfx header $04 and appends
-        // the continuation header $05 (spr_makuadultsprites_2) after the first
-        // 16-tile sheet, exactly like the stop-bit walk in loadGraphics.s.
-        // Its OAM blocks use tiles $20-$2e, which live in that second sheet.
-        if (interactionId == 0x87)
-            return GetExtraGfxChain(gfxHeader);
-
-        return GetSheet(gfxHeader);
-    }
-
-    private SpriteSheet? GetExtraGfxChain(int gfxHeader)
+    private SpriteSheet? GetSheetWithContinuation(int gfxHeader, int maxCell)
     {
         var sheet = GetSheet(gfxHeader);
         if (sheet == null)
             return null;
 
-        for (var id = gfxHeader; !_gfxHeaderStops.Contains(id);)
+        var id = gfxHeader;
+        var cells = (sheet.Width / 8) * (sheet.Height / 16);
+        while (cells <= maxCell && !_gfxHeaderStops.Contains(id) &&
+               _gfxHeaders.TryGetValue(id + 1, out var names) && names.Length > 0)
         {
-            id++;
-            if (!_gfxHeaders.TryGetValue(id, out var names) || names.Length == 0)
-                break;
-
             var next = LoadSheet(names[0]);
             if (next == null || next.Width != sheet.Width)
                 break;
             sheet = SpriteSheet.Vertical(sheet, next);
+            id++;
+            cells = (sheet.Width / 8) * (sheet.Height / 16);
         }
 
         return sheet;

@@ -136,10 +136,10 @@ following are bridges:
    walk-off, instant, fall and dungeon stairs through the existing
    `MapTransitionSystem`/`ObjLink` state. Reuse `ObjDoor` semantics where they
    fit; do not add a second transition system.
-5. **Sprite palette context**: importer applies per-room `m_PaletteHeaderSpr` and
-   object extra graphics (the `$87` chain `$04`+`$05` is ported; per-room sprite
-   palettes 6/7 remain). This is the right place to finish the Maku
-   sign/flower and post-game statue presentation.
+5. **Sprite palette context**: per-room `m_PaletteHeaderSpr` remains; object
+   extra graphics and source-derived collision/flags/palettes/entry gates are
+   ported (`InteractionBehaviors`, OAM-driven object-gfx chain). Per-room sprite
+   palettes 6/7 and script-driven one-shot removals remain.
 6. **Camera policy**: lock small maps to their centre or clamp to bounds; add a
    dungeon camera mode. Use `Map.CameraTarget`.
 

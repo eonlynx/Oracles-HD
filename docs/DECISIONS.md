@@ -328,37 +328,57 @@ When a record is superseded, add a new one instead of editing history.
 
 ## ADR-032 - Oracle NPC collision radius
 
-- **Status:** accepted.
-- **Decision:** `oracleSprite` carries an importer-provided `collisionRadius`.
-  Ordinary NPCs/actors use the `ooa-godot` `NpcCharacter` default of 6 (a 12x12
-  blocking box, matching `ObjectCollisionBounds`). Background/effect
-  interactions (`$87` Maku eyes, `$89` flame, `$e5` flower/book, `$71` tree
-  decoration) use 0.
-- **Why:** the first presentation-only pass let Link walk through the dog and
-  townsfolk. The box must also stay inside `EntitySize`; DX-HD asserts that a
-  `BoxCollisionComponent` lies within the object bounds.
-- **Consequence:** NPCs block Link and each other through the existing
-  `CollisionComponent`/`SystemBody` path. Per-NPC `objectSetCollideRadii` values
-  can refine the default later without changing the object model. The box is
-  clamped to `EntitySize` because some imported actors are only 8px wide; a
-  fixed 12x12 box would trip DX-HD's `GameObject.AddComponent` assertion and
-  abort the map load.
+- **Status:** accepted; superseded by ADR-034 for the source of the values.
+- **Decision:** `oracleSprite` carries `solidTile` and explicit `radiusY/radiusX`
+  values. They come from the interaction's own code:
+  `objectMarkSolidPosition`/`wRoomCollisions` -> 16x16 tile box,
+  `objectSetCollideRadius/Radii` -> explicit box, otherwise no collision. The box
+  is centred on the interaction anchor and clamped to `EntitySize`.
+- **Why:** the first presentation-only pass let Link walk through the dog; a
+  later blanket 12x12 default then let Link walk through tall actors' feet and
+  crashed on 8px sprites. The native rule is per-object, not a global default.
+- **Consequence:** NPCs that mark a solid position or set radii block Link;
+  effects and script actors that set nothing are walk-through, matching the ROM.
+  DX-HD's `BoxCollisionComponent` assertion stays satisfied because the box is
+  clamped to the frame.
 
-## ADR-033 - Maku Tree extra object-gfx chain
+## ADR-033 - Object-gfx continuation sheets
 
-- **Status:** accepted.
-- **Decision:** `InteractionSprites` grows the composed sheet for `$87` by
-  walking consecutive `objectGfxHeaders.s` entries until the stop bit:
-  `$04 spr_makuadultsprites_1` (no `, 1`) then
-  `$05 spr_makuadultsprites_2, 1`. The second 128x16 sheet is appended after
-  the first, matching `interactionLoadExtraGraphics` +
-  `loadGraphics.s:@nextExtraGfxIndex` and ooa-godot
-  `Import-MakuTreeData.ps1`.
+- **Status:** accepted; supersedes the earlier `$87`-only rule.
+- **Decision:** `InteractionSprites` computes the maximum OAM cell referenced by
+  **all** animations of an interaction. If it exceeds the base sheet, the
+  importer walks consecutive `objectGfxHeaders.s` entries until the stop bit and
+  appends each 128x16 sheet, matching `interactionLoadExtraGraphics` +
+  `loadGraphics.s:@nextExtraGfxIndex`. No interaction id is involved.
 - **Why:** `$87` OAM frames use tiles `$20-$2e` (mouths, eyebrows, cheeks) that
-  live in `$05`. Composing only `$04` silently dropped those blocks, so the
-  face's expression frames were incomplete. The Maku Tree's canopy/lower band
-  are static tileset $22 graphics (header `$70`), not `treeGfxHeaderTable`
-  (`TREE_GFXH_07..0a` are the scent/pegasus/gale/mystery trees).
-- **Consequence:** the importer keeps the native chain semantics instead of a
-  per-sheet list; the continuation is resolved generically by the stop bit and
-  currently applied only to `$87`, the only interaction that requests it.
+  live in the continuation header `$05`; composing only `$04` dropped those
+  blocks. The same rule covers any future interaction with a continuation
+  header. The Maku Tree's canopy/lower band are static tileset $22 graphics
+  (header `$70`), not `treeGfxHeaderTable` (`TREE_GFXH_07..0a` are the
+  scent/pegasus/gale/mystery trees).
+- **Consequence:** extra-graphics residency is data-driven from OAM and the
+  header stop bit, not an id table.
+
+## ADR-034 - Source-derived interaction behaviour
+
+- **Status:** accepted.
+- **Decision:** `InteractionBehaviors` parses each interaction's own code block
+  (and its subid jump table) for the native helpers that define behaviour:
+  `objectMarkSolidPosition`/`wRoomCollisions` (solid tile),
+  `objectSetCollideRadius/Radii` (explicit box), `checkGlobalFlag` +
+  `interactionDelete` (`jp z` requires, `jp nz` forbids), `PALH_x` +
+  `loadPaletteHeader` (sprite palette), `interactionBeginTimewarp` (portal), and
+  `wScreenTransitionDirection` + `cp` + delete (one-shot entry actor).
+  `OracleAssetBuilder` emits those values per object; `InGame/` consumes them.
+- **Why:** the previous per-id table (`InteractionRules`) was a hardcode: it
+  gave every ordinary NPC a 12x12 box even when the source sets no collision,
+  gated `$6b:$15` by a literal id, and forced `$8f` on room `$38`. ooa-godot's
+  importers parse the same helpers per feature (`Import-MakuTreeData`,
+  `Import-MakuRescueData`, `Import-ImpaCutsceneData`); this generalises that
+  approach instead of copying one-off constants.
+- **Consequence:** collision, flags, palettes, portals and one-shot entry actors
+  work for every interaction that uses the native helper. Values that come from
+  unparsed scripts (e.g. the past villager's `$41` removal, per-NPC cutscene
+  radii) remain explicit gaps until the script runner exists. Room `$38` now
+  uses its real tileset palette `$30`, restoring the pink flowers; `$8f` is a
+  cutscene load, not a static override.

@@ -196,7 +196,7 @@ public sealed class RoomBuilder
                 gfxHeader = $"0x{info.Gfx:x2}",
                 uniqueGfxHeader = $"0x{info.UniqueGfx:x2}",
                 paletteHeader = $"0x{info.Palette:x2}",
-                appliedPaletteHeader = $"0x{_content.GetRoomPaletteHeader(room, info):x2}",
+                appliedPaletteHeader = $"0x{info.Palette:x2}",
                 flags = $"0x{info.Flags:x2}",
                 outdoors = info.IsOutdoors,
                 indoors = info.IsIndoors,

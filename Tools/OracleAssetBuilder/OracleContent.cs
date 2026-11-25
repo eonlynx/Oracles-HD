@@ -36,6 +36,9 @@ public sealed class OracleContent
     private readonly Dictionary<string, int> _tileTypeConstants = new(StringComparer.Ordinal);
     private readonly byte[]? _roomPacks;
     private readonly Dictionary<int, (string Mappings, string Collisions)> _layoutHeaders;
+    private readonly int _makuOverrideRoom;
+    private readonly int _makuOverrideIncrement;
+    private readonly int _pastCliffExcludedRoom;
 
     public OracleContent(OracleRepo repo, int group)
     {
@@ -60,6 +63,56 @@ public sealed class OracleContent
         AddSymbols(symbols, AsmParser.ParseHeaderStartIndices(_paletteHeadersPath, "m_PaletteHeaderStart"));
 
         _tilesets = AsmParser.ParseTilesetData(Path.Combine(repo.DataDir, "tilesets.s"), symbols);
+
+        var overrideRules = ParseTilesetOverrideRules(Path.Combine(repo.Root, "code", "ages", "loadTilesetData.s"));
+        _makuOverrideRoom = overrideRules.MakuRoom;
+        _makuOverrideIncrement = overrideRules.MakuIncrement;
+        _pastCliffExcludedRoom = overrideRules.PastCliffExcludedRoom;
+    }
+
+    private static (int MakuRoom, int MakuIncrement, int PastCliffExcludedRoom)
+        ParseTilesetOverrideRules(string path)
+    {
+        var lines = File.ReadAllLines(path);
+        var makuRoom = -1;
+        var makuIncrement = 0;
+        var pastCliffRoom = -1;
+
+        var block = "";
+        foreach (var raw in lines)
+        {
+            var line = raw.Trim();
+            if (line.StartsWith("@checkMakuTreeSaved:", StringComparison.Ordinal))
+                block = "maku";
+            else if (line.StartsWith("@checkJabuFlooded:", StringComparison.Ordinal))
+                block = "";
+            else if (line.StartsWith("setPastCliffPalettesToRed:", StringComparison.Ordinal))
+                block = "cliff";
+
+            if (block == "maku")
+            {
+                var room = System.Text.RegularExpressions.Regex.Match(line, @"cp\s+<ROOM_AGES_([0-9a-fA-F]+)");
+                if (room.Success)
+                    makuRoom = Convert.ToInt32(room.Groups[1].Value, 16);
+                if (line.Contains("inc (hl)", StringComparison.Ordinal))
+                    makuIncrement++;
+            }
+            else if (block == "cliff")
+            {
+                var room = System.Text.RegularExpressions.Regex.Match(line, @"cp\s+<ROOM_AGES_([0-9a-fA-F]+)");
+                if (room.Success)
+                {
+                    pastCliffRoom = Convert.ToInt32(room.Groups[1].Value, 16);
+                    block = "";
+                }
+            }
+        }
+
+        if (makuRoom < 0 || makuIncrement == 0 || pastCliffRoom < 0)
+            throw new InvalidDataException(
+                $"{path}: could not parse checkMakuTreeSaved/setPastCliffPalettesToRed room rules.");
+
+        return (makuRoom, makuIncrement, pastCliffRoom);
     }
 
     private byte[]? ReadOptionalRoomPacks(int group)
@@ -104,12 +157,12 @@ public sealed class OracleContent
 
         var tileset = bytes[room & 0xFF] & 0x7F;
 
-        // checkTilesetOverride@checkMakuTreeSaved: saved Maku Tree room uses $24.
-        if (Group == 0 && (room & 0xFF) == 0x38 && options.MakuSaved)
-            tileset += 2;
+        // checkTilesetOverride@checkMakuTreeSaved: saved Maku Tree room.
+        if (Group == 0 && (room & 0xFF) == _makuOverrideRoom && options.MakuSaved)
+            tileset += _makuOverrideIncrement;
 
-        // checkTilesetOverride@checkJabuFlooded: flooded Jabu floor uses $3f.
-        if (options.JabuUnderwater && tileset == 0x3E)
+        // checkTilesetOverride@checkJabuFlooded: flooded Jabu floor.
+        if (options.JabuUnderwater)
             tileset += 1;
 
         if (tileset >= _tilesets.Count)
@@ -383,10 +436,11 @@ public sealed class OracleContent
         var info = GetTileset(tilesetId);
         var renderer = new TilesetRenderer(tilesetId)
         {
-            // setPastCliffPalettesToRed: overworld collisions, past flag, room != $38.
+            // setPastCliffPalettesToRed: overworld collisions, past flag, room
+            // not the excluded Maku/source room parsed above.
             PastCliffPalettes = info.IsPastOrSubrosia &&
                                 (info.CollisionModeAndDungeon >> 4) == 0 &&
-                                (room & 0xFF) != 0x38,
+                                (room & 0xFF) != _pastCliffExcludedRoom,
         };
 
         renderer.LoadGraphics(AsmParser.ParseGfxHeader(_gfxHeadersPath, info.Gfx), Repo);
@@ -403,20 +457,8 @@ public sealed class OracleContent
         if (backgroundPaletteHeader.HasValue)
             ApplyPaletteHeader(renderer, backgroundPaletteHeader.Value);
 
-        ApplyPaletteHeader(renderer, GetRoomPaletteHeader(room, info));
+        ApplyPaletteHeader(renderer, info.Palette);
         return renderer;
-    }
-
-    /// <summary>
-    /// makuTree.s loads PALH_8f before the present Maku Tree scene; the room is
-    /// not drawn with the plain tileset palette $30. Keep this room-specific
-    /// branch because the source has one.
-    /// </summary>
-    public int GetRoomPaletteHeader(int room, TilesetInfo info)
-    {
-        if (Group == 0 && (room & 0xFF) == 0x38)
-            return 0x8f;
-        return info.Palette;
     }
 
     private void ApplyPaletteHeader(TilesetRenderer renderer, int header)

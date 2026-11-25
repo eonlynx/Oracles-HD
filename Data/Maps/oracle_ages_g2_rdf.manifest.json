@@ -136,11 +136,11 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_entities.atlas",
-      "sha256": "d1f58f032eedc41a56bcbb63823f49fc8a20cfa308c22e5a1fb76c9ea19eb717"
+      "sha256": "182bbc875f068e28667b5ed3ad1bfb0c69e9ef2062335d1c9379d3b0bcc9e391"
     },
     {
       "path": "../Map Objects/oracle_ages_entities.png",
-      "sha256": "a54dc6c977ef5a7b3eb15f6629aa23c9defd0426c9dbda9ab0946f91299e5488"
+      "sha256": "3bc7ac3d6dffc7d7f9dd097cb789bf905a389b98fb32162c7b651f0d0066c879"
     },
     {
       "path": "Previews/oracle_ages_g2_rdf.png",

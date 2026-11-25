@@ -11,6 +11,7 @@ namespace ProjectZ.InGame.Things
     public static class OracleFlagState
     {
         public const int IntroDone = 0x0a;
+        public const int MakuTreeSaved = 0x12;
         public const int FinishedGame = 0x14;
 
         private static readonly bool[] Flags = new bool[256];

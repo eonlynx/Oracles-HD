@@ -39,12 +39,13 @@ Status legend:
 | Tile collisions | Partial | Quadrant bits + water/hole/lava solid; special collisions (`>=0x10`, bridges/rails) not yet exact. |
 | Terrain (`FieldStates`) | Partial | Water, deep water, lava, grass; swimming/falling not implemented. |
 | Room-specific graphics (`roomGfxChanges`) | Not started | Shops, gasha spots and sign/tile rewrites are still pending. The Maku Tree room `$38` needs none: its tiles and palette match the original screenshot. |
-| Objects / interactions (first pass) | Partial | 37 interaction ids composed into one atlas; positioned interactions only, default animation. `INTERAC_MAKU_TREE $87` composes object-gfx headers `$04`+`$05` (`spr_makuadultsprites_1/2`), so its eyes, expressions and smile render and blink. |
-| Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, requires/forbids, `obj_Condition` and before/after room-flag gates. `$6b:$15` post-game statue is hidden by default and appears with `--flag FINISHEDGAME`. |
-| NPC collision | Partial | Ordinary NPCs/actors use the `ooa-godot` 6px radius (12x12 box, clamped to the frame); Maku eyes/flame/flower/tree decoration are non-solid. Per-NPC radii still pending. |
-| Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is composed for `$6b:$15`; general per-room sprite palette application is still pending. |
-| Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Past group 3 and dungeons pending. |
-| Maku Tree palette (`PALH_8f`) | Done | Room `$38` uses palette header `$8f` per `makuTree.s`, not tileset `$30`. |
+| Objects / interactions (first pass) | Partial | Source-derived collision/palette/flag/portal/entry-direction behaviour for every placed interaction; extra object-gfx sheets are resolved from the OAM tile range. `INTERAC_MAKU_TREE $87` composes `$04`+`$05`, so its eyes, expressions and smile render and blink. Scripts/facing still pending. |
+| Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, source-derived requires/forbids flags, entry-direction gate, `obj_Condition`, before/after room flags and native collision (solid tile or explicit radii). `$6b:$15` post-game statue requires `GLOBALFLAG_FINISHEDGAME` and `PALH_c7`. |
+| NPC collision | Done (source-derived) | `objectMarkSolidPosition`/`wRoomCollisions` -> 16x16 tile box; `objectSetCollideRadius/Radii` -> explicit box; otherwise no collision. The body is centred on the interaction anchor. One-shot cutscene actors are hidden unless their source entry condition holds; per-NPC script radii/events remain pending. |
+| Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is applied for `$6b:$15` from the source `PALH` load; general per-room sprite palette application is still pending. |
+| Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Group 1 overworld and time portals are in; past group 3 interiors and dungeons pending. |
+| Time portals (Ages) | Done (first pass) | `$e1` objects whose source calls `interactionBeginTimewarp` become `oracleTimePortal`; group toggles at the same world position through `MapTransitionSystem`, and the arrival portal is spawned after load. |
+| Room palette | Done | Rooms use their tileset `PALH` (e.g. `$30` for `$38`); the `$8f` load belongs to the disappearance cutscene, not the static room. |
 | Dungeon floor layouts | Not started | `dungeonLayouts.s` not parsed; sample rooms only. |
 | Text / dialogue | Not started | LA `.lng` files still used. |
 | Audio (Oracle GBS) | Not started | DX-HD GBS player ready; Oracle `.gbs` not built. |
@@ -81,15 +82,18 @@ Validation artifacts (generated, gitignored): `Data/Maps/Previews/`,
 ### Known Ages artifacts
 
 - The Maku Tree canopy and lower band are **not** black in `0:$38`. The static
-  tileset $22 (header `$70`: common + bottom) plus palette `$8f` reproduce the
-  original screenshot (`Oracle_Of_Ages_-_Maku_Tree.png`) exactly: teal pond,
-  blue bubble foliage, brown trunk and face. The earlier black reading came
-  from the missing object-gfx continuation sheet (`$05`), now composed.
+  tileset $22 (header `$70`: common + bottom) plus its tileset palette `$30`
+  reproduce the original screenshot (`Oracle_Of_Ages_-_Maku_Tree.png`): teal
+  pond, blue bubble foliage, brown trunk, face and pink flowers. The earlier
+  black reading came from a missing object-gfx continuation sheet (`$05`, now
+  composed from the OAM tile range) and from the incorrect static `$8f` palette
+  override (now removed; `$8f` belongs to the disappearance cutscene).
 - The four treetop cutscene rooms (`$e0`,`$e1`,`$e2`,`$f1`, tileset `$25`,
   header `$71`: common + top) render with their red-and-green canopy outline;
   background palette 0 is the shared `paletteData48e0` from `PALH_0f`.
-- The right-side sign/flower are room graphics; only the palette is correct
-  today.
+- One-shot room-entry cutscene actors (e.g. Ralph `$37:$0d`) are hidden unless
+  their source entry condition holds; their scripts/removal flags (e.g. the past
+  villager `$3a:$0d` after flag `$41`) are not implemented yet.
 - Special tiles whose graphics are loaded by room code may show placeholder
   colours until `roomGfxChanges` is imported.
 - Bridges/rails and other special collisions are treated as free or full-solid
@@ -123,7 +127,8 @@ Estimates are phase-weighted, not line counts:
 
 See `ROADMAP.md` -> "Immediate next tasks". The Phase 3/4 acceptance (enter an
 interior through a warp, see the animated Maku eyes, load first NPCs) is met for
-the present-day slice. Next: past group 1 overworld and time portals,
-`roomGfxChanges` (shops/signs), enemies/parts, and past/dungeon interiors.
+the present-day slice. Next: past interiors/dungeons, one-shot room-entry
+cutscenes (`RalphPortalEvent`, `EnterPastEvent`), `roomGfxChanges`
+(shops/signs), enemies/parts.
 
 Per-content inventory (enemies, NPCs, items, scripts): `COVERAGE.md`.

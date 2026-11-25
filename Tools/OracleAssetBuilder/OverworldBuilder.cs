@@ -160,14 +160,14 @@ public sealed class OverworldBuilder
                 }
             }
 
-            var roomData = streams.GetRoom(0, room);
+            var roomData = streams.GetRoom(group, room);
             interactions += roomData.Interactions.Count;
             enemies += roomData.EnemyCount;
             parts += roomData.PartCount;
             items += roomData.ItemCount;
             conditional += roomData.ConditionalCount;
 
-            AddRoomObjects(mapObjects, room, roomData, gridX, gridY, layout, collisionMode,
+            AddRoomObjects(mapObjects, group, room, roomData, gridX, gridY, layout, collisionMode,
                 spritePlan, warps, warnings);
         }
 
@@ -204,6 +204,7 @@ public sealed class OverworldBuilder
 
     private void AddRoomObjects(
         List<MapObjectPlacement> mapObjects,
+        int group,
         int room,
         RoomObjectData roomData,
         int gridX,
@@ -223,6 +224,26 @@ public sealed class OverworldBuilder
                 !spritePlan.TryGetValue((interaction.Id, interaction.SubId), out var sprite))
                 continue;
 
+            // Any interaction whose source calls interactionBeginTimewarp is a
+            // time portal; the runtime owns activation and the era transition,
+            // so it gets a dedicated object instead of a presentation sprite.
+            if (sprite.TimeWarp)
+            {
+                mapObjects.Add(new MapObjectPlacement("oracleTimePortal", new[]
+                {
+                    (gridX * roomWidth * 16 + interaction.X).ToString(),
+                    (gridY * roomHeight * 16 + interaction.Y).ToString(),
+                    string.Join(',', sprite.FrameIds),
+                    string.Join(',', sprite.Durations),
+                    sprite.OffsetX.ToString(),
+                    sprite.OffsetY.ToString(),
+                    "2",
+                    sprite.LoopStart.ToString(),
+                    interaction.SubId.ToString(),
+                }));
+                continue;
+            }
+
             mapObjects.Add(new MapObjectPlacement("oracleSprite", new[]
             {
                 (gridX * roomWidth * 16 + interaction.X).ToString(),
@@ -240,14 +261,17 @@ public sealed class OverworldBuilder
                 interaction.ConditionMask.ToString(),
                 interaction.RoomFlagMask.ToString(),
                 interaction.RoomFlagValue.ToString(),
-                sprite.CollisionRadius.ToString(),
+                sprite.SolidTile ? "1" : "0",
+                sprite.RadiusY.ToString(),
+                sprite.RadiusX.ToString(),
+                sprite.RequiresEntryDirection.ToString(),
             }));
         }
 
-        // Group-0 warps that leave the stitched overworld for a present-day
-        // interior. Edge warps and group-0/1 warps need no object: the
-        // overworld is already continuous.
-        var tileWarp = warps.FindTileWarp(0, room);
+        // Group-specific tile warps that leave the stitched overworld for a
+        // present-day interior. Edge warps and time-portal objects need no
+        // oracleWarp entry: the overworld is already continuous.
+        var tileWarp = warps.FindTileWarp(group, room);
         if (tileWarp == null || tileWarp.DestinationGroup != 2)
             return;
 

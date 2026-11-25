@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -44,6 +45,12 @@ namespace ProjectZ.InGame.GameSystems
         private bool _nextMapStartInMiddle;
         private Color _nextMapColor;
         private bool _nextColorMode;
+
+        /// <summary>
+        /// Gameplay spawns that must run against the new map after it finishes
+        /// loading (Oracle time-portal arrival, matching link.s:@substate3).
+        /// </summary>
+        public readonly System.Collections.Generic.List<System.Action<ProjectZ.InGame.Map.Map>> PostLoadActions = new();
 
         private float _changeMapCount;
 
@@ -458,6 +465,15 @@ namespace ProjectZ.InGame.GameSystems
                 MapManager.Camera.ForceUpdate(goalPosition);
             else
                 MapManager.Camera.SoftUpdate(goalPosition);
+
+            // gameplay spawns that belong to the freshly loaded map
+            if (PostLoadActions.Count > 0)
+            {
+                var actions = PostLoadActions.ToArray();
+                PostLoadActions.Clear();
+                foreach (var action in actions)
+                    action(_gameMapManager.CurrentMap);
+            }
         }
     }
 }

@@ -10,12 +10,13 @@ a system is implemented.
 | Area | Source inventory | Implemented | Notes |
 |---|---|---|---|
 | Overworld rooms (present) | 196 | 196 generated | Group 0, 140x112, collisions/terrain/animations. |
-| Overworld rooms (past) | 196 | 196 generated | Group 1. |
+| Overworld rooms (past) | 196 | 196 generated | Group 1, 140x112, past cliffs/collisions/terrain/animations; group-specific room objects. |
 | Present interiors / underwater (group 2) | 256 room slots | 22 maps | Reachable from group-0 warps; 10x8; group 3 not generated. |
 | Dungeon rooms | groups 4/5 | 5 sample rooms | No floor layouts; 10x8 / 15x11 storage. |
 | Enemies / bosses (files) | 37 Ages + 71 common = 108 | 0 | Bosses are included in these files. |
-| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | 37 ids / 125 placements | Positioned interactions with default animation; Maku `$87` renders/blinks. Scripts, facing and extra graphics pending. |
+| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | source-derived, 150+ placements | Positioned interactions with default animation; collision/flags/palette/entry direction parsed from each interaction's code. Maku `$87` renders/blinks. Scripts and facing pending. |
 | Warps / doors | `warpSources.s`, `warpDestinations.s`, `warpTiles.s` | 13 entry + 11 exit | Group-0 tile/pointer/edge sources; present interiors only. |
+| Time portals | `$e1`, `$de`, `timeportalSpawner.s` | 14 spawners + dynamic return | Present <-> past at the same world position through `MapTransitionSystem`. |
 | Items / treasure behaviours (files) | 3 Ages + 22 common = 25 | 0 | Treasure IDs are `$63` entries in `treasureObjectData` (ROM_DATA_FORMATS section 5.4). |
 | Parts / effects (files) | 41 Ages + 45 common = 86 | 0 | Particles, projectiles, helpers. |
 | Special objects (files) | 3 Ages + 9 common = 12 | 0 | Link, companions, Maple, ... |
@@ -36,17 +37,20 @@ come from `objectGfxHeaders.s`.
 65 66 6b 72 80 83 87 89 9a b6 c2 c8 cd d5 e1 e5
 ```
 
-`$34` and `$71` are skipped for now: their OAM selects palette 6/7, which is a
-room/object sprite palette not imported yet. `$6b:$15` (post-game Link statue)
-is imported with its `PALH_c7` sprite palette 6 and is gated by
+`$34` and some `$71` variants are skipped for now because their OAM selects
+sprite palette 6/7 and the room/object sprite palette is not imported yet; this
+is a palette-availability gate, not an id rule. `$6b:$15` (post-game Link
+statue) is imported with its `PALH_c7` sprite palette 6 and is gated by
 `GLOBALFLAG_FINISHEDGAME`; it appears only when that flag is set.
 
 - `87` is the Maku Tree face (6 OAM frames, animated).
 - `53`/`54` are the Mamamu dog and owner in `2:e7`.
 - `5c` is the past lady/generic guy; `89` is a flame; `e5` is the shared
   Maku flower/Book of Seals/Vineseed sheet.
-- `2e`, `3c`, `3d`, `c2`, `c8`, `cd`, `d5`, `e1` are story/cutscene actors or
-  props that happen to be positioned; they render with their default animation.
+- `2e`, `3c`, `3d`, `c2`, `c8`, `cd`, `d5` are story/cutscene actors or props
+  that happen to be positioned; they render with their default animation.
+- `e1` is the time-portal spawner; its source `interactionBeginTimewarp` makes
+  it an `oracleTimePortal`.
 - Facing/script animations, enemies, parts and item drops are not in this pass.
 
 ## Seasons

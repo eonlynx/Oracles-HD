@@ -46,6 +46,23 @@ not importing another engine's architecture. This rule is recorded as ADR-028.
   presentation.
 - Import general tables; a room-specific branch is correct only when the source
   has one.
+- **Never hardcode behaviour, positions, offsets, exceptions or rules for a
+  specific object or room id.** If a position, movement, extra graphic, palette
+  change or collision is wrong, do not add `if (id == 0x87)` (or equivalent) or
+  force an isolated result. Find the generic table, flag or engine system that
+  governs it in `ooa-godot`, `oracles-decomp`, `top` or `oracles-disasm`, and
+  implement that system so every object and room that uses it works
+  automatically. A source-proven room handler is data, not a hardcode; a constant
+  compared against an id is a hardcode.
+- **Sweep existing code for hardcodes before extending it.** When a new generic
+  mechanism lands, replace earlier ad-hoc branches, id exceptions and forced
+  values that it supersedes; do not leave two mechanisms for the same fact.
+- **Always contrast a new or existing system with `ooa-godot` before calling it
+  closed.** If our implementation is more generic and cleaner, keep it and use
+  the review to find missed flags, conditions or edge cases. If `ooa-godot`
+  covers the system more completely, structured or faithfully, adapt theirs
+  instead of keeping an incomplete version. Record the comparison and the
+  decision beside the implementation or in `DECISIONS.md` when the two differ.
 - Reject unsupported data with a source path and hex ID. Never turn an unknown
   opcode, object or treasure into a silent no-op.
 - Do not add save migrations, automatic repairs or unstuck rules; fix the cause.

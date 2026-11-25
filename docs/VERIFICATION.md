@@ -109,22 +109,26 @@ Phase 3/4 evidence:
 | Enter interior | Boot `oracle --pos 1037,880`; hold Up into room `0:66`'s door | Map changes to `oracle_ages_g2_re7.map` |
 | Exit interior | Boot `oracle --room e7 --pos 76,108`; hold Down into the bottom edge | Map changes to `oracle_ages_g0_overworld.map`, spawn at room `0:66`'s door |
 | Maku eyes | Boot `oracle --pos 1360,470`; observe `$87` | Eyes, expressions and smile render on the upper trunk |
-| Maku reference | Compare `Data/Maps/Previews/oracle_ages_g0_r38.png` with the original `Oracle_Of_Ages_-_Maku_Tree.png` | Same teal pond, blue bubble foliage, brown trunk and face; no black canopy/lower band |
+| Maku reference | Compare `Data/Maps/Previews/oracle_ages_g0_r38.png` with the original `Oracle_Of_Ages_-_Maku_Tree.png` | Same teal pond, blue bubble foliage, brown trunk, face and pink flowers; no black canopy/lower band |
 | Eye animation | Burst of frames over 3.3 s | Frame 0 open, then half/closed frames; loop returns to open |
 | Object anchor | Interior `2:e7` dog (`$54`) and person (`$53`) | Sprites centred on the native interaction positions |
 | Flag gate off | Boot `oracle --pos 1360,470` | `$6b:$15` Link statue absent |
 | Flag gate on | Same with `--flag FINISHEDGAME` | Statue appears right of the Maku Tree with `PALH_c7` colours |
-| NPC collision | Interior `2:e7`; hold Up toward the dog (`$54`) | Link stops at the 12x12 NPC box instead of passing through |
+| NPC collision | Interior `2:e7`; hold Up toward the dog (`$54`) | Link stops at the solid tile instead of passing through |
+| Source-derived collision | Room `0:39`; enter normally | Ralph `$37:$0d` is hidden (source requires entry from the right); the past villager `$3a:$0d` is a different NPC |
+| Time portal present->past | Boot `oracle --pos 1480,431`; step down and back up | Map becomes `oracle_ages_g1_overworld.map` at the same world position; past palette and Maku sprout |
+| Time portal past->present | From the arrival portal, step off and back on | Map returns to `oracle_ages_g0_overworld.map`; Maku Tree visible |
 
 ## 5. Known false positives / artifacts
 
 - Link's idle animation changes pixels; exclude his 64x64 screen box when
   measuring water animation.
-- The Maku Tree scene uses `PALH_8f` (BG 2-7), not the plain tileset palette
-  `$30`; the eyes themselves use standard sprite palette 3 (2/3 XORed). The
-  canopy and lower band are static tileset $22 graphics (header `$70`:
-  common + bottom) and match the original screenshot. The face/expressions
-  also need the object-gfx chain `$04`+`$05`; they are not `roomGfxChanges`.
+- The Maku Tree scene uses its tileset palette `$30`; the eyes use standard
+  sprite palette 3 (2/3 XORed). `$8f` is a cutscene-issued load and must not be
+  applied statically. The canopy and lower band are static tileset $22 graphics
+  (header `$70`: common + bottom) and match the original screenshot. The
+  face/expressions also need the object-gfx chain `$04`+`$05`, resolved from the
+  OAM tile range; they are not `roomGfxChanges`.
 - `WindowWidth/Height` include the title bar/border; map-to-screen crops must
   account for it.
 - The overworld/internals are intentionally stitched or separate maps; a
@@ -143,13 +147,24 @@ Run before each milestone commit:
 - [ ] Entity atlas -> 221 entries, 37 interaction ids, 6 Maku frames.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
-- [ ] Maku eyes/expressions render and blink; palette `$8f` sign/flower colours are correct.
+- [ ] Maku eyes/expressions render and blink; the room uses palette `$30` with pink flowers.
+- [ ] Time portal crosses present <-> past in both directions at the same world position.
+- [ ] Source-derived collision: `objectMarkSolidPosition`/radii only; no default 12x12 for every NPC.
 - [ ] `$87` composes object-gfx headers `$04`+`$05`; no missing tiles on expression frames.
 - [ ] NPC collision box stays inside the sprite frame (narrow 8px actors do not crash the map).
 - [ ] Tile animation crop differs between two frames.
 - [ ] Collision: Link stops at water/cliff.
 - [ ] Root cause checked against `ooa-godot` / `oracles-decomp` / `top` before
   applying any fix (no fix-by-trial).
+- [ ] No hardcoded behaviour, position, offset, exception or rule keyed by an
+  object/room id. Collision, palettes, extra graphics, flags and portals come
+  from parsed source tables/behaviour, not `if (id == ...)`. Any room-specific
+  branch must be backed by a source handler and recorded as data.
+- [ ] Existing code swept for hardcodes/deprecated ad-hoc branches after adding
+  the generic mechanism; no duplicate mechanisms for the same fact.
+- [ ] New/changed system contrasted with `ooa-godot`; keep ours only when it is
+  more generic/clean, otherwise adopt the missing conditions or structure, and
+  record any divergence.
 - [ ] Manifests updated; no generated asset staged.
 - [ ] No GB conversion arithmetic added to `InGame/` (review the diff).
 - [ ] No `.bak`/`.tmp`/debug log/dead branch from an experiment.

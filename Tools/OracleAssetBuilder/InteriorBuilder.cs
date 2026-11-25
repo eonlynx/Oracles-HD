@@ -99,7 +99,10 @@ public sealed class InteriorBuilder
                 interaction.ConditionMask.ToString(),
                 interaction.RoomFlagMask.ToString(),
                 interaction.RoomFlagValue.ToString(),
-                sprite.CollisionRadius.ToString(),
+                sprite.SolidTile ? "1" : "0",
+                sprite.RadiusY.ToString(),
+                sprite.RadiusX.ToString(),
+                sprite.RequiresEntryDirection.ToString(),
             }));
         }
     }

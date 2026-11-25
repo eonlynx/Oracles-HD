@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using ProjectZ.InGame.GameObjects.Base;
 using ProjectZ.InGame.GameObjects.Base.CObjects;
 using ProjectZ.InGame.GameObjects.Base.Components;
+using ProjectZ.InGame.Map;
 using ProjectZ.InGame.SaveLoad;
 using ProjectZ.InGame.Things;
 
@@ -30,7 +31,8 @@ namespace ProjectZ.InGame.GameObjects.Things
         public ObjOracleSprite(Map.Map map, int posX, int posY, string frames,
             string durations, int offsetX, int offsetY, int layer, int loopStart,
             int interactionId, int subId, int requiresFlag, int forbiddenFlag, int roomStateMask,
-            int roomFlagMask, int roomFlagValue, int collisionRadius) : base(map)
+            int roomFlagMask, int roomFlagValue, bool solidTile, int radiusY, int radiusX,
+            int requiresEntryDirection) : base(map)
         {
             InteractionId = interactionId;
             SubId = subId;
@@ -42,14 +44,24 @@ namespace ProjectZ.InGame.GameObjects.Things
                 return;
             }
 
-            _frames = LoadFrames(frames);
+            // One-shot room-entry actors (ralph.s:@initSubid0d) delete themselves
+            // unless Link entered from the direction the source checks.
+            if (requiresEntryDirection >= 0 &&
+                MapManager.ObjLink != null &&
+                MapManager.ObjLink.DirectionEntry != requiresEntryDirection)
+            {
+                IsDead = true;
+                return;
+            }
+
+            _frames = OracleSpriteFrames.Load(frames);
             if (_frames.Length == 0)
             {
                 IsDead = true;
                 return;
             }
 
-            _durations = LoadDurations(durations, _frames.Length);
+            _durations = OracleSpriteFrames.LoadDurations(durations, _frames.Length);
             _loopStart = Math.Clamp(loopStart, 0, _frames.Length - 1);
 
             // DX-HD's draw pool sorts by EntityPosition and expects the sprite
@@ -64,65 +76,31 @@ namespace ProjectZ.InGame.GameObjects.Things
             _sprite = new CSprite(_frames[0], EntityPosition);
             AddComponent(DrawComponent.Index, new DrawCSpriteComponent(_sprite, layer));
 
-            // ooa-godot NpcCharacter: a 6px radius around the interaction
-            // anchor, i.e. a 12x12 blocking box. Effects use radius 0.
-            if (collisionRadius > 0)
+            // Native object collision: objectMarkSolidPosition marks the object's
+            // tile solid (16x16); objectSetCollideRadius/Radii give an explicit
+            // Y/X radius. The body is always centred on the interaction anchor
+            // (the object's feet), not on the OAM top-left.
+            if (solidTile || radiusY > 0 || radiusX > 0)
             {
-                // DX-HD asserts that a BoxCollisionComponent stays inside
-                // EntitySize. Some imported actors are only 8px wide, so clamp
-                // the box to the frame instead of crashing the map load.
-                var boxWidth = Math.Min(collisionRadius * 2, EntitySize.Width);
-                var boxHeight = Math.Min(collisionRadius * 2, EntitySize.Height);
-                var boxX = (EntitySize.Width - boxWidth) / 2;
-                var boxY = (EntitySize.Height - boxHeight) / 2;
-                AddComponent(CollisionComponent.Index, new BoxCollisionComponent(
-                    new CBox(EntityPosition, boxX, boxY, 0,
-                        boxWidth, boxHeight, 16),
-                    Values.CollisionTypes.Normal));
+                var boxHeight = solidTile ? 16 : radiusY * 2;
+                var boxWidth = solidTile ? 16 : radiusX * 2;
+                boxHeight = Math.Min(boxHeight, EntitySize.Height);
+                boxWidth = Math.Min(boxWidth, EntitySize.Width);
+
+                var anchorX = posX - (int)EntityPosition.X;
+                var anchorY = posY - (int)EntityPosition.Y;
+                var boxX = Math.Clamp(anchorX - boxWidth / 2, 0, EntitySize.Width - boxWidth);
+                var boxY = Math.Clamp(anchorY - boxHeight / 2, 0, EntitySize.Height - boxHeight);
+
+                if (boxWidth > 0 && boxHeight > 0)
+                    AddComponent(CollisionComponent.Index, new BoxCollisionComponent(
+                        new CBox(EntityPosition, boxX, boxY, 0,
+                            boxWidth, boxHeight, 16),
+                        Values.CollisionTypes.Normal));
             }
 
             if (_frames.Length > 1)
                 AddComponent(UpdateComponent.Index, new UpdateComponent(Update));
-        }
-
-        private static DictAtlasEntry[] LoadFrames(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                return Array.Empty<DictAtlasEntry>();
-
-            var ids = value.Split(',', StringSplitOptions.RemoveEmptyEntries);
-            var frames = new DictAtlasEntry[ids.Length];
-            var count = 0;
-            foreach (var id in ids)
-            {
-                var sprite = Resources.GetSprite(id.Trim());
-                if (sprite != null)
-                    frames[count++] = sprite;
-            }
-
-            if (count == ids.Length)
-                return frames;
-
-            var trimmed = new DictAtlasEntry[count];
-            Array.Copy(frames, trimmed, count);
-            return trimmed;
-        }
-
-        private static int[] LoadDurations(string value, int frameCount)
-        {
-            var durations = new int[frameCount];
-            for (var i = 0; i < durations.Length; i++)
-                durations[i] = 100;
-
-            if (string.IsNullOrWhiteSpace(value))
-                return durations;
-
-            var parts = value.Split(',', StringSplitOptions.RemoveEmptyEntries);
-            for (var i = 0; i < parts.Length && i < durations.Length; i++)
-                if (int.TryParse(parts[i], NumberStyles.Integer, CultureInfo.InvariantCulture, out var duration))
-                    durations[i] = Math.Max(16, duration);
-
-            return durations;
         }
 
         private void Update()

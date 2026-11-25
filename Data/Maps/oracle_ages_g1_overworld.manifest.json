@@ -206,18 +206,88 @@
     "0xdd"
   ],
   "skippedRoomIds": [],
+  "inputs": [
+    {
+      "path": "data/ages/interactionAnimations.s",
+      "sha256": "362fe60cf3c5f4613430f4596d330a19947890fe2e69cfad1da329a3229e5d3e"
+    },
+    {
+      "path": "data/ages/interactionData.s",
+      "sha256": "f7d7945b32dba38e77f205d5cc24aab462ac9faea344e8f06862647da7aeed1e"
+    },
+    {
+      "path": "data/ages/interactionOamData.s",
+      "sha256": "6153a9642689f0c6b9c7bc19a644bfd011d28faab315423f09fb309e0289486e"
+    },
+    {
+      "path": "data/ages/objectGfxHeaders.s",
+      "sha256": "a47dce00605b0fd78f1defb4f2f36e8758554e98716944754b083a507d178859"
+    },
+    {
+      "path": "data/ages/paletteData.s",
+      "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
+    },
+    {
+      "path": "data/ages/tile_properties/warpTiles.s",
+      "sha256": "179e4b77a3b93790902fd20f9bbc4f361c4294122d2d65ecec3345766f5a2942"
+    },
+    {
+      "path": "data/ages/warpDestinations.s",
+      "sha256": "039a765ea4c7d25792649755856aae9dcbe857007c75072d6643689ce018c1dd"
+    },
+    {
+      "path": "data/ages/warpSources.s",
+      "sha256": "aa1383af45a8773765cc991c97343f1ac72ad1d3b2242fad9d40f86d0e251756"
+    },
+    {
+      "path": "objects/ages/enemyData.s",
+      "sha256": "1ed80d46fd4fafe0d64cbeedf44c8754748b1000b1fbd45633cb2eb37388cb55"
+    },
+    {
+      "path": "objects/ages/extraData1.s",
+      "sha256": "b210abdb92a0a5e25202763f3fe316ecf5e7019e4cc82b6a1793f209b715c41f"
+    },
+    {
+      "path": "objects/ages/extraData2.s",
+      "sha256": "a5e79985b1893c6bfe8842cc8f5dd29f5aabe2697915e9aa5f1211bb9d26ddfe"
+    },
+    {
+      "path": "objects/ages/extraData3.s",
+      "sha256": "14dcf3fd119c5855632b4617b25a99c92b92264797070b80cf2be3715411c02f"
+    },
+    {
+      "path": "objects/ages/extraData4.s",
+      "sha256": "7eb75ab9cf68e62701f36756c41298a8caee12f1984c7035dea1544a5cdfa0f4"
+    },
+    {
+      "path": "objects/ages/mainData.s",
+      "sha256": "d84969f0439dbdc4dfdbb73345c06da6ef8e46dfb0e147c554665a92d850367b"
+    },
+    {
+      "path": "objects/ages/pointers.s",
+      "sha256": "27dbfe2506ef383ac175c22f6050b51a2960c3fb8f3b544ffc60ce383be4dc57"
+    }
+  ],
   "outputs": [
     {
+      "path": "../Map Objects/oracle_ages_entities.atlas",
+      "sha256": "182bbc875f068e28667b5ed3ad1bfb0c69e9ef2062335d1c9379d3b0bcc9e391"
+    },
+    {
+      "path": "../Map Objects/oracle_ages_entities.png",
+      "sha256": "3bc7ac3d6dffc7d7f9dd097cb789bf905a389b98fb32162c7b651f0d0066c879"
+    },
+    {
       "path": "Previews/oracle_ages_g1_overworld.png",
-      "sha256": "d2cb7c0c743c0a350729886208db3341b89543a9b6693809ba472fdf555ad148"
+      "sha256": "12301e21c5b31652aa234d9d4facc7414b7afcbe25f1f52504e0a78254bb935e"
     },
     {
       "path": "Tilesets/oracle_ages_g1_overworld.png",
-      "sha256": "1ec5a4ff6492f57c9d349e8e64c6eca07a6c2e5f96375cafd102806b46116647"
+      "sha256": "c29bc47b3476a60e424785cd6e2601ba982fec8b04d8b55843c7f5eedbce38fb"
     },
     {
       "path": "oracle_ages_g1_overworld.map",
-      "sha256": "5be541a0f0e7ac78cdcf6556c1bb197b58ae173b5ec72510e5326dc550bd7191"
+      "sha256": "0100633079c778403bb437c5887c48fa1755aec71e4287b12556f2534faedeec"
     }
   ]
 }

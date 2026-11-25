@@ -32,6 +32,12 @@ namespace ProjectZ
                     Game1.OracleStartMap = $"oracle_ages_g2_r{room:x2}.map";
                     Game1.OracleStartPosition = new Microsoft.Xna.Framework.Vector2(80, 120);
                 }
+                else if (arg == "--map" && i + 1 < args.Length)
+                {
+                    // Development entry: boot a generated Oracle map by name,
+                    // e.g. --map oracle_ages_g1_overworld.map.
+                    Game1.OracleStartMap = args[++i];
+                }
                 else if (arg == "--pos" && i + 1 < args.Length)
                 {
                     var parts = args[++i].Split(',');

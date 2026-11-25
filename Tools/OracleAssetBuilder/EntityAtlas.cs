@@ -10,7 +10,11 @@ public sealed record ComposedInteraction(
     int LoopStart,
     int RequiresFlag,
     int ForbiddenFlag,
-    int CollisionRadius);
+    bool TimeWarp,
+    bool SolidTile,
+    int RadiusY,
+    int RadiusX,
+    int RequiresEntryDirection);
 
 /// <summary>
 /// Owns the single shared entity atlas. Both the overworld and the interior
@@ -36,6 +40,7 @@ public static class EntityAtlas
         out IReadOnlyList<string> warnings)
     {
         var spriteData = new InteractionSprites(repo);
+        var behaviors = new InteractionBehaviors(repo);
         var atlas = new SpriteAtlasWriter();
         var result = new Dictionary<(int, int), ComposedInteraction>();
         var issues = new List<string>();
@@ -47,10 +52,12 @@ public static class EntityAtlas
         {
             try
             {
-                var rule = InteractionRules.For(pair.Id, pair.SubId);
-                var paletteOverrides = rule.SpritePaletteHeader >= 0
-                    ? LoadSpritePaletteOverrides(paletteHeadersPath, paletteData, rule.SpritePaletteHeader)
+                var behavior = behaviors.For(pair.Id, pair.SubId);
+                var paletteOverrides = behavior.SpritePaletteHeader >= 0
+                    ? LoadSpritePaletteOverrides(paletteHeadersPath, paletteData, behavior.SpritePaletteHeader)
                     : null;
+                if (paletteOverrides is { Count: 0 })
+                    paletteOverrides = null;
 
                 if (!spriteData.TryCompose(pair.Id, pair.SubId, out var frames, out var durations,
                         out var loopStart, paletteOverrides))
@@ -71,7 +78,9 @@ public static class EntityAtlas
                 result[pair] = new ComposedInteraction(
                     pair.Id, pair.SubId, frameIds, durations,
                     frames[0].OffsetX - 8, frames[0].OffsetY - 16,
-                    loopStart, rule.RequiresFlag, rule.ForbiddenFlag, rule.CollisionRadius);
+                    loopStart, behavior.RequiresFlag, behavior.ForbiddenFlag,
+                    behavior.TimeWarp, behavior.SolidTile,
+                    behavior.RadiusY, behavior.RadiusX, behavior.RequiresEntryDirection);
             }
             catch (Exception exception)
             {
@@ -88,7 +97,7 @@ public static class EntityAtlas
     }
 
     /// <summary>
-    /// Positioned interactions from the present overworld (group 0) and from
+    /// Positioned interactions from both overworlds (groups 0 and 1) and from
     /// every present interior reachable from a group-0 warp (group 2). This is
     /// deliberately a stable plan, not a function of which command runs.
     /// </summary>
@@ -98,6 +107,9 @@ public static class EntityAtlas
         var ids = new SortedSet<(int, int)>();
         for (var room = 0; room < 256; room++)
             AddRoom(streams, 0, room, ids);
+
+        for (var room = 0; room < 256; room++)
+            AddRoom(streams, 1, room, ids);
 
         foreach (var room in InteriorRooms(warps))
             AddRoom(streams, 2, room, ids);
