@@ -141,8 +141,8 @@ plans.
 ## Current snapshot
 
 - Base: Links-Awakening-DX-HD v2.0.6 (`2e68849`).
-- Latest implementation commit: `b5119ed` (script engine, Ralph/past villager
-  cutscenes, continuous room presentation).
+- Latest implementation commit: `6081e40` (performance audit, dungeon layouts,
+  past interiors, entity placement data).
 - Target: `net8.0-windows` / MonoGame 3.8.1.303 WindowsDX; 0 build errors.
 - Runtime entry: `Oracles-HD.exe oracle` (development switch).
 - Assets: generated locally, gitignored; manifests committed.

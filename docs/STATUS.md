@@ -1,6 +1,6 @@
 # Progress and parity tracker
 
-Snapshot: **2026-11-25**, commit `b5119ed`, script-engine block (Ralph `$37:$0d`, past
+Snapshot: **2026-11-25**, commit `6081e40`, performance + dungeon-data block (Ralph `$37:$0d`, past
 villager `$3a:$0d`, continuous room presentation), base
 Links-Awakening-DX-HD v2.0.6 (`2e68849`).
 
