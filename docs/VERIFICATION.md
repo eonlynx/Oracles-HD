@@ -34,8 +34,8 @@ Current results (commit `76659a6`, Phase 3/4 slice):
 | Map metadata | every Oracle map starts with `#oracle-map v1`; interior `2:e7` has `group=2 kind=interior camera=fixed` |
 | Camera | `2:e7` is centred by `Map.CameraTarget`; the overworld keeps DX-HD follow |
 | Ages present interiors (group 2) | 22 maps, 22 sprite objects, 11 exit warps, 0 importer warnings |
-| Overworld object pass | 101 sprites + 13 interior-entry warps |
-| Entity atlas | 220 frames from 36 interaction ids; Maku `$87:00` has 6 frames |
+| Overworld object pass | 103 sprites + 13 interior-entry warps |
+| Entity atlas | 221 frames from 37 interaction ids; Maku `$87:00` has 6 frames |
 | Ages group 4 | rooms `00,01,08,10,20` render with 0 missing-tile/palette warnings |
 | Seasons tileset `00` | inspect works; seasonal variants not implemented |
 
@@ -111,6 +111,8 @@ Phase 3/4 evidence:
 | Maku eyes | Boot `oracle --pos 1360,470`; observe `$87` | Eyes and mouth render on the upper trunk |
 | Eye animation | Burst of frames over 3.3 s | Frame 0 open, then half/closed frames; loop returns to open |
 | Object anchor | Interior `2:e7` dog (`$54`) and person (`$53`) | Sprites centred on the native interaction positions |
+| Flag gate off | Boot `oracle --pos 1360,470` | `$6b:$15` Link statue absent |
+| Flag gate on | Same with `--flag FINISHEDGAME` | Statue appears right of the Maku Tree with `PALH_c7` colours |
 
 ## 5. Known false positives / artifacts
 
@@ -134,7 +136,7 @@ Run before each milestone commit:
 - [ ] Determinism check -> True.
 - [ ] `room --group 4 --room 01` -> no missing-tile/palette warning.
 - [ ] `interiors --game ages` -> 22 maps, 0 importer warnings.
-- [ ] Entity atlas -> 220 entries, 36 interaction ids, 6 Maku frames.
+- [ ] Entity atlas -> 221 entries, 37 interaction ids, 6 Maku frames.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
 - [ ] Maku eyes render and blink; palette `$8f` sign/flower colours are correct.

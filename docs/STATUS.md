@@ -39,7 +39,9 @@ Status legend:
 | Tile collisions | Partial | Quadrant bits + water/hole/lava solid; special collisions (`>=0x10`, bridges/rails) not yet exact. |
 | Terrain (`FieldStates`) | Partial | Water, deep water, lava, grass; swimming/falling not implemented. |
 | Room-specific graphics (`roomGfxChanges`) | Not started | Maku Tree canopy/bottom still render black until this is imported. |
-| Objects / interactions (first pass) | Partial | 36 interaction ids composed into one atlas; positioned interactions only, default animation. `INTERAC_MAKU_TREE $87` eyes render and blink. |
+| Objects / interactions (first pass) | Partial | 37 interaction ids composed into one atlas; positioned interactions only, default animation. `INTERAC_MAKU_TREE $87` eyes render and blink. |
+| Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, requires/forbids, `obj_Condition` and before/after room-flag gates. `$6b:$15` post-game statue is hidden by default and appears with `--flag FINISHEDGAME`. |
+| Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is composed for `$6b:$15`; general per-room sprite palette application is still pending. |
 | Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Past group 3 and dungeons pending. |
 | Maku Tree palette (`PALH_8f`) | Done | Room `$38` uses palette header `$8f` per `makuTree.s`, not tileset `$30`. |
 | Dungeon floor layouts | Not started | `dungeonLayouts.s` not parsed; sample rooms only. |
@@ -65,7 +67,7 @@ Validation artifacts (generated, gitignored): `Data/Maps/Previews/`,
 
 ### Phase 3/4 vertical slice
 
-- Present overworld: 101 sprite objects, 13 interior-entry warps.
+- Present overworld: 103 sprite objects, 13 interior-entry warps.
 - Present interiors: 22 maps, 22 sprite objects, 11 exit warps.
 - Entity atlas: 244 frame entries from 36 interaction ids.
 - Maku Tree: 6 composed OAM frames (`$87:00`), blink timeline

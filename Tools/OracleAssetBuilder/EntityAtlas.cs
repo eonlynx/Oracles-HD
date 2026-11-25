@@ -7,7 +7,9 @@ public sealed record ComposedInteraction(
     int[] Durations,
     int OffsetX,
     int OffsetY,
-    int LoopStart);
+    int LoopStart,
+    int RequiresFlag,
+    int ForbiddenFlag);
 
 /// <summary>
 /// Owns the single shared entity atlas. Both the overworld and the interior
@@ -36,12 +38,21 @@ public static class EntityAtlas
         var atlas = new SpriteAtlasWriter();
         var result = new Dictionary<(int, int), ComposedInteraction>();
         var issues = new List<string>();
+        var paletteHeadersPath = Path.Combine(repo.DataDir, "paletteHeaders.s");
+        var paletteDataPath = Path.Combine(repo.DataDir, "paletteData.s");
+        var paletteData = AsmParser.ParsePaletteData(paletteDataPath);
 
         foreach (var pair in CollectInteractions(streams, warps))
         {
             try
             {
-                if (!spriteData.TryCompose(pair.Id, pair.SubId, out var frames, out var durations, out var loopStart))
+                var rule = InteractionRules.For(pair.Id, pair.SubId);
+                var paletteOverrides = rule.SpritePaletteHeader >= 0
+                    ? LoadSpritePaletteOverrides(paletteHeadersPath, paletteData, rule.SpritePaletteHeader)
+                    : null;
+
+                if (!spriteData.TryCompose(pair.Id, pair.SubId, out var frames, out var durations,
+                        out var loopStart, paletteOverrides))
                     continue;
 
                 var idPrefix = $"oracle_{repo.Game}_i{pair.Id:x2}_{pair.SubId:x2}";
@@ -59,7 +70,7 @@ public static class EntityAtlas
                 result[pair] = new ComposedInteraction(
                     pair.Id, pair.SubId, frameIds, durations,
                     frames[0].OffsetX - 8, frames[0].OffsetY - 16,
-                    loopStart);
+                    loopStart, rule.RequiresFlag, rule.ForbiddenFlag);
             }
             catch (Exception exception)
             {
@@ -117,6 +128,39 @@ public static class EntityAtlas
             _ => null,
         };
     }
+
+    private static Dictionary<int, Rgba[]> LoadSpritePaletteOverrides(
+        string paletteHeadersPath, IReadOnlyDictionary<string, Rgb555[]> paletteData, int header)
+    {
+        var result = new Dictionary<int, Rgba[]>();
+        foreach (var entry in AsmParser.ParsePaletteHeaderSpr(paletteHeadersPath, header))
+        {
+            if (!paletteData.TryGetValue(entry.DataLabel, out var colors))
+                continue;
+
+            for (var palette = 0; palette < entry.Count; palette++)
+            {
+                var target = entry.Start + palette;
+                if (target is < 0 or > 7 || (palette + 1) * 4 > colors.Length)
+                    continue;
+
+                result[target] = new[]
+                {
+                    new Rgba(0, 0, 0, 0),
+                    ToRgba(colors[palette * 4 + 1]),
+                    ToRgba(colors[palette * 4 + 2]),
+                    ToRgba(colors[palette * 4 + 3]),
+                };
+            }
+        }
+        return result;
+    }
+
+    private static Rgba ToRgba(Rgb555 color) => new(
+        (byte)(color.R * 255 / 31),
+        (byte)(color.G * 255 / 31),
+        (byte)(color.B * 255 / 31),
+        255);
 
     private static void AddRoom(RoomObjectStreams streams, int group, int room, SortedSet<(int, int)> ids)
     {

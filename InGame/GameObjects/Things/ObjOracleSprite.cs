@@ -16,6 +16,9 @@ namespace ProjectZ.InGame.GameObjects.Things
     /// </summary>
     internal class ObjOracleSprite : GameObject
     {
+        public int InteractionId { get; }
+        public int SubId { get; }
+
         private readonly DictAtlasEntry[] _frames;
         private readonly int[] _durations;
         private readonly int _loopStart;
@@ -25,8 +28,20 @@ namespace ProjectZ.InGame.GameObjects.Things
         private float _elapsed;
 
         public ObjOracleSprite(Map.Map map, int posX, int posY, string frames,
-            string durations, int offsetX, int offsetY, int layer, int loopStart) : base(map)
+            string durations, int offsetX, int offsetY, int layer, int loopStart,
+            int interactionId, int subId, int requiresFlag, int forbiddenFlag, int roomStateMask,
+            int roomFlagMask, int roomFlagValue) : base(map)
         {
+            InteractionId = interactionId;
+            SubId = subId;
+
+            if (!OracleFlagState.IsVisible(requiresFlag, forbiddenFlag, roomStateMask,
+                    roomFlagMask, roomFlagValue))
+            {
+                IsDead = true;
+                return;
+            }
+
             _frames = LoadFrames(frames);
             if (_frames.Length == 0)
             {

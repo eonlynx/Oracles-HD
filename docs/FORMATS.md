@@ -227,12 +227,19 @@ Oracle entities and warps reuse the native DX-HD object list; there is **no**
 `oracleSprite` fields, after the native `posX;posY`:
 
 ```
-frames     comma-separated atlas entry ids
-durations  comma-separated milliseconds per frame
-offsetX    OAM bounding-box X relative to the interaction anchor
-offsetY    OAM bounding-box Y relative to the interaction anchor
-layer      DX-HD layer (2 = player)
-loopStart  frame index used after the last frame (native m_AnimationLoop)
+frames        comma-separated atlas entry ids
+durations     comma-separated milliseconds per frame
+offsetX       OAM bounding-box X relative to the interaction anchor
+offsetY       OAM bounding-box Y relative to the interaction anchor
+layer         DX-HD layer (2 = player)
+loopStart     frame index used after the last frame (native m_AnimationLoop)
+interactionId native interaction id
+subId         native subid (semantic identity)
+requiresFlag  global flag that must be set, or -1
+forbiddenFlag global flag that must be clear, or -1
+roomStateMask native obj_Condition mask (skip if this bit is set in wRoomStateModifier)
+roomFlagMask  native event gate mask (bit 7 for obj_BeforeEvent/obj_AfterEvent)
+roomFlagValue required room-flag value
 ```
 
 `oracleWarp` fields, after `posX;posY`:
@@ -263,6 +270,25 @@ Warp resolution follows `ooa-godot` `WarpDatabase` / `Import-Warps.ps1`:
 The runtime checks both the tile Link stands on and the tile he faces. The
 second check is needed because DX-HD's 8x10 body collision is stricter than the
 GB tile check: a door tile is often only half-walkable.
+
+### 5.5 Oracle flags and spawn conditions
+
+`Tools/OracleAssetBuilder/InteractionRules.cs` carries the interaction-level
+conditions that live in object code rather than in the room stream. The first
+case is `$6b:$15` (post-game Link statue): `requiresFlag=$14`
+(`GLOBALFLAG_FINISHEDGAME`) and sprite palette header `$c7` (palette 6 from
+`paletteData44f0`).
+
+`obj_Condition` masks and `obj_BeforeEvent`/`obj_AfterEvent` pointers are also
+carried on `oracleSprite`:
+
+- `roomStateMask`: hide the object when
+  `(mask & (1 << OracleFlagState.RoomStateModifier)) != 0`.
+- `roomFlagMask=0x80`, `roomFlagValue=0`: `obj_BeforeEvent` branch.
+- `roomFlagMask=0x80`, `roomFlagValue=0x80`: `obj_AfterEvent` branch.
+
+The runtime evaluates these in `OracleFlagState.IsVisible`. The dev entry can
+set flags with `--flag FINISHEDGAME`, `--room-state N` and `--room-flags N`.
 
 ## 6. Atlas and manifest
 

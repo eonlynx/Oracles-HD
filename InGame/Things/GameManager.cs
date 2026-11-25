@@ -1406,6 +1406,8 @@ namespace ProjectZ.InGame.Things
 
             // load the map (Oracle development entry loads the generated overworld)
             var oracle = Game1.OracleOverworld;
+            OracleFlagState.Reset(Game1.OracleDevFlags, Game1.OracleRoomStateModifier);
+            OracleFlagState.RoomFlags = (byte)Game1.OracleRoomFlags;
             var startPosition = oracle
                 ? Game1.OracleStartPosition ??
                   new Vector2(9 * Values.FieldWidth + Values.FieldWidth / 2f,

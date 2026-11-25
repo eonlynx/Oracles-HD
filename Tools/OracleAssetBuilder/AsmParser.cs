@@ -45,6 +45,10 @@ public static class AsmParser
         @"^\s*m_PaletteHeaderBg\s+(?<start>\d+)\s*,\s*(?<count>\d+)\s*,\s*(?<label>[A-Za-z_][A-Za-z0-9_]*)",
         RegexOptions.Compiled);
 
+    private static readonly Regex PaletteSprRegex = new(
+        @"^\s*m_PaletteHeaderSpr\s+(?<start>\d+)\s*,\s*(?<count>\d+)\s*,\s*(?<label>[A-Za-z_][A-Za-z0-9_]*)",
+        RegexOptions.Compiled);
+
     private static readonly Regex LabelRegex = new(
         @"^(?<label>[A-Za-z_][A-Za-z0-9_]*):",
         RegexOptions.Compiled);
@@ -138,6 +142,42 @@ public static class AsmParser
 
         if (entries.Count == 0)
             throw new InvalidDataException($"{path}: palette header ${index:x2} has no background entries (or does not exist).");
+        return entries;
+    }
+
+    /// <summary>Sprite-palette entries (`m_PaletteHeaderSpr`) for one header.</summary>
+    public static IReadOnlyList<PaletteEntry> ParsePaletteHeaderSpr(string path, int index)
+    {
+        var entries = new List<PaletteEntry>();
+        var inside = false;
+        foreach (var line in File.ReadLines(path))
+        {
+            var start = IndexedStart.Match(line);
+            if (start.Success && start.Groups["macro"].Value == "m_PaletteHeaderStart")
+            {
+                inside = ParseHexCapture(start.Groups["index"].Value) == index;
+                continue;
+            }
+
+            if (!inside)
+                continue;
+
+            if (line.Contains("m_PaletteHeaderEnd", StringComparison.Ordinal))
+            {
+                inside = false;
+                continue;
+            }
+
+            var entry = PaletteSprRegex.Match(line);
+            if (entry.Success)
+            {
+                entries.Add(new PaletteEntry(
+                    int.Parse(entry.Groups["start"].Value, CultureInfo.InvariantCulture),
+                    int.Parse(entry.Groups["count"].Value, CultureInfo.InvariantCulture),
+                    entry.Groups["label"].Value));
+            }
+        }
+
         return entries;
     }
 

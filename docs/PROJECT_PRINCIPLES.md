@@ -84,7 +84,23 @@ persistence and re-entry agree with the source for the supported paths.
 These rules are non-negotiable. Run the checklist before every commit; record
 exceptions in `DECISIONS.md`, not in code comments.
 
-### 1. Strict translation boundary
+### 1. Investigate references before attempting a fix
+
+If a coordinate, collision, palette, animation, flag, script or transition looks
+wrong, stop. Read the existing high-level implementation first:
+
+1. `ooa-godot` (`tools/import_oracles`, runtime C#) for the imported model and
+   the behaviour.
+2. `oracles-decomp` / `top` for the C specification, edge cases and validation.
+3. `oracles-disasm` only as the raw source and final arbiter.
+
+Do not apply a sequence of trial-and-error patches. Record the root cause and
+the evidence before changing code. The Maku post-game statue (`$6b:$15`) and
+the `roomGfxChanges` tile remap are the reference examples: the first is gated
+by `GLOBALFLAG_FINISHEDGAME` and uses `PALH_c7`; the second is a runtime tree
+graphic issue, not a blind tile replacement.
+
+### 2. Strict translation boundary
 
 All Game Boy / `oracles-disasm` / `ooa-godot` conversions happen in
 `Tools/OracleAssetBuilder`:
@@ -99,7 +115,7 @@ The runtime consumes DX-HD units and mechanisms (`TileSize`, `CPosition`,
 or palette arithmetic to `InGame/`. Behaviour/trigger logic is allowed; format
 conversion is not.
 
-### 2. No residue from failed experiments
+### 3. No residue from failed experiments
 
 - No `.bak`, `.tmp`, `.orig`, debug logs, throwaway screenshots or scripts in
   the repository.
@@ -109,13 +125,13 @@ conversion is not.
 - Before committing: search the changed files for `TODO`, `HACK`, `debug`,
   `Console.WriteLine` (tool output excepted), `.bak` and temporary paths.
 
-### 3. Continuous Link's Awakening cleanup
+### 4. Continuous Link's Awakening cleanup
 
 Remove LA-specific code/data when its Oracle replacement exists and is verified
 (`CLEANUP.md`). The LA fallback boot/menu/HUD/audio/save remain only while they
 are the working path; do not add new LA dependencies to Oracle systems.
 
-### 4. Pre-commit checklist
+### 5. Pre-commit checklist
 
 - [ ] Game and `OracleAssetBuilder` build with 0 errors.
 - [ ] Generated assets are reproducible and gitignored; manifests are committed.

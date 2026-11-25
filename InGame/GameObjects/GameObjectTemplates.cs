@@ -225,7 +225,7 @@ namespace ProjectZ.InGame.GameObjects
 
             // Oracle content objects emitted by Tools/OracleAssetBuilder.
             ObjectTemplates.Add("oracleWarp", new GameObjectTemplate(typeof(ObjOracleWarp), new object[] { "", 0, 0, 3, 16, 16 }));
-            ObjectTemplates.Add("oracleSprite", new GameObjectTemplate(typeof(ObjOracleSprite), new object[] { "", "", 0, 0, Values.LayerPlayer, 0 }));
+            ObjectTemplates.Add("oracleSprite", new GameObjectTemplate(typeof(ObjOracleSprite), new object[] { "", "", 0, 0, Values.LayerPlayer, 0, 0, 0, -1, -1, 0, 0, 0 }));
 
             ObjectTemplates.Add("lowFloor", new GameObjectTemplate(typeof(ObjFloor), new object[] { -2 }));
             ObjectTemplates.Add("water", new GameObjectTemplate(typeof(ObjWater), new object[] { -2 }));

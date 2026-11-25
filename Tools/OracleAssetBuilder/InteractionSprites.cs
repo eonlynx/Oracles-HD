@@ -73,7 +73,8 @@ public sealed class InteractionSprites
     }
 
     public bool TryCompose(int interactionId, int subid, out ComposedSprite[] frames,
-        out int[] durations, out int loopStart)
+        out int[] durations, out int loopStart,
+        IReadOnlyDictionary<int, Rgba[]>? paletteOverrides = null)
     {
         frames = Array.Empty<ComposedSprite>();
         durations = Array.Empty<int>();
@@ -84,7 +85,8 @@ public sealed class InteractionSprites
         // Palettes 6/7 are room/object sprite palettes loaded at runtime; the
         // importer only has the standard 0-5 set. Do not fall back to a wrong
         // palette (e.g. the post-game Link statue $6b:$15 uses palette 6).
-        if (graphics.Palette >= _palettes.Length)
+        if (graphics.Palette >= _palettes.Length &&
+            (paletteOverrides == null || !paletteOverrides.ContainsKey(graphics.Palette)))
             return false;
 
         var animationTable = $"interaction{interactionId:x2}Animations";
@@ -125,8 +127,12 @@ public sealed class InteractionSprites
         // a partial sprite would be worse than omitting it.
         foreach (var blocks in blocksByFrame)
             foreach (var block in blocks)
-                if (((graphics.Palette ^ (block.Flags & 0x07)) & 0x07) >= _palettes.Length)
+            {
+                var palette = (graphics.Palette ^ (block.Flags & 0x07)) & 0x07;
+                if (palette >= _palettes.Length &&
+                    (paletteOverrides == null || !paletteOverrides.ContainsKey(palette)))
                     return false;
+            }
 
         var minX = int.MaxValue;
         var minY = int.MaxValue;
@@ -150,7 +156,7 @@ public sealed class InteractionSprites
             var image = new RgbaImage(maxX - minX, maxY - minY);
             // Lower OAM indices win: compose in reverse.
             for (var i = blocks.Length - 1; i >= 0; i--)
-                DrawBlock(image, sheet, graphics, blocks[i], minX, minY);
+                DrawBlock(image, sheet, graphics, blocks[i], minX, minY, paletteOverrides);
             composed.Add(new ComposedSprite(image, minX, minY));
         }
 
@@ -160,7 +166,8 @@ public sealed class InteractionSprites
         return frames.Length > 0;
     }
 
-    private void DrawBlock(RgbaImage image, SpriteSheet sheet, InteractionGraphics graphics, OamBlock block, int originX, int originY)
+    private void DrawBlock(RgbaImage image, SpriteSheet sheet, InteractionGraphics graphics, OamBlock block,
+        int originX, int originY, IReadOnlyDictionary<int, Rgba[]>? paletteOverrides)
     {
         var cellsPerRow = Math.Max(1, sheet.Width / 8);
         var cell = ((graphics.TileBase + block.Tile) & 0xfe) / 2;
@@ -172,7 +179,11 @@ public sealed class InteractionSprites
         var flipX = (block.Flags & 0x20) != 0;
         var flipY = (block.Flags & 0x40) != 0;
         var palette = (graphics.Palette ^ (block.Flags & 0x07)) & 0x07;
-        var colors = _palettes[palette];
+        var colors = paletteOverrides != null && paletteOverrides.TryGetValue(palette, out var overrideColors)
+            ? overrideColors
+            : palette >= _palettes.Length ? null : _palettes[palette];
+        if (colors == null)
+            return;
 
         for (var y = 0; y < 16; y++)
         {

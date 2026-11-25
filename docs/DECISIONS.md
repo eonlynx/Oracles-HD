@@ -307,3 +307,19 @@ When a record is superseded, add a new one instead of editing history.
 - **Consequence:** the importer owns the conversion; runtime code does not
   derive group/era from file names. The fixed camera is data-driven, not a
   second camera system.
+
+## ADR-031 - Semantic object identity and flag-gated spawn
+
+- **Status:** accepted.
+- **Decision:** every `oracleSprite` carries its native `interactionId/subid`,
+  its optional `requiresFlag`/`forbiddenFlag`, and the native room condition
+  masks. `OracleFlagState` evaluates them at map load.
+- **Evidence:** the post-game Link statue `$6b:$15` is deleted when
+  `GLOBALFLAG_FINISHEDGAME` is clear (`oracles-decomp`
+  `miscellaneous1.c:interaction6b_subid15`); it loads `PALH_c7`, which defines
+  sprite palette 6. `obj_Condition` and the before/after event pointer gates
+  follow `ooa-godot` `NativeObjectStreamReader`.
+- **Consequence:** the statue is absent by default and appears with
+  `--flag FINISHEDGAME` with its real palette. The eventual save owner only
+  needs to populate `OracleFlagState`; presentation objects keep their semantic
+  id for future NPC/enemy behaviour.

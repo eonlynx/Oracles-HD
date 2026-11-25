@@ -233,6 +233,13 @@ public sealed class OverworldBuilder
                 sprite.OffsetY.ToString(),
                 "2",
                 sprite.LoopStart.ToString(),
+                sprite.Id.ToString(),
+                sprite.SubId.ToString(),
+                sprite.RequiresFlag.ToString(),
+                sprite.ForbiddenFlag.ToString(),
+                interaction.ConditionMask.ToString(),
+                interaction.RoomFlagMask.ToString(),
+                interaction.RoomFlagValue.ToString(),
             }));
         }
 

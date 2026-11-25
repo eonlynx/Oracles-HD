@@ -42,6 +42,10 @@ bin\Debug\net8.0-windows\Oracles-HD.exe oracle --room e7
 
 # spawn override in map pixels
 bin\Debug\net8.0-windows\Oracles-HD.exe oracle --pos 1360,470
+
+# development flag/room-condition overrides
+bin\Debug\net8.0-windows\Oracles-HD.exe oracle --flag FINISHEDGAME
+bin\Debug\net8.0-windows\Oracles-HD.exe oracle --room-state 3 --room-flags 80
 ```
 
 Publish:

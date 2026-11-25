@@ -3,7 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace Oracles.Tools.AssetBuilder;
 
-public sealed record RoomInteraction(int Id, int SubId, int X, int Y, bool Conditional, string Source);
+public sealed record RoomInteraction(
+    int Id, int SubId, int X, int Y,
+    byte ConditionMask, byte RoomFlagMask, byte RoomFlagValue, string Source);
 
 public sealed record RoomObjectData(
     IReadOnlyList<RoomInteraction> Interactions,
@@ -72,14 +74,16 @@ public sealed class RoomObjectStreams
         var parts = 0;
         var items = 0;
         var visited = new HashSet<string>(StringComparer.Ordinal);
-        ParseBlock(label, block, interactions, ref enemies, ref parts, ref items, visited, conditional: false);
+        ParseBlock(label, block, interactions, ref enemies, ref parts, ref items, visited,
+            conditionMask: 0, roomFlagMask: 0, roomFlagValue: 0);
         return new RoomObjectData(interactions, enemies, parts, items,
-            interactions.Count(interaction => interaction.Conditional));
+            interactions.Count(interaction => interaction.ConditionMask != 0));
     }
 
     /// <summary>Returns true when the native obj_End terminates the whole stream.</summary>
     private bool ParseBlock(string label, string[] lines, List<RoomInteraction> interactions,
-        ref int enemies, ref int parts, ref int items, HashSet<string> visited, bool conditional)
+        ref int enemies, ref int parts, ref int items, HashSet<string> visited,
+        byte conditionMask, byte roomFlagMask, byte roomFlagValue)
     {
         if (!visited.Add(label))
             return false;
@@ -97,7 +101,26 @@ public sealed class RoomObjectStreams
 
             if (line.StartsWith("obj_Condition", StringComparison.Ordinal))
             {
-                conditional = true;
+                var conditionValues = ParseArguments(line);
+                if (conditionValues.Count > 0)
+                    conditionMask = (byte)conditionValues[0];
+                continue;
+            }
+
+            if (line.StartsWith("obj_BeforeEvent", StringComparison.Ordinal) ||
+                line.StartsWith("obj_AfterEvent", StringComparison.Ordinal))
+            {
+                var eventPointer = PointerRegex.Match(line.Replace("obj_BeforeEvent", "obj_Pointer")
+                    .Replace("obj_AfterEvent", "obj_Pointer"));
+                if (eventPointer.Success)
+                {
+                    var target = eventPointer.Groups["label"].Value;
+                    var after = line.StartsWith("obj_AfterEvent", StringComparison.Ordinal);
+                    if (_blocks.TryGetValue(target, out var targetBlock) &&
+                        ParseBlock(target, targetBlock, interactions, ref enemies, ref parts, ref items, visited,
+                            conditionMask, 0x80, (byte)(after ? 0x80 : 0)))
+                        return true;
+                }
                 continue;
             }
 
@@ -106,7 +129,8 @@ public sealed class RoomObjectStreams
             {
                 var target = pointer.Groups["label"].Value;
                 if (_blocks.TryGetValue(target, out var targetBlock) &&
-                    ParseBlock(target, targetBlock, interactions, ref enemies, ref parts, ref items, visited, conditional))
+                    ParseBlock(target, targetBlock, interactions, ref enemies, ref parts, ref items, visited,
+                        conditionMask, roomFlagMask, roomFlagValue))
                     return true;
                 continue;
             }
@@ -116,8 +140,8 @@ public sealed class RoomObjectStreams
             {
                 var values = ParseArguments(interaction.Groups["args"].Value);
                 if (values.Count >= 4)
-                    interactions.Add(new RoomInteraction(values[0], values[1], values[3], values[2], conditional,
-                        $"{label}:{line}"));
+                    interactions.Add(new RoomInteraction(values[0], values[1], values[3], values[2],
+                        conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}"));
                 continue;
             }
 

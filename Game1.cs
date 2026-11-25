@@ -138,6 +138,9 @@ namespace ProjectZ
         public static bool OracleOverworld;
         public static string OracleStartMap = "oracle_ages_g0_overworld.map";
         public static Vector2? OracleStartPosition;
+        public static readonly System.Collections.Generic.List<int> OracleDevFlags = new();
+        public static int OracleRoomStateModifier;
+        public static int OracleRoomFlags;
         private static bool _oracleStarted;
 
 #if DEBUG

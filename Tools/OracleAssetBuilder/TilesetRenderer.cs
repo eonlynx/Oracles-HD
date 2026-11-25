@@ -103,7 +103,8 @@ public sealed class TilesetRenderer
 
     public RgbaImage RenderMetatile(byte[] mappings, int metatile) => RenderMetatile(mappings, metatile, null);
 
-    public RgbaImage RenderMetatile(byte[] mappings, int metatile, IReadOnlyDictionary<int, byte[]>? slotOverrides)
+    public RgbaImage RenderMetatile(byte[] mappings, int metatile,
+        IReadOnlyDictionary<int, byte[]>? slotOverrides)
     {
         var image = new RgbaImage(MetatileSize, MetatileSize);
         var baseIndex = metatile * 8;

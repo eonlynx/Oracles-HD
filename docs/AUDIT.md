@@ -72,10 +72,10 @@ following are bridges:
 2. `RoomObjects` is a text parser that treats conditions as a flag and does not
    evaluate `obj_BeforeEvent`/`obj_AfterEvent` or the native conditional skip.
    It is enough for static interactions, not for enemy placement.
-3. Standard sprite palettes 0-5 only. Palettes 6/7 and room sprite-palette
-   headers are not imported; objects using them are now skipped (for example the
-   post-game Link statue `$6b:$15`, which is gated by `GLOBALFLAG_FINISHEDGAME`
-   and loads `PALH_c7`).
+3. Standard sprite palettes 0-5 only. The post-game Link statue `$6b:$15` is
+   now the first object-level exception: it carries `PALH_c7` sprite palette 6
+   and is gated by `GLOBALFLAG_FINISHEDGAME`. General room sprite-palette
+   headers are still pending.
 4. `RoomObjectData` counts 82 overworld enemies and 3 interior enemies; none are
    placed or ticked yet.
 
@@ -113,9 +113,9 @@ following are bridges:
   interactions.
 - Made the enemy/part/item/conditional counts visible in the CLI summary, so
   the remaining coverage is explicit.
-- Added a palette-capability filter: interactions whose OAM selects palette 6/7
-  are skipped instead of recoloured with a wrong standard palette. This removes
-  the post-game Link statue artifact in room `0:$38`.
+- Added a palette-capability filter for objects without palette context, then
+  replaced it for the post-game Link statue with the source-backed
+  `PALH_c7`/palette-6 override and `GLOBALFLAG_FINISHEDGAME` spawn gate.
 - Reverted the `DrawOffset` depth-anchor experiment after it misrendered the
   Maku eyes; the working top-left anchor is documented as a limitation.
 - Updated the tool README and the permanent quality gate.

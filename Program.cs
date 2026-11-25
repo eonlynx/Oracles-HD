@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ProjectZ.InGame.Things;
 
 namespace ProjectZ
 {
@@ -39,6 +40,12 @@ namespace ProjectZ
                         float.TryParse(parts[1], out var y))
                         Game1.OracleStartPosition = new Microsoft.Xna.Framework.Vector2(x, y);
                 }
+                else if (arg == "--flag" && i + 1 < args.Length)
+                    Game1.OracleDevFlags.Add(ParseFlag(args[++i]));
+                else if (arg == "--room-state" && i + 1 < args.Length)
+                    Game1.OracleRoomStateModifier = ParseHex(args[++i]);
+                else if (arg == "--room-flags" && i + 1 < args.Length)
+                    Game1.OracleRoomFlags = ParseHex(args[++i]);
             }
 
             try
@@ -51,6 +58,26 @@ namespace ProjectZ
                MessageBox.Show(exception.StackTrace, exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                throw;
             }
+        }
+
+        private static int ParseFlag(string value)
+        {
+            return value.ToUpperInvariant() switch
+            {
+                "FINISHEDGAME" => OracleFlagState.FinishedGame,
+                "INTRO_DONE" => OracleFlagState.IntroDone,
+                _ => ParseHex(value),
+            };
+        }
+
+        private static int ParseHex(string value)
+        {
+            value = value.Trim();
+            if (value.StartsWith('$'))
+                value = value[1..];
+            else if (value.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+                value = value[2..];
+            return Convert.ToInt32(value, 16);
         }
     }
 }
