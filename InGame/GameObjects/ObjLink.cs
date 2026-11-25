@@ -1948,7 +1948,8 @@ namespace ProjectZ.InGame.GameObjects
                 !CanWalk || _isRafting) return;
 
             var walkVelocity = Vector2.Zero;
-            if (!_isLocked && (CurrentState != State.Attacking || !_body.IsGrounded))
+            if (!_isLocked && !OracleFlagState.Current.LinkInputDisabled &&
+                (CurrentState != State.Attacking || !_body.IsGrounded))
                 walkVelocity = ControlHandler.GetMoveVector2();
 
             var walkVelLength = walkVelocity.Length();

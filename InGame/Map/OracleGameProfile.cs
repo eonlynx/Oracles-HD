@@ -111,12 +111,5 @@ namespace ProjectZ.InGame.Map
                 _ => false,
             };
         }
-
-        internal IReadOnlyList<IOracleRoomEvent> CreateRoomEvents()
-        {
-            return Game == "ages"
-                ? new IOracleRoomEvent[] { new RalphPortalRoomEvent(), new EnterPastRoomEvent() }
-                : Array.Empty<IOracleRoomEvent>();
-        }
     }
 }

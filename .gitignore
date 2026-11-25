@@ -27,3 +27,5 @@ Data/Maps/Previews/
 Data/Map Objects/oracle_*.png
 Data/Map Objects/oracle_*.atlas
 Data/Map Objects/oracle_*_interaction_behaviors.tsv
+Data/Maps/Scripts/oracle_*_scripts.tsv
+Data/Maps/Scripts/oracle_*_script_bindings.tsv

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using ProjectZ.InGame.Things;
 
 namespace ProjectZ.InGame.Map
@@ -7,17 +8,6 @@ namespace ProjectZ.InGame.Map
     public readonly record struct OracleRoomContext(
         OracleSessionState Session, OracleGameProfile Profile,
         int Group, int Room, int EntryDirection);
-
-    /// <summary>
-    /// Code-hosted room-entry event (the equivalent of ooa-godot's
-    /// IRoomEntryEvent). The event can inspect flags/entry direction and leave
-    /// state for the future script runner.
-    /// </summary>
-    internal interface IOracleRoomEvent
-    {
-        bool Matches(int group, int room);
-        void RoomEntered(OracleRoomContext context);
-    }
 
     /// <summary>
     /// Room-wide entry handlers from `roomSpecificCode.s`. The native handler
@@ -45,8 +35,8 @@ namespace ProjectZ.InGame.Map
                 switch (effect.Handler)
                 {
                     case RalphPortalMusic:
-                        // Music is owned by the audio system; the Ralph event
-                        // itself is code-hosted (RalphPortalRoomEvent).
+                        // Music is owned by the audio system; the Ralph script
+                        // itself is bound by OracleScriptRuntime.
                         break;
                     case NayruHouseMusic:
                     case FinishedGameMusic:
@@ -76,7 +66,12 @@ namespace ProjectZ.InGame.Map
         private readonly OracleSessionState _session;
         private readonly OracleGameProfile _profile;
         private readonly OracleRoomEntryEffects _effects = new();
-        private readonly List<IOracleRoomEvent> _events = new();
+        private readonly OracleScriptRuntime _scripts;
+
+        private OracleMapInfo _mapInfo;
+        private int _lastRoom = -1;
+        private Vector2 _lastPosition;
+        private bool _trackingRoom;
 
         public event Action<OracleRoomContext> RoomEntered;
 
@@ -84,19 +79,27 @@ namespace ProjectZ.InGame.Map
         {
             _session = session ?? throw new ArgumentNullException(nameof(session));
             _profile = profile ?? throw new ArgumentNullException(nameof(profile));
-            _events.AddRange(profile.CreateRoomEvents());
+            _scripts = new OracleScriptRuntime(session, profile);
         }
 
         internal void OnMapLoading(Map map)
         {
+            _scripts.OnMapLoading();
+            _mapInfo = map?.OracleInfo;
+            _trackingRoom = false;
+            _lastRoom = -1;
+
             var info = map.OracleInfo;
             if (info == null)
                 return;
 
             var link = MapManager.ObjLink;
-            var direction = link == null ? -1 : link.DirectionEntry;
+            var direction = Game1.OracleEntryDirection >= 0
+                ? Game1.OracleEntryDirection
+                : link == null ? -1 : link.DirectionEntry;
+            Game1.OracleEntryDirection = -1;
             var spawn = link == null
-                ? Microsoft.Xna.Framework.Vector2.Zero
+                ? Vector2.Zero
                 : link.NextMapPositionStart ?? link.EntityPosition.Position;
             _session.EnterRoom(info.Group, ResolveRoom(info, spawn), direction);
         }
@@ -109,23 +112,78 @@ namespace ProjectZ.InGame.Map
 
             var link = MapManager.ObjLink;
             var position = link == null
-                ? Microsoft.Xna.Framework.Vector2.Zero
+                ? Vector2.Zero
                 : link.EntityPosition.Position;
             var room = ResolveRoom(info, position);
             if (_session.Group != info.Group || _session.Room != room)
                 _session.EnterRoom(info.Group, room, _session.EntryDirection);
 
+            _mapInfo = info;
+            _lastRoom = room;
+            _lastPosition = position;
+            _trackingRoom = true;
+            OracleScriptRuntime.Trace(
+                $"map {info.Game} group {info.Group:x} room {room:x2} dir {_session.EntryDirection} pos {position.X:0},{position.Y:0}");
+
             var context = new OracleRoomContext(_session, _profile, info.Group, room, _session.EntryDirection);
             _effects.Apply(info.RoomEffects, context);
 
-            foreach (var roomEvent in _events)
-                if (roomEvent.Matches(info.Group, room))
-                    roomEvent.RoomEntered(context);
-
             RoomEntered?.Invoke(context);
+            _scripts.OnMapLoaded(map);
         }
 
-        private static int ResolveRoom(OracleMapInfo info, Microsoft.Xna.Framework.Vector2 position)
+        /// <summary>
+        /// Called once per game update, before map object movement. Tracks
+        /// stitched-map room crossings as well as script counters so room-entry
+        /// actors work without a screen load.
+        /// </summary>
+        internal void Update()
+        {
+            TrackRoom();
+            _scripts.UpdatePresentation();
+            _scripts.Update();
+        }
+
+        private void TrackRoom()
+        {
+            if (!_trackingRoom || _mapInfo == null)
+                return;
+
+            var link = MapManager.ObjLink;
+            if (link == null)
+                return;
+
+            var position = link.EntityPosition.Position;
+            var room = ResolveRoom(_mapInfo, position);
+            if (room == _lastRoom)
+            {
+                _lastPosition = position;
+                return;
+            }
+
+            var direction = DirectionFromDelta(position - _lastPosition, link.DirectionEntry);
+            _session.EnterRoom(_mapInfo.Group, room, direction);
+            _lastRoom = room;
+            _lastPosition = position;
+            OracleScriptRuntime.Trace(
+                $"room {_mapInfo.Group:x}:{room:x2} dir {direction} pos {position.X:0},{position.Y:0}");
+
+            var context = new OracleRoomContext(_session, _profile, _mapInfo.Group, room, direction);
+            _effects.Apply(_mapInfo.RoomEffects, context);
+            RoomEntered?.Invoke(context);
+            _scripts.RoomEntered(_mapInfo.Group, room, direction);
+        }
+
+        private static int DirectionFromDelta(Vector2 delta, int fallback)
+        {
+            if (Math.Abs(delta.X) > Math.Abs(delta.Y) && Math.Abs(delta.X) > 0.01f)
+                return delta.X > 0 ? 1 : 3;
+            if (Math.Abs(delta.Y) > 0.01f)
+                return delta.Y > 0 ? 2 : 0;
+            return fallback is >= 0 and <= 3 ? fallback : 0;
+        }
+
+        internal static int ResolveRoom(OracleMapInfo info, Microsoft.Xna.Framework.Vector2 position)
         {
             if (info.Room >= 0)
                 return info.Room;
@@ -135,35 +193,6 @@ namespace ProjectZ.InGame.Map
             var x = Math.Clamp((int)(position.X / tileWidth), 0, 0x0f);
             var y = Math.Clamp((int)(position.Y / tileHeight), 0, 0x0f);
             return (y << 4) | x;
-        }
-    }
-
-    /// <summary>room $0:$39 Ralph departure: only from the right, once.</summary>
-    internal sealed class RalphPortalRoomEvent : IOracleRoomEvent
-    {
-        public bool Matches(int group, int room) => group == 0 && room == 0x39;
-
-        public void RoomEntered(OracleRoomContext context)
-        {
-            var profile = context.Profile;
-            context.Session.RalphPortalEventActive =
-                context.EntryDirection == 1 &&
-                (profile.RalphEnteredPortalFlag < 0 ||
-                 !context.Session.GetFlag(profile.RalphEnteredPortalFlag));
-        }
-    }
-
-    /// <summary>room $1:$39 first past arrival; the villager leaves after flag $41.</summary>
-    internal sealed class EnterPastRoomEvent : IOracleRoomEvent
-    {
-        public bool Matches(int group, int room) => group == 1 && room == 0x39;
-
-        public void RoomEntered(OracleRoomContext context)
-        {
-            var profile = context.Profile;
-            context.Session.EnterPastEventActive =
-                profile.EnterPastDoneFlag < 0 ||
-                !context.Session.GetFlag(profile.EnterPastDoneFlag);
         }
     }
 }

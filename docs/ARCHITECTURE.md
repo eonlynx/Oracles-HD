@@ -29,7 +29,9 @@ SHA-256 of inputs and outputs.
 | World | `MapManager`, `Map`, `TileMap`, `ObjectManager` | DX-HD large-map model; Oracle data is a normal map. |
 | Physics | `SystemBody`, `ObjectManager.Collision` | Object collisions plus the new tile collision test. |
 | Oracle state | `OracleSessionState`, `OracleRoomRuntime`, `OracleGameProfile` | Per-session 0x80 global flags, per-group/room flag bytes, room state, entry direction, capture/restore. The static `OracleFlagState` is a dev facade. |
-| Room lifecycle | `MapTransitionSystem.MapLoading/MapLoaded`, `OracleRoomRuntime` | `MapLoading` runs after metadata and before objects; `MapLoaded` runs after Link is placed. Room-entry effects come from `roomSpecificCode.s`. |
+| Room lifecycle | `MapTransitionSystem.MapLoading/MapLoaded`, `OracleRoomRuntime` | `MapLoading` runs after metadata and before objects; `MapLoaded` runs after Link is placed. Room-entry effects come from `roomSpecificCode.s`; stitched-map room crossings are tracked every frame. |
+| Room presentation | `OracleScriptRuntime.UpdatePresentation` | Entry-gated actors are presented for the edge Link would use from the current room, including neighbours, so they do not pop in at the boundary. Scripts still start only on the real crossing. |
+| Scripts | `InGame/Scripting/CutsceneCommandCatalog`, `CutsceneCommandRunner`, `OracleScriptRuntime` | Typed command stream + per-actor runner; native counter1/counter2 ordering; source-cited `(interaction, subid) -> script` bindings; `asm15` helpers for the imported families. |
 | Collision/terrain data | `Map.CollisionMap`, `Map.TerrainMap` | Loaded from the `.map` Oracle sections. |
 | Tile animation | `Map.TileAnimations`, `TileAnimation` | Swaps atlas indices; no extra files. |
 | UI | `OverlayManager`, `Pages/`, `Interface/` | Still LA-shaped; to be replaced. |
@@ -47,8 +49,9 @@ On the first update after resources finish loading, `Game1.Update`:
 `StartNewGame` selects `Game1.OracleStartMap` (default
 `oracle_ages_g0_overworld.map`, or the selected profile's overworld) and spawns
 Link at `Game1.OracleStartPosition` (default the centre of room `0x39`). The
-development flags `--game ages|seasons`, `--room e7`, `--pos x,y` and
-`--map <file>.map` override the game, map and position. It uses the existing
+development flags `--game ages|seasons`, `--room e7`, `--pos x,y`,
+`--entry 0..3` and `--map <file>.map` override the game, map, position and the
+forced native entry direction used by development entry. It uses the existing
 `MapTransitionSystem.LoadMapFromFile`, so camera setup and the first fade are the
 DX-HD paths. The switch is development-only; no menu entry was added.
 
@@ -64,12 +67,15 @@ DX-HD paths. The switch is development-only; no menu entry was added.
 | `InGame/GameObjects/Base/Systems/SystemBody.cs` | Blocks walking bodies against solid tiles before object collision. |
 | `InGame/Things/GameManager.cs` | Oracle map/position selection in `StartNewGame`. |
 | `InGame/Things/OracleSessionState.cs` | Per-session global/room flags, room state, entry direction and save snapshot. |
-| `InGame/Map/OracleRoomRuntime.cs` | Room load/enter lifecycle, `roomSpecificCode` effects and code-hosted events (Ralph/EnterPast). |
+| `InGame/Map/OracleRoomRuntime.cs` | Room load/enter lifecycle, `roomSpecificCode` effects, continuous stitched-map room tracking and presentation hand-off. |
+| `InGame/Map/OracleScriptRuntime.cs` | Active runners, source-cited actor bindings, neighbour presentation pass, `asm15` helpers and completion guards. |
+| `InGame/Scripting/CutsceneCommandCatalog.cs` | Validates and loads `oracle_<game>_scripts.tsv` and `oracle_<game>_script_bindings.tsv`. |
+| `InGame/Scripting/CutsceneCommandRunner.cs` | Native-order interpreter (counter1/counter2, callstack, yield/block/end). |
 | `InGame/Map/OracleGameProfile.cs` | Ages/Seasons flags, portal policy, groups and map naming. |
 | `InGame/GameSystems/MapTransitionSystem.cs` | `MapLoading`/`MapLoaded` hooks and `PostLoadActions` (portal arrival). |
-| `Game1.cs`, `Program.cs` | `--oracle`, `--game`, `--room`, `--pos`, `--map` development entry. |
+| `Game1.cs`, `Program.cs` | `--oracle`, `--game`, `--room`, `--pos`, `--entry`, `--map` development entry. |
 | `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; routes through `MapTransitionSystem`. |
-| `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames; source-derived collision, flag/entry gates. |
+| `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames; source-derived collision, flag/entry gates and script visibility state. |
 | `InGame/GameObjects/Things/ObjOracleTimePortal.cs` | `interactionBeginTimewarp` portals; toggles group through `MapTransitionSystem` and spawns the arrival portal. |
 | `InGame/GameObjects/Things/OracleSpriteFrames.cs` | Shared frame/duration parsing for Oracle sprites. |
 | `InGame/GameObjects/GameObjectTemplates.cs` | Registers `oracleWarp`, `oracleSprite`, `oracleTimePortal`; no parallel object system. |
@@ -84,6 +90,32 @@ Design constraints:
 - Legacy LA code is removed only when its Oracle replacement exists
   (`CLEANUP.md`).
 
+### 4.1 Room presentation vs script activation
+
+Native screen-at-a-time rooms create one-shot actors only for the direction of
+the incoming scroll. A stitched DX-HD map crosses rooms without reloading, so
+the runtime must not use "create it at the boundary" as its visibility model.
+
+`OracleScriptRuntime.UpdatePresentation` runs every frame before the script
+tick. For each entry-gated actor it computes the direction Link would use to
+cross from the current room into the actor's room (the room-grid edge), and
+shows the actor exactly when that prospective direction matches. Actors in
+neighbouring rooms are therefore already composed before Link reaches them.
+The actual script still starts only in `RoomEntered`, when the real crossing
+happens and the real direction matches. A script that owns its actor (flicker,
+temporary hide, delete) suppresses presentation until it ends.
+
+Completed one-shot events are recognised at import time from the root guard
+`jumpifglobalflagset FLAG, stubScript` and emitted as `completed_flag` in the
+binding table. Once the flag is set, presentation and activation are both
+suppressed, so revisiting the room cannot flash the actor for a frame.
+
+This mirrors two references: `top` captures a neighbour in the state the game
+creates for the edge the player would cross (its ghost), and `ooa-godot` refuses
+an incoming entity that has not resolved its presentation during the scroll
+preload. We keep DX-HD's continuous map and apply the same invariant without a
+second emulator instance.
+
 ## 5. Importer structure
 
 | File | Responsibility |
@@ -94,6 +126,7 @@ Design constraints:
 | `OracleGameConfig.cs` | Per-game overworld groups/interior group (importer counterpart of `OracleGameProfile`). |
 | `RoomEntryEffects.cs` | `roomSpecificCode.s` group tables -> `#oracle-room-effects` rows. |
 | `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry facts + typed TSV/manifest. |
+| `ScriptImporter.cs` | Resolves event script closures, encodes typed command indices/targets and emits source-cited actor bindings + manifest. |
 | `TilesetRenderer.cs` | Two VRAM banks, palettes, metatile rendering, past cliffs, animation overrides. |
 | `MetatileAtlas.cs` | Packed 16px metatiles, base and animation-variant keys. |
 | `OracleAnimation.cs` | Groups/tracks/headers/sheets, `(delay, gfxIndex)` parsing. |

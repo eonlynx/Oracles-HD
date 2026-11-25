@@ -248,6 +248,9 @@ namespace ProjectZ.InGame.Things
                 foreach (var gameSystem in GameSystems)
                     gameSystem.Value.Update();
 
+                if (Game1.UpdateGame && OracleRooms != null)
+                    OracleRooms.Update();
+
                 if (Game1.UpdateGame)
                     MapManager.Update(false);
             }

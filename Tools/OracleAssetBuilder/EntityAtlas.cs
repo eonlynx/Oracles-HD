@@ -96,6 +96,8 @@ public static class EntityAtlas
         var stem = FileStem(repo.Game);
         atlas.Write(Path.Combine(directory, stem + ".png"), Path.Combine(directory, stem + ".atlas"));
         WriteBehaviorTable(repo, behaviors, interactionPairs, mapsOutDir);
+        ScriptImporter.Build(repo, mapsOutDir, out var scriptWarnings);
+        issues.AddRange(scriptWarnings);
 
         warnings = issues;
         return result;

@@ -1,0 +1,63 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "event_scripts",
+  "rows": 46,
+  "scripts": [
+    "jumpAndWaitUntilLanded",
+    "ralphSubid0dScript",
+    "stubScript",
+    "villagerSubid0dScript"
+  ],
+  "bindings": [
+    {
+      "interaction": 55,
+      "subid": 13,
+      "script": "ralphSubid0dScript",
+      "deleteOnEnd": true,
+      "completedFlag": 64,
+      "source": "object_code/ages/interactions/ralph.s:ralphRunScriptAndDeleteWhenOver"
+    },
+    {
+      "interaction": 58,
+      "subid": 13,
+      "script": "villagerSubid0dScript",
+      "deleteOnEnd": true,
+      "completedFlag": 65,
+      "source": "object_code/ages/interactions/villager.s:@runSubid0d"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "constants/ages/interactions.s",
+      "sha256": "26c7c2a44d911c5d582b6d15097c049e345b48cbb9b2d4a1f3565acf412d6232"
+    },
+    {
+      "path": "constants/common/globalFlags.s",
+      "sha256": "0adc42ac810c408120fd5d6725ebf7426b5a0e7c84543c09f75873ab81286c12"
+    },
+    {
+      "path": "constants/common/objectSpeeds.s",
+      "sha256": "fe758f068dafae5e0796763c50abcfe6b4490e7b2b2868a1f8706c166d4dd181"
+    },
+    {
+      "path": "scripts/ages/scripts.s",
+      "sha256": "77eee513ca54db21c885bedbff8317a08a69c13c2235c5d7386204e9ae6db00c"
+    },
+    {
+      "path": "scripts/common/commonScripts.s",
+      "sha256": "2bd26e1316d9612c4fc7ad613f20cca16c3ebdf8362b1c1e83d3937775217119"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "Scripts/oracle_ages_scripts.tsv",
+      "sha256": "dfae9f3b447aff8c203e796d83237cd45d8c31e79ac41004b78c24609c1ec17a"
+    },
+    {
+      "path": "Scripts/oracle_ages_script_bindings.tsv",
+      "sha256": "a31b924d0d4f232acf578939cb6b924a9c16ef4a8d3b8a375934fb67ac78a110"
+    }
+  ]
+}

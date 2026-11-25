@@ -418,3 +418,40 @@ When a record is superseded, add a new one instead of editing history.
 - **Consequence:** the runtime keeps consuming the per-object `.map` fields; the
   table is the tooling/audit contract. New facts must be added to the parser and
   the table together.
+
+## ADR-037 - Room presentation is separate from script activation
+
+- **Status:** accepted.
+- **Context:** native one-shot actors such as Ralph `$37:$0d` are created only
+  when `wScreenTransitionDirection` matches the edge in `ralph.s:@initSubid0d`.
+  A screen-at-a-time engine hides the room until the scroll and therefore never
+  shows the actor before it exists. Our overworld is stitched and the camera can
+  already see the next room; hiding the actor until Link crosses its boundary
+  makes him pop into view.
+- **Decision:** split the two questions.
+  1. `OracleRoomRuntime` tracks the current stitched-map room every frame.
+  2. `OracleScriptRuntime.UpdatePresentation` presents every entry-gated actor
+     as the native initializer would for the edge Link would use from the
+     current room, including actors in visible neighbouring rooms. The
+     prospective edge is the room-grid direction (left/right/up/down), not the
+     crossing frame.
+  3. Scripts start only on the real room entry, and only when the actual entry
+     direction matches. Presentation never runs a script early.
+  4. A one-shot guard at the script root
+     (`jumpifglobalflagset FLAG, stubScript`) is emitted as `completed_flag`;
+     once set, presentation and activation are suppressed immediately.
+  5. An active script owns its actor's visibility (flicker, hide, delete). When
+     it ends, the binding's `delete_on_end` or the presentation pass takes over.
+- **Why:** this is the same contract `top` implements with its neighbour ghost:
+  the neighbour is captured in the state the game creates for the edge the
+  player would cross, so it is already composed before the scroll. `ooa-godot`
+  enforces the same invariant for screen transitions: an incoming entity must
+  resolve its presentation during preload, and hidden entities must say so
+  explicitly; otherwise it fails instead of allowing a pop after the scroll.
+- **Consequence:** approaching `$0:$39` from the left shows Ralph in the next
+  screen before the boundary; crossing starts `ralphSubid0dScript` with no
+  visual change. Approaching from another edge leaves him absent both before
+  and after the crossing, as the native initializer would. Future gate facts
+  (global flags, room state, subid conditions) must feed presentation, and
+  animated neighbours should be posed/looped rather than frozen. Enemies and
+  parts will use the same presentation/activation split.

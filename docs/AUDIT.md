@@ -186,13 +186,13 @@ importable and save-compatible as scripts, enemies, floors and Seasons arrive.
 | Import products | `tools/import_oracles/{Shared,Ages,Seasons}` producers validate ROM + disasm and write per-game `assets/oracle/<game>/` tables/gfx with schemas and manifests; runtime `GeneratedTable`/databases read them. | `OracleAssetBuilder` commands (`room`, `overworld`, `interiors`) parse `.s` on demand and write `.map` + manifests; `InteractionBehaviors` scans each interaction block. | Keep the command builders. New cross-cutting facts (behaviours, scripts, room-entry effects, enemies) should become typed generated tables with schema validation, not more regex inside builders. |
 | Room content | `IRoomContent.LoadRoom(group, room, save, runtime, tick, toggle)` + `RoomSession` own the current room, animation tick, visits, minimap, palette and room state. | `OracleRoomRuntime` owns current group/room/entry direction over `MapManager`; `MapTransitionSystem.MapLoading/MapLoaded` fire around object construction and Link placement. | Keep the small runtime; do not copy the full `RoomSession` until save/minimap/animations need it. |
 | Entity lifecycle | `IRoomEntityFactory` constructs content; `RoomEntityManager` executes ordered object streams, slots, freezes, outgoing sets and capability interfaces. | `ObjectManager.ObjectList` + DX-HD `GameObject` constructors; `oracleSprite`/`oracleWarp`/`oracleTimePortal` read flat `.map` parameters. | Add an `OracleEntityFactory`/registry (id/subid -> constructor) and typed placement records before enemy AI. Use DX-HD pools, `SystemBody`, `SystemAi`; do not import the ECS. |
-| Scripts | `CutsceneCommandCatalog` loads schema-validated command streams; `CutsceneCommandRunner` + host interfaces execute them; event databases bind actors/flags/text. | None. | Adapt the command-table + runner shape. Start with one room-entry event family to prove the host contract, then generalise. |
+| Scripts | `CutsceneCommandCatalog` loads schema-validated command streams; `CutsceneCommandRunner` + host interfaces execute them; event databases bind actors/flags/text. | `CutsceneCommandCatalog` loads a typed TSV + binding table; `CutsceneCommandRunner` runs native counter/call semantics; `OracleScriptRuntime` binds source-cited actors. Text/audio are host no-ops. | Keep the shape; add text, animation variants and more opcodes as their owners land. |
 | State / save | `OracleSaveData` is the native `$550` image (0x80 global flags, per-room flag tables, visited/minimap, inventory); `OracleRuntimeState` mirrors live WRAM fields. | `OracleSessionState` is an instance with 0x80 global flags, per-group/room flag bytes, room state, entry direction and capture/restore; save-image wiring is still pending. `OracleFlagState` is a dev facade. | Keep the session; bind it to `OracleSaveData` when the save owner lands. |
-| Room-entry effects | `RoomEntryEffectDatabase` is a 7-row data table (group, room, handler, source) plus `IRoomEntryEvent` cutscene hosts; e.g. Ralph portal music/departure. | `RoomEntryEffects` parses `roomSpecificCode.s` and emits `#oracle-room-effects v1`; `OracleRoomRuntime` dispatches handlers and code-hosted Ralph/EnterPast events. | Keep the table; add music/minimap/respawn owners as they land. |
+| Room-entry effects | `RoomEntryEffectDatabase` is a 7-row data table (group, room, handler, source) plus `IRoomEntryEvent` cutscene hosts; e.g. Ralph portal music/departure. | `RoomEntryEffects` parses `roomSpecificCode.s` and emits `#oracle-room-effects v1`; `OracleRoomRuntime` dispatches handlers; `OracleScriptRuntime` owns the Ralph/EnterPast script bindings and presentation. | Keep the table; add music/minimap/respawn owners as they land. |
 | Transitions | `RoomTransitionController`/`ScreenTransitionRenderer` with room packs, palette handoff, scroll modes. | `MapTransitionSystem` + warps/portals; warp mode is a fade only. | Keep DX-HD transitions; add `sourceTransition`/mode (walk-off, instant, fall, stairs) and floor metadata. |
 | Game packs | `Games/Ages` and `Games/Seasons` content + enums; `Features` shared; pack identity validated (save/runtime/content must match). | Importer understands `--game`, but runtime/tool constants are Ages: `OracleFlagState` flags, portal behavior, `--room` `oracle_ages_g2`, Ages tileset-override parser. | Add `OracleGameProfile` (flag table, portal behavior, groups, map naming, tileset overrides) before Seasons. Pack identity check is cheap and prevents mixed state. |
 | `InteractionBehaviors` | Per-feature importers validate the exact source used by each feature (Maku, Ralph, Impa, ...). | One generic parser for collision/flags/palette/warp/entry; emits a typed, manifest-backed TSV and reads `.ifdef`-filtered game flags. | Keep it; add per-feature validations only where the generic helpers cannot express a scripted state. |
-| Room-entry events | `IRoomEntryEvent` + per-event databases (`RalphPortalEvent`, `EnterPastEvent`, `MakuTreeDisappearanceEvent`, ...). | None; one-shot actors are hidden by source entry gate, scripts not run. | Highest-value next adaptation: one small event registry and one event to validate. |
+| Room-entry events | `IRoomEntryEvent` + per-event databases (`RalphPortalEvent`, `EnterPastEvent`, `MakuTreeDisappearanceEvent`, ...). | `OracleScriptRuntime` binds source-cited scripts; room presentation uses the prospective edge so neighbouring actors are composed before entry; completed guards suppress one-shots. | Keep adapting event families to bindings; add the remaining Maku Tree and NPC events as their scripts are imported. |
 | Seasons readiness | Shared `Features`; game-specific `Games/*`; save/inventory/runtime carry `OracleGame`. | `OracleGameProfile` holds flags/portal/groups and `--game` is generic; no Seasons maps/content yet. | Architecture ready; content/import is the remaining gate. |
 
 ### 7.1 Is `InteractionBehaviors` better than `ooa-godot`?
@@ -219,8 +219,8 @@ because state was static and there was no room-entry lifecycle; those two are
 cheap now and expensive after more content. Do not rewrite the importer or clone
 `ooa-godot`'s ECS.
 
-**Status (2026-11-25): steps 1-4 are implemented and verified in this block; the
-next block is the script engine.**
+**Status (2026-11-25): steps 1-5 are implemented and verified; the script engine
+runs the first two room-entry families. The next block is enemies/parts.**
 
 Order:
 
@@ -234,11 +234,89 @@ Order:
    and map naming; `InteractionBehaviors` reads `.ifdef`-filtered flags. **Done.**
 4. **Typed behavior table:** sorted TSV + manifest from `InteractionBehaviors`.
    **Done.**
-5. **Next: scripts** - generated command streams + a `CutsceneCommandRunner`-style
-   host; start with room-entry events and one script family.
+5. **Scripts:** generated command stream + binding table, `CutsceneCommandRunner`
+   with native counters/callstack, and room presentation split from activation.
+   **Done for `ralphSubid0dScript` and `villagerSubid0dScript`; text/audio and
+   animation variants are the remaining host gaps.**
 6. **Then enemies:** `OracleEntityFactory` + emitted enemy/PART/item placements.
 7. **Dungeons:** warp modes, floor layouts, large rooms; **Seasons** after the
    content pack boundaries exist.
 
 `roomGfxChanges` can interleave; it is independent importer work.
 
+
+## 8. Reference audit: `top`, `oracles-decomp`, `epoch-equinox` (2026-11-25)
+
+This closes the four-repository map before the script/enemy/dungeon work.
+
+### 8.1 `top`
+
+- **What it has:** a SameBoy/mGBA host with software PPU, a smooth camera and a
+  second ("ghost") core instance that loads neighbouring rooms by forcing the
+  game's own scroll. `engine/neighbours` owns the ghost's object capture,
+  sprites and tile animation; `engine/game/data` only decodes layout, tileset,
+  text, object-stream and warp tables.
+- **Scripts:** no bytecode interpreter and no script reader in
+  `engine/game/data`/`engine/neighbours`. It does not reimplement gameplay
+  logic; a cutscene is still run by the emulated game.
+- **Useful finding for us:** the neighbour is composed in the state the game
+  creates for **the edge Link would cross**. `static` neighbours show only
+  objects whose creation state is deterministic, deliberately excluding random
+  placements and objects created by other objects; animated objects are stepped
+  in place and enemies stay frozen. This is exactly the no-pop-in contract our
+  stitched overworld needs, and it is the basis of ADR-037.
+- **Adopted:** presentation by prospective entry edge, before the real crossing.
+  **Not adopted:** the ghost-emulator itself (we own the data and render
+  directly) and its list of named per-room exceptions.
+- **Still useful later:** its `ROM_DATA_FORMATS` sections 5-7 are a second
+  source for object-stream/warp/dungeon encodings; they agree with the
+  disassembly fields we already parse.
+
+### 8.2 `oracles-decomp`
+
+- **Scripts:** `src/game/scripting.c` is the authoritative check for the hook
+  semantics we implement: `disableinput` writes `$81` to `wDisabledObjects`
+  and clears the menu; `jumpifmemoryset` tests `(mem & mask)`; global-flag and
+  call/return handlers use the native return slot; `scriptCmd_moveNpc_*` sets
+  `Interaction.angle`, chooses the animation from the angle and writes
+  `counter2`. `interactionRunScript` decrements `counter1` before `counter2`;
+  while `counter2` is non-zero the object moves and the command stream does not
+  advance. `objectMovementScript.c` confirms the `move*`/`wait` byte layout.
+- **Movement:** `bank3.objectSpeedTable` is signed 8.8 Y/X, with `SPEED_100`
+  (`$28`) equal to one pixel per frame on a cardinal axis; the 32-step angle
+  circle is `0 up / 8 right / 16 down / 24 left`.
+- **Enemies/parts:** per-object C state machines under `common/enemies` and
+  `common/parts`, not a generic ECS. This reinforces ADR-035: keep DX-HD
+  `GameObject`/`ObjectManager` and add typed placement/state hosts per family.
+- **Warps:** bank 1 has explicit screen-transition states and several modes
+  (walk-off, edge, fall, portal), while our `MapTransitionSystem` still fades
+  for every source. This is a real remaining gap, not a script issue.
+- **Adopted:** exact counter/yield ordering and jump/gravity semantics in
+  `CutsceneCommandRunner`; source-derived movement values. `asm15` helpers are
+  implemented only by their native contracts (`beginJump`, `updateGravity`,
+  `ralph_flickerVisibility`, `ralph_decVar3f`, `ralph_restoreMusic`).
+
+### 8.3 `epoch-equinox`
+
+- **What it has:** an emulator shell (rewind/checkpoints, secrets, splits,
+  overlay, voxel renderer, mod loader), not a game-data importer.
+- **Scripts/maps/saves:** no script or warp tables. `epoch_rewind` uses the
+  runtime's snapshot API, which validates the direction of
+  `OracleSessionState.Capture/Restore`; `epoch_secrets` documents the `$c6xx`
+  secret image and `wSecretType` for a later save/secret owner; the voxel
+  renderer derives terrain from the PPU and is intentionally not a source of
+  gameplay facts.
+- **Adopted:** nothing for this block. **Recorded:** do not look here for
+  scripts, warp modes, dungeon layouts or enemy state; the useful future
+  contract is the snapshot/rewind shape when saves land.
+
+### 8.4 Resulting order
+
+1. Script runner and source-cited bindings (this block). **Done for
+   `ralphSubid0dScript` and `villagerSubid0dScript`.**
+2. Presentation/activation split for continuous rooms (ADR-037). **Done.**
+3. Import text payloads and animation variants (`setanimation`) so cutscenes
+   keep their dialogue and poses; sound/music tables next.
+4. Enemy/part placements and their per-family state hosts.
+5. Warp modes, dungeon floors and large rooms; Seasons content after the pack
+   boundary.

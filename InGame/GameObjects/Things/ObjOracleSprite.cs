@@ -17,6 +17,23 @@ namespace ProjectZ.InGame.GameObjects.Things
     {
         public int InteractionId { get; }
         public int SubId { get; }
+        public int RequiresEntryDirection { get; }
+
+        // Script-visible actor state. Runtime scripts own these values; the
+        // sprite only exposes the native object bytes the commands address.
+        public int ScriptAnimation { get; set; }
+        public int ScriptSpeed { get; set; }
+        public int ScriptAngle { get; set; }
+        public int Var3F { get; set; }
+        public bool ScriptBound { get; set; }
+        public bool ScriptCompleted { get; set; }
+        public bool ScriptVisible => _sprite?.IsVisible ?? false;
+
+        public void SetScriptVisible(bool visible)
+        {
+            if (_sprite != null)
+                _sprite.IsVisible = visible;
+        }
 
         private readonly DictAtlasEntry[] _frames;
         private readonly int[] _durations;
@@ -34,6 +51,7 @@ namespace ProjectZ.InGame.GameObjects.Things
         {
             InteractionId = interactionId;
             SubId = subId;
+            RequiresEntryDirection = requiresEntryDirection;
 
             if (!OracleFlagState.IsVisible(requiresFlag, forbiddenFlag, roomStateMask,
                     roomFlagMask, roomFlagValue))
@@ -42,17 +60,11 @@ namespace ProjectZ.InGame.GameObjects.Things
                 return;
             }
 
-            // One-shot room-entry actors (ralph.s:@initSubid0d) delete themselves
-            // unless Link entered from the direction the source checks. The
-            // direction comes from the Oracle room lifecycle, not from a
-            // per-object rule.
-            if (requiresEntryDirection >= 0 &&
-                OracleFlagState.EntryDirection != requiresEntryDirection)
-            {
-                IsDead = true;
-                return;
-            }
-
+            // One-shot room-entry actors (ralph.s:@initSubid0d) are created
+            // only for the native screen-entry direction. A stitched map can
+            // cross rooms without reloading, so keep the object dormant and
+            // let OracleScriptRuntime activate it when that room is entered
+            // from the required direction.
             _frames = OracleSpriteFrames.Load(frames);
             if (_frames.Length == 0)
             {
@@ -74,6 +86,9 @@ namespace ProjectZ.InGame.GameObjects.Things
 
             _sprite = new CSprite(_frames[0], EntityPosition);
             AddComponent(DrawComponent.Index, new DrawCSpriteComponent(_sprite, layer));
+
+            if (requiresEntryDirection >= 0)
+                _sprite.IsVisible = false;
 
             // Native object collision: objectMarkSolidPosition marks the object's
             // tile solid (16x16); objectSetCollideRadius/Radii give an explicit

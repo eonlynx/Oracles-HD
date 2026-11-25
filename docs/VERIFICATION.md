@@ -12,7 +12,7 @@ submodule. Record the commit and the exact counts with each milestone.
 dotnet build -c Debug
 ```
 
-Expected: **0 errors**. The 46 warnings are the upstream v2.0.6 warnings
+Expected: **0 errors**. The 48 warnings are the upstream v2.0.6 warnings
 (unused fields, nullable annotations in `Game1`, manifest DPI).
 
 ## 2. Asset import
@@ -102,6 +102,12 @@ Animation check: crop the Maku Tree water area (x 0-330, y 250-850) in
 `anim3_a/b`; **1.273 pixels differ**, far from Link's idle sprite. Tile
 animation is running.
 
+For script probes, set `ORACLE_SCRIPT_TRACE=1` and wait for the
+`oracle-script: map ...` line before injecting keys; the normal game intro runs
+first, so an early screenshot shows the intro sea rather than the loaded room.
+`--entry 0..3` forces the native `wScreenTransitionDirection` for development
+entry, which is how the scripts are exercised without walking a path.
+
 Phase 3/4 evidence:
 
 | Check | Procedure | Result |
@@ -119,8 +125,13 @@ Phase 3/4 evidence:
 | Time portal present->past | Boot `oracle --pos 1480,431`; step down and back up | Map becomes `oracle_ages_g1_overworld.map` at the same world position; Maku sprout |
 | Time portal past->present | From the arrival portal, step off and back on | Map returns to `oracle_ages_g0_overworld.map`; Maku Tree visible |
 | Past Maku colours | Space `1:$38` after the portal | Teal pond and blue bubbles; `$38` is excluded from `setPastCliffPalettesToRed` |
-| Room lifecycle | Enter `0:$39` normally vs from the right | Ralph is hidden normally and appears only for the right-entry event; the past villager is a different interaction |
+| Room lifecycle | Enter `0:$39` from `0:$38` (cross right) vs from another edge | Ralph is presented before the crossing when approaching right; hidden for other entries; the past villager is a different interaction |
 | Behaviour table | Regenerate twice | `oracle_ages_interaction_behaviors.tsv` + manifest are identical; rows include `$37:$0d` entry=1 and `$6b:$15` flag=$14/palette=$c7 |
+| Script table | Regenerate twice | `oracle_ages_scripts.tsv` + `oracle_ages_script_bindings.tsv` and the manifest are identical; bindings include `$37:$0d -> ralphSubid0dScript` and `$3a:$0d -> villagerSubid0dScript` |
+| Ralph cutscene | `ORACLE_SCRIPT_TRACE=1 oracle --map oracle_ages_g0_overworld.map --pos 1424,431 --entry 0`; wait for the overworld trace, hold Right ~1.2 s | Log shows `presentation $37:$0d visible=True prospective dir=1` before `room 0:39 dir 1`; script starts, sets global flag `$40`, deletes Ralph and ends |
+| Past villager cutscene | `ORACLE_SCRIPT_TRACE=1 oracle --map oracle_ages_g1_overworld.map --pos 1480,431 --entry 0` | Script runs `jumpAndWaitUntilLanded`, skips text, moves down/right, sets flag `$41`, deletes the villager and ends |
+| Completed one-shot | Same past map with `--flag ENTER_PAST_DONE` | No script start; the binding's `completed_flag=$41` suppresses presentation and activation |
+| No pop-in | Boot `0:$38`, wait for map load, observe `0:$39` before crossing | Ralph is already drawn in the neighbour room; crossing does not change his visibility |
 
 ## 5. Known false positives / artifacts
 
@@ -150,6 +161,10 @@ Run before each milestone commit:
 - [ ] Entity atlas deterministic; `oracle_<game>_interaction_behaviors.tsv` + manifest deterministic.
 - [ ] Past `1:$38` keeps the teal Maku water; `$40..$7f` rewrite and room `$38` exclusion verified.
 - [ ] `OracleRoomRuntime` load/enter hooks fire; `MapLoading` precedes object construction and `MapLoaded` follows Link.
+- [ ] Continuous room tracking updates `OracleSessionState` on stitched-map crossings; room presentation shows entry-gated actors before the boundary (no pop-in).
+- [ ] `ralphSubid0dScript` runs on right entry, sets `$40`, deletes Ralph and restores input; the completed guard suppresses him afterwards.
+- [ ] `villagerSubid0dScript` runs on past `1:$39`, jumps/lands, moves down/right, sets `$41`, deletes the villager and restores input.
+- [ ] Script command/binding TSV + manifest regenerate deterministically; no generated script TSV is staged.
 - [ ] `--game ages --room e7` resolves the generic interior map; `--flag` names use `OracleGameProfile`.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.

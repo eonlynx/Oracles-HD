@@ -23,12 +23,13 @@ namespace ProjectZ.InGame.Things
         public int Room { get; private set; } = -1;
         public int EntryDirection { get; private set; } = -1;
 
+        /// <summary>Native wDisabledObjects. Bit 0 disables Link, bit 7 disables input/menu.</summary>
+        public int DisabledObjects { get; set; }
+
+        public bool LinkInputDisabled => (DisabledObjects & 0x81) != 0;
+
         /// <summary>Development override applied to the next entered room.</summary>
         public int PendingRoomFlags { get; set; } = -1;
-
-        /// <summary>Entry-event decisions for the active room (script seam).</summary>
-        public bool RalphPortalEventActive { get; set; }
-        public bool EnterPastEventActive { get; set; }
 
         public OracleSessionState()
         {
@@ -47,8 +48,7 @@ namespace ProjectZ.InGame.Things
             Room = -1;
             EntryDirection = -1;
             PendingRoomFlags = -1;
-            RalphPortalEventActive = false;
-            EnterPastEventActive = false;
+            DisabledObjects = 0;
 
             if (introFlag is >= 0 and < GlobalFlagCount)
                 _globalFlags[introFlag] = true;

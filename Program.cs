@@ -55,6 +55,13 @@ namespace ProjectZ
                         positionExplicit = true;
                     }
                 }
+                else if (arg == "--entry" && i + 1 < args.Length)
+                {
+                    // Development entry: force the native screen-transition
+                    // direction for the first map load (0 up, 1 right, 2 down, 3 left).
+                    if (int.TryParse(args[++i], out var entry) && entry is >= 0 and <= 3)
+                        Game1.OracleEntryDirection = entry;
+                }
                 else if (arg == "--flag" && i + 1 < args.Length)
                     flagArgs.Add(args[++i]);
                 else if (arg == "--room-state" && i + 1 < args.Length)

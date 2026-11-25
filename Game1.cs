@@ -140,6 +140,7 @@ namespace ProjectZ
         public static OracleGameProfile OracleProfile => OracleGameProfile.For(OracleGame);
         public static string OracleStartMap = "oracle_ages_g0_overworld.map";
         public static Vector2? OracleStartPosition;
+        public static int OracleEntryDirection = -1;
         public static readonly System.Collections.Generic.List<int> OracleDevFlags = new();
         public static int OracleRoomStateModifier;
         public static int OracleRoomFlags;

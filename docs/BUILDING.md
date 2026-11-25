@@ -89,7 +89,7 @@ copied via the `Data/**` item group.
 - **`dotnet` has no SDK**: use `.\build.cmd` or prepend
   `%LOCALAPPDATA%\Microsoft\dotnet` to `PATH`.
 - **`dotnet tool restore` fails**: it must run with the .NET 8 SDK on `PATH`.
-- **46 warnings on build**: upstream v2.0.6 warnings; errors are the gate.
+- **48 warnings on build**: upstream v2.0.6 warnings; errors are the gate.
 - **Game exits on launch**: check `bin/.../stderr` when running through
   `dotnet Oracles-HD.dll`; the base ships a duplicate `.lng` fix.
 - **Black map cell**: check the room inclusion flag (`OUTDOORS | MAKU`) and the

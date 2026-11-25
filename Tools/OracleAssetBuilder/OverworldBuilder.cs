@@ -383,6 +383,8 @@ public sealed class OverworldBuilder
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".png"),
                     Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".atlas"),
                     EntityAtlas.BehaviorTablePath(_outDir, _content.Repo.Game),
+                    ScriptImporter.TablePath(_outDir, _content.Repo.Game),
+                    ScriptImporter.BindingTablePath(_outDir, _content.Repo.Game),
                 }
                 .Where(File.Exists)
                 .OrderBy(p => p, StringComparer.Ordinal)

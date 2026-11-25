@@ -147,8 +147,8 @@ only reads the already-converted values.
 Rows come from `roomSpecificCode.s` group tables. `handler` is the native jump
 index (0x04/0x05/0x08/0x09/0x0a/0x0b/0x0c are the supported room-wide effects;
 others are explicit no-ops until their owners land). `OracleRoomRuntime` applies
-the rows for the current `(group, room)` on `MapLoaded`; code-hosted events
-(e.g. Ralph/EnterPast) are registered separately.
+the rows for the current `(group, room)` on `MapLoaded`; script bindings and
+their prospective-edge presentation are owned by `OracleScriptRuntime`.
 
 ### 5.1 Collision
 

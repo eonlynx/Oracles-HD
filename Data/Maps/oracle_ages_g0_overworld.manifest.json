@@ -290,6 +290,14 @@
       "sha256": "895937b576beae34897516bc37efa9ea8e1eb7e17a2b2e72cd4241f961ed19bc"
     },
     {
+      "path": "Scripts/oracle_ages_script_bindings.tsv",
+      "sha256": "a31b924d0d4f232acf578939cb6b924a9c16ef4a8d3b8a375934fb67ac78a110"
+    },
+    {
+      "path": "Scripts/oracle_ages_scripts.tsv",
+      "sha256": "dfae9f3b447aff8c203e796d83237cd45d8c31e79ac41004b78c24609c1ec17a"
+    },
+    {
       "path": "Tilesets/oracle_ages_g0_overworld.png",
       "sha256": "e9de3273eda94fc94484290efaea6853a49000a49552eea1992bac93fe4c52a8"
     },
