@@ -345,6 +345,40 @@ public sealed class OracleContent
         return new RoomLayout(width, height, tiles, large);
     }
 
+    /// <summary>
+    /// Source files that can affect an object/interior/overworld build, for
+    /// manifest input hashes. Missing optional files are skipped.
+    /// </summary>
+    public IReadOnlyList<string> GetImportedSourcePaths()
+    {
+        var paths = new List<string>();
+        void Add(string path)
+        {
+            if (File.Exists(path))
+                paths.Add(path);
+        }
+
+        Add(Path.Combine(Repo.DataDir, "warpSources.s"));
+        Add(Path.Combine(Repo.DataDir, "warpDestinations.s"));
+        Add(Path.Combine(Repo.DataDir, "tile_properties", "warpTiles.s"));
+        Add(Path.Combine(Repo.DataDir, "tile_properties", "facingDirAfterWarp.s"));
+        Add(Path.Combine(Repo.DataDir, "interactionData.s"));
+        Add(Path.Combine(Repo.DataDir, "interactionAnimations.s"));
+        Add(Path.Combine(Repo.DataDir, "interactionOamData.s"));
+        Add(Path.Combine(Repo.DataDir, "objectGfxHeaders.s"));
+        Add(Path.Combine(Repo.DataDir, "paletteData.s"));
+
+        var objectsDir = Path.Combine(Repo.Root, "objects", Repo.Game);
+        foreach (var file in new[]
+                 {
+                     "pointers.s", "extraData1.s", "enemyData.s", "extraData2.s",
+                     "mainData.s", "extraData3.s", "extraData4.s",
+                 })
+            Add(Path.Combine(objectsDir, file));
+
+        return paths;
+    }
+
     public TilesetRenderer CreateRenderer(int tilesetId, int? backgroundPaletteHeader, int room, OracleOptions options)
     {
         var info = GetTileset(tilesetId);
@@ -370,8 +404,20 @@ public sealed class OracleContent
         if (backgroundPaletteHeader.HasValue)
             ApplyPaletteHeader(renderer, backgroundPaletteHeader.Value);
 
-        ApplyPaletteHeader(renderer, info.Palette);
+        ApplyPaletteHeader(renderer, GetRoomPaletteHeader(room, info));
         return renderer;
+    }
+
+    /// <summary>
+    /// makuTree.s loads PALH_8f before the present Maku Tree scene; the room is
+    /// not drawn with the plain tileset palette $30. Keep this room-specific
+    /// branch because the source has one.
+    /// </summary>
+    public int GetRoomPaletteHeader(int room, TilesetInfo info)
+    {
+        if (Group == 0 && (room & 0xFF) == 0x38)
+            return 0x8f;
+        return info.Palette;
     }
 
     private void ApplyPaletteHeader(TilesetRenderer renderer, int header)

@@ -31,10 +31,11 @@ Acceptance: LA base runs identically from source.
 - [x] Collisions/terrain sections.
 - [x] Present overworld 196/196 rooms.
 - [x] Past overworld 196/196 rooms.
-- [ ] Underwater groups 2/3.
+- [x] Present interiors (group 2) reachable from group 0.
+- [ ] Past interiors (group 3) and underwater groups.
 - [ ] Full dungeon floors and large-room selection.
 - [ ] `roomGfxChanges` / room-specific graphics.
-- [ ] Room object stream.
+- [x] Room object stream: positioned interactions and counts for the rest.
 
 Acceptance: `overworld --group 0` and `--group 1` are deterministic; previews show
 no corrupt tiles; manifests match.
@@ -46,8 +47,9 @@ no corrupt tiles; manifests match.
 - [x] Tile collision blocks water/cliffs.
 - [x] Terrain flags (water/deep/lava/grass).
 - [x] Tile animation runs.
-- [ ] Interiors as separate maps + warps.
-- [ ] Doors, stairs, holes, overworld teleporters.
+- [x] Interiors as separate maps + warps (present group 2, 22 maps).
+- [x] Door/tile and screen-edge warps through `MapTransitionSystem`.
+- [ ] Doors, stairs, holes, overworld teleporters (native LA objects).
 - [ ] Special collisions (bridges, rails, one-way).
 - [ ] Swimming, diving, falling.
 - [ ] Camera policies for rooms that need a locked view.
@@ -57,8 +59,9 @@ house, cross a bridge, and fall into a hole without leaving the map.
 
 ## Phase 4 - Objects, enemies and inventory
 
-- [ ] Room object stream (interactions, enemies, parts, static objects).
-- [ ] Maku Tree object (`INTERAC_MAKU_TREE $87`) and eyes.
+- [x] Room object stream: positioned interactions + default animation.
+- [ ] Enemies, parts, item drops and scripted interactions.
+- [x] Maku Tree object (`INTERAC_MAKU_TREE $87`) and animated eyes.
 - [ ] Enemy AI (use `ooa-godot`, verify with `oracles-decomp`).
 - [ ] Items, chests, doors, switches, platforms, water, mines.
 - [ ] Inventory, rings, HUD, minimap, dungeon map.
@@ -86,8 +89,12 @@ Acceptance: complete Ages dungeon 1 (keys, map, compass, boss, essence).
 
 ## Immediate next tasks
 
-1. Import `INTERAC_MAKU_TREE` and its sprite/animation; render the eyes.
-2. Implement the room object stream reader and a generic Oracle sprite renderer.
-3. Separate interiors from the overworld grid; add warp objects.
-4. Parse `dungeonLayouts.s`; generate one map per dungeon floor.
-5. Replace the LA HUD with the Oracle status bar.
+1. Import `roomGfxChanges`; remove the black Maku canopy/lower band and restore
+   other room-specific graphics.
+2. Extend the object stream to enemies, parts and item drops; add their OAM
+   presentation and simple movement.
+3. Generate past interiors (group 3) and wire their warps.
+4. Align door triggers with the native walkable strip; reduce the facing-tile
+   approximation after the body collision is compared with the GB tile check.
+5. Parse `dungeonLayouts.s`; generate one map per dungeon floor.
+6. Replace the LA HUD with the Oracle status bar.

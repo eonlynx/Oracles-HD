@@ -27,7 +27,9 @@ public sealed class RoomBuilder
         _tilesetsDir = tilesetsDir;
     }
 
-    public RoomBuildResult Build(int group, int room, bool largeRoom, int? backgroundPaletteHeader, OracleOptions options)
+    public RoomBuildResult Build(int group, int room, bool largeRoom, int? backgroundPaletteHeader, OracleOptions options,
+        IReadOnlyList<MapObjectPlacement>? objects = null,
+        Func<OracleContent.RoomLayout, IReadOnlyList<MapObjectPlacement>>? objectFactory = null)
     {
         var tilesetId = _content.GetRoomTileset(room, options);
         var info = _content.GetTileset(tilesetId);
@@ -35,6 +37,13 @@ public sealed class RoomBuilder
         var layout = _content.GetRoomLayout(_content.GetLayoutGroup(room, info, options), room, largeRoom);
         var width = layout.Width;
         var height = layout.Height;
+
+        if (objectFactory != null)
+        {
+            var extra = objectFactory(layout);
+            if (extra.Count > 0)
+                objects = (objects ?? Array.Empty<MapObjectPlacement>()).Concat(extra).ToArray();
+        }
         var renderer = _content.CreateRenderer(tilesetId, backgroundPaletteHeader, room, options);
 
         var atlas = new MetatileAtlas(64);
@@ -109,7 +118,7 @@ public sealed class RoomBuilder
         Directory.CreateDirectory(_tilesetsDir);
         atlas.SavePng(tilesetPath);
 
-        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements);
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, objects);
 
         Directory.CreateDirectory(Path.GetDirectoryName(previewPath)!);
         var preview = _content.RenderRoomPreview(layout, atlas, tilesetId);
@@ -157,6 +166,7 @@ public sealed class RoomBuilder
             layoutPath,
         };
         inputs.AddRange(renderer.SourcePngs);
+        inputs.AddRange(_content.GetImportedSourcePaths());
 
         var manifest = new
         {
@@ -174,6 +184,7 @@ public sealed class RoomBuilder
                 gfxHeader = $"0x{info.Gfx:x2}",
                 uniqueGfxHeader = $"0x{info.UniqueGfx:x2}",
                 paletteHeader = $"0x{info.Palette:x2}",
+                appliedPaletteHeader = $"0x{_content.GetRoomPaletteHeader(room, info):x2}",
                 flags = $"0x{info.Flags:x2}",
                 outdoors = info.IsOutdoors,
                 indoors = info.IsIndoors,
@@ -189,7 +200,12 @@ public sealed class RoomBuilder
                     sha256 = OracleRepo.Sha256(p),
                 })
                 .ToArray(),
-            outputs = new[] { mapPath, tilesetPath, previewPath }
+            outputs = new[]
+                {
+                    mapPath, tilesetPath, previewPath,
+                    Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".png"),
+                    Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".atlas"),
+                }
                 .OrderBy(p => p, StringComparer.Ordinal)
                 .Select(p => new
                 {

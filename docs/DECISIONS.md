@@ -246,3 +246,48 @@ When a record is superseded, add a new one instead of editing history.
   summarized in `ARCHITECTURE.md` and `ROADMAP.md`; they get their own document
   when implementation starts.
 - **Why:** avoid duplicated plans and stale docs.
+
+## ADR-028 - Prefer high-level reference implementations before raw disassembly
+
+- **Status:** accepted (project owner, 2026-11-25).
+- **Decision:** before writing a low-level parser or entity behaviour from
+  `oracles-disasm`, inspect and adapt the existing implementations:
+  `ooa-godot` first (`tools/import_oracles` and runtime C#), `top` and
+  `oracles-decomp` for data readers, C specifications and edge cases, and
+  `oracles-disasm` as the raw data source and final arbiter.
+- **Why:** re-deriving `warpSources`, object streams, interaction presentation or
+  OAM composition from `.s` duplicates working code and adds avoidable risk.
+  `ooa-godot` already encodes the control flow, ordering and validation for these
+  formats.
+- **Consequence:** adapted algorithms keep their source reference in comments and
+  manifests. The runtime still uses DX-HD's objects, transitions, atlas and map
+  format; no `ooa-godot` architecture or Godot dependency is imported.
+- **Applied to:** warp lookup (`Warps.cs`), object-stream reading
+  (`RoomObjects.cs`), interaction presentation and OAM composition
+  (`InteractionSprites.cs`). Existing tile/tileset, collision and background
+  animation code already matches the high-level importers and was not rewritten.
+
+## ADR-029 - Oracle object anchor, OAM origin and warp trigger
+
+- **Status:** accepted.
+- **Decision:** treat the native interaction position as the centre of a 16x16
+  object cell (`ooa-godot` `SpriteBounds`). The generated entity atlas stores
+  `rawOamMinX - 8, rawOamMinY - 16` as the draw origin. Do not apply the GB
+  engine's `+$10` screen Y again: it is the status-bar offset, and DX-HD map
+  coordinates already start at the playfield.
+- **Evidence:** `getObjectPositionOnScreen` (`Object.yh - cameraY + $10`),
+  `ooa-godot` `NpcCharacter.SpriteBounds`/`BuildPositionedOamTexture`, and the
+  Maku Tree room `$38` result (eyes on the upper trunk, mouth below).
+- **Palette:** room `0:$38` uses `PALH_8f` (BG 2-7 from `paletteData4500`), not
+  the tileset `$30`; `makuTree.s` loads it. This fixes the right-side
+  sign/flower colours.
+- **Warp trigger:** the runtime checks the tile Link stands on **and** the tile
+  he faces. DX-HD's 8x10 body collision is stricter than the GB tile check, and
+  a door metatile is commonly only half-walkable; without the facing check Link
+  stops one pixel short of the warp tile.
+- **Atlas:** one shared `oracle_<game>_entities.png/.atlas` for the overworld
+  and interior commands, built from a stable plan. The timeline is embedded in
+  the `oracleSprite` map object; no `.ani`.
+- **Limit:** this is a first pass for positioned interactions with their default
+  animation. Enemies, parts, item drops, scripted animation/facing and
+  `roomGfxChanges` remain separate work.

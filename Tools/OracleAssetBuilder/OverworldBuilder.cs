@@ -53,6 +53,14 @@ public sealed class OverworldBuilder
         var collisionMap = new byte[width, height];
         var terrainMap = new byte[width, height];
         var placements = new List<MapAnimationPlacement>();
+        var mapObjects = new List<MapObjectPlacement>();
+
+        // One shared entity atlas and one object plan for both the overworld
+        // and the interior command.
+        var warps = new OracleWarpData(_content.Repo);
+        var streams = new RoomObjectStreams(_content.Repo);
+        var spritePlan = EntityAtlas.Build(_content.Repo, streams, warps, _outDir, out var spriteWarnings);
+        var warnings = new List<string>(spriteWarnings);
 
         // Outside rooms and the skipped indoor cell are solid so Link cannot
         // walk into the void until interiors are generated.
@@ -140,6 +148,9 @@ public sealed class OverworldBuilder
                     }
                 }
             }
+
+            AddRoomObjects(mapObjects, room, gridX, gridY, layout, collisionMode,
+                streams, spritePlan, warps, warnings);
         }
 
         var emptyLayer = EmptyLayer(width, height);
@@ -155,7 +166,10 @@ public sealed class OverworldBuilder
         Directory.CreateDirectory(_tilesetsDir);
         atlas.SavePng(tilesetPath);
 
-        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements);
+        DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, mapObjects);
+
+        foreach (var warning in warnings)
+            Console.WriteLine($"  warning: {warning}");
 
         Directory.CreateDirectory(Path.GetDirectoryName(previewPath)!);
         var preview = RenderPreview(layer, atlas);
@@ -166,6 +180,78 @@ public sealed class OverworldBuilder
         return new OverworldBuildResult(
             mapPath, tilesetPath, previewPath, manifestPath,
             usedRooms.Count, skipped.Count, width, height, atlas.Count);
+    }
+
+    private void AddRoomObjects(
+        List<MapObjectPlacement> mapObjects,
+        int room,
+        int gridX,
+        int gridY,
+        OracleContent.RoomLayout layout,
+        int collisionMode,
+        RoomObjectStreams streams,
+        IReadOnlyDictionary<(int Id, int SubId), ComposedInteraction> spritePlan,
+        OracleWarpData warps,
+        List<string> warnings)
+    {
+        const int roomWidth = RoomWidth;
+        const int roomHeight = RoomHeight;
+
+        foreach (var interaction in streams.GetRoom(0, room).Interactions)
+        {
+            if (interaction.Id >= 0x200 ||
+                !spritePlan.TryGetValue((interaction.Id, interaction.SubId), out var sprite))
+                continue;
+
+            mapObjects.Add(new MapObjectPlacement("oracleSprite", new[]
+            {
+                (gridX * roomWidth * 16 + interaction.X).ToString(),
+                (gridY * roomHeight * 16 + interaction.Y).ToString(),
+                string.Join(',', sprite.FrameIds),
+                string.Join(',', sprite.Durations),
+                sprite.OffsetX.ToString(),
+                sprite.OffsetY.ToString(),
+                "2",
+                sprite.LoopStart.ToString(),
+            }));
+        }
+
+        // Group-0 warps that leave the stitched overworld for a present-day
+        // interior. Edge warps and group-0/1 warps need no object: the
+        // overworld is already continuous.
+        var tileWarp = warps.FindTileWarp(0, room);
+        if (tileWarp == null || tileWarp.DestinationGroup != 2)
+            return;
+
+        if (!warps.TryResolve(tileWarp, out var destination, out var error))
+        {
+            warnings.Add(error);
+            return;
+        }
+
+        var target = EntityAtlas.MapName(_content.Repo, tileWarp.DestinationGroup, destination.Room);
+        if (target == null)
+            return;
+
+        var spawn = InteriorBuilder.Spawn(destination, fallbackDirection: 3);
+        for (var y = 0; y < layout.Height; y++)
+        {
+            for (var x = 0; x < layout.Width; x++)
+            {
+                var metatile = layout.Tiles[y * layout.Width + x];
+                if (!warps.IsWarpTile(collisionMode, metatile))
+                    continue;
+
+                mapObjects.Add(new MapObjectPlacement("oracleWarp", new[]
+                {
+                    (gridX * roomWidth * 16 + x * 16).ToString(),
+                    (gridY * roomHeight * 16 + y * 16).ToString(),
+                    target,
+                    spawn.X.ToString(), spawn.Y.ToString(), spawn.Direction.ToString(),
+                    "16", "16",
+                }));
+            }
+        }
     }
 
     private static RgbaImage RenderPreview(int[,] layer, MetatileAtlas atlas)
@@ -229,7 +315,21 @@ public sealed class OverworldBuilder
             atlasMetatiles,
             roomIds = usedRooms.Select(r => $"0x{r:x2}").ToArray(),
             skippedRoomIds = skippedRooms.Select(r => $"0x{r:x2}").ToArray(),
-            outputs = new[] { mapPath, tilesetPath, previewPath }
+            inputs = _content.GetImportedSourcePaths()
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(p => p, StringComparer.Ordinal)
+                .Select(p => new
+                {
+                    path = Path.GetRelativePath(_content.Repo.Root, p).Replace('\\', '/'),
+                    sha256 = OracleRepo.Sha256(p),
+                })
+                .ToArray(),
+            outputs = new[]
+                {
+                    mapPath, tilesetPath, previewPath,
+                    Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".png"),
+                    Path.Combine(EntityAtlas.ResolveMapObjectsDir(_outDir), EntityAtlas.FileStem(_content.Repo.Game) + ".atlas"),
+                }
                 .OrderBy(p => p, StringComparer.Ordinal)
                 .Select(p => new
                 {

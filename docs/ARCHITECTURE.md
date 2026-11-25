@@ -42,10 +42,13 @@ On the first update after resources finish loading, `Game1.Update`:
 1. changes to `Values.ScreenNameGame`;
 2. calls `GameManager.StartNewGame(0, "Oracle")`.
 
-`StartNewGame` selects `oracle_ages_g0_overworld.map` and spawns Link at the
-centre of room `0x39` (`9*160 + 80`, `3*128 + 64`). It uses the existing
-`MapTransitionSystem.LoadMapFromFile`, so camera setup and the first fade are
-the DX-HD paths. The switch is development-only; no menu entry was added.
+`StartNewGame` selects `Game1.OracleStartMap` (default
+`oracle_ages_g0_overworld.map`) and spawns Link at
+`Game1.OracleStartPosition` (default the centre of room `0x39`). The
+development flags `--room e7` and `--pos x,y` override the map and position. It
+uses the existing `MapTransitionSystem.LoadMapFromFile`, so camera setup and the
+first fade are the DX-HD paths. The switch is development-only; no menu entry
+was added.
 
 ## 4. Engine additions
 
@@ -57,13 +60,17 @@ the DX-HD paths. The switch is development-only; no menu entry was added.
 | `InGame/SaveLoad/SaveLoadMap.cs` | Parses the trailing Oracle sections after the native object list. |
 | `InGame/GameObjects/Base/Systems/SystemBody.cs` | Blocks walking bodies against solid tiles before object collision. |
 | `InGame/Things/GameManager.cs` | Oracle map/position selection in `StartNewGame`. |
-| `Game1.cs`, `Program.cs` | `--oracle` development entry. |
+| `Game1.cs`, `Program.cs` | `--oracle`, `--room`, `--pos` development entry. |
+| `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; routes through `MapTransitionSystem`. |
+| `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames from the entity atlas with a map-embedded timeline. |
+| `InGame/GameObjects/GameObjectTemplates.cs` | Registers `oracleWarp` and `oracleSprite`; no parallel object system. |
 
 Design constraints:
 
 - No new user-facing feature, menu or shader.
-- No `.ani` file and no extra data file for animations; frames live in the
-  existing atlas and the timeline in the existing `.map`.
+- No `.ani` file and no extra data file for animations; tile frames live in the
+  tile atlas and the timeline in the existing `.map`; object frames live in the
+  shared entity atlas and the timeline in the `oracleSprite` object parameters.
 - Collision/terrain live in the map file, so no extra per-map file.
 - Legacy LA code is removed only when its Oracle replacement exists
   (`CLEANUP.md`).
@@ -79,10 +86,14 @@ Design constraints:
 | `MetatileAtlas.cs` | Packed 16px metatiles, base and animation-variant keys. |
 | `OracleAnimation.cs` | Groups/tracks/headers/sheets, `(delay, gfxIndex)` parsing. |
 | `AnimationComposer.cs` | Per-metatile timeline, distinct variants, durations. |
-| `DxMapWriter.cs` | Native `.map` plus Oracle sections. |
-| `RoomBuilder.cs` / `OverworldBuilder.cs` | Single rooms / 14x14 or 16x16 stitching, collisions, terrain, animations, manifests. |
+| `DxMapWriter.cs` | Native `.map` plus Oracle sections and native object placements. |
+| `RoomBuilder.cs` / `OverworldBuilder.cs` / `InteriorBuilder.cs` | Single rooms / stitched overworld / present interiors, collisions, terrain, animations, objects, manifests. |
+| `Warps.cs` | `warpSources.s`, `warpDestinations.s`, `warpTiles.s`, facing table, pointer expansion. |
+| `RoomObjects.cs` | Native room object stream (`pointers.s`, `mainData.s`, enemy/extra data); positioned interactions and counts. |
+| `InteractionSprites.cs` | Interaction data, animation tables, contiguous OAM pointer stream, OAM composition. |
+| `EntityAtlas.cs` / `SpriteAtlasWriter.cs` | Shared entity plan, deterministic RGBA atlas + `.atlas`. |
 | `Png.cs` | Dependency-free 2bpp indexed PNG reader and RGBA writer. |
-| `Program.cs` | CLI: `room`, `overworld`, `inspect`, `inspect-anim`. |
+| `Program.cs` | CLI: `room`, `overworld`, `interiors`, `inspect`, `inspect-anim`. |
 
 ## 6. Planned contracts (not implemented)
 
@@ -92,10 +103,11 @@ These are summarized here instead of separate speculative documents (ADR-027).
   files per game with a primary and a backup; explicit save boundaries only;
   transient state in `OracleRuntimeState`. Do not mirror save bytes. See
   `ROADMAP.md` phase 4.
-- **Content systems.** Room object stream -> interactions/enemies/parts/items;
-  a fixed-60 Hz script runner with actors, events and modal ownership. First
-  target: `INTERAC_MAKU_TREE` ($87) and its eyes. See `ROADMAP.md` and
-  `COVERAGE.md`.
+- **Content systems (first pass implemented).** The importer reads positioned
+  interactions and emits `oracleSprite`/`oracleWarp` objects; `$87` renders and
+  blinks. Still planned: enemies/parts/item drops, a fixed-60 Hz script runner
+  with actors/events/modal ownership, and scripted animation/facing changes.
+  See `ROADMAP.md` and `COVERAGE.md`.
 - **Audio.** Reuse `GbsPlayer`; build an Oracle `.gbs` from
   `code/audio.s` + `audio/{game}`. No LA music fallback. WLA-DX is deferred
   (ADR-024).

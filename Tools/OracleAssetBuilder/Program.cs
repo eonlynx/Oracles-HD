@@ -48,9 +48,10 @@ public static class Program
         {
             "room" => BuildRoom(content, group, oracleOptions, options, outDir, tilesetsDir),
             "overworld" => BuildOverworld(content, group, oracleOptions, outDir, tilesetsDir),
+            "interiors" => BuildInteriors(content, oracleOptions, options, outDir, tilesetsDir),
             "inspect" => Inspect(content, options, oracleOptions),
             "inspect-anim" => InspectAnim(content, options),
-            _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld' or 'inspect'."),
+            _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld', 'interiors' or 'inspect'."),
         };
     }
 
@@ -91,6 +92,31 @@ public static class Program
         Console.WriteLine($"  tileset  {result.TilesetPath}");
         Console.WriteLine($"  preview  {result.PreviewPath}");
         Console.WriteLine($"  manifest {result.ManifestPath}");
+        return 0;
+    }
+
+    private static int BuildInteriors(OracleContent content, OracleOptions oracleOptions,
+        Dictionary<string, string> options, string outDir, string tilesetsDir)
+    {
+        int? room = options.TryGetValue("room", out var roomValue) ? ParseHex(roomValue) : null;
+        if (room is < 0 or > 0xFF)
+            throw new ArgumentException("--room must be 00..ff.");
+
+        // Interiors always live in group 2; the --group option belongs to the
+        // overworld/room commands. Building with the caller's group would read
+        // group0Tilesets.bin for a group-2 room and produce the wrong tileset.
+        var interiorContent = content.Group == 2 ? content : new OracleContent(content.Repo, 2);
+        var warps = new OracleWarpData(content.Repo);
+        var streams = new RoomObjectStreams(content.Repo);
+        var builder = new InteriorBuilder(interiorContent, outDir, tilesetsDir, warps, streams);
+        var result = builder.BuildAll(oracleOptions, room);
+
+        Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} present interiors");
+        Console.WriteLine($"  rooms {result.Rooms}");
+        foreach (var map in result.MapPaths)
+            Console.WriteLine($"  map      {map}");
+        foreach (var warning in result.Warnings)
+            Console.WriteLine($"  warning: {warning}");
         return 0;
     }
 
@@ -181,12 +207,13 @@ public static class Program
             Commands:
               room       Render one room and emit a DX-HD .map + tileset atlas
               overworld  Stitch all OUTDOORS rooms of a group into one DX-HD map
+              interiors  Build present-day interiors reachable from group 0 + warps
               inspect   Print a tileset's tables
 
             Options:
               --game ages|seasons       Game pack (default: ages)
               --group N                 Room group (default: 0)
-              --room HH                 Room id, hex (default: 00)
+              --room HH                 Room id, hex (default: 00; interiors: optional filter)
               --tileset HH              Tileset id for inspect (default: 00)
               --large                   Use the 15x11 playable area of a 176-byte room
               --bg-palette HH           Optional palette header applied before the tileset palette

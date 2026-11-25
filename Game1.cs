@@ -136,6 +136,8 @@ namespace ProjectZ
         public static bool FinishedLoading => _finishedLoading;
         public static bool LoadFirstSave;
         public static bool OracleOverworld;
+        public static string OracleStartMap = "oracle_ages_g0_overworld.map";
+        public static Vector2? OracleStartPosition;
         private static bool _oracleStarted;
 
 #if DEBUG

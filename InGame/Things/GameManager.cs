@@ -1407,10 +1407,11 @@ namespace ProjectZ.InGame.Things
             // load the map (Oracle development entry loads the generated overworld)
             var oracle = Game1.OracleOverworld;
             var startPosition = oracle
-                ? new Vector2(9 * Values.FieldWidth + Values.FieldWidth / 2f,
+                ? Game1.OracleStartPosition ??
+                  new Vector2(9 * Values.FieldWidth + Values.FieldWidth / 2f,
                               3 * Values.FieldHeight + Values.FieldHeight / 2f)
                 : new Vector2(MapManager.ObjLink.PosX, MapManager.ObjLink.PosY);
-            var startMap = oracle ? "oracle_ages_g0_overworld.map" : "house1.map";
+            var startMap = oracle ? Game1.OracleStartMap : "house1.map";
 
             MapManager.ObjLink.SetNextMapPosition(startPosition);
             var transitionSystem = (MapTransitionSystem)GameSystems[typeof(MapTransitionSystem)];

@@ -85,6 +85,10 @@ Layout aliases are resolved through `tilesetLayoutGroupXX`: layout `$20` uses
 - Past cliffs: when the tileset has `TILESETFLAG_PAST`, collision mode 0 and
   the room is not `$38`, every attribute palette 6 in metatiles `$40..$ff`
   becomes 0 (`setPastCliffPalettesToRed`).
+- Maku Tree scene: `makuTree.s` loads `PALH_8f` (BG 2-7 from
+  `paletteData4500`) before the interaction runs. Room `0:$38` therefore uses
+  `$8f`, not the tileset palette `$30`; this is what restores the sign/flower
+  colours on the right side.
 
 ## 5. `.map` format
 
@@ -191,6 +195,51 @@ The composer:
 The three initial forced writes of `initializeAnimations` are ignored in the
 steady-state timeline; they only affect the first three updates.
 
+### 5.4 Native objects emitted by the importer
+
+Oracle entities and warps reuse the native DX-HD object list; there is **no**
+`#oracle-objects` section.
+
+`oracleSprite` fields, after the native `posX;posY`:
+
+```
+frames     comma-separated atlas entry ids
+durations  comma-separated milliseconds per frame
+offsetX    OAM bounding-box X relative to the interaction anchor
+offsetY    OAM bounding-box Y relative to the interaction anchor
+layer      DX-HD layer (2 = player)
+loopStart  frame index used after the last frame (native m_AnimationLoop)
+```
+
+`oracleWarp` fields, after `posX;posY`:
+
+```
+nextMap    map file name (for example oracle_ages_g2_re7.map)
+spawnX     spawn pixel X in the destination map space
+spawnY     spawn pixel Y
+direction  DX-HD direction (0 left, 1 up, 2 right, 3 down)
+width      trigger width
+height     trigger height
+```
+
+Warp resolution follows `ooa-godot` `WarpDatabase` / `Import-Warps.ps1`:
+
+- `m_StandardWarp`: edge mask, room, destination index, destination group,
+  source transition.
+- `m_PointerWarp` expands the target label's `m_PositionWarp` rows; the YX
+  position selects the exact tile.
+- `warpTiles.s` marks the metatiles that trigger a warp. Stacked `@overworld:`
+  and `@underwater:` labels share the same rows.
+- Destination `YX` is `(y << 4) | x`; spawn = `x*16+8, y*16+8`. Transition `$3`
+  with parameter `$9` enters from the bottom walking up; `$f` enters from the
+  top walking down.
+- Group-0/1 destinations add the stitched room offset (`roomX*160`,
+  `roomY*128`); group-2/3 interiors are standalone and stay local.
+
+The runtime checks both the tile Link stands on and the tile he faces. The
+second check is needed because DX-HD's 8x10 body collision is stricter than the
+GB tile check: a door tile is often only half-walkable.
+
 ## 6. Atlas and manifest
 
 - Atlas PNG: one 16x16 metatile per cell, 64 columns for generated overworlds.
@@ -199,6 +248,27 @@ steady-state timeline; they only affect the first three updates.
 - Manifest (`*.manifest.json`): tool version, game/group/room, tileset metadata,
   room IDs, skipped IDs, input SHA-256s (relative to the disasm root) and output
   SHA-256s. Manifests are committed; maps/atlases/previews are gitignored.
+
+### 6.1 Entity atlas
+
+`Tools/OracleAssetBuilder` writes one shared pair:
+
+```
+Data/Map Objects/oracle_<game>_entities.png
+Data/Map Objects/oracle_<game>_entities.atlas
+```
+
+- Entry id = `oracle_<game>_i<interaction:x2>_<subid:x2>_<frame:00>`.
+- Each entry is the composed OAM frame, not a raw sheet cell. OAM blocks are
+  drawn in reverse order (lower index wins), with X/Y flips, 8x16 cells,
+  `tileBase + tile`, and palette `oamFlags XOR (flags & 7)`.
+- The interaction anchor is the centre of a 16x16 object cell
+  (`ooa-godot` `SpriteBounds`). The atlas offset is
+  `rawOamMinX - 8, rawOamMinY - 16`; the map object stores that offset.
+- The same plan (all positioned group-0 interactions plus the group-2 interior
+  set) is used by both `overworld` and `interiors`, so either command produces
+  the same atlas.
+- Entity atlases are gitignored; their SHA-256 is in the manifest.
 
 ## 7. Room inclusion in the overworld grid
 
@@ -210,9 +280,12 @@ room `$38` is MAKU-only but is part of the overworld map
 
 ## 8. Pending formats
 
-- Room object stream (`objects/{game}/pointers.s`, `mainData.s`): interactions,
-  enemies, parts, static dungeon objects.
-- `roomGfxChanges` and `checkLoadPastSignAndChestGfx`.
+- Room object stream (`objects/{game}/pointers.s`, `mainData.s`): positioned
+  interactions are read; enemies, parts, item drops and static dungeon objects
+  still need placement and behaviour.
+- `roomGfxChanges` and `checkLoadPastSignAndChestGfx`; these supply the Maku
+  canopy/lower band and other room-specific graphics that currently render
+  black or placeholder.
 - `dungeonLayouts.s` and large-room size selection.
 - Seasonal tilesets (`m_SeasonalTileset`, `wRoomStateModifier`) and four
   layouts per room.

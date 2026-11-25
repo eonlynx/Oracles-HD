@@ -11,10 +11,11 @@ a system is implemented.
 |---|---|---|---|
 | Overworld rooms (present) | 196 | 196 generated | Group 0, 140x112, collisions/terrain/animations. |
 | Overworld rooms (past) | 196 | 196 generated | Group 1. |
-| Underwater rooms | groups 2/3 | 0 | Not generated. |
+| Present interiors / underwater (group 2) | 256 room slots | 22 maps | Reachable from group-0 warps; 10x8; group 3 not generated. |
 | Dungeon rooms | groups 4/5 | 5 sample rooms | No floor layouts; 10x8 / 15x11 storage. |
 | Enemies / bosses (files) | 37 Ages + 71 common = 108 | 0 | Bosses are included in these files. |
-| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | 0 | Includes `makuTree.s`, `makuFlower.s`, shops, story actors. |
+| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | 38 ids / 144 placements | Positioned interactions with default animation; Maku `$87` renders/blinks. Scripts, facing and extra graphics pending. |
+| Warps / doors | `warpSources.s`, `warpDestinations.s`, `warpTiles.s` | 13 entry + 11 exit | Group-0 tile/pointer/edge sources; present interiors only. |
 | Items / treasure behaviours (files) | 3 Ages + 22 common = 25 | 0 | Treasure IDs are `$63` entries in `treasureObjectData` (ROM_DATA_FORMATS section 5.4). |
 | Parts / effects (files) | 41 Ages + 45 common = 86 | 0 | Particles, projectiles, helpers. |
 | Special objects (files) | 3 Ages + 9 common = 12 | 0 | Link, companions, Maple, ... |
@@ -23,6 +24,25 @@ a system is implemented.
 | Text | `text/ages/text.yaml` | 0 | LA `.lng` still used. |
 | Audio | `audio/ages/`, `code/audio.s` | 0 Oracle tracks | LA `awakening.gbs` still used. |
 | Save / progression | SRAM `0x550` x 3 files | 0 | LA save layout still used. |
+
+### Present interaction pass (38 ids)
+
+The first pass composes every positioned interaction reachable from the present
+overworld and the 22 present interiors. IDs are listed for traceability; names
+come from `objectGfxHeaders.s`.
+
+```
+2e 34 36 37 39 3a 3b 3c 3d 3f 41 44 46 47 48 49 4c 53 54 59 5c 5d
+65 66 71 72 80 83 87 89 9a b6 c2 c8 cd d5 e1 e5
+```
+
+- `87` is the Maku Tree face (6 OAM frames, animated).
+- `53`/`54` are the Mamamu dog and owner in `2:e7`.
+- `5c` is the past lady/generic guy; `89` is a flame; `e5` is the shared
+  Maku flower/Book of Seals/Vineseed sheet.
+- `2e`, `3c`, `3d`, `c2`, `c8`, `cd`, `d5`, `e1` are story/cutscene actors or
+  props that happen to be positioned; they render with their default animation.
+- Facing/script animations, enemies, parts and item drops are not in this pass.
 
 ## Seasons
 

@@ -122,11 +122,12 @@ asset generation, publishing and troubleshooting. In short: `.\build.cmd`,
 
 ## Known limitations
 
-Room objects (Maku Tree eyes, NPCs, enemies), interiors/warps, special
-collisions, and the Oracle HUD/text/audio/save are not implemented yet. Seasons
-needs seasonal tilesets/layouts and Subrosia. The live list is
-[`docs/STATUS.md`](docs/STATUS.md); the content inventory is
-[`docs/COVERAGE.md`](docs/COVERAGE.md).
+Present-day interiors and warps work as a first pass (22 group-2 maps), and
+positioned interactions render with their default animation, including the
+animated Maku Tree eyes. Enemies, parts, item drops, scripts, `roomGfxChanges`
+(the black Maku canopy), the Oracle HUD/text/audio/save and Seasons content are
+still pending. The live list is [`docs/STATUS.md`](docs/STATUS.md); the content
+inventory is [`docs/COVERAGE.md`](docs/COVERAGE.md).
 
 ## Credits
 

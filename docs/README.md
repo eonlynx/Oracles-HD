@@ -30,6 +30,75 @@ duplicating them.
 | WindowsDX vs multiplatform status | `PLATFORM.md` |
 | Reproducible checks and recorded evidence | `VERIFICATION.md` |
 
+## Coherence audit
+
+This is a consistency check across the documents, not a second source of truth.
+When two documents disagree, the owner below wins and the other document is
+corrected in the same commit.
+
+| Topic | Owner | Must not be restated as authority in |
+|---|---|---|
+| Fidelity rules, evidence order, reference reuse | `PROJECT_PRINCIPLES.md` | any other document |
+| What is done / partial / missing, counts | `STATUS.md` | `README.md`, `ROADMAP.md` |
+| Phases, acceptance, next tasks | `ROADMAP.md` | `STATUS.md` |
+| Engine layers, runtime entry, planned contracts | `ARCHITECTURE.md` | `README.md` |
+| `.map`/atlas/object/audio formats | `FORMATS.md` | `ARCHITECTURE.md` |
+| Chosen design and evidence | `DECISIONS.md` | `PROJECT_PRINCIPLES.md` |
+| Per-content inventory | `COVERAGE.md` | `STATUS.md` |
+| Commands and exact checks | `VERIFICATION.md` | `BUILDING.md` |
+| SDK, publish, troubleshooting | `BUILDING.md` | `README.md` |
+| Licences and reuse caveats | `THIRD_PARTY.md` | `DECISIONS.md` |
+| LA legacy inventory | `CLEANUP.md` | `STATUS.md` |
+| WindowsDX vs multiplatform | `PLATFORM.md` | `README.md` |
+
+Rules:
+
+1. Counts and commit hashes live in `STATUS.md`; `docs/README.md` only names the
+   current implementation commit as a navigation aid.
+2. "Not started" means no verified implementation. A working-tree slice is
+   "Partial" until its check is recorded in `VERIFICATION.md`.
+3. A new format gets one `FORMATS.md` entry, a new command gets `BUILDING.md` and
+   `VERIFICATION.md`, and a new content system gets `COVERAGE.md` rows.
+4. A design choice that changes behaviour or evidence order gets an ADR; do not
+   bury it in a status table.
+5. `README.md` (root) is a short entry point. It links to owners and must not
+   duplicate build steps, counts, licences or limitations.
+
+Audit result for 2026-11-25 (Phase 3/4 slice):
+
+- The source hierarchy is stated once in `PROJECT_PRINCIPLES.md` and referenced
+  by `README.md` and `THIRD_PARTY.md`.
+- `STATUS.md` owns counts; `ROADMAP.md` owns next tasks. The earlier duplication
+  was removed in `4caed59`.
+- `FORMATS.md` is the only owner of `.map` sections, native object fields and the
+  entity atlas layout. ADR-029 records the anchor/palette/warp-trigger
+  decisions.
+- `STATUS.md` and `COVERAGE.md` now say objects/warps are **Partial**, matching
+  the verified `0:66` <-> `2:e7` warp, the animated `$87` eyes and the 38
+  composed interaction ids. They do not claim enemies, scripts or
+  `roomGfxChanges`.
+- `README.md` (root) links to `STATUS.md`/`COVERAGE.md` for limitations instead
+  of maintaining its own list.
+- No document claims the Maku canopy is done; the black band is explicitly
+  attributed to `roomGfxChanges` in `STATUS.md`, `FORMATS.md` and
+  `VERIFICATION.md`.
+
+Single pipeline:
+
+```
+oracles-disasm tables + ooa-godot/decomp/top algorithms
+        |
+        v
+Tools/OracleAssetBuilder (only reader of .s/.bin/.png)
+        |
+        +--> oracle_*.map        tiles, collision, terrain, animations,
+        |                        oracleSprite/oracleWarp native objects
+        +--> oracle_*_entities   shared RGBA atlas + .atlas origins
+        |
+        v
+DX-HD runtime: TileMap, MapTransitionSystem, ObjectManager, Camera
+```
+
 ## Code entry points
 
 These are boundaries, not a complete class inventory.
@@ -42,11 +111,13 @@ These are boundaries, not a complete class inventory.
 | Tile collision / terrain | `SystemBody.Collision`, `Map.IsSolid`, `Map.ApplyTerrainToFieldStates` |
 | Tile animation | `Map.TileAnimations`, `TileAnimation.cs`, `SaveLoadMap.LoadOracleSections` |
 | Import CLI | `Tools/OracleAssetBuilder/Program.cs` |
-| Overworld / rooms | `Tools/OracleAssetBuilder/OverworldBuilder.cs`, `RoomBuilder.cs` |
+| Overworld / rooms / interiors | `Tools/OracleAssetBuilder/OverworldBuilder.cs`, `RoomBuilder.cs`, `InteriorBuilder.cs` |
 | Tables, overrides, aliases | `Tools/OracleAssetBuilder/OracleContent.cs`, `AsmParser.cs` |
 | Tilesets / palettes / metatiles | `Tools/OracleAssetBuilder/TilesetRenderer.cs` |
 | Animation decode / composition | `Tools/OracleAssetBuilder/OracleAnimation.cs`, `AnimationComposer.cs` |
-| Map sections / manifests | `Tools/OracleAssetBuilder/DxMapWriter.cs`, `MetatileAtlas.cs` |
+| Warps / object streams / interaction sprites | `Tools/OracleAssetBuilder/Warps.cs`, `RoomObjects.cs`, `InteractionSprites.cs` |
+| Map sections, native objects, manifests | `Tools/OracleAssetBuilder/DxMapWriter.cs`, `MetatileAtlas.cs`, `SpriteAtlasWriter.cs` |
+| Oracle warps / sprites in the runtime | `InGame/GameObjects/Things/ObjOracleWarp.cs`, `ObjOracleSprite.cs` |
 
 ## Source hierarchy
 
@@ -69,8 +140,8 @@ plans.
 ## Current snapshot
 
 - Base: Links-Awakening-DX-HD v2.0.6 (`2e68849`).
-- Latest implementation commit: `501fb1f` (animated tiles, tile collisions,
-  Oracle overworld runtime).
+- Latest implementation commit: `a794306` (present interiors, warps, Oracle
+  object pipeline, animated Maku eyes).
 - Target: `net8.0-windows` / MonoGame 3.8.1.303 WindowsDX; 0 build errors.
 - Runtime entry: `Oracles-HD.exe oracle` (development switch).
 - Assets: generated locally, gitignored; manifests committed.

@@ -18,6 +18,25 @@ Use evidence in this order:
 scripts, inventory, UI). When it conflicts with 1-2, the disassembly wins and the
 conflict is recorded in `DECISIONS.md`.
 
+## Reference reuse workflow
+
+Before writing a low-level parser, read the existing high-level implementation in
+this order:
+
+1. **`ooa-godot`** - its `tools/import_oracles` scripts and runtime C# already
+   describe warps, object streams, interaction presentation, OAM composition and
+   entity behaviour. Translate or adapt that C# to DX-HD instead of re-deriving
+   the format from `.s`.
+2. **`top` / `oracles-decomp`** - use the C readers and the C specification to
+   check a detail, a branch, Seasons data or an edge case that `ooa-godot` does
+   not cover.
+3. **`oracles-disasm`** - the raw data source and final arbiter. Read it directly
+   only when the higher-level implementations disagree or do not cover the case,
+   and record the finding.
+
+The output still targets DX-HD mechanisms; reuse means adapting the algorithm,
+not importing another engine's architecture. This rule is recorded as ADR-028.
+
 ## Fidelity rules
 
 - Trace handlers, callers, tables and placement before coding.

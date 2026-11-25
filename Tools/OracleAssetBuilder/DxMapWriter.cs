@@ -4,6 +4,9 @@ namespace Oracles.Tools.AssetBuilder;
 
 public sealed record MapAnimationPlacement(int X, int Y, int[] Frames, int[] Durations);
 
+/// <summary>One placed DX-HD map object: template name plus semicolon-separated fields (posX, posY first).</summary>
+public sealed record MapObjectPlacement(string Type, IReadOnlyList<string> Fields);
+
 /// <summary>
 /// Writes the text map format used by Links-Awakening-DX-HD v2.0.6, plus the
 /// optional Oracle sections (collision, terrain, tile animation) appended after
@@ -20,7 +23,8 @@ public static class DxMapWriter
         IReadOnlyList<int[,]> layers,
         byte[,]? collision = null,
         byte[,]? terrain = null,
-        IReadOnlyList<MapAnimationPlacement>? animations = null)
+        IReadOnlyList<MapAnimationPlacement>? animations = null,
+        IReadOnlyList<MapObjectPlacement>? objects = null)
     {
         if (layers.Count == 0)
             throw new ArgumentException("At least one tile layer is required.", nameof(layers));
@@ -52,8 +56,7 @@ public static class DxMapWriter
             }
         }
 
-        writer.WriteLine("0");          // object templates used by this map
-        writer.WriteLine("0");          // placed objects
+        WriteObjects(writer, objects);
 
         if (collision != null)
             WriteByteMap(writer, "#oracle-collision v1", collision);
@@ -72,6 +75,37 @@ public static class DxMapWriter
                     string.Join(',', animation.Durations) + ";" +
                     animation.X + ";" + animation.Y);
             }
+        }
+    }
+
+    private static void WriteObjects(StreamWriter writer, IReadOnlyList<MapObjectPlacement>? objects)
+    {
+        if (objects == null || objects.Count == 0)
+        {
+            writer.WriteLine("0");
+            writer.WriteLine("0");
+            return;
+        }
+
+        var types = objects
+            .Select(o => o.Type)
+            .Distinct(StringComparer.Ordinal)
+            .OrderBy(t => t, StringComparer.Ordinal)
+            .ToArray();
+        var typeIndex = types
+            .Select((type, index) => (type, index))
+            .ToDictionary(pair => pair.type, pair => pair.index, StringComparer.Ordinal);
+
+        writer.WriteLine(types.Length);
+        foreach (var type in types)
+            writer.WriteLine(type);
+
+        writer.WriteLine(objects.Count);
+        foreach (var placement in objects)
+        {
+            var fields = new List<string> { typeIndex[placement.Type].ToString() };
+            fields.AddRange(placement.Fields);
+            writer.WriteLine(string.Join(';', fields));
         }
     }
 

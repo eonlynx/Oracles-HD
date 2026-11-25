@@ -36,6 +36,12 @@ bin\Debug\net8.0-windows\Oracles-HD.exe
 
 # development entry: generated Ages present overworld
 bin\Debug\net8.0-windows\Oracles-HD.exe oracle
+
+# present interior (group 2 room id)
+bin\Debug\net8.0-windows\Oracles-HD.exe oracle --room e7
+
+# spawn override in map pixels
+bin\Debug\net8.0-windows\Oracles-HD.exe oracle --pos 1360,470
 ```
 
 Publish:
@@ -51,13 +57,19 @@ The `Publish` folder is produced by the DX-HD publish profile.
 ```powershell
 dotnet run --project Tools/OracleAssetBuilder -- overworld --game ages --group 0
 dotnet run --project Tools/OracleAssetBuilder -- overworld --game ages --group 1
+dotnet run --project Tools/OracleAssetBuilder -- interiors --game ages
 dotnet run --project Tools/OracleAssetBuilder -- room --game ages --group 4 --room 01
 dotnet run --project Tools/OracleAssetBuilder -- inspect --game ages --tileset 22
 dotnet run --project Tools/OracleAssetBuilder -- inspect-anim --game ages --group 0
 ```
 
-Outputs are written under `Data/Maps/` and `Data/Maps/Tilesets/`; previews under
-`Data/Maps/Previews/`. They are gitignored; the manifests are committed.
+`interiors` always builds the present-day interior group (2), regardless of
+`--group`; `--room e7` limits it to one map. The overworld and interiors share
+`Data/Map Objects/oracle_ages_entities.png/.atlas`.
+
+Outputs are written under `Data/Maps/`, `Data/Maps/Tilesets/`, and
+`Data/Map Objects/`; previews under `Data/Maps/Previews/`. They are gitignored;
+the manifests are committed.
 
 ## Content pipeline
 
