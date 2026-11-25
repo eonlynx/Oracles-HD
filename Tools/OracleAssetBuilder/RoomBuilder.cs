@@ -29,7 +29,8 @@ public sealed class RoomBuilder
 
     public RoomBuildResult Build(int group, int room, bool largeRoom, int? backgroundPaletteHeader, OracleOptions options,
         IReadOnlyList<MapObjectPlacement>? objects = null,
-        Func<OracleContent.RoomLayout, IReadOnlyList<MapObjectPlacement>>? objectFactory = null)
+        Func<OracleContent.RoomLayout, IReadOnlyList<MapObjectPlacement>>? objectFactory = null,
+        int floor = -1, int dungeon = -1)
     {
         var tilesetId = _content.GetRoomTileset(room, options);
         var info = _content.GetTileset(tilesetId);
@@ -128,7 +129,8 @@ public sealed class RoomBuilder
         // future puzzle can set Map.CameraTarget explicitly.
         var camera = "follow";
         var mapInfo = OracleMapInfo.SingleRoom(_content.Repo.Game, group, room,
-            width, height, kind, camera, _content.GetRoomEntryEffects(group));
+            width, height, kind, camera, _content.GetRoomEntryEffects(group),
+            floor, dungeon);
 
         DxMapWriter.Write(mapPath, tilesetName, width, height, layers, collisionMap, terrainMap, placements, objects, mapInfo);
 
@@ -220,6 +222,9 @@ public sealed class RoomBuilder
                     EntityAtlas.BehaviorTablePath(_outDir, _content.Repo.Game),
                     ScriptImporter.TablePath(_outDir, _content.Repo.Game),
                     ScriptImporter.BindingTablePath(_outDir, _content.Repo.Game),
+                    EntityPlacements.TablePath(_outDir, _content.Repo.Game),
+                    OracleDungeons.DungeonTablePath(_outDir, _content.Repo.Game),
+                    OracleDungeons.LayoutTablePath(_outDir, _content.Repo.Game),
                 }
                 .Where(File.Exists)
                 .OrderBy(p => p, StringComparer.Ordinal)

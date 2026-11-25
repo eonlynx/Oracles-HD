@@ -1,0 +1,23 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "entity_placements",
+  "rows": 1198,
+  "inputs": [
+    {
+      "path": "objects/ages/mainData.s",
+      "sha256": "d84969f0439dbdc4dfdbb73345c06da6ef8e46dfb0e147c554665a92d850367b"
+    },
+    {
+      "path": "objects/ages/enemyData.s",
+      "sha256": "1ed80d46fd4fafe0d64cbeedf44c8754748b1000b1fbd45633cb2eb37388cb55"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "../../Data/Maps/Entities/oracle_ages_entity_placements.tsv",
+      "sha256": "1e9ad4fa222180a5fd3c1e70009dfbcf3e3c2676fa3f99861e99acee5f94b4ce"
+    }
+  ]
+}

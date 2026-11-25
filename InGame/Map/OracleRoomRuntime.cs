@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using ProjectZ.Base;
 using ProjectZ.InGame.Things;
 
 namespace ProjectZ.InGame.Map
@@ -126,10 +127,12 @@ namespace ProjectZ.InGame.Map
                 $"map {info.Game} group {info.Group:x} room {room:x2} dir {_session.EntryDirection} pos {position.X:0},{position.Y:0}");
 
             var context = new OracleRoomContext(_session, _profile, info.Group, room, _session.EntryDirection);
-            _effects.Apply(info.RoomEffects, context);
+            OraclePerf.Measure("  Oracle room effects",
+                () => _effects.Apply(info.RoomEffects, context));
 
             RoomEntered?.Invoke(context);
-            _scripts.OnMapLoaded(map);
+            OraclePerf.Measure("  Oracle script bind",
+                () => _scripts.OnMapLoaded(map));
         }
 
         /// <summary>
@@ -140,7 +143,6 @@ namespace ProjectZ.InGame.Map
         internal void Update()
         {
             TrackRoom();
-            _scripts.UpdatePresentation();
             _scripts.Update();
         }
 

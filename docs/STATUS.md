@@ -17,7 +17,7 @@ Status legend:
 |---|---|---|
 | DX-HD engine fork (render, camera, entities, overlays, save, UI) | Done | v2.0.6 base imported unchanged where possible. |
 | .NET 8 build | Done | `net8.0-windows`, 0 errors, 48 pre-existing warnings. |
-| Runtime startup | Done | `--oracle` boots directly into the generated overworld. |
+| Runtime startup | Done | `--oracle` boots directly into the generated overworld; opt-in `ORACLE_PERF_TRACE=1` timestamps startup/map loads (`docs/PERFORMANCE.md`). |
 | Map metadata (`#oracle-map v1`) | Done | Group/era/kind/room size/grid/room/floor/dungeon/camera; parsed into `Map.OracleInfo`. |
 | Camera policy | Done | DX-HD smooth follow everywhere, including houses; `Map.CameraTarget` only for explicit gameplay/puzzle locks. |
 | Multiplatform (Linux/macOS/OpenGL/Vulkan/DX12) | Blocked | Upstream v2.0.6 is WindowsDX-only; sources not in the repository. See `PLATFORM.md`. |
@@ -43,7 +43,7 @@ Status legend:
 | Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, source-derived requires/forbids flags, entry-direction gate, `obj_Condition`, before/after room flags and native collision (solid tile or explicit radii). `$6b:$15` post-game statue requires `GLOBALFLAG_FINISHEDGAME` and `PALH_c7`. Entry-gated actors now use prospective-edge presentation (ADR-037), not a boundary pop. |
 | NPC collision | Done (source-derived) | `objectMarkSolidPosition`/`wRoomCollisions` -> 16x16 tile box; `objectSetCollideRadius/Radii` -> explicit box; otherwise no collision. The body is centred on the interaction anchor. One-shot cutscene actors are hidden unless their source entry condition holds; per-NPC script radii/events remain pending. |
 | Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is applied for `$6b:$15` from the source `PALH` load; general per-room sprite palette application is still pending. |
-| Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Group 1 overworld and time portals are in; past group 3 interiors and dungeons pending. |
+| Warps / interiors / doors (first pass) | Partial | 22 present (group 2) + 16 past (group 3) interiors from overworld warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Dungeon maps now have a data slot for source/destination transition modes (walk, instant, fall); stairs/large-room routing remains pending. |
 | Time portals (Ages) | Done (first pass) | `$e1` objects whose source calls `interactionBeginTimewarp` become `oracleTimePortal`; group toggles at the same world position through `MapTransitionSystem`, and the arrival portal is spawned after load. |
 | Room palette | Done | Rooms use their tileset `PALH` (e.g. `$30` for `$38`); the `$8f` load belongs to the disappearance cutscene, not the static room. |
 | Session state (`OracleSessionState`) | Done (first pass) | 0x80 global flags, flags per `(group, room)`, room state, entry direction and capture/restore hooks; `OracleFlagState` is a dev facade only. |
@@ -51,9 +51,9 @@ Status legend:
 | Room presentation (no pop-in) | Done (first pass) | Entry-gated actors are presented for the edge Link would cross, including neighbours; scripts start only on the real crossing; completed one-shot guards suppress the actor immediately. ADR-037. |
 | Script engine (`CutsceneCommandCatalog`/Runner) | Partial | Typed command stream + manifest and source-cited `(interaction, subid)` bindings; native counter1/counter2 order, callstack, jump/gravity and Ralph helpers. Verified `$37:$0d` (flag `$40`, delete) and `$3a:$0d` (flag `$41`, jump, move, delete). Text is deliberately skipped; `setanimation` records the index but the atlas still carries only the default animation; audio pending. |
 | Game profile (`OracleGameProfile`) | Partial | Ages/Seasons flags (`.ifdef`-aware), portal policy, overworld groups, map naming and `--game`; Seasons content generation is still pending. |
-| Interaction behaviour table | Done | Typed, sorted TSV + manifest (`Data/Map Objects/oracle_<game>_interaction_behaviors.*`), emitted from `InteractionBehaviors`. |
+| Enemy/part/item placements | Partial | Native object streams now emit typed placements (1,199 rows across groups 0-5 for Ages), including condition/room-flag gates and random-enemy marking. Runtime construction/AI is not wired yet. |\n| Interaction behaviour table | Done | Typed, sorted TSV + manifest (`Data/Map Objects/oracle_<game>_interaction_behaviors.*`), emitted from `InteractionBehaviors`. |
 | Script command tables | Done (first family) | `Data/Maps/Scripts/oracle_<game>_scripts.*` and `oracle_<game>_script_bindings.*`; deterministic, sorted, with source hashes and completed-flag guards. Generated TSV/JSON are gitignored; manifests are committed. |
-| Dungeon floor layouts | Not started | `dungeonLayouts.s` not parsed; sample rooms only. |
+| Dungeon floor layouts | Partial | `dungeonData.s` + `dungeonLayouts.s` parsed into typed tables; `dungeons --dungeon N` builds all rooms of a dungeon (dungeon `$05` has 45 rooms/2 floors). Same-floor edge connections use room properties; stairs/fall routing and large rooms remain pending. |
 | Text / dialogue | Not started | LA `.lng` files still used. The script host deliberately skips Oracle `showtext` (it logs the id) so cutscene flow can be verified before text import. |
 | Audio (Oracle GBS) | Not started | DX-HD GBS player ready; Oracle `.gbs` not built. |
 | Save / progression | Not started | LA save layout still active; 4 slots. |
@@ -145,3 +145,4 @@ behaviour table. Next: the script engine (`CutsceneCommandCatalog` +
 `CutsceneCommandRunner`), then enemies/parts, dungeons and Seasons content.
 
 Per-content inventory (enemies, NPCs, items, scripts): `COVERAGE.md`.
+

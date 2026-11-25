@@ -49,9 +49,10 @@ public static class Program
             "room" => BuildRoom(content, group, oracleOptions, options, outDir, tilesetsDir),
             "overworld" => BuildOverworld(content, group, oracleOptions, outDir, tilesetsDir),
             "interiors" => BuildInteriors(content, oracleOptions, options, outDir, tilesetsDir),
+            "dungeons" => BuildDungeons(content, oracleOptions, options, outDir, tilesetsDir),
             "inspect" => Inspect(content, options, oracleOptions),
             "inspect-anim" => InspectAnim(content, options),
-            _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld', 'interiors' or 'inspect'."),
+            _ => throw new ArgumentException($"Unknown command '{command}'. Use 'room', 'overworld', 'interiors', 'dungeons' or 'inspect'."),
         };
     }
 
@@ -104,18 +105,44 @@ public static class Program
         if (room is < 0 or > 0xFF)
             throw new ArgumentException("--room must be 00..ff.");
 
-        // Interiors always live in group 2; the --group option belongs to the
-        // overworld/room commands. Building with the caller's group would read
-        // group0Tilesets.bin for a group-2 room and produce the wrong tileset.
-        var interiorContent = content.Group == 2 ? content : new OracleContent(content.Repo, 2);
+        // Interiors always live in group 2 (present) or group 3 (past); the
+        // --group option belongs to the overworld/room commands.
+        var interiorGroup = options.ContainsKey("past") ? 3 : 2;
+        var interiorContent = content.Group == interiorGroup
+            ? content
+            : new OracleContent(content.Repo, interiorGroup);
         var warps = new OracleWarpData(content.Repo);
         var streams = new RoomObjectStreams(content.Repo);
         var builder = new InteriorBuilder(interiorContent, outDir, tilesetsDir, warps, streams);
-        var result = builder.BuildAll(oracleOptions, room);
+        var result = builder.BuildAll(oracleOptions, room, interiorGroup);
 
-        Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} present interiors");
+        Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} " +
+                          $"{(interiorGroup == 3 ? "past" : "present")} interiors");
         Console.WriteLine($"  rooms {result.Rooms}");
         Console.WriteLine($"  contents: {result.Interactions} interactions, {result.Conditional} conditional, " +
+                          $"{result.Enemies} enemies, {result.Parts} parts, {result.Items} items");
+        foreach (var map in result.MapPaths)
+            Console.WriteLine($"  map      {map}");
+        foreach (var warning in result.Warnings)
+            Console.WriteLine($"  warning: {warning}");
+        return 0;
+    }
+
+    private static int BuildDungeons(OracleContent content, OracleOptions oracleOptions,
+        Dictionary<string, string> options, string outDir, string tilesetsDir)
+    {
+        var dungeon = ParseHex(Get(options, "dungeon", "00"));
+        if (dungeon is < 0 or > 0x0f)
+            throw new ArgumentException("--dungeon must be 00..0f.");
+
+        var warps = new OracleWarpData(content.Repo);
+        var streams = new RoomObjectStreams(content.Repo);
+        var builder = new DungeonBuilder(content, outDir, tilesetsDir, warps, streams);
+        var result = builder.Build(dungeon, oracleOptions);
+
+        Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} dungeon 0x{dungeon:x2}");
+        Console.WriteLine($"  group {result.Group}, floors {result.Floors}, rooms {result.Rooms}");
+        Console.WriteLine($"  contents: {result.Interactions} interactions, " +
                           $"{result.Enemies} enemies, {result.Parts} parts, {result.Items} items");
         foreach (var map in result.MapPaths)
             Console.WriteLine($"  map      {map}");
@@ -206,7 +233,7 @@ public static class Program
     private static void PrintHelp()
     {
         Console.WriteLine("""
-            OracleAssetBuilder — offline importer for Oracles-HD
+            OracleAssetBuilder â€” offline importer for Oracles-HD
 
             Commands:
               room       Render one room and emit a DX-HD .map + tileset atlas

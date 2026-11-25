@@ -146,6 +146,7 @@ namespace ProjectZ
         public static int OracleRoomFlags;
         public static bool OracleRoomFlagsSet;
         private static bool _oracleStarted;
+        private static bool _perfFirstUpdate;
 
 #if DEBUG
         private MapTest _mapTest;
@@ -155,6 +156,7 @@ namespace ProjectZ
 
         public Game1(bool editorMode, bool loadFirstSave)
         {
+            OraclePerf.Mark("game constructor start");
 #if WINDOWS
             _windowForm = (Forms.Form)Forms.Control.FromHandle(Window.Handle);
             _windowForm.Icon = Properties.Resources.Icon;
@@ -185,6 +187,7 @@ namespace ProjectZ
 
             var thread = new Thread(ConsoleReaderThread);
             thread.Start();
+            OraclePerf.Mark("game constructor end");
         }
 
         private void ClientSizeChanged(object sender, EventArgs e)
@@ -267,33 +270,40 @@ namespace ProjectZ
             _mapTest = new MapTest();
             _sequenceTester = new SequenceTester();
 #endif
+            OraclePerf.Mark("LoadContent complete");
         }
 
         private void LoadContentThreaded(Object obj)
         {
-            // load resources
-            Resources.LoadTextures(Graphics.GraphicsDevice, Content);
-            Resources.LoadSounds(Content);
+            OraclePerf.Measure("LoadContentThreaded (textures/sounds/templates)", () =>
+            {
+                // load resources
+                OraclePerf.Measure("  Resources.LoadTextures",
+                    () => Resources.LoadTextures(Graphics.GraphicsDevice, Content));
+                OraclePerf.Measure("  Resources.LoadSounds",
+                    () => Resources.LoadSounds(Content));
+                OraclePerf.Measure("  GameManager.Load",
+                    () => GameManager.Load(Content));
+                OraclePerf.Measure("  GameObjectTemplates.SetUpGameObjects",
+                    () => GameObjectTemplates.SetUpGameObjects());
+                OraclePerf.Measure("  ScreenManager.Load",
+                    () => ScreenManager.Load(Content));
 
-            GameManager.Load(Content);
+                // load the language files
+                OraclePerf.Measure("  LanguageManager.Load",
+                    () => LanguageManager.Load());
+                OraclePerf.Measure("  UiPageManager.Load",
+                    () => UiPageManager.Load());
 
-            GameObjectTemplates.SetUpGameObjects();
-
-            ScreenManager.Load(Content);
-
-            // load the language files
-            LanguageManager.Load();
-
-            UiPageManager.Load();
-
-            if (EditorMode)
-                SetUpEditorUi();
+                if (EditorMode)
+                    SetUpEditorUi();
 
 #if DEBUG
-            _dialogTester = new DialogTester();
+                _dialogTester = new DialogTester();
 #endif
 
-            _finishedLoading = true;
+                _finishedLoading = true;
+            });
         }
 
         private void UpdateConsoleInput()
@@ -324,6 +334,12 @@ namespace ProjectZ
 
         protected override void Update(GameTime gameTime)
         {
+            if (!_perfFirstUpdate)
+            {
+                _perfFirstUpdate = true;
+                OraclePerf.Mark("first Game1.Update");
+            }
+
             WasActive = IsActive;
 
             // mute the music if the window is not focused

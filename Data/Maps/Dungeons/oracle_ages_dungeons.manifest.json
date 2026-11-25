@@ -1,0 +1,28 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "dungeons",
+  "dungeons": 16,
+  "floors": 27,
+  "inputs": [
+    {
+      "path": "data/ages/dungeonData.s",
+      "sha256": "d8e8ca71ba77a9d32e320bbfc2b4a05d3c0f3798dfcba6d8d0c832d5bade0541"
+    },
+    {
+      "path": "data/ages/dungeonLayouts.s",
+      "sha256": "48bec34cb42c243af07d0e4f41f5d78d38a3dc25d41d4521be5038abe4abb03f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "../../Data/Maps/Dungeons/oracle_ages_dungeons.tsv",
+      "sha256": "f2467caa68f7e08f19e59f98df3d9567e2ce578f2dc9e07d3d48b675d0c9d27f"
+    },
+    {
+      "path": "../../Data/Maps/Dungeons/oracle_ages_dungeon_layouts.tsv",
+      "sha256": "092b01c86a46049fcbf9d1eb87ab650b406cd8686075d8503f891cb58f91401d"
+    }
+  ]
+}

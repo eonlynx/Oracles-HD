@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using ProjectZ.Base;
 using ProjectZ.InGame.GameSystems;
 using ProjectZ.InGame.Map;
 using ProjectZ.InGame.Overlay;
@@ -1438,6 +1439,7 @@ namespace ProjectZ.InGame.Things
 
             MapManager.ObjLink.SetNextMapPosition(startPosition);
             var transitionSystem = (MapTransitionSystem)GameSystems[typeof(MapTransitionSystem)];
+            OraclePerf.Mark($"StartNewGame map request: {startMap}");
             transitionSystem.LoadMapFromFile(startMap, true, true, Values.MapFirstTransitionColor, false);
             transitionSystem.AdditionalBlackScreenDelay = oracle ? 0 : Values.GameSaveBlackScreen;
         }

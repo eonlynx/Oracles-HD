@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.Xna.Framework;
@@ -19,7 +19,7 @@ namespace ProjectZ.InGame.GameObjects
     class GameObjectTemplates
     {
         public static Dictionary<string, GameObjectTemplate> ObjectTemplates = new Dictionary<string, GameObjectTemplate>();
-        public static Dictionary<string, ObjActivator.ObjectActivator<GameObject>> ObjectSpawner = new Dictionary<string, ObjActivator.ObjectActivator<GameObject>>();
+        public static Dictionary<string, ConstructorInfo> ObjectSpawner = new Dictionary<string, ConstructorInfo>();
         public static Dictionary<string, ParameterInfo[]> GameObjectParameter = new Dictionary<string, ParameterInfo[]>();
 
         public static void SetUpGameObjects()
@@ -224,7 +224,7 @@ namespace ProjectZ.InGame.GameObjects
             ObjectTemplates.Add("doorEgg", new GameObjectTemplate(typeof(ObjDoorEgg), new object[] { null }));
 
             // Oracle content objects emitted by Tools/OracleAssetBuilder.
-            ObjectTemplates.Add("oracleWarp", new GameObjectTemplate(typeof(ObjOracleWarp), new object[] { "", 0, 0, 3, 16, 16 }));
+            ObjectTemplates.Add("oracleWarp", new GameObjectTemplate(typeof(ObjOracleWarp), new object[] { "", 0, 0, 3, 16, 16, 0 }));
             ObjectTemplates.Add("oracleSprite", new GameObjectTemplate(typeof(ObjOracleSprite), new object[] { "", "", 0, 0, Values.LayerPlayer, 0, 0, 0, -1, -1, 0, 0, 0, false, 0, 0, -1 }));
             ObjectTemplates.Add("oracleTimePortal", new GameObjectTemplate(typeof(ObjOracleTimePortal), new object[] { "", "", 0, 0, Values.LayerPlayer, 0, 0 }));
 
@@ -712,7 +712,7 @@ namespace ProjectZ.InGame.GameObjects
                     if (!correctParameter)
                         continue;
 
-                    ObjectSpawner.Add(name, ObjActivator.GetActivator<GameObject>(constructor));
+                    ObjectSpawner.Add(name, constructor);
 
                     // parameter
                     GameObjectParameter.Add(name, constructor.GetParameters());

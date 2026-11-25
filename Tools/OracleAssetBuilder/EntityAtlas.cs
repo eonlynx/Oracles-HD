@@ -98,6 +98,8 @@ public static class EntityAtlas
         WriteBehaviorTable(repo, behaviors, interactionPairs, mapsOutDir);
         ScriptImporter.Build(repo, mapsOutDir, out var scriptWarnings);
         issues.AddRange(scriptWarnings);
+        EntityPlacements.Build(repo, streams, mapsOutDir, out var placementWarnings);
+        issues.AddRange(placementWarnings);
 
         warnings = issues;
         return result;
@@ -170,22 +172,32 @@ public static class EntityAtlas
             for (var room = 0; room < 256; room++)
                 AddRoom(streams, group, room, ids);
 
-        foreach (var room in InteriorRooms(warps))
+        foreach (var room in InteriorRooms(warps, OracleGameConfig.InteriorGroup(game)))
             AddRoom(streams, OracleGameConfig.InteriorGroup(game), room, ids);
+
+        if (OracleGameConfig.SupportsTimeTravel(game))
+            foreach (var room in InteriorRooms(warps, 3))
+                AddRoom(streams, 3, room, ids);
+
+        foreach (var group in new[] { 4, 5 })
+            for (var room = 0; room < 256; room++)
+                AddRoom(streams, group, room, ids);
 
         return ids.ToArray();
     }
 
-    public static SortedSet<int> InteriorRooms(OracleWarpData warps)
+    public static SortedSet<int> InteriorRooms(OracleWarpData warps, int destinationGroup = 2)
     {
         var rooms = new SortedSet<int>();
-        foreach (var source in warps.Sources(0))
-        {
-            if (source.DestinationGroup != 2)
-                continue;
-            if (warps.TryResolve(source, out var destination, out _))
-                rooms.Add(destination.Room);
-        }
+        var sourceGroups = destinationGroup == 3 ? new[] { 1 } : new[] { 0, 1 };
+        foreach (var sourceGroup in sourceGroups)
+            foreach (var source in warps.Sources(sourceGroup))
+            {
+                if (source.DestinationGroup != destinationGroup)
+                    continue;
+                if (warps.TryResolve(source, out var destination, out _))
+                    rooms.Add(destination.Room);
+            }
         return rooms;
     }
 
@@ -197,6 +209,7 @@ public static class EntityAtlas
             1 => $"oracle_{repo.Game}_g1_overworld.map",
             2 => $"oracle_{repo.Game}_g2_r{room:x2}.map",
             3 => $"oracle_{repo.Game}_g3_r{room:x2}.map",
+            4 or 5 => $"oracle_{repo.Game}_g{group}_r{room:x2}.map",
             _ => null,
         };
     }

@@ -34,9 +34,9 @@ public sealed class InteriorBuilder
         _streams = streams;
     }
 
-    public InteriorBuildResult BuildAll(OracleOptions options, int? onlyRoom = null)
+    public InteriorBuildResult BuildAll(OracleOptions options, int? onlyRoom = null, int group = 2)
     {
-        var rooms = EntityAtlas.InteriorRooms(_warps);
+        var rooms = EntityAtlas.InteriorRooms(_warps, group);
         if (onlyRoom.HasValue)
             rooms = new SortedSet<int> { onlyRoom.Value };
 
@@ -56,17 +56,17 @@ public sealed class InteriorBuilder
         foreach (var room in rooms)
         {
             var roomObjects = new List<MapObjectPlacement>();
-            var roomData = _streams.GetRoom(2, room);
+            var roomData = _streams.GetRoom(group, room);
             interactions += roomData.Interactions.Count;
-            enemies += roomData.EnemyCount;
-            parts += roomData.PartCount;
-            items += roomData.ItemCount;
+            enemies += roomData.Enemies.Count;
+            parts += roomData.Parts.Count;
+            items += roomData.Items.Count;
             conditional += roomData.ConditionalCount;
 
             AddSpriteObjects(roomObjects, roomData, plan, 0, 0);
 
-            var result = roomBuilder.Build(2, room, false, null, options, roomObjects,
-                layout => AddWarpObjects(2, room, layout, options, issues));
+            var result = roomBuilder.Build(group, room, false, null, options, roomObjects,
+                layout => AddWarpObjects(group, room, layout, options, issues));
             maps.Add(result.MapPath);
         }
 
@@ -74,7 +74,7 @@ public sealed class InteriorBuilder
             interactions, enemies, parts, items, conditional);
     }
 
-    private void AddSpriteObjects(List<MapObjectPlacement> objects, RoomObjectData roomData,
+    public void AddSpriteObjects(List<MapObjectPlacement> objects, RoomObjectData roomData,
         IReadOnlyDictionary<(int Id, int SubId), ComposedInteraction> plan, int offsetX, int offsetY)
     {
         foreach (var interaction in roomData.Interactions)
@@ -107,7 +107,7 @@ public sealed class InteriorBuilder
         }
     }
 
-    private IReadOnlyList<MapObjectPlacement> AddWarpObjects(int group, int room,
+    public IReadOnlyList<MapObjectPlacement> AddWarpObjects(int group, int room,
         OracleContent.RoomLayout layout, OracleOptions options, List<string> issues)
     {
         var collisionMode = _content.GetTileset(_content.GetRoomTileset(room, options)).CollisionModeAndDungeon >> 4;
@@ -137,7 +137,7 @@ public sealed class InteriorBuilder
                         var metatile = layout.Tiles[y * layout.Width + x];
                         if (!_warps.IsWarpTile(collisionMode, metatile))
                             continue;
-                        AddWarp(objects, x * 16, y * 16, 16, 16, map, spawn);
+                        AddWarp(objects, x * 16, y * 16, 16, 16, map, spawn, tileSource.SourceTransition | (destination.Transition << 4));
                     }
                 }
             }
@@ -158,7 +158,8 @@ public sealed class InteriorBuilder
             var x = (positionSource.Position & 0x0f) * 16;
             var y = ((positionSource.Position >> 4) & 0x0f) * 16;
             AddWarp(objects, x, y, 16, 16, map,
-                SpawnForMap(destination, positionSource.DestinationGroup, destination.Room, fallbackDirection: 3));
+                SpawnForMap(destination, positionSource.DestinationGroup, destination.Room, fallbackDirection: 3),
+                positionSource.SourceTransition | (destination.Transition << 4));
         }
 
         foreach (var edgeSource in _warps.FindEdgeWarps(group, room))
@@ -174,36 +175,36 @@ public sealed class InteriorBuilder
                 continue;
 
             var spawn = SpawnForMap(destination, edgeSource.DestinationGroup, destination.Room, fallbackDirection: 3);
-            AddEdgeWarp(objects, layout, edgeSource.EdgeMask, map, spawn);
+            AddEdgeWarp(objects, layout, edgeSource.EdgeMask, map, spawn, edgeSource.SourceTransition | (destination.Transition << 4));
         }
 
         return objects;
     }
 
     private static void AddEdgeWarp(List<MapObjectPlacement> objects, OracleContent.RoomLayout layout,
-        int edgeMask, string map, (int X, int Y, int Direction) spawn)
+        int edgeMask, string map, (int X, int Y, int Direction) spawn, int transition)
     {
         var half = layout.Width * 16 / 2;
         var bottom = layout.Height * 16 - 8;
 
         if ((edgeMask & 1) != 0)
-            AddWarp(objects, 0, 0, half, 8, map, spawn);
+            AddWarp(objects, 0, 0, half, 8, map, spawn, transition);
         if ((edgeMask & 2) != 0)
-            AddWarp(objects, half, 0, half, 8, map, spawn);
+            AddWarp(objects, half, 0, half, 8, map, spawn, transition);
         if ((edgeMask & 4) != 0)
-            AddWarp(objects, 0, bottom, half, 8, map, spawn);
+            AddWarp(objects, 0, bottom, half, 8, map, spawn, transition);
         if ((edgeMask & 8) != 0)
-            AddWarp(objects, half, bottom, half, 8, map, spawn);
+            AddWarp(objects, half, bottom, half, 8, map, spawn, transition);
     }
 
     private static void AddWarp(List<MapObjectPlacement> objects, int x, int y, int width, int height,
-        string map, (int X, int Y, int Direction) spawn)
+        string map, (int X, int Y, int Direction) spawn, int transition)
     {
         objects.Add(new MapObjectPlacement("oracleWarp", new[]
         {
             x.ToString(), y.ToString(), map,
             spawn.X.ToString(), spawn.Y.ToString(), spawn.Direction.ToString(),
-            width.ToString(), height.ToString(),
+            width.ToString(), height.ToString(), transition.ToString(),
         }));
     }
 

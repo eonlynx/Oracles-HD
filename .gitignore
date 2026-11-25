@@ -29,3 +29,6 @@ Data/Map Objects/oracle_*.atlas
 Data/Map Objects/oracle_*_interaction_behaviors.tsv
 Data/Maps/Scripts/oracle_*_scripts.tsv
 Data/Maps/Scripts/oracle_*_script_bindings.tsv
+Data/Maps/Entities/oracle_*_entity_placements.tsv
+Data/Maps/Dungeons/oracle_*_dungeons.tsv
+Data/Maps/Dungeons/oracle_*_dungeon_layouts.tsv

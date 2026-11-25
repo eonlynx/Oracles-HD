@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -81,11 +81,14 @@ namespace ProjectZ.InGame.Map
 
             ClearPools();
 
-            foreach (var gameObj in ObjectList)
+            OraclePerf.Measure("  object constructors", () =>
             {
-                var gameObject = GetGameObject(Owner, gameObj.Index, gameObj.Parameter);
-                AddObjectToMap(gameObject);
-            }
+                foreach (var gameObj in ObjectList)
+                {
+                    var gameObject = GetGameObject(Owner, gameObj.Index, gameObj.Parameter);
+                    AddObjectToMap(gameObject);
+                }
+            });
 
             // done after calling the constructors before the init methode
             // stonespawner adds sprites that can be accessed in the init methode
@@ -103,8 +106,11 @@ namespace ProjectZ.InGame.Map
             // for this we need to call the key listeners before calling the init method
             UpdateKeyListeners();
 
-            foreach (var gameObject in _poolSpawnedObjects)
-                gameObject.Init();
+            OraclePerf.Measure("  object Init", () =>
+            {
+                foreach (var gameObject in _poolSpawnedObjects)
+                    gameObject.Init();
+            });
 
             // ensures key setters, key condition setter, etc are all set correctly after loading the objects
             UpdateKeyListeners();
@@ -677,7 +683,7 @@ namespace ProjectZ.InGame.Map
             objectParameter[0] = owner;
             var constructor = GameObjectTemplates.ObjectSpawner[objectId];
 
-            return constructor(objectParameter);
+            return (GameObject)constructor.Invoke(objectParameter);
         }
 
         // TODO_End: be careful to not use this often

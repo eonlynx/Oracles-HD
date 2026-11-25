@@ -34,7 +34,8 @@ public sealed record OracleMapInfo(
 
     public static OracleMapInfo SingleRoom(string game, int group, int room,
         int roomWidth, int roomHeight, string kind, string camera,
-        IReadOnlyList<RoomEntryEffect>? roomEffects = null)
+        IReadOnlyList<RoomEntryEffect>? roomEffects = null,
+        int floor = -1, int dungeon = -1)
     {
         return new OracleMapInfo(
             game, group,
@@ -42,7 +43,7 @@ public sealed record OracleMapInfo(
             kind,
             roomWidth, roomHeight,
             0, 0,
-            room, -1, -1,
+            room, floor, dungeon,
             camera,
             roomEffects ?? Array.Empty<RoomEntryEffect>());
     }

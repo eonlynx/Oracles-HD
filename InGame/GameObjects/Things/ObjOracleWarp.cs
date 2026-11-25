@@ -21,6 +21,7 @@ namespace ProjectZ.InGame.GameObjects.Things
         private readonly string _nextMap;
         private readonly Vector2 _spawnPosition;
         private readonly int _direction;
+        private readonly int _transition;
         private readonly int _tileX;
         private readonly int _tileY;
 
@@ -29,7 +30,7 @@ namespace ProjectZ.InGame.GameObjects.Things
         private bool _triggered;
 
         public ObjOracleWarp(Map.Map map, int posX, int posY, string nextMap,
-            int spawnX, int spawnY, int direction, int width, int height) : base(map)
+            int spawnX, int spawnY, int direction, int width, int height, int transition = 0) : base(map)
         {
             if (string.IsNullOrEmpty(nextMap))
             {
@@ -46,6 +47,7 @@ namespace ProjectZ.InGame.GameObjects.Things
             _nextMap = nextMap;
             _spawnPosition = new Vector2(spawnX, spawnY);
             _direction = Math.Clamp(direction, 0, 3);
+            _transition = transition;
 
             AddComponent(UpdateComponent.Index, new UpdateComponent(Update));
         }
@@ -89,7 +91,13 @@ namespace ProjectZ.InGame.GameObjects.Things
                 _triggered = true;
                 link.SetNextMapPosition(_spawnPosition);
                 link.DirectionEntry = _direction;
-                transitionSystem.AppendMapChange(_nextMap, null, false, false, Values.MapTransitionColor, false);
+                var source = _transition & 0x0f;
+                var destination = (_transition >> 4) & 0x0f;
+                if (source == 9 || destination == 5)
+                    transitionSystem.StartKnockoutTransition = true;
+                var instant = source == 4;
+                transitionSystem.AppendMapChange(_nextMap, null, false, instant,
+                    Values.MapTransitionColor, false);
             }
 
             _wasInside = inside;

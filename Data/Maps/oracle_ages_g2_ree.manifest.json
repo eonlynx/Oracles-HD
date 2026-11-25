@@ -128,19 +128,39 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_entities.atlas",
-      "sha256": "182bbc875f068e28667b5ed3ad1bfb0c69e9ef2062335d1c9379d3b0bcc9e391"
+      "sha256": "737d0af28b64de5bb329383c5f5743167c603a12b35770b03d175c4a03982d2e"
     },
     {
       "path": "../Map Objects/oracle_ages_entities.png",
-      "sha256": "3bc7ac3d6dffc7d7f9dd097cb789bf905a389b98fb32162c7b651f0d0066c879"
+      "sha256": "c75229165a0948f6f350a11cd513128a766b03a74a3c949d9b0125dd90d6053e"
     },
     {
       "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
-      "sha256": "80d56093dbbaca445edfdcc86def27b31005c7e063008e72f9927ae8ed4b6ef0"
+      "sha256": "2d3777152e662e60449e7bb766a0aeae4eb844cf9f95593faf0b398c595af565"
+    },
+    {
+      "path": "Dungeons/oracle_ages_dungeon_layouts.tsv",
+      "sha256": "092b01c86a46049fcbf9d1eb87ab650b406cd8686075d8503f891cb58f91401d"
+    },
+    {
+      "path": "Dungeons/oracle_ages_dungeons.tsv",
+      "sha256": "f2467caa68f7e08f19e59f98df3d9567e2ce578f2dc9e07d3d48b675d0c9d27f"
+    },
+    {
+      "path": "Entities/oracle_ages_entity_placements.tsv",
+      "sha256": "1e9ad4fa222180a5fd3c1e70009dfbcf3e3c2676fa3f99861e99acee5f94b4ce"
     },
     {
       "path": "Previews/oracle_ages_g2_ree.png",
       "sha256": "95f4a202796dda2963cb37e8f22b228bbf903583b397a6b4ba530bace1cb383c"
+    },
+    {
+      "path": "Scripts/oracle_ages_script_bindings.tsv",
+      "sha256": "a31b924d0d4f232acf578939cb6b924a9c16ef4a8d3b8a375934fb67ac78a110"
+    },
+    {
+      "path": "Scripts/oracle_ages_scripts.tsv",
+      "sha256": "dfae9f3b447aff8c203e796d83237cd45d8c31e79ac41004b78c24609c1ec17a"
     },
     {
       "path": "Tilesets/oracle_ages_t28.png",
@@ -148,7 +168,7 @@
     },
     {
       "path": "oracle_ages_g2_ree.map",
-      "sha256": "d766376491b306cf02df93447e6d6c584ed21e471435b324c7bd40f1b0676853"
+      "sha256": "2234f53096f2f79b7081366b90d2b87e55b8ded82f6416b6f0a64b9717463d3b"
     }
   ]
 }

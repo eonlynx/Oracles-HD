@@ -74,7 +74,7 @@ DX-HD paths. The switch is development-only; no menu entry was added.
 | `InGame/Map/OracleGameProfile.cs` | Ages/Seasons flags, portal policy, groups and map naming. |
 | `InGame/GameSystems/MapTransitionSystem.cs` | `MapLoading`/`MapLoaded` hooks and `PostLoadActions` (portal arrival). |
 | `Game1.cs`, `Program.cs` | `--oracle`, `--game`, `--room`, `--pos`, `--entry`, `--map` development entry. |
-| `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; routes through `MapTransitionSystem`. |
+| `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; carries the native source/destination transition byte and maps walk/instant/fall to existing `MapTransitionSystem` modes. |\n| `Base/OraclePerf.cs` | Opt-in startup/map-load timestamps; no cost when `ORACLE_PERF_TRACE` is unset. |
 | `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames; source-derived collision, flag/entry gates and script visibility state. |
 | `InGame/GameObjects/Things/ObjOracleTimePortal.cs` | `interactionBeginTimewarp` portals; toggles group through `MapTransitionSystem` and spawns the arrival portal. |
 | `InGame/GameObjects/Things/OracleSpriteFrames.cs` | Shared frame/duration parsing for Oracle sprites. |
@@ -132,7 +132,7 @@ second emulator instance.
 | `OracleAnimation.cs` | Groups/tracks/headers/sheets, `(delay, gfxIndex)` parsing. |
 | `AnimationComposer.cs` | Per-metatile timeline, distinct variants, durations. |
 | `DxMapWriter.cs` | Native `.map` plus Oracle sections and native object placements. |
-| `RoomBuilder.cs` / `OverworldBuilder.cs` / `InteriorBuilder.cs` | Single rooms / stitched overworld / present interiors, collisions, terrain, animations, objects, manifests. |
+| `RoomBuilder.cs` / `OverworldBuilder.cs` / `InteriorBuilder.cs` | Single rooms / stitched overworld / present and past interiors, collisions, terrain, animations, objects, manifests. |\n| `Dungeons.cs` / `DungeonBuilder.cs` | `dungeonData.s` + `dungeonLayouts.s` -> typed dungeon tables and per-dungeon room maps. |\n| `EntityPlacements.cs` | Native enemy/part/item placements -> typed TSV + manifest (random enemies marked, not invented). |
 | `Warps.cs` | `warpSources.s`, `warpDestinations.s`, `warpTiles.s`, pointer expansion. |
 | `RoomObjects.cs` | Native room object stream (`pointers.s`, `mainData.s`, enemy/extra data); positioned interactions and counts; group-aware. |
 | `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry-direction behaviour per interaction/subid; no id table. |
@@ -169,3 +169,4 @@ These are summarized here instead of separate speculative documents (ADR-027).
 The canonical hierarchy and fidelity rules are in `PROJECT_PRINCIPLES.md`. In
 short: executed game/trace > `oracles-disasm`/`oracles-decomp`/`top` on
 contradictions > `ooa-godot` as accelerator > assumptions in `DECISIONS.md`.
+

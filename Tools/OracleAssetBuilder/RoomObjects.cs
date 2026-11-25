@@ -7,11 +7,23 @@ public sealed record RoomInteraction(
     int Id, int SubId, int X, int Y,
     byte ConditionMask, byte RoomFlagMask, byte RoomFlagValue, string Source);
 
+public sealed record RoomEnemy(
+    int Id, int SubId, int X, int Y, int Var03, bool Random,
+    byte ConditionMask, byte RoomFlagMask, byte RoomFlagValue, string Source);
+
+public sealed record RoomPart(
+    int Id, int SubId, int X, int Y, int Var03,
+    byte ConditionMask, byte RoomFlagMask, byte RoomFlagValue, string Source);
+
+public sealed record RoomItem(
+    int Flags, int Item, int X, int Y,
+    byte ConditionMask, byte RoomFlagMask, byte RoomFlagValue, string Source);
+
 public sealed record RoomObjectData(
     IReadOnlyList<RoomInteraction> Interactions,
-    int EnemyCount,
-    int PartCount,
-    int ItemCount,
+    IReadOnlyList<RoomEnemy> Enemies,
+    IReadOnlyList<RoomPart> Parts,
+    IReadOnlyList<RoomItem> Items,
     int ConditionalCount);
 
 /// <summary>
@@ -45,6 +57,8 @@ public sealed class RoomObjectStreams
 
     private readonly Dictionary<string, string[]> _blocks = new(StringComparer.Ordinal);
     private readonly Dictionary<(int Group, int Room), string> _roomLabels = new();
+    private int _lastEnemyAFlags;
+    private int _lastItemFlags;
 
     public RoomObjectStreams(OracleRepo repo)
     {
@@ -67,14 +81,17 @@ public sealed class RoomObjectStreams
     {
         if (!_roomLabels.TryGetValue((group, room), out var label) ||
             !_blocks.TryGetValue(label, out var block))
-            return new RoomObjectData(Array.Empty<RoomInteraction>(), 0, 0, 0, 0);
+            return new RoomObjectData(Array.Empty<RoomInteraction>(), Array.Empty<RoomEnemy>(),
+                Array.Empty<RoomPart>(), Array.Empty<RoomItem>(), 0);
 
         var interactions = new List<RoomInteraction>();
-        var enemies = 0;
-        var parts = 0;
-        var items = 0;
+        var enemies = new List<RoomEnemy>();
+        var parts = new List<RoomPart>();
+        var items = new List<RoomItem>();
+        _lastEnemyAFlags = 0;
+        _lastItemFlags = 0;
         var visited = new HashSet<string>(StringComparer.Ordinal);
-        ParseBlock(label, block, interactions, ref enemies, ref parts, ref items, visited,
+        ParseBlock(label, block, interactions, enemies, parts, items, visited,
             conditionMask: 0, roomFlagMask: 0, roomFlagValue: 0);
         return new RoomObjectData(interactions, enemies, parts, items,
             interactions.Count(interaction => interaction.ConditionMask != 0));
@@ -82,7 +99,8 @@ public sealed class RoomObjectStreams
 
     /// <summary>Returns true when the native obj_End terminates the whole stream.</summary>
     private bool ParseBlock(string label, string[] lines, List<RoomInteraction> interactions,
-        ref int enemies, ref int parts, ref int items, HashSet<string> visited,
+        List<RoomEnemy> enemies, List<RoomPart> parts, List<RoomItem> items,
+        HashSet<string> visited,
         byte conditionMask, byte roomFlagMask, byte roomFlagValue)
     {
         if (!visited.Add(label))
@@ -117,7 +135,7 @@ public sealed class RoomObjectStreams
                     var target = eventPointer.Groups["label"].Value;
                     var after = line.StartsWith("obj_AfterEvent", StringComparison.Ordinal);
                     if (_blocks.TryGetValue(target, out var targetBlock) &&
-                        ParseBlock(target, targetBlock, interactions, ref enemies, ref parts, ref items, visited,
+                        ParseBlock(target, targetBlock, interactions, enemies, parts, items, visited,
                             conditionMask, 0x80, (byte)(after ? 0x80 : 0)))
                         return true;
                 }
@@ -129,7 +147,7 @@ public sealed class RoomObjectStreams
             {
                 var target = pointer.Groups["label"].Value;
                 if (_blocks.TryGetValue(target, out var targetBlock) &&
-                    ParseBlock(target, targetBlock, interactions, ref enemies, ref parts, ref items, visited,
+                    ParseBlock(target, targetBlock, interactions, enemies, parts, items, visited,
                         conditionMask, roomFlagMask, roomFlagValue))
                     return true;
                 continue;
@@ -145,24 +163,110 @@ public sealed class RoomObjectStreams
                 continue;
             }
 
-            if (EnemyRegex.IsMatch(line))
+            var enemy = EnemyRegex.Match(line);
+            if (enemy.Success)
             {
-                enemies++;
+                ParseEnemy(line, enemy.Groups["args"].Value, enemies,
+                    conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}");
                 continue;
             }
 
             var part = PartRegex.Match(line);
             if (part.Success)
             {
-                parts++;
+                var values = ParseArguments(part.Groups["args"].Value);
+                if (values.Count >= 3)
+                {
+                    var x = values.Count >= 5 ? values[3] : (values[2] & 0x0f) * 16;
+                    var y = values.Count >= 5 ? values[2] : ((values[2] >> 4) & 0x0f) * 16;
+                    var var03 = values.Count >= 5 ? values[4] : 0;
+                    parts.Add(new RoomPart(values[0], values[1], x, y, var03,
+                        conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}"));
+                }
                 continue;
             }
 
-            if (ItemRegex.IsMatch(line))
-                items++;
+            var item = ItemRegex.Match(line);
+            if (item.Success)
+            {
+                var values = ParseArguments(item.Groups["args"].Value);
+                if (values.Count >= 3)
+                {
+                    _lastItemFlags = values[0];
+                    items.Add(new RoomItem(_lastItemFlags, values[1],
+                        (values[2] & 0x0f) * 16, ((values[2] >> 4) & 0x0f) * 16,
+                        conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}"));
+                }
+                else if (values.Count == 2)
+                {
+                    items.Add(new RoomItem(_lastItemFlags, values[0],
+                        (values[1] & 0x0f) * 16, ((values[1] >> 4) & 0x0f) * 16,
+                        conditionMask, roomFlagMask, roomFlagValue, $"{label}:{line}"));
+                }
+            }
         }
 
         return false;
+    }
+
+    private void ParseEnemy(string line, string args, List<RoomEnemy> enemies,
+        byte conditionMask, byte roomFlagMask, byte roomFlagValue, string source)
+    {
+        var values = ParseArguments(args);
+        var random = line.Contains("obj_RandomEnemy", StringComparison.Ordinal);
+        var specificA = line.Contains("obj_SpecificEnemyA", StringComparison.Ordinal);
+        var specificB = line.Contains("obj_SpecificEnemyB", StringComparison.Ordinal);
+
+        int id, subId, x, y, var03;
+        if (random)
+        {
+            if (values.Count < 3)
+                return;
+            id = values[1];
+            subId = values[2];
+            x = y = -1;
+            var03 = 0;
+        }
+        else if (specificB)
+        {
+            if (values.Count < 5)
+                return;
+            id = values[0];
+            subId = values[1];
+            y = values[2];
+            x = values[3];
+            var03 = values[4];
+        }
+        else if (specificA)
+        {
+            if (values.Count >= 5)
+            {
+                _lastEnemyAFlags = values[0];
+                id = values[1];
+                subId = values[2];
+                y = values[3];
+                x = values[4];
+            }
+            else if (values.Count >= 4)
+            {
+                id = values[0];
+                subId = values[1];
+                y = values[2];
+                x = values[3];
+            }
+            else
+            {
+                return;
+            }
+            var03 = 0;
+        }
+        else
+        {
+            return;
+        }
+
+        enemies.Add(new RoomEnemy(id, subId, x, y, var03, random,
+            conditionMask, roomFlagMask, roomFlagValue, source));
     }
 
     private void LoadBlocks(string path)

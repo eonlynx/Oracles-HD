@@ -28,11 +28,11 @@ This tool is **not** part of the game build. The game project excludes
 | Animated tiles (atlas + `.map` timeline) | Done |
 | Tile collisions + terrain (`.map` sections) | Done |
 | Runtime overworld entry (`--oracle`) | Done |
-| Present interiors (group 2) + warps | Done for the 22 group-0-reachable rooms |
+| Present interiors (group 2) + warps | Done for the 22 group-0-reachable rooms |\n| Past interiors (group 3) + warps | Done for the 16 group-1-reachable rooms |\n| Dungeon data + floor layouts | Done: typed tables + `dungeons` maps |\n| Enemy/part/item placements | Done: typed table; runtime AI/art pending |
 | Room object stream (positioned interactions) | Partial (default animation; enemies/parts/items counted only) |
 | Interaction OAM atlas + shared entity plan | Done |
 | Maku Tree `$87` eyes + blink | Done |
-| `roomGfxChanges`, enemies, past, dungeons | TODO |
+| `roomGfxChanges`, enemy AI, stairs/large-room routing | TODO |
 
 ## Animated tiles: resolved
 
@@ -121,3 +121,4 @@ These were verified against `ooa-godot` (`OracleRoomData.RenderRoom`),
 - Collisions, terrain, objects and warps are not emitted yet.
 - Previews show raw RGB555 colours; the game applies the GBC colour-correction
   shader at runtime, so in-game colours are less saturated.
+

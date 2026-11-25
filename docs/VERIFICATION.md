@@ -43,6 +43,27 @@ No `.ani` file and no extra data file is generated. Frames live in the existing
 tile atlas or the shared entity atlas; the timeline is the `#oracle-anim v1`
 section or the `oracleSprite` durations.
 
+| Ages past interiors (group 3) | 16 maps from group-1 warps, 16 interactions, 4 items | 
+| Ages dungeon tables | 16 dungeons; `dungeons --dungeon 05` = 45 rooms/2 floors, 28 interactions, 67 enemies, 20 parts, 37 items | 
+| Ages entity placements | 1,199 typed rows across groups 0-5 (random enemies marked) |
+
+### 2.1 Performance
+
+The detailed timings and root causes are in `docs/PERFORMANCE.md`. The
+reproducible probes are:
+
+```powershell
+$env:ORACLE_PERF_TRACE = '1'
+Oracles-HD.exe oracle --map oracle_ages_g0_overworld.map
+Oracles-HD.exe oracle --map oracle_ages_g1_overworld.map
+```
+
+Observed warm startup: **2.09 s (g0)**, **2.63 s (g1)**, **2.16 s (g4 ra3)**.
+Map loader: **20-57 ms (g0)**, **26-59 ms (g1)**, **5.5 ms (g4)**. The loader
+runs behind the existing fade. The 530-template reflection compile that cost
+~0.78 s was replaced with cached constructors; the per-frame room-presentation
+scan now runs only on a room change.
+
 ## 3. Determinism
 
 Hash the map and atlas, re-run the importer, hash again:
@@ -125,6 +146,8 @@ Phase 3/4 evidence:
 | Time portal present->past | Boot `oracle --pos 1480,431`; step down and back up | Map becomes `oracle_ages_g1_overworld.map` at the same world position; Maku sprout |
 | Time portal past->present | From the arrival portal, step off and back on | Map returns to `oracle_ages_g0_overworld.map`; Maku Tree visible |
 | Past Maku colours | Space `1:$38` after the portal | Teal pond and blue bubbles; `$38` is excluded from `setPastCliffPalettesToRed` |
+| Dungeon map | `oracle --map oracle_ages_g4_ra3.map --pos 80,120` | Loads the generated dungeon map with `kind=dungeon`, group 4, floor/dungeon metadata; no exception |
+| Past interior | `oracle --map oracle_ages_g3_r2f.map --pos 80,120` | Loads a generated group-3 interior map |
 | Room lifecycle | Enter `0:$39` from `0:$38` (cross right) vs from another edge | Ralph is presented before the crossing when approaching right; hidden for other entries; the past villager is a different interaction |
 | Behaviour table | Regenerate twice | `oracle_ages_interaction_behaviors.tsv` + manifest are identical; rows include `$37:$0d` entry=1 and `$6b:$15` flag=$14/palette=$c7 |
 | Script table | Regenerate twice | `oracle_ages_scripts.tsv` + `oracle_ages_script_bindings.tsv` and the manifest are identical; bindings include `$37:$0d -> ralphSubid0dScript` and `$3a:$0d -> villagerSubid0dScript` |
@@ -164,7 +187,7 @@ Run before each milestone commit:
 - [ ] Continuous room tracking updates `OracleSessionState` on stitched-map crossings; room presentation shows entry-gated actors before the boundary (no pop-in).
 - [ ] `ralphSubid0dScript` runs on right entry, sets `$40`, deletes Ralph and restores input; the completed guard suppresses him afterwards.
 - [ ] `villagerSubid0dScript` runs on past `1:$39`, jumps/lands, moves down/right, sets `$41`, deletes the villager and restores input.
-- [ ] Script command/binding TSV + manifest regenerate deterministically; no generated script TSV is staged.
+- [ ] Script command/binding TSV + manifest regenerate deterministically; no generated script TSV is staged.\n- [ ] `dungeons --dungeon N` writes dungeon/layout tables + maps; no generated dungeon TSV is staged.\n- [ ] `ORACLE_PERF_TRACE=1` startup and map-load marks recorded; no per-frame presentation scan remains.
 - [ ] `--game ages --room e7` resolves the generic interior map; `--flag` names use `OracleGameProfile`.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
@@ -206,3 +229,4 @@ Run before each milestone commit:
   ~3k animated cells; measure before optimizing.
 - **Coverage:** a passing check proves the exercised path, not universal
   parity. Record unsupported paths explicitly in `STATUS.md`/`COVERAGE.md`.
+

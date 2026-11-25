@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
+using ProjectZ.Base;
 using ProjectZ.InGame.Things;
 
 namespace ProjectZ
@@ -9,6 +10,7 @@ namespace ProjectZ
         [STAThread]
         static void Main(string[] args)
         {
+            OraclePerf.Mark("main start");
             var editorMode = false;
             var loadFirstSave = false;
             int? roomArg = null;

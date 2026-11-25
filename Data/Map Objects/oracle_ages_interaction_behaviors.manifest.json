@@ -3,7 +3,7 @@
   "format": 1,
   "game": "ages",
   "entry": "interaction_behaviors",
-  "rows": 246,
+  "rows": 459,
   "inputs": [
     {
       "path": "constants/common/globalFlags.s",
@@ -877,7 +877,7 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
-      "sha256": "80d56093dbbaca445edfdcc86def27b31005c7e063008e72f9927ae8ed4b6ef0"
+      "sha256": "2d3777152e662e60449e7bb766a0aeae4eb844cf9f95593faf0b398c595af565"
     }
   ]
 }

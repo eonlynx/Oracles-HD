@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ProjectZ.Base;
 using ProjectZ.InGame.GameObjects.Things;
 using ProjectZ.InGame.Map;
 using ProjectZ.InGame.SaveLoad;
@@ -419,10 +420,15 @@ namespace ProjectZ.InGame.GameSystems
                 //Thread.Sleep(75);
 
                 // load the map file
-                SaveLoadMap.LoadMap(mapFileName, _gameMapManager.NextMap);
-                MapLoading?.Invoke(_gameMapManager.NextMap);
+                OraclePerf.Mark($"map load start: {mapFileName}");
+                OraclePerf.Measure($"SaveLoadMap.LoadMap {mapFileName}",
+                    () => SaveLoadMap.LoadMap(mapFileName, _gameMapManager.NextMap));
+                OraclePerf.Measure("Oracle MapLoading hooks",
+                    () => MapLoading?.Invoke(_gameMapManager.NextMap));
                 // create the objects
-                _gameMapManager.NextMap.Objects.LoadObjects();
+                OraclePerf.Measure("ObjectManager.LoadObjects",
+                    () => _gameMapManager.NextMap.Objects.LoadObjects());
+                OraclePerf.Mark($"map load ready: {mapFileName}");
 
                 _finishedLoading = true;
             }
@@ -438,6 +444,7 @@ namespace ProjectZ.InGame.GameSystems
 
         public void FinishLoading()
         {
+            OraclePerf.Mark("FinishLoading start");
             AdditionalBlackScreenDelay = 0;
 
             // switch to the new map
@@ -460,7 +467,8 @@ namespace ProjectZ.InGame.GameSystems
             _gameMapManager.FinishLoadingMap(_gameMapManager.CurrentMap);
 
             // Oracle room lifecycle: entry effects and code-hosted events.
-            MapLoaded?.Invoke(_gameMapManager.CurrentMap);
+            OraclePerf.Measure("Oracle MapLoaded hooks",
+                () => MapLoaded?.Invoke(_gameMapManager.CurrentMap));
 
             MapManager.ObjLink.UpdateMapTransitionIn(0);
 
@@ -484,6 +492,8 @@ namespace ProjectZ.InGame.GameSystems
                 foreach (var action in actions)
                     action(_gameMapManager.CurrentMap);
             }
+
+            OraclePerf.Mark("FinishLoading end");
         }
     }
 }

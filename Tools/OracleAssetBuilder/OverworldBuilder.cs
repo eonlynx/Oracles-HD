@@ -162,9 +162,9 @@ public sealed class OverworldBuilder
 
             var roomData = streams.GetRoom(group, room);
             interactions += roomData.Interactions.Count;
-            enemies += roomData.EnemyCount;
-            parts += roomData.PartCount;
-            items += roomData.ItemCount;
+            enemies += roomData.Enemies.Count;
+            parts += roomData.Parts.Count;
+            items += roomData.Items.Count;
             conditional += roomData.ConditionalCount;
 
             AddRoomObjects(mapObjects, group, room, roomData, gridX, gridY, layout, collisionMode,
@@ -269,42 +269,97 @@ public sealed class OverworldBuilder
             }));
         }
 
-        // Group-specific tile warps that leave the stitched overworld for a
-        // present-day interior. Edge warps and time-portal objects need no
-        // oracleWarp entry: the overworld is already continuous.
+        // Warps that leave the stitched overworld for an interior, past
+        // interior, or dungeon. Edge warps between overworld groups stay
+        // continuous and need no object.
         var tileWarp = warps.FindTileWarp(group, room);
-        if (tileWarp == null || tileWarp.DestinationGroup != 2)
-            return;
-
-        if (!warps.TryResolve(tileWarp, out var destination, out var error))
+        if (tileWarp != null && tileWarp.DestinationGroup is >= 2 and <= 5)
         {
-            warnings.Add(error);
-            return;
-        }
-
-        var target = EntityAtlas.MapName(_content.Repo, tileWarp.DestinationGroup, destination.Room);
-        if (target == null)
-            return;
-
-        var spawn = InteriorBuilder.Spawn(destination, fallbackDirection: 3);
-        for (var y = 0; y < layout.Height; y++)
-        {
-            for (var x = 0; x < layout.Width; x++)
+            if (!warps.TryResolve(tileWarp, out var tileDestination, out var tileError))
             {
-                var metatile = layout.Tiles[y * layout.Width + x];
-                if (!warps.IsWarpTile(collisionMode, metatile))
-                    continue;
-
-                mapObjects.Add(new MapObjectPlacement("oracleWarp", new[]
+                warnings.Add(tileError);
+            }
+            else
+            {
+                var target = EntityAtlas.MapName(_content.Repo, tileWarp.DestinationGroup, tileDestination.Room);
+                if (target != null)
                 {
-                    (gridX * roomWidth * 16 + x * 16).ToString(),
-                    (gridY * roomHeight * 16 + y * 16).ToString(),
-                    target,
-                    spawn.X.ToString(), spawn.Y.ToString(), spawn.Direction.ToString(),
-                    "16", "16",
-                }));
+                    var spawn = InteriorBuilder.SpawnForMap(tileDestination,
+                        tileWarp.DestinationGroup, tileDestination.Room, fallbackDirection: 3);
+                    for (var y = 0; y < layout.Height; y++)
+                        for (var x = 0; x < layout.Width; x++)
+                        {
+                            var metatile = layout.Tiles[y * layout.Width + x];
+                            if (!warps.IsWarpTile(collisionMode, metatile))
+                                continue;
+                            AddWarp(mapObjects,
+                                gridX * roomWidth * 16 + x * 16,
+                                gridY * roomHeight * 16 + y * 16,
+                                16, 16, target, spawn,
+                                tileWarp.SourceTransition | (tileDestination.Transition << 4));
+                        }
+                }
             }
         }
+
+        foreach (var positionSource in warps.FindPositionWarps(group, room))
+        {
+            if (positionSource.DestinationGroup is < 2 or > 5)
+                continue;
+            if (!warps.TryResolve(positionSource, out var destination, out var error))
+            {
+                warnings.Add(error);
+                continue;
+            }
+            var target = EntityAtlas.MapName(_content.Repo, positionSource.DestinationGroup, destination.Room);
+            if (target == null)
+                continue;
+            AddWarp(mapObjects,
+                gridX * roomWidth * 16 + (positionSource.Position & 0x0f) * 16,
+                gridY * roomHeight * 16 + ((positionSource.Position >> 4) & 0x0f) * 16,
+                16, 16, target,
+                InteriorBuilder.SpawnForMap(destination, positionSource.DestinationGroup,
+                    destination.Room, fallbackDirection: 3),
+                positionSource.SourceTransition | (destination.Transition << 4));
+        }
+
+        foreach (var edgeSource in warps.FindEdgeWarps(group, room))
+        {
+            if (edgeSource.DestinationGroup is < 2 or > 5)
+                continue;
+            if (!warps.TryResolve(edgeSource, out var destination, out var error))
+            {
+                warnings.Add(error);
+                continue;
+            }
+            var target = EntityAtlas.MapName(_content.Repo, edgeSource.DestinationGroup, destination.Room);
+            if (target == null)
+                continue;
+            var spawn = InteriorBuilder.SpawnForMap(destination, edgeSource.DestinationGroup,
+                destination.Room, fallbackDirection: 3);
+            var transition = edgeSource.SourceTransition | (destination.Transition << 4);
+            var half = roomWidth * 16 / 2;
+            var bottom = gridY * roomHeight * 16 + roomHeight * 16 - 8;
+            if ((edgeSource.EdgeMask & 1) != 0)
+                AddWarp(mapObjects, gridX * roomWidth * 16, gridY * roomHeight * 16, half, 8, target, spawn, transition);
+            if ((edgeSource.EdgeMask & 2) != 0)
+                AddWarp(mapObjects, gridX * roomWidth * 16 + half, gridY * roomHeight * 16, half, 8, target, spawn, transition);
+            if ((edgeSource.EdgeMask & 4) != 0)
+                AddWarp(mapObjects, gridX * roomWidth * 16, bottom, half, 8, target, spawn, transition);
+            if ((edgeSource.EdgeMask & 8) != 0)
+                AddWarp(mapObjects, gridX * roomWidth * 16 + half, bottom, half, 8, target, spawn, transition);
+        }
+    }
+
+    private static void AddWarp(List<MapObjectPlacement> mapObjects, int x, int y,
+        int width, int height, string target, (int X, int Y, int Direction) spawn, int transition)
+    {
+        mapObjects.Add(new MapObjectPlacement("oracleWarp", new[]
+        {
+            x.ToString(), y.ToString(), target,
+            spawn.X.ToString(), spawn.Y.ToString(), spawn.Direction.ToString(),
+            width.ToString(), height.ToString(), transition.ToString(),
+        }));
     }
 
     private static RgbaImage RenderPreview(int[,] layer, MetatileAtlas atlas)

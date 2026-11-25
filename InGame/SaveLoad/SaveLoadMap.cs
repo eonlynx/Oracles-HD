@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
+using ProjectZ.Base;
 using ProjectZ.InGame.GameObjects;
 using ProjectZ.InGame.Map;
 using ProjectZ.InGame.Things;
@@ -235,7 +236,8 @@ namespace ProjectZ.InGame.SaveLoad
             }
 
             // load the tilemap
-            LoadTileMap(reader, map.TileMap);
+            OraclePerf.Measure("  LoadTileMap",
+                () => LoadTileMap(reader, map.TileMap));
 
             CreateEmptyHoleMap(map.HoleMap, map.MapWidth, map.MapHeight);
 
@@ -247,17 +249,20 @@ namespace ProjectZ.InGame.SaveLoad
             map.UpdateMap = new int[map.MapWidth, map.MapHeight];
 
             // load the objects
-            LoadObjects(reader, map);
+            OraclePerf.Measure("  LoadObjects (map rows)",
+                () => LoadObjects(reader, map));
 
             // optional Oracle sections appended after the native map data
-            LoadOracleSections(reader, map);
+            OraclePerf.Measure("  LoadOracleSections",
+                () => LoadOracleSections(reader, map));
 
             // close the file
             reader.Close();
 
             // load the dig map
             if (File.Exists(fileName + ".data"))
-                map.DigMap = DataMapSerializer.LoadData(fileName + ".data");
+                OraclePerf.Measure("  LoadDigMap",
+                    () => map.DigMap = DataMapSerializer.LoadData(fileName + ".data"));
             else
                 map.DigMap = new string[map.MapWidth, map.MapHeight];
         }
