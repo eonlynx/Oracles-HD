@@ -6,7 +6,7 @@
   "group": 1,
   "rooms": 196,
   "skippedRooms": 0,
-  "atlasMetatiles": 1646,
+  "atlasMetatiles": 1652,
   "roomIds": [
     "0x00",
     "0x01",
@@ -232,6 +232,10 @@
       "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
     },
     {
+      "path": "data/ages/singleTileChanges.s",
+      "sha256": "bc5afdd8448abc34e642a64788d6858be2c9ce9bbe736aea0cc8a9b95e11efc4"
+    },
+    {
       "path": "data/ages/tile_properties/warpTiles.s",
       "sha256": "179e4b77a3b93790902fd20f9bbc4f361c4294122d2d65ecec3345766f5a2942"
     },
@@ -275,15 +279,15 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_entities.atlas",
-      "sha256": "737d0af28b64de5bb329383c5f5743167c603a12b35770b03d175c4a03982d2e"
+      "sha256": "9124680ed15d4ed679fbb162b8c26e4fac466d4f7440afd4f4f8064a48427c07"
     },
     {
       "path": "../Map Objects/oracle_ages_entities.png",
-      "sha256": "c75229165a0948f6f350a11cd513128a766b03a74a3c949d9b0125dd90d6053e"
+      "sha256": "e226ea3a9ce54be618c1d6f15f91cb21eeba2bfecbd968df600d9a41803520b1"
     },
     {
       "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
-      "sha256": "2d3777152e662e60449e7bb766a0aeae4eb844cf9f95593faf0b398c595af565"
+      "sha256": "da657e0c4342a3d8f17eeb47eed2916695a5ac7bd097d382073aa6109d7c9f78"
     },
     {
       "path": "Previews/oracle_ages_g1_overworld.png",
@@ -298,12 +302,20 @@
       "sha256": "dfae9f3b447aff8c203e796d83237cd45d8c31e79ac41004b78c24609c1ec17a"
     },
     {
+      "path": "TileChanges/oracle_ages_g1_tile_changes.tsv",
+      "sha256": "a3b3552904a47d0c6143fbb37b8db93a45372453b15c36955ea28bfe2bc7519f"
+    },
+    {
+      "path": "TileChanges/oracle_ages_tile_changes.tsv",
+      "sha256": "acb903b56b62a586109b8f406881711087a8a2e21eb2792b3c02393c3c848c57"
+    },
+    {
       "path": "Tilesets/oracle_ages_g1_overworld.png",
-      "sha256": "3d1e43cd0cef9d464cb2000f95f03acda9e0e1083b7e184cb81d06bcbfc53754"
+      "sha256": "4ff96d6cabae14ef9a8cc4520aef0c270fb7b1c57fa0b01414036193aa2ae3c8"
     },
     {
       "path": "oracle_ages_g1_overworld.map",
-      "sha256": "c8abb0e9c25480c2fd04428d65ad5fe37f85070c186752139349ad398ae2fef2"
+      "sha256": "6d1783b192d3692055003223f223229ee46988cf294a51c17ee19177b20e3146"
     }
   ]
 }

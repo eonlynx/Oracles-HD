@@ -1,0 +1,186 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 2,
+  "game": "ages",
+  "entry": "oracle_ages_g5_rf0",
+  "group": 5,
+  "room": "0xf0",
+  "tileset": {
+    "id": "0x46",
+    "layout": "0x2a",
+    "layoutGroup": "0x05",
+    "gfxHeader": "0x6a",
+    "uniqueGfxHeader": "0x00",
+    "paletteHeader": "0x4a",
+    "appliedPaletteHeader": "0x4a",
+    "flags": "0x08",
+    "outdoors": false,
+    "indoors": false,
+    "sideScroll": false,
+    "underwater": false
+  },
+  "inputs": [
+    {
+      "path": "code/ages/roomSpecificCode.s",
+      "sha256": "756811917cfb79460bda1bd7236a937f54d556a9606159982372bf383bb4b48d"
+    },
+    {
+      "path": "data/ages/gfxHeaders.s",
+      "sha256": "a80380f668c565f0ea4d0c2ae24317adc42343ae98cae6b21375cfcb2e8462e9"
+    },
+    {
+      "path": "data/ages/interactionAnimations.s",
+      "sha256": "362fe60cf3c5f4613430f4596d330a19947890fe2e69cfad1da329a3229e5d3e"
+    },
+    {
+      "path": "data/ages/interactionData.s",
+      "sha256": "f7d7945b32dba38e77f205d5cc24aab462ac9faea344e8f06862647da7aeed1e"
+    },
+    {
+      "path": "data/ages/interactionOamData.s",
+      "sha256": "6153a9642689f0c6b9c7bc19a644bfd011d28faab315423f09fb309e0289486e"
+    },
+    {
+      "path": "data/ages/objectGfxHeaders.s",
+      "sha256": "a47dce00605b0fd78f1defb4f2f36e8758554e98716944754b083a507d178859"
+    },
+    {
+      "path": "data/ages/paletteData.s",
+      "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
+    },
+    {
+      "path": "data/ages/paletteHeaders.s",
+      "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
+    },
+    {
+      "path": "data/ages/tile_properties/warpTiles.s",
+      "sha256": "179e4b77a3b93790902fd20f9bbc4f361c4294122d2d65ecec3345766f5a2942"
+    },
+    {
+      "path": "data/ages/tilesets.s",
+      "sha256": "bf2dec6c3946360b7409cd8257cd0cdacc3012dfac7076d129709adb6f901510"
+    },
+    {
+      "path": "data/ages/uniqueGfxHeaders.s",
+      "sha256": "39c05b2dc9347f8a81ee9bf4946890822112a3b50091274e4d8ad5ab5451f0bc"
+    },
+    {
+      "path": "data/ages/warpDestinations.s",
+      "sha256": "039a765ea4c7d25792649755856aae9dcbe857007c75072d6643689ce018c1dd"
+    },
+    {
+      "path": "data/ages/warpSources.s",
+      "sha256": "aa1383af45a8773765cc991c97343f1ac72ad1d3b2242fad9d40f86d0e251756"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_dungeon_standard_1.png",
+      "sha256": "1f22a9e7d989201be9af7dc0efc6b17b4d29c2587c31085bd9202d9377f4c8e1"
+    },
+    {
+      "path": "gfx_compressible/ages/gfx_tileset_dungeon_standard_2.png",
+      "sha256": "6825711b805a9a4c167899feb7bcddc9e6052931d2ebe218ffe3cb351c5892ff"
+    },
+    {
+      "path": "objects/ages/enemyData.s",
+      "sha256": "1ed80d46fd4fafe0d64cbeedf44c8754748b1000b1fbd45633cb2eb37388cb55"
+    },
+    {
+      "path": "objects/ages/extraData1.s",
+      "sha256": "b210abdb92a0a5e25202763f3fe316ecf5e7019e4cc82b6a1793f209b715c41f"
+    },
+    {
+      "path": "objects/ages/extraData2.s",
+      "sha256": "a5e79985b1893c6bfe8842cc8f5dd29f5aabe2697915e9aa5f1211bb9d26ddfe"
+    },
+    {
+      "path": "objects/ages/extraData3.s",
+      "sha256": "14dcf3fd119c5855632b4617b25a99c92b92264797070b80cf2be3715411c02f"
+    },
+    {
+      "path": "objects/ages/extraData4.s",
+      "sha256": "7eb75ab9cf68e62701f36756c41298a8caee12f1984c7035dea1544a5cdfa0f4"
+    },
+    {
+      "path": "objects/ages/mainData.s",
+      "sha256": "d84969f0439dbdc4dfdbb73345c06da6ef8e46dfb0e147c554665a92d850367b"
+    },
+    {
+      "path": "objects/ages/pointers.s",
+      "sha256": "27dbfe2506ef383ac175c22f6050b51a2960c3fb8f3b544ffc60ce383be4dc57"
+    },
+    {
+      "path": "rooms/ages/group5Tilesets.bin",
+      "sha256": "a16b745f3955244dff7adddcc2face2c2ca7c4dad608c544f535e983ba735645"
+    },
+    {
+      "path": "rooms/ages/large/room05f0.bin",
+      "sha256": "b407876865356bb6c3aec07787ffbe33073a8bdc9f05d4131569394e06a806ba"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetCollisions2a.bin",
+      "sha256": "50afd32a9ac143d7b3fc2f4615861401b044281c752291d1fa4b980502f2ab92"
+    },
+    {
+      "path": "tileset_layouts/ages/tilesetMappings2a.bin",
+      "sha256": "ab7a5aec6d0b8439e778fd395bc4573a55066e8ab8e0c92106197fb4891cc71f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "../Map Objects/oracle_ages_enemies.atlas",
+      "sha256": "9b88482cca65fea1b17b1820ffbd04839614bbd3f924334bb71db72be6e4d85f"
+    },
+    {
+      "path": "../Map Objects/oracle_ages_enemies.png",
+      "sha256": "d118ec3b573ac5743421f22794f879a25385eb32975645bae6aeea7f532f40ae"
+    },
+    {
+      "path": "../Map Objects/oracle_ages_entities.atlas",
+      "sha256": "9124680ed15d4ed679fbb162b8c26e4fac466d4f7440afd4f4f8064a48427c07"
+    },
+    {
+      "path": "../Map Objects/oracle_ages_entities.png",
+      "sha256": "e226ea3a9ce54be618c1d6f15f91cb21eeba2bfecbd968df600d9a41803520b1"
+    },
+    {
+      "path": "../Map Objects/oracle_ages_interaction_behaviors.tsv",
+      "sha256": "da657e0c4342a3d8f17eeb47eed2916695a5ac7bd097d382073aa6109d7c9f78"
+    },
+    {
+      "path": "Dungeons/oracle_ages_dungeon_layouts.tsv",
+      "sha256": "092b01c86a46049fcbf9d1eb87ab650b406cd8686075d8503f891cb58f91401d"
+    },
+    {
+      "path": "Dungeons/oracle_ages_dungeons.tsv",
+      "sha256": "f2467caa68f7e08f19e59f98df3d9567e2ce578f2dc9e07d3d48b675d0c9d27f"
+    },
+    {
+      "path": "Entities/oracle_ages_entity_placements.tsv",
+      "sha256": "1e9ad4fa222180a5fd3c1e70009dfbcf3e3c2676fa3f99861e99acee5f94b4ce"
+    },
+    {
+      "path": "Previews/oracle_ages_g5_rf0.png",
+      "sha256": "8307ca22e8696be84a76aca56b96f78aba21218104036fa9affef24c359ba425"
+    },
+    {
+      "path": "Scripts/oracle_ages_script_bindings.tsv",
+      "sha256": "a31b924d0d4f232acf578939cb6b924a9c16ef4a8d3b8a375934fb67ac78a110"
+    },
+    {
+      "path": "Scripts/oracle_ages_scripts.tsv",
+      "sha256": "dfae9f3b447aff8c203e796d83237cd45d8c31e79ac41004b78c24609c1ec17a"
+    },
+    {
+      "path": "Tilesets/oracle_ages_t46.png",
+      "sha256": "a0042bcc3c2e2e95edbc81fbc374c2b964a448660f4b6f1915645f466e607a41"
+    },
+    {
+      "path": "Visibility/oracle_ages_visibility.tsv",
+      "sha256": "b3820d3dc7fbdc273e8595e9dc562f9572c5ad001fe04b390b5654964ff56d19"
+    },
+    {
+      "path": "oracle_ages_g5_rf0.map",
+      "sha256": "364e48100e014925d4f7db0c7f33670ad73677b31b0d00b7ced70d51c389855b"
+    }
+  ]
+}
