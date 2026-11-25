@@ -35,3 +35,4 @@ Data/Maps/Dungeons/oracle_*_dungeon_layouts.tsv
 Data/Maps/Visibility/oracle_*_visibility.tsv
 Data/Maps/Audit/oracle_*_entity_conditions.tsv
 Data/Maps/Audit/oracle_*_symbols.tsv
+Data/Maps/TileChanges/oracle_*_tile_changes.tsv

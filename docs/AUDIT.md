@@ -13,7 +13,7 @@ not new features.
 | Enemies / combat | **NO-GO yet** | Object streams only emit interactions; enemy/PART/item placements, handler identity and a runtime construction seam are missing. |
 | Dungeons | **NO-GO yet** | Metadata exists, but stairs/fall/source-transition warp modes, large rooms, floor layouts, per-room flags and camera locks remain. |
 | Seasons | **NO-GO for content yet** | `OracleGameProfile` now holds flags/portal/groups and `--game` is generic, but no Seasons maps/content are generated and the Ages-only events are gated by profile. |
-| `roomGfxChanges` | **GO** | It is importer/render work; it does not require a new runtime abstraction and does not affect Maku `$38`, whose tiles and `$30` palette match the reference. |
+| `roomGfxChanges` | **GO** | It is importer/render work; it does not require a new runtime abstraction. Maku `$38` uses its tileset `$30` palette plus the `PALH_8f` wood palette loaded by `makuTree.s`; `singleTileChanges` is now a separate data-driven pass. |
 
 The current slice is coherent enough to keep; it is not yet coherent enough to
 scale to scripts, enemies or floors without the small ownership refactor in

@@ -46,6 +46,12 @@ public sealed class RoomBuilder
                 objects = (objects ?? Array.Empty<MapObjectPlacement>()).Concat(extra).ToArray();
         }
         var renderer = _content.CreateRenderer(tilesetId, backgroundPaletteHeader, room, options);
+        var appliedPaletteHeader = info.Palette;
+        if (group == 0 && info.IsMaku && _content.MakuTreePaletteHeader >= 0)
+        {
+            _content.ApplyMakuTreePalette(renderer);
+            appliedPaletteHeader = _content.MakuTreePaletteHeader;
+        }
 
         var atlas = new MetatileAtlas(64);
         for (var metatile = 0; metatile < 256; metatile++)
@@ -138,7 +144,8 @@ public sealed class RoomBuilder
         var preview = _content.RenderRoomPreview(layout, atlas, tilesetId);
         Png.SaveRgba(previewPath, preview);
 
-        WriteManifest(manifestPath, stem, group, room, info, renderer, layout.SourcePath, mapPath, tilesetPath, previewPath);
+        WriteManifest(manifestPath, stem, group, room, info, appliedPaletteHeader,
+            renderer, layout.SourcePath, mapPath, tilesetPath, previewPath);
 
         return new RoomBuildResult(
             mapPath, tilesetPath, previewPath, manifestPath,
@@ -161,6 +168,7 @@ public sealed class RoomBuilder
         int group,
         int room,
         TilesetInfo info,
+        int appliedPaletteHeader,
         TilesetRenderer renderer,
         string layoutPath,
         string mapPath,
@@ -198,7 +206,7 @@ public sealed class RoomBuilder
                 gfxHeader = $"0x{info.Gfx:x2}",
                 uniqueGfxHeader = $"0x{info.UniqueGfx:x2}",
                 paletteHeader = $"0x{info.Palette:x2}",
-                appliedPaletteHeader = $"0x{info.Palette:x2}",
+                appliedPaletteHeader = $"0x{appliedPaletteHeader:x2}",
                 flags = $"0x{info.Flags:x2}",
                 outdoors = info.IsOutdoors,
                 indoors = info.IsIndoors,

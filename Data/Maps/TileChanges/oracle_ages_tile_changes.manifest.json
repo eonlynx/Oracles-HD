@@ -1,0 +1,19 @@
+{
+  "tool": "OracleAssetBuilder",
+  "format": 1,
+  "game": "ages",
+  "entry": "single_tile_changes",
+  "rows": 56,
+  "inputs": [
+    {
+      "path": "data/ages/singleTileChanges.s",
+      "sha256": "bc5afdd8448abc34e642a64788d6858be2c9ce9bbe736aea0cc8a9b95e11efc4"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "TileChanges/oracle_ages_tile_changes.tsv",
+      "sha256": "acb903b56b62a586109b8f406881711087a8a2e21eb2792b3c02393c3c848c57"
+    }
+  ]
+}

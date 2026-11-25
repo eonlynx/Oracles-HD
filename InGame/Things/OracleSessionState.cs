@@ -23,6 +23,9 @@ namespace ProjectZ.InGame.Things
         public int Room { get; private set; } = -1;
         public int EntryDirection { get; private set; } = -1;
 
+        /// <summary>Native wIsLinkedGame; $f0/$f1 tile changes branch on it.</summary>
+        public bool IsLinkedGame { get; set; }
+
         /// <summary>Native wDisabledObjects. Bit 0 disables Link, bit 7 disables input/menu.</summary>
         public int DisabledObjects { get; set; }
 
@@ -49,6 +52,7 @@ namespace ProjectZ.InGame.Things
             EntryDirection = -1;
             PendingRoomFlags = -1;
             DisabledObjects = 0;
+            IsLinkedGame = false;
 
             if (introFlag is >= 0 and < GlobalFlagCount)
                 _globalFlags[introFlag] = true;

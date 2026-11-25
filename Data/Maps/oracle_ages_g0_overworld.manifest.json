@@ -6,7 +6,7 @@
   "group": 0,
   "rooms": 196,
   "skippedRooms": 0,
-  "atlasMetatiles": 1566,
+  "atlasMetatiles": 1569,
   "roomIds": [
     "0x00",
     "0x01",
@@ -232,6 +232,10 @@
       "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
     },
     {
+      "path": "data/ages/singleTileChanges.s",
+      "sha256": "bc5afdd8448abc34e642a64788d6858be2c9ce9bbe736aea0cc8a9b95e11efc4"
+    },
+    {
       "path": "data/ages/tile_properties/warpTiles.s",
       "sha256": "179e4b77a3b93790902fd20f9bbc4f361c4294122d2d65ecec3345766f5a2942"
     },
@@ -287,7 +291,7 @@
     },
     {
       "path": "Previews/oracle_ages_g0_overworld.png",
-      "sha256": "895937b576beae34897516bc37efa9ea8e1eb7e17a2b2e72cd4241f961ed19bc"
+      "sha256": "23d52f7d53c8d7fa2ece2cede2cdf910d9ea47fdc0ac770bc117367b4b745185"
     },
     {
       "path": "Scripts/oracle_ages_script_bindings.tsv",
@@ -298,8 +302,16 @@
       "sha256": "dfae9f3b447aff8c203e796d83237cd45d8c31e79ac41004b78c24609c1ec17a"
     },
     {
+      "path": "TileChanges/oracle_ages_g0_tile_changes.tsv",
+      "sha256": "f54f2defa3c1a707f691440e6ddb16293fdcee0f982979b7ee62c1c752a7cc61"
+    },
+    {
+      "path": "TileChanges/oracle_ages_tile_changes.tsv",
+      "sha256": "acb903b56b62a586109b8f406881711087a8a2e21eb2792b3c02393c3c848c57"
+    },
+    {
       "path": "Tilesets/oracle_ages_g0_overworld.png",
-      "sha256": "e9de3273eda94fc94484290efaea6853a49000a49552eea1992bac93fe4c52a8"
+      "sha256": "ab89d83f0d805a0226e23b68d79045358d5e9736a54dc2dbe081fa6ec41b4404"
     },
     {
       "path": "oracle_ages_g0_overworld.map",

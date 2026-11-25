@@ -126,6 +126,9 @@ namespace ProjectZ.InGame.Map
             OracleScriptRuntime.Trace(
                 $"map {info.Game} group {info.Group:x} room {room:x2} dir {_session.EntryDirection} pos {position.X:0},{position.Y:0}");
 
+            OraclePerf.Measure("  Oracle tile changes",
+                () => OracleTileChangeCatalog.Apply(map, _session, _profile));
+
             var context = new OracleRoomContext(_session, _profile, info.Group, room, _session.EntryDirection);
             OraclePerf.Measure("  Oracle room effects",
                 () => _effects.Apply(info.RoomEffects, context));
@@ -169,6 +172,9 @@ namespace ProjectZ.InGame.Map
             _lastPosition = position;
             OracleScriptRuntime.Trace(
                 $"room {_mapInfo.Group:x}:{room:x2} dir {direction} pos {position.X:0},{position.Y:0}");
+
+            OracleTileChangeCatalog.Apply(
+                Game1.GameManager.MapManager.CurrentMap, _session, _profile);
 
             var context = new OracleRoomContext(_session, _profile, _mapInfo.Group, room, direction);
             _effects.Apply(_mapInfo.RoomEffects, context);

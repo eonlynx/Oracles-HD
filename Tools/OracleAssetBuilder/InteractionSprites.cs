@@ -230,7 +230,7 @@ public sealed class InteractionSprites
 
     private bool TryGetEnemyGraphics(int enemyId, int subid, out InteractionGraphics graphics)
     {
-        graphics = default;
+        graphics = new InteractionGraphics(0, 0, 0, 0);
         if (!_enemyData.TryGetValue(enemyId, out var row))
             return false;
 

@@ -1,7 +1,7 @@
 # Progress and parity tracker
 
-Snapshot: **2026-11-25**, commit `6f0bf74`, visibility/audit block (Ralph `$37:$0d`, past
-villager `$3a:$0d`, continuous room presentation), base
+Snapshot: **2026-11-25**, Maku palette/tile-change block (Ralph `$37:$0d`, past
+villager `$3a:$0d`, continuous room presentation, visibility/audit), base
 Links-Awakening-DX-HD v2.0.6 (`2e68849`).
 
 Status legend:
@@ -38,20 +38,25 @@ Status legend:
 | Animated tiles | Done | Frames in the existing atlas; timeline in `.map`; no `.ani`. |
 | Tile collisions | Partial | Quadrant bits + water/hole/lava solid; special collisions (`>=0x10`, bridges/rails) not yet exact. |
 | Terrain (`FieldStates`) | Partial | Water, deep water, lava, grass; swimming/falling not implemented. |
-| Room-specific graphics (`roomGfxChanges`) | Not started | Shops, gasha spots and sign/tile rewrites are still pending. The Maku Tree room `$38` needs none: its tiles and palette match the original screenshot. |
+| Room-specific graphics (`roomGfxChanges`) | Not started | Shops, gasha spots and sign/tile rewrites are still pending. Maku `$38` uses the source `PALH_8f` wood palette (below); no ad-hoc room branch. |
+| Present Maku wood palette | Done | `makuTree.s` loads `PALH_8f`; present Maku tilesets apply it after their `$30` header. Only BG palette 7 changes, turning the lower wall/portal spot from pink/white to the source gold/brown. |
+| `singleTileChanges` | Done | `singleTileChanges.s` parsed into a raw table and baked per overworld group with atlas/collision/terrain indices. `OracleTileChangeCatalog` applies the source-ordered write on map load/room entry; rooms, masks and tiles come from data. |
 | Objects / interactions (first pass) | Partial | Source-derived collision/palette/flag/portal/entry-direction behaviour for every placed interaction; extra object-gfx sheets are resolved from the OAM tile range. `INTERAC_MAKU_TREE $87` composes `$04`+`$05`, so its eyes, expressions and smile render and blink. First scripts run (`ralphSubid0dScript`, `villagerSubid0dScript`); facing and general NPC dialogue loops still pending. |
 | Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, source-derived requires/forbids flags, entry-direction gate, `obj_Condition`, before/after room flags and native collision (solid tile or explicit radii). `$6b:$15` post-game statue requires `GLOBALFLAG_FINISHEDGAME` and `PALH_c7`. Entry-gated actors now use prospective-edge presentation (ADR-037), not a boundary pop. |
 | NPC collision | Done (source-derived) | `objectMarkSolidPosition`/`wRoomCollisions` -> 16x16 tile box; `objectSetCollideRadius/Radii` -> explicit box; otherwise no collision. The body is centred on the interaction anchor. One-shot cutscene actors are hidden unless their source entry condition holds; per-NPC script radii/events remain pending. |
 | Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is applied for `$6b:$15` from the source `PALH` load; general per-room sprite palette application is still pending. |
 | Warps / interiors / doors (first pass) | Partial | 22 present (group 2) + 16 past (group 3) interiors from overworld warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Dungeon maps now have a data slot for source/destination transition modes (walk, instant, fall); stairs/large-room routing remains pending. |
 | Time portals (Ages) | Done (first pass) | `$e1` objects whose source calls `interactionBeginTimewarp` become `oracleTimePortal`; group toggles at the same world position through `MapTransitionSystem`, and the arrival portal is spawned after load. |
-| Room palette | Done | Rooms use their tileset `PALH` (e.g. `$30` for `$38`); the `$8f` load belongs to the disappearance cutscene, not the static room. |
+| Room palette | Done | Rooms use their tileset `PALH` (e.g. `$30` for `$38`). Present Maku additionally applies `PALH_8f` after it because the native interaction installs that wood palette and it remains the stable room palette; past keeps its own header. |
 | Session state (`OracleSessionState`) | Done (first pass) | 0x80 global flags, flags per `(group, room)`, room state, entry direction and capture/restore hooks; `OracleFlagState` is a dev facade only. |
 | Room lifecycle (`OracleRoomRuntime`) | Done (first pass) | `MapTransitionSystem.MapLoading` (before objects) and `MapLoaded` (after Link); continuous stitched-map room tracking; `OracleRoomEntryEffects` parses `roomSpecificCode.s`. |
 | Room presentation (no pop-in) | Done (first pass) | Entry-gated actors are presented for the edge Link would cross, including neighbours; scripts start only on the real crossing; completed one-shot guards suppress the actor immediately. ADR-037. |
-| Story-state visibility | Done (first pass) | One `OracleVisibilityEvaluator` reads global flags, room-state bits and source-cited rules keyed by `(id,subid,var03)`. Pre-intro `$6b:$01` audience and post-intro `$5d:$02` animals are sequential states, not cross-room exclusions. `--intro-done` selects the later state. |\n| Enemy atlas / Octorok | Partial | `enemyData`, `enemyAnimations` and `enemyOamData` compose into `oracle_ages_enemies.*`; specific Octoroks are placed and animated. Runtime AI/combat is the next step; random enemies remain intentionally unplaced. |\n| Script engine (`CutsceneCommandCatalog`/Runner) | Partial | Typed command stream + manifest and source-cited `(interaction, subid)` bindings; native counter1/counter2 order, callstack, jump/gravity and Ralph helpers. Verified `$37:$0d` (flag `$40`, delete) and `$3a:$0d` (flag `$41`, jump, move, delete). Text is deliberately skipped; `setanimation` records the index but the atlas still carries only the default animation; audio pending. |
+| Story-state visibility | Done (first pass) | One `OracleVisibilityEvaluator` reads global flags, room-state bits and source-cited rules keyed by `(id,subid,var03)`. Pre-intro `$6b:$01` audience and post-intro `$5d:$02` animals are sequential states, not cross-room exclusions. `--intro-done` selects the later state. |
+| Enemy atlas / Octorok | Partial | `enemyData`, `enemyAnimations` and `enemyOamData` compose into `oracle_ages_enemies.*`; specific Octoroks are placed and animated. Runtime AI/combat is the next step; random enemies remain intentionally unplaced. |
+| Script engine (`CutsceneCommandCatalog`/Runner) | Partial | Typed command stream + manifest and source-cited `(interaction, subid)` bindings; native counter1/counter2 order, callstack, jump/gravity and Ralph helpers. Verified `$37:$0d` (flag `$40`, delete) and `$3a:$0d` (flag `$41`, jump, move, delete). Text is deliberately skipped; `setanimation` records the index but the atlas still carries only the default animation; audio pending. |
 | Game profile (`OracleGameProfile`) | Partial | Ages/Seasons flags (`.ifdef`-aware), portal policy, overworld groups, map naming and `--game`; Seasons content generation is still pending. |
-| Enemy/part/item placements | Partial | Native object streams now emit typed placements (1,199 rows across groups 0-5 for Ages), including condition/room-flag gates and random-enemy marking. Runtime construction/AI is not wired yet. |\n| Interaction behaviour table | Done | Typed, sorted TSV + manifest (`Data/Map Objects/oracle_<game>_interaction_behaviors.*`), emitted from `InteractionBehaviors`. |
+| Enemy/part/item placements | Partial | Native object streams now emit typed placements (1,199 rows across groups 0-5 for Ages), including condition/room-flag gates and random-enemy marking. Runtime construction/AI is not wired yet. |
+| Interaction behaviour table | Done | Typed, sorted TSV + manifest (`Data/Map Objects/oracle_<game>_interaction_behaviors.*`), emitted from `InteractionBehaviors`. |
 | Script command tables | Done (first family) | `Data/Maps/Scripts/oracle_<game>_scripts.*` and `oracle_<game>_script_bindings.*`; deterministic, sorted, with source hashes and completed-flag guards. Generated TSV/JSON are gitignored; manifests are committed. |
 | Dungeon floor layouts | Partial | `dungeonData.s` + `dungeonLayouts.s` parsed into typed tables; `dungeons --dungeon N` builds all rooms of a dungeon (dungeon `$05` has 45 rooms/2 floors). Same-floor edge connections use room properties; stairs/fall routing and large rooms remain pending. |
 | Text / dialogue | Not started | LA `.lng` files still used. The script host deliberately skips Oracle `showtext` (it logs the id) so cutscene flow can be verified before text import. |
@@ -62,7 +67,7 @@ Status legend:
 
 | Group | Meaning | Rooms | Map size | Atlas | Animation placements |
 |---|---|---|---|---|---|
-| 0 | Present overworld | 196 / 196 | 140x112 tiles | 1.566 metatiles | 3.251 |
+| 0 | Present overworld | 196 / 196 | 140x112 tiles | 1.569 metatiles | 3.251 |
 | 1 | Past overworld | 196 / 196 | 140x112 tiles | 1.646 metatiles | 4.129 |
 | 2 | Present interiors / underwater | 22 interiors | 10x8 each | per room | per room |
 | 3 | Past interiors / underwater | 0 | - | - | - |

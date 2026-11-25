@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 
 namespace Oracles.Tools.AssetBuilder;
@@ -104,6 +105,11 @@ public sealed class OverworldBuilder
             if (!renderers.TryGetValue(tilesetId, out var renderer))
             {
                 renderer = _content.CreateRenderer(tilesetId, null, room, options);
+                // Present Maku Tree rooms keep the wood palette installed by
+                // the native interaction (makuTree.s:PALH_8f). The past uses
+                // its own tileset/palette and must not be rewritten.
+                if (group == 0 && info.IsMaku)
+                    _content.ApplyMakuTreePalette(renderer);
                 renderers.Add(tilesetId, renderer);
             }
 
@@ -171,6 +177,10 @@ public sealed class OverworldBuilder
                 spritePlan, warps, warnings);
         }
 
+        var tileChanges = new OracleTileChanges(_content.Repo);
+        tileChanges.WriteRawTable(_content.Repo, _outDir);
+        BakeTileChanges(group, tileChanges, usedRooms, renderers, atlas, options, warnings);
+
         var emptyLayer = EmptyLayer(width, height);
         var layers = new List<int[,]> { layer, emptyLayer, EmptyLayer(width, height) };
 
@@ -201,6 +211,85 @@ public sealed class OverworldBuilder
             mapPath, tilesetPath, previewPath, manifestPath,
             usedRooms.Count, skipped.Count, width, height, atlas.Count,
             interactions, enemies, parts, items, conditional);
+    }
+
+    private void BakeTileChanges(
+        int group,
+        OracleTileChanges changes,
+        IReadOnlyList<int> usedRooms,
+        IReadOnlyDictionary<int, TilesetRenderer> renderers,
+        MetatileAtlas atlas,
+        OracleOptions options,
+        List<string> warnings)
+    {
+        var used = new HashSet<int>(usedRooms);
+        var rows = new List<string>();
+        foreach (var change in changes.Changes
+                     .Where(c => c.Group == group && used.Contains(c.Room))
+                     .OrderBy(c => c.Room).ThenBy(c => c.Position))
+        {
+            var tilesetId = _content.GetRoomTileset(change.Room, options);
+            if (!renderers.TryGetValue(tilesetId, out var renderer))
+            {
+                warnings.Add($"tile change room {change.Room:x2}: renderer for tileset " +
+                             $"{tilesetId:x2} is missing; skipped.");
+                continue;
+            }
+
+            var info = _content.GetTileset(tilesetId);
+            var layout = _content.GetRoomLayout(
+                _content.GetLayoutGroup(change.Room, info, options), change.Room,
+                largeRoom: false);
+            var localX = change.Position & 0x0F;
+            var localY = change.Position >> 4;
+            if (localX >= layout.Width || localY >= layout.Height)
+            {
+                warnings.Add($"tile change room {change.Room:x2}: position " +
+                             $"{change.Position:x2} is outside {layout.Width}x{layout.Height}.");
+                continue;
+            }
+
+            var mappings = _content.GetMappings(info.Layout);
+            var collisions = _content.GetCollisions(info.Layout);
+            var collisionMode = info.CollisionModeAndDungeon >> 4;
+            var baseMetatile = layout.Tiles[localY * layout.Width + localX];
+            var baseAtlas = atlas.GetOrAdd(tilesetId, baseMetatile,
+                () => renderer.RenderMetatile(mappings, baseMetatile));
+            var replacementAtlas = atlas.GetOrAdd(tilesetId, change.Tile,
+                () => renderer.RenderMetatile(mappings, change.Tile));
+            var baseTerrain = _content.GetTerrain(collisionMode, baseMetatile);
+            var replacementTerrain = _content.GetTerrain(collisionMode, change.Tile);
+
+            byte Collision(int metatile, int terrain)
+            {
+                var value = collisions[metatile];
+                return terrain is 1 or 2 or 3 or 5
+                    ? (byte)0xFF
+                    : value < 0x10 ? value : (byte)0;
+            }
+
+            var mapX = (change.Room & 0x0F) * RoomWidth + localX;
+            var mapY = (change.Room >> 4) * RoomHeight + localY;
+            rows.Add(string.Join("\t",
+                $"0x{change.Room:x2}", $"0x{change.Mask:x2}",
+                $"0x{mapX:x2}", $"0x{mapY:x2}",
+                $"0x{baseMetatile:x2}", $"0x{change.Tile:x2}",
+                $"0x{baseAtlas:x}", $"0x{replacementAtlas:x}",
+                $"0x{Collision(baseMetatile, baseTerrain):x2}",
+                $"0x{Collision(change.Tile, replacementTerrain):x2}",
+                $"0x{baseTerrain:x2}", $"0x{replacementTerrain:x2}",
+                change.Source));
+        }
+
+        var path = OracleTileChanges.BakedTablePath(_outDir, _content.Repo.Game, group);
+        Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        var builder = new StringBuilder();
+        builder.Append("room\tmask\tx\ty\tbase_metatile\treplacement_metatile\t");
+        builder.Append("base_atlas\treplacement_atlas\tbase_collision\t");
+        builder.Append("replacement_collision\tbase_terrain\treplacement_terrain\tsource\n");
+        foreach (var row in rows)
+            builder.Append(row).Append('\n');
+        File.WriteAllText(path, builder.ToString(), new UTF8Encoding(false));
     }
 
     private void AddRoomObjects(
@@ -435,6 +524,7 @@ public sealed class OverworldBuilder
             roomIds = usedRooms.Select(r => $"0x{r:x2}").ToArray(),
             skippedRoomIds = skippedRooms.Select(r => $"0x{r:x2}").ToArray(),
             inputs = _content.GetImportedSourcePaths()
+                .Append(Path.Combine(_content.Repo.DataDir, "singleTileChanges.s"))
                 .Distinct(StringComparer.OrdinalIgnoreCase)
                 .OrderBy(p => p, StringComparer.Ordinal)
                 .Select(p => new
@@ -451,6 +541,8 @@ public sealed class OverworldBuilder
                     EntityAtlas.BehaviorTablePath(_outDir, _content.Repo.Game),
                     ScriptImporter.TablePath(_outDir, _content.Repo.Game),
                     ScriptImporter.BindingTablePath(_outDir, _content.Repo.Game),
+                    OracleTileChanges.RawTablePath(_outDir, _content.Repo.Game),
+                    OracleTileChanges.BakedTablePath(_outDir, _content.Repo.Game, group),
                 }
                 .Where(File.Exists)
                 .OrderBy(p => p, StringComparer.Ordinal)

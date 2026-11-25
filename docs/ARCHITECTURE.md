@@ -68,13 +68,16 @@ DX-HD paths. The switch is development-only; no menu entry was added.
 | `InGame/Things/GameManager.cs` | Oracle map/position selection in `StartNewGame`. |
 | `InGame/Things/OracleSessionState.cs` | Per-session global/room flags, room state, entry direction and save snapshot. |
 | `InGame/Map/OracleRoomRuntime.cs` | Room load/enter lifecycle, `roomSpecificCode` effects, continuous stitched-map room tracking and presentation hand-off. |
-| `InGame/Map/OracleScriptRuntime.cs` | Active runners, source-cited actor bindings, neighbour presentation pass, `asm15` helpers and completion guards. |\n| `InGame/Map/OracleVisibilityEvaluator.cs` | Single save/progress gate for all actors: global flags, room-state bits and per-entity story rules; no per-room exclusion. |
+| `InGame/Map/OracleScriptRuntime.cs` | Active runners, source-cited actor bindings, neighbour presentation pass, `asm15` helpers and completion guards. |
+| `InGame/Map/OracleVisibilityEvaluator.cs` | Single save/progress gate for all actors: global flags, room-state bits and per-entity story rules; no per-room exclusion. |
+| `InGame/Map/OracleTileChangeCatalog.cs` | Applies `singleTileChanges.s` writes on map load/room entry; baked per-group rows carry room mask, atlas indices and collision/terrain. |
 | `InGame/Scripting/CutsceneCommandCatalog.cs` | Validates and loads `oracle_<game>_scripts.tsv` and `oracle_<game>_script_bindings.tsv`. |
 | `InGame/Scripting/CutsceneCommandRunner.cs` | Native-order interpreter (counter1/counter2, callstack, yield/block/end). |
 | `InGame/Map/OracleGameProfile.cs` | Ages/Seasons flags, portal policy, groups and map naming. |
 | `InGame/GameSystems/MapTransitionSystem.cs` | `MapLoading`/`MapLoaded` hooks and `PostLoadActions` (portal arrival). |
 | `Game1.cs`, `Program.cs` | `--oracle`, `--game`, `--room`, `--pos`, `--entry`, `--map` development entry. |
-| `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; carries the native source/destination transition byte and maps walk/instant/fall to existing `MapTransitionSystem` modes. |\n| `Base/OraclePerf.cs` | Opt-in startup/map-load timestamps; no cost when `ORACLE_PERF_TRACE` is unset. |
+| `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; carries the native source/destination transition byte and maps walk/instant/fall to existing `MapTransitionSystem` modes. |
+| `Base/OraclePerf.cs` | Opt-in startup/map-load timestamps; no cost when `ORACLE_PERF_TRACE` is unset. |
 | `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames; source-derived collision, flag/entry gates and script visibility state. |
 | `InGame/GameObjects/Things/ObjOracleTimePortal.cs` | `interactionBeginTimewarp` portals; toggles group through `MapTransitionSystem` and spawns the arrival portal. |
 | `InGame/GameObjects/Things/OracleSpriteFrames.cs` | Shared frame/duration parsing for Oracle sprites. |
@@ -122,17 +125,23 @@ second emulator instance.
 |---|---|
 | `OracleRepo.cs` | Paths, PNG index, SHA-256, default roots. |
 | `AsmParser.cs` | Header indices, gfx/palette headers, palette data, tileset data, layout-label aliases. |
-| `OracleContent.cs` | Resolved tables, room tileset/overrides, layout and room files, renderer factory, tile properties. |
+| `OracleContent.cs` | Resolved tables, room tileset/overrides, layout and room files, renderer factory, tile properties, present Maku `PALH_8f` override parsed from `makuTree.s`. |
 | `OracleGameConfig.cs` | Per-game overworld groups/interior group (importer counterpart of `OracleGameProfile`). |
 | `RoomEntryEffects.cs` | `roomSpecificCode.s` group tables -> `#oracle-room-effects` rows. |
 | `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry facts + typed TSV/manifest. |
-| `ScriptImporter.cs` | Resolves event script closures, encodes typed command indices/targets and emits source-cited actor bindings + manifest. |\n| `DependencyAudit.cs` | Scans `object_code/*`, `objects/*`, `scripts/*`, `code/*` and exports every WRAM/global-flag/room-flag/object-stream condition with entity scope and source line. |\n| `InteractionVisibility.cs` | Emits source-cited story-state rules and child-object groups for room actors (e.g. `$6b:$01` pre-intro audience, `$5d:$02` post-intro bear). |\n| `EnemyAtlas.cs` | Composes enemy animations/OAM into `oracle_<game>_enemies.png/.atlas`; Octorok is the first species. |
+| `ScriptImporter.cs` | Resolves event script closures, encodes typed command indices/targets and emits source-cited actor bindings + manifest. |
+| `DependencyAudit.cs` | Scans `object_code/*`, `objects/*`, `scripts/*`, `code/*` and exports every WRAM/global-flag/room-flag/object-stream condition with entity scope and source line. |
+| `InteractionVisibility.cs` | Emits source-cited story-state rules and child-object groups for room actors (e.g. `$6b:$01` pre-intro audience, `$5d:$02` post-intro bear). |
+| `EnemyAtlas.cs` | Composes enemy animations/OAM into `oracle_<game>_enemies.png/.atlas`; Octorok is the first species. |
+| `TileChanges.cs` | Parses `singleTileChanges.s` into the exhaustive raw table and source citations; `OverworldBuilder` bakes per-group atlas/collision rows. |
 | `TilesetRenderer.cs` | Two VRAM banks, palettes, metatile rendering, past cliffs, animation overrides. |
 | `MetatileAtlas.cs` | Packed 16px metatiles, base and animation-variant keys. |
 | `OracleAnimation.cs` | Groups/tracks/headers/sheets, `(delay, gfxIndex)` parsing. |
 | `AnimationComposer.cs` | Per-metatile timeline, distinct variants, durations. |
 | `DxMapWriter.cs` | Native `.map` plus Oracle sections and native object placements. |
-| `RoomBuilder.cs` / `OverworldBuilder.cs` / `InteriorBuilder.cs` | Single rooms / stitched overworld / present and past interiors, collisions, terrain, animations, objects, manifests. |\n| `Dungeons.cs` / `DungeonBuilder.cs` | `dungeonData.s` + `dungeonLayouts.s` -> typed dungeon tables and per-dungeon room maps. |\n| `EntityPlacements.cs` | Native enemy/part/item placements -> typed TSV + manifest (random enemies marked, not invented). |
+| `RoomBuilder.cs` / `OverworldBuilder.cs` / `InteriorBuilder.cs` | Single rooms / stitched overworld / present and past interiors, collisions, terrain, animations, objects, manifests. |
+| `Dungeons.cs` / `DungeonBuilder.cs` | `dungeonData.s` + `dungeonLayouts.s` -> typed dungeon tables and per-dungeon room maps. |
+| `EntityPlacements.cs` | Native enemy/part/item placements -> typed TSV + manifest (random enemies marked, not invented). |
 | `Warps.cs` | `warpSources.s`, `warpDestinations.s`, `warpTiles.s`, pointer expansion. |
 | `RoomObjects.cs` | Native room object stream (`pointers.s`, `mainData.s`, enemy/extra data); positioned interactions and counts; group-aware. |
 | `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry-direction behaviour per interaction/subid; no id table. |

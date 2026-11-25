@@ -39,7 +39,17 @@ public sealed class OracleContent
     private readonly int _makuOverrideRoom;
     private readonly int _makuOverrideIncrement;
     private readonly int _pastCliffExcludedRoom;
+    private readonly int _makuTreePaletteHeader;
     private readonly IReadOnlyList<RoomEntryEffect> _roomEntryEffects;
+
+    /// <summary>
+    /// The native Maku Tree interaction loads PALH_8f before its disappearance
+    /// script. That header changes only BG palette 7 (the wooden wall/portal
+    /// spot) from the flower palette to the wood palette; palettes 2-6 are
+    /// identical. Present-room rendering applies it after the tileset header so
+    /// the generated atlas matches the stable in-game palette.
+    /// </summary>
+    public int MakuTreePaletteHeader => _makuTreePaletteHeader;
 
     public OracleContent(OracleRepo repo, int group)
     {
@@ -71,6 +81,7 @@ public sealed class OracleContent
         _makuOverrideRoom = overrideRules.Item1;
         _makuOverrideIncrement = overrideRules.Item2;
         _pastCliffExcludedRoom = overrideRules.Item3;
+        _makuTreePaletteHeader = ParseMakuTreePaletteHeader(repo, symbols);
         _roomEntryEffects = RoomEntryEffects.Parse(
             Path.Combine(repo.Root, "code", repo.Game, "roomSpecificCode.s"));
     }
@@ -118,6 +129,38 @@ public sealed class OracleContent
                 $"{path}: could not parse checkMakuTreeSaved/setPastCliffPalettesToRed room rules.");
 
         return (makuRoom, makuIncrement, pastCliffRoom);
+    }
+
+    private static int ParseMakuTreePaletteHeader(OracleRepo repo,
+        IReadOnlyDictionary<string, int> symbols)
+    {
+        var path = Path.Combine(repo.Root, "object_code", repo.Game,
+            "interactions", "makuTree.s");
+        if (!File.Exists(path))
+            return -1;
+
+        var match = System.Text.RegularExpressions.Regex.Match(
+            File.ReadAllText(path),
+            @"ld\s+a\s*,\s*(?<symbol>PALH_[A-Za-z0-9_]+)");
+        if (!match.Success)
+            return -1;
+
+        var symbol = match.Groups["symbol"].Value;
+        if (!symbols.TryGetValue(symbol, out var header))
+            throw new InvalidDataException(
+                $"{path}: palette symbol '{symbol}' is not defined in paletteHeaders.s.");
+        return header;
+    }
+
+    /// <summary>
+    /// Applies the palette loaded by the present Maku Tree interaction after
+    /// the tileset header. Only palette 7 differs, so the ground/tree palettes
+    /// remain those from the tileset table.
+    /// </summary>
+    public void ApplyMakuTreePalette(TilesetRenderer renderer)
+    {
+        if (_makuTreePaletteHeader >= 0)
+            ApplyPaletteHeader(renderer, _makuTreePaletteHeader);
     }
 
     private byte[]? ReadOptionalRoomPacks(int group)

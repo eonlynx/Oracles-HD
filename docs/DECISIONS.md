@@ -488,3 +488,35 @@ When a record is superseded, add a new one instead of editing history.
 - **Consequence:** the audit is exhaustive as a reference map, not a semantic
   interpreter of every branch. Every newly encoded rule must cite a row from
   this table.
+
+## ADR-040 - Present Maku palette comes from the interaction, not a flat room color
+
+- **Status:** accepted.
+- **Decision:** present Maku tilesets (`TILESETFLAG_MAKU`, group 0) apply
+  `PALH_8f` after the tileset's `PALH_TILESET_MAKU_TREE` header. The header is
+  parsed from `object_code/ages/interactions/makuTree.s`; the asset builder
+  records `appliedPaletteHeader` in each room manifest. Past groups keep their
+  own palette.
+- **Why:** `PALH_8f` changes only BG palette 7: the lower fence and portal spot
+  become gold/brown instead of the pink/white flower palette. The previous
+  static `$30` render made those areas look uncolored. Applying it at the
+  present-Maku renderer level is source-driven and affects no other tileset.
+- **Consequence:** `Data/Maps/Previews/oracle_ages_g0_r38.png` and the in-game
+  present Maku room show the same wood palette. A future per-story palette
+  transition can swap the header at runtime; the static bake targets the
+  stable post-first-interaction state.
+
+## ADR-041 - `singleTileChanges` is a data-driven room-load write
+
+- **Status:** accepted.
+- **Decision:** `singleTileChanges.s` is parsed into a raw source table and a
+  baked per-group table with resolved atlas indices, collision nibble and
+  terrain byte. `OracleTileChangeCatalog` applies the selected row on map load
+  and room entry. Mask `$f0`/`$f1`/`$f2` map to unlinked/linked/finished-game;
+  all rooms, positions and tiles come from the source.
+- **Why:** the white square beside the Maku Tree was the room `$39` portal spot
+  awaiting the native room-flag write (`$40`, position `$22`, tile `$d7`).
+  Forcing the tile at build time or keying it to a global flag would break the
+  sequential story state.
+- **Consequence:** the overworld `TileChanges` TSV is generated (gitignored)
+  and its manifest is committed; runtime has no room/tile literals.
