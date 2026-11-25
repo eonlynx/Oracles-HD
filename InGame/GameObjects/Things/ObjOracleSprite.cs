@@ -30,7 +30,7 @@ namespace ProjectZ.InGame.GameObjects.Things
         public ObjOracleSprite(Map.Map map, int posX, int posY, string frames,
             string durations, int offsetX, int offsetY, int layer, int loopStart,
             int interactionId, int subId, int requiresFlag, int forbiddenFlag, int roomStateMask,
-            int roomFlagMask, int roomFlagValue) : base(map)
+            int roomFlagMask, int roomFlagValue, int collisionRadius) : base(map)
         {
             InteractionId = interactionId;
             SubId = subId;
@@ -57,11 +57,27 @@ namespace ProjectZ.InGame.GameObjects.Things
             // Keep the composed top-left for now and record the tall-actor
             // depth limitation in the audit instead of adding a second anchor.
             EntityPosition = new CPosition(posX + offsetX, posY + offsetY, 0);
+
             EntitySize = new Rectangle(0, 0,
                 _frames[0].SourceRectangle.Width, _frames[0].SourceRectangle.Height);
 
             _sprite = new CSprite(_frames[0], EntityPosition);
             AddComponent(DrawComponent.Index, new DrawCSpriteComponent(_sprite, layer));
+
+            // ooa-godot NpcCharacter: a 6px radius around the interaction
+            // anchor, i.e. a 12x12 blocking box. Effects use radius 0.
+            if (collisionRadius > 0)
+            {
+                // Keep the blocking box inside the sprite rectangle; the atlas
+                // origin already centres normal 16x16 NPCs on the interaction
+                // anchor.
+                var boxX = Math.Max(0, _frames[0].SourceRectangle.Width / 2 - collisionRadius);
+                var boxY = Math.Max(0, _frames[0].SourceRectangle.Height / 2 - collisionRadius);
+                AddComponent(CollisionComponent.Index, new BoxCollisionComponent(
+                    new CBox(EntityPosition, boxX, boxY, 0,
+                        collisionRadius * 2, collisionRadius * 2, 16),
+                    Values.CollisionTypes.Normal));
+            }
 
             if (_frames.Length > 1)
                 AddComponent(UpdateComponent.Index, new UpdateComponent(Update));

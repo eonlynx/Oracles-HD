@@ -113,6 +113,7 @@ Phase 3/4 evidence:
 | Object anchor | Interior `2:e7` dog (`$54`) and person (`$53`) | Sprites centred on the native interaction positions |
 | Flag gate off | Boot `oracle --pos 1360,470` | `$6b:$15` Link statue absent |
 | Flag gate on | Same with `--flag FINISHEDGAME` | Statue appears right of the Maku Tree with `PALH_c7` colours |
+| NPC collision | Interior `2:e7`; hold Up toward the dog (`$54`) | Link stops at the 12x12 NPC box instead of passing through |
 
 ## 5. Known false positives / artifacts
 

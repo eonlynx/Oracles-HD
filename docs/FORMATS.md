@@ -241,6 +241,7 @@ forbiddenFlag global flag that must be clear, or -1
 roomStateMask native obj_Condition mask (skip if this bit is set in wRoomStateModifier)
 roomFlagMask  native event gate mask (bit 7 for obj_BeforeEvent/obj_AfterEvent)
 roomFlagValue required room-flag value
+collisionRadius blocking radius around the interaction anchor (0 = none)
 ```
 
 `oracleWarp` fields, after `posX;posY`:
@@ -290,6 +291,11 @@ carried on `oracleSprite`:
 
 The runtime evaluates these in `OracleFlagState.IsVisible`. The dev entry can
 set flags with `--flag FINISHEDGAME`, `--room-state N` and `--room-flags N`.
+
+`collisionRadius` follows `ooa-godot` `NpcCharacter` (`CollisionRadius=6`, a
+12x12 blocking box). It defaults to 6 for ordinary NPCs/actors and is 0 for the
+Maku eyes, flame, flower and tree decoration. The runtime adds a
+`BoxCollisionComponent` only when the radius is positive.
 
 ## 6. Atlas and manifest
 

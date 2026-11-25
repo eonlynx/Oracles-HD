@@ -240,6 +240,7 @@ public sealed class OverworldBuilder
                 interaction.ConditionMask.ToString(),
                 interaction.RoomFlagMask.ToString(),
                 interaction.RoomFlagValue.ToString(),
+                sprite.CollisionRadius.ToString(),
             }));
         }
 

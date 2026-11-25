@@ -9,7 +9,8 @@ namespace Oracles.Tools.AssetBuilder;
 public readonly record struct InteractionRule(
     int RequiresFlag,
     int ForbiddenFlag,
-    int SpritePaletteHeader);
+    int SpritePaletteHeader,
+    int CollisionRadius);
 
 public static class InteractionRules
 {
@@ -17,8 +18,17 @@ public static class InteractionRules
     {
         return (id, subId) switch
         {
-            (0x6b, 0x15) => new InteractionRule(0x14, -1, 0xc7),
-            _ => new InteractionRule(-1, -1, -1),
+            // Post-game Link statue: solid, PALH_c7 sprite palette 6.
+            (0x6b, 0x15) => new InteractionRule(0x14, -1, 0xc7, 6),
+
+            // Background/effect interactions: visible but not solid.
+            (0x87, _) => new InteractionRule(-1, -1, -1, 0), // Maku Tree eyes
+            (0x89, _) => new InteractionRule(-1, -1, -1, 0), // flame
+            (0xe5, _) => new InteractionRule(-1, -1, -1, 0), // flower/book/seedling
+            (0x71, _) => new InteractionRule(-1, -1, -1, 0), // tree/seed decoration
+
+            // Ordinary NPC/actor default from ooa-godot NpcCharacter.
+            _ => new InteractionRule(-1, -1, -1, 6),
         };
     }
 }

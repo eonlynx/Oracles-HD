@@ -41,6 +41,7 @@ Status legend:
 | Room-specific graphics (`roomGfxChanges`) | Not started | Maku Tree canopy/bottom still render black until this is imported. |
 | Objects / interactions (first pass) | Partial | 37 interaction ids composed into one atlas; positioned interactions only, default animation. `INTERAC_MAKU_TREE $87` eyes render and blink. |
 | Object flags / spawn identity | Partial | `oracleSprite` carries `interactionId/subid`, requires/forbids, `obj_Condition` and before/after room-flag gates. `$6b:$15` post-game statue is hidden by default and appears with `--flag FINISHEDGAME`. |
+| NPC collision | Partial | Ordinary NPCs/actors use the `ooa-godot` 6px radius (12x12 box); Maku eyes/flame/flower/tree decoration are non-solid. Per-NPC radii still pending. |
 | Sprite palettes 6/7 | Partial | `PALH_c7` sprite palette 6 is composed for `$6b:$15`; general per-room sprite palette application is still pending. |
 | Warps / interiors / doors (first pass) | Partial | 22 present interiors (group 2) from group-0 warps; tile, pointer-position and screen-edge warps trigger DX-HD transitions. Past group 3 and dungeons pending. |
 | Maku Tree palette (`PALH_8f`) | Done | Room `$38` uses palette header `$8f` per `makuTree.s`, not tileset `$30`. |

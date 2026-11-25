@@ -9,7 +9,8 @@ public sealed record ComposedInteraction(
     int OffsetY,
     int LoopStart,
     int RequiresFlag,
-    int ForbiddenFlag);
+    int ForbiddenFlag,
+    int CollisionRadius);
 
 /// <summary>
 /// Owns the single shared entity atlas. Both the overworld and the interior
@@ -70,7 +71,7 @@ public static class EntityAtlas
                 result[pair] = new ComposedInteraction(
                     pair.Id, pair.SubId, frameIds, durations,
                     frames[0].OffsetX - 8, frames[0].OffsetY - 16,
-                    loopStart, rule.RequiresFlag, rule.ForbiddenFlag);
+                    loopStart, rule.RequiresFlag, rule.ForbiddenFlag, rule.CollisionRadius);
             }
             catch (Exception exception)
             {

@@ -325,3 +325,18 @@ When a record is superseded, add a new one instead of editing history.
   `--flag FINISHEDGAME` with its real palette. The eventual save owner only
   needs to populate `OracleFlagState`; presentation objects keep their semantic
   id for future NPC/enemy behaviour.
+
+## ADR-032 - Oracle NPC collision radius
+
+- **Status:** accepted.
+- **Decision:** `oracleSprite` carries an importer-provided `collisionRadius`.
+  Ordinary NPCs/actors use the `ooa-godot` `NpcCharacter` default of 6 (a 12x12
+  blocking box, matching `ObjectCollisionBounds`). Background/effect
+  interactions (`$87` Maku eyes, `$89` flame, `$e5` flower/book, `$71` tree
+  decoration) use 0.
+- **Why:** the first presentation-only pass let Link walk through the dog and
+  townsfolk. The box must also stay inside `EntitySize`; DX-HD asserts that a
+  `BoxCollisionComponent` lies within the object bounds.
+- **Consequence:** NPCs block Link and each other through the existing
+  `CollisionComponent`/`SystemBody` path. Per-NPC `objectSetCollideRadii` values
+  can refine the default later without changing the object model.
