@@ -25,7 +25,7 @@ Commands: `BUILDING.md` -> Generate assets. The checks are:
 - `inspect-anim` shows headers `0,24,32` first for group `$00`;
 - no `.ani` or extra data file appears in `Data/`.
 
-Current results (commit `76659a6`, Phase 3/4 slice):
+Current results (commit `b17d2a1`, Phase 3/4 slice):
 
 | Item | Value |
 |---|---|

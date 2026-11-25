@@ -1,6 +1,6 @@
 # Progress and parity tracker
 
-Snapshot: **2026-11-25**, commit `76659a6`, Phase 3/4 vertical slice
+Snapshot: **2026-11-25**, commit `b17d2a1`, Phase 3/4 vertical slice
 (interiors, warps, Maku Tree eyes, first generic objects), base
 Links-Awakening-DX-HD v2.0.6 (`2e68849`).
 
