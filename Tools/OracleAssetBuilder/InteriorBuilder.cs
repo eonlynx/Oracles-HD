@@ -3,7 +3,12 @@ namespace Oracles.Tools.AssetBuilder;
 public sealed record InteriorBuildResult(
     int Rooms,
     IReadOnlyList<string> MapPaths,
-    IReadOnlyList<string> Warnings);
+    IReadOnlyList<string> Warnings,
+    int Interactions,
+    int Enemies,
+    int Parts,
+    int Items,
+    int Conditional);
 
 /// <summary>
 /// Builds present-day interior maps (group 2) reachable from the group-0
@@ -36,30 +41,43 @@ public sealed class InteriorBuilder
             rooms = new SortedSet<int> { onlyRoom.Value };
 
         if (rooms.Count == 0)
-            return new InteriorBuildResult(0, Array.Empty<string>(), Array.Empty<string>());
+            return new InteriorBuildResult(0, Array.Empty<string>(), Array.Empty<string>(), 0, 0, 0, 0, 0);
 
         var plan = EntityAtlas.Build(_content.Repo, _streams, _warps, _outDir, out var warnings);
         var issues = new List<string>(warnings);
         var maps = new List<string>();
         var roomBuilder = new RoomBuilder(_content, _outDir, _tilesetsDir);
+        var interactions = 0;
+        var enemies = 0;
+        var parts = 0;
+        var items = 0;
+        var conditional = 0;
 
         foreach (var room in rooms)
         {
             var roomObjects = new List<MapObjectPlacement>();
-            AddSpriteObjects(roomObjects, 2, room, plan, 0, 0);
+            var roomData = _streams.GetRoom(2, room);
+            interactions += roomData.Interactions.Count;
+            enemies += roomData.EnemyCount;
+            parts += roomData.PartCount;
+            items += roomData.ItemCount;
+            conditional += roomData.ConditionalCount;
+
+            AddSpriteObjects(roomObjects, roomData, plan, 0, 0);
 
             var result = roomBuilder.Build(2, room, false, null, options, roomObjects,
                 layout => AddWarpObjects(2, room, layout, options, issues));
             maps.Add(result.MapPath);
         }
 
-        return new InteriorBuildResult(maps.Count, maps, issues);
+        return new InteriorBuildResult(maps.Count, maps, issues,
+            interactions, enemies, parts, items, conditional);
     }
 
-    private void AddSpriteObjects(List<MapObjectPlacement> objects, int group, int room,
+    private void AddSpriteObjects(List<MapObjectPlacement> objects, RoomObjectData roomData,
         IReadOnlyDictionary<(int Id, int SubId), ComposedInteraction> plan, int offsetX, int offsetY)
     {
-        foreach (var interaction in _streams.GetRoom(group, room).Interactions)
+        foreach (var interaction in roomData.Interactions)
         {
             if (!plan.TryGetValue((interaction.Id, interaction.SubId), out var sprite))
                 continue;

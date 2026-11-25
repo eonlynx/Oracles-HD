@@ -7,9 +7,7 @@ public sealed record ComposedInteraction(
     int[] Durations,
     int OffsetX,
     int OffsetY,
-    int LoopStart,
-    int Width,
-    int Height);
+    int LoopStart);
 
 /// <summary>
 /// Owns the single shared entity atlas. Both the overworld and the interior
@@ -61,7 +59,7 @@ public static class EntityAtlas
                 result[pair] = new ComposedInteraction(
                     pair.Id, pair.SubId, frameIds, durations,
                     frames[0].OffsetX - 8, frames[0].OffsetY - 16,
-                    loopStart, frames[0].Image.Width, frames[0].Image.Height);
+                    loopStart);
             }
             catch (Exception exception)
             {

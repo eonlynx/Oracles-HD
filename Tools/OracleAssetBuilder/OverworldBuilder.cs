@@ -11,7 +11,12 @@ public sealed record OverworldBuildResult(
     int SkippedRooms,
     int WidthTiles,
     int HeightTiles,
-    int AtlasMetatiles);
+    int AtlasMetatiles,
+    int Interactions,
+    int Enemies,
+    int Parts,
+    int Items,
+    int Conditional);
 
 /// <summary>
 /// Stitches every OUTDOORS room of a group into one continuous DX-HD map.
@@ -49,6 +54,11 @@ public sealed class OverworldBuilder
         var renderers = new Dictionary<int, TilesetRenderer>();
         var usedRooms = new List<int>();
         var skipped = new List<int>();
+        var interactions = 0;
+        var enemies = 0;
+        var parts = 0;
+        var items = 0;
+        var conditional = 0;
         var composer = new AnimationComposer(_content.Animation);
         var collisionMap = new byte[width, height];
         var terrainMap = new byte[width, height];
@@ -149,8 +159,15 @@ public sealed class OverworldBuilder
                 }
             }
 
-            AddRoomObjects(mapObjects, room, gridX, gridY, layout, collisionMode,
-                streams, spritePlan, warps, warnings);
+            var roomData = streams.GetRoom(0, room);
+            interactions += roomData.Interactions.Count;
+            enemies += roomData.EnemyCount;
+            parts += roomData.PartCount;
+            items += roomData.ItemCount;
+            conditional += roomData.ConditionalCount;
+
+            AddRoomObjects(mapObjects, room, roomData, gridX, gridY, layout, collisionMode,
+                spritePlan, warps, warnings);
         }
 
         var emptyLayer = EmptyLayer(width, height);
@@ -179,17 +196,18 @@ public sealed class OverworldBuilder
 
         return new OverworldBuildResult(
             mapPath, tilesetPath, previewPath, manifestPath,
-            usedRooms.Count, skipped.Count, width, height, atlas.Count);
+            usedRooms.Count, skipped.Count, width, height, atlas.Count,
+            interactions, enemies, parts, items, conditional);
     }
 
     private void AddRoomObjects(
         List<MapObjectPlacement> mapObjects,
         int room,
+        RoomObjectData roomData,
         int gridX,
         int gridY,
         OracleContent.RoomLayout layout,
         int collisionMode,
-        RoomObjectStreams streams,
         IReadOnlyDictionary<(int Id, int SubId), ComposedInteraction> spritePlan,
         OracleWarpData warps,
         List<string> warnings)
@@ -197,7 +215,7 @@ public sealed class OverworldBuilder
         const int roomWidth = RoomWidth;
         const int roomHeight = RoomHeight;
 
-        foreach (var interaction in streams.GetRoom(0, room).Interactions)
+        foreach (var interaction in roomData.Interactions)
         {
             if (interaction.Id >= 0x200 ||
                 !spritePlan.TryGetValue((interaction.Id, interaction.SubId), out var sprite))

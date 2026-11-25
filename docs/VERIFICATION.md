@@ -32,8 +32,8 @@ Current results (commit `0af0f0b`, Phase 3/4 slice):
 | Ages group 0 | 196/196 rooms, 0 skipped, 140x112 tiles, atlas 1.566, 3.251 animations |
 | Ages group 1 | 196/196 rooms, 0 skipped, 140x112 tiles, atlas 1.646, 4.129 animations |
 | Ages present interiors (group 2) | 22 maps, 22 sprite objects, 11 exit warps, 0 importer warnings |
-| Overworld object pass | 122 sprites + 13 interior-entry warps |
-| Entity atlas | 244 frames from 38 interaction ids; Maku `$87:00` has 6 frames |
+| Overworld object pass | 101 sprites + 13 interior-entry warps |
+| Entity atlas | 220 frames from 36 interaction ids; Maku `$87:00` has 6 frames |
 | Ages group 4 | rooms `00,01,08,10,20` render with 0 missing-tile/palette warnings |
 | Seasons tileset `00` | inspect works; seasonal variants not implemented |
 
@@ -132,14 +132,18 @@ Run before each milestone commit:
 - [ ] Determinism check -> True.
 - [ ] `room --group 4 --room 01` -> no missing-tile/palette warning.
 - [ ] `interiors --game ages` -> 22 maps, 0 importer warnings.
-- [ ] Entity atlas -> 244 entries, 38 interaction ids, 6 Maku frames.
+- [ ] Entity atlas -> 220 entries, 36 interaction ids, 6 Maku frames.
 - [ ] `--oracle` launches; Link moves; no exception in stderr.
 - [ ] Enter and exit `0:66` <-> `2:e7` through the generated warps.
 - [ ] Maku eyes render and blink; palette `$8f` sign/flower colours are correct.
 - [ ] Tile animation crop differs between two frames.
 - [ ] Collision: Link stops at water/cliff.
 - [ ] Manifests updated; no generated asset staged.
+- [ ] No GB conversion arithmetic added to `InGame/` (review the diff).
+- [ ] No `.bak`/`.tmp`/debug log/dead branch from an experiment.
 - [ ] `STATUS.md` and the affected doc updated in the same commit.
+- [ ] `AUDIT.md` debt list still accurate; update it if the change moves a
+  boundary or resolves a bridge.
 
 ## 7. Validation design and limits
 

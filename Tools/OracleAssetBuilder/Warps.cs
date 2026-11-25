@@ -55,7 +55,6 @@ public sealed class OracleWarpData
     private readonly List<WarpSourceRecord>[] _sources = new List<WarpSourceRecord>[8];
     private readonly List<WarpDestinationRecord>[] _destinations = new List<WarpDestinationRecord>[8];
     private readonly Dictionary<int, HashSet<int>> _warpTiles = new();
-    private readonly Dictionary<int, Dictionary<int, int>> _facing = new();
     private readonly Dictionary<string, List<string>> _labels = new(StringComparer.Ordinal);
 
     public OracleWarpData(OracleRepo repo)
@@ -69,11 +68,9 @@ public sealed class OracleWarpData
         LoadSources(Path.Combine(repo.DataDir, "warpSources.s"));
         LoadDestinations(Path.Combine(repo.DataDir, "warpDestinations.s"));
         LoadWarpTiles(Path.Combine(repo.DataDir, "tile_properties", "warpTiles.s"), _warpTiles);
-        LoadFacingTable(Path.Combine(repo.DataDir, "tile_properties", "facingDirAfterWarp.s"), _facing);
     }
 
     public IReadOnlyList<WarpSourceRecord> Sources(int group) => _sources[group];
-    public IReadOnlyList<WarpDestinationRecord> Destinations(int group) => _destinations[group];
 
     public bool TryResolve(WarpSourceRecord source, out WarpDestinationRecord destination, out string error)
     {
@@ -130,27 +127,6 @@ public sealed class OracleWarpData
     public bool IsWarpTile(int collisionMode, int metatile)
     {
         return _warpTiles.TryGetValue(Math.Clamp(collisionMode, 0, 5), out var tiles) && tiles.Contains(metatile);
-    }
-
-    /// <summary>
-    /// Direction (DX-HD convention: 0 left, 1 up, 2 right, 3 down) after
-    /// spawning on a warp/facing tile. Returns -1 when the table has no row.
-    /// </summary>
-    public int FacingDirection(int collisionMode, int metatile)
-    {
-        if (!_facing.TryGetValue(Math.Clamp(collisionMode, 0, 5), out var table) ||
-            !table.TryGetValue(metatile, out var oracleDirection))
-            return -1;
-
-        // Oracle: 0 up, 1 right, 2 down, 3 left.
-        return oracleDirection switch
-        {
-            0 => 1,
-            1 => 2,
-            2 => 3,
-            3 => 0,
-            _ => -1,
-        };
     }
 
     private void LoadSources(string path)
@@ -341,74 +317,6 @@ public sealed class OracleWarpData
 
             if (tile > 0 && tile <= 0xFF)
                 tiles.Add(tile);
-        }
-
-        Flush();
-    }
-
-    private static void LoadFacingTable(string path, Dictionary<int, Dictionary<int, int>> target)
-    {
-        if (!File.Exists(path))
-            return;
-
-        var modes = new Dictionary<string, int>(StringComparer.Ordinal)
-        {
-            ["overworld"] = 0,
-            ["indoors"] = 1,
-            ["dungeons"] = 2,
-            ["sidescrolling"] = 3,
-            ["underwater"] = 4,
-            ["five"] = 5,
-        };
-
-        var activeModes = new List<int>();
-        var rows = new Dictionary<int, int>();
-        void Flush()
-        {
-            if (rows.Count > 0)
-                foreach (var mode in activeModes)
-                    target[mode] = new Dictionary<int, int>(rows);
-            rows.Clear();
-            activeModes.Clear();
-        }
-
-        foreach (var raw in File.ReadLines(path))
-        {
-            var line = StripComment(raw).Trim();
-            var modeMatch = Regex.Match(line, @"^@(?<name>\w+):");
-            if (modeMatch.Success)
-            {
-                if (rows.Count > 0)
-                    Flush();
-                if (modes.TryGetValue(modeMatch.Groups["name"].Value, out var id))
-                    activeModes.Add(id);
-                continue;
-            }
-
-            if (activeModes.Count == 0 || !line.StartsWith(".db", StringComparison.Ordinal))
-                continue;
-
-            var tokens = line[3..].Split(new[] { ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries);
-            if (tokens.Length < 2)
-                continue;
-
-            var tile = ParseNumber(tokens[0]);
-            if (tile == 0)
-            {
-                Flush();
-                continue;
-            }
-
-            var direction = tokens[1] switch
-            {
-                "DIR_UP" => 0,
-                "DIR_RIGHT" => 1,
-                "DIR_DOWN" => 2,
-                "DIR_LEFT" => 3,
-                _ => ParseNumber(tokens[1]),
-            };
-            if (tile > 0 && tile <= 0xFF && direction is >= 0 and <= 3)
-                rows[tile] = direction;
         }
 
         Flush();

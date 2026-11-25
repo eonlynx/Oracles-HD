@@ -9,7 +9,8 @@ public sealed record RoomObjectData(
     IReadOnlyList<RoomInteraction> Interactions,
     int EnemyCount,
     int PartCount,
-    int ItemCount);
+    int ItemCount,
+    int ConditionalCount);
 
 /// <summary>
 /// Reads the native room object stream. The macro/control-flow model follows
@@ -64,7 +65,7 @@ public sealed class RoomObjectStreams
     {
         if (!_roomLabels.TryGetValue((group, room), out var label) ||
             !_blocks.TryGetValue(label, out var block))
-            return new RoomObjectData(Array.Empty<RoomInteraction>(), 0, 0, 0);
+            return new RoomObjectData(Array.Empty<RoomInteraction>(), 0, 0, 0, 0);
 
         var interactions = new List<RoomInteraction>();
         var enemies = 0;
@@ -72,7 +73,8 @@ public sealed class RoomObjectStreams
         var items = 0;
         var visited = new HashSet<string>(StringComparer.Ordinal);
         ParseBlock(label, block, interactions, ref enemies, ref parts, ref items, visited, conditional: false);
-        return new RoomObjectData(interactions, enemies, parts, items);
+        return new RoomObjectData(interactions, enemies, parts, items,
+            interactions.Count(interaction => interaction.Conditional));
     }
 
     /// <summary>Returns true when the native obj_End terminates the whole stream.</summary>

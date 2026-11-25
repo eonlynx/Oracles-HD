@@ -78,3 +78,52 @@ For a behavioural change:
 
 A feature is complete when its data, runtime effects, timing, transitions,
 persistence and re-entry agree with the source for the supported paths.
+
+## Permanent quality gate (every milestone and commit)
+
+These rules are non-negotiable. Run the checklist before every commit; record
+exceptions in `DECISIONS.md`, not in code comments.
+
+### 1. Strict translation boundary
+
+All Game Boy / `oracles-disasm` / `ooa-godot` conversions happen in
+`Tools/OracleAssetBuilder`:
+
+- YX/tile coordinates, room grid offsets, spawn pixels and facing.
+- OAM origins, frame durations, loop indices and sprite anchors.
+- Tile slots, VRAM banks, palette slots, palette headers and PNG shade order.
+- Warp source/destination indices and map identifiers.
+
+The runtime consumes DX-HD units and mechanisms (`TileSize`, `CPosition`,
+`CSprite`, `MapTransitionSystem`, `SystemBody`). Do not add pixel, tile-id, OAM
+or palette arithmetic to `InGame/`. Behaviour/trigger logic is allowed; format
+conversion is not.
+
+### 2. No residue from failed experiments
+
+- No `.bak`, `.tmp`, `.orig`, debug logs, throwaway screenshots or scripts in
+  the repository.
+- No unused fields, methods, parameters, fake IDs or dead branches left from an
+  earlier attempt. Remove them or make them live and document why.
+- No commented-out legacy blocks.
+- Before committing: search the changed files for `TODO`, `HACK`, `debug`,
+  `Console.WriteLine` (tool output excepted), `.bak` and temporary paths.
+
+### 3. Continuous Link's Awakening cleanup
+
+Remove LA-specific code/data when its Oracle replacement exists and is verified
+(`CLEANUP.md`). The LA fallback boot/menu/HUD/audio/save remain only while they
+are the working path; do not add new LA dependencies to Oracle systems.
+
+### 4. Pre-commit checklist
+
+- [ ] Game and `OracleAssetBuilder` build with 0 errors.
+- [ ] Generated assets are reproducible and gitignored; manifests are committed.
+- [ ] No conversion logic leaked into the runtime (review the diff).
+- [ ] No failed-attempt residue (grep the diff).
+- [ ] `STATUS.md` and the affected durable document are updated in the same
+  commit; `AUDIT.md` debt items are updated if the change affects them.
+- [ ] The commit message names the milestone, not the implementation diary.
+
+The current debt list and the go/no-go for `roomGfxChanges`, past and dungeons
+are in `AUDIT.md`.

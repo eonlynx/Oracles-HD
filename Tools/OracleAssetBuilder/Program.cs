@@ -87,6 +87,8 @@ public static class Program
         var result = builder.Build(group, oracleOptions);
         Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} group {group} overworld");
         Console.WriteLine($"  rooms {result.Rooms}, skipped non-outdoors {result.SkippedRooms}");
+        Console.WriteLine($"  contents: {result.Interactions} interactions, {result.Conditional} conditional, " +
+                          $"{result.Enemies} enemies, {result.Parts} parts, {result.Items} items");
         Console.WriteLine($"  size {result.WidthTiles}x{result.HeightTiles} tiles, atlas {result.AtlasMetatiles} metatiles");
         Console.WriteLine($"  map      {result.MapPath}");
         Console.WriteLine($"  tileset  {result.TilesetPath}");
@@ -113,6 +115,8 @@ public static class Program
 
         Console.WriteLine($"OracleAssetBuilder: {content.Repo.Game} present interiors");
         Console.WriteLine($"  rooms {result.Rooms}");
+        Console.WriteLine($"  contents: {result.Interactions} interactions, {result.Conditional} conditional, " +
+                          $"{result.Enemies} enemies, {result.Parts} parts, {result.Items} items");
         foreach (var map in result.MapPaths)
             Console.WriteLine($"  map      {map}");
         foreach (var warning in result.Warnings)

@@ -7,7 +7,7 @@ Links-Awakening-DX-HD v2.0.6).
 This tool is **not** part of the game build. The game project excludes
 `Tools/**`, and generated assets are ignored by Git.
 
-## Status (Phase 2 core)
+## Status (Phase 3/4 slice)
 
 | Feature | Status |
 |---|---|
@@ -28,7 +28,11 @@ This tool is **not** part of the game build. The game project excludes
 | Animated tiles (atlas + `.map` timeline) | Done |
 | Tile collisions + terrain (`.map` sections) | Done |
 | Runtime overworld entry (`--oracle`) | Done |
-| Room objects (Maku Tree eyes, NPCs, warps) | TODO (Phase 4) |
+| Present interiors (group 2) + warps | Done for the 22 group-0-reachable rooms |
+| Room object stream (positioned interactions) | Partial (default animation; enemies/parts/items counted only) |
+| Interaction OAM atlas + shared entity plan | Done |
+| Maku Tree `$87` eyes + blink | Done |
+| `roomGfxChanges`, enemies, past, dungeons | TODO |
 
 ## Animated tiles: resolved
 
@@ -61,6 +65,10 @@ dotnet run --project Tools/OracleAssetBuilder -- room --game ages --room 39
 # Stitch every OUTDOORS room of a group into one continuous map
 dotnet run --project Tools/OracleAssetBuilder -- overworld --game ages
 
+# Build present-day interiors reachable from group 0, with warps and objects
+dotnet run --project Tools/OracleAssetBuilder -- interiors --game ages
+dotnet run --project Tools/OracleAssetBuilder -- interiors --game ages --room e7
+
 # Print a tileset's tables
 dotnet run --project Tools/OracleAssetBuilder -- inspect --game ages --tileset 00
 
@@ -77,6 +85,7 @@ Outputs:
 - `Data/Maps/oracle_<game>_g<group>_r<room>.map`
 - `Data/Maps/Tilesets/oracle_<game>_t<tileset>.png` (1024x64 at 16px/metatile)
 - `Data/Maps/Previews/*.png` (160x128 per room, 2240x1792 for the Ages overworld)
+- `Data/Map Objects/oracle_<game>_entities.png` + `.atlas` (shared interaction atlas)
 - `*.manifest.json` with SHA-256 of every input and output
 
 ## Decode rules that are easy to get wrong

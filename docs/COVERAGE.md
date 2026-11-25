@@ -14,7 +14,7 @@ a system is implemented.
 | Present interiors / underwater (group 2) | 256 room slots | 22 maps | Reachable from group-0 warps; 10x8; group 3 not generated. |
 | Dungeon rooms | groups 4/5 | 5 sample rooms | No floor layouts; 10x8 / 15x11 storage. |
 | Enemies / bosses (files) | 37 Ages + 71 common = 108 | 0 | Bosses are included in these files. |
-| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | 38 ids / 144 placements | Positioned interactions with default animation; Maku `$87` renders/blinks. Scripts, facing and extra graphics pending. |
+| Interactions / NPCs (files) | 152 Ages + 63 common = 215 | 36 ids / 123 placements | Positioned interactions with default animation; Maku `$87` renders/blinks. Scripts, facing and extra graphics pending. |
 | Warps / doors | `warpSources.s`, `warpDestinations.s`, `warpTiles.s` | 13 entry + 11 exit | Group-0 tile/pointer/edge sources; present interiors only. |
 | Items / treasure behaviours (files) | 3 Ages + 22 common = 25 | 0 | Treasure IDs are `$63` entries in `treasureObjectData` (ROM_DATA_FORMATS section 5.4). |
 | Parts / effects (files) | 41 Ages + 45 common = 86 | 0 | Particles, projectiles, helpers. |
@@ -25,16 +25,21 @@ a system is implemented.
 | Audio | `audio/ages/`, `code/audio.s` | 0 Oracle tracks | LA `awakening.gbs` still used. |
 | Save / progression | SRAM `0x550` x 3 files | 0 | LA save layout still used. |
 
-### Present interaction pass (38 ids)
+### Present interaction pass (36 ids)
 
 The first pass composes every positioned interaction reachable from the present
 overworld and the 22 present interiors. IDs are listed for traceability; names
 come from `objectGfxHeaders.s`.
 
 ```
-2e 34 36 37 39 3a 3b 3c 3d 3f 41 44 46 47 48 49 4c 53 54 59 5c 5d
-65 66 71 72 80 83 87 89 9a b6 c2 c8 cd d5 e1 e5
+2e 36 37 39 3a 3b 3c 3d 3f 41 44 46 47 48 49 4c 53 54 59 5c 5d
+65 66 72 80 83 87 89 9a b6 c2 c8 cd d5 e1 e5
 ```
+
+`$34` and `$71` are skipped for now: their OAM selects palette 6/7, which is a
+room/object sprite palette not imported yet. The same capability filter hides
+the post-game Link statue `$6b:$15` (palette 6, `GLOBALFLAG_FINISHEDGAME`); it
+must only appear after the global-flag/save system exists.
 
 - `87` is the Maku Tree face (6 OAM frames, animated).
 - `53`/`54` are the Mamamu dog and owner in `2:e7`.

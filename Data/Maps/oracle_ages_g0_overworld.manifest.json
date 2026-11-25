@@ -228,10 +228,6 @@
       "sha256": "76d0a5bd1e50762c6ca53e3f27e625a8fb0379aa4ec8cf4fbb06cf070d61e22f"
     },
     {
-      "path": "data/ages/tile_properties/facingDirAfterWarp.s",
-      "sha256": "a3ad1136a5b8e8a57a39729138e814fd08e3cea7b65741249a9d7497ca636b9c"
-    },
-    {
       "path": "data/ages/tile_properties/warpTiles.s",
       "sha256": "179e4b77a3b93790902fd20f9bbc4f361c4294122d2d65ecec3345766f5a2942"
     },
@@ -275,11 +271,11 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_entities.atlas",
-      "sha256": "b53548d928fee98c6009b0292e56786b93e2c22cd5f51d84ff0fdaf428d71340"
+      "sha256": "6fe1fb6d93d6bf8c979299068010ec8bef715fc972030e400362bde7ecfbe1a5"
     },
     {
       "path": "../Map Objects/oracle_ages_entities.png",
-      "sha256": "b23a99726e9daeac218077e3d844e8aaa0db7eec891c791a6c3171b5f37190cb"
+      "sha256": "f0469970e371328ace2ac24d658968e0917c4f5f823748bd0ec9c636906433f1"
     },
     {
       "path": "Previews/oracle_ages_g0_overworld.png",
@@ -291,7 +287,7 @@
     },
     {
       "path": "oracle_ages_g0_overworld.map",
-      "sha256": "d8916a0952897d3b756802455248fe6ee7e5ac38fd71dea5a0f55d45e6c5ad3a"
+      "sha256": "1a8d7b4c1e91def79e92698ee050f31aec1fd80bf79cae986fdab6b89a3aa838"
     }
   ]
 }

@@ -17,7 +17,8 @@ duplicating them.
 
 | If you are changing... | Read |
 |---|---|
-| Fidelity, evidence order, definition of done | `PROJECT_PRINCIPLES.md` |
+| Fidelity, evidence order, definition of done, pre-commit gate | `PROJECT_PRINCIPLES.md` |
+| Abstraction debt, boundary audit, go/no-go | `AUDIT.md` |
 | What is done / partial / missing, map coverage | `STATUS.md` |
 | Phases, acceptance criteria, next tasks | `ROADMAP.md` |
 | Engine layers, runtime entry, planned contracts | `ARCHITECTURE.md` |

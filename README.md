@@ -104,6 +104,7 @@ oracles-disasm  ->  Tools/OracleAssetBuilder  ->  Data/Maps/*.map
 - [`docs/PROJECT_PRINCIPLES.md`](docs/PROJECT_PRINCIPLES.md) - fidelity, evidence order, definition of done.
 - [`docs/STATUS.md`](docs/STATUS.md) - parity/progress tracker.
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) - engine layers, runtime entry, planned contracts.
+- [`docs/AUDIT.md`](docs/AUDIT.md) - abstraction boundary audit, debt and go/no-go.
 - [`docs/FORMATS.md`](docs/FORMATS.md) - disassembly to `.map`/atlas formats.
 - [`docs/DECISIONS.md`](docs/DECISIONS.md) - ADRs and their evidence.
 - [`docs/COVERAGE.md`](docs/COVERAGE.md) - content inventory (enemies, NPCs, items, scripts).

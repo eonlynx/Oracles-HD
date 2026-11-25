@@ -361,7 +361,6 @@ public sealed class OracleContent
         Add(Path.Combine(Repo.DataDir, "warpSources.s"));
         Add(Path.Combine(Repo.DataDir, "warpDestinations.s"));
         Add(Path.Combine(Repo.DataDir, "tile_properties", "warpTiles.s"));
-        Add(Path.Combine(Repo.DataDir, "tile_properties", "facingDirAfterWarp.s"));
         Add(Path.Combine(Repo.DataDir, "interactionData.s"));
         Add(Path.Combine(Repo.DataDir, "interactionAnimations.s"));
         Add(Path.Combine(Repo.DataDir, "interactionOamData.s"));

@@ -37,11 +37,13 @@ namespace ProjectZ.InGame.GameObjects.Things
             _durations = LoadDurations(durations, _frames.Length);
             _loopStart = Math.Clamp(loopStart, 0, _frames.Length - 1);
 
-            // The importer bakes the OAM bounding-box origin. DX-HD map
-            // coordinates are already the room playfield (the GB engine's +$10
-            // is the status-bar offset), so draw directly at object + origin.
+            // DX-HD's draw pool sorts by EntityPosition and expects the sprite
+            // top-left there; negative EntitySize offsets cull incorrectly.
+            // Keep the composed top-left for now and record the tall-actor
+            // depth limitation in the audit instead of adding a second anchor.
             EntityPosition = new CPosition(posX + offsetX, posY + offsetY, 0);
-            EntitySize = new Rectangle(0, 0, _frames[0].SourceRectangle.Width, _frames[0].SourceRectangle.Height);
+            EntitySize = new Rectangle(0, 0,
+                _frames[0].SourceRectangle.Width, _frames[0].SourceRectangle.Height);
 
             _sprite = new CSprite(_frames[0], EntityPosition);
             AddComponent(DrawComponent.Index, new DrawCSpriteComponent(_sprite, layer));

@@ -6,11 +6,10 @@ namespace Oracles.Tools.AssetBuilder;
 public sealed record OamBlock(int Y, int X, int Tile, int Flags);
 
 /// <summary>
-/// Native animation row: duration, OAM-pointer byte offset, general parameter.
-/// The engine reads byte 1 into the OAM table index and byte 2 into
-/// Interaction.animParameter; do not swap them.
+/// Native animation row. The engine reads byte 1 into the OAM table index;
+/// byte 2 is Interaction.animParameter, which is currently unused.
 /// </summary>
-public sealed record InteractionFrame(int Duration, int PointerOffset, int Parameter);
+public sealed record InteractionFrame(int Duration, int PointerOffset);
 
 public sealed record InteractionAnimation(InteractionFrame[] Frames, int LoopStart, string Label);
 
@@ -50,7 +49,6 @@ public sealed class InteractionSprites
     private static readonly Regex HexByteRegex = new(
         @"\$(?<value>[0-9a-fA-F]{1,2})", RegexOptions.Compiled);
 
-    private readonly string _game;
     private readonly string _gfxDir;
     private readonly Dictionary<int, InteractionGraphics> _inlineData = new();
     private readonly Dictionary<string, List<InteractionGraphics>> _subidData = new(StringComparer.Ordinal);
@@ -65,7 +63,6 @@ public sealed class InteractionSprites
 
     public InteractionSprites(OracleRepo repo)
     {
-        _game = repo.Game;
         _gfxDir = repo.GfxCompressibleDir;
 
         LoadInteractionData(Path.Combine(repo.DataDir, "interactionData.s"));
@@ -82,6 +79,12 @@ public sealed class InteractionSprites
         durations = Array.Empty<int>();
         loopStart = 0;
         if (!TryGetGraphics(interactionId, subid, out var graphics) || graphics.GfxHeader == 0)
+            return false;
+
+        // Palettes 6/7 are room/object sprite palettes loaded at runtime; the
+        // importer only has the standard 0-5 set. Do not fall back to a wrong
+        // palette (e.g. the post-game Link statue $6b:$15 uses palette 6).
+        if (graphics.Palette >= _palettes.Length)
             return false;
 
         var animationTable = $"interaction{interactionId:x2}Animations";
@@ -117,6 +120,13 @@ public sealed class InteractionSprites
 
         if (blocksByFrame.Count == 0)
             return false;
+
+        // Skip the whole interaction if any OAM block selects palette 6/7;
+        // a partial sprite would be worse than omitting it.
+        foreach (var blocks in blocksByFrame)
+            foreach (var block in blocks)
+                if (((graphics.Palette ^ (block.Flags & 0x07)) & 0x07) >= _palettes.Length)
+                    return false;
 
         var minX = int.MaxValue;
         var minY = int.MaxValue;
@@ -481,8 +491,9 @@ public sealed class InteractionSprites
                 var values = HexByteRegex.Matches(line)
                     .Select(match => ParseHex(match.Groups["value"].Value))
                     .ToArray();
+                // byte 2 (animParameter) is intentionally ignored for now.
                 for (var i = 0; i + 2 < values.Length; i += 3)
-                    frames.Add(new InteractionFrame(values[i], values[i + 1], values[i + 2]));
+                    frames.Add(new InteractionFrame(values[i], values[i + 1]));
             }
         }
 
@@ -544,14 +555,13 @@ public sealed class InteractionSprites
         if (!data.TryGetValue("standardSpritePaletteData", out var colors) || colors.Length < 12)
             throw new InvalidDataException($"{path}: standardSpritePaletteData is missing or too short.");
 
-        var palettes = new Rgba[8][];
+        // Palettes 0-5 are the standard sprite set. 6/7 are room/object
+        // palettes and are rejected by TryCompose until that context exists.
+        var palettes = new Rgba[6][];
         for (var i = 0; i < palettes.Length; i++)
         {
             if ((i + 1) * 4 > colors.Length)
-            {
-                palettes[i] = palettes[1];
-                continue;
-            }
+                throw new InvalidDataException($"{path}: standardSpritePaletteData has no palette {i}.");
 
             palettes[i] = new[]
             {

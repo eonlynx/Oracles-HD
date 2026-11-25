@@ -49,10 +49,6 @@
       "sha256": "8a2ec0a6fe00dcad6eee49010642ab1c8710b0f504fe4daf3a8121a3bf206d66"
     },
     {
-      "path": "data/ages/tile_properties/facingDirAfterWarp.s",
-      "sha256": "a3ad1136a5b8e8a57a39729138e814fd08e3cea7b65741249a9d7497ca636b9c"
-    },
-    {
       "path": "data/ages/tile_properties/warpTiles.s",
       "sha256": "179e4b77a3b93790902fd20f9bbc4f361c4294122d2d65ecec3345766f5a2942"
     },
@@ -128,11 +124,11 @@
   "outputs": [
     {
       "path": "../Map Objects/oracle_ages_entities.atlas",
-      "sha256": "b53548d928fee98c6009b0292e56786b93e2c22cd5f51d84ff0fdaf428d71340"
+      "sha256": "6fe1fb6d93d6bf8c979299068010ec8bef715fc972030e400362bde7ecfbe1a5"
     },
     {
       "path": "../Map Objects/oracle_ages_entities.png",
-      "sha256": "b23a99726e9daeac218077e3d844e8aaa0db7eec891c791a6c3171b5f37190cb"
+      "sha256": "f0469970e371328ace2ac24d658968e0917c4f5f823748bd0ec9c636906433f1"
     },
     {
       "path": "Previews/oracle_ages_g2_ree.png",
