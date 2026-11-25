@@ -20,6 +20,7 @@ Status legend:
 | Runtime startup | Done | `--oracle` boots directly into the generated overworld; opt-in `ORACLE_PERF_TRACE=1` timestamps startup/map loads (`docs/PERFORMANCE.md`). |
 | Map metadata (`#oracle-map v1`) | Done | Group/era/kind/room size/grid/room/floor/dungeon/camera; parsed into `Map.OracleInfo`. |
 | Camera policy | Done | DX-HD smooth follow everywhere, including houses; `Map.CameraTarget` only for explicit gameplay/puzzle locks. |
+| DX-HD native alignment | Audit complete / refactor pending | Entities still use `oracleSprite` presentation only; shadows, bodies, light/darkness, enemy/chest/door components are native but unused. P0 actor+shadow and P0 room-light refactor are the gate before new enemies/dungeons. `AUDIT.md` section 9 / `ARCHITECTURE.md` section 8. |
 | Multiplatform (Linux/macOS/OpenGL/Vulkan/DX12) | Blocked | Upstream v2.0.6 is WindowsDX-only; sources not in the repository. See `PLATFORM.md`. |
 | Legacy LA cleanup | Not started | Policy in `CLEANUP.md`; LA data still backs the fallback boot/menu. |
 

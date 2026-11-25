@@ -372,3 +372,247 @@ contract that solves one of the next four systems better than our current plan?
    neighbour rule: deterministic creation state only, no random/child pop-in.
 5. Warp modes, dungeon floors and large rooms; Seasons content after the pack
    boundary.
+## 9. Comparative audit against the original DX-HD engine (2026-11-25)
+
+This addendum compares the current Oracle runtime with the neighbouring base
+checkout at `..\Links-Awakening-DX-HD`. It is a read-only audit: no entity,
+lighting or map behaviour is changed by this section. Its purpose is to stop
+building a parallel presentation/physics layer and reuse the components that
+already ship with DX-HD.
+
+### 9.1 Method and baseline
+
+The comparison used the actual base files, not a summary:
+
+- `InGame/GameObjects/Base/Components/*`
+- `InGame/GameObjects/Base/Systems/SystemBody.cs`
+- `InGame/GameObjects/Things/ObjSprite.cs`
+- `InGame/GameObjects/NPCs/ObjPersonNew.cs`, `ObjMonkey.cs`, `ObjMarin.cs`
+- `InGame/GameObjects/Enemies/EnemyOctorok.cs`
+- `InGame/GameObjects/ObjLink.cs`
+- `InGame/Map/Map.cs`, `MapManager.cs`, `ObjectManager.cs`, `TileMap.cs`
+- `InGame/GameObjects/Dungeon/ObjDungeonBlacker.cs`,
+  `ObjDungeonBlackRoom.cs`, `ObjRoomDarkener.cs`
+- `InGame/GameObjects/Things/ObjLight.cs`, `ObjLightSprite.cs`, `ObjLamp.cs`,
+  `ObjShadowSetter.cs`, `ObjShadowDisabler.cs`, `ObjDoor.cs`,
+  `ObjOverworldTeleporter.cs`, `ObjChest.cs`
+- `InGame/SaveLoad/SaveLoadMap.cs`, `MapData.cs`
+- `InGame/Things/GameManager.cs`
+
+The base and Oracle `InGame/GameObjects/Base/Components` trees are
+**byte-identical**: only `SystemBody.cs` has an Oracle addition (the tile-solid
+hook). `Map.cs` adds Oracle collision/terrain/metadata; `MapManager.cs` adds
+tile-animation updates; `ObjectManager.cs` only adds perf timers and a cast.
+The component vocabulary is therefore intact and available; the divergence is
+how Oracle objects and maps *use* it.
+
+### 9.2 Verdict
+
+| Area | Current Oracle state | Base DX-HD mechanism | Severity |
+|---|---|---|---|
+| Actor shadows | `oracleSprite` adds no shadow component | `BodyDrawShadowComponent`, `DrawShadowCSpriteComponent`, `DrawShadowSpriteComponent`; `Map.UseShadows`; `ObjectManager.DrawShadow` + `GameManager` blur pass | **Critical** |
+| Tall-actor Y-sort | `oracleSprite` anchors `EntityPosition` at the OAM top-left; comment in code admits the depth limitation | Actors put `EntityPosition` at their feet and use `BodyDrawComponent`/negative `EntitySize`; `DrawComponent.CompareTo` sorts by `Layer` then `Position.Y` | **Critical** |
+| Physics / body | Oracle actors have no `BodyComponent`; scripts write `EntityPosition` directly | `BodyComponent` + `SystemBody` gravity, velocity, field state, collision, Z, water/grass | **Critical** |
+| NPC interaction | `oracleSprite` has no `InteractComponent`/`KeyChangeListener` | `ObjPersonNew`/`ObjMonkey` attach body, collision, interact, animation and shadow | High |
+| Enemy combat | `EnemyAtlas.AddPlacements` emits `oracleSprite` only | `EnemyOctorok` uses Body, Ai, DamageField, Hittable, Pushable, BaseAnimation, BodyDraw and DrawShadow | **Critical** |
+| Room light/atmosphere | Oracle maps never emit light objects and never set `Map.UseLight`; `OracleRoomRuntime` only dispatches music/minimap no-ops | `ObjDungeonBlacker` sets `UseLight/LightColor`; `ObjRoomDarkener`/`ObjDungeonBlackRoom` + `ObjLamp`/`ObjLight` drive the native light pass | **Critical** |
+| Shadow tuning | no `shadowSetter`/`shadowDisabler` placements | `ObjShadowSetter`/`ObjShadowDisabler` mutate `Map.ShadowHeight`/`ShadowRotation`/`UseShadows` | High |
+| Doors/chests/warps | `oracleWarp` and `oracleTimePortal` poll Link every Update | `ObjDoor`, `ObjOverworldTeleporter`, `ObjChest` use native `ObjectCollisionComponent`/`InteractComponent` and transition modes | High |
+| Map format | native `.map` v3 + appended `#oracle-*` sections; `.map.data` not generated | native `.map` v3, `.map.data` (dig map), object templates | Low/medium |
+| Room lifecycle | custom `OracleRoomRuntime` tracks stitched-map rooms and dispatch | native load = `LoadMapFile` -> `Objects.LoadObjects` -> `FinishLoadingMap`; room-sized maps | Medium (continuous map needs a room host) |
+| Tile collision | `Map.CollisionMap` is consumed by `SystemBody.Collision` (good), but only actors with a body benefit | base uses collider objects; our tile hook is a native-facing extension | Medium |
+| Palette/visual data | tiles are baked into the atlas at import time | native `BackgroundPaletteState`/palette offset fades; map light shader | Medium |
+
+The current `oracleSprite` is not an NPC/enemy host. It is a **composed
+animation presenter** with an optional static collision box. That is useful for
+simple scenery and cutscene-only actors, but it cannot inherit native shadows,
+body physics, combat, interaction or foot outlines.
+
+### 9.3 Native mechanisms we should inherit
+
+**Shadows.** `DrawComponent.CompareTo` orders by `Layer` and then
+`Position.Y`; `ComponentDrawPoolNew` partitions and sorts the visible pool.
+`BodyDrawShadowComponent` uses the body's Z and the map's
+`ShadowHeight`/`ShadowRotation`; `DrawShadowCSpriteComponent` draws a silhouette
+of a `CSprite`; `DrawShadowSpriteComponent` draws an explicit shadow sprite.
+`GameManager.DrawGame` renders the shadow mask into a render target, blurs it
+and assigns `ObjectManager.ShadowTexture`; `ObjectManager.Draw` multiplies the
+shadow over the map. This is why native NPCs and enemies have contact shadows
+without per-object shadow assets.
+
+**Lighting and atmosphere.** `Map` owns `UseLight`, `LightColor`, `LightState`,
+`UseShadows`, `ShadowHeight` and `ShadowRotation`.
+`ObjDungeonBlacker`/`houseBlacker`/`caveBlacker` set `UseLight` and
+`LightColor`. `ObjLight` and `ObjLightSprite` add a `LightDrawComponent`; `ObjLamp`
+does the same and tags itself `Lamp`. `ObjRoomDarkener` counts tagged lamps in
+its room and blends a black light overlay; `ObjDungeonBlackRoom` animates a
+black/blur overlay and can save its state through a key. `GameManager.DrawGame`
+runs `MapManager.DrawLight` and the native `LightShader` when `UseLight` is set.
+`ObjShadowSetter`/`ObjShadowDisabler` tune the shadow pass. `ObjFog`,
+`ObjBackgroundColor`, `ObjTransition` and `ObjColorShift` cover other native
+screen/atmosphere effects.
+
+**Bodies and interaction.** `ObjPersonNew` adds `BodyComponent`,
+`BodyCollisionComponent`, `InteractComponent`, `AnimationComponent`,
+`BodyDrawComponent` and `BodyDrawShadowComponent`. `EnemyOctorok` adds
+`BodyComponent`, `AiComponent`, `DamageFieldComponent`, `HittableComponent`,
+`PushableComponent`, `BaseAnimationComponent`, `BodyDrawComponent` and
+`DrawShadowComponent`, plus `AiDamageState`/`AiFallState`. `ObjDoor` uses
+`ObjectCollisionComponent`; `ObjChest` uses `InteractComponent` or
+`HittableComponent`; `ObjOverworldTeleporter` uses `ObjectCollisionComponent`
+plus a hole collision.
+
+**Map data.** The base `.map` is version 3: offset, tile map, object-type table,
+object rows. The optional `.map.data` is the **dig map**, not lighting or room
+metadata. Native object templates are already registered in our
+`GameObjectTemplates.cs` (`door`, `ddoor`, `chest`, `item`, `teleporter`,
+`overworldTeleporter`, `light`, `spriteLight`, `roomDarkener`,
+`dungeonBlackRoom`, `dungeonBlacker`, `shadowSetter`, `shadowDisabler`, ...).
+Our importer never emits them.
+
+### 9.4 Why Oracle objects do not inherit this today
+
+1. **No body, therefore no native shadow/physics/field state.** `ObjOracleSprite`
+   attaches only `DrawComponent`, optional `UpdateComponent` and an optional
+   `BoxCollisionComponent`. `BodyDrawShadowComponent` requires a `BodyComponent`;
+   `BodyDrawComponent` requires a body; `SystemBody` only moves bodies.
+2. **Wrong anchor.** `ObjOracleSprite` does
+   `EntityPosition = pos + OAM offset`, `EntitySize = (0,0,w,h)`. The draw pool
+   therefore sorts the object by the top of its composed OAM, not by its feet.
+   Tall NPCs overlap the player incorrectly. The code comment explicitly calls
+   this a limitation.
+3. **All Oracle actors share `Values.LayerPlayer`.** The importer always emits
+   layer `2`; it does not parse the interaction OAM priority/foreground bits.
+   Ground/overhead props cannot sort into `LayerBottom`/`LayerTop`.
+4. **Enemies are presentation only.** `EnemyAtlas.AddPlacements` emits
+   `oracleSprite` rows: no `AiComponent`, `HittableComponent`, `DamageField`,
+   `Pushable`, or `BodyComponent`. The Octorok can animate but cannot move, be
+   hit, push or leave a shadow.
+5. **Room light never turns on.** Oracle maps contain no `dungeonBlacker`,
+   `roomDarkener`, `light` or `shadowSetter` objects. `Map.UseLight` remains
+   false and no `LightDrawComponent` exists. `PART_DARK_ROOM_HANDLER $08` and
+   the dungeon `DARK_BIT` are imported as audit data at most, not mapped to
+   native light components. `roomDarkener` already implements the torch-count
+   blend; we are not using it.
+6. **Warps/portals use custom polling.** `ObjOracleWarp.Update` and
+   `ObjOracleTimePortal.Update` inspect Link's feet/facing every frame. Native
+   `ObjDoor`/`ObjOverworldTeleporter` receive `ObjectCollisionComponent` events
+   and have source transition modes. The custom code duplicates trigger
+   semantics and does not participate in native collision filters.
+7. **Room effects are a switch, not objects.** `OracleRoomRuntime` dispatches
+   `roomSpecificCode` handlers through `OracleRoomEntryEffects`; most are music
+   or minimap no-ops. A room cannot set `UseLight`, spawn a light, or tune
+   shadows because the effect model has no such owner.
+8. **Tile changes are a parallel load pass.** `OracleTileChangeCatalog` writes
+   `TileMap.ArrayTileMap` and collision/terrain from a side table. It is
+   source-cited and useful, but it is a second room-load path. The native
+   alternative is a map variant or a tiny map object that performs the write;
+   in a continuous map the catalog is acceptable only as an explicit bridge.
+
+### 9.5 Re-alignment plan (bounded, in order)
+
+**P0.1 - Actor host: body, anchor, shadow, animation.**
+
+- Refactor `ObjOracleSprite` (or introduce `ObjOracleActor`) so the anchor is
+  the **feet**: `EntityPosition` at the native interaction anchor, negative
+  `EntitySize` for culling, `CSprite` positioned at the anchor with per-frame
+  draw offset.
+- Add `BodyComponent` (or a minimal body for stationary NPCs),
+  `BodyDrawComponent`, `BodyDrawShadowComponent` and
+  `AnimationComponent`/`BaseAnimationComponent`. Keep the imported frame
+  timeline; drive `CSprite` through the native animation component rather than
+  a private frame counter.
+- Add `BodyCollisionComponent`/`InteractComponent` for talkable NPCs and
+  `KeyChangeListenerComponent` for save-key-driven variants. Keep
+  `OracleVisibilityEvaluator` as a spawn gate only.
+- Move script `applySpeed`/jump/Z writes from `EntityPosition` to
+  `Body.VelocityTarget` / `Body.Velocity.Z`; let `SystemBody` apply gravity,
+  collision and field state. `SetActorZ` becomes body Z, not a negative sprite
+  offset.
+- Acceptance: Maku audience/bear/rabbit and Ralph show contact shadows; a tall
+  NPC correctly overlaps Link; no culling regressions; scripts still complete.
+
+**P0.2 - Native room atmosphere and lights.**
+
+- Import Oracle darkness/light data into map objects:
+  - `PART_DARK_ROOM_HANDLER $08` and `wNumTorchesLit` -> `roomDarkener` plus
+    `ObjLamp`-tagged torches, or `dungeonBlackRoom` for the one-shot reveal.
+  - dungeon `DUNGEONROOMPROPERTY_DARK_BIT` / room dark flag -> `dungeonBlacker`
+    or `caveBlacker` with source color/alpha.
+  - lightable torches -> native `ObjLight`/`ObjLightSprite`/`ObjLamp` with
+    `LightDrawComponent` and `Tags = Lamp`.
+  - source shadow overrides -> `shadowSetter`/`shadowDisabler`.
+- Emit these as normal map objects through `DxMapWriter`; do not add a second
+  room-light runtime. `Map.UseLight`, `LightColor` and `LightState` then flow
+  through the existing `GameManager` shader.
+- Acceptance: a known dark room (e.g. `5:$a8` / `5:$ed` from the imported dark
+  room table) darkens; lighting torches raises the native lamp count; the light
+  pass visibly changes; Maku daytime remains unchanged.
+
+**P1.1 - Enemy hosts.**
+
+- Replace enemy `oracleSprite` rows with per-family native hosts. First:
+  `ObjOracleOctorok` using `BodyComponent`, `AiComponent`, `AiDamageState`,
+  `HittableComponent`, `DamageFieldComponent`, `PushableComponent`,
+  `BaseAnimationComponent`, `BodyDrawComponent` and `DrawShadowComponent`.
+- Keep `EnemyAtlas` as the frame source; the host owns state/AI/collision.
+- Do not reuse `EnemyOctorok` AI blindly: it is LA behavior/animations. Reuse
+  its component wiring and port Oracle's source state machine.
+- Acceptance: Octorok walks, shoots, takes damage/knockback, uses tile
+  collision, and casts a shadow.
+
+**P1.2 - Doors, chests, teleporters.**
+
+- Map Oracle warp transition bytes to the existing `ObjDoor` modes (`0..7`)
+  and use `ObjectCollisionComponent`; use `overworldTeleporter` where the
+  native template matches.
+- Map Oracle item/chest placements to `chest`/`item` native templates instead
+  of leaving `RoomItem` as a count.
+- Keep a thin `ObjOracle*` adapter only where the source behavior is truly
+  Oracle-specific; the adapter must attach native components, not poll the
+  player itself.
+
+**P2.1 - Map/room ownership.**
+
+- Keep native `.map` v3 and `.map.data`; keep `#oracle-map v1` only for
+  identity (game/group/era/kind/grid/room/floor/dungeon). Move behaviour out of
+  `#oracle-room-effects` and the custom effect switch into native objects.
+- Keep `OracleRoomRuntime` as the continuous-map room host (base maps are
+  room-sized; our stitched overworld still needs a room identity/session).
+  Narrow it to: resolve room, publish entry, dispatch scripts/visibility, and
+  apply explicit bridge data. It must not own sprite presentation, physics,
+  light or shadows.
+- Keep `Map.CollisionMap` only because `SystemBody` consumes it; it is a native
+  map extension, not a second collider layer. Every new Oracle actor must have a
+  body so it inherits this path.
+- `singleTileChanges`: prefer baked per-state map variants for persistent room
+  flags; if a runtime write is unavoidable in the continuous map, make it a
+  small map object/room-load owner and retire the global catalog once variants
+  exist.
+- Do not replace DX-HD `GameObject`/`ObjectManager` with an ECS.
+
+**P2.2 - Verification matrix.**
+
+Add before/after captures for: Maku present, Maku past, a cave/dark room with
+torches, a dungeon floor, Octorok, a tall NPC overlapping Link, a portal, and a
+door transition. Measure shadow/light passes with `ORACLE_PERF_TRACE=1`; do not
+accept a visual gain that adds an unmeasured full-screen pass per room.
+
+### 9.6 What not to do
+
+- Do not add another sprite/entity abstraction beside `GameObject`.
+- Do not add a second light/shadow shader or a custom room-colour table when
+  `LightShader`/`LightDrawComponent`/`Map.UseLight` already exist.
+- Do not keep `oracleSprite` as the enemy/chest/door host once a native host
+  exists.
+- Do not encode room IDs/coordinates/colours in runtime branches.
+- Do not port LA enemy AI as if it were Oracle AI; port the component wiring and
+  the Oracle source state machine.
+- Do not remove the continuous map to copy base's room-sized map lifecycle;
+  keep the room host, but make it thin.
+
+### 9.7 Audit status
+
+This section is a **NO-GO gate** for new enemy/dungeon features until P0.1 and
+P0.2 are green. The current Maku palette/tile-change fixes remain valid; they
+are data fixes, not a substitute for native actor/room integration.
