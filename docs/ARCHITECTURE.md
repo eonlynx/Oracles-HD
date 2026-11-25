@@ -28,6 +28,7 @@ SHA-256 of inputs and outputs.
 | Game state | `GameManager` | Equipment, health, overlays, systems, save manager. |
 | World | `MapManager`, `Map`, `TileMap`, `ObjectManager` | DX-HD large-map model; Oracle data is a normal map. |
 | Physics | `SystemBody`, `ObjectManager.Collision` | Object collisions plus the new tile collision test. |
+| Oracle state | `OracleFlagState` (temporary) | 0x80-ish global flags, one room-flag byte, room-state modifier; session-only. Replaced by `OracleSessionState` in the next block (AUDIT section 7). |
 | Collision/terrain data | `Map.CollisionMap`, `Map.TerrainMap` | Loaded from the `.map` Oracle sections. |
 | Tile animation | `Map.TileAnimations`, `TileAnimation` | Swaps atlas indices; no extra files. |
 | UI | `OverlayManager`, `Pages/`, `Interface/` | Still LA-shaped; to be replaced. |
@@ -45,10 +46,10 @@ On the first update after resources finish loading, `Game1.Update`:
 `StartNewGame` selects `Game1.OracleStartMap` (default
 `oracle_ages_g0_overworld.map`) and spawns Link at
 `Game1.OracleStartPosition` (default the centre of room `0x39`). The
-development flags `--room e7` and `--pos x,y` override the map and position. It
-uses the existing `MapTransitionSystem.LoadMapFromFile`, so camera setup and the
-first fade are the DX-HD paths. The switch is development-only; no menu entry
-was added.
+development flags `--room e7`, `--pos x,y` and `--map <file>.map` override the
+map and position. It uses the existing `MapTransitionSystem.LoadMapFromFile`, so
+camera setup and the first fade are the DX-HD paths. The switch is
+development-only; no menu entry was added.
 
 ## 4. Engine additions
 
@@ -63,8 +64,11 @@ was added.
 | `InGame/Things/GameManager.cs` | Oracle map/position selection in `StartNewGame`. |
 | `Game1.cs`, `Program.cs` | `--oracle`, `--room`, `--pos` development entry. |
 | `InGame/GameObjects/Things/ObjOracleWarp.cs` | Tile/facing and edge warp trigger; routes through `MapTransitionSystem`. |
-| `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames from the entity atlas with a map-embedded timeline. |
-| `InGame/GameObjects/GameObjectTemplates.cs` | Registers `oracleWarp` and `oracleSprite`; no parallel object system. |
+| `InGame/GameObjects/Things/ObjOracleSprite.cs` | Draws composed OAM frames; source-derived collision, flag/entry gates. |
+| `InGame/GameObjects/Things/ObjOracleTimePortal.cs` | `interactionBeginTimewarp` portals; toggles group through `MapTransitionSystem` and spawns the arrival portal. |
+| `InGame/GameObjects/Things/OracleSpriteFrames.cs` | Shared frame/duration parsing for Oracle sprites. |
+| `InGame/GameSystems/MapTransitionSystem.cs` | `PostLoadActions` hook for gameplay spawns that belong to the freshly loaded map (time-portal arrival). |
+| `InGame/GameObjects/GameObjectTemplates.cs` | Registers `oracleWarp`, `oracleSprite`, `oracleTimePortal`; no parallel object system. |
 
 Design constraints:
 
@@ -89,10 +93,11 @@ Design constraints:
 | `AnimationComposer.cs` | Per-metatile timeline, distinct variants, durations. |
 | `DxMapWriter.cs` | Native `.map` plus Oracle sections and native object placements. |
 | `RoomBuilder.cs` / `OverworldBuilder.cs` / `InteriorBuilder.cs` | Single rooms / stitched overworld / present interiors, collisions, terrain, animations, objects, manifests. |
-| `Warps.cs` | `warpSources.s`, `warpDestinations.s`, `warpTiles.s`, facing table, pointer expansion. |
-| `RoomObjects.cs` | Native room object stream (`pointers.s`, `mainData.s`, enemy/extra data); positioned interactions and counts. |
-| `InteractionSprites.cs` | Interaction data, animation tables, contiguous OAM pointer stream, OAM composition. |
-| `EntityAtlas.cs` / `SpriteAtlasWriter.cs` | Shared entity plan, deterministic RGBA atlas + `.atlas`. |
+| `Warps.cs` | `warpSources.s`, `warpDestinations.s`, `warpTiles.s`, pointer expansion. |
+| `RoomObjects.cs` | Native room object stream (`pointers.s`, `mainData.s`, enemy/extra data); positioned interactions and counts; group-aware. |
+| `InteractionBehaviors.cs` | Source-derived collision/flag/palette/warp/entry-direction behaviour per interaction/subid; no id table. |
+| `InteractionSprites.cs` | Interaction data, animation tables, contiguous OAM pointer stream, OAM-driven object-gfx continuation, OAM composition. |
+| `EntityAtlas.cs` / `SpriteAtlasWriter.cs` | Shared entity plan (groups 0, 1 and present interiors), deterministic RGBA atlas + `.atlas`. |
 | `Png.cs` | Dependency-free 2bpp indexed PNG reader and RGBA writer. |
 | `Program.cs` | CLI: `room`, `overworld`, `interiors`, `inspect`, `inspect-anim`. |
 
@@ -105,10 +110,16 @@ These are summarized here instead of separate speculative documents (ADR-027).
   transient state in `OracleRuntimeState`. Do not mirror save bytes. See
   `ROADMAP.md` phase 4.
 - **Content systems (first pass implemented).** The importer reads positioned
-  interactions and emits `oracleSprite`/`oracleWarp` objects; `$87` renders and
-  blinks. Still planned: enemies/parts/item drops, a fixed-60 Hz script runner
-  with actors/events/modal ownership, and scripted animation/facing changes.
+  interactions and emits `oracleSprite`/`oracleTimePortal`/`oracleWarp` objects
+  with source-derived behaviour. Still planned: the instance state/room-event
+  refactor (AUDIT section 7), enemies/parts/item drops, a fixed-60 Hz script
+  runner with actors/events/modal ownership, and scripted animation/facing.
   See `ROADMAP.md` and `COVERAGE.md`.
+- **Scaling seams.** `docs/AUDIT.md` section 7 compares this runtime with
+  `ooa-godot`. The agreed order is: instance `OracleSessionState`, room lifecycle
+  + entry-effect table, `OracleGameProfile`, typed behaviour table, then scripts,
+  enemies and dungeons. Do not replace DX-HD's `GameObject`/`ObjectManager`
+  model with `ooa-godot`'s ECS.
 - **Audio.** Reuse `GbsPlayer`; build an Oracle `.gbs` from
   `code/audio.s` + `audio/{game}`. No LA music fallback. WLA-DX is deferred
   (ADR-024).

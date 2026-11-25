@@ -382,3 +382,22 @@ When a record is superseded, add a new one instead of editing history.
   radii) remain explicit gaps until the script runner exists. Room `$38` now
   uses its real tileset palette `$30`, restoring the pink flowers; `$8f` is a
   cutscene load, not a static override.
+
+## ADR-035 - Keep DX-HD runtime ownership; add Oracle state/room seams
+
+- **Status:** accepted.
+- **Decision:** keep DX-HD `GameObject`/`ObjectManager`/`MapTransitionSystem` as
+  the runtime. Before scripts, add only: an instance `OracleSessionState`
+  (global flags, per-group/room flags, room state, entry direction, save hooks),
+  an `OracleRoomRuntime` with room-load/entry events and a small room-entry
+  effect table, and an `OracleGameProfile` for game-specific flags, portals,
+  groups and map names. Do not port `ooa-godot`'s `RoomEntityManager`/ECS.
+- **Why:** the structural audit (AUDIT section 7) found that the static
+  `OracleFlagState` and the lack of a room lifecycle block scripts, dungeons and
+  Seasons, while the importer and DX-HD object model are adequate. `ooa-godot`'s
+  `RoomEntryEffectDatabase` and command-table/runner shape are the parts worth
+  adapting; its full room/entity manager is unnecessary for this engine.
+- **Consequence:** the next block can implement scripts and room-entry events
+  without a big-bang rewrite. Typed generated tables for behaviours, scripts and
+  enemy placements replace further ad-hoc parsing; `roomGfxChanges` can proceed
+  independently.
