@@ -247,76 +247,128 @@ Order:
 
 ## 8. Reference audit: `top`, `oracles-decomp`, `epoch-equinox` (2026-11-25)
 
-This closes the four-repository map before the script/enemy/dungeon work.
+This closes the four-repository map before the script/enemy/dungeon work. The
+question for each repository was narrow: is there a reader, table or runtime
+contract that solves one of the next four systems better than our current plan?
 
 ### 8.1 `top`
 
-- **What it has:** a SameBoy/mGBA host with software PPU, a smooth camera and a
-  second ("ghost") core instance that loads neighbouring rooms by forcing the
-  game's own scroll. `engine/neighbours` owns the ghost's object capture,
-  sprites and tile animation; `engine/game/data` only decodes layout, tileset,
-  text, object-stream and warp tables.
-- **Scripts:** no bytecode interpreter and no script reader in
-  `engine/game/data`/`engine/neighbours`. It does not reimplement gameplay
-  logic; a cutscene is still run by the emulated game.
-- **Useful finding for us:** the neighbour is composed in the state the game
-  creates for **the edge Link would cross**. `static` neighbours show only
-  objects whose creation state is deterministic, deliberately excluding random
-  placements and objects created by other objects; animated objects are stepped
-  in place and enemies stay frozen. This is exactly the no-pop-in contract our
-  stitched overworld needs, and it is the basis of ADR-037.
-- **Adopted:** presentation by prospective entry edge, before the real crossing.
-  **Not adopted:** the ghost-emulator itself (we own the data and render
-  directly) and its list of named per-room exceptions.
-- **Still useful later:** its `ROM_DATA_FORMATS` sections 5-7 are a second
-  source for object-stream/warp/dungeon encodings; they agree with the
-  disassembly fields we already parse.
+- **Scripts:** none. `engine/game/data` has no bytecode reader and
+  `engine/neighbours` never runs a script; the emulated game owns cutscenes.
+  There is nothing here to replace `ScriptImporter`/`CutsceneCommandRunner`.
+- **Collisions/interactions:** `layout.c` decodes small and large room layouts
+  (including expanded tilesets); `tileset.c` decodes metatile mappings,
+  collisions and `dungeon_index`/`layout_group`; `ROM_DATA_FORMATS.md` sections
+  3.3, 5.1 and 6 document the native collision, object-stream and warp formats.
+  These are format references, not a reusable runtime: `top` observes the
+  emulated game and does not reimplement collision or interaction logic.
+- **Enemies/parts:** `engine/neighbours/objects.c` keeps records for the three
+  native kinds (interactions, enemies, parts), including slot number, creation
+  PC, id/subid/var03, visible/drawn bytes and animation state. `object_sprites.c`
+  composes OAM frames; `object_animation.c` advances the game's own animation
+  tables. Its `static` neighbour mode shows only objects whose creation state is
+  deterministic and excludes random placements and objects created later by
+  other objects; enemies stay frozen, interactions may animate in place.
+- **Dungeons/warps:** `tileset.c` exposes a room's `dungeon_index` and
+  `layout_group`; `engine/enhanced/view_map.c` reads the live `w2DungeonLayout`
+  (0x40 bytes per floor) for the map view and resolves an adjacent dungeon room
+  from the floor's 8x8 grid, not from the room index. It deliberately samples
+  the floor that belongs to the observed position, because the game changes the
+  live floor before a fall's or a staircase's fade. The warp symbols are in
+  `gen_tables.py`/`oracles_tables_*.c`, but there is no `dungeonLayoutDataStart`
+  or `warpDestTable` parser; those are documented in `ROM_DATA_FORMATS.md`
+  sections 6-7 and still run inside the emulator.
+- **Verdict:** do not port a data reader. Adopt the neighbour contract
+  (prospective-edge composition, deterministic objects only, animated
+  interactions, frozen enemies) as ADR-037. Use `ROM_DATA_FORMATS.md` sections
+  5-7 as a second specification when importing object streams, warps and
+  dungeon floors.
 
 ### 8.2 `oracles-decomp`
 
-- **Scripts:** `src/game/scripting.c` is the authoritative check for the hook
-  semantics we implement: `disableinput` writes `$81` to `wDisabledObjects`
-  and clears the menu; `jumpifmemoryset` tests `(mem & mask)`; global-flag and
-  call/return handlers use the native return slot; `scriptCmd_moveNpc_*` sets
-  `Interaction.angle`, chooses the animation from the angle and writes
-  `counter2`. `interactionRunScript` decrements `counter1` before `counter2`;
-  while `counter2` is non-zero the object moves and the command stream does not
-  advance. `objectMovementScript.c` confirms the `move*`/`wait` byte layout.
-- **Movement:** `bank3.objectSpeedTable` is signed 8.8 Y/X, with `SPEED_100`
-  (`$28`) equal to one pixel per frame on a cardinal axis; the 32-step angle
-  circle is `0 up / 8 right / 16 down / 24 left`.
-- **Enemies/parts:** per-object C state machines under `common/enemies` and
-  `common/parts`, not a generic ECS. This reinforces ADR-035: keep DX-HD
-  `GameObject`/`ObjectManager` and add typed placement/state hosts per family.
-- **Warps:** bank 1 has explicit screen-transition states and several modes
-  (walk-off, edge, fall, portal), while our `MapTransitionSystem` still fades
-  for every source. This is a real remaining gap, not a script issue.
-- **Adopted:** exact counter/yield ordering and jump/gravity semantics in
-  `CutsceneCommandRunner`; source-derived movement values. `asm15` helpers are
-  implemented only by their native contracts (`beginJump`, `updateGravity`,
-  `ralph_flickerVisibility`, `ralph_decVar3f`, `ralph_restoreMusic`).
+- **Scripts:** `src/game/scripting.c` is the authoritative check for our runner.
+  It confirms `disableinput` (`$81` to `wDisabledObjects`, menu disabled),
+  `jumpifmemoryset` (`mem & mask`), `jumpifglobalflagset`, `callscript`/`ret`,
+  `scriptCmd_moveNpc_*` (angle + angle-derived animation + `counter2`), and the
+  `interactionRunScript` order: `counter1` first, then `counter2`; while
+  `counter2` is non-zero the object moves and the command stream does not
+  advance. `objectMovementScript.c` confirms the `move*`/`wait` byte layout and
+  the `storePointer` behavior. `bank3.objectSpeedTable` is signed 8.8 Y/X;
+  `SPEED_100` (`$28`) is one pixel/frame on a cardinal axis and the angle circle
+  is 0 up / 8 right / 16 down / 24 left. The native interpreter is not a generic
+  bytecode table: each opcode is a hook with its own carry/yield result. Our
+  `CutsceneCommandCatalog` is only the translation layer; the runner must keep
+  those results, which is why the counter/call/block cases are explicit.
+- **Collisions/interactions:** the common `ecom_*` helpers
+  (`ecom_checkHazards`, `ecom_updateKnockbackAndCheckHazards`,
+  `objectCheckCollidedWithLink_*`) and each interaction's state switch show that
+  collision is part of the object's own runtime state, not a separate generic
+  solver. Our tile collision plus per-object boxes are the right first pass;
+  special collisions (`>= $10`, bridges/rails/side-scroll) remain gaps.
+- **Enemies/parts:** 71 enemy files under `src/game/common/enemies/` and 45
+  part files under `src/game/common/parts/`, each with per-object state jump
+  tables and shared `ecom_*`/`partCommon` helpers. There is no ECS or generic
+  behavior table to import. This reinforces ADR-035: keep DX-HD `GameObject`
+  objects and add typed placement records plus per-family state hosts.
+- **Dungeons/warps:** `bank1.c` owns the screen-transition states 0-5 and the
+  directional scroll (`screenTransitionState2__transitionUp/Down/Left/Right`),
+  plus `screenTransitionStandard`, `screenTransitionForestScrambler` (Ages'
+  Lost Woods) and `screenTransitionEyePuzzle`. `bank0.c` owns
+  `setWarpDestVariables`/`applyWarpDest`, and `bank1.c` has
+  `initiateFallDownHoleWarp` with `wWarpDestGroup/Room/Pos`,
+  `wWarpTransition`/`wWarpTransition2`.
+- **Verdict:** authoritative runtime reference, not an importer. We already
+  matched the script counter/call/jump semantics and the 8.8 movement contract.
+  The real remaining divergence is presentation: our `MapTransitionSystem`
+  still fades every source, so walk-off, edge scroll, fall-hole, Lost-Woods
+  scrambling, eye-puzzle routing and stairs need explicit modes.
 
 ### 8.3 `epoch-equinox`
 
-- **What it has:** an emulator shell (rewind/checkpoints, secrets, splits,
-  overlay, voxel renderer, mod loader), not a game-data importer.
-- **Scripts/maps/saves:** no script or warp tables. `epoch_rewind` uses the
-  runtime's snapshot API, which validates the direction of
-  `OracleSessionState.Capture/Restore`; `epoch_secrets` documents the `$c6xx`
-  secret image and `wSecretType` for a later save/secret owner; the voxel
-  renderer derives terrain from the PPU and is intentionally not a source of
-  gameplay facts.
-- **Adopted:** nothing for this block. **Recorded:** do not look here for
-  scripts, warp modes, dungeon layouts or enemy state; the useful future
-  contract is the snapshot/rewind shape when saves land.
+- **What it is:** an emulator shell and launcher, not a game-data importer. It
+  has no bytecode reader, no dungeon/warp table and no object/enemy database.
+- **Useful utilities for later:**
+  - `epoch_rewind` snapshots the core and keeps a rewind/checkpoint ring; it
+    validates the shape and lifetime of our future `OracleSessionState`
+    capture/restore and save-state integration.
+  - `epoch_handoff` and `epoch_secrets` drive the linked-game transfer secret
+    (the `$c6xx` block, `wSecretType`, the symbol grid). This is the contract to
+    reuse when secrets/save import lands; `epoch_secrets.h` documents the
+    encoder split (`ES_TYPE_GAME`, `ES_TYPE_RING`, `ES_TYPE_SHORT`).
+  - `epoch_splits`/`epoch_achievements` evaluate conditions against a 0x2000
+    WRAM snapshot; useful as a model for future save-condition checks, not for
+    gameplay tables.
+  - `epoch_stream` exposes live `group/room`, essences, hearts, rings, deaths
+    and play time; it confirms which live fields a future diagnostics overlay
+    should read.
+  - `voxel_oracle.c` reads `wActiveGroup`, `wRoomStateModifier`,
+    `wRoomCollisions` and `wRoomLayout` to classify the current room; it is a
+    live-field cross-check, not a source of room data. `voxel_edit.c` writes
+    per-room override files for its renderer only.
+  - `mod_loader` applies IPS/BPS patches; irrelevant to content import.
+- **Verdict:** nothing to adopt for scripts, warps or dungeon layouts. Record
+  rewind/snapshot and secret-handoff as future save/secret contracts; do not
+  look here for gameplay tables.
 
-### 8.4 Resulting order
+### 8.4 Decision table
+
+| System | `top` | `oracles-decomp` | `epoch-equinox` | Decision for Oracles-HD |
+|---|---|---|---|---|
+| Scripts | No reader; emulated game | Exact opcode/counter semantics in `scripting.c` | None | Keep the typed importer + runner; use decomp for each new opcode/helper |
+| Collisions/interactions | Format docs + live observation | `ecom_*` inside object state machines | `voxel_oracle` reads live collision bytes | Keep tile + object boxes; add special collision modes when their objects land |
+| Enemies/parts | Neighbour capture shows creation state; enemies frozen | 71 enemy + 45 part state machines, shared helpers | None | Typed placements + per-family DX-HD hosts; no ECS |
+| Dungeons | `dungeon_index`/`layout_group`, live `w2DungeonLayout`, format docs | Runtime large-room scroll/transition behavior | None | Parse `dungeonDataTable`/`dungeonLayoutDataStart`; render large rooms continuously |
+| Warps/transitions | `warpSourcesTable`/`warpDestTable` docs only | States 0-5, standard/forest/eye-puzzle, fall-hole, `wWarpDest*` | None | Add explicit source transition modes instead of one fade |
+| Save/rewind | Not applicable | Native save/WRAM behavior | Rewind/handoff/splits/stream utilities | Reuse snapshot/secret contracts when save lands |
+
+### 8.5 Resulting order
 
 1. Script runner and source-cited bindings (this block). **Done for
    `ralphSubid0dScript` and `villagerSubid0dScript`.**
 2. Presentation/activation split for continuous rooms (ADR-037). **Done.**
 3. Import text payloads and animation variants (`setanimation`) so cutscenes
    keep their dialogue and poses; sound/music tables next.
-4. Enemy/part placements and their per-family state hosts.
+4. Enemy/part placements and their per-family state hosts, reusing the
+   neighbour rule: deterministic creation state only, no random/child pop-in.
 5. Warp modes, dungeon floors and large rooms; Seasons content after the pack
    boundary.
